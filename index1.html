@@ -2,24 +2,26 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>HTML2</title>
+    <title>HTML1</title>
 </head>
 <body>
-    <h1>Welcome to HTML2!</h1>
-    <p>Name: <span id="name"></span></p>
+    <h1>Welcome to HTML1!</h1>
+    <form method="post" action="receive.html">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
     <script>
-        // 获取cookie中的数据
-        const cookies = document.cookie.split(';');
-        let name = '';
-        for (let cookie of cookies) {
-            cookie = cookie.trim();
-            if (cookie.startsWith('name=')) {
-                name = cookie.substring(5);
-                break;
-            }
-        }
-        // 将数据渲染到页面上
-        document.getElementById('name').textContent = name;
+        // 获取表单元素和输入框元素
+        const form = document.querySelector('form');
+        const input = document.querySelector('#name');
+ 
+        // 在表单提交时将数据保存到cookie中
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            document.cookie = `name=${input.value}`;
+            form.submit();
+        });
     </script>
 </body>
 </html>
