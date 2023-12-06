@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2023b"><title>实验11 追赶问题与微分方程数值解</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S2 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S3 { margin: 10px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: 700; text-align: left;  }
+.CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S4 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 1px solid rgb(217, 217, 217); border-bottom: 0px none rgb(33, 33, 33); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S5 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S6 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(217, 217, 217); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S7 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 1px solid rgb(217, 217, 217); border-bottom: 1px solid rgb(217, 217, 217); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }</style></head><body><div class = rtcContent><h2  class = 'S0'><span style=' font-weight: bold;'>实验11 追赶问题与微分方程数值解</span></h2><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验问题</span><span>：海上边防缉私艇发现正西方向3km处有一走私船朝正北方向行驶，缉私艇立即以最大速度追赶，在雷达的引导下，缉私艇的方向始终指向走私船.试建立数学模型，解决以下问题:</span></div><div  class = 'S1'><span>(1)缉私艇能否追上走私船?</span></div><div  class = 'S1'><span>(2)在能够追上走私船的情况下，需要多长时间才可以追上?并求出缉私艇行进的路线</span></div><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验目的</span><span>：通过建立追赶问题的数学模型，模型求解，结果验证与讨论，学习微分方程模型的建立与求解方法，学会使用求微分方程的解析解及数值解的MATLAB 命令，了解如何利用计算机仿真验证模型的正确性.</span></div><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验内容</span><span>：首先，建立追赶问题的数学模型，这是一个微分方程模型;其次，介绍利用 MATLAB求微分方程解析解及数值解的命令和用法;然后，通过MATLAB编程求解追赶问题的数学模型，画出追赶曲线;最后，利用计算机仿真验证模型. </span></div><h3  class = 'S2'><span>11.1 追赶问题数学模型的建立</span></h3><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>11.2 常微分方程解析解与数值解</span></h3><h4  class = 'S3'><span>1. 常微分方程解析解与数值解的定义</span></h4><h4  class = 'S3'><span>2. 求微分方程的解析解的MATLAB命令</span></h4><h4  class = 'S3'><span>例11-1</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">y(x)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >eqn = diff(y,x) == x+x*y;</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >y=dsolve(eqn)</span></span></div></div></div><h4  class = 'S3'><span>例11-2</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">y(t) a</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >eqn = diff(y,t,2) == a*y;</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >ySol(t) = dsolve(eqn)</span></span></div></div></div><h4  class = 'S3'><span>例11-3</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">y(t) a b</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >eqn = diff(y,t,2) == a^2*y;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >Dy = diff(y,t);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >cond = [y(0)==b, Dy(0)==1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >ySol(t) = dsolve(eqn,cond)</span></span></div></div></div><h4  class = 'S3'><span>例11-4</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">x(t) y(t)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >eqns = [diff(x,t)==y, diff(y,t)==-x];</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >[xSol(t) ySol(t)] = dsolve(eqns)</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>3. 求微分方程的数值解的MATLAB命令</span></h4><h4  class = 'S3'><span>例11-5</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >tspan = [0 5];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >y0 = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[t,y] = ode45(@(t,y) 2*t, tspan, y0);    </span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >plot(t,y,</span><span style="color: rgb(167, 9, 245);">'-o'</span><span >)                 </span><span style="color: rgb(0, 128, 19);">%绘制解的图像 </span></span></div></div></div><h4  class = 'S3'><span>例11-6</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">function </span><span >dydt = vdp1(t,y)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >dydt = [y(2); (1-y(1)^2)*y(2)-y(1)];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[t,y] = ode45(@vdp1,[0 20],[2; 0]);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >plot(t,y(:,1),</span><span style="color: rgb(167, 9, 245);">'-o'</span><span >,t,y(:,2),</span><span style="color: rgb(167, 9, 245);">'-o'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >title(</span><span style="color: rgb(167, 9, 245);">'Solution of van der Pol Equation (\mu = 1) with ODE45'</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >xlabel(</span><span style="color: rgb(167, 9, 245);">'Time t'</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >ylabel(</span><span style="color: rgb(167, 9, 245);">'Solution y'</span><span >);</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >legend(</span><span style="color: rgb(167, 9, 245);">'y_1'</span><span >,</span><span style="color: rgb(167, 9, 245);">'y_2'</span><span >)</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>11.3 追赶问题求解</span></h3><h4  class = 'S3'><span>1. 追赶问题数学模型的解析解</span></h4><h4  class = 'S3'><span>例11-7</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S7'>&nbsp;</div></div></div><h4  class = 'S3'><span>例11-8</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">y(x) c r</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >eqn = diff(y,x) == 0.5*((x/c)^r-(c/x)^r);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >Dy = diff(y,x);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >cond = [y(c)==0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >ySol(x) = dsolve(eqn,cond)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">y(x) c </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >eqn = diff(y,x) == 0.5*((x/c) -(c/x));</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >Dy = diff(y,x);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >cond = [y(c)==0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >ySol(x) = dsolve(eqn,cond)</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>2. 追赶问题数学模型的数值解</span></h4><h4  class = 'S3'><span>例11-9</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >clear,clc</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">for </span><span >r=0.2:0.3:0.8</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >xspan = [3 0.0005];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >y0 = 0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[x,y] = ode45(@(x,y) 0.5*( (x/3)^r - (3/x)^r), xspan, y0); </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >plot(x,y,</span><span style="color: rgb(167, 9, 245);">'-o'</span><span >)      </span><span style="color: rgb(0, 128, 19);">%绘制解的图像   </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >hold </span><span style="color: rgb(167, 9, 245);">on</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >jstendy=y(end)      </span><span style="color: rgb(0, 128, 19);">%缉私艇追上走私船时的 y坐标</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >t=y(end)/0.4        </span><span style="color: rgb(0, 128, 19);">%追赶时间</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >gtext(</span><span style="color: rgb(167, 9, 245);">'r=0.2'</span><span >)     </span><span style="color: rgb(0, 128, 19);">%标注曲线对应r=0.2 </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >gtext(</span><span style="color: rgb(167, 9, 245);">'r=0.5'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >gtext(</span><span style="color: rgb(167, 9, 245);">'r=0.8'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">function</span><span style="color: rgb(14, 0, 255);"> </span><span >dydx = odefcn(x,y,r)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >dydx = zeros(2,1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >dydx(1) = y(2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >dydx(2) = r*sqrt(1+y(1).^2)./x;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">for </span><span >r = 0.2:0.3:0.8;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >xspan = [3 0.0005];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >y0 = [0 0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[x,y] = ode45(@(x,y) odefcn(x,y,r), xspan, y0);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >plot(x,y(:,1),</span><span style="color: rgb(167, 9, 245);">'-o'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >hold </span><span style="color: rgb(167, 9, 245);">on</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >gtext(</span><span style="color: rgb(167, 9, 245);">'r=0.2'</span><span >)     </span><span style="color: rgb(0, 128, 19);">%标注曲线对应r=0.2</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >gtext(</span><span style="color: rgb(167, 9, 245);">'r=0.5'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >gtext(</span><span style="color: rgb(167, 9, 245);">'r=0.8'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >hold </span><span style="color: rgb(167, 9, 245);">off</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>11.4 追赶问题的计算机仿真法</span></h3><h4  class = 'S3'><span>例11-10</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >clc,clear,clf</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >c=3; a=0.4/60; b=0.8/60;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >jstxb=[];jstyb=[];zscxb=[];zscyb=[];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >d=0.01;dt=2;t=0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >jstx=c;jsty=0;zscx=0;zscy=0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">while </span><span >(sqrt((jstx-zscx)^2+(jsty-zscy)^2)&gt;d)            </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       t=t+dt;                                       </span><span style="color: rgb(0, 128, 19);">%时间更新</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       jstx=jstx-b*dt*jstx/sqrt(jstx^2+(a*t-jsty)^2);         </span><span style="color: rgb(0, 128, 19);">%缉私艇横坐标的更新</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       jstxb=[jstxb,jstx];                              </span><span style="color: rgb(0, 128, 19);">%缉私艇追赶过程横坐标序列</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       jsty=jsty+b*dt*(a*t-jsty)/sqrt(jstx^2+(a*t-jsty)^2);   </span><span style="color: rgb(0, 128, 19);">%缉私艇纵坐标的更新</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       jstyb=[jstyb,jsty];                              </span><span style="color: rgb(0, 128, 19);">%缉私艇追赶过程纵坐标序列</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       zscy=a*t;                                    </span><span style="color: rgb(0, 128, 19);">%走私船纵坐标的更新</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >       zscyb=[zscyb,zscy];                            </span><span style="color: rgb(0, 128, 19);">%走私船行进过程纵坐标序列</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >zscxb=zeros(length(zscyb));                     </span><span style="color: rgb(0, 128, 19);">%走私船行进过程横坐标序列</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >    plot(jstxb,jstyb, </span><span style="color: rgb(167, 9, 245);">'^'</span><span >,zscxb,zscyb,</span><span style="color: rgb(167, 9, 245);">'*'</span><span >);                   </span><span style="color: rgb(0, 128, 19);">%绘制缉私艇和走私船行进曲线  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >fprintf(</span><span style="color: rgb(167, 9, 245);">'历时=%.0f \n'</span><span >,t) </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >fprintf(</span><span style="color: rgb(167, 9, 245);">'缉私艇终点x坐标=%.6f 缉私艇终点y坐标=%.6f \n'</span><span >,jstxb(end),jstyb(end)) </span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >fprintf(</span><span style="color: rgb(167, 9, 245);">'走私船终点x坐标=%.6f 走私船终点y坐标=%.6f \n'</span><span >, zscxb(end),zscyb(end)) </span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'></h4>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% *实验11 追赶问题与微分方程数值解*
+% *实验问题*：海上边防缉私艇发现正西方向3km处有一走私船朝正北方向行驶，缉私艇立即以最大速度追赶，在雷达的引导下，缉私艇的方向始终指向走私船.试建立数学模型，解决以下问题:
+% 
+% (1)缉私艇能否追上走私船?
+% 
+% (2)在能够追上走私船的情况下，需要多长时间才可以追上?并求出缉私艇行进的路线
+% 
+% *实验目的*：通过建立追赶问题的数学模型，模型求解，结果验证与讨论，学习微分方程模型的建立与求解方法，学会使用求微分方程的解析解及数值解的MATLAB 
+% 命令，了解如何利用计算机仿真验证模型的正确性.
+% 
+% *实验内容*：首先，建立追赶问题的数学模型，这是一个微分方程模型;其次，介绍利用 MATLAB求微分方程解析解及数值解的命令和用法;然后，通过MATLAB编程求解追赶问题的数学模型，画出追赶曲线;最后，利用计算机仿真验证模型. 
+% 11.1 追赶问题数学模型的建立
+% 
+% 11.2 常微分方程解析解与数值解
+% 1. 常微分方程解析解与数值解的定义
+% 2. 求微分方程的解析解的MATLAB命令
+% 例11-1
+
+syms y(x)
+eqn = diff(y,x) == x+x*y;
+y=dsolve(eqn)
+% 例11-2
+
+syms y(t) a
+eqn = diff(y,t,2) == a*y;
+ySol(t) = dsolve(eqn)
+% 例11-3
+
+syms y(t) a b
+eqn = diff(y,t,2) == a^2*y;
+Dy = diff(y,t);
+cond = [y(0)==b, Dy(0)==1];
+ySol(t) = dsolve(eqn,cond)
+% 例11-4
+
+syms x(t) y(t)
+eqns = [diff(x,t)==y, diff(y,t)==-x];
+[xSol(t) ySol(t)] = dsolve(eqns)
+% 
+% 3. 求微分方程的数值解的MATLAB命令
+% 例11-5
+
+tspan = [0 5];
+y0 = 0;
+[t,y] = ode45(@(t,y) 2*t, tspan, y0);    
+plot(t,y,'-o')                 %绘制解的图像 
+% 例11-6
+
+function dydt = vdp1(t,y)
+dydt = [y(2); (1-y(1)^2)*y(2)-y(1)];
+
+[t,y] = ode45(@vdp1,[0 20],[2; 0]);
+plot(t,y(:,1),'-o',t,y(:,2),'-o')
+title('Solution of van der Pol Equation (\mu = 1) with ODE45');
+xlabel('Time t');
+ylabel('Solution y');
+legend('y_1','y_2')
+% 
+% 11.3 追赶问题求解
+% 1. 追赶问题数学模型的解析解
+% 例11-7
+
+
+% 例11-8
+
+syms y(x) c r
+eqn = diff(y,x) == 0.5*((x/c)^r-(c/x)^r);
+Dy = diff(y,x);
+cond = [y(c)==0];
+ySol(x) = dsolve(eqn,cond)
+
+syms y(x) c 
+eqn = diff(y,x) == 0.5*((x/c) -(c/x));
+Dy = diff(y,x);
+cond = [y(c)==0];
+ySol(x) = dsolve(eqn,cond)
+% 
+% 2. 追赶问题数学模型的数值解
+% 例11-9
+
+clear,clc
+for r=0.2:0.3:0.8
+xspan = [3 0.0005];
+y0 = 0;
+[x,y] = ode45(@(x,y) 0.5*( (x/3)^r - (3/x)^r), xspan, y0); 
+plot(x,y,'-o')      %绘制解的图像   
+hold on
+jstendy=y(end)      %缉私艇追上走私船时的 y坐标
+t=y(end)/0.4        %追赶时间
+end
+gtext('r=0.2')     %标注曲线对应r=0.2 
+gtext('r=0.5')
+gtext('r=0.8')
+
+function dydx = odefcn(x,y,r)
+dydx = zeros(2,1);
+dydx(1) = y(2);
+dydx(2) = r*sqrt(1+y(1).^2)./x;
+
+for r = 0.2:0.3:0.8;
+xspan = [3 0.0005];
+y0 = [0 0];
+[x,y] = ode45(@(x,y) odefcn(x,y,r), xspan, y0);
+plot(x,y(:,1),'-o')
+hold on
+end
+gtext('r=0.2')     %标注曲线对应r=0.2
+gtext('r=0.5')
+gtext('r=0.8')
+hold off
+% 
+% 11.4 追赶问题的计算机仿真法
+% 例11-10
+
+clc,clear,clf
+c=3; a=0.4/60; b=0.8/60;
+jstxb=[];jstyb=[];zscxb=[];zscyb=[];
+d=0.01;dt=2;t=0;
+jstx=c;jsty=0;zscx=0;zscy=0;
+while (sqrt((jstx-zscx)^2+(jsty-zscy)^2)>d)            
+       t=t+dt;                                       %时间更新
+       jstx=jstx-b*dt*jstx/sqrt(jstx^2+(a*t-jsty)^2);         %缉私艇横坐标的更新
+       jstxb=[jstxb,jstx];                              %缉私艇追赶过程横坐标序列
+       jsty=jsty+b*dt*(a*t-jsty)/sqrt(jstx^2+(a*t-jsty)^2);   %缉私艇纵坐标的更新
+       jstyb=[jstyb,jsty];                              %缉私艇追赶过程纵坐标序列
+       zscy=a*t;                                    %走私船纵坐标的更新
+       zscyb=[zscyb,zscy];                            %走私船行进过程纵坐标序列
+end
+zscxb=zeros(length(zscyb));                     %走私船行进过程横坐标序列
+    plot(jstxb,jstyb, '^',zscxb,zscyb,'*');                   %绘制缉私艇和走私船行进曲线  
+fprintf('历时=%.0f \n',t) 
+fprintf('缉私艇终点x坐标=%.6f 缉私艇终点y坐标=%.6f \n',jstxb(end),jstyb(end)) 
+fprintf('走私船终点x坐标=%.6f 走私船终点y坐标=%.6f \n', zscxb(end),zscyb(end)) 
+% 
+%
+##### SOURCE END #####
+-->
+</div></body></html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2023b"><title>实验6 开普勒方程近似解与方程求根</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S2 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S3 { margin: 10px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: 700; text-align: left;  }
+.CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S4 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 1px solid rgb(217, 217, 217); border-bottom: 0px none rgb(33, 33, 33); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S5 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S6 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(217, 217, 217); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }</style></head><body><div class = rtcContent><h2  class = 'S0'><span style=' font-weight: bold;'>实验6 开普勒方程近似解与方程求根</span></h2><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验问题</span><span>：在天文学中有一类著名的方程--开普勒方程x=qsinx+a (0&lt;q&lt;1,a为常数)是用来确定行星在其运行轨道上的位置的.如何求解该方程并使其解达到一定的精度要求呢?</span></div><div  class = 'S1'><span>这是一个非线性方程求根问题. 在科学研究和工程技术问题中，常常会遇到类似的非线性方程或高次代数方程的求根问题，他们的解析解通常难以获得，因此，需要通过构造相应的数值求解方法，求得其近似解. </span></div><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验目的</span><span>：通过开普勒方程求根问题的讨论，寻求和建立非线性方程求根的数值方法，并进行实验.</span></div><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验内容</span><span>：首先，介绍通过绘图和MATLAB命令求解方程根的方法; 其次，介绍求方程近似根的二分法、切线法、一般迭代法，以及非线性方程组的求解方法.</span></div><div  class = 'S1'><span>为了求解开普勒方程，通常建立函数f(x)=x-qsinx-a	(6-1)	</span></div><div  class = 'S1'><span>此时，方程求根问题就转化为求函数f(x)的零点或方程f(x)=0的根的问题，首先，在平面坐标系中绘制函数f(x)的曲线，大致了解f(x)零点的情况和位置，如果有多个零点，则需要分区间逐个求解. 其次，介绍方程求根的几种常用方法.下面就q=0.5,a=1的情形进行讨论.</span></div><h3  class = 'S2'><span>6.1 利用 MATLAB命令求方程的近似根</span></h3><h4  class = 'S3'><span>1. 绘图并观察函数零点的分布</span></h4><h4  class = 'S3'><span>2. 利用MATLAB中的fzero命令求解</span></h4><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>6.2 求方程近似根的常用数值方法</span></h3><h4  class = 'S3'><span>1. 二分法</span></h4><h4  class = 'S3'><span>例6-1</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >clc;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >f=@(x)x-0.5*sin(x)-1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >dlt=1.0e-5;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >k=1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">while </span><span >abs(b-a)&gt;dlt</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >c=(a+b)/2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">if </span><span >f(c)= =0</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">break</span><span >;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">elseif </span><span >f(c)*f(b)&lt;0</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=c;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=c;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >fprintf(</span><span style="color: rgb(167, 9, 245);">'k=%d, x=%.5f\n'</span><span >,k,c);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >k=k+1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div></div><h4  class = 'S3'><span>2. 切线法</span></h4><h4  class = 'S3'><span>例6-2</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >clc;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >f=@(x)x-0.5*sin(x)-1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >df=@(x)1-0.5*cos(x);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >d2f=@(x)0.5*sin(x);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >dlt=1.0e-5;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">if </span><span >f(a)*d2f(a)&gt;0</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x0=a;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x0=b;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >m=min(abs(df(a)),abs(df(b)));</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >k=0;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">while </span><span >abs(f(x0))&gt;m*dlt</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >k=k+1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x1=x0-f(x0)/df(x0);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x0=x1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >fprintf(</span><span style="color: rgb(167, 9, 245);">'k=%d,x=%.5f\n'</span><span >,k,x0);</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div></div><h4  class = 'S3'><span>3. 一般迭代法</span></h4><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>6.3 非线性方程组求解</span></h3><h4  class = 'S3'><span>1. 求解非线性方程组的MATLAB命令</span></h4><h4  class = 'S3'><span>2. 求解非线性方程组的近似解举例</span></h4><h4  class = 'S3'><span>例6-3</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">function </span><span >f=group1(x)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >f=[sin(x(1))+x(2)+x(3)^2*exp(x(1))-4;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x(1)+x(2)*x(3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x(1)*x(2)*x(3)+2];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >[x,fval]=fsolve(</span><span style="color: rgb(167, 9, 245);">'group1'</span><span >,[1,1,1])</span></span></div></div></div><h4  class = 'S3'><span>例6-4</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">function</span><span style="color: rgb(14, 0, 255);"> </span><span >f=group2(x)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >f=[9*x(2)^2-12*x(1)-54*x(2)+61;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x(1)*x(2)-2*x(1)+1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >[x,fval]=fsolve(</span><span style="color: rgb(167, 9, 245);">'group2'</span><span >,[0,0])</span></span></div></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% *实验6 开普勒方程近似解与方程求根*
+% *实验问题*：在天文学中有一类著名的方程REPLACE_WITH_DASH_DASH开普勒方程x=qsinx+a (0<q<1,a为常数)是用来确定行星在其运行轨道上的位置的.如何求解该方程并使其解达到一定的精度要求呢?
+% 
+% 这是一个非线性方程求根问题. 在科学研究和工程技术问题中，常常会遇到类似的非线性方程或高次代数方程的求根问题，他们的解析解通常难以获得，因此，需要通过构造相应的数值求解方法，求得其近似解. 
+% 
+% *实验目的*：通过开普勒方程求根问题的讨论，寻求和建立非线性方程求根的数值方法，并进行实验.
+% 
+% *实验内容*：首先，介绍通过绘图和MATLAB命令求解方程根的方法; 其次，介绍求方程近似根的二分法、切线法、一般迭代法，以及非线性方程组的求解方法.
+% 
+% 为了求解开普勒方程，通常建立函数f(x)=x-qsinx-a	(6-1)	
+% 
+% 此时，方程求根问题就转化为求函数f(x)的零点或方程f(x)=0的根的问题，首先，在平面坐标系中绘制函数f(x)的曲线，大致了解f(x)零点的情况和位置，如果有多个零点，则需要分区间逐个求解. 
+% 其次，介绍方程求根的几种常用方法.下面就q=0.5,a=1的情形进行讨论.
+% 6.1 利用 MATLAB命令求方程的近似根
+% 1. 绘图并观察函数零点的分布
+% 2. 利用MATLAB中的fzero命令求解
+% 
+% 6.2 求方程近似根的常用数值方法
+% 1. 二分法
+% 例6-1
+
+clc;
+clear;
+f=@(x)x-0.5*sin(x)-1;
+a=1;
+b=2;
+dlt=1.0e-5;
+k=1;
+while abs(b-a)>dlt
+c=(a+b)/2;
+if f(c)= =0
+break;
+elseif f(c)*f(b)<0
+a=c;
+else
+b=c;
+end
+fprintf('k=%d, x=%.5f\n',k,c);
+k=k+1;
+end
+% 2. 切线法
+% 例6-2
+
+clc;
+clear;
+f=@(x)x-0.5*sin(x)-1;
+df=@(x)1-0.5*cos(x);
+d2f=@(x)0.5*sin(x);
+a=1;
+b=2;
+dlt=1.0e-5;
+if f(a)*d2f(a)>0
+x0=a;
+else
+x0=b;
+end
+m=min(abs(df(a)),abs(df(b)));
+k=0;
+while abs(f(x0))>m*dlt
+k=k+1;
+x1=x0-f(x0)/df(x0);
+x0=x1;
+fprintf('k=%d,x=%.5f\n',k,x0);
+end
+% 3. 一般迭代法
+% 
+% 6.3 非线性方程组求解
+% 1. 求解非线性方程组的MATLAB命令
+% 2. 求解非线性方程组的近似解举例
+% 例6-3
+
+function f=group1(x)
+f=[sin(x(1))+x(2)+x(3)^2*exp(x(1))-4;
+x(1)+x(2)*x(3);
+x(1)*x(2)*x(3)+2];
+
+[x,fval]=fsolve('group1',[1,1,1])
+% 例6-4
+
+function f=group2(x)
+f=[9*x(2)^2-12*x(1)-54*x(2)+61;
+x(1)*x(2)-2*x(1)+1];
+
+[x,fval]=fsolve('group2',[0,0])
+##### SOURCE END #####
+-->
+</div></body></html>

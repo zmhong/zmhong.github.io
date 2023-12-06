@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2023b"><title>实验12 气象观测站的调整与线性代数应用</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S2 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S3 { margin: 10px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 15px; font-weight: 700; text-align: left;  }
+.CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S4 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 1px solid rgb(217, 217, 217); border-bottom: 0px none rgb(33, 33, 33); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S5 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 0px none rgb(33, 33, 33); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S6 { border-left: 1px solid rgb(217, 217, 217); border-right: 1px solid rgb(217, 217, 217); border-top: 0px none rgb(33, 33, 33); border-bottom: 1px solid rgb(217, 217, 217); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }</style></head><body><div class = rtcContent><h2  class = 'S0'><span style=' font-weight: bold;'>实验12 气象观测站的调整与线性代数应用</span></h2><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验问题</span><span>：某地区有12个气象观测站，为了节省开支，计划减少气象站的数目，已知12个气象观测站的位置如图12-1所示，10年来各观测站测得的年降水量如表12-1所示. 试问: 减少哪些观测站之后，所得到的降水量的信息仍然足够大?</span></div><div  class = 'S1'><span style=' font-weight: bold;'>问题分析</span><span>：本问题可以用12个10维列向量分别表示这12个气象观测站10年的降水量，则可得一个向量组，由代数知识知道，这12个向量线性相关.为此，先求出向量组的一个极大无关组，则其他向量可由此极大无关组线性表示，从而可以撤销其所对应的观测站，因此，该问题可以通过线性代数中向量组的线性相关性知识来加以解决.</span></div><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验目的</span><span>：掌握MATLAB中常用的线性代数运算命令，并利用线性代数知识及相关命令解决一些简单的实际问题. </span></div><div  class = 'S1'><span style=' font-weight: bold; text-decoration: underline;'>实验内容</span><span>：首先，介绍MATLAB中的基本线性代数运算命令；然后，举例说明如何使用MATLAB解决线性代数应用问题；最后，对气象观测站的调整问题进行求解. </span></div><h3  class = 'S2'><span>12.1 线性代数基本运算命令</span></h3><h4  class = 'S3'><span>1. 求三维向量的数量积、向量积及混合积</span></h4><h4  class = 'S3'><span>例12-1</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >dot([1,2,3],[4,5,6])</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >u = [4 1 8];v = [3 4 8];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >w = cross(u, v)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a = [4 1 8];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b = [3 4 8];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >c=[1 2 3];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >v1=dot(a,cross(b,c))  </span><span style="color: rgb(0, 128, 19);">%求混合积   </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >v2=dot(cross(a,b),c)  </span><span style="color: rgb(0, 128, 19);">%求混合积 </span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >v3=cross(a,dot(b,c))  </span><span style="color: rgb(0, 128, 19);">%此句运行后出现了什么结果，请思考为什么？</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>2. 求向量组的秩和极大无关组</span></h4><h4  class = 'S3'><span>例12-2</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(:,1)=[ 1 -2 0 3 ]';   </span><span style="color: rgb(0, 128, 19);">%将列向量 作为矩阵a的第1列</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(:,2)=[ 2 -5 -3 6 ]';  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(:,3)= [0 1 3 0 ]';</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(:,4)=[ 2 -1 4 -7 ]';</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(:,5)= [5 -8 1 2 ]';</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=rank(a)   </span><span style="color: rgb(0, 128, 19);">%求矩阵a的秩，也就是原向量组的秩</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >c=rref(a)    </span><span style="color: rgb(0, 128, 19);">%将矩阵a化为行最简形</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>3. 求与向量组等价的标准正交向量组</span></h4><h4  class = 'S3'><span>例12-3</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >a=[1 -1 5;1 1 -1;2 4 -8;3 -1 9]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >format </span><span style="color: rgb(167, 9, 245);">short</span><span >  </span><span style="color: rgb(0, 128, 19);">%设置数据显示为短格式方式，即显示5位定点十进制数</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >result=orth(a) </span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>4. 求线性方程组的结构式通解</span></h4><h4  class = 'S3'><span>例12-4</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >a=[1 2 4 -3;3 5 6 -4;4 5 -2 3;3 8 24 -19]  </span><span style="color: rgb(0, 128, 19);">%记该方程组的系数矩阵为a</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >format </span><span style="color: rgb(167, 9, 245);">rat</span><span >  </span><span style="color: rgb(0, 128, 19);">%设置MATLAB计算结果以较小整数的比值，即分数形式表示</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=rref(a)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=[1 2 4 -3;3 5 6 -4;4 5 -2 3;3 8 24 -19];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >format  </span><span style="color: rgb(0, 128, 19);">%同format short，设置MATLAB数据为短格式，显示5位定点十进制数</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >c=null(a)</span></span></div></div></div><h4  class = 'S3'><span>例12-5</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >a=[1 1 -1 2;2 1 0 -3;-2 0 -2 10]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=[3;1;4]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >c=[a b]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >huajian=rref(c) </span><span style="color: rgb(0, 128, 19);">%将增广矩阵c化为行最简形</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=[1 1 -1 2;2 1 0 -3;-2 0 -2 10]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=[3;1;4]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >c=[a b]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x0=a\b</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >x1=null(a)</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>5. 求实对称阵的相似对角阵</span></h4><h4  class = 'S3'><span>例12-6</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >a=[1 2 3;4 5 6;7 8 9]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >tzza=eig(a)       </span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >[tzxl,tzz]=eig(a) </span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>7. 判定二次型的正定性</span></h4><h4  class = 'S3'><span>例12-7</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >A=[2 -2 0;-2 1 -2;0 -2 0]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[V, D]= eig(A)</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >C=inv(V)*A*V</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>8. 化二次曲面方程为标准型</span></h4><h4  class = 'S3'><span>例12-8</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >A=[2 -2 0;-2 1 -2;0 -2 0]</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >flag=0;           </span><span style="color: rgb(0, 128, 19);">%赋初值，flag=0表示该矩阵不是正定的，flag=1表示正定</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[v d]=eig(A);      </span><span style="color: rgb(0, 128, 19);">%求矩阵A的特征值和特征向量</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">if</span><span >(min(diag(d))&gt;0)  </span><span style="color: rgb(0, 128, 19);">% diag(d)用于取出d的对角线元素(即A的全部特征值)，min(d)用于检查d中的最小元素(即A的最小特征值)是否大于零</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >flag=1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">switch</span><span style="color: rgb(14, 0, 255);"> </span><span >flag</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >  </span><span style="color: rgb(14, 0, 255);">case </span><span >1          </span><span style="color: rgb(0, 128, 19);">%若flag=1</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     disp(</span><span style="color: rgb(167, 9, 245);">'A是正定矩阵'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >  </span><span style="color: rgb(14, 0, 255);">case </span><span >0         </span><span style="color: rgb(0, 128, 19);">%若flag=0</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     disp(</span><span style="color: rgb(167, 9, 245);">' A不是正定矩阵'</span><span >)</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >  </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>12.2 线性代数应用举例</span></h3><h4  class = 'S3'><span>1. 过河问题</span></h4><h4  class = 'S3'><span>例12-9</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >format </span><span style="color: rgb(167, 9, 245);">rat</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >syms </span><span style="color: rgb(167, 9, 245);">y1 y2 y3</span><span >;  </span><span style="color: rgb(0, 128, 19);">%声明y1、 y2、y3是符号变量</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >A=[2 -2 0;-2 1 -2;0 -2 0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >B=[2,2,0]';</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[V, D]= eig(A);  </span><span style="color: rgb(0, 128, 19);">%求矩阵A的特征值和特征向量</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >P=orth(V) ;     </span><span style="color: rgb(0, 128, 19);">%将矩阵V的列向量组正交化，单位化</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >y=[y1;y2;y3];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x=P*y         </span><span style="color: rgb(0, 128, 19);">%正交变换</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >f=[y1,y2,y3]*P'*A*P*y+2*B'*P*y-2</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >x=-3:0.01:3;y=-3:0.01:3; </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >[x,y]=meshgrid(x,y);  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >z1=sqrt((x.^2)./2+2.*y.^2-2); </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >z2=-1.*sqrt((x.^2)./2+2.*y.^2-2); </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >plot3(x,y,z1); </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >hold </span><span style="color: rgb(167, 9, 245);">on</span><span >;  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >plot3(x,y,z2)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >grid </span><span style="color: rgb(167, 9, 245);">on</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >title(</span><span style="color: rgb(167, 9, 245);">'单叶双曲面'</span><span >)</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span>2. 光合作用化学反应方程式的配平</span></h4><h4  class = 'S3'><span>例12-10</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >ezsurf(</span><span style="color: rgb(167, 9, 245);">'4*sec(u)*cos(v)'</span><span >,</span><span style="color: rgb(167, 9, 245);">'2.*sec(u)*sin(v)'</span><span >,</span><span style="color: rgb(167, 9, 245);">'3.*tan(u)'</span><span >,[-pi./2,pi./2,0,2*pi]) </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >axis </span><span style="color: rgb(167, 9, 245);">equal </span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >title(</span><span style="color: rgb(167, 9, 245);">'单叶双曲面'</span><span >)</span></span></div></div></div><h4  class = 'S3'><span></span></h4><h3  class = 'S2'><span>12.3 实验问题求解</span></h3><h4  class = 'S3'><span>例12-11</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">%人狗鸡米过河问题求解</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >clear</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >status=[1,1,1,1;0,0,0,0;1,1,1,0;0,0,0,1;1,1,0,1;0,0,1,0;1,0,1,1;0,1,0,0;1,0,1,0;0,1,0,1];  </span><span style="color: rgb(0, 128, 19);">% 十种允许状态</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >move=[1,0,0,0;1,0,1,0;1,1,0,0;1,0,0,1;]; </span><span style="color: rgb(0, 128, 19);">%四种允许的运载方式</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=[1,1,1,1]; </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >result=[];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >result=[result;a];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >mid=[];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >stop=1;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">while </span><span >stop~=2</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">for </span><span >i=1:4</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     mid(i,:)=a+move(i,:); </span><span style="color: rgb(0, 128, 19);">%存放从初始状态施加四种运载操作后的结果</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">for </span><span >i=1:4   </span><span style="color: rgb(0, 128, 19);">%二进制运算,请思考，此处有没有别的实现方法？</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >  </span><span style="color: rgb(14, 0, 255);">for </span><span >j=1:4  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     </span><span style="color: rgb(14, 0, 255);">if</span><span >(mid(i,j)==2)  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >        mid(i,j)=0; </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >  </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >check1=[];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > </span><span style="color: rgb(14, 0, 255);">for </span><span >i=1:4  </span><span style="color: rgb(0, 128, 19);">%检查是否为可取状态</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">for </span><span >j=1:10</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">if </span><span >(mid(i,:)==status(j,:))  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >      check1=[check1;mid(i,:)];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >    </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > </span><span style="color: rgb(14, 0, 255);">end </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > check2=[];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > [mcheck1,ncheck1]=size(check1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > [m,n]=size(result);  </span><span style="color: rgb(0, 128, 19);">%检查是否与已有状态重复</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > </span><span style="color: rgb(14, 0, 255);">for </span><span >i=1:mcheck1  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   flag=true;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">for </span><span >j=1:m</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     </span><span style="color: rgb(14, 0, 255);">if </span><span >(check1(i,:)==result(j,:)) </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >         flag=false;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">if </span><span >flag==true</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >     check2=[check2;check1(i,:)];    </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >   </span><span style="color: rgb(14, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > </span><span style="color: rgb(14, 0, 255);">end</span><span >   </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > a=check2(1,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span > result=[result;a];  </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">if </span><span >(a(1)==0&amp;a(2)==0&amp;a(3)==0&amp;a(4)==0)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >    stop=2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end</span><span >    </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span style="color: rgb(14, 0, 255);">end </span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >result</span></span></div></div></div><h4  class = 'S3'><span>例12-12</span></h4><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S4'><span style="white-space: pre"><span >clc,clear</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a=[1 0 -6 0 0;0 2 -12 0 -2;2 1 -6 -2 -1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >format </span><span style="color: rgb(167, 9, 245);">rat</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >b=rref(a)</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'>&nbsp;</div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >clc;clear</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(1,:)=[272.6,324.5,158.6,412.5,292.8,258.4,334.1,303.2,292.9,243.2,159.7,331.2];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(2,:)=[251.6,287.3,349.5,297.4,227.8,453.6,321.5,451.0,446.2,307.5,421.1,455.1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(3,:)=[192.7,433.2,289.9,366.3,466.2,239.1,357.4,219.7,245.7,411.1,357.0,353.2];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(4,:)=[246.2,232.4,243.7,372.5,460.4,158.9,298.7,314.5,256.6,327.0,296.5,423.0];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(5,:)=[291.7,311.0,502.4,254.0,245.6,324.8,401.0,266.5,251.3,289.9,255.4,362.1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(6,:)=[466.5,158.9,223.5,425.1,251.4,321.0,315.4,317.4,246.2,277.5,304.2,410.7];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(7,:)=[258.6,327.4,432.1,403.9,256.6,282.9,389.7,413.2,466.5,199.3,282.1,387.6];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(8,:)=[453.4,365.5,357.6,258.1,278.8,467.2,355.2,228.5,453.6,315.6,456.3,407.2];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(9,:)=[158.5,271.0,410.2,344.2,250.0,360.7,376.4,179.4,159.2,342.4,331.2,377.7];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >a(10,:)=[324.8,406.5,235.7,288.8,192.6,284.9,290.5,343.7,283.4,281.2,243.7,411.1];</span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >ranka=rank(a) </span></span></div></div><div class="inlineWrapper"><div  class = 'S5'><span style="white-space: pre"><span >format </span><span style="color: rgb(167, 9, 245);">rat</span></span></div></div><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span >c=rref(a) </span></span></div></div></div><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span></span></h4><h4  class = 'S3'><span></span></h4><h4  class = 'S3'></h4>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% *实验12 气象观测站的调整与线性代数应用*
+% *实验问题*：某地区有12个气象观测站，为了节省开支，计划减少气象站的数目，已知12个气象观测站的位置如图12-1所示，10年来各观测站测得的年降水量如表12-1所示. 
+% 试问: 减少哪些观测站之后，所得到的降水量的信息仍然足够大?
+% 
+% *问题分析*：本问题可以用12个10维列向量分别表示这12个气象观测站10年的降水量，则可得一个向量组，由代数知识知道，这12个向量线性相关.为此，先求出向量组的一个极大无关组，则其他向量可由此极大无关组线性表示，从而可以撤销其所对应的观测站，因此，该问题可以通过线性代数中向量组的线性相关性知识来加以解决.
+% 
+% *实验目的*：掌握MATLAB中常用的线性代数运算命令，并利用线性代数知识及相关命令解决一些简单的实际问题. 
+% 
+% *实验内容*：首先，介绍MATLAB中的基本线性代数运算命令；然后，举例说明如何使用MATLAB解决线性代数应用问题；最后，对气象观测站的调整问题进行求解. 
+% 12.1 线性代数基本运算命令
+% 1. 求三维向量的数量积、向量积及混合积
+% 例12-1
+
+dot([1,2,3],[4,5,6])
+u = [4 1 8];v = [3 4 8];
+w = cross(u, v)
+a = [4 1 8];
+b = [3 4 8];
+c=[1 2 3];
+v1=dot(a,cross(b,c))  %求混合积   
+v2=dot(cross(a,b),c)  %求混合积 
+v3=cross(a,dot(b,c))  %此句运行后出现了什么结果，请思考为什么？
+% 
+% 2. 求向量组的秩和极大无关组
+% 例12-2
+
+clear;
+a(:,1)=[ 1 -2 0 3 ]';   %将列向量 作为矩阵a的第1列
+a(:,2)=[ 2 -5 -3 6 ]';  
+a(:,3)= [0 1 3 0 ]';
+a(:,4)=[ 2 -1 4 -7 ]';
+a(:,5)= [5 -8 1 2 ]';
+a
+b=rank(a)   %求矩阵a的秩，也就是原向量组的秩
+c=rref(a)    %将矩阵a化为行最简形
+% 
+% 3. 求与向量组等价的标准正交向量组
+% 例12-3
+
+a=[1 -1 5;1 1 -1;2 4 -8;3 -1 9]
+format short  %设置数据显示为短格式方式，即显示5位定点十进制数
+result=orth(a) 
+% 
+% 4. 求线性方程组的结构式通解
+% 例12-4
+
+a=[1 2 4 -3;3 5 6 -4;4 5 -2 3;3 8 24 -19]  %记该方程组的系数矩阵为a
+format rat  %设置MATLAB计算结果以较小整数的比值，即分数形式表示
+b=rref(a)
+
+a=[1 2 4 -3;3 5 6 -4;4 5 -2 3;3 8 24 -19];
+format  %同format short，设置MATLAB数据为短格式，显示5位定点十进制数
+c=null(a)
+% 例12-5
+
+a=[1 1 -1 2;2 1 0 -3;-2 0 -2 10]
+b=[3;1;4]
+c=[a b]
+huajian=rref(c) %将增广矩阵c化为行最简形
+
+a=[1 1 -1 2;2 1 0 -3;-2 0 -2 10]
+b=[3;1;4]
+c=[a b]
+x0=a\b
+x1=null(a)
+% 
+% 5. 求实对称阵的相似对角阵
+% 例12-6
+
+a=[1 2 3;4 5 6;7 8 9]
+tzza=eig(a)       
+[tzxl,tzz]=eig(a) 
+% 
+% 7. 判定二次型的正定性
+% 例12-7
+
+A=[2 -2 0;-2 1 -2;0 -2 0]
+[V, D]= eig(A)
+C=inv(V)*A*V
+% 
+% 8. 化二次曲面方程为标准型
+% 例12-8
+
+A=[2 -2 0;-2 1 -2;0 -2 0]
+flag=0;           %赋初值，flag=0表示该矩阵不是正定的，flag=1表示正定
+[v d]=eig(A);      %求矩阵A的特征值和特征向量
+if(min(diag(d))>0)  % diag(d)用于取出d的对角线元素(即A的全部特征值)，min(d)用于检查d中的最小元素(即A的最小特征值)是否大于零
+flag=1;
+end
+switch flag
+  case 1          %若flag=1
+     disp('A是正定矩阵')
+  case 0         %若flag=0
+     disp(' A不是正定矩阵')
+  end
+% 
+% 12.2 线性代数应用举例
+% 1. 过河问题
+% 例12-9
+
+format rat
+syms y1 y2 y3;  %声明y1、 y2、y3是符号变量
+A=[2 -2 0;-2 1 -2;0 -2 0];
+B=[2,2,0]';
+[V, D]= eig(A);  %求矩阵A的特征值和特征向量
+P=orth(V) ;     %将矩阵V的列向量组正交化，单位化
+y=[y1;y2;y3];
+x=P*y         %正交变换
+f=[y1,y2,y3]*P'*A*P*y+2*B'*P*y-2
+
+x=-3:0.01:3;y=-3:0.01:3; 
+[x,y]=meshgrid(x,y);  
+z1=sqrt((x.^2)./2+2.*y.^2-2); 
+z2=-1.*sqrt((x.^2)./2+2.*y.^2-2); 
+plot3(x,y,z1); 
+hold on;  
+plot3(x,y,z2)
+grid on
+title('单叶双曲面')
+% 
+% 2. 光合作用化学反应方程式的配平
+% 例12-10
+
+ezsurf('4*sec(u)*cos(v)','2.*sec(u)*sin(v)','3.*tan(u)',[-pi./2,pi./2,0,2*pi]) 
+axis equal 
+title('单叶双曲面')
+% 
+% 12.3 实验问题求解
+% 例12-11
+
+%人狗鸡米过河问题求解
+clear
+status=[1,1,1,1;0,0,0,0;1,1,1,0;0,0,0,1;1,1,0,1;0,0,1,0;1,0,1,1;0,1,0,0;1,0,1,0;0,1,0,1];  % 十种允许状态
+move=[1,0,0,0;1,0,1,0;1,1,0,0;1,0,0,1;]; %四种允许的运载方式
+a=[1,1,1,1]; 
+result=[];
+result=[result;a];
+mid=[];
+stop=1;
+while stop~=2
+    for i=1:4
+     mid(i,:)=a+move(i,:); %存放从初始状态施加四种运载操作后的结果
+   end
+for i=1:4   %二进制运算,请思考，此处有没有别的实现方法？
+  for j=1:4  
+     if(mid(i,j)==2)  
+        mid(i,j)=0; 
+    end
+  end
+end
+check1=[];
+ for i=1:4  %检查是否为可取状态
+   for j=1:10
+    if (mid(i,:)==status(j,:))  
+      check1=[check1;mid(i,:)];
+    end
+   end
+ end 
+ check2=[];
+ [mcheck1,ncheck1]=size(check1);
+ [m,n]=size(result);  %检查是否与已有状态重复
+ for i=1:mcheck1  
+   flag=true;
+   for j=1:m
+     if (check1(i,:)==result(j,:)) 
+         flag=false;
+     end
+   end
+   if flag==true
+     check2=[check2;check1(i,:)];    
+   end
+ end   
+ a=check2(1,:);
+ result=[result;a];  
+if (a(1)==0&a(2)==0&a(3)==0&a(4)==0)
+    stop=2;
+end    
+end 
+result
+% 例12-12
+
+clc,clear
+a=[1 0 -6 0 0;0 2 -12 0 -2;2 1 -6 -2 -1];
+format rat
+b=rref(a)
+
+clc;clear
+a(1,:)=[272.6,324.5,158.6,412.5,292.8,258.4,334.1,303.2,292.9,243.2,159.7,331.2];
+a(2,:)=[251.6,287.3,349.5,297.4,227.8,453.6,321.5,451.0,446.2,307.5,421.1,455.1];
+a(3,:)=[192.7,433.2,289.9,366.3,466.2,239.1,357.4,219.7,245.7,411.1,357.0,353.2];
+a(4,:)=[246.2,232.4,243.7,372.5,460.4,158.9,298.7,314.5,256.6,327.0,296.5,423.0];
+a(5,:)=[291.7,311.0,502.4,254.0,245.6,324.8,401.0,266.5,251.3,289.9,255.4,362.1];
+a(6,:)=[466.5,158.9,223.5,425.1,251.4,321.0,315.4,317.4,246.2,277.5,304.2,410.7];
+a(7,:)=[258.6,327.4,432.1,403.9,256.6,282.9,389.7,413.2,466.5,199.3,282.1,387.6];
+a(8,:)=[453.4,365.5,357.6,258.1,278.8,467.2,355.2,228.5,453.6,315.6,456.3,407.2];
+a(9,:)=[158.5,271.0,410.2,344.2,250.0,360.7,376.4,179.4,159.2,342.4,331.2,377.7];
+a(10,:)=[324.8,406.5,235.7,288.8,192.6,284.9,290.5,343.7,283.4,281.2,243.7,411.1];
+ranka=rank(a) 
+format rat
+c=rref(a) 
+% 
+% 
+% 
+%
+##### SOURCE END #####
+-->
+</div></body></html>
