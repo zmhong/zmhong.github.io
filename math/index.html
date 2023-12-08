@@ -65,7 +65,7 @@ def SEL(A='[(0,1,-1,2),(-1,0,2,4), (0,-1,1,-2)]',
     variables = var(var_names)
 
     HSLE_as_latex(M, variables)
-    pretty_print(HtmlFragment( 'SEL in matrix form'))
+    pretty_print(HtmlFragment( '系数矩阵'))
     show(M)
 
     pivot = {}
@@ -78,7 +78,7 @@ def SEL(A='[(0,1,-1,2),(-1,0,2,4), (0,-1,1,-2)]',
                 ibound_variables.append(k)
                 if M[m,k]==0:
                     M[c,:],M[m,:]=M[m,:],M[c,:]
-                    pretty_print( HtmlFragment('We permute rows %d and %d'%(m+1,c+1)))
+                    pretty_print( HtmlFragment('交换第%d行和第%d行'%(m+1,c+1)))
                     show(M)
                 pivot[m] = k
                 break
@@ -86,25 +86,25 @@ def SEL(A='[(0,1,-1,2),(-1,0,2,4), (0,-1,1,-2)]',
         a=M[m,k]
         for n in range(m+1,neqs):
             if M[n,k]!=0:
-                pretty_print( HtmlFragment("We add %s times row %d to row %d"%(-M[n,k]/a, m+1, n+1)))
+                pretty_print( HtmlFragment("将第%d行的%s倍加到第%d行"%(-M[n,k]/a, m+1, n+1)))
                 M=M.with_added_multiple_of_row(n,m,-M[n,k]/a)
                 show(M)
 
-    pretty_print( HtmlFragment('Equivalent system of equations'))
+    pretty_print( HtmlFragment('原方程组同解的方程组'))
     HSLE_as_latex(M, variables)
     SEL_type = 'compatible'
     null_rows = None
     for k,row in enumerate(M):
         if row.is_zero():
-            pretty_print( HtmlFragment('We remove trivial 0=0 equations'))
+            pretty_print( HtmlFragment('移去0=0型恒等式'))
             M = M[:k,:]
             HSLE_as_latex(M, variables)
                 
     ifree_variables = [k for k in range(nvars) if k not in ibound_variables]
     bound_variables = [variables[k] for k in ibound_variables]
     free_variables = [variables[k] for k in ifree_variables]
-    pretty_print( HtmlFragment('Free variables: %s'% free_variables))
-    pretty_print( HtmlFragment('Bound variables: %s'% bound_variables))
+    pretty_print( HtmlFragment('自由未知量: %s'% free_variables))
+    pretty_print( HtmlFragment('约束未知量: %s'% bound_variables))
     reduced_eqs = [
         sum(c*v for c,v in zip(row, variables))==0
         for row in M
@@ -115,18 +115,18 @@ def SEL(A='[(0,1,-1,2),(-1,0,2,4), (0,-1,1,-2)]',
     else:
         soldict = solve(reduced_eqs, bound_variables, solution_dict=True)[0]
 
-    pretty_print( HtmlFragment('Solution in parametric form'))
+    pretty_print( HtmlFragment('方程组参数形式的解'))
     parametric_sol = matrix(
         xvector.apply_map(lambda s:s.subs(soldict))
     ).transpose()
     show(parametric_sol)
-    pretty_print( HtmlFragment('Generators'))
+    pretty_print( HtmlFragment('基础解系'))
     pretty_print( HtmlFragment(
         r'$$\langle %s\rangle$$'%','.join(latex(
             parametric_sol.subs(dict((variables[k],1 if j==k else 0) for k in ifree_variables))
         ) for j in ifree_variables)
     ))
-    pretty_print( HtmlFragment('Dimension is %d'%len(free_variables)))
+    pretty_print( HtmlFragment('解空间的维数为%d'%len(free_variables)))
  </script></div>
 
  <h2><li>求非齐次线性方程组的通解</li></h2>
