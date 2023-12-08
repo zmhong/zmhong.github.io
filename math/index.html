@@ -155,8 +155,8 @@ def extended_matrix_as_latex(M):
     r'\end{array}\right)$$'))
 
 @interact
-def SEL(A_text='[(0,0,-1,2),(-1,0,2,4), (0,0,1,-2)]',
-        b_text='[2,1,-2]',
+def SEL(A_text='[(1,-1,1,-1),(1,-1,-1,1), (2,-2,-4,4)]',
+        b_text='[1,0,-1]',
         auto_update=False
     ):
     A = matrix(eval(A_text))
@@ -192,7 +192,7 @@ def SEL(A_text='[(0,0,-1,2),(-1,0,2,4), (0,0,1,-2)]',
         a=M[m,k]
         for n in range(m+1,neqs):
             if M[n,k]!=0:
-                pretty_print( HtmlFragment("将第%d行的%s倍加到第%d行上"%(-M[n,k]/a, m+1, n+1)))
+                pretty_print( HtmlFragment("将%s倍的第%d行加到第%d行上"%(-M[n,k]/a, m+1, n+1)))
                 M=M.with_added_multiple_of_row(n,m,-M[n,k]/a)
                 extended_matrix_as_latex(M)
 
