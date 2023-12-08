@@ -55,7 +55,7 @@ def HSLE_as_latex(A, variables):
     r'\end{array}\right.$$'))
 
 @interact
-def SEL(A='[(0,1,-1,2),(-1,0,2,4), (0,-1,1,-2)]',
+def SEL(A='[(2,1,-2,3),(3,2,-1,2),(1,1,1,-1)]',
         auto_update=False
     ):
     M = A = matrix(eval(A))
@@ -86,7 +86,7 @@ def SEL(A='[(0,1,-1,2),(-1,0,2,4), (0,-1,1,-2)]',
         a=M[m,k]
         for n in range(m+1,neqs):
             if M[n,k]!=0:
-                pretty_print( HtmlFragment("将第%d行的%s倍加到第%d行"%(-M[n,k]/a, m+1, n+1)))
+                pretty_print( HtmlFragment("将%s倍的第%d行加到第%d行"%(-M[n,k]/a, m+1, n+1)))
                 M=M.with_added_multiple_of_row(n,m,-M[n,k]/a)
                 show(M)
 
