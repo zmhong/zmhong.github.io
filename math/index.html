@@ -25,6 +25,7 @@
 </font>
 </h1>
 
+友情链接：
 <a href="https://textbooks.math.gatech.edu/ila/index.html" target="_blank" 
 style="text-decoration:none">交互式线性代数</a>
 
@@ -39,7 +40,7 @@ style="text-decoration:none">矩阵的初等行变换</a>
 style="text-decoration:none">矩阵的对角化</a>
 
  <h2>   
-<img src="qrcode_zmhong.github.io.png">
+<img src="qrcode_zmhong.github.io.png" width=80%>
 </h2>
     
 <h2><li>交互式的矩阵初等行变换</li></h2>
@@ -48,8 +49,8 @@ style="text-decoration:none">矩阵的对角化</a>
 <h2><li>希尔密码加密</li></h2>
  <div class="compute"><script type="text/x-sage">
 #Last edited 8/8/19 at 1:47pm
-pretty_print(html("<h1>Hill Cipher Encryptor</h1>"))
-pretty_print(html("<h>Please select the size of your key:<h>"))
+pretty_print(html("<h1>希尔密码加密</h1>"))
+pretty_print(html("<h>请选择密钥矩阵的阶数:<h>"))
 @interact
 def hill_cipher(Size=['2','3','4']):
     if Size == '2':
@@ -61,7 +62,7 @@ def hill_cipher(Size=['2','3','4']):
             R = IntegerModRing(26)
             M = MatrixSpace(R,Size,Size)
             A = M([[a,b],[c,d]])
-            print("This is your key:")
+            print("您的密钥矩阵如下:")
             print(A)
             invertible = A.is_invertible()
             if not invertible:
@@ -74,7 +75,7 @@ def hill_cipher(Size=['2','3','4']):
             if len(newmessage) % 2 == 1:
                 newmessage+="z"
             message=E.encoding(newmessage)
-            print("This is your encrypted message:")
+            print("您的加密信息为:")
             print(e(S(message)))
     if Size=='3':
         pretty_print(html("<h>Please input your message (in quotes) and the numbers in your square matrix key:<h>"))
@@ -85,7 +86,7 @@ def hill_cipher(Size=['2','3','4']):
             R = IntegerModRing(26)
             M = MatrixSpace(R,3,3)
             A = M([[a,b,c],[d,e,f],[g,h,i]])
-            print("This is your key:")
+            print("您的密钥矩阵如下:")
             print(A)
             invertible = A.is_invertible()
             if not invertible:
@@ -100,7 +101,7 @@ def hill_cipher(Size=['2','3','4']):
             elif len(newmessage) % 3 == 1:
                 newmessage+="zz"
             message=E.encoding(newmessage)
-            print("This is your encrypted message:")
+            print("您的加密信息为:")
             print(e(S(message)))
     if Size == '4':
         pretty_print(html("<h>Please input your message (in quotes) and the numbers in your square matrix key:<h>"))
@@ -111,7 +112,7 @@ def hill_cipher(Size=['2','3','4']):
             R = IntegerModRing(26)
             M = MatrixSpace(R,4,4)
             A = M([[a,b,c,d],[e,f,g,h],[i,j,k,l],[m,n,o,p]])
-            print("This is your key:")
+            print("您的密钥矩阵如下:")
             print(A)
             invertible = A.is_invertible()
             if not invertible:
@@ -128,7 +129,7 @@ def hill_cipher(Size=['2','3','4']):
             elif len(newmessage) % 4 == 1:
                 newmessage+="zzz"
             message=E.encoding(newmessage)
-            print("This is your encrypted message:")
+            print("您的加密信息为:")
             print(e(S(message)))
      </script></div>
 
