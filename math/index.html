@@ -332,7 +332,7 @@ def SEL(A='[(2,1,-2,3),(3,2,-1,2),(1,1,1,-1)]',
     show(parametric_sol)
     pretty_print( HtmlFragment('基础解系'))
     pretty_print( HtmlFragment(
-        r'$$\langle %s\rangle$$'%','.join(latex(
+        r'$$\left\langle %s\right\rangle$$'%','.join(latex(
             parametric_sol.subs(dict((variables[k],1 if j==k else 0) for k in ifree_variables))
         ) for j in ifree_variables)
     ))
