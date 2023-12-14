@@ -12,7 +12,7 @@
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
 </script>
 <title>Linear Algebra</title>
 </head>
@@ -23,19 +23,19 @@
 <br>
 <h1 align=center>
 <font color=#FF5809; size=6; face=Verdana>
-»¶Ó­À´µ½ÏßĞÔ´úÊıÑ§Ï°ÍøÕ¾
+æ¬¢è¿æ¥åˆ°çº¿æ€§ä»£æ•°å­¦ä¹ ç½‘ç«™
 </font>
 </h1> 
 
 
 
-<font size=6.0; face=¿¬Ìå>
-<h2><a name="C0"><strong>Ä¿Â¼:</strong></a><br></h2>
+<font size=6.0; face=æ¥·ä½“>
+<h2><a name="C0"><strong>ç›®å½•:</strong></a><br></h2>
 
 <ul>
-<li><a href="#C2">µäĞÍÀıÌâ</a></li>
-<li><a href="#C3">Ñ§Ï°Ö¸µ¼ÊéÑ¡ÔñÌâ</a></li>
-<li><a href="#C4">ÆäËûÏ°Ìâ</a></li>
+<li><a href="#C2">å…¸å‹ä¾‹é¢˜</a></li>
+<li><a href="#C3">å­¦ä¹ æŒ‡å¯¼ä¹¦é€‰æ‹©é¢˜</a></li>
+<li><a href="#C4">å…¶ä»–ä¹ é¢˜</a></li>
 </ul>
 
 
@@ -43,12 +43,12 @@
 
 
 
-<h2><a name="C2">µäĞÍÀıÌâ</a></h2>
+<h2><a name="C2">å…¸å‹ä¾‹é¢˜</a></h2>
 
 <ul>
 <p></p> 
 <li>
-<b>1.</b>&nbsp; Èô $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ ¶¼ÊÇ $4$ Î¬ÁĞÏòÁ¿, ÇÒ $4$ ½×ĞĞÁĞÊ½ $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1\right|=m$, $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\beta}_2, \boldsymbol{\alpha}_3\right|=n$, Ôò $4$ ½×ĞĞÁĞÊ½ $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1+\boldsymbol{\beta}_2\right|=$ $(\qquad)$.
+<b>1.</b>&nbsp; è‹¥ $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ éƒ½æ˜¯ $4$ ç»´åˆ—å‘é‡, ä¸” $4$ é˜¶è¡Œåˆ—å¼ $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1\right|=m$, $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\beta}_2, \boldsymbol{\alpha}_3\right|=n$, åˆ™ $4$ é˜¶è¡Œåˆ—å¼ $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1+\boldsymbol{\beta}_2\right|=$ $(\qquad)$.
 <p></p>
 $\mathrm{A}$. $m+n$
 
@@ -59,15 +59,15 @@ $\qquad\qquad$$\mathrm{C}$. $n-m$
 
 $\qquad\qquad$$\mathrm{D}$. $m-n$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.1").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.1").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.1").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.1").style.display="none"'> 
 <div id= "divID1.1" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD
+æ­£ç¡®ç­”æ¡ˆï¼šD
 </div> 
 </li>
 <p></p> 
 <li>
-<b>2. </b>&nbsp; Èô $\boldsymbol{P}\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)=\left(\begin{array}{ccc}a_{11}-3 a_{31} & a_{12}-3 a_{32} & a_{13}-3 a_{33} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)$, Ôò $\boldsymbol{P}= (\qquad)$.
+<b>2. </b>&nbsp; è‹¥ $\boldsymbol{P}\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)=\left(\begin{array}{ccc}a_{11}-3 a_{31} & a_{12}-3 a_{32} & a_{13}-3 a_{33} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)$, åˆ™ $\boldsymbol{P}= (\qquad)$.
 
 
 <p></p> 
@@ -86,15 +86,15 @@ $\qquad\qquad$$\mathrm{C}$. $\left(\begin{array}{ccc}0 & 0 & -3 \\ 0 & 1 & 0 \\ 
 $\qquad\qquad$$\mathrm{D}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -3 & 1\end{array}\right)$
 <br><br>
 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.2").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.2").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.2").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.2").style.display="none"'> 
 <div id= "divID1.2" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºB
+æ­£ç¡®ç­”æ¡ˆï¼šB
 </div> 
 </li>
 <p></p> 
 <li>
-<b>3. </b>&nbsp;  Æë´ÎÏßĞÔ·½³Ì×é $x_1+x_2+\cdots+x_n=0$ µÄ»ù´¡½âÏµËùº¬½âÏòÁ¿µÄ¸öÊıÎª $(\qquad)$.
+<b>3. </b>&nbsp;  é½æ¬¡çº¿æ€§æ–¹ç¨‹ç»„ $x_1+x_2+\cdots+x_n=0$ çš„åŸºç¡€è§£ç³»æ‰€å«è§£å‘é‡çš„ä¸ªæ•°ä¸º $(\qquad)$.
 <p></p>
 $\mathrm{A}$. $1$
 
@@ -107,61 +107,61 @@ $\qquad\qquad$$\mathrm{C}$. $n-1$
 $\qquad\qquad$$\mathrm{D}$. $n+1$
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.3").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.3").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.3").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.3").style.display="none"'> 
 <div id= "divID1.3" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>4. </b>&nbsp; Éè $\boldsymbol{A}$ ÊÇ $n$ ½×Êµ¶Ô³Æ¾ØÕó, ½« $\boldsymbol{A}$ µÄµÚ $i$ ÁĞÓëµÚ $j$ ÁĞ¶Ô»»µÃµ½ $\boldsymbol{B}$, ÔÙ½« $\boldsymbol{B}$ µÄµÚ $i$ ĞĞÓëµÚ $j$ ĞĞ¶Ô»»µÃµ½ $\boldsymbol{C}$, Ôò¾ØÕó $\boldsymbol{A}$ Óë $\boldsymbol{C}$ $(\qquad)$.
+<b>4. </b>&nbsp; è®¾ $\boldsymbol{A}$ æ˜¯ $n$ é˜¶å®å¯¹ç§°çŸ©é˜µ, å°† $\boldsymbol{A}$ çš„ç¬¬ $i$ åˆ—ä¸ç¬¬ $j$ åˆ—å¯¹æ¢å¾—åˆ° $\boldsymbol{B}$, å†å°† $\boldsymbol{B}$ çš„ç¬¬ $i$ è¡Œä¸ç¬¬ $j$ è¡Œå¯¹æ¢å¾—åˆ° $\boldsymbol{C}$, åˆ™çŸ©é˜µ $\boldsymbol{A}$ ä¸ $\boldsymbol{C}$ $(\qquad)$.
 <p></p>
-$\mathrm{A}$. µÈ¼Ûµ«²»ÏàËÆ
+$\mathrm{A}$. ç­‰ä»·ä½†ä¸ç›¸ä¼¼
 $\qquad\qquad$$\mathrm{B}$. 
-ºÏÍ¬µ«²»ÏàËÆ
+åˆåŒä½†ä¸ç›¸ä¼¼
 
 
-$\qquad\qquad$$\mathrm{C}$. ²»ºÏÍ¬µ«ÏàËÆ
-$\qquad\qquad$$\mathrm{D}$. µÈ¼Û, ºÏÍ¬ÇÒÏàËÆ
+$\qquad\qquad$$\mathrm{C}$. ä¸åˆåŒä½†ç›¸ä¼¼
+$\qquad\qquad$$\mathrm{D}$. ç­‰ä»·, åˆåŒä¸”ç›¸ä¼¼
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.4").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.4").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.4").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.4").style.display="none"'> 
 <div id= "divID1.4" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD
+æ­£ç¡®ç­”æ¡ˆï¼šD
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>5. </b>&nbsp; Éè $\boldsymbol{A}$ ÊÇ $m \times n$ ¾ØÕó, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ ÊÇ $n$ Î¬ÁĞÏòÁ¿×é, ÔòÏÂÁĞ½áÂÛÕıÈ·µÄÊÇ $(\qquad)$.
+<b>5. </b>&nbsp; è®¾ $\boldsymbol{A}$ æ˜¯ $m \times n$ çŸ©é˜µ, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ æ˜¯ $n$ ç»´åˆ—å‘é‡ç»„, åˆ™ä¸‹åˆ—ç»“è®ºæ­£ç¡®çš„æ˜¯ $(\qquad)$.
 
 <p></p>
-$\mathrm{A}$. Èô $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ ÏßĞÔÏà¹Ø, Ôò $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ ±ØÏßĞÔÏà¹Ø
-
-
-<p></p>
-$\mathrm{B}$.  Èô $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  ÏßĞÔÏà¹Ø, Ôò $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ ±ØÏßĞÔÎŞ¹Ø
+$\mathrm{A}$. è‹¥ $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ çº¿æ€§ç›¸å…³, åˆ™ $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ å¿…çº¿æ€§ç›¸å…³
 
 
 <p></p>
-$\mathrm{C}$. Èô $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  ÏßĞÔÎŞ¹Ø, Ôò $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ ±ØÏßĞÔÏà¹Ø
+$\mathrm{B}$.  è‹¥ $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  çº¿æ€§ç›¸å…³, åˆ™ $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ å¿…çº¿æ€§æ— å…³
 
 
 <p></p>
-$\mathrm{D}$. Èô $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  ÏßĞÔÎŞ¹Ø, Ôò $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ ±ØÏßĞÔÎŞ¹Ø 
+$\mathrm{C}$. è‹¥ $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  çº¿æ€§æ— å…³, åˆ™ $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ å¿…çº¿æ€§ç›¸å…³
+
+
+<p></p>
+$\mathrm{D}$. è‹¥ $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  çº¿æ€§æ— å…³, åˆ™ $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ å¿…çº¿æ€§æ— å…³ 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.5").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.5").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.5").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.5").style.display="none"'> 
 <div id= "divID1.5" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD
+æ­£ç¡®ç­”æ¡ˆï¼šD
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>6. </b>&nbsp; ¼ÙÉè $\boldsymbol{A}, \boldsymbol{B}$ ¾ùÎª $n$ ½×·½Õó, $(\boldsymbol{A B})^2=\boldsymbol{I}$, Ôò±ØÓĞ$(\qquad)$.
+<b>6. </b>&nbsp; å‡è®¾ $\boldsymbol{A}, \boldsymbol{B}$ å‡ä¸º $n$ é˜¶æ–¹é˜µ, $(\boldsymbol{A B})^2=\boldsymbol{I}$, åˆ™å¿…æœ‰$(\qquad)$.
 
 <p></p>
 $\mathrm{A}$. $\boldsymbol{A B}=\boldsymbol{I}$ 
@@ -175,16 +175,16 @@ $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A}^2\boldsymbol{B}^2=\boldsymbol{I}$
 
 $\qquad\qquad$$\mathrm{D}$.  $(\boldsymbol{BA})^2=\boldsymbol{I}$ 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.6").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.6").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.6").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.6").style.display="none"'> 
 <div id= "divID1.6" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD
+æ­£ç¡®ç­”æ¡ˆï¼šD
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>7. </b>&nbsp; Éè $n$ ½×·½Õó $\boldsymbol{A}$ ·ÇÆæÒì, $\boldsymbol{A}^*$ ÊÇ $\boldsymbol{A}$ µÄ°éËæ¾ØÕó, Ôò$(\qquad)$.
+<b>7. </b>&nbsp; è®¾ $n$ é˜¶æ–¹é˜µ $\boldsymbol{A}$ éå¥‡å¼‚, $\boldsymbol{A}^*$ æ˜¯ $\boldsymbol{A}$ çš„ä¼´éšçŸ©é˜µ, åˆ™$(\qquad)$.
 <p></p>
 $\mathrm{A}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n-1}\boldsymbol{A}$ 
 
@@ -197,16 +197,16 @@ $\qquad\qquad$$\mathrm{C}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n
 
 $\qquad\qquad$$\mathrm{D}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n-2} \boldsymbol{A}$ 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.7").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.7").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.7").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.7").style.display="none"'> 
 <div id= "divID1.7" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>8. </b>&nbsp; Éè $\boldsymbol{A}$ Îª·´¶Ô³Æ¾ØÕó $\left(\boldsymbol{A}^{\rm T}=-\boldsymbol{A}\right)$, ÇÒ $|\boldsymbol{A}| \neq 0, \boldsymbol{B}$ ¿ÉÄæ, $\boldsymbol{A}, \boldsymbol{B}$ ÎªÍ¬½×·½Õó, $\boldsymbol{A}^*$ Îª $\boldsymbol{A}$ µÄ°éËæ¾ØÕó, Ôò $\left[\boldsymbol{A}^{\rm T} \boldsymbol{A}^*\left(\boldsymbol{B}^{-1}\right)^{\rm T}\right]^{-1}=(\qquad)$.
+<b>8. </b>&nbsp; è®¾ $\boldsymbol{A}$ ä¸ºåå¯¹ç§°çŸ©é˜µ $\left(\boldsymbol{A}^{\rm T}=-\boldsymbol{A}\right)$, ä¸” $|\boldsymbol{A}| \neq 0, \boldsymbol{B}$ å¯é€†, $\boldsymbol{A}, \boldsymbol{B}$ ä¸ºåŒé˜¶æ–¹é˜µ, $\boldsymbol{A}^*$ ä¸º $\boldsymbol{A}$ çš„ä¼´éšçŸ©é˜µ, åˆ™ $\left[\boldsymbol{A}^{\rm T} \boldsymbol{A}^*\left(\boldsymbol{B}^{-1}\right)^{\rm T}\right]^{-1}=(\qquad)$.
 <p></p>
 $\mathrm{A}$. $-\dfrac{\boldsymbol{B}}{|\boldsymbol{A}|}$
 
@@ -219,17 +219,17 @@ $\qquad\qquad$$\mathrm{C}$. $-\dfrac{\boldsymbol{B}^{\rm T}}{|\boldsymbol{A}|}$
 
 $\qquad\qquad$$\mathrm{D}$. $\dfrac{\boldsymbol{B}^{\rm T}}{|\boldsymbol{A}|}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.8").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.8").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.8").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.8").style.display="none"'> 
 <div id= "divID1.8" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>9. </b>&nbsp; Éè $n$ Î¬ĞĞÏòÁ¿ $\boldsymbol{\alpha}=\left(\dfrac{1}{2}, 0,0, \cdots, 0, \dfrac{1}{2}\right)$, ¾ØÕó $\boldsymbol{A}=\boldsymbol{I}-\boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}, \boldsymbol{B}=\boldsymbol{I}+2 \boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}$, ÆäÖĞ
-$\boldsymbol{I}$ Îª $n$ ½×µ¥Î»¾ØÕó, Ôò $\boldsymbol{A} \boldsymbol{B}=(\qquad)$.
+<b>9. </b>&nbsp; è®¾ $n$ ç»´è¡Œå‘é‡ $\boldsymbol{\alpha}=\left(\dfrac{1}{2}, 0,0, \cdots, 0, \dfrac{1}{2}\right)$, çŸ©é˜µ $\boldsymbol{A}=\boldsymbol{I}-\boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}, \boldsymbol{B}=\boldsymbol{I}+2 \boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}$, å…¶ä¸­
+$\boldsymbol{I}$ ä¸º $n$ é˜¶å•ä½çŸ©é˜µ, åˆ™ $\boldsymbol{A} \boldsymbol{B}=(\qquad)$.
 
 <p></p>
 $\mathrm{A}$. $\boldsymbol{O}$  
@@ -243,16 +243,16 @@ $\qquad\qquad$$\mathrm{C}$. $-\boldsymbol{I}$
 
 $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{I}+\boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}$  
 <br><br> 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.9").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.9").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.9").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.9").style.display="none"'> 
 <div id= "divID1.9" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºB
+æ­£ç¡®ç­”æ¡ˆï¼šB
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>10. </b>&nbsp; Éè $\boldsymbol{A}$ Îª$3$½×¾ØÕó, ÒÑÖª $|3 \boldsymbol{I}+\boldsymbol{A}|=0$, ¾ØÕó $2 \boldsymbol{I}-\boldsymbol{A}$ ²»¿ÉÄæ, ÏßĞÔ·½³Ì×é $(\boldsymbol{I}+\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$ ÓĞ·ÇÁã½â, Ôò $\left|\boldsymbol{A}^*-\boldsymbol{I}\right|=(\qquad)$.
+<b>10. </b>&nbsp; è®¾ $\boldsymbol{A}$ ä¸º$3$é˜¶çŸ©é˜µ, å·²çŸ¥ $|3 \boldsymbol{I}+\boldsymbol{A}|=0$, çŸ©é˜µ $2 \boldsymbol{I}-\boldsymbol{A}$ ä¸å¯é€†, çº¿æ€§æ–¹ç¨‹ç»„ $(\boldsymbol{I}+\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$ æœ‰éé›¶è§£, åˆ™ $\left|\boldsymbol{A}^*-\boldsymbol{I}\right|=(\qquad)$.
 
 <p></p>
 $\mathrm{A}$. $6$
@@ -266,16 +266,16 @@ $\qquad\qquad$$\mathrm{C}$. $0$
 
 $\qquad\qquad$$\mathrm{D}$. $21$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.10").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.10").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.10").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.10").style.display="none"'> 
 <div id= "divID1.10" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºB
+æ­£ç¡®ç­”æ¡ˆï¼šB
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>11. </b>&nbsp; Éè¾ØÕó $\boldsymbol{A}=\left(\begin{array}{ccc}4 & 1 & -2 \\ 1 & 2 & a \\ 3 & 1 & -1\end{array}\right)$ µÄÒ»¸öÌØÕ÷ÏòÁ¿Îª $\left(\begin{array}{l}1 \\ 1 \\ 2\end{array}\right)$, Ôò $\boldsymbol{A}=(\qquad)$.
+<b>11. </b>&nbsp; è®¾çŸ©é˜µ $\boldsymbol{A}=\left(\begin{array}{ccc}4 & 1 & -2 \\ 1 & 2 & a \\ 3 & 1 & -1\end{array}\right)$ çš„ä¸€ä¸ªç‰¹å¾å‘é‡ä¸º $\left(\begin{array}{l}1 \\ 1 \\ 2\end{array}\right)$, åˆ™ $\boldsymbol{A}=(\qquad)$.
 
 <p></p>
 $\mathrm{A}$. $0$
@@ -289,16 +289,16 @@ $\qquad\qquad$$\mathrm{C}$. $-1$
 
 $\qquad\qquad$$\mathrm{D}$. $2$ 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.11").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.11").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.11").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.11").style.display="none"'> 
 <div id= "divID1.11" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>12. </b>&nbsp;  Éè $\boldsymbol{A}$ ÊÇÖÈÎª $n-1$ µÄ $n$ ½×¾ØÕó, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ ÊÇ·½³Ì×é $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{0}$ µÄÁ½¸ö²»Í¬µÄ½â ÏòÁ¿, Ôò $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{0}$ µÄÍ¨½âÊÇ $(\qquad)$.
+<b>12. </b>&nbsp;  è®¾ $\boldsymbol{A}$ æ˜¯ç§©ä¸º $n-1$ çš„ $n$ é˜¶çŸ©é˜µ, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ æ˜¯æ–¹ç¨‹ç»„ $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{0}$ çš„ä¸¤ä¸ªä¸åŒçš„è§£ å‘é‡, åˆ™ $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{0}$ çš„é€šè§£æ˜¯ $(\qquad)$.
 <p></p>
 $\mathrm{A}$. $\boldsymbol{\alpha}_1+\boldsymbol{\alpha}_2$ 
 
@@ -308,65 +308,65 @@ $\qquad\qquad$$\mathrm{C}$. $k\left(\boldsymbol{\alpha}_1+\boldsymbol{\alpha}_2\
 
 $\qquad\qquad$$\mathrm{D}$. $k\left(\boldsymbol{\alpha}_1-\boldsymbol{\alpha}_2\right)$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.12").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.12").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.12").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.12").style.display="none"'> 
 <div id= "divID1.12" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD
+æ­£ç¡®ç­”æ¡ˆï¼šD
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>13. </b>&nbsp; Éè $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ ÊÇËÄÔª·ÇÆë´ÎÏßĞÔ·½³Ì×é $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ µÄÈı¸ö½âÏòÁ¿, ÇÒ
-$R(\boldsymbol{A})=3$, $\boldsymbol{\alpha}_1=(1,2,3,4)^{\rm T}$, $\boldsymbol{\alpha}_2+\boldsymbol{\alpha}_3=(0,1,2,3)^{\rm T}$, $k$ ±íÊ¾ÈÎÒâ³£Êı, ÔòÏßĞÔ·½³Ì×é $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ µÄÍ¨½âÎª$(\qquad)$.
+<b>13. </b>&nbsp; è®¾ $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ æ˜¯å››å…ƒéé½æ¬¡çº¿æ€§æ–¹ç¨‹ç»„ $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ çš„ä¸‰ä¸ªè§£å‘é‡, ä¸”
+$R(\boldsymbol{A})=3$, $\boldsymbol{\alpha}_1=(1,2,3,4)^{\rm T}$, $\boldsymbol{\alpha}_2+\boldsymbol{\alpha}_3=(0,1,2,3)^{\rm T}$, $k$ è¡¨ç¤ºä»»æ„å¸¸æ•°, åˆ™çº¿æ€§æ–¹ç¨‹ç»„ $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ çš„é€šè§£ä¸º$(\qquad)$.
 <p></p>
 $\mathrm{A}$. $(1,2,3,4)^{\rm T}+k(1,1,1,1)^{\rm T}$
 $\qquad\qquad$$\mathrm{B}$. $(1,2,3,4)^{\rm T}+k(0,1,2,3)^{\rm T}$
 $\qquad\qquad$$\mathrm{C}$. $(1,2,3,4)^{\rm T}+k(2,3,4,5)^{\rm T}$
 $\qquad\qquad$$\mathrm{D}$. $(1,2,3,4)^{\rm T}+k(3,4,5,6)^{\rm T}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.13").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.13").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.13").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.13").style.display="none"'> 
 <div id= "divID1.13" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>14. </b>&nbsp; ¶ş´ÎĞÍ $f\left(x_1, x_2, x_3\right)=x_1^2+3 x_2^2+x_3^2+2 x_1 x_2+2 x_2 x_3$, Ôò $f$ µÄÕı¹ßĞÔÖ¸ÊıÎª$(\qquad)$.
+<b>14. </b>&nbsp; äºŒæ¬¡å‹ $f\left(x_1, x_2, x_3\right)=x_1^2+3 x_2^2+x_3^2+2 x_1 x_2+2 x_2 x_3$, åˆ™ $f$ çš„æ­£æƒ¯æ€§æŒ‡æ•°ä¸º$(\qquad)$.
 <p></p>
 $\mathrm{A}$. $0$
 $\qquad\qquad$$\mathrm{B}$. $1$
 $\qquad\qquad$$\mathrm{C}$. $2$
 $\qquad\qquad$$\mathrm{D}$. $3$ 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.14").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.14").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.14").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.14").style.display="none"'> 
 <div id= "divID1.14" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>15. </b>&nbsp; Éè $f\left(x_1, x_2, x_3\right)=x_1^2+4 x_2^2+2 x_3^2+2 t x_1 x_2+2 x_1 x_3$ ÊÇÕı¶¨¶ş´ÎĞÍ, Ôò $t$ µÄÈ¡Öµ·¶Î§$(\qquad)$.
+<b>15. </b>&nbsp; è®¾ $f\left(x_1, x_2, x_3\right)=x_1^2+4 x_2^2+2 x_3^2+2 t x_1 x_2+2 x_1 x_3$ æ˜¯æ­£å®šäºŒæ¬¡å‹, åˆ™ $t$ çš„å–å€¼èŒƒå›´$(\qquad)$.
 <p></p>
 $\mathrm{A}$. $t>\sqrt{2}$
 $\qquad\qquad$$\mathrm{B}$. $t<-\sqrt{2}$
 $\qquad\qquad$$\mathrm{C}$. $-\sqrt{2} < t < \sqrt{2}$
 $\qquad\qquad$$\mathrm{D}$. $t>0$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.15").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.15").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.15").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.15").style.display="none"'> 
 <div id= "divID1.15" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>16. </b>&nbsp; µ± $k$ ÎªºÎÖµÊ±, ·ÇÆë´ÎÏßĞÔ·½³Ì×é
+<b>16. </b>&nbsp; å½“ $k$ ä¸ºä½•å€¼æ—¶, éé½æ¬¡çº¿æ€§æ–¹ç¨‹ç»„
 $$
 \left\{\begin{array}{c}
 x_1+2 x_2+3 x_3+3 x_4=1 \\
@@ -374,38 +374,38 @@ x_1+2 x_2+3 x_3+3 x_4=1 \\
 2 x_1+3 x_2+4 x_3+4 x_4=k
 \end{array}\right.
 $$
-ÓĞ½â? ²¢ÇóÆäÍ¨½â (ÓÃÆäµ¼³ö×éµÄ»ù´¡½âÏµÏßĞÔ±íÊ¾). 
-<br><br><b>½â´ğ: </b>&nbsp; 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.16").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.16").style.display="none"'> 
+æœ‰è§£? å¹¶æ±‚å…¶é€šè§£ (ç”¨å…¶å¯¼å‡ºç»„çš„åŸºç¡€è§£ç³»çº¿æ€§è¡¨ç¤º). 
+<br><br><b>è§£ç­”: </b>&nbsp; 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.16").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.16").style.display="none"'> 
 <div id= "divID1.16" style= "display:none"> 
-¶ÔÔö¹ã¾ØÕó½øĞĞ³õµÈĞĞ±ä»» 
+å¯¹å¢å¹¿çŸ©é˜µè¿›è¡Œåˆç­‰è¡Œå˜æ¢ 
 $$\overline{A}=\left(\begin{array}{ccccc}1 & 2 & 3 & 3 & 1 \\ 3 & 2 & 1 & 1 & -1 \\ 2 & 3 & 4 & 4 & k\end{array}\right) \rightarrow \cdots \rightarrow\left(\begin{array}{ccccc}1 & 0 & -1 & -1 & -1 \\ 0 & 1 & 2 & 2 & 1 \\ 0 & 0 & 0 & 0 & k-1\end{array}\right).$$
 <br><br>
-µ± $k=1$ Ê±, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2<4$, ·½³Ì×éÓĞÎŞÇî¶à½â. 
+å½“ $k=1$ æ—¶, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2<4$, æ–¹ç¨‹ç»„æœ‰æ— ç©·å¤šè§£. 
 <br><br>
-´ËÊ±¶ÔÓ¦µÄ·½³Ì×éÎª: $\left\{\begin{array}{l}x_1=-1+x_3+x_4 \\ x_2=1-2 x_3-2 x_4\end{array}\right.$, Áî $x_3=x_4=0$ µÃÆäÒ»ÌØ½âÎª:
+æ­¤æ—¶å¯¹åº”çš„æ–¹ç¨‹ç»„ä¸º: $\left\{\begin{array}{l}x_1=-1+x_3+x_4 \\ x_2=1-2 x_3-2 x_4\end{array}\right.$, ä»¤ $x_3=x_4=0$ å¾—å…¶ä¸€ç‰¹è§£ä¸º:
 $$
 \eta^*=(-1,1,0,0)^{\rm T} ;
 $$
-¶ÔÓ¦µÄµ¼³ö×éÎª $\left\{\begin{array}{c}x_1=x_3+x_4 \\ x_2=-2 x_3-2 x_4\end{array}\right.$, Áî $\left(\begin{array}{l}x_3 \\ x_4\end{array}\right)$ ·Ö±ğÎª $\left(\begin{array}{l}1 \\ 0\end{array}\right),\left(\begin{array}{l}0 \\ 1\end{array}\right)$, µÃÆäÒ»×é»ù´¡½âÏµÎª: $$\boldsymbol{\xi}_1=(1,-2,1,0)^{\rm T}, \quad \boldsymbol{\xi}_2=(1,-2,0,1)^{\rm T} ;$$ 
-ËùÒÔÔ­·½³Ì×éµÄÍ¨½âÎª $\eta^*+k_1 \boldsymbol{\xi}_1+k_2 \boldsymbol{\xi}_2$, ÆäÖĞ $k_1, k_2$ ÎªÈÎÒâ³£Êı. 
+å¯¹åº”çš„å¯¼å‡ºç»„ä¸º $\left\{\begin{array}{c}x_1=x_3+x_4 \\ x_2=-2 x_3-2 x_4\end{array}\right.$, ä»¤ $\left(\begin{array}{l}x_3 \\ x_4\end{array}\right)$ åˆ†åˆ«ä¸º $\left(\begin{array}{l}1 \\ 0\end{array}\right),\left(\begin{array}{l}0 \\ 1\end{array}\right)$, å¾—å…¶ä¸€ç»„åŸºç¡€è§£ç³»ä¸º: $$\boldsymbol{\xi}_1=(1,-2,1,0)^{\rm T}, \quad \boldsymbol{\xi}_2=(1,-2,0,1)^{\rm T} ;$$ 
+æ‰€ä»¥åŸæ–¹ç¨‹ç»„çš„é€šè§£ä¸º $\eta^*+k_1 \boldsymbol{\xi}_1+k_2 \boldsymbol{\xi}_2$, å…¶ä¸­ $k_1, k_2$ ä¸ºä»»æ„å¸¸æ•°. 
 
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>17. </b>&nbsp;  ÒÑÖªÏòÁ¿×é $\boldsymbol{\alpha}_1=(4,-1,-5,-6)^{\rm T}, \boldsymbol{\alpha}_2=(1,-3,-4,-7)^{\rm T}, \boldsymbol{\alpha}_3=(1,2,1,3)^{\rm T}$, $\boldsymbol{\alpha}_4=(2,1,-1,0)^{\rm T}$ . 
+<b>17. </b>&nbsp;  å·²çŸ¥å‘é‡ç»„ $\boldsymbol{\alpha}_1=(4,-1,-5,-6)^{\rm T}, \boldsymbol{\alpha}_2=(1,-3,-4,-7)^{\rm T}, \boldsymbol{\alpha}_3=(1,2,1,3)^{\rm T}$, $\boldsymbol{\alpha}_4=(2,1,-1,0)^{\rm T}$ . 
 <br><br>
-(1) Çó¸ÃÏòÁ¿×éµÄÖÈ, ²¢ÅĞ¶ÏÆäÏßĞÔÏà¹ØĞÔ; 
+(1) æ±‚è¯¥å‘é‡ç»„çš„ç§©, å¹¶åˆ¤æ–­å…¶çº¿æ€§ç›¸å…³æ€§; 
 <br><br>
-(2) Çó¸ÃÏòÁ¿×éµÄÒ»¸ö¼«´óÏßĞÔÎŞ¹Ø×é, ²¢½«ÆäÓàÏòÁ¿ÓÃËùÇóµÄ¼«´óÏßĞÔÎŞ¹Ø×éÏßĞÔ±íÊ¾. 
-<br><br><b>½â´ğ: </b>&nbsp; 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.17").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.17").style.display="none"'> 
+(2) æ±‚è¯¥å‘é‡ç»„çš„ä¸€ä¸ªæå¤§çº¿æ€§æ— å…³ç»„, å¹¶å°†å…¶ä½™å‘é‡ç”¨æ‰€æ±‚çš„æå¤§çº¿æ€§æ— å…³ç»„çº¿æ€§è¡¨ç¤º. 
+<br><br><b>è§£ç­”: </b>&nbsp; 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.17").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.17").style.display="none"'> 
 <div id= "divID1.17" style= "display:none"> 
-¶Ô¾ØÕó $\left(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\alpha}_4\right)$ ½øĞĞĞĞ³õµÈ±ä»»»¯ÎªĞĞ×î¼òĞÍ¾ØÕó
+å¯¹çŸ©é˜µ $\left(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\alpha}_4\right)$ è¿›è¡Œè¡Œåˆç­‰å˜æ¢åŒ–ä¸ºè¡Œæœ€ç®€å‹çŸ©é˜µ
 $$
 \left(\begin{array}{cccc}4 & 1 & 1 & 2 \\ -1 & -3 & 2 & 1 \\ -5 & -4 & 1 & -1 \\ -6 & -7 & 3 & 0\end{array}\right) \rightarrow 
 \left(\begin{array}{cccc}
@@ -420,19 +420,19 @@ $$
 0 & 0 & 0 & 0 \\ 
 0 & 0 & 0 & 0\end{array}\right).
 $$
-¸ÃÏòÁ¿×éµÄÖÈÎª $2$ , ÊÇÏßĞÔÏà¹ØµÄ.  $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ ÎªËüµÄÒ»¸ö¼«´óÎŞ¹Ø×é, ÇÒ $$\boldsymbol{\alpha}_3=\frac{5}{11} \boldsymbol{\alpha}_1-\frac{9}{11} \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_4=\frac{7}{11} \boldsymbol{\alpha}_1-\frac{6}{11} \boldsymbol{\alpha}_2.$$
+è¯¥å‘é‡ç»„çš„ç§©ä¸º $2$ , æ˜¯çº¿æ€§ç›¸å…³çš„.  $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ ä¸ºå®ƒçš„ä¸€ä¸ªæå¤§æ— å…³ç»„, ä¸” $$\boldsymbol{\alpha}_3=\frac{5}{11} \boldsymbol{\alpha}_1-\frac{9}{11} \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_4=\frac{7}{11} \boldsymbol{\alpha}_1-\frac{6}{11} \boldsymbol{\alpha}_2.$$
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>18. </b>&nbsp; ÅĞ¶Ï¾ØÕó $\boldsymbol{A}=\left(\begin{array}{ccc}4 & 0 & -2 \\ 0 & 3 & 0 \\ 3 & 6 & -1\end{array}\right)$ ÊÇ·ñ¿ÉÒÔ¶Ô½Ç»¯, Èç¿ÉÒÔ, Çó¿ÉÄæ¾ØÕó $\boldsymbol{P}$ ºÍ¶Ô½Ç¾ØÕó $\boldsymbol{\varLambda}$, Ê¹µÃ $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ .  
-<br><br><b>½â´ğ: </b>&nbsp; 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.18").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.18").style.display="none"'> 
+<b>18. </b>&nbsp; åˆ¤æ–­çŸ©é˜µ $\boldsymbol{A}=\left(\begin{array}{ccc}4 & 0 & -2 \\ 0 & 3 & 0 \\ 3 & 6 & -1\end{array}\right)$ æ˜¯å¦å¯ä»¥å¯¹è§’åŒ–, å¦‚å¯ä»¥, æ±‚å¯é€†çŸ©é˜µ $\boldsymbol{P}$ å’Œå¯¹è§’çŸ©é˜µ $\boldsymbol{\varLambda}$, ä½¿å¾— $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ .  
+<br><br><b>è§£ç­”: </b>&nbsp; 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.18").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.18").style.display="none"'> 
 <div id= "divID1.18" style= "display:none"> 
 $$|\lambda \boldsymbol{I}-\boldsymbol{A}|=\left|\begin{array}{ccc}\lambda-4 & 0 & 2 \\ 0 & \lambda-3 & 0 \\ -3 & -6 & \lambda+1\end{array}\right|=(\lambda-1)(\lambda-2)(\lambda-3),$$
-$\boldsymbol{A}$ µÄÈ«²¿ÌØÕ÷ÖµÎª: $\lambda_1=1, \lambda_2=2, \lambda_3=3$ .  µ± $\lambda_1=1$ Ê±, ½â·½³Ì×é $(\boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, ÓÉ
+$\boldsymbol{A}$ çš„å…¨éƒ¨ç‰¹å¾å€¼ä¸º: $\lambda_1=1, \lambda_2=2, \lambda_3=3$ .  å½“ $\lambda_1=1$ æ—¶, è§£æ–¹ç¨‹ç»„ $(\boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, ç”±
 $$
 \boldsymbol{I}-\boldsymbol{A}=\left(\begin{array}{ccc}
 -3 & 0 & 2 \\
@@ -444,8 +444,8 @@ $$
 0 & 0 & 0
 \end{array}\right),
 $$
-½âµÃÆä»ù´¡½âÏµÎª: $\boldsymbol{\xi}_1=(2,0,3)^{\rm T}$;
-µ± $\lambda_2=2$ Ê±, ½â·½³Ì×é $(2 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, ÓÉ
+è§£å¾—å…¶åŸºç¡€è§£ç³»ä¸º: $\boldsymbol{\xi}_1=(2,0,3)^{\rm T}$;
+å½“ $\lambda_2=2$ æ—¶, è§£æ–¹ç¨‹ç»„ $(2 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, ç”±
 $$
 \boldsymbol{I}-2\boldsymbol{A}=\left(\begin{array}{ccc}
 -2 & 0 & 2 \\
@@ -457,8 +457,8 @@ $$
 0 & 0 & 0
 \end{array}\right),
 $$
-½âµÃÆä»ù´¡½âÏµÎª: $\boldsymbol{\xi}_2=(1,0,1)^{\rm T}$;
-µ± $\lambda_3=3$ Ê±, ½â·½³Ì×é $(3 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, ÓÉ
+è§£å¾—å…¶åŸºç¡€è§£ç³»ä¸º: $\boldsymbol{\xi}_2=(1,0,1)^{\rm T}$;
+å½“ $\lambda_3=3$ æ—¶, è§£æ–¹ç¨‹ç»„ $(3 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, ç”±
 $$
 \boldsymbol{I}-3\boldsymbol{A}=\left(\begin{array}{ccc}
 -1 & 0 & 2 \\
@@ -470,19 +470,19 @@ $$
 0 & 0 & 0
 \end{array}\right),
 $$
-½âµÃÆä»ù´¡½âÏµÎª: $\boldsymbol{\xi}_3=(6,-1,3)^{\rm T}$;
-ÒòÎª $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3$ ÏßĞÔÎŞ¹Ø, Òò´Ë $\boldsymbol{A}$ ¿É¶Ô½Ç»¯. 
+è§£å¾—å…¶åŸºç¡€è§£ç³»ä¸º: $\boldsymbol{\xi}_3=(6,-1,3)^{\rm T}$;
+å› ä¸º $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3$ çº¿æ€§æ— å…³, å› æ­¤ $\boldsymbol{A}$ å¯å¯¹è§’åŒ–. 
 <br><br>
-Áî $\boldsymbol{P}=\left(\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3\right)=\left(\begin{array}{ccc}2 & 1 & 6 \\ 0 & 0 & -1 \\ 3 & 1 & 3\end{array}\right)$, Ôò $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}=\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3\end{array}\right)$ . 
+ä»¤ $\boldsymbol{P}=\left(\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3\right)=\left(\begin{array}{ccc}2 & 1 & 6 \\ 0 & 0 & -1 \\ 3 & 1 & 3\end{array}\right)$, åˆ™ $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}=\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3\end{array}\right)$ . 
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>19. </b>&nbsp; ÓÃÅä·½·¨»¯¶ş´ÎĞÍ $f\left(x_1, x_2, x_3\right)=x_1^2+2 x_2^2+2 x_3^2+2 x_1 x_2+2 x_1 x_3+4 x_2 x_3$ Îª±ê×¼ĞÎ, ²¢Ğ´³öÏàÓ¦µÄ¿ÉÄæÏßĞÔ±ä»». 
-<br><br><b>½â´ğ: </b>&nbsp; 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID1.19").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID1.19").style.display="none"'> 
+<b>19. </b>&nbsp; ç”¨é…æ–¹æ³•åŒ–äºŒæ¬¡å‹ $f\left(x_1, x_2, x_3\right)=x_1^2+2 x_2^2+2 x_3^2+2 x_1 x_2+2 x_1 x_3+4 x_2 x_3$ ä¸ºæ ‡å‡†å½¢, å¹¶å†™å‡ºç›¸åº”çš„å¯é€†çº¿æ€§å˜æ¢. 
+<br><br><b>è§£ç­”: </b>&nbsp; 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID1.19").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID1.19").style.display="none"'> 
 <div id= "divID1.19" style= "display:none"> 
 $$
 \begin{aligned}
@@ -492,15 +492,15 @@ f\left(x_1, x_2, x_3\right)&=x_1^2+2 x_2^2+2 x_3^2+2 x_1 x_2+2 x_1 x_3+4 x_2 x_3
 & =\left(x_1+x_2+x_3\right)^2+\left(x_2+x_3\right)^2, \\
 \end{aligned}
 $$
-Áî$\left\{\begin{array}{lr}
+ä»¤$\left\{\begin{array}{lr}
 y_1= &x_1+x_2+x_3 \\ 
 y_2= & x_2+x_3 \\ 
 y_3= & x_3\end{array}\right.$,
-Ôò $\left\{\begin{array}{rrrr}
+åˆ™ $\left\{\begin{array}{rrrr}
 x_1= & y_1&-y_2 & \\ 
 x_2= &  &y_2&-y_3 \\ 
 x_3= & & &y_3
-\end{array}\right.$, ¼´ $X=\boldsymbol{C}Y=\left(
+\end{array}\right.$, å³ $X=\boldsymbol{C}Y=\left(
 \begin{array}{ccc}
 1 & -1 & 0\\
 0 & 1 & -1\\
@@ -508,186 +508,186 @@ x_3= & & &y_3
 \end{array}
 \right)Y$.
 <p></p> 
-¿ÉµÃ¶ş´ÎĞÍµÄ±ê×¼ĞÍÎª $f=y_1^2+y_2^2$.
+å¯å¾—äºŒæ¬¡å‹çš„æ ‡å‡†å‹ä¸º $f=y_1^2+y_2^2$.
 </div> 
 </li>
 
 </ul>
-<a href="#C0">·µ»Ø¶¥²¿</a>
+<a href="#C0">è¿”å›é¡¶éƒ¨</a>
 
 
-<h2><a name="C3">Ñ§Ï°Ö¸µ¼ÊéÑ¡ÔñÌâ</a></h2>
+<h2><a name="C3">å­¦ä¹ æŒ‡å¯¼ä¹¦é€‰æ‹©é¢˜</a></h2>
 
 <ul>
 <p></p> 
 <li>
-<b>1. </b>&nbsp; Éè $\boldsymbol{A}, \boldsymbol{B}$ ¶¼ÊÇ $n$ ½×¾ØÕó,Ôò $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}$ µÄ³ä·Ö±ØÒªÌõ¼şÊÇ $(\qquad)$.
+<b>1. </b>&nbsp; è®¾ $\boldsymbol{A}, \boldsymbol{B}$ éƒ½æ˜¯ $n$ é˜¶çŸ©é˜µ,åˆ™ $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}$ çš„å……åˆ†å¿…è¦æ¡ä»¶æ˜¯ $(\qquad)$.
 <p></p>
 $\mathrm{A}$. $\boldsymbol{A}=\boldsymbol{I}$ 
 $\qquad\qquad$$\mathrm{B}$. $\boldsymbol{B}=\boldsymbol{O}$ 
 $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$ 
 $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{A}=\boldsymbol{B}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.1").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.1").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.1").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.1").style.display="none"'> 
 <div id= "divID2.1" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC. 
+æ­£ç¡®ç­”æ¡ˆï¼šC. 
 <p></p>
-<b>·ÖÎö£º</b> ¾ØÕóÔËËãÓë´úÊıÔËËãµÄ²îÒìÖ÷ÒªÓĞÁ½µã: ²»Âú×ã½»»»ÂÉÓëÏûÈ¥ÂÉ, ¼´Ò» °ãµØ $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$; $\boldsymbol{A B}=\boldsymbol{O}$ Î´±ØÓĞ $\boldsymbol{A}=\boldsymbol{O}$ »ò $\boldsymbol{B}=\boldsymbol{O}$. 
-A,B,D¾ùÎªµÈÊ½ $(\boldsymbol{A}+\boldsymbol{B})^{2}= \boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}$ ³ÉÁ¢µÄ³ä·ÖÌõ¼ş,µ«·Ç±ØÒªÌõ¼ş,¹ÊCÊÇÕıÈ·´ğ°¸. 
+<b>åˆ†æï¼š</b> çŸ©é˜µè¿ç®—ä¸ä»£æ•°è¿ç®—çš„å·®å¼‚ä¸»è¦æœ‰ä¸¤ç‚¹: ä¸æ»¡è¶³äº¤æ¢å¾‹ä¸æ¶ˆå»å¾‹, å³ä¸€ èˆ¬åœ° $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$; $\boldsymbol{A B}=\boldsymbol{O}$ æœªå¿…æœ‰ $\boldsymbol{A}=\boldsymbol{O}$ æˆ– $\boldsymbol{B}=\boldsymbol{O}$. 
+A,B,Då‡ä¸ºç­‰å¼ $(\boldsymbol{A}+\boldsymbol{B})^{2}= \boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}$ æˆç«‹çš„å……åˆ†æ¡ä»¶,ä½†éå¿…è¦æ¡ä»¶,æ•…Cæ˜¯æ­£ç¡®ç­”æ¡ˆ. 
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>2. </b>&nbsp;  Éè $\boldsymbol{A}, \boldsymbol{B}$ ¶¼ÊÇ $n$ ½×¶Ô³Æ¾ØÕó,ÔòÏÂÁĞ½áÂÛ²»ÕıÈ·µÄÊÇ$(\qquad)$.
+<b>2. </b>&nbsp;  è®¾ $\boldsymbol{A}, \boldsymbol{B}$ éƒ½æ˜¯ $n$ é˜¶å¯¹ç§°çŸ©é˜µ,åˆ™ä¸‹åˆ—ç»“è®ºä¸æ­£ç¡®çš„æ˜¯$(\qquad)$.
 <p></p>
-$\mathrm{A}$. $\boldsymbol{A}+\boldsymbol{B}$ Ò²ÊÇ¶Ô³Æ¾ØÕó
-$\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A B}$ Ò²ÊÇ¶Ô³Æ¾ØÕó
-$\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A}^{m}+\boldsymbol{B}^{m}(m$ ÎªÕıÕûÊı) Ò²ÊÇ¶Ô³Æ¾ØÕó
-$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{B} \boldsymbol{A}^{\mathrm{T}}+\boldsymbol{A} \boldsymbol{B}^{\mathrm{T}}$ Ò²ÊÇ¶Ô³Æ¾ØÕó
+$\mathrm{A}$. $\boldsymbol{A}+\boldsymbol{B}$ ä¹Ÿæ˜¯å¯¹ç§°çŸ©é˜µ
+$\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A B}$ ä¹Ÿæ˜¯å¯¹ç§°çŸ©é˜µ
+$\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A}^{m}+\boldsymbol{B}^{m}(m$ ä¸ºæ­£æ•´æ•°) ä¹Ÿæ˜¯å¯¹ç§°çŸ©é˜µ
+$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{B} \boldsymbol{A}^{\mathrm{T}}+\boldsymbol{A} \boldsymbol{B}^{\mathrm{T}}$ ä¹Ÿæ˜¯å¯¹ç§°çŸ©é˜µ
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.2").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.2").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.2").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.2").style.display="none"'> 
 <div id= "divID2.2" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºB 
+æ­£ç¡®ç­”æ¡ˆï¼šB 
 <p></p>
-<b>·ÖÎö£º</b> ÖğÏî¼ÆËã×ªÖÃ¾ØÕó¿´ÊÇ·ñÎª¶Ô³Æ¾ØÕó¼´¿É. Òò $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B} \boldsymbol{A}$, µ«Ò» °ã $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$, ¹Ê B ÊÇÕıÈ·´ğ°¸.
+<b>åˆ†æï¼š</b> é€é¡¹è®¡ç®—è½¬ç½®çŸ©é˜µçœ‹æ˜¯å¦ä¸ºå¯¹ç§°çŸ©é˜µå³å¯. å›  $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B} \boldsymbol{A}$, ä½†ä¸€ èˆ¬ $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$, æ•… B æ˜¯æ­£ç¡®ç­”æ¡ˆ.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>3. </b>&nbsp; Éè $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ ¾ùÎª $n$ ½×·½Õó,Èô $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}, \boldsymbol{A C}=\boldsymbol{C A}$, Ôò $\boldsymbol{A B C}$ µÈÓÚ$(\qquad)$.
+<b>3. </b>&nbsp; è®¾ $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ å‡ä¸º $n$ é˜¶æ–¹é˜µ,è‹¥ $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}, \boldsymbol{A C}=\boldsymbol{C A}$, åˆ™ $\boldsymbol{A B C}$ ç­‰äº$(\qquad)$.
 <p></p>
 $\mathrm{A}$. $\boldsymbol{A C B}$
 $\qquad\qquad$$\mathrm{B}$. $\boldsymbol{C B A}$
 $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{B C A}$
 $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{C A B}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.3").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.3").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.3").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.3").style.display="none"'> 
 <div id= "divID2.3" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 <p></p>
-<b>·ÖÎö£º</b>$\boldsymbol{A B C}=(\boldsymbol{B} \boldsymbol{A}) \boldsymbol{C}=\boldsymbol{B}(\boldsymbol{A} \boldsymbol{C})=\boldsymbol{B} \boldsymbol{C} \boldsymbol{A}$, ¹Ê C ÊÇÕıÈ·´ğ°¸. 
+<b>åˆ†æï¼š</b>$\boldsymbol{A B C}=(\boldsymbol{B} \boldsymbol{A}) \boldsymbol{C}=\boldsymbol{B}(\boldsymbol{A} \boldsymbol{C})=\boldsymbol{B} \boldsymbol{C} \boldsymbol{A}$, æ•… C æ˜¯æ­£ç¡®ç­”æ¡ˆ. 
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>4. </b>&nbsp; Éè $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ ¾ùÎª $n$ ½×·½Õó, Èô $\boldsymbol{A B}=\boldsymbol{B C}=\boldsymbol{C A}=\boldsymbol{I}$, Ôò $\boldsymbol{A}^{2}+\boldsymbol{B}^{2}+\boldsymbol{C}^{2}$ µÈÓÚ$(\qquad)$.
+<b>4. </b>&nbsp; è®¾ $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ å‡ä¸º $n$ é˜¶æ–¹é˜µ, è‹¥ $\boldsymbol{A B}=\boldsymbol{B C}=\boldsymbol{C A}=\boldsymbol{I}$, åˆ™ $\boldsymbol{A}^{2}+\boldsymbol{B}^{2}+\boldsymbol{C}^{2}$ ç­‰äº$(\qquad)$.
 <p></p>
 $\mathrm{A}$. $3 \boldsymbol{I}$
 $\qquad\qquad$$\mathrm{B}$. $2 \boldsymbol{I}$
 $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{I}$
 $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{O}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.4").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.4").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.4").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.4").style.display="none"'> 
 <div id= "divID2.4" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºA
+æ­£ç¡®ç­”æ¡ˆï¼šA
 <p></p>
-<b>·ÖÎö£º</b> $\boldsymbol{I}=(\boldsymbol{A B})(\boldsymbol{C A})=\boldsymbol{A}(\boldsymbol{B C}) \boldsymbol{A}=\boldsymbol{A}^{2}, \boldsymbol{I}=(\boldsymbol{B C})(\boldsymbol{A B})=\boldsymbol{B}(\boldsymbol{C A}) \boldsymbol{B}=\boldsymbol{B}^{2}$, $\boldsymbol{I}=(\boldsymbol{C A})(\boldsymbol{B C})=\boldsymbol{C}(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{C}^{2}$, ËùÒÔ $\boldsymbol{A}^{2}+\boldsymbol{B}^{2}+\boldsymbol{C}^{2}=3 \boldsymbol{I}$, ¹Ê A ÊÇÕıÈ·´ğ°¸.
+<b>åˆ†æï¼š</b> $\boldsymbol{I}=(\boldsymbol{A B})(\boldsymbol{C A})=\boldsymbol{A}(\boldsymbol{B C}) \boldsymbol{A}=\boldsymbol{A}^{2}, \boldsymbol{I}=(\boldsymbol{B C})(\boldsymbol{A B})=\boldsymbol{B}(\boldsymbol{C A}) \boldsymbol{B}=\boldsymbol{B}^{2}$, $\boldsymbol{I}=(\boldsymbol{C A})(\boldsymbol{B C})=\boldsymbol{C}(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{C}^{2}$, æ‰€ä»¥ $\boldsymbol{A}^{2}+\boldsymbol{B}^{2}+\boldsymbol{C}^{2}=3 \boldsymbol{I}$, æ•… A æ˜¯æ­£ç¡®ç­”æ¡ˆ.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>5. </b>&nbsp; Éè $\boldsymbol{A}, \boldsymbol{B}$ Îª $n$ ½×·½Õó, Ôò $(\qquad)$.
+<b>5. </b>&nbsp; è®¾ $\boldsymbol{A}, \boldsymbol{B}$ ä¸º $n$ é˜¶æ–¹é˜µ, åˆ™ $(\qquad)$.
 <p></p>
-$\mathrm{A}$. $\boldsymbol{A}$ »ò $\boldsymbol{B}$ ¿ÉÄæ,±ØÓĞ $\boldsymbol{A B}$ ¿ÉÄæ
-$\qquad$$\mathrm{B}$. $\boldsymbol{A}$ »ò $\boldsymbol{B}$ ²»¿ÉÄæ, ±ØÓĞ $\boldsymbol{A B}$ ²»¿ÉÄæ
-$\qquad$$\mathrm{C}$. $\boldsymbol{A}$ ÇÒ $\boldsymbol{B}$ ¿ÉÄæ, ±ØÓĞ $\boldsymbol{A}+\boldsymbol{B}$ ¿ÉÄæ
-$\qquad$$\mathrm{D}$. $\boldsymbol{A}$ ÇÒ $\boldsymbol{B}$ ²»¿ÉÄæ, ±ØÓĞ $\boldsymbol{A}+\boldsymbol{B}$ ²»¿ÉÄæ
+$\mathrm{A}$. $\boldsymbol{A}$ æˆ– $\boldsymbol{B}$ å¯é€†,å¿…æœ‰ $\boldsymbol{A B}$ å¯é€†
+$\qquad$$\mathrm{B}$. $\boldsymbol{A}$ æˆ– $\boldsymbol{B}$ ä¸å¯é€†, å¿…æœ‰ $\boldsymbol{A B}$ ä¸å¯é€†
+$\qquad$$\mathrm{C}$. $\boldsymbol{A}$ ä¸” $\boldsymbol{B}$ å¯é€†, å¿…æœ‰ $\boldsymbol{A}+\boldsymbol{B}$ å¯é€†
+$\qquad$$\mathrm{D}$. $\boldsymbol{A}$ ä¸” $\boldsymbol{B}$ ä¸å¯é€†, å¿…æœ‰ $\boldsymbol{A}+\boldsymbol{B}$ ä¸å¯é€†
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.5").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.5").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.5").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.5").style.display="none"'> 
 <div id= "divID2.5" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºB 
+æ­£ç¡®ç­”æ¡ˆï¼šB 
 <p></p>
-<b>·ÖÎö£º</b> Èô $\boldsymbol{A}$ »ò $\boldsymbol{B}$ ²»¿ÉÄæ, ²»·ÁÉè $\boldsymbol{B}$ ²»¿ÉÄæ, Ôò´æÔÚ $\boldsymbol{X} \neq \mathbf{0}$, Ê¹µÃ $\boldsymbol{B X}=\mathbf{0}$. Òò´Ë $\boldsymbol{A B X}=\mathbf{0}$, ¼´ $\boldsymbol{A B X}=\mathbf{0}$ ÓĞ·ÇÁã½â, ±ØÓĞ $\boldsymbol{A B}$ ²»¿ÉÄæ. ¹Ê B ÊÇÕıÈ·´ğ°¸.
+<b>åˆ†æï¼š</b> è‹¥ $\boldsymbol{A}$ æˆ– $\boldsymbol{B}$ ä¸å¯é€†, ä¸å¦¨è®¾ $\boldsymbol{B}$ ä¸å¯é€†, åˆ™å­˜åœ¨ $\boldsymbol{X} \neq \mathbf{0}$, ä½¿å¾— $\boldsymbol{B X}=\mathbf{0}$. å› æ­¤ $\boldsymbol{A B X}=\mathbf{0}$, å³ $\boldsymbol{A B X}=\mathbf{0}$ æœ‰éé›¶è§£, å¿…æœ‰ $\boldsymbol{A B}$ ä¸å¯é€†. æ•… B æ˜¯æ­£ç¡®ç­”æ¡ˆ.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>6. </b>&nbsp; Éè $\boldsymbol{A}$ ¿ÉÄæ, $\boldsymbol{B}$ Óë $\boldsymbol{A}$ ÎªÍ¬½×·½Õó, Ôò $(\qquad)$.
+<b>6. </b>&nbsp; è®¾ $\boldsymbol{A}$ å¯é€†, $\boldsymbol{B}$ ä¸ $\boldsymbol{A}$ ä¸ºåŒé˜¶æ–¹é˜µ, åˆ™ $(\qquad)$.
 <p></p>
 $\mathrm{A}$. $\boldsymbol{A B}=\boldsymbol{B A}$
-$\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A}$ Îª¶Ô³Æ¾ØÕó
-$\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A}^{\mathrm{T}}$ Îª¿É½»»»¾ØÕó
-$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{A}^{\mathrm{T}}$ Îª¿ÉÄæ¾ØÕó
+$\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A}$ ä¸ºå¯¹ç§°çŸ©é˜µ
+$\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A}^{\mathrm{T}}$ ä¸ºå¯äº¤æ¢çŸ©é˜µ
+$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{A}^{\mathrm{T}}$ ä¸ºå¯é€†çŸ©é˜µ
 <br><br> 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.6").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.6").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.6").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.6").style.display="none"'> 
 <div id= "divID2.6" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD 
+æ­£ç¡®ç­”æ¡ˆï¼šD 
 <p></p>
-<b>·ÖÎö£º</b>$\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$, ¹Ê D ÊÇÕıÈ·´ğ°¸. 
+<b>åˆ†æï¼š</b>$\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$, æ•… D æ˜¯æ­£ç¡®ç­”æ¡ˆ. 
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>7. </b>&nbsp; Éè $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ ¾ùÎª $n$ ½×·½Õó, ÇÒ $\boldsymbol{A B C}=\boldsymbol{I}$, Ôò±ØÓĞ$(\qquad)$.
+<b>7. </b>&nbsp; è®¾ $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ å‡ä¸º $n$ é˜¶æ–¹é˜µ, ä¸” $\boldsymbol{A B C}=\boldsymbol{I}$, åˆ™å¿…æœ‰$(\qquad)$.
 <p></p> 
 $\mathrm{A}$. $\boldsymbol{A C B}=\boldsymbol{I}$
 $\qquad\qquad$$\mathrm{B}$. $\boldsymbol{C B A}=\boldsymbol{I}$
 $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{B AC}=\boldsymbol{I}$
 $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{B C A}=\boldsymbol{I}$
 <br><br> 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.7").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.7").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.7").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.7").style.display="none"'> 
 <div id= "divID2.7" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºD
+æ­£ç¡®ç­”æ¡ˆï¼šD
 <p></p>
-<b>·ÖÎö£º</b> ÓÉ $\boldsymbol{A B C}=\boldsymbol{I}$, ËµÃ÷ $\boldsymbol{A}$ Óë $\boldsymbol{B C}$, »ò $\boldsymbol{A B}$ Óë $\boldsymbol{C}$ »¥ÎªÄæ¾ØÕó, ¼´ $(\boldsymbol{A B})^{-1}=\boldsymbol{C}$, $\boldsymbol{A}^{-1}=\boldsymbol{B C}$, ¹ÊÓĞ $\boldsymbol{A}(\boldsymbol{B C})=(\boldsymbol{B C}) \boldsymbol{A}=(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{C}(\boldsymbol{A B})=\boldsymbol{I}$, ¶Ô±ÈÑ¡Ïî¿ÉÖª D ÎªÕıÈ·´ğ°¸. ÆäÓàÑ¡ÏîÒò¾ØÕó³Ë·¨²»Âú×ã½»»»ÂÉ¶ø²»³ÉÁ¢.
+<b>åˆ†æï¼š</b> ç”± $\boldsymbol{A B C}=\boldsymbol{I}$, è¯´æ˜ $\boldsymbol{A}$ ä¸ $\boldsymbol{B C}$, æˆ– $\boldsymbol{A B}$ ä¸ $\boldsymbol{C}$ äº’ä¸ºé€†çŸ©é˜µ, å³ $(\boldsymbol{A B})^{-1}=\boldsymbol{C}$, $\boldsymbol{A}^{-1}=\boldsymbol{B C}$, æ•…æœ‰ $\boldsymbol{A}(\boldsymbol{B C})=(\boldsymbol{B C}) \boldsymbol{A}=(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{C}(\boldsymbol{A B})=\boldsymbol{I}$, å¯¹æ¯”é€‰é¡¹å¯çŸ¥ D ä¸ºæ­£ç¡®ç­”æ¡ˆ. å…¶ä½™é€‰é¡¹å› çŸ©é˜µä¹˜æ³•ä¸æ»¡è¶³äº¤æ¢å¾‹è€Œä¸æˆç«‹.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>8. </b>&nbsp; Éè $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{A}+\boldsymbol{B}, \boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$ ¾ùÎª $n$ ½×¿ÉÄæ¾ØÕó, Ôò $\left(\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}\right)^{-1}$ µÈÓÚ$(\qquad)$.
+<b>8. </b>&nbsp; è®¾ $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{A}+\boldsymbol{B}, \boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$ å‡ä¸º $n$ é˜¶å¯é€†çŸ©é˜µ, åˆ™ $\left(\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}\right)^{-1}$ ç­‰äº$(\qquad)$.
 <p></p> 
 $\mathrm{A}$. $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$
 $\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A}+\boldsymbol{B}$
 $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{A}(\boldsymbol{A}+\boldsymbol{B})^{-1} \boldsymbol{B}$
 $\qquad\qquad$$\mathrm{D}$. $(\boldsymbol{A}+\boldsymbol{B})^{-1}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.8").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.8").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.8").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.8").style.display="none"'> 
 <div id= "divID2.8" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC
+æ­£ç¡®ç­”æ¡ˆï¼šC
 <p></p>
-<b>·ÖÎö£º</b> A ¿ÉÁ¢¼´ÅÅ³ı, ÒòÎª $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$ µÄÄæ¾ØÕóÒ»°ã²»µÈÓÚ×ÔÉí; ÁíÍâ¾ØÕóºÍµÄÄæ²¢²»µÈÓÚ¾ØÕóÄæµÄºÍ, ¹Ê B ´íÎó. Ê£ÏÂ C, D Ö±½ÓÑéÖ¤ÓĞÒ»¶¨µÄÄÑ¶È, ²» ·Á·´Çó´ğ°¸ C, D µÄÄæ¾ØÕó, ¿´ÊÇ·ñµÈÓÚ $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$, Òò $\left[\boldsymbol{A}(\boldsymbol{A}+\boldsymbol{B})^{-1} \boldsymbol{B}\right]^{-1}=$ $\boldsymbol{B}^{-1}(\boldsymbol{A}+\boldsymbol{B}) \boldsymbol{A}^{-1}=\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1},\left[(\boldsymbol{A}+\boldsymbol{B})^{-1}\right]^{-1}=\boldsymbol{A}+\boldsymbol{B}$, ¹Ê¿ÉÖª C ÎªÕıÈ·´ğ°¸.
+<b>åˆ†æï¼š</b> A å¯ç«‹å³æ’é™¤, å› ä¸º $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$ çš„é€†çŸ©é˜µä¸€èˆ¬ä¸ç­‰äºè‡ªèº«; å¦å¤–çŸ©é˜µå’Œçš„é€†å¹¶ä¸ç­‰äºçŸ©é˜µé€†çš„å’Œ, æ•… B é”™è¯¯. å‰©ä¸‹ C, D ç›´æ¥éªŒè¯æœ‰ä¸€å®šçš„éš¾åº¦, ä¸ å¦¨åæ±‚ç­”æ¡ˆ C, D çš„é€†çŸ©é˜µ, çœ‹æ˜¯å¦ç­‰äº $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$, å›  $\left[\boldsymbol{A}(\boldsymbol{A}+\boldsymbol{B})^{-1} \boldsymbol{B}\right]^{-1}=$ $\boldsymbol{B}^{-1}(\boldsymbol{A}+\boldsymbol{B}) \boldsymbol{A}^{-1}=\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1},\left[(\boldsymbol{A}+\boldsymbol{B})^{-1}\right]^{-1}=\boldsymbol{A}+\boldsymbol{B}$, æ•…å¯çŸ¥ C ä¸ºæ­£ç¡®ç­”æ¡ˆ.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>9. </b>&nbsp; Éè $\boldsymbol{A}$ Îª $n$ ½×¿ÉÄæ¾ØÕó, Ôò$(\qquad)$.
+<b>9. </b>&nbsp; è®¾ $\boldsymbol{A}$ ä¸º $n$ é˜¶å¯é€†çŸ©é˜µ, åˆ™$(\qquad)$.
 <br><br>
-$\mathrm{A}$. Èô $\boldsymbol{A B}=\boldsymbol{C B}$, Ôò $\boldsymbol{A}=\boldsymbol{C}$
+$\mathrm{A}$. è‹¥ $\boldsymbol{A B}=\boldsymbol{C B}$, åˆ™ $\boldsymbol{A}=\boldsymbol{C}$
 <br><br>
-$\mathrm{B}$. $\boldsymbol{A}$ ×Ü¿ÉÒÔ¾­¹ıĞĞ³õµÈ±ä»»»¯Îª $\boldsymbol{I}$
+$\mathrm{B}$. $\boldsymbol{A}$ æ€»å¯ä»¥ç»è¿‡è¡Œåˆç­‰å˜æ¢åŒ–ä¸º $\boldsymbol{I}$
 <br><br>
-$\mathrm{C}$. ¶Ô¾ØÕó $(\boldsymbol{A}, \boldsymbol{I})$ Ê©ĞĞÈô¸É´Î³õµÈ±ä»», µ± $\boldsymbol{A}$ ±äÎª $\boldsymbol{I}$ Ê±,ÏàÓ¦µØ $\boldsymbol{I}$ ±äÎª $\boldsymbol{A}^{-1}$
+$\mathrm{C}$. å¯¹çŸ©é˜µ $(\boldsymbol{A}, \boldsymbol{I})$ æ–½è¡Œè‹¥å¹²æ¬¡åˆç­‰å˜æ¢, å½“ $\boldsymbol{A}$ å˜ä¸º $\boldsymbol{I}$ æ—¶,ç›¸åº”åœ° $\boldsymbol{I}$ å˜ä¸º $\boldsymbol{A}^{-1}$
 <br><br>
-$\mathrm{D}$. ÒÔÉÏ¶¼²»¶Ô
+$\mathrm{D}$. ä»¥ä¸Šéƒ½ä¸å¯¹
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.9").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.9").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.9").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.9").style.display="none"'> 
 <div id= "divID2.9" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºB 
+æ­£ç¡®ç­”æ¡ˆï¼šB 
 <p></p>
-<b>·ÖÎö£º</b> ÓÉÓÚ¾ØÕó³Ë·¨²»Âú×ãÏûÈ¥ÂÉ, µ± $\boldsymbol{B}$ ²»¿ÉÄæÊ±,Ò»°ã $\boldsymbol{A} \neq \boldsymbol{C}$, ¼´ A ´íÎó; C ±ØĞëÏŞÓÚĞĞ³õµÈ±ä»», ÔÚ $\boldsymbol{A}$ ¿ÉÄæµÄÌõ¼şÏÂ, $\boldsymbol{A}$ ×Ü¿ÉÒÔ¾­¹ıĞĞ³õµÈ±ä»»»¯Îªµ¥Î»¾ØÕó, ¹Ê B ÎªÕıÈ·´ğ°¸.
+<b>åˆ†æï¼š</b> ç”±äºçŸ©é˜µä¹˜æ³•ä¸æ»¡è¶³æ¶ˆå»å¾‹, å½“ $\boldsymbol{B}$ ä¸å¯é€†æ—¶,ä¸€èˆ¬ $\boldsymbol{A} \neq \boldsymbol{C}$, å³ A é”™è¯¯; C å¿…é¡»é™äºè¡Œåˆç­‰å˜æ¢, åœ¨ $\boldsymbol{A}$ å¯é€†çš„æ¡ä»¶ä¸‹, $\boldsymbol{A}$ æ€»å¯ä»¥ç»è¿‡è¡Œåˆç­‰å˜æ¢åŒ–ä¸ºå•ä½çŸ©é˜µ, æ•… B ä¸ºæ­£ç¡®ç­”æ¡ˆ.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>10. </b>&nbsp; Éè
+<b>10. </b>&nbsp; è®¾
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
 a_{11} & a_{12} & a_{13} \\
@@ -709,19 +709,19 @@ $$\boldsymbol{P}_{1}=\left(\begin{array}{lll}
 1 & 0 & 1
 \end{array}\right),
 $$
-Ôò±ØÓĞ$(\qquad)$.
+åˆ™å¿…æœ‰$(\qquad)$.
 <br><br>
 $\mathrm{A}$. $\boldsymbol{A} \boldsymbol{P}_{1} \boldsymbol{P}_{2}=\boldsymbol{B}$
 $\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A} \boldsymbol{P}_{2} \boldsymbol{P}_{1}=\boldsymbol{B}$
 $\qquad\qquad$$\mathrm{C}$. $\boldsymbol{P}_{1} \boldsymbol{P}_{2} \boldsymbol{A}=\boldsymbol{B}$
 $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{B}$
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.10").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.10").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.10").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.10").style.display="none"'> 
 <div id= "divID2.10" style= "display:none"> 
-ÕıÈ·´ğ°¸£ºC 
+æ­£ç¡®ç­”æ¡ˆï¼šC 
 <p></p>
-<b>·ÖÎö£º</b> $\boldsymbol{B}$ ÊÇ $\boldsymbol{A}$ ¾­¹ı°ÑµÚÒ»ĞĞ¼Óµ½µÚÈıĞĞ, È»ºó½»»»µÚÒ»ĞĞÓëµÚ¶şĞĞµÄĞĞ³õµÈ±ä»»µÃµ½µÄ, Òò´Ë C ÎªÕıÈ·´ğ°¸. ±¾ÌâÓ¦×¢Òâ×ó³ËÓëÓÒ³Ë³õµÈ¾ØÕó$\boldsymbol{P}_{1}, \boldsymbol{P}_{2}$ ·Ö±ğ¶ÔÓ¦ĞĞ¡¢ÁĞ³õµÈ±ä»», Í¬Ê±»¹Ó¦×¢ÒâËù×÷³õµÈ±ä»»µÄÇ°ºóË³Ğò.
+<b>åˆ†æï¼š</b> $\boldsymbol{B}$ æ˜¯ $\boldsymbol{A}$ ç»è¿‡æŠŠç¬¬ä¸€è¡ŒåŠ åˆ°ç¬¬ä¸‰è¡Œ, ç„¶åäº¤æ¢ç¬¬ä¸€è¡Œä¸ç¬¬äºŒè¡Œçš„è¡Œåˆç­‰å˜æ¢å¾—åˆ°çš„, å› æ­¤ C ä¸ºæ­£ç¡®ç­”æ¡ˆ. æœ¬é¢˜åº”æ³¨æ„å·¦ä¹˜ä¸å³ä¹˜åˆç­‰çŸ©é˜µ$\boldsymbol{P}_{1}, \boldsymbol{P}_{2}$ åˆ†åˆ«å¯¹åº”è¡Œã€åˆ—åˆç­‰å˜æ¢, åŒæ—¶è¿˜åº”æ³¨æ„æ‰€ä½œåˆç­‰å˜æ¢çš„å‰åé¡ºåº.
 </div> 
 </li>
 
@@ -730,12 +730,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>11. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.11").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.11").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.11").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.11").style.display="none"'> 
 <div id= "divID2.11" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -744,12 +744,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>12. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.12").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.12").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.12").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.12").style.display="none"'> 
 <div id= "divID2.12" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -758,12 +758,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>13. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.13").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.13").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.13").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.13").style.display="none"'> 
 <div id= "divID2.13" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -772,12 +772,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>14. </b>&nbsp;  
 
 <br><br> 
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.14").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.14").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.14").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.14").style.display="none"'> 
 <div id= "divID2.4" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -786,12 +786,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>15. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.15").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.15").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.15").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.15").style.display="none"'> 
 <div id= "divID2.15" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -800,12 +800,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>16. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.16").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.16").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.16").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.16").style.display="none"'> 
 <div id= "divID2.16" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -814,12 +814,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>17. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.17").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.17").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.17").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.17").style.display="none"'> 
 <div id= "divID2.17" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -828,12 +828,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>18. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.18").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.18").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.18").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.18").style.display="none"'> 
 <div id= "divID2.18" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -842,12 +842,12 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>19. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.19").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.19").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.19").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.19").style.display="none"'> 
 <div id= "divID2.19" style= "display:none"> 
-ÕıÈ·´ğ°¸£º 
+æ­£ç¡®ç­”æ¡ˆï¼š 
 <p></p>
-<b>·ÖÎö£º</b> 
+<b>åˆ†æï¼š</b> 
 </div> 
 </li>
 
@@ -856,15 +856,15 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 <b>20. </b>&nbsp;  
 
 <br><br>
-<input type=button value= "ÏÔÊ¾´ğ°¸" onclick='document.getElementById("divID2.20").style.display="block"'> 
-<input type=button value= "ÊÕÆğ´ğ°¸" onclick='document.getElementById("divID2.20").style.display="none"'> 
+<input type=button value= "æ˜¾ç¤ºç­”æ¡ˆ" onclick='document.getElementById("divID2.20").style.display="block"'> 
+<input type=button value= "æ”¶èµ·ç­”æ¡ˆ" onclick='document.getElementById("divID2.20").style.display="none"'> 
 <div id= "divID2.20" style= "display:none"> 
 
 </div> 
 </li>
 
 </ul>
-<a href="#C0">·µ»Ø¶¥²¿</a>
+<a href="#C0">è¿”å›é¡¶éƒ¨</a>
 
 <br>
 <center>
