@@ -743,15 +743,31 @@ $\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A
 
 <p></p> 
 <li>
-<b>11. </b>  
-
+<b>11. </b>  设分块矩阵 $\boldsymbol{X}=\left(\begin{array}{cc}\boldsymbol{A}_{1} & \boldsymbol{\alpha}_{1} \\ \boldsymbol{\beta}_{1} & 1\end{array}\right), \boldsymbol{X}^{-1}=\left(\begin{array}{cc}\boldsymbol{A}_{2} & \boldsymbol{\alpha}_{2} \\ \boldsymbol{\beta}_{2} & \alpha\end{array}\right)$, 其中 $\boldsymbol{A}_{i}$ 为 $n \times n$ 矩阵, $\boldsymbol{\alpha}_{i}$ 为 $n \times 1$ 矩阵, $\boldsymbol{\beta}_{i}$ 为 $1 \times n$ 矩阵, $i=1,2, \alpha$ 为实数, 则 $\alpha$ 等于 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{C}$. $\frac{1}{1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}}$
+<p></p>
+$\mathrm{D}$. $\frac{1}{1+\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}}$
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.11").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.11").style.display="none"'> 
 <div id= "divID2.11" style= "display:none"> 
-正确答案： 
+正确答案： C. 
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 由 $\left(\begin{array}{cc}\boldsymbol{A}_{1} & \boldsymbol{\alpha}_{1} \\ \boldsymbol{\beta}_{1} & 1\end{array}\right)\left(\begin{array}{cc}\boldsymbol{A}_{2} & \boldsymbol{\alpha}_{2} \\ \boldsymbol{\beta}_{2} & \alpha\end{array}\right)=\boldsymbol{X} \boldsymbol{X}^{-1}=\left(\begin{array}{cc}\boldsymbol{I} & \boldsymbol{O} \\ \boldsymbol{O} & 1\end{array}\right)$ 得
+$$
+\left\{\begin{array}{c}
+\boldsymbol{A}_{1} \boldsymbol{A}_{2}+\boldsymbol{\alpha}_{1} \boldsymbol{\beta}_{2}=\boldsymbol{I}, \\
+\boldsymbol{A}_{1} \boldsymbol{\alpha}_{2}+\alpha \boldsymbol{\alpha}_{1}=\boldsymbol{O}, \\
+\boldsymbol{\beta}_{1} \boldsymbol{A}_{2}+\boldsymbol{\beta}_{2}=\boldsymbol{O}, \\
+\boldsymbol{\beta}_{1} \boldsymbol{\alpha}_{2}+\alpha=1,
+\end{array}\right.
+$$
+由 $\boldsymbol{\beta}_{1} \boldsymbol{\alpha}_{2}+\alpha=1$, 有 $\alpha=1-\boldsymbol{\beta}_{1} \boldsymbol{\alpha}_{2}=1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{A}_{1} \boldsymbol{\alpha}_{2}=1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1}\left(\boldsymbol{A}_{1} \boldsymbol{\alpha}_{2}\right)$. 利用第二个方程得 $\alpha=1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1}\left(-\alpha \boldsymbol{\alpha}_{1}\right)=1+\alpha \boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}$. 故 $\alpha=\frac{1}{1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}}$.
 </div> 
 </li>
 
