@@ -1301,7 +1301,47 @@ $\mathrm{D}$. $\left(
 </div> 
 </li>
 
-
+<p></p> 
+<li>
+<b>29. </b>  设矩阵 $A=\left(\begin{array}{ccc}-4 & -10 & 0 \\ 1 & 3 & 0 \\ 3 & 6 & 1\end{array}\right)$, 
+  求可逆矩阵 $P$ 及对角矩阵 $\varLambda$, 使得 $P^{-1} A P=\varLambda$.
+<br><br><b>解答: </b>&nbsp; 
+<input type=button value= "显示答案" onclick='document.getElementById("divID3.21").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID3.21").style.display="none"'> 
+<div id= "divID3.21" style= "display:none"> 
+$|\lambda I-A|=\left|\begin{array}{ccc}
+  \lambda+4 & 10 & 0 \\ -1 & \lambda-3 & 0 \\ -3 & -6 & \lambda-1
+  \end{array}\right|=(\lambda-1)\left|\begin{array}{cc}
+  \lambda+4 & 10 \\ -1 & \lambda-3
+  \end{array}\right|=(\lambda+2)(\lambda-1)^2$, 
+<p></p>  
+特征值 $\lambda_1=-2, \quad \lambda_2=\lambda_3=1$.
+<p></p> 
+对于 $\lambda_1=-2$, 解齐次线性方程组 $(-2 E-A) x=0$:
+$$
+-2 I-A=\left(\begin{array}{ccc}
+2 & 10 & 0 \\
+-1 & -5 & 0 \\
+-3 & -6 & -3
+\end{array}\right) \rightarrow \cdots \rightarrow\left(\begin{array}{ccc}
+1 & 0 & 5 / 3 \\
+0 & 1 & -1 / 3 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+$
+\left\{\begin{array}{l}
+x_1=-\frac{5}{3} x_3 \\
+x_2=\frac{1}{3} x_3
+\end{array}, \right.
+$基础解系为  $\alpha_1=\left(-\frac{5}{3}, \frac{1}{3}, 1\right)^T $;
+<p></p> 
+对于 $\lambda_2=\lambda_3=1$, 解齐次线性方程组 $(I-A) x=0$:
+基础解系为 $\alpha_2=(-2,1,0)^T, \alpha_3=(0,0,1)^T$.  
+<p></p> 
+令 $P=\left(\begin{array}{ccc}-5 / 3 & -2 & 0 \\ 1 / 3 & 1 & 0 \\ 1 & 0 & 1\end{array}\right), \varLambda=\left(\begin{array}{ccc}-2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)$, 则 $P$ 是可逆矩阵, 使 $P^{-1} A P=\varLambda$.
+</div> 
+</li>
 
 <p></p> 
 <li>
@@ -1327,7 +1367,14 @@ x_3= & y_3
 \end{array}\right.\right.
 \end{aligned}
 $$
-就把 $f$ 化成标准形 $f=y_1^2-3 y_2^2$.
+令$X=\bm{C}Y=\left(
+\begin{array}{ccc}
+1 & 1 & 1\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}
+\right)Y$.
+则 $f$ 可化为标准形 $f=y_1^2-3 y_2^2$.
 </div> 
 </li>
 
