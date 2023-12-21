@@ -787,91 +787,214 @@ $$
 
 <p></p> 
 <li>
-<b>12. </b>  
-
+<b>12. </b>  下列结论不正确的是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则 $(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-\boldsymbol{I})=\boldsymbol{A}^{2}-\boldsymbol{I}$
+<p></p>
+$\mathrm{B}$. 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n \times 1$ 矩阵, 则 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}$
+<p></p>
+$\mathrm{C}$. 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶矩阵, 且满足 $\boldsymbol{A B}=\boldsymbol{O}$, 则 $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+\boldsymbol{B}^{2}$
+<p></p>
+$\mathrm{D}$. 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶矩阵, 且满足 $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$, 则 $\boldsymbol{A}^{5} \boldsymbol{B}^{3}=\boldsymbol{B}^{3} \boldsymbol{A}^{5}$
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.12").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.12").style.display="none"'> 
 <div id= "divID2.12" style= "display:none"> 
-正确答案： 
+正确答案： C
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 因 $(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-\boldsymbol{I})=\boldsymbol{A}^{2}-\boldsymbol{A} \boldsymbol{I}+\boldsymbol{I} \boldsymbol{A}-\boldsymbol{I}=\boldsymbol{A}^{2}-\boldsymbol{I}$, 故A正确. 
+<p></p>
+因为 $\boldsymbol{A}, \boldsymbol{B}$  均为 $n \times 1$ 矩阵, 所以 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}, \boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}$ 均为一阶矩阵, 从而 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}=\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}\right)^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}$, 故 B 正确. 
+<p></p>
+由于 $\boldsymbol{A B}=\boldsymbol{O}$ 一般推不出 $\boldsymbol{B} \boldsymbol{A}=\boldsymbol{O}$,  因此 $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+\boldsymbol{A} \boldsymbol{B}+\boldsymbol{B} \boldsymbol{A}+\boldsymbol{B}^{2} \neq \boldsymbol{A}^{2}+\boldsymbol{B}^{2}$, 故 C 不正确.
+<p></p>
+$\boldsymbol{A}^{4}\left(\boldsymbol{A B}{ }^{3}\right)=\boldsymbol{A}^{4}\left(\boldsymbol{B}^{3} \boldsymbol{A}\right)=\boldsymbol{A}^{3}\left(\boldsymbol{A B}{ }^{3}\right) \boldsymbol{A}=\cdots=\boldsymbol{B}^{3} \boldsymbol{A}^{5}$, 故 D 正确.因此, 应选 C.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>13. </b>  
-
+<b>13. </b> 设$n$阶行列式$D_n$, 则$D_n=0$的必要条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $D_{n}$ 中有两行 (或列) 元素对应成比例
+<p></p>
+$\mathrm{B}$. $D_{n}$ 中有一行 (或列) 元素全为零
+<p></p>
+$\mathrm{C}$. $D_{n}$ 中各列元素之和为零
+<p></p>
+$\mathrm{D}$. 以 $D_{n}$ 为系数行列式的齐次线性方程组有非零解 
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.13").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.13").style.display="none"'> 
 <div id= "divID2.13" style= "display:none"> 
-正确答案： 
+正确答案： D
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 据行列式的性质及线性方程组的解与系数行列式的关系知, 选 D.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>14. </b>  
-
+<b>14. </b>  设 $\left|\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right|=a$, 则 $\left|\begin{array}{ccc}a_{11} & a_{12} & a_{13} \\ 2 a_{21}-3 a_{31} & 2 a_{22}-3 a_{32} & 2 a_{23}-3 a_{33} \\ a_{31} & a_{32} & a_{33}\end{array}\right|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $a$ $\qquad$ $\mathrm{B}$. $2 a$ $\qquad$ $\mathrm{C}$. $-2 a$ $\qquad$ $\mathrm{D}$. $-3 a$
 <br><br> 
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.14").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.14").style.display="none"'> 
 <div id= "divID2.4" style= "display:none"> 
-正确答案： 
+正确答案： B
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 据行列式的性质, 经简单计算知
+$$
+\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+2 a_{21}-3 a_{31} & 2 a_{22}-3 a_{32} & 2 a_{23}-3 a_{33} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|=\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+2 a_{21} & 2 a_{22} & 2 a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|=2 a,
+$$
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>15. </b> 
-
+<b>15. </b> 设线性方程组 $\left\{\begin{aligned} b x-a y &=-2 a b, \\-2 c y+3 b z &=b c, \\ c x+a z &=0, \end{aligned}\right.$ 则 $(\qquad )$.
+<p></p>
+$\mathrm{A}$. 当 $a, b, c$ 取任意实数时, 方程组均有解
+<p></p>
+$\mathrm{B}$. 当 $a=0$ 时,方程组无解
+<p></p>
+$\mathrm{C}$. 当 $b=0$ 时, 方程组无解
+<p></p>
+$\mathrm{D}$. 当 $c=0$ 时, 方程组无解
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.15").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.15").style.display="none"'> 
 <div id= "divID2.15" style= "display:none"> 
-正确答案： 
+正确答案： A
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 方程组的系数行列式
+$$
+D=\left|\begin{array}{ccc}
+b & -a & 0 \\
+0 & -2 c & 3 b \\
+c & 0 & a
+\end{array}\right|=c\left|\begin{array}{cc}
+-a & 0 \\
+-2 c & 3 b
+\end{array}\right|+a\left|\begin{array}{cc}
+b & -a \\
+0 & -2 c
+\end{array}\right|=-5 a b c .
+$$
+由克拉默法则知, 当 $a b c \neq 0$ 时, 方程组有唯一解; 当 $a b c=0$ (即 $a=0$ 或 $b=0$ 或 $c=0$ ) 时, 方程组均有无穷多个解. 故选 A.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>16. </b>  
-
+<b>16. </b>  四阶行列式 $\left|\begin{array}{cccc}a_{1} & 0 & 0 & b_{1} \\ 0 & a_{2} & b_{2} & 0 \\ 0 & b_{3} & a_{3} & 0 \\ b_{4} & 0 & 0 & a_{4}\end{array}\right|$ 的值等于$(\qquad )$.
+<p></p>
+$\mathrm{A}$. $a_{1} a_{2} a_{3} a_{4}-b_{1} b_{2} b_{3} b_{4}$
+<p></p>
+$\mathrm{B}$. $a_{1} a_{2} a_{3} a_{4}+b_{1} b_{2} b_{3} b_{4}$
+<p></p>
+$\mathrm{C}$. $\left(a_{1} a_{2}-b_{1} b_{2}\right)\left(a_{3} a_{4}-b_{3} b_{4}\right)$
+<p></p>
+$\mathrm{D}$. $\left(a_{2} a_{3}-b_{2} b_{3}\right)\left(a_{1} a_{4}-b_{1} b_{4}\right)$
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.16").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.16").style.display="none"'> 
 <div id= "divID2.16" style= "display:none"> 
-正确答案： 
+正确答案： D
 <p></p>
-<b>分析：</b> 
+<b>分析1：</b> 按第一行展开
+$$
+\begin{aligned} 
+D &=a_{1}\left|\begin{array}{ccc}a_{2} & b_{2} & 0 \\ b_{3} & a_{3} & 0 \\ 0 & 0 & a_{4}\end{array}\right|-b_{1}\left|\begin{array}{ccc}0 & a_{2} & b_{2} \\ 0 & b_{3} & a_{3} \\ b_{4} & 0 & 0\end{array}\right|=a_{1} a_{4}\left|\begin{array}{cc}a_{2} & b_{2} \\ b_{3} & a_{3}\end{array}\right|-b_{1} b_{4}\left|\begin{array}{cc}a_{2} & b_{2} \\ b_{3} & a_{3}\end{array}\right| \\ 
+&=\left(a_{1} a_{4}-b_{1} b_{4}\right)\left(a_{2} a_{3}-b_{2} b_{3}\right) . 
+\end{aligned}
+$$
+故选 D.
+<br><br>
+<b>分析2：</b>  用拉普拉斯定理 
+$$
+D =\left|\begin{array}{cc}a_{2} & b_{2} \\ b_{3} & a_{3}\end{array}\right| \cdot(-1)^{(2+3)+(2+3)}\left|\begin{array}{cc}a_{1} & b_{1} \\ b_{4} & a_{4}\end{array}\right|=\left(a_{1} a_{4}-b_{1} b_{4}\right)\left(a_{2} a_{3}-b_{2} b_{3}\right) . 
+$$
+故选(D).
 </div> 
 </li>
 
+
+
+
+
+
+
+
+
 <p></p> 
 <li>
-<b>17. </b>  
-
+<b>17. </b> 设 $f(x)=\left|\begin{array}{cccc}x-2 & x-1 & x-2 & x-3 \\ 2 x-2 & 2 x-1 & 2 x-2 & 2 x-3 \\ 3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\ 4 x & 4 x-3 & 5 x-7 & 4 x-3\end{array}\right|$, 则方程 $f(x)=0$ 的根的个数为 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1$$\qquad$
+$\mathrm{B}$. $2$$\qquad$
+$\mathrm{C}$. $3$$\qquad$
+$\mathrm{D}$. $4$
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.17").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.17").style.display="none"'> 
 <div id= "divID2.17" style= "display:none"> 
-正确答案： 
+正确答案：B
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 由行列式的性质知
+$$
+f(x)=\left|\begin{array}{cccc}
+x-2 & x-1 & x-2 & x-3 \\
+2 & 1 & 2 & 3 \\
+3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\
+4 x & 4 x-3 & 5 x-7 & 4 x-3
+\end{array}\right|=x\left|\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+2 & 1 & 2 & 3 \\
+3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\
+4 x & 4 x-3 & 5 x-7 & 4 x-3
+\end{array}\right|
+$$
+$$
+\begin{aligned}
+&=\left|\begin{array}{rrrr}
+1 & 1 & 1 & 1 \\
+2 & 1 & 2 & 3 \\
+-3 & -2 & x-5 & -5 \\
+0 & -3 & x-7 & -3
+\end{array}\right|=x\left|\begin{array}{rrrr}
+1 & 1 & 1 & 1 \\
+0 & -1 & 0 & 1 \\
+0 & 1 & x-2 & -2 \\
+0 & -3 & x-7 & -3
+\end{array}\right|=x\left|\begin{array}{rcr}
+-1 & 0 & 1 \\
+1 & x-2 & -2 \\
+-3 & x-7 & -3
+\end{array}\right| \\
+&=x\left|\begin{array}{rrr}
+-1 & 0 & 1 \\
+0 & x-2 & -1 \\
+0 & x-7 & -6
+\end{array}\right|=5 x(x-1),
+\end{aligned}
+$$
+故 $f(x)=0$ 根的个数为 $2$, 应选 B.
 </div> 
 </li>
 
 <p></p> 
 <li>
-<b>18. </b>  
+<b>18. </b> 
 
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.18").style.display="block"'> 
@@ -885,17 +1008,27 @@ $$
 
 <p></p> 
 <li>
-<b>19. </b>  
-
+<b>19. </b> 设 $n$ 阶矩阵的伴随矩阵为 $\boldsymbol{A}^{*},|\boldsymbol{A}|=a \neq 0$, 则 $\left|\boldsymbol{A}^{*}\right|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $a$$\qquad$
+$\mathrm{B}$. $\frac{1}{a}$$\qquad$
+$\mathrm{C}$. $a^{n-1}$$\qquad$
+$\mathrm{D}$. $a^{n}$
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.19").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.19").style.display="none"'> 
 <div id= "divID2.19" style= "display:none"> 
-正确答案： 
+正确答案：C
 <p></p>
-<b>分析：</b> 
+<b>分析：</b> 由矩阵与伴随矩阵的关系: $A A^{*}=A^{*} A=(\operatorname{det} A) I$ 可知,
+$$
+\operatorname{det} \boldsymbol{A}^{*}=(\operatorname{det} \boldsymbol{A})^{n-1}=a^{n-1} \text {, }
+$$
+故应选 C.
 </div> 
 </li>
+
+
 
 <p></p> 
 <li>
