@@ -841,7 +841,7 @@ $\mathrm{A}$. $a$ $\qquad$ $\mathrm{B}$. $2 a$ $\qquad$ $\mathrm{C}$. $-2 a$ $\q
 <br><br> 
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.14").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.14").style.display="none"'> 
-<div id= "divID2.4" style= "display:none"> 
+<div id= "divID2.14" style= "display:none"> 
 正确答案： B
 <p></p>
 <b>分析：</b> 据行列式的性质, 经简单计算知
@@ -931,11 +931,6 @@ $$
 
 
 
-
-
-
-
-
 <p></p> 
 <li>
 <b>17. </b> 设 $f(x)=\left|\begin{array}{cccc}x-2 & x-1 & x-2 & x-3 \\ 2 x-2 & 2 x-1 & 2 x-2 & 2 x-3 \\ 3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\ 4 x & 4 x-3 & 5 x-7 & 4 x-3\end{array}\right|$, 则方程 $f(x)=0$ 的根的个数为 $(\qquad)$.
@@ -952,26 +947,26 @@ $\mathrm{D}$. $4$
 <p></p>
 <b>分析：</b> 由行列式的性质知
 $$
-f(x)=\left|\begin{array}{cccc}
+\begin{aligned}
+f(x)&=\left|\begin{array}{cccc}
 x-2 & x-1 & x-2 & x-3 \\
 2 & 1 & 2 & 3 \\
 3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\
 4 x & 4 x-3 & 5 x-7 & 4 x-3
-\end{array}\right|=x\left|\begin{array}{cccc}
+\end{array}\right|\\
+  &=x\left|\begin{array}{cccc}
 1 & 1 & 1 & 1 \\
 2 & 1 & 2 & 3 \\
 3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\
 4 x & 4 x-3 & 5 x-7 & 4 x-3
-\end{array}\right|
-$$
-$$
-\begin{aligned}
+\end{array}\right|\\
 &=\left|\begin{array}{rrrr}
 1 & 1 & 1 & 1 \\
 2 & 1 & 2 & 3 \\
 -3 & -2 & x-5 & -5 \\
 0 & -3 & x-7 & -3
-\end{array}\right|=x\left|\begin{array}{rrrr}
+\end{array}\right|\\
+  &=x\left|\begin{array}{rrrr}
 1 & 1 & 1 & 1 \\
 0 & -1 & 0 & 1 \\
 0 & 1 & x-2 & -2 \\
