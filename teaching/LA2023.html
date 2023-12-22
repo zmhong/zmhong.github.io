@@ -1083,7 +1083,243 @@ $$
 </div> 
 </li>
 
+<p></p> 
+<li>
+<b>22. </b> 设 $D=\left|\begin{array}{llll}1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 1 & 0 & 1 & 1 \\ 0 & 1 & 1 & 1\end{array}\right|$, 则其值为 $(\qquad )$.
+<p></p>
+$\mathrm{A}$. $1$ $\qquad$ $\mathrm{B}$. $2$ $\qquad$ $\mathrm{C}$. $3$ $\qquad$ $\mathrm{D}$. $-3$ 
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.22").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.22").style.display="none"'> 
+<div id= "divID2.22" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b>  $$D=\left|\begin{array}{llll}3 & 1 & 1 & 0 \\ 3 & 1 & 0 & 1 \\ 3 & 0 & 1 & 1 \\ 3 & 1 & 1 & 1\end{array}\right|=3\left|\begin{array}{rrrr}1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 1 & 0 & 1 & 1 \\ 1 & 1 & 1 & 1\end{array}\right|=3\left|\begin{array}{rrrr}1 & 1 & 1 & 0 \\ 0 & 0 & -1 & 1 \\ 0 & -1 & 0 & 1 \\ 0 & 0 & 0 & 1\end{array}\right|
+=-3\left|\begin{array}{rrrr}
+1 & 1 & 1 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 0 & 1
+\end{array}\right|=-3.
+$$
+</div> 
+</li>
 
+
+<p></p> 
+<li>
+<b>23. </b>  
+设 $n$ 阶矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价,则必有$(\qquad )$.
+<p></p>
+$\mathrm{A}$. 当 $|\boldsymbol{A}|=a(a \neq 0)$ 时, $|\boldsymbol{B}|=a$
+<p></p>
+$\mathrm{B}$. 当 $|\boldsymbol{A}|=a(a \neq 0)$ 时, $|\boldsymbol{B}|=-a$
+<p></p>
+$\mathrm{C}$. 当 $|\boldsymbol{A}| \neq 0$ 时, $|\boldsymbol{B}|=0$
+<p></p>
+$\mathrm{D}$. 当 $|\boldsymbol{A}|=0$ 时, $|\boldsymbol{B}|=0$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.23").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.23").style.display="none"'> 
+<div id= "divID2.23" style= "display:none"> 
+正确答案：D 
+<p></p>
+<b>分析：</b>  当 $|\boldsymbol{A}|=0$ 时, $R(\boldsymbol{A})<n$, 而 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 故 $R(\boldsymbol{B})=R(\boldsymbol{A})<n$, 即 $|\boldsymbol{B}|=0$, 故选 D.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>24. </b>  
+设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, $\boldsymbol{B}$ 为 $n \times m$ 矩阵, 则$(\qquad )$.
+<p></p>
+$\mathrm{A}$. 当 $m>n$ 时, 必有 $|\boldsymbol{A B}| \neq 0$
+<p></p>
+$\mathrm{B}$. 当 $m>n$ 时, 必有 $|\boldsymbol{A B}|=0$
+<p></p>
+$\mathrm{C}$. 当 $n>m$ 时, 必有 $|\boldsymbol{A B}| \neq 0$
+<p></p>
+$\mathrm{D}$. 当 $n>m$ 时, 必有 $|\boldsymbol{A B}|=0$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.24").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.24").style.display="none"'> 
+<div id= "divID2.24" style= "display:none"> 
+正确答案：B
+<p></p>
+<b>分析：</b>  $\boldsymbol{A B}$ 为 $m$ 阶方阵, 且 $R(\boldsymbol{A B}) \leqslant \min \{R(\boldsymbol{A}), R(\boldsymbol{B})\} \leqslant n$, 故当 $m>n$ 时,
+$$
+R(\boldsymbol{A B}) \leqslant \min \{R(\boldsymbol{A}), R(\boldsymbol{B})\} \leqslant n<m,
+$$
+从而有 $|\boldsymbol{A B}|=0$, 故选 B.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>25. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶非零矩阵, 且 $\boldsymbol{A B}=\boldsymbol{O}$, 则 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 的秩 $(\qquad )$.
+<p></p>
+$\mathrm{A}$. 必有一个等于零
+<p></p>
+$\mathrm{B}$. 都小于 $n$
+<p></p>
+$\mathrm{C}$. 一个小于 $n$, 一个等于 $n$
+<p></p>
+$\mathrm{D}$. 都等于 $n$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.25").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.25").style.display="none"'> 
+<div id= "divID2.25" style= "display:none"> 
+正确答案： B
+<p></p>
+<b>分析：</b>  因为 $\boldsymbol{A} \neq \boldsymbol{O}, \boldsymbol{B} \neq \boldsymbol{O}$, 故 $R(\boldsymbol{A}) \geqslant 1, R(\boldsymbol{B}) \geqslant 1$. 由 $\boldsymbol{B}=\left(\beta_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right) \neq \boldsymbol{O}$, 可得存在 $\boldsymbol{\beta}_{l} \neq \mathbf{0}$, 从而由 $\boldsymbol{A B}=\boldsymbol{O}$, 可得 $\boldsymbol{A} \boldsymbol{\beta}_{l}=\mathbf{0}\left(\boldsymbol{\beta}_{l} \neq \mathbf{0}\right)$, 即以 $\boldsymbol{A}$ 为系数的齐次线性方 程组有非零解, 所以 $\boldsymbol{A}$ 对应的行阶梯形矩阵非零行的行数小于 $n$, 故 $R(\boldsymbol{A})<n$. 类似 由 $\boldsymbol{A B}=\boldsymbol{O}$, 可得 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{O}$, 可得 $R(\boldsymbol{B})<n$. 故选 B.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>26. </b>  
+下列$\mathbf{R}^3$的子集合中能构成子空间的是$(\qquad)$. 
+<p></p>
+$\mathrm{A}$. $U_{1}=\left\{\boldsymbol{x}=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1}=\frac{x_{2}}{2}=\frac{x_{3}}{3}\right\}$
+<p></p>
+$\mathrm{B}$. $U_{2}=\left\{\boldsymbol{x}=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1}+x_{2}=1\right\}$
+<p></p>
+$\mathrm{C}$. $U_{3}=\left\{x=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1}=\frac{x_{2}-1}{2}=\frac{x_{3}}{3}\right\}$
+<p></p>
+$\mathrm{D}$. $U_{4}=\left\{\boldsymbol{x}=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1} x_{2}=0\right\}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.26").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.26").style.display="none"'> 
+<div id= "divID2.26" style= "display:none"> 
+正确答案： A 
+<p></p>
+<b>分析：</b>  显然 $\boldsymbol{0}=(0,0,0) \in U_{1}$, 故 $U_{1}$ 非空. 又若 $\boldsymbol{\alpha}=\left(a_{1}, a_{2}, a_{3}\right), \boldsymbol{\beta}=\left(b_{1}, b_{2}, b_{3}\right) \in$ $U_{1}, k \in \mathbf{R}$, 则
+$$
+\boldsymbol{\alpha}+\boldsymbol{\beta}=\left(a_{1}+b_{1}, a_{2}+b_{2}, a_{3}+b_{3}\right), k \boldsymbol{\alpha}=\left(k a_{1}, k a_{2}, k a_{3}\right) .
+$$
+再由 $a_{1}=\frac{a_{2}}{2}=\frac{a_{3}}{3}, b_{1}=\frac{b_{2}}{2}=\frac{b_{3}}{3}$, 可得
+$$
+a_{1}+b_{1}=\frac{a_{2}+b_{2}}{2}=\frac{a_{3}+b_{3}}{3}, k a_{1}=\frac{k a_{2}}{2}=\frac{k a_{3}}{3} .
+$$
+即 $\boldsymbol{\alpha}+\boldsymbol{\beta} \in U_{1}, k \boldsymbol{\alpha} \in U_{1}$, 故 $U_{1}$ 是 $\mathbf{R}^{3}$ 的子空间.
+容易验证其余几个集合对 $\mathbf{R}^{3}$ 中的加法均不封闭, 故不构成 $\mathbf{R}^{3}$ 的子空间.
+<p></p>
+<b>评注:</b> 构成子空间的充要条件是子集合对线性运算封闭. $U_{1}$ 是齐次方程组解 向量构成的集合, 它对线性运算是封闭的.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>27. </b>  
+向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性无关,则下面向量组中线性无关的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}+\boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.27").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.27").style.display="none"'> 
+<div id= "divID2.27" style= "display:none"> 
+正确答案： C
+<p></p>
+<b>分析：</b> 由 A 可知, $\left(\alpha_{1}+\alpha_{2}\right)-\left(\alpha_{2}+\alpha_{3}\right)+\left(\alpha_{3}+\alpha_{4}\right)-\left(\alpha_{4}+\alpha_{1}\right)=0$, 所以向量组线性 相关. 由 B 可知, $\left(\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}\right)+\left(\boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}\right)+\left(\boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}\right)+\left(\boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}\right)=0$, 所以向量组线性相关. 由 D 可知, $\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)-\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}\right)+\left(\boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}\right)+\left(\boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}\right)=0$, 所以向量组线性相关. 只有 C 正确.
+<p></p>
+<b>评注:</b> 
+这一类问题一般不要用向量组线性无关、线性相关的定义来判断, 而尽 量用观察法, 排除选项中一些明显具有线性相关或无关的答案, 再进一步仔细确 认. 另外, 由于是单项选择题, 所以可以用特殊值法来判断. 比如, 本题中也可以假设 这四个向量为 4 个 4 维的单位向量, 通过对特殊向量组的运算来选择答案.
+</div> 
+</li>
+
+
+
+<p></p> 
+<li>
+<b>28. </b>  
+对任意的 $a, b, c$, 线性无关的向量组为$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $(a, 1,2),(2, b, 3),(0,0,0)$
+<p></p>
+$\mathrm{B}$. $(b, 1,1),(2, a, 3),(2,3, c),(a, 0, c)$
+<p></p>
+$\mathrm{C}$. $(1, a, 1,1),(1, b, 1,0),(1, c, 0,0)$
+<p></p>
+$\mathrm{D}$. $(1,1,1, a),(2,2,2, b),(0,0,0, c)$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.28").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.28").style.display="none"'> 
+<div id= "divID2.28" style= "display:none"> 
+正确答案： C
+<p></p>
+<b>分析：</b> A 中有零向量, 故线性相关. B 有 4 个 3 维向量, 故线性相关. 对于
+C, 若令 $c=0$, 则 D 中有零向量, 故线性相关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>29. </b>  
+设向量组 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\delta}$ 线性相关, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\alpha$ 必可由 $\boldsymbol{\beta}, \boldsymbol{\delta}, \gamma$ 线性表出
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\beta}$ 必可由 $\alpha, \delta, \gamma$ 线性表出
+<p></p>
+$\mathrm{C}$. $\boldsymbol{\delta}$ 必可由 $\boldsymbol{\beta}, \boldsymbol{\alpha}, \boldsymbol{\gamma}$ 线性表出
+<p></p>
+$\mathrm{D}$. $\delta$ 必不可由 $\boldsymbol{\beta}, \boldsymbol{\alpha}, \gamma$ 线性表出
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.29").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.29").style.display="none"'> 
+<div id= "divID2.29" style= "display:none"> 
+正确答案：C  
+<p></p>
+<b>分析：</b>  由于 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\delta}$ 线性相关, 则 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \gamma, \boldsymbol{\delta}$ 线性相关. 又因 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, 故 $\delta$ 必可由 $\boldsymbol{\beta}, \boldsymbol{\alpha}, \gamma$ 线性表出.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>30. </b>  
+设向量 $\boldsymbol{\beta}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表出, 但不能由向量组(I) : $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n-1}$ 线性表出,记向量组(II) : $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n-1}, \boldsymbol{\beta}$, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{\alpha}_{n}$ 不能由向量组(II)线性表出, 也不能由向量组(II)线性表出
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\alpha}_{n}$ 不能由向量组(I) 线性表出, 但可由向量组(II)线性表出
+<p></p>
+$\mathrm{C}$. $\boldsymbol{\alpha}_{n}$ 可由向量组(I) 线性表出, 也可由向量组(II)线性表出
+<p></p>
+$\mathrm{D}$. $\boldsymbol{\alpha}_{n}$ 可由向量组(I) 线性表出, 但不可由向量组(II)线性表出
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.30").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.30").style.display="none"'> 
+<div id= "divID2.30" style= "display:none"> 
+正确答案： B 
+<p></p>
+<b>分析：</b>  由题设有
+$$\boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n} \boldsymbol{\alpha}_{n}. \eqno{4-1}$$
+因 $\boldsymbol{\beta}$ 不能由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n-1}$ 线性表出, 故 $k_{n} \neq 0$. 因此
+$$
+\boldsymbol{\alpha}_{n}=-\frac{1}{k_{n}}\left(-\boldsymbol{\beta}+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n-1} \boldsymbol{\alpha}_{n-1}\right),
+$$
+即 $\boldsymbol{\alpha}_{n}$ 可由向量组(II) 线性表出.
+<p></p>
+若 $\boldsymbol{\alpha}_{n}=l_{1} \boldsymbol{\alpha}_{1}+l_{2} \boldsymbol{\alpha}_{2}+\cdots+l_{n-1} \boldsymbol{\alpha}_{n-1}$, 将其代人 (4-1) 式得
+$$
+\boldsymbol{\beta}=\left(k_{1}+k_{n} l_{1}\right) \boldsymbol{\alpha}_{1}+\left(k_{2}+k_{n} l_{2}\right) \boldsymbol{\alpha}_{2}+\cdots+\left(k_{n-1}+k_{n} l_{n-1}\right) \boldsymbol{\alpha}_{n-1},
+$$
+这与 $\boldsymbol{\beta}$ 不能由向量组(I) 线性表出矛盾, 所以 $\alpha_{n}$ 不能由向量组(I) 线性表出.
+</div> 
+</li>
 
 
 
