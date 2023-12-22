@@ -1594,6 +1594,273 @@ $$
 </div> 
 </li>
 
+<p></p> 
+<li>
+<b>41. </b>  
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 且 $\boldsymbol{A}^{k}=\boldsymbol{O}$ ($k$ 为一自然数), 则下列说法正确的是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}=\boldsymbol{O}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 有一不为零的特征值
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 的特征值全部为零
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 有 $n$个线性无关特征向量
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.41").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.41").style.display="none"'> 
+<div id= "divID2.41" style= "display:none"> 
+正确答案：C 
+<p></p>
+<b>分析：</b>  设 $\lambda$ 是矩阵 $\boldsymbol{A}$ 的任一特征值, $\alpha$ 是矩阵 $\boldsymbol{A}$ 的与 $\lambda$ 相对应的特征向量, 则 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha} \Rightarrow \boldsymbol{A}^{k} \boldsymbol{\alpha}=\lambda^{k} \boldsymbol{\alpha}$, 由于 $\boldsymbol{A}^{k}=\boldsymbol{O}$, 所以 $\lambda^{k} \boldsymbol{\alpha}=\mathbf{0}$, 同时 $\boldsymbol{\alpha} \neq \mathbf{0}$, 故有 $\lambda^{k}=0$, 即 $\lambda=0$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>42. </b>  
+设 $n$ 阶方阵 $\boldsymbol{A}$ 的全部特征值为 $2,4, \cdots, 2 n$, 则方阵 $\boldsymbol{I}-\boldsymbol{A}$ 的行列式等于$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1 \times 3 \times \cdots \times(2 n-1)$
+<p></p>
+$\mathrm{B}$. $2^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$
+<p></p>
+$\mathrm{C}$. $(-2)^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$
+<p></p>
+$\mathrm{D}$. $(-1)^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.42").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.42").style.display="none"'> 
+<div id= "divID2.42" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b>  若 $\lambda$ 是矩阵 $\boldsymbol{A}$ 的特征值, 则 $\boldsymbol{I}-\boldsymbol{A}$ 的特征值为 $1-\lambda$, 所以 $\boldsymbol{I}-\boldsymbol{A}$ 的全部特 征值为 $-1,-3, \cdots,-(2 n-1)$, 故 $\operatorname{det}(\boldsymbol{I}-\boldsymbol{A})=(-1)^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>43. </b>  
+已知三阶矩阵 $\boldsymbol{A}$ 的特征值为 $-1,1,2$, 则矩阵 $\boldsymbol{B}=\left(3 \boldsymbol{A}^{*}\right)^{-1}$ 的特征值为 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1,-1,-2$
+<p></p>
+$\mathrm{B}$. $\frac{1}{6},-\frac{1}{6},-\frac{1}{3}$
+<p></p>
+$\mathrm{C}$. $\frac{1}{6},-\frac{1}{6}, \frac{1}{3}$
+<p></p>
+$\mathrm{D}$. $\frac{1}{2},-\frac{1}{2}, -1$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.43").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.43").style.display="none"'> 
+<div id= "divID2.43" style= "display:none"> 
+正确答案：B  
+<p></p>
+<b>分析：</b>  因为 $|\boldsymbol{A}|=\lambda_{1} \lambda_{2} \lambda_{3}=-2$, 则 $\boldsymbol{B}=\left(3 \boldsymbol{A}^{*}\right)^{-1}=\frac{1}{3|\boldsymbol{A}|} \boldsymbol{A}=-\frac{1}{6} \boldsymbol{A}$, 于是 $\boldsymbol{B}=\left(3 \boldsymbol{A}^{*}\right)^{-1}$ 的特征值为 $\frac{1}{6},-\frac{1}{6},-\frac{1}{3}$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>44. </b>  
+设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则以下结论正确的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 如果矩阵 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{A}^{-1}$ 与 $\boldsymbol{A}$ 有相同的特征向量
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 的特征向量的任一线性组合都是 $\boldsymbol{A}$ 的特征向量
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 与 $\boldsymbol{A}^{\mathrm{T}}$ 具有相同的特征向量
+<p></p>
+$\mathrm{D}$. 方程组 $(\boldsymbol{A}-\lambda \boldsymbol{I}) \boldsymbol{X}=\mathbf{0}$ 的解向量都是 $\boldsymbol{A}$ 的特征向量
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.44").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.44").style.display="none"'> 
+<div id= "divID2.44" style= "display:none"> 
+正确答案： A 
+<p></p>
+<b>分析：</b>  A 中, 设 $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 对应特征值 $\lambda$ 的特征向量, 即 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$, 如果矩阵 $\boldsymbol{A}$ 可逆, 则 $\alpha=\lambda A^{-1} \alpha$, 且 $\lambda \neq 0$, 从而 $A^{-1} \alpha=\frac{1}{\lambda} \alpha$, 故 $\alpha$ 也是 $A^{-1}$ 特征向量; 同理, $A^{-1}$ 特 征向量也都是 $\boldsymbol{A}$ 的特征向量. 所以 A 正确.
+<p></p>
+B 不正确. 设 $\boldsymbol{A} \boldsymbol{\alpha}_{i}=\lambda_{i} \boldsymbol{\alpha}_{i}(i=1,2), \lambda_{1} \neq \lambda_{2}$, 则 $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}$ 一定不是 $\boldsymbol{A}$ 的特征向 量, 因为若 $\boldsymbol{A}\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)=\lambda\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)$, 则 $\lambda_{1} \boldsymbol{\alpha}_{1}+\lambda_{2} \boldsymbol{\alpha}_{2}=\lambda\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)$, 由于 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无 关, 可得 $\lambda_{1}=\lambda=\lambda_{2}$, 矛盾.
+<p></p>
+C 不正确. 设矩阵 $\boldsymbol{A}=\left(\begin{array}{ll}1 & 1 \\ 0 & 2\end{array}\right)$, 则 $\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{ll}1 & 0 \\ 1 & 2\end{array}\right)$, 易知, $\boldsymbol{\alpha}=\left(\begin{array}{l}1 \\ 0\end{array}\right)$ 是 $\boldsymbol{A}$ 对应于特 征值 $\lambda=1$ 的特征向量,但 $\boldsymbol{\alpha}$ 却不是 $\boldsymbol{A}^{T}$ 的特征向量.
+<p></p>
+D 不正确, 根据特征值和特征向量的定义, 矩阵 $\boldsymbol{A}$ 的特征向量为非零向 量, 故方程组 $(\boldsymbol{A}-\lambda \boldsymbol{I}) \boldsymbol{X}=\mathbf{0}$ 的零向量解不是 $\boldsymbol{A}$ 的特征向量.
+<p></p>
+<b>评注：</b>
+一般结论是: $\boldsymbol{A}$ 与 $\boldsymbol{A}^{-1}$ 有相同的特征向量, 但不一定有相同的特征值; $\boldsymbol{A}$ 与 $A^{\mathrm{T}}$ 有相同的特征值, 但不一定有相同的特征向量; $A$ 的同一特征值对应的特征 向量的任一非零线性组合都是 $A$ 的特征向量, 不同特征值对应的特征向量的非零 线性组合都不是 $\boldsymbol{A}$ 的特征向量.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>45. </b>  
+不是“$-1$ 是 $\boldsymbol{A}$ 的特征值”的充分条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $A^{2}=\boldsymbol{I}$
+<p></p>
+$\mathrm{B}$. $R(\boldsymbol{A}+\boldsymbol{I})<n$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 中每行元素之和为 $-1$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 且 1 是 $\boldsymbol{A}$ 的特征值
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.45").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.45").style.display="none"'> 
+<div id= "divID2.45" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>   对 A, 取 $A=I$, 显然 $A^{2}=I$, 但 $-1$ 不是 $A$ 的特征值, 故应选 A. 
+<p></p>
+对 B, 由 $R(\boldsymbol{A}+\boldsymbol{I})<n$ 知, $|\boldsymbol{A}+\boldsymbol{I}|=0 \Rightarrow|-\boldsymbol{I}-\boldsymbol{A}|=0$, 则 $-1$ 是 $\boldsymbol{A}$ 的特征值; 
+<p></p>
+对 C, 记 $\boldsymbol{\alpha}=(1, \cdots, 1)^{\mathrm{T}}$, 则有 $\boldsymbol{A} \boldsymbol{\alpha}=-\boldsymbol{\alpha},-1$ 是 $\boldsymbol{A}$ 的特征值;
+<p></p>
+对 D, 由条件知，
+$$
+0=|\boldsymbol{I}-\boldsymbol{A}|=\left|(\boldsymbol{I}-\boldsymbol{A})^{\mathrm{T}}\right|=\left|\boldsymbol{I}-\boldsymbol{A}^{\mathrm{T}}\right|=|\boldsymbol{I}+\boldsymbol{A}|=(-1)^{n}|-\boldsymbol{I}-\boldsymbol{A}|,
+$$
+得 $|-\boldsymbol{I}-\boldsymbol{A}|=0$, 所以 $-1$ 是 $\boldsymbol{A}$ 的特征值.
+<p></p>
+<b>评注：</b> 判断数 $\lambda$ 是 $n$ 阶 $\boldsymbol{A}$ 矩阵的特征值的常见方法有: $\boldsymbol{A \alpha}=\lambda \boldsymbol{\alpha} ;|\lambda \boldsymbol{I}-\boldsymbol{A}|=0$; $\lambda \boldsymbol{I}-\boldsymbol{A}$ 不可逆; $R(\lambda \boldsymbol{I}-\boldsymbol{A})<n ; \boldsymbol{A}$ 中每行元素之和为 $\lambda$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>46. </b>  
+已知 $\boldsymbol{A}$ 是 3 阶矩阵, $R(\boldsymbol{A})=1$, 则 $\lambda=0$ $(\qquad)$.
+<p></p>
+$\mathrm{A}$. 必是 $\boldsymbol{A}$ 的二重特征值
+<p></p>
+$\mathrm{B}$. 至少是 $\boldsymbol{A}$ 的二重特征值
+<p></p>
+$\mathrm{C}$. 至多是 $\boldsymbol{A}$ 的二重特征值
+<p></p>
+$\mathrm{D}$. 一重、二重、三重特征值都可能
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.46").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.46").style.display="none"'> 
+<div id= "divID2.46" style= "display:none"> 
+正确答案：B  
+<p></p>
+<b>分析：</b>   因为 $R(0 \boldsymbol{I}-\boldsymbol{A})=R(\boldsymbol{A})=1$, 所以 $(0 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{X}=\mathbf{0}$ 基础解系含有 2 个解向 量, 即 $\boldsymbol{A}$ 对应 $\lambda=0$ 有两个线性无关的特征向量, 根据特征值的代数重数要大于或
+等于其几何重数知, $\lambda=0$ 至少是二重特征值, 也可能是三重. 如 $\boldsymbol{A}=\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)$, $R(\boldsymbol{A})=1 \cdot \lambda=0$ 是三重特征值.
+</div> 
+</li>
+
+
+
+<p></p> 
+<li>
+<b>47. </b>  
+设矩阵 $\boldsymbol{B}=\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{array}\right)$, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 则 $R(\boldsymbol{A}-2 \boldsymbol{I})+R(\boldsymbol{A}-\boldsymbol{I})=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $2$$\qquad$
+$\mathrm{B}$. $3$$\qquad$
+$\mathrm{C}$. $4$$\qquad$
+$\mathrm{D}$. $5$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.47").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.47").style.display="none"'> 
+<div id= "divID2.47" style= "display:none"> 
+正确答案：C  
+<p></p>
+<b>分析：</b>   利用相似矩阵具有相同的秩即可求解. 由 $\boldsymbol{A} \sim \boldsymbol{B}$ 知, $\boldsymbol{A}-2 \boldsymbol{I} \sim \boldsymbol{B}-2 \boldsymbol{I}, \boldsymbol{A}-\boldsymbol{I} \sim$ $\boldsymbol{B}-\boldsymbol{I}$, 易求得 $R(\boldsymbol{B}-2 \boldsymbol{I})=3, R(\boldsymbol{B}-\boldsymbol{I})=1$, 所以
+$$
+R(\boldsymbol{A}-2 \boldsymbol{I})+R(\boldsymbol{A}-\boldsymbol{I})=R(\boldsymbol{B}-2 \boldsymbol{I})+R(\boldsymbol{B}-\boldsymbol{I})=4 .
+$$
+<p></p>
+<b>评注：</b> 
+一般情况有: 设 $g(x)$ 是多项式, 若矩阵 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $g(\boldsymbol{A}) \sim g(\boldsymbol{B})$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>48. </b>  
+设 $n$ 阶方阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值, 则下列说法正确的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A} \sim \boldsymbol{B}$
+<p></p>
+$\mathrm{B}$. 存在对角矩阵 $\boldsymbol{\varLambda}$, 使得 $\boldsymbol{A} \sim \boldsymbol{\varLambda} \sim \boldsymbol{B}$
+<p></p>
+$\mathrm{C}$. $\operatorname{det} \boldsymbol{A}=\operatorname{det} \boldsymbol{B}$
+<p></p>
+$\mathrm{D}$. 存在正交矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{\mathrm{T}} \boldsymbol{A P}=\boldsymbol{B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.48").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.48").style.display="none"'> 
+<div id= "divID2.48" style= "display:none"> 
+正确答案： C 
+<p></p>
+<b>分析：</b>  相似矩阵有相同的特征值, 反之则不成立. 例如二阶单位矩阵 $\boldsymbol{I}$ 和矩
+阵 $\boldsymbol{A}=\left(\begin{array}{ll}1 & 1 \\ 0 & 1\end{array}\right)$ 有相同的特征值 $1$ (二重), 但它们不相似, 因为与单位矩阵相似的 必然是单位矩阵, 所以 A、B、D 均不对. 由于矩阵的行列式等于其所有特征 值的乘积, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值, 所以两矩阵有相同的行列式.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>49. </b>  
+$n$ 阶矩阵 $\boldsymbol{A}$ 能够相似对角化的充要条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}$ 有 $n$ 个不全相同的特征值
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 有 $n$ 个互异的特征值
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 有 $n$ 个不相同的特征向量
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 的任一特征值的重数与其线性无关特征向量的个数相同
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.49").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.49").style.display="none"'> 
+<div id= "divID2.49" style= "display:none"> 
+正确答案： D
+<p></p>
+<b>分析：</b>   A 不正确,如 $\boldsymbol{A}=\boldsymbol{I}, n$ 个特征值全相同,但它与自身相似;
+<p></p>
+B 是矩阵 $\boldsymbol{A}$ 相似于对角矩阵的充分而非必要的条件;
+<p></p>
+C 不正确, 应为 $n$ 个线性无关的特征向量;
+<p></p>
+若 D 成立, 则 $\boldsymbol{A}$ 一定有 $n$ 个线性无关的特征向量, 从而能够相似对角化, 反之亦然.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>50. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, 且 $\boldsymbol{A} \sim \boldsymbol{B}, \boldsymbol{I}$ 为 $n$ 阶单位阵, 则有$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\lambda \boldsymbol{I}-\boldsymbol{A}=\lambda \boldsymbol{I}-\boldsymbol{B}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值和特征向量
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似于同一对角矩阵
+<p></p>
+$\mathrm{D}$. 对任意常数 $t$, 有 $t \boldsymbol{I}-\boldsymbol{A} \sim \boldsymbol{I}-\boldsymbol{B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.50").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.50").style.display="none"'> 
+<div id= "divID2.50" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b>   A 中, $\lambda \boldsymbol{I}-\boldsymbol{A}=\lambda \boldsymbol{I}-\boldsymbol{B} \Leftrightarrow \boldsymbol{A}=\boldsymbol{B}$, 显然不对;
+<p></p>
+B 不对,相似矩阵有相同的特征值但末必有相同的特征向量;
+<p></p>
+C 不对, $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 不一定相似于对角形;
+<p></p>
+对 D, 由 $\boldsymbol{A}=\boldsymbol{P}^{-1} B \boldsymbol{B} \Rightarrow t \boldsymbol{I}-\boldsymbol{A}=\boldsymbol{P}^{-1}(t \boldsymbol{I}-\boldsymbol{B}) \boldsymbol{P}$ 正确.
+</div> 
+</li>
 
 
 
