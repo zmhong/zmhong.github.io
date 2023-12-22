@@ -1026,15 +1026,67 @@ $$
 
 <p></p> 
 <li>
-<b>20. </b>  
-
+<b>20. </b>  设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $3$ 阶方阵, $|\boldsymbol{A}|=-2, \boldsymbol{A}^{3}-\boldsymbol{A B A}+2 \boldsymbol{I}=\boldsymbol{O}$, 则 $|\boldsymbol{A}-\boldsymbol{B}|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $2$$\qquad$
+$\mathrm{B}$. $-2$$\qquad$
+$\mathrm{C}$. $\frac{1}{2}$ $\qquad$ 
+$\mathrm{D}$. $-\frac{1}{2}$
 <br><br>
 <input type=button value= "显示答案" onclick='document.getElementById("divID2.20").style.display="block"'> 
 <input type=button value= "收起答案" onclick='document.getElementById("divID2.20").style.display="none"'> 
 <div id= "divID2.20" style= "display:none"> 
-
+正确答案： B
+<p></p>
+<b>分析：</b>  由 $\boldsymbol{A}^{3}-\boldsymbol{A B A}+2 \boldsymbol{I}=\boldsymbol{O}$, 可得 $\boldsymbol{A}(\boldsymbol{A}-\boldsymbol{B}) \boldsymbol{A}=-2 \boldsymbol{I}$, 两边取行列式得,
+$$
+|\boldsymbol{A}||\boldsymbol{A}-\boldsymbol{B}||\boldsymbol{A}|=|-2 \boldsymbol{I}|=(-2)^{3},
+$$
+故 $|\boldsymbol{A}-\boldsymbol{B}|=\frac{-8}{(-2)^{2}}=-2$, 故选 B.
 </div> 
 </li>
+
+<p></p> 
+<li>
+<b>21. </b>  设 $n$ 阶行列式 $D_{n}=\left|\begin{array}{ccccc}1 & a & a & \cdots & a \\ a & 1 & a & \cdots & a \\ a & a & 1 & \cdots & a \\ \vdots & \vdots & \vdots & & \vdots \\ a & a & a & \cdots & 1\end{array}\right|=0$, 而 $n-1$ 阶行列式 $D_{n-1} \neq 0$, 则 $a=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1$ $\qquad$ 
+$\mathrm{B}$. $-1$ $\qquad$ 
+$\mathrm{C}$. $\frac{1}{n-1}$ $\qquad$ 
+$\mathrm{D}$. $\frac{1}{1-n}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.21").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.21").style.display="none"'> 
+<div id= "divID2.21" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b>
+$$
+\begin{aligned}
+D_{n} & =\left|\begin{array}{ccccc}
+1+(n-1) a & 1+(n-1) a & 1+(n-1) a & \cdots & 1+(n-1) a \\
+a & 1 & a & \cdots & a \\
+a & a & 1 & \cdots & a \\
+\vdots & \vdots & \vdots & & \vdots \\
+a & a & a & \cdots & 1
+\end{array}\right| \\
+& = [1+(n-1) a]\left|\begin{array}{ccccc}
+1 & 1 & 1 & \cdots & 1 \\
+0 & 1-a & 0 & \cdots & a \\
+0 & 0 & 1-a & \cdots & a \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & \cdots & 1-a
+\end{array}\right|=[1+(n-1) a](1-a)^{n-1}.
+\end{aligned}
+$$
+若 $a=1$, 则 $D_{n-1}=0$, 故 $a=\frac{1}{1-n}$. 选 D.
+</div> 
+</li>
+
+
+
+
+
 
 </ul>
 <a href="#C0">返回顶部</a>
