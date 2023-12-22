@@ -1325,6 +1325,275 @@ $$
 </div> 
 </li>
 
+<p></p> 
+<li>
+<b>31. </b>  
+已知向量组(I): $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 与 (II) : $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{t}, \boldsymbol{\alpha}_{s+1}, \boldsymbol{\alpha}_{s+1}, \cdots$, $\boldsymbol{\alpha}_{s+1}$, 若向量组的秩 $R($ I $)=p, R($ II $)=q$, 则下列条件中不能判定(I)是(II)的最大线性无关组的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $p=q$, (II)可由 (I)线性表出
+<p></p>
+$\mathrm{B}$. $s=q$, (I)与(II)为等价向量组
+<p></p>
+$\mathrm{C}$. $p=q$, (I)线性无关
+<p></p>
+$\mathrm{D}$. $p=q=s$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.31").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.31").style.display="none"'> 
+<div id= "divID2.31" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>  A 中仅凭 $p=q$ 不能保证 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 所以不能判定(I)是(II) 的最大线性无关组. 其余情况均能根据最大无关组的定义确定是正确的.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>32. </b>  
+设线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$ 有 $n$ 个未知量, $m$ 个方程, 且 $R(\boldsymbol{A})=r$, 则此方程组$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $r=m$ 时, 有解
+<p></p>
+$\mathrm{B}$. $r=n$ 时, 有唯一解
+<p></p>
+$\mathrm{C}$. $m=n$ 时, 有唯一解
+<p></p>
+$\mathrm{D}$. $r<n$ 时, 有无穷解
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.32").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.32").style.display="none"'> 
+<div id= "divID2.32" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>  已知 $\boldsymbol{A}$ 是 $m \times n$ 矩阵.
+<br><br>
+$\mathrm{A}$. 若 $R(\boldsymbol{A})=m$, 则必有 $m$ 阶子式不为零,而 $\overline{\boldsymbol{A}}$中不存在 $m+1$ 阶子式, 所以 $R(\overline{\boldsymbol{A}})=m$, 故方程组必有解. 且若 $r=m=n$, 方程组有唯 一解; 若 $r=m<n$, 方程组有无穷多解. 所以 A 正确.
+<br><br>
+$\mathrm{B}$. 若 $R(\boldsymbol{A})=n$, 自然有 $m \geqslant n$. 若 $m=n$, 则 $\boldsymbol{A}$ 是 $n$ 阶可逆矩阵, 由克拉默法 则, 方程组有唯一解. 若 $m>n$, 且 $R(\overline{\boldsymbol{A}})=n=R(\boldsymbol{A})$, 则因 $\boldsymbol{A}$ 的列向量线性无关, 此 时方程组有唯一解.但若 $m>n$, 且 $R(\overline{\boldsymbol{A}})>n$ 时,方程组就无解. 所以 B 不正确. 要注意 $R(\boldsymbol{A})=n$ 时,不能保证 $R(\overline{\boldsymbol{A}})=n$ 必成立.
+<br><br>
+$\mathrm{C}$ 、$\mathrm{D}$ 两种条件下都可能有无解的情况, 故不正确.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>33. </b>  
+设 $n$ 维列向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\mathrm{m}}(m<n)$ 线性无关, 则 $n$ 维列向量组 $\boldsymbol{\beta}_{1}$, $\boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 线性无关的充分必要条件为$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性表出
+<p></p>
+$\mathrm{B}$. 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表出
+<p></p>
+$\mathrm{C}$. 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 与向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 等价
+<p></p>
+$\mathrm{D}$. 矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\mathrm{m}}\right)$ 与矩阵 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}\right)$ 等价
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.33").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.33").style.display="none"'> 
+<div id= "divID2.33" style= "display:none"> 
+正确答案：D  
+<p></p>
+<b>分析1：</b> $\mathrm{A}$ 是 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关的充分条件而非必要条件.
+<br><br>
+$\mathrm{B}$. 由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表出不能保证 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots$, $\boldsymbol{\beta}_{m}$ 线性无关.
+<br><br>
+$\mathrm{C}$. 是 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关的充分条件而非必要条件. 例如，取 $m=2$, $\boldsymbol{\alpha}_{1}=(1,0,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(0,1,0)^{\mathrm{T}} ; \boldsymbol{\beta}_{1}=(0,1,0)^{\mathrm{T}}, \boldsymbol{\beta}_{2}=(0,0,1)^{\mathrm{T}}$. 显然这两个向 量组都线性无关, 但它们却不等价.
+<br><br>
+$\mathrm{D}$. 若矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}\right)$ 与矩阵 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}\right)$ 等价, 则 $R(\boldsymbol{A})=$ $R(\boldsymbol{B})=m$, 所以 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关. 反之, 若 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关, 则 $R(\boldsymbol{B})=$ $m=R(\boldsymbol{A})$, 同型矩阵 $\boldsymbol{A}, \boldsymbol{B}$ 有相同的秩, 所以 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价. 故 D 正确.
+<br><br>
+<b>分析2：</b> 设 $\boldsymbol{\alpha}_{1}=(1,0,0,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(0,1,0,0)^{\mathrm{T}}, \boldsymbol{\beta}_{1}=(0,0,1,0)^{\mathrm{T}}$, $\boldsymbol{\beta}_{2}=(0,0,0,1)^{\mathrm{T}}$, 则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}$ 线性无关, 但 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}$ 不能 互相线性表出, 故排除 A, B, C.
+<br><br>
+<b>评注：</b>矩阵等价与向量组等价的区别:
+<br><br>
+矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}\right)$ 与 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}\right)$ 等价是指这两个矩阵能够通过 初等变换互化,其充分必要条件为 $R(\boldsymbol{A})=R(\boldsymbol{B})$.
+<br><br>
+向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\mathrm{m}}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 等价是指这两个向量组能㿟相互线性表 出, 其充分必要条件为 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})=R(\boldsymbol{B})$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>34. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为满足 $\boldsymbol{A B}=\boldsymbol{O}$ 的任意两个非零矩阵, 则必有$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}$ 的列向量线性相关, $\boldsymbol{B}$ 的行向量线性相关
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 的列向量线性相关, $\boldsymbol{B}$ 的列向量线性相关
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 的行向量线性相关, $\boldsymbol{B}$ 的行向量线性相关
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 的行向量线性相关, $\boldsymbol{B}$ 的列向量线性相关
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.34").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.34").style.display="none"'> 
+<div id= "divID2.34" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b> 设 $\boldsymbol{A}$ 是 $m \times s$ 矩阵, $\boldsymbol{B}$ 是 $s \times n$ 矩阵.把矩阵 $\boldsymbol{B}$ 按列分块 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right)$, 由题设得 $\boldsymbol{A B}=\boldsymbol{A}\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right)=\left(\boldsymbol{A} \boldsymbol{\beta}_{1}, \boldsymbol{A} \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{A} \boldsymbol{\beta}_{n}\right)=\boldsymbol{O}$, 即
+$$
+\boldsymbol{A} \boldsymbol{\beta}_{i}=\mathbf{0} \quad(i=1,2, \cdots, n) .
+$$
+$\boldsymbol{\beta}_{i}(i=1,2, \cdots, n)$ 为线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的解. 由 $\boldsymbol{B} \neq \boldsymbol{O}$ 知 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 有非零解, 所以 $R(\boldsymbol{A})<s$, 所以 $\boldsymbol{A}$ 的列向量组线性相关. 由 $\boldsymbol{A B}=\boldsymbol{O}$ 取转置, 类似可得 $\boldsymbol{B}$ 的行向量组线性相关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>35. </b>  
+设向量组(I)$\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_r$ 可由向量组(II): $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_s$, 线性表出, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 当 $r<s$ 时, 向量组 (II)线性相关
+<p></p>
+$\mathrm{B}$. 当 $r>s$ 时, 向量组 (II) 线性相关
+<p></p>
+$\mathrm{C}$. 当 $r<s$ 时, 向量组 (I) 线性相关
+<p></p>
+$\mathrm{D}$. 当 $r>s$ 时, 向量组 (I)线性相关
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.35").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.35").style.display="none"'> 
+<div id= "divID2.35" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b> 向量组(I)可由向量组(II)线性表出, 则向量组(I)的秩不超过向量 组(II)的秩, 而向量组(II)的秩不超过 $s$, 所以当 $r>s$ 时, 向量组(I)的秩小于向 量组向量的个数, 故向量组(I)线性相关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>36. </b>  
+齐次线性方程组 $\left\{\begin{array}{l}\lambda x_{1}+x_{2}+\lambda^{2} x_{3}=0, \\ x_{1}+\lambda x_{2}+x_{3}=0, \\ x_{1}+x_{2}+\lambda x_{3}=0\end{array}\right.$ 的系数矩阵记为 $\boldsymbol{A}$, 若存在三阶 矩阵 $\boldsymbol{B} \neq \boldsymbol{O}$, 使得 $\boldsymbol{A B}=\boldsymbol{O}$, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\lambda=-2$ 且 $|\boldsymbol{B}|=0$
+<p></p>
+$\mathrm{B}$. $\lambda=-2$ 且 $|\boldsymbol{B}| \neq 0$
+<p></p>
+$\mathrm{C}$. $\lambda=1$ 且 $|\boldsymbol{B}|=0$
+<p></p>
+$\mathrm{D}$. $\lambda=1$ 且 $|\boldsymbol{B}| \neq 0$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.36").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.36").style.display="none"'> 
+<div id= "divID2.36" style= "display:none"> 
+正确答案：C  
+<p></p>
+<b>分析：</b> 由 $\boldsymbol{A B}=\boldsymbol{O}$ 知 $R(\boldsymbol{A})+R(\boldsymbol{B}) \leqslant 3$, 因 $\boldsymbol{B} \neq \boldsymbol{O}$, 故 $R(\boldsymbol{A}) \leqslant 2$. 由 $|\boldsymbol{A}|=\left|\begin{array}{ccc}\lambda & 1 & \lambda^{2} \\ 1 & \lambda & 1 \\ 1 & 1 & \lambda\end{array}\right|=1-\lambda^{2}=0$, 故 $\lambda=\pm 1$, 且有 $R(\boldsymbol{B}) \leqslant 2$, 则 $|\boldsymbol{B}|=0$, 所以 C 正确. 
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>37. </b>  
+设 $\boldsymbol{\alpha}_{1}=\left(\begin{array}{l}a_{1} \\ a_{2} \\ a_{3}\end{array}\right), \boldsymbol{\alpha}_{2}=\left(\begin{array}{l}b_{1} \\ b_{2} \\ b_{3}\end{array}\right), \boldsymbol{\alpha}_{3}=\left(\begin{array}{l}c_{1} \\ c_{2} \\ c_{3}\end{array}\right)$, 则三条直线 $a_{i} x+b_{i} y+c_{i}=0$ (其中$\left.a_{i}^{2}+b_{i}^{2} \neq 0, i=1,2,3\right)$ 交于一点的充分必要条件为$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关
+<p></p>
+$\mathrm{C}$. $R\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}\right)=R\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}\right)$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.37").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.37").style.display="none"'> 
+<div id= "divID2.37" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b> 将三条直线方程组成的方程组用向量形式来表示, 即为 $x \boldsymbol{\alpha}_{1}+y \boldsymbol{\alpha}_{2}=$ $-\boldsymbol{\alpha}_{3}$, 则
+三直线交于一点 $\Leftrightarrow$ 方程组有唯一解 $\Leftrightarrow \boldsymbol{\alpha}_{3}$ 能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 唯一线性表出 $\Leftrightarrow \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
+<p></p>
+<b>评注：</b> 将几何问题转化为代数问题是解决该类题目的关键.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>38. </b>  
+设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵, 线性方程组(I) : $\boldsymbol{A X}=\boldsymbol{b}$ 对应的齐次线性方程组为 (II) : $\boldsymbol{A X}=\mathbf{0}$, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. (I) 有无穷多解 $\Rightarrow$ (II) 仅有零解
+<p></p>
+$\mathrm{B}$. (I)有无穷多解 $\Rightarrow$ (II) 有无穷多解
+<p></p>
+$\mathrm{C}$. (II) 仅有零解 $\Rightarrow$ (I) 有唯一解
+<p></p>
+$\mathrm{D}$. (II)有非零解 $\Rightarrow$ (I) 有无穷多解
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.38").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.38").style.display="none"'> 
+<div id= "divID2.38" style= "display:none"> 
+正确答案：B  
+<p></p>
+<b>分析：</b> 由非齐次方程组解的结构知, B 是正确的, A 不正确; C 与 D 不正确的原因是(II)有解时(I)可能无解.
+<p></p>
+<b>评注：</b>非齐次方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{b}$ 有解的充分必要条件是 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{b})$, 与齐次 方程组 $\boldsymbol{A X}=\mathbf{0}$ 有多少解无关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>39. </b>  
+设有齐次线性方程组 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 和 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$, 其中 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $m \times n$ 矩阵, 现有 4 个命题:
+<p></p>
+(1) 若 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 的解均为 $\boldsymbol{B X}=\mathbf{0}$ 的解, 则 $R(\boldsymbol{A}) \geqslant R(\boldsymbol{B})$;
+<p></p>
+(2) 若 $R(\boldsymbol{A}) \geqslant R(\boldsymbol{B})$, 则 $\boldsymbol{A X}=\mathbf{0}$ 的解均为 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 的解;
+<p></p>
+(3) 若 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 与 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 同解, 则 $R(\boldsymbol{A})=R(\boldsymbol{B})$;
+<p></p>
+(4) 若 $R(\boldsymbol{A})=R(\boldsymbol{B})$, 则 $\boldsymbol{A X}=\mathbf{0}$ 与 $\boldsymbol{B X}=\mathbf{0}$ 同解.
+<p></p>
+以上命题正确的是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. (1) (2)$\quad$
+$\mathrm{B}$. (1) (3)$\quad$
+$\mathrm{C}$. (2) (4)$\quad$
+$\mathrm{D}$. (3) (4)
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.39").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.39").style.display="none"'> 
+<div id= "divID2.39" style= "display:none"> 
+正确答案：B 
+<p></p>
+<b>分析：</b> 若 $\boldsymbol{A X}=\mathbf{0}$ 的解均为 $\boldsymbol{B X}=\mathbf{0}$ 的解, 则 $\boldsymbol{A X}=\mathbf{0}$ 的解空间的维数不超过 $\boldsymbol{B X}=\mathbf{0}$ 的解空间的维数, 即 $n-R(\boldsymbol{A}) \leqslant n-R(\boldsymbol{B})$, (1)正确. 而根据两个解空间的维数的大小关系不能得出其对应的齐次线性方程组的解集的包含关系, 所以(2)不成立, 即 A, C 不对. 只需考虑 B, D 两项的正确性. 显然(4)不成立, 故选 B.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>40. </b>  
+设 $n$ 阶矩阵 $\boldsymbol{A}$ 的伴随矩阵 $\boldsymbol{A}^{*} \neq \boldsymbol{O}$, 若 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \boldsymbol{\xi}_{3}, \boldsymbol{\xi}_{4}$ 是非齐次线性方程 组 $\boldsymbol{A X}=\boldsymbol{b}$ 的互不相等的解, 则对应的齐次线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的基础解系$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 不存在
+<p></p>
+$\mathrm{B}$. 仅含一个非零向量
+<p></p>
+$\mathrm{C}$. 含有两个线性无关的向量
+<p></p>
+$\mathrm{D}$. 含有三个线性无关的向量
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.40").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.40").style.display="none"'> 
+<div id= "divID2.40" style= "display:none"> 
+正确答案： B 
+<p></p>
+<b>分析：</b> 矩阵与其伴随矩阵的秩之间的关系为
+$$
+R\left(\boldsymbol{A}^{*}\right)= \begin{cases}0, & R(\boldsymbol{A})<n-1, \\ 1, & R(\boldsymbol{A})=n-1, \\ n, & R(\boldsymbol{A})=n .\end{cases}
+$$
+因为 $\boldsymbol{A}^{*} \neq \boldsymbol{O}$, 所以 $R\left(\boldsymbol{A}^{*}\right) \neq 0$, 则 $R(\boldsymbol{A})=n$ 或 $n-1$. 因为线性方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{b}$ 有互 不相等的解 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \boldsymbol{\xi}_{3}, \boldsymbol{\xi}_{4}$, 即解不唯一, 则矩阵 $\boldsymbol{A}$ 不是满秩矩阵, 即 $R(\boldsymbol{A}) \neq n$, 从 而 $R(\boldsymbol{A})=n-1$. 故齐次线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的基础解系仅含一个解向量.
+</div> 
+</li>
+
 
 
 
