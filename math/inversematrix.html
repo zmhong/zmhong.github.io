@@ -784,7 +784,7 @@ def decrypt_hill(size=['2','3','4']):
     if size=='2':
         pretty_print(html("<h>请输入您已加密的信息和密钥矩阵:<h>"))
         @interact
-        def two_decrypt(coded_text=input_box(default='"HSVAKSCYLENB"',label="Message:"), a=input_box(default=1), b=input_box(default=3), c=input_box(default=3), d=input_box(default=4)):
+        def two_decrypt(coded_text=input_box(default='"JNZDZQHSSIATAA"',label="Message:"), a=input_box(default=1), b=input_box(default=3), c=input_box(default=3), d=input_box(default=4)):
             R = IntegerModRing(26)
             M = MatrixSpace(R,2,2)
             a = M([[a,b],[c,d]])
