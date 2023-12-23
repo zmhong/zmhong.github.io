@@ -718,7 +718,7 @@ def hill_cipher(Size=['2','3','4']):
     if Size=='3':
         pretty_print(html("<h>请输入您已加密的信息和密钥矩阵:<h>"))
         @interact
-        def three_matrix(message=input_box(default='"Alexis smells"',label = "Message:"), a=input_box(default=1), b=input_box(default=2), c=input_box(default=3), d=input_box(default=5), e=input_box(default=2), f=input_box(default=6), g=input_box(default=7), h=input_box(default=9), i=input_box(default=9)):
+        def three_matrix(message=input_box(default='"Linear Algebra A"',label = "Message:"), a=input_box(default=1), b=input_box(default=2), c=input_box(default=3), d=input_box(default=5), e=input_box(default=2), f=input_box(default=6), g=input_box(default=7), h=input_box(default=9), i=input_box(default=9)):
             S = AlphabeticStrings()
             E = HillCryptosystem(S,3)
             R = IntegerModRing(26)
