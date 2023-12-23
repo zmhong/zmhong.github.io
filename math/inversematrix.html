@@ -1,0 +1,681 @@
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<title>Linear Algebra</title>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+$1.3$ 逆矩阵
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="C0"><strong>目录:</strong></a><br></h2>
+
+<ul>
+<li><a href="#C1">1.3.1 逆矩阵的概念与性质</a></li>
+<li><a href="#C2">1.3.2 用行初等变换求逆矩阵</a></li>
+<li><a href="#C3">在线求解</a></li>
+<li><a href="#C3">华罗庚精神</a></li>
+</ul>
+
+
+  
+
+<h2><a name="C1">$1.3.1$ 逆矩阵的概念与性质</a></h2>
+
+
+<ul>
+
+<p style="text-indent: 2em;">
+前面我们定义了矩阵的加法、减法和乘法三种运算. 自然地, 欲在矩阵中引入类似于“除法”的概念, 其关键是要引入类似于数的倒数的概念. 
+</p> 
+<p style="text-indent: 2em;">
+对于任意方阵 $\boldsymbol{A}$, 有 $\boldsymbol{A} \boldsymbol{I}=\boldsymbol{I} \boldsymbol{A}=\boldsymbol{A}$. 所以, 从矩阵乘法的角度来看, 单位矩阵 $\boldsymbol{I}$ 类似于数 $1$ 的作用. 一个数 $a \neq 0$ 的倒数 $a^{-1}$ 可用 $a a^{-1}=1$ 或 $a^{-1} a=1$ 来刻画. 类似地, 我们引入逆矩阵的概念.
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 若存在 $n$ 阶方阵 $\boldsymbol{B}$, 使得 $\boldsymbol{A} \boldsymbol{B}=\boldsymbol{B} \boldsymbol{A}=\boldsymbol{I}$, 则称 $\boldsymbol{A}$ 是可逆矩阵, 简称 $\boldsymbol{A}$ 可逆, 并称 $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的逆矩阵.
+</p>
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>设 $\boldsymbol {A}$ 是可逆矩阵, 则它的逆矩阵是惟一的.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
+设 $\boldsymbol{A}$ 有两个逆矩阵 $\boldsymbol{B}$ 和 $\boldsymbol{C}$, 即
+$$
+\boldsymbol{A} \boldsymbol{B}=\boldsymbol{B} \boldsymbol{A}=\boldsymbol{I}, \boldsymbol{A} \boldsymbol{C}=\boldsymbol{C} \boldsymbol{A}=\boldsymbol{I}.
+$$
+于是
+$$
+\boldsymbol{B}=\boldsymbol{B} \boldsymbol{I}=\boldsymbol{B}(\boldsymbol{A} \boldsymbol{C})=(\boldsymbol{B} \boldsymbol{A}) \boldsymbol{C}=\boldsymbol{I}\boldsymbol{C}=\boldsymbol{C} .
+$$
+故可逆矩阵的逆矩阵是惟一的.
+</p>
+</div> 
+</p>
+
+<p style="text-indent: 2em;">
+由定义可知, 若 $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的逆矩阵, 则 $\boldsymbol{A}$ 亦是 $\boldsymbol{B}$ 的逆矩阵, 它们互为逆矩阵.
+</p>
+<p style="text-indent: 2em;">
+若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{A}$ 的逆矩阵存在, 记为 $\boldsymbol{A}^{-1}$, 且有 $\boldsymbol{A}\boldsymbol{A}^{-1}=\boldsymbol{A}^{-1} \boldsymbol{A}=\boldsymbol{I}$.
+</p>
+<p style="text-indent: 2em;">
+在后面的 $\S 2.2$ 中我们将证明: 若 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, 且 $\boldsymbol{A B}=\boldsymbol{I}$ (或 $\boldsymbol{B} \boldsymbol{A}=\boldsymbol{I}$ ), 则 $\boldsymbol{B}=\boldsymbol{A}^{-1}$. 这样, 检验矩阵可逆时, 就不必按定义证明 $\boldsymbol{A B}=\boldsymbol{I}$ 且 $\boldsymbol{B} \boldsymbol{A}=\boldsymbol{I}$, 而只要证明 $\boldsymbol{AB}=\boldsymbol{I}$ (或 $\boldsymbol{BA}=\boldsymbol{I}$ ) 就行了.
+</p>
+<p style="text-indent: 2em;">
+显然, $\boldsymbol{I}^{-1}=\boldsymbol{I}$. 由逆矩阵的定义易得对角矩阵的逆矩阵. 设
+$$
+\boldsymbol{A}=\operatorname{diag}\left(d_{1}, d_{2}, \cdots, d_{n}\right), 
+$$
+其中$d_{i} \neq 0$ $(i=1,2, \cdots, n)$, 则
+$$
+\boldsymbol{A}^{-1}=\operatorname{diag}\left(\frac{1}{d_{1}}, \frac{1}{d_{2}}, \cdots, \frac{1}{d_{n}}\right).
+$$
+</p>
+<p style="text-indent: 2em;">
+要注意的是, 并非每个矩阵都有逆矩阵, 例如矩阵 $\left(\begin{array}{ll}0 & 0 \\ 1 & 1\end{array}\right)$ 不可能有逆矩阵, 这是 因为它与任何二阶矩阵的乘积都不可能为单位矩阵.
+</p>
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
+设 $\boldsymbol{A}=\left(\begin{array}{ll}0 & 1 \\ 1 & 2\end{array}\right)$, 求 $\boldsymbol{A}$ 的逆矩阵. 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+用待定系数法, 令 $\boldsymbol{A}^{-1}=\left(\begin{array}{ll}a & b \\ c & d\end{array}\right)$, 则可得
+$$
+\boldsymbol{A} \boldsymbol{A}^{-1}=\left(\begin{array}{ll}
+0 & 1 \\
+1 & 2
+\end{array}\right)\left(\begin{array}{ll}
+a & b \\
+c & d
+\end{array}\right)=\left(\begin{array}{ll}
+1 & 0 \\
+0 & 1
+\end{array}\right)=\boldsymbol{I},
+$$
+所以
+$$
+\left(\begin{array}{cc}
+c & d \\
+a+2 c & b+2 d
+\end{array}\right)=\left(\begin{array}{cc}
+1 & 0 \\
+0 & 1
+\end{array}\right).
+$$
+因此可得线性方程组
+$$
+\left\{\begin{array}{l}
+c=1, \\
+d=0, \\
+a+2 c=0, \\
+b+2 d=1 .
+\end{array}\right.
+$$
+解得 $a=-2, b=1, c=1, d=0$. 故
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{cc}
+-2 & 1 \\
+1 & 0
+\end{array}\right).
+$$
+</p>
+</div> 
+</p>
+
+用待定系数法求 $n$ 阶矩阵的逆矩阵, 当 $n$ 较大时, 工作量很大, 并不方便, 后面将介绍简便的方法. 在介绍其他方法之前, 先研究逆矩阵的性质.
+
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶可逆矩阵, 数 $\lambda \neq 0$, 则
+<br>
+$1^{\circ}$ $\boldsymbol{A}^{-1}$ 可逆, 且 $\left(\boldsymbol{A}^{-1}\right)^{-1}=\boldsymbol{A}$;
+<br>
+$2^{\circ}$ $\lambda \boldsymbol{A}$ 可逆, 且 $(\lambda \boldsymbol{A})^{-1}=\frac{1}{\lambda} \boldsymbol{A}^{-1}$;
+<br>
+$3^{\circ}$ $\boldsymbol{AB}$ 可逆, 且 $(\boldsymbol{AB})^{-1}=\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}$;
+<br>
+$4^{\circ}$ $\boldsymbol{A}^{\mathrm{T}}$ 可逆, 且 $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
+<div id= "divIDthm2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=#FF5809><b>证明：</b></font>
+我们证明其中的 $3^{\circ}$ 和 $4^{\circ}$.
+<br>
+$3^{\circ}$ 因为 $(\boldsymbol{AB})\left(\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}\right)=A\left(B \boldsymbol{B}^{-1}\right) \boldsymbol{A}^{-1}=\boldsymbol{AI} \boldsymbol{A}^{-1}=\boldsymbol{A}\boldsymbol{A}^{-1}=\boldsymbol{I}$, 所以 $\boldsymbol{AB}$ 可 逆, 且 $(\boldsymbol{AB})^{-1}=\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}$.
+<br>
+$4^{\circ}$ 因为 $\boldsymbol{A}^{\mathrm{T}}\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}=\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right)^{\mathrm{T}}=\boldsymbol{I}^{\mathrm{T}}=\boldsymbol{I}$, 所以 $\boldsymbol{A}^{\mathrm{T}}$ 可逆, 且 $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$. 
+</p>
+</div> 
+</p>
+
+
+
+<p style="text-indent: 2em;">
+对于上述性质中的 $3^{\circ}$, 由数学归纳法不难推广到 $s$ 个矩阵的乘积. 若 $\boldsymbol{A}_{1}, \boldsymbol{A}_{2}, \cdots, \boldsymbol{A}_{s}$ 均为同阶可逆矩阵, 则 $\left(\boldsymbol{A}_{1} \boldsymbol{A}_{2} \cdots \boldsymbol{A}_{s}\right)^{-1}=\boldsymbol{A}_{s}^{-1} \boldsymbol{A}_{s-1}^{-1} \cdots \boldsymbol{A}_{1}^{-1}$.
+</p>
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>设方阵 $\boldsymbol{B}$ 为幂等矩阵 (即 $\boldsymbol{B}^{2}=\boldsymbol{B}$, 从而 $\forall k \in \mathbf{N}^{*}$, $\boldsymbol{B}^{k}=\boldsymbol{B}$), $\boldsymbol{A}=\boldsymbol{I}+\boldsymbol{B}$, 证明: $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{-1}=\frac{1}{2}(3 \boldsymbol{I}-\boldsymbol{A})$.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
+$$
+\boldsymbol{A}\left(\frac{1}{2}(3 \boldsymbol{I}-\boldsymbol{A})\right)=\frac{1}{2}\left(3 \boldsymbol{A}-\boldsymbol{A}^{2}\right),
+$$
+而
+$$
+\boldsymbol{A}^{2}=(\boldsymbol{I}+\boldsymbol{B})^{2}=\boldsymbol{I}+2 \boldsymbol{B}+\boldsymbol{B}^{2}=\boldsymbol{I}+3 \boldsymbol{B}=\boldsymbol{I}+3(\boldsymbol{A}-\boldsymbol{I})=3 \boldsymbol{A}-2 \boldsymbol{I},
+$$
+于是
+$$
+\boldsymbol{A}\left(\frac{1}{2}(3 \boldsymbol{I}-\boldsymbol{A})\right)=\frac{1}{2}(3 \boldsymbol{A}-3 \boldsymbol{A}+2 \boldsymbol{I})=\boldsymbol{I},
+$$
+故 $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{-1}=\frac{1}{2}(3 \boldsymbol{I}-\boldsymbol{A})$.
+</p>
+</div> 
+</p>
+
+
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>设矩阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{2}-3 \boldsymbol{A}-10 \boldsymbol{I}=\boldsymbol{O}$, 证明: $\boldsymbol{A}, \boldsymbol{A}-4 \boldsymbol{I}$ 都可逆, 并求它们的逆矩阵.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
+由 $\boldsymbol{A}^{2}-3\boldsymbol{A}-10 \boldsymbol{I}=\boldsymbol{O}$ 得 $\boldsymbol{A}(\boldsymbol{A}-3 \boldsymbol{I})=10 \boldsymbol{I}$, 即
+$$
+\boldsymbol{A}\left(\frac{1}{10}(\boldsymbol{A}-3 \boldsymbol{I})\right)=\boldsymbol{I},
+$$
+故由逆矩阵的定义知, $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{-1}=\frac{1}{10}(\boldsymbol{A}-3 \boldsymbol{I})$.
+<br>
+$\quad\,\,\,$再由 $\boldsymbol{A}^{2}-3 \boldsymbol{A}-10 \boldsymbol{I}=\boldsymbol{O}$ 得 $(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-4 \boldsymbol{I})=6 \boldsymbol{I}$, 即
+$$
+\frac{1}{6}(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-4 \boldsymbol{I})=\boldsymbol{I},
+$$
+故 $\boldsymbol{A}-4 \boldsymbol{I}$ 可逆, 且 $(\boldsymbol{A}-4 \boldsymbol{I})^{-1}=\frac{1}{6}(\boldsymbol{A}+\boldsymbol{I})$.
+</p>
+</div> 
+</p>
+
+
+<p style="text-indent: 2em;">
+由初等变换可逆及其与逆变换的对应关系可知, 初等矩阵是可逆的, 且逆矩阵仍为初等矩阵, 事实上,
+$$
+\boldsymbol{E}_{i j}^{-1}=\boldsymbol{E}_{i j} ; \boldsymbol{E}_{i}^{-1}(c)=\boldsymbol{E}_{i}\left(\frac{1}{c}\right), c \neq 0 ; \boldsymbol{E}_{i j}^{-1}(c)=\boldsymbol{E}_{i j}(-c) .
+$$
+</p>
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则下列各命题是等价的:
+<br>
+$1^{\circ}$ $\boldsymbol{A}$ 是可逆的;
+<br>
+$2^{\circ}$ 齐次线性方程组 $\boldsymbol{AX}=\boldsymbol{0}$ 只有零解;
+<br>
+$3^{\circ}$ $\boldsymbol{A}$ 与 $\boldsymbol{I}$ 行等价;
+<br>
+$4^{\circ}$ $\boldsymbol{A}$ 可表示为有限个初等矩阵的乘积.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm3").style.display="none"'> 
+<div id= "divIDthm3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
+$1^{\circ} \Rightarrow 2^{\circ}$ 设 $\boldsymbol{A}$ 是可逆的且 $\boldsymbol{X}$ 是 $\boldsymbol{AX}=\boldsymbol{0}$ 的解, 则
+$$
+\boldsymbol{X}=\boldsymbol{IX}=\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{A}^{-1}(\boldsymbol{AX})=\boldsymbol{A}^{-1} \boldsymbol{0}=\boldsymbol{0},
+$$
+因此, $\boldsymbol{AX}=\boldsymbol{0}$ 只有零解.
+<br>
+<br>
+$2^{\circ} \Rightarrow 3^{\circ}$ 若齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 只有零解, 设
+$$
+\boldsymbol{A} \stackrel{\text{ 行初等变换 }}{\longrightarrow{}\cdots\longrightarrow{}} \boldsymbol{B}\, (\boldsymbol{B} \text{为行阶梯形矩阵} ),
+$$
+则 $\boldsymbol{A X}=\mathbf{0}$ 与 $\boldsymbol{B X}=\boldsymbol{0}$ 同解. 若 $\boldsymbol{B}$ 有一对角元为零, 则 $\boldsymbol{B}$ 的最后一行元全为零, 这样 $\boldsymbol{AX}=\boldsymbol{0}$ 同解于未知量个数多于方程个数的线性方程组. 于是 $\boldsymbol{AX}=\boldsymbol{0}$ 有非零解, 这与已知矛盾. 因而行阶梯形矩阵 $\boldsymbol{B}$ 的对角元全为非零, 从而 $\boldsymbol{A}$ 经过行初等变换可化为的简化行阶梯形矩阵是 $\boldsymbol{I}$, 即 $\boldsymbol{A}$ 与 $\boldsymbol{I}$ 行等价.
+<br>
+<br>
+$3^{\circ} \Rightarrow 4^{\circ}$ 因为 $\boldsymbol{A}$ 与 $\boldsymbol{I}$ 行等价, 所以 $\boldsymbol{A}$ 经过行初等变换可以得到 $\boldsymbol{I}$. 又因对 $\boldsymbol{A}$ 施以行初等变换相当于用初等矩阵左乘 $\boldsymbol{A}$, 从而存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{k}$, 使得 $\boldsymbol{P}_{k} \cdots \boldsymbol{P}_{2}\boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{I}$, 又因初等矩阵可逆, 故 $\boldsymbol{A}=\boldsymbol{P}_{1}^{-1} \boldsymbol{P}_{2}^{-1} \cdots \boldsymbol{P}_{k}^{-1}$, 而初等矩阵的逆矩阵仍为初等矩阵, 因此 $\boldsymbol{A}$ 可表示为有限个初等矩阵的乘积.
+<br>
+<br>
+$4^{\circ} \Rightarrow 1^{\circ}$ 设存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{k}$, 由初等矩阵可 逆及定理 2 中 $3^{\circ}$ 的推广知 $\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{k}$ 也可逆. 故 $\boldsymbol{A}$ 可逆.
+</p>
+</div> 
+</p>
+
+
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $1$：</b></font>设 $\boldsymbol{A}$为 $n$ 阶矩阵, 则非齐次线性方程组 $\boldsymbol{AX}=\boldsymbol{b}$有惟一解的充要条件是 $\boldsymbol{A}$可逆.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDcoro1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDcoro1").style.display="none"'> 
+<div id= "divIDcoro1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=red><b>证明：</b></font>
+<font color=red><b>充分性</b></font> 
+若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{AX}=\boldsymbol{b}$ 有惟一解 $\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{b}$.
+<br>
+<font color=red><b>必要性</b></font> 
+设 $\boldsymbol{AX}=\boldsymbol{b}$ 有惟一解 $\boldsymbol{X}$, 但 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{AX}=\boldsymbol{0}$ 有非零解 $\boldsymbol{Z} \neq \boldsymbol{0}$. 令$\boldsymbol{Y}=\boldsymbol{X}+\boldsymbol{Z}$, 易知, $\boldsymbol{Y} \neq \boldsymbol{X}$ 且 $\boldsymbol{AY} =\boldsymbol{A}(\boldsymbol{X}+\boldsymbol{Z})=\boldsymbol{A} \boldsymbol{X}+\boldsymbol{AZ} =\boldsymbol{b}+\boldsymbol{0}=\boldsymbol{b}$, 即 $\boldsymbol{Y}$ 也为 $\boldsymbol{AX}=\boldsymbol{b}$ 的解, 矛盾. 故 $\boldsymbol{A}$ 可逆.
+</p>
+</div> 
+</p>
+
+</ul>
+
+
+<h2><a name="C2">$1.3.2$ 用行初等变换求逆矩阵</a></h2>
+
+
+<ul>
+
+<p style="text-indent: 2em;">
+现在我们介绍一个求 $\boldsymbol{A}^{-1}$ 的简便方法. 设 $\boldsymbol{A}$ 可逆, 故存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 
+$$\boldsymbol{E}_{k} \boldsymbol{E}_{k-1} \cdots \boldsymbol{E}_{1} \boldsymbol{A}=\boldsymbol{I}, $$
+即
+$$
+\boldsymbol{A}^{-1}=\boldsymbol{E}_{k} \boldsymbol{E}_{k-1} \cdots \boldsymbol{E}_{1}=\boldsymbol{E}_{k} \boldsymbol{E}_{k-1} \cdots \boldsymbol{E}_{1} \boldsymbol{I} .
+$$
+因此, 如果用一系列行初等变换将 $\boldsymbol{A}$ 化为 $\boldsymbol{I}$, 则用同样的行初等变换就将 $\boldsymbol{I}$ 化为 $\boldsymbol{A}^{-1}$. 这就给我们提供了一个计算 $\boldsymbol{A}^{-1}$ 的有效方法: 若对 $(\boldsymbol{A}, \boldsymbol{I})$ 施以行初等变换将 $\boldsymbol{A}$ 变为 $\boldsymbol{I}$, 则 $\boldsymbol{I}$ 就变为 $\boldsymbol{A}^{-1}$, 即
+$$
+(\boldsymbol{A}, \boldsymbol{I}) \stackrel{\text { 行初等变换 }}{\longrightarrow{}\cdots\longrightarrow{}}\left(\boldsymbol{I}, \boldsymbol{A}^{-1}\right) .
+$$
+</p>
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>利用行初等变换求 $\boldsymbol{A}=\left(\begin{array}{ccc}0 & 2 & -1 \\ 1 & 1 & 2 \\ -1 & -1 & -1\end{array}\right)$ 的逆矩阵 $\boldsymbol{A}^{-1}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+因
+$$
+\begin{aligned}
+(\boldsymbol{A}, \boldsymbol{I})&=\left(\begin{array}{ccc;{2pt/2pt}ccc}
+0 & 2 & -1 & 1 & 0 & 0 \\
+1 & 1 & 2 & 0 & 1 & 0 \\
+-1 & -1 & -1 & 0 & 0 & 1
+\end{array}\right) \stackrel{r_{1} \leftrightarrow r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & 1 & 2 & 0 & 1 & 0 \\
+0 & 2 & -1 & 1 & 0 & 0 \\
+-1 & -1 & -1 & 0 & 0 & 1
+\end{array}\right)\\
+&\stackrel{r_{1}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & 1 & 2 & 0 & 1 & 0 \\
+0 & 2 & -1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 1
+\end{array}\right) \stackrel{r_{3}+r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & 1 & 2 & 0 & 1 & 0 \\
+0 & 2 & 0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 & 1 & 1
+\end{array}\right)\\
+& \stackrel{-2 r_{3}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & 1 & 0 & 0 & -1 & -2 \\
+0 & 2 & 0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 & 1 & 1
+\end{array}\right) \stackrel{\frac{1}{2} r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & 1 & 0 & 0 & -1 & -2 \\[5pt]
+0 & 1 & 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\[5pt]
+0 & 0 & 1 & 0 & 1 & 1
+\end{array}\right)\\
+& \stackrel{-r_{2}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & 0 & 0 & -\frac{1}{2} & -\frac{3}{2} & -\frac{5}{2} \\
+0 & 1 & 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+0 & 0 & 1 & 0 & 1 & 1
+\end{array}\right),
+\end{aligned}
+$$
+故
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{ccc}
+-\frac{1}{2} & -\frac{3}{2} & -\frac{5}{2} \\
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
+0 & 1 & 1
+\end{array}\right) .
+$$
+</p>
+</div> 
+</p>
+
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,1,0,0:1,1,2,0,1,0:-1,-1,-1,0,0,1&ops=s0:1,r0:1:2,r2:1:1,r2:-2:0,m1:1.2,r1:-1:0&cur=6" target="_blank" style="text-decoration:none">例 $4$ 中求逆矩阵的交互式行初等变换完成版 (点击链接跳转)</a>
+</li>
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,1,0,0:1,1,2,0,1,0:-1,-1,-1,0,0,1" target="_blank" style="text-decoration:none">例 $4$ 中求逆矩阵的交互式行初等变换自行演示 (点击链接跳转)</a>
+</li>
+
+<p style="text-indent: 2em;">
+值得注意的是, 用行初等变换求逆矩阵时, 必须始终用行初等变换, 其间不能做任何列初等变换.
+</p>
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>问矩阵 $\boldsymbol{A}=\left(\begin{array}{ccc}1 & -2 & 1 \\ 2 & 0 & 1 \\ 0 & 4 & -1\end{array}\right)$ 是否可逆?
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+$$
+\begin{aligned}
+(\boldsymbol{A}, \boldsymbol{I}) &=\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & -2 & 1 & 1 & 0 & 0 \\
+2 & 0 & 1 & 0 & 1 & 0 \\
+0 & 4 & -1 & 0 & 0 & 1
+\end{array}\right) \rightarrow\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & -2 & 1 & 1 & 0 & 0 \\
+0 & 4 & -1 & -2 & 1 & 0 \\
+0 & 4 & -1 & 0 & 0 & 1
+\end{array}\right) \\
+& \rightarrow\left(\begin{array}{ccc;{2pt/2pt}ccc}
+1 & -2 & 1 & 1 & 0 & 0 \\
+0 & 4 & -1 & -2 & 1 & 0 \\
+0 & 0 & 0 & 2 & -1 & 1
+\end{array}\right),
+\end{aligned}
+$$
+故 $\boldsymbol{A}$ 不可逆.
+</p>
+</div> 
+</p>
+
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1&ops=r0:-2:1,r1:-1:2&cur=2" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换完成版 (点击链接跳转)</a>
+</li>
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换自行演示 (点击链接跳转)</a>
+</li>
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>解线性方程组
+$$
+\left\{\begin{aligned}
+2 x_{2}-x_{3} &=2, \\
+x_{1}+x_{2}+2 x_{3} &=1, \\
+-x_{1}-x_{2}-x_{3} &=1.
+\end{aligned}\right.
+$$
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+以前我们用高斯消元法求解, 现在用逆矩阵求解. 设原方程组为 $\boldsymbol{A X}=\boldsymbol{b}$, 其中
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+0 & 2 & -1 \\
+1 & 1 & 2 \\
+-1 & -1 & -1
+\end{array}\right), \quad \boldsymbol{b}=\left(\begin{array}{l}
+2 \\
+1 \\
+1
+\end{array}\right),
+$$
+由例 $4$ 知 $\boldsymbol{A}^{-1}=\left(\begin{array}{ccc}
+-\frac{1}{2} & -\frac{3}{2} & -\frac{5}{2} \\ 
+\frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\ 
+0 & 1 & 1\end{array}\right)$, 故原方程组有惟一解 $\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{b}=(-5,2,2)^{\mathrm{T}}$.
+</p>
+</div> 
+</p>
+
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,2:1,1,2,1:-1,-1,-1,1&ops=s0:1,r0:1:2,r2:1:1,r2:-2:0,m1:1.2,r1:-1:0&cur=6" target="_blank" style="text-decoration:none">例 $6$ 的交互式行初等变换完成版 (点击链接跳转)</a>
+</li>
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,2:1,1,2,1:-1,-1,-1,1" target="_blank" style="text-decoration:none">例 $6$ 的交互式行初等变换自行演示 (点击链接跳转)</a>
+</li>
+
+<p style="text-indent: 2em;">
+方程组 $\boldsymbol{AX}=\boldsymbol{B}$ 可以认为是矩阵方程, 若 $\boldsymbol{A}$ 可逆, 则有解 $\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{B}$. 而对于矩阵方程 $\boldsymbol{XA}=\boldsymbol{B}$, 若 $\boldsymbol{A}$ 可逆, 则有解 $\boldsymbol{X}=\boldsymbol{BA}^{-1}$. 若 $\boldsymbol{A}, \boldsymbol{B}$ 均可逆, 对于矩阵方程 $\boldsymbol{AXB}=\boldsymbol{C}$, 则有解 $\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{CB}^{-1}$.
+</p>
+
+<p style="text-indent: 2em;">
+类似于前面关于 “$(\boldsymbol{A}, \boldsymbol{I}) \stackrel{\text { 行初等变换 }}{\longrightarrow{}}\left(\boldsymbol{I}, \boldsymbol{A}^{-1}\right)$” 的推导方法, 我们很容易知道可以用如下方法求 $\boldsymbol{A}^{-1} \boldsymbol{B}$ (留给读者自证):
+$$
+(\boldsymbol{A}, \boldsymbol{B}) \stackrel{\text { 行初等变换 }}{\longrightarrow{}}\left(\boldsymbol{I}, \boldsymbol{A}^{-1}\boldsymbol{B}\right).
+$$
+</p>
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>设 $\left(2 \boldsymbol{I}-\boldsymbol{C}^{-1} \boldsymbol{B}\right) \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{C}^{-1}$, 其中 $\boldsymbol{I}$是 $4$阶单位矩阵,
+$$
+\boldsymbol{B}=\left(\begin{array}{cccc}
+1 & 2 & -3 & -2 \\
+0 & 1 & 2 & -3 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 1
+\end{array}\right), \quad \boldsymbol{C}=\left(\begin{array}{cccc}
+1 & 2 & 0 & 1 \\
+0 & 1 & 2 & 0 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 1
+\end{array}\right),
+$$
+求 $\boldsymbol{A}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+由题设有 $\boldsymbol{C}\left(2 \boldsymbol{I}-\boldsymbol{C}^{-1} \boldsymbol{B}\right) \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{I}$, 即 $(2 \boldsymbol{C}-\boldsymbol{B}) \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{I}$, 也就是 $\boldsymbol{A}(2 \boldsymbol{C}-\boldsymbol{B})^{\mathrm{T}}=\boldsymbol{I}$. 由于
+$$
+2 \boldsymbol{C}-\boldsymbol{B}=\left(\begin{array}{llll}
+1 & 2 & 3 & 4 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 1
+\end{array}\right),
+$$
+且易知 $2 \boldsymbol{C}-\boldsymbol{B}$ 可逆, 因而 $(2 \boldsymbol{C}-\boldsymbol{B})^{\mathrm{T}}$ 也可逆, 于是
+$$
+\boldsymbol{A}=\left((2\boldsymbol{C}-\boldsymbol{B})^{\mathrm{T}}\right)^{-1}=\left((2 \boldsymbol{C}-\boldsymbol{B})^{-1}\right)^{\mathrm{T}}=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+-2 & 1 & 0 & 0 \\
+1 & -2 & 1 & 0 \\
+0 & 1 & -2 & 1
+\end{array}\right).
+$$
+</p>
+</div> 
+</p>
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>设
+$$
+\boldsymbol{P}_{1}=\left(\begin{array}{llll}
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right), \quad \boldsymbol{P}_{2}=\left(\begin{array}{llll}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+c & 0 & 0 & 1
+\end{array}\right), \quad \boldsymbol{P}_{3}=\left(\begin{array}{llll}
+1 & & & \\
+& k & & \\
+& & 1 & \\
+& & & 1
+\end{array}\right),
+$$
+求 $\left(\boldsymbol{P}_{1} \boldsymbol{P}_{2} \boldsymbol{P}_{3}\right)^{-1}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+$$
+\begin{aligned}
+\left(\boldsymbol{P}_{1} \boldsymbol{P}_{2} \boldsymbol{P}_{3}\right)^{-1} 
+& =\boldsymbol{P}_{3}^{-1} \boldsymbol{P}_{2}^{-1}\boldsymbol{P}_{1}^{-1}
+=\left(\begin{array}{cccc}1 & & & \\ & \frac{1}{k} & & \\  & & 1 & \\ & & & 1\end{array}\right)
+\left(\begin{array}{cccc}1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ -c & 0 & 0 & 1\end{array}\right)
+\left(\begin{array}{llll}0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1\end{array}\right)\\
+&=\left(\begin{array}{cccc}1 & & & \\ & \frac{1}{k} & & \\ & & 1 & \\ & & & 1\end{array}\right)\left(\begin{array}{cccc}0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & -c & 1\end{array}\right)=\left(\begin{array}{cccc}0 & 0 & 1 & 0 \\ 0 & \frac{1}{k} & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & -c & 1\end{array}\right) .
+\end{aligned}
+$$
+</p>
+</div> 
+</p>
+
+
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>设
+</p>
+
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>设 $\boldsymbol {A}$ 是
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm").style.display="none"'> 
+<div id= "divIDthm" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=red><b>证明：</b></font>
+设 $\boldsymbol{A}$ 有
+</p>
+</div> 
+</p>
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $1$：</b></font>设 $\boldsymbol {A}$ 是
+<input type=button value= "显示证明" onclick='document.getElementById("divIDcoro").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDcoro").style.display="none"'> 
+<div id= "divIDcoro" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=red><b>证明：</b></font>
+设 $\boldsymbol{A}$ 有
+</p>
+</div> 
+</p>
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>设 $\boldsymbol {A}$ 是
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample").style.display="none"'> 
+<div id= "divIDexample" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+设 $\boldsymbol{A}$ 有
+</p>
+</div> 
+</p>
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>设 $\boldsymbol {A}$ 是
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample").style.display="none"'> 
+<div id= "divIDexample" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
+设 $\boldsymbol{A}$ 有
+</p>
+</div> 
+</p>
+
+
+
+<li>
+<b>1.</b> 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ 都是 $4$ 维列向量, 且 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1\right|=m$, $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\beta}_2, \boldsymbol{\alpha}_3\right|=n$, 则 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1+\boldsymbol{\beta}_2\right|=$ $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $m+n$
+$\qquad$$\mathrm{B}$. $-(m+n)$
+$\qquad$$\mathrm{C}$. $n-m$
+$\qquad$$\mathrm{D}$. $m-n$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID1.1").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID1.1").style.display="none"'> 
+<div id= "divID1.1" style= "display:none"> 
+正确答案：D
+</div> 
+</li>
+
+</ul>
+
+<h2><a name="C2">交互式初等行变换</a></h2>
+
+<ul>
+<li>
+
+</li>
+</ul>
+
+
+<h2><a name="C3">在线求解</a></h2>
+
+<ul>
+<li>
+
+
+</li>
+</ul>
+
+
+<h2><a name="C4">华罗庚精神</a></h2>
+<ul>
+<li>
+
+
+</li>
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+<br>
+<center>
+Copyright &copy; 2023 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
+
+
