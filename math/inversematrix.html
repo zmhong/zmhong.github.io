@@ -393,6 +393,14 @@ $$
 <li>
 <a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,1,0,0:1,1,2,0,1,0:-1,-1,-1,0,0,1" target="_blank" style="text-decoration:none">例 $4$ 中求逆矩阵的交互式行初等变换自行演示 (点击链接跳转)</a>
 </li>
+<li>将例$4$中的矩阵化为简化行阶梯形矩阵</li>
+ <div class="compute"><script type="text/x-sage">
+A = matrix([[0,2,-1],[1,1,2],[-1,-1,-1]])
+show(A)                #显示矩阵A
+show(A.rref())         #简化行阶梯形矩阵
+show(A^-1)             #直接求逆矩阵
+ </script>
+ </div>
 
 <p style="text-indent: 2em;">
 值得注意的是, 用行初等变换求逆矩阵时, 必须始终用行初等变换, 其间不能做任何列初等变换.
