@@ -398,7 +398,7 @@ $$
 <li>
 <a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,1,0,0:1,1,2,0,1,0:-1,-1,-1,0,0,1" target="_blank" style="text-decoration:none">例 $4$ 中求逆矩阵的交互式行初等变换自行演示 (点击链接跳转)</a>
 </li>
-<li>利用SageMath在线代码模块求例$4$中矩阵$A$的逆矩阵</li>
+<li>利用SageMath在线代码模块求例 $4$ 中矩阵 $\boldsymbol{A}$ 的逆矩阵</li>
  <div class="compute"><script type="text/x-sage">
 A = matrix([[0,2,-1],[1,1,2],[-1,-1,-1]])  #输入矩阵A
 B = matrix([[0,2,-1,1,0,0],[1,1,2,0,1,0],[-1,-1,-1,0,0,1]])  #输入矩阵(A, I)
@@ -546,14 +546,13 @@ $$
 </div> 
 </p>
 
-<li>利用SageMath在线代码模块求例$7$中矩阵$A$</li>
+<li>利用SageMath在线代码模块求例 $7$ 中矩阵 $\boldsymbol{A}$</li>
  <div class="compute"><script type="text/x-sage">
 B = matrix([[1,2,-3,-2],[0,1,2,-3],[0,0,1,2],[0,0,0,1]]); #矩阵B按行输入
 C = matrix([[1,2,0,1],[0,1,2,0],[0,0,1,2],[0,0,0,1]]);    #矩阵C按行输入
-D=2*C-B;               #将2C-B赋值给矩阵D
-show(D)                #显示矩阵2C-B
-show(D.transpose()^-1) #显示矩阵A
-show(D^-1.transpose()) #显示矩阵A
+show(2*C-B)                    #显示矩阵2C-B
+show((2*C-B).transpose()^-1)   #显示矩阵A
+show(((2*C-B)^-1).transpose()) #显示矩阵A
  </script></div>
 
 
