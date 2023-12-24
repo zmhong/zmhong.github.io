@@ -444,12 +444,17 @@ $$
 </p>
 
 <li>利用SageMath在线代码模块判断例 $5$ 中的矩阵 $\boldsymbol{A}$ 是否可逆</li>
- <div class="compute"><script type="text/x-sage">
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaima1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaima1").style.display="none"'> 
+<div id= "divIDdaima1" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
 A = matrix([[1,-2,1],[2,0,1],[0,4,-1]])  #按行输入矩阵A
 B = matrix([[1,-2,1,1,0,0],[2,0,1,0,1,0],[0,4,-1,0,0,1]])  #按行输入矩阵(A, I)
 show(A.is_invertible())  #判断A是否可逆
 show(B.echelon_form())   #求(A, I)的行阶梯形矩阵
  </script></div>
+</div> 
+ 
 
 <li>
 <a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1&ops=r0:-2:1,r1:-1:2&cur=2" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换完成版 (点击链接跳转)</a>
