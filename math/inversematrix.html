@@ -401,9 +401,9 @@ B = matrix([[0,2,-1,1,0,0],[1,1,2,0,1,0],[-1,-1,-1,0,0,1]])  #输入矩阵(A, I)
 show(A)                #显示矩阵A
 show(A^-1)             #直接求逆矩阵
 show(B)                #显示矩阵(A, I)
+show(B.echelon_form()) #求矩阵(A, I)的行阶梯形矩阵
 show(B.rref())         #求矩阵(A, I)的简化行阶梯形矩阵
- </script>
- </div>
+ </script></div>
 
 <p style="text-indent: 2em;">
 值得注意的是, 用行初等变换求逆矩阵时, 必须始终用行初等变换, 其间不能做任何列初等变换.
