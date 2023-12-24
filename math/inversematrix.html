@@ -546,6 +546,16 @@ $$
 </div> 
 </p>
 
+<li>利用SageMath在线代码模块求例$7$中矩阵$A$</li>
+ <div class="compute"><script type="text/x-sage">
+B = matrix([[1,2,-3,-2],[0,1,2,-3],[0,0,1,2],[0,0,0,1]]); #矩阵B按行输入
+C = matrix([[1,2,0,1],[0,1,2,0],[0,0,1,2],[0,0,0,1]]);    #矩阵C按行输入
+D=2*C-B;               #将2C-B赋值给矩阵D
+show(D)                #显示矩阵2C-B
+show(D.transpose()^-1) #显示矩阵A
+show(D^-1.transpose()) #显示矩阵A
+ </script></div>
+
 
 
 <p style="border: 2px solid green; border-radius: 5px">
