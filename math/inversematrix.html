@@ -700,6 +700,19 @@ $$
 <h2><a name="C4">$1.3.4$ 应用案例：希尔密码加密解密过程</a></h2>
 <ul>
 <li>利用SageMath在线代码模块实现希尔密码加密功能</li>
+将英文字母A-Z分别与数字$0-25$一一对应, 把需要传输的英文信息转化成$0-25$的数字, 通过加密矩阵$\boldsymbol{A}$对明文$\boldsymbol{X}$进行加密, 
+将加密后的密文进行传输. 接收者收到密文后先通过解密矩阵进行解码, 再将解码得到的信息查表转化成英文. 由于加密可能会导致得到的信息数值超过25, 
+因此需要保证加密矩阵与解密矩阵的乘积是模$26$同余于单位矩阵的. 为了保证这一点, 只需要使得加密矩阵的行列式与$26$没有公因子. 下面以二阶加密矩阵为例来展示加密和解密的过程.
+设加密矩阵为$\boldsymbol{A}=\left\(\begin{array}{cc}1 & 3 \\ 3 & 4\end{array}\right\)$, 解密矩阵为
+$\boldsymbol{B}=\left\(\begin{array}{cc}20 & 11 \\ 11 & 5\end{array}\right\)$. 设需要加密的信息为"shenfenbaolu", 查表并将信息转化成
+$2$行$6$列的矩阵$\boldsymbol{X}$, 得到
+$$
+\boldsymbol{X}=\left\(\begin{array}{cc}18 & 4 & 5 & 13 & 0 & 11 \\ 7 & 13 & 4 & 1 & 14 & 20\end{array}\right\),
+$$
+$$
+\boldsymbol{AX}=\left\(\begin{array}{cc}39 & 43 & 17 & 16 & 42 & 71 \\ 82 & 64 & 31 & 43 & 56 & 113\end{array}\right\).
+$$
+将上述加密后的信息模$26$之后查表得到"NERMRFQRQETJ". 
  <div class="compute"><script type="text/x-sage">
 #Last edited 12/24/2023 at 11:05pm
 pretty_print(html("<h1>希尔密码加密</h1>"))
