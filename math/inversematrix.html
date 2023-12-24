@@ -511,12 +511,12 @@ $$
 <input type=button value= "收起代码" onclick='document.getElementById("divIDdaima2").style.display="none"'> 
 <div id= "divIDdaima2" style= "display:none"> 
 <div class="compute"><script type="text/x-sage">
-A = matrix([[0,2,-1],[1,1,2],[-1,-1,-1]])  #按行输入矩阵A
-b = matrix([[2],[1],[1]]).                 #输入列矩阵b
-B = matrix([[0,2,-1,2],[1,1,2,1],[-1,-1,-1,1]])  #按行输入矩阵(A, b)
+A = matrix(QQ,[[0,2,-1],[1,1,2],[-1,-1,-1]])        #按行输入矩阵A
+b = matrix(QQ,[[2],[1],[1]])                        #输入列矩阵b
+B = matrix(QQ,[[0,2,-1,2],[1,1,2,1],[-1,-1,-1,1]])  #按行输入矩阵(A, b)
 show(A.is_invertible())  #判断A是否可逆
 show(A^-1*b)             #求解X
-show(B.echelon_form())   #求(A, b)的行阶梯形矩阵,最后一列为X
+show(B.rref())           #求(A, b)的简化行阶梯形矩阵,最后一列为X
  </script></div>
 </div> 
 
