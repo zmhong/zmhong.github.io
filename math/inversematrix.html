@@ -446,8 +446,9 @@ $$
 <li>利用SageMath在线代码模块判断例 $5$ 中的矩阵 $\boldsymbol{A}$ 是否可逆</li>
  <div class="compute"><script type="text/x-sage">
 A = matrix([[1,-2,1],[2,0,1],[0,4,-1]])  #按行输入矩阵A
+B = matrix([[1,-2,1,1,0,0],[2,0,1,0,1,0],[0,4,-1,0,0,1]])  #按行输入矩阵(A, I)
 show(A.is_invertible())  #判断A是否可逆
-show(A.echelon_form())   #求A的行阶梯形矩阵
+show(B.echelon_form())   #求(A, I)的行阶梯形矩阵
  </script></div>
 
 <li>
