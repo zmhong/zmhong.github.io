@@ -576,13 +576,18 @@ $$
 </p>
 
 <li>利用SageMath在线代码模块求例 $7$ 中矩阵 $\boldsymbol{A}$</li>
- <div class="compute"><script type="text/x-sage">
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaima1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaima1").style.display="none"'> 
+<div id= "divIDdaima1" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
 B = matrix([[1,2,-3,-2],[0,1,2,-3],[0,0,1,2],[0,0,0,1]]); #矩阵B按行输入
 C = matrix([[1,2,0,1],[0,1,2,0],[0,0,1,2],[0,0,0,1]]);    #矩阵C按行输入
 show(2*C-B)                    #显示矩阵2C-B
 show((2*C-B).transpose()^-1)   #显示矩阵A
 show(((2*C-B)^-1).transpose()) #显示矩阵A
  </script></div>
+</div> 
+
 
 
 
@@ -627,13 +632,17 @@ $$
 </p>
 
 <li>利用SageMath在线代码模块求例 $8$ 中的矩阵</li>
- <div class="compute"><script type="text/x-sage">
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaima1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaima1").style.display="none"'> 
+<div id= "divIDdaima1" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
 var("c k")        #定义符号变量c和k
 P1 = matrix([[0,0,1,0],[0,1,0,0],[1,0,0,0],[0,0,0,1]]);    #矩阵P1按行输入
 P2 = matrix([[1,0,0,0],[0,1,0,0],[0,0,1,0],[c,0,0,1]]);    #矩阵P2按行输入
 P3 = matrix([[1,0,0,0],[0,k,0,0],[0,0,1,0],[0,0,0,1]]);    #矩阵P3按行输入
 show((P1*P2*P3)^-1)                #显示矩阵(P1*P2*P3)的逆矩阵
  </script></div>
+</div> 
 
 
 
