@@ -443,6 +443,13 @@ $$
 </div> 
 </p>
 
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1&ops=r0:-2:1,r1:-1:2&cur=2" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换完成版 (点击链接跳转)</a>
+</li>
+<li>
+<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换自行演示 (点击链接跳转)</a>
+</li>
+
 <li>利用SageMath在线代码模块判断例 $5$ 中的矩阵 $\boldsymbol{A}$ 是否可逆</li>
 <input type=button value= "显示代码" onclick='document.getElementById("divIDdaima1").style.display="block"'> 
 <input type=button value= "收起代码" onclick='document.getElementById("divIDdaima1").style.display="none"'> 
@@ -456,12 +463,7 @@ show(B.echelon_form())   #求(A, I)的行阶梯形矩阵
 </div> 
  
 
-<li>
-<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1&ops=r0:-2:1,r1:-1:2&cur=2" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换完成版 (点击链接跳转)</a>
-</li>
-<li>
-<a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=1,-2,1,1,0,0:2,0,1,0,1,0:0,4,-1,0,0,1" target="_blank" style="text-decoration:none">例 $5$ 的交互式行初等变换自行演示 (点击链接跳转)</a>
-</li>
+
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $6$：</b></font>解线性方程组
@@ -503,6 +505,20 @@ $$
 <li>
 <a href="https://textbooks.math.gatech.edu/ila/demos/rrinter.html?mat=0,2,-1,2:1,1,2,1:-1,-1,-1,1" target="_blank" style="text-decoration:none">例 $6$ 的交互式行初等变换自行演示 (点击链接跳转)</a>
 </li>
+
+<li>利用SageMath在线代码模块求解例 $6$ 中的线性方程组</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaima1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaima1").style.display="none"'> 
+<div id= "divIDdaima1" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[0,2,-1],[1,1,2],[-1,-1,-1]])  #按行输入矩阵A
+b = matrix([[2],[1],[1]]).                 #输入列矩阵b
+B = matrix([[0,2,-1,2],[1,1,2,1],[-1,-1,-1,1]])  #按行输入矩阵(A, b)
+show(A.is_invertible())  #判断A是否可逆
+show(A^-1*b)             #求解X
+show(B.echelon_form())   #求(A, b)的行阶梯形矩阵,最后一列为X
+ </script></div>
+</div> 
 
 <p style="text-indent: 2em;">
 方程组 $\boldsymbol{AX}=\boldsymbol{B}$ 可以认为是矩阵方程, 若 $\boldsymbol{A}$ 可逆, 则有解 $\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{B}$. 而对于矩阵方程 $\boldsymbol{XA}=\boldsymbol{B}$, 若 $\boldsymbol{A}$ 可逆, 则有解 $\boldsymbol{X}=\boldsymbol{BA}^{-1}$. 若 $\boldsymbol{A}, \boldsymbol{B}$ 均可逆, 对于矩阵方程 $\boldsymbol{AXB}=\boldsymbol{C}$, 则有解 $\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{CB}^{-1}$.
