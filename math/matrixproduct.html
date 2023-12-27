@@ -122,11 +122,11 @@ $$
 </p>
 
 <p style="text-indent: 2em;">
-通常用大写黑体字母 $\bm{A}, \bm{B}, \cdots$ 或者 $\left(a_{i j}\right),\left(b_{i j}\right), \cdots$ 表示矩阵. 若需指明矩阵的行数 和列数, 常写为 $\bm{A}_{m \times n}$ 或 $\bm{A}=\left(a_{i j}\right)_{m \times n}$.
+通常用大写黑体字母 $\boldsymbol{A}, \boldsymbol{B}, \cdots$ 或者 $\left(a_{i j}\right),\left(b_{i j}\right), \cdots$ 表示矩阵. 若需指明矩阵的行数 和列数, 常写为 $\boldsymbol{A}_{m \times n}$ 或 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}$.
 </p>
 
 <p style="text-indent: 2em;">
-例如, $\bm{A}=\left(\begin{array}{ccc}0 & -1 & 2 \\ 1 & 2 & 3\end{array}\right)$ 为一个 $2 \times 3$ 矩阵.
+例如, $\boldsymbol{A}=\left(\begin{array}{ccc}0 & -1 & 2 \\ 1 & 2 & 3\end{array}\right)$ 为一个 $2 \times 3$ 矩阵.
 </p>
   
 <p style="text-indent: 2em;">
@@ -141,7 +141,7 @@ a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}
 $$
 的系数可以组成一个 $m$ 行 $n$ 列矩阵
 $$
-\bm{A}=\left(\begin{array}{cccc}
+\boldsymbol{A}=\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
 a_{21} & a_{22} & \cdots & a_{2 n} \\
 \vdots & \vdots & & \vdots \\
@@ -150,7 +150,7 @@ a_{m 1} & a_{m 2} & \cdots & a_{m n}
 $$
 称为方程组的系数矩阵; 而系数及常数项可以组成一个 $m$ 行 $n+1$ 列矩阵
 $$
-\overline{\bm{A}}=\left(\begin{array}{ccccc}
+\overline{\boldsymbol{A}}=\left(\begin{array}{ccccc}
 a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\
 a_{21} & a_{22} & \cdots & a_{2 n} & b_{2} \\
 \vdots & \vdots & & \vdots & \vdots \\
@@ -161,12 +161,12 @@ $$
 </p>
   
 <p style="text-indent: 2em;">
-元全为零的矩阵称为零矩阵, 记作 $\bm{O}_{m \times n}$ 或 $\bm{O}$. 如
+元全为零的矩阵称为零矩阵, 记作 $\boldsymbol{O}_{m \times n}$ 或 $\boldsymbol{O}$. 如
 $$
-\bm{O}_{2 \times 2}=\left(\begin{array}{cc}
+\boldsymbol{O}_{2 \times 2}=\left(\begin{array}{cc}
 0 & 0 \\
 0 & 0
-\end{array}\right), \quad \bm{O}_{2 \times 3}=\left(\begin{array}{ccc}
+\end{array}\right), \quad \boldsymbol{O}_{2 \times 3}=\left(\begin{array}{ccc}
 0 & 0 & 0 \\
 0 & 0 & 0
 \end{array}\right).
@@ -174,7 +174,7 @@ $$
 </p>
 
 <p style="text-indent: 2em;">
-当 $m=n$ 时, 称 $\bm{A}$ 为 $n$ 阶矩阵 (或 $n$ 阶方阵).
+当 $m=n$ 时, 称 $\boldsymbol{A}$ 为 $n$ 阶矩阵 (或 $n$ 阶方阵).
 </p>
 
 <p style="text-indent: 2em;">
@@ -191,9 +191,9 @@ $$
 </p>
 
 <p style="text-indent: 2em;">
-若方阵 $\bm{A}=\left(a_{i j}\right)_{n \times n}$ 的元 $a_{i j}=0(i \neq j)$, 则称 $\bm{A}$ 为对角矩阵, $a_{i i}(i=1,2, \cdots, n)$ 称为 $\bm{A}$ 的对角元, 记作 $\bm{A}=\operatorname{diag}\left(a_{11}, a_{22}, \cdots, a_{n n}\right)$. 例如,
+若方阵 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 的元 $a_{i j}=0(i \neq j)$, 则称 $\boldsymbol{A}$ 为对角矩阵, $a_{i i}(i=1,2, \cdots, n)$ 称为 $\boldsymbol{A}$ 的对角元, 记作 $\boldsymbol{A}=\operatorname{diag}\left(a_{11}, a_{22}, \cdots, a_{n n}\right)$. 例如,
 $$
-\bm{A}=\left(\begin{array}{cc}
+\boldsymbol{A}=\left(\begin{array}{cc}
 -1 & 0 \\
 0 & 5
 \end{array}\right)=\operatorname{diag}(-1,5)
@@ -202,9 +202,9 @@ $$
 </p>
 
 <p style="text-indent: 2em;">
-对角元全为数 $1$ 的对角矩阵称为单位矩阵, $n$ 阶单位矩阵记为 $\bm{I}_{n}$, 在不致混淆时也 记为 $\bm{I}$, 即
+对角元全为数 $1$ 的对角矩阵称为单位矩阵, $n$ 阶单位矩阵记为 $\boldsymbol{I}_{n}$, 在不致混淆时也 记为 $\boldsymbol{I}$, 即
 $$
-\bm{I}=\operatorname{diag}(1,1, \cdots, 1)=\left(\begin{array}{llll}
+\boldsymbol{I}=\operatorname{diag}(1,1, \cdots, 1)=\left(\begin{array}{llll}
 1 & & & \\
 & 1 & & \\
 & & \ddots & \\
