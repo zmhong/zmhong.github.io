@@ -94,11 +94,11 @@ $$
 
 <p style="text-indent: 2em;">又如, 对矩阵 $\boldsymbol{A}$ 进行如下形式分块:
 $$
-\boldsymbol{A}=\left(\begin{array}{ccc;{1pt/1pt}cc}
+\boldsymbol{A}=\left(\begin{array}{ccc:cc}
 1 & 0 & 0 & 0 & 2 \\
 0 & 1 & 0 & 1 & -3 \\
 0 & 0 & 1 & -1 & 0 \\
-\hdashline[1pt/1pt] 0 & 0 & 0 & 4 & 1
+\hdashline  0 & 0 & 0 & 4 & 1
 \end{array}\right),
 $$
 记
@@ -225,14 +225,15 @@ $$
 $$
 
 
-\begin{example}
-设 $\boldsymbol{A}=\left(\begin{array}{c;{1pt/1pt}ccc}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
+设 $\boldsymbol{A}=\left(\begin{array}{c:ccc}
 1 & 2 & 3 & 4 \\ 
-2 & 3 & -1 & -4 \\ \hdashline[1pt/1pt] 
+2 & 3 & -1 & -4 \\ \hdashline 
 3 & -1 & -2 & 2\end{array}\right)$, 
-$\boldsymbol{B}=\left(\begin{array}{c;{1pt/1pt}ccc}
+$\boldsymbol{B}=\left(\begin{array}{c:ccc}
 2 & 5 & -6 & -1 \\ 
-4 & 7 & 3 & -2 \\ \hdashline[1pt/1pt] 
+4 & 7 & 3 & -2 \\ \hdashline 
 -1 & 2 & 4 & 5\end{array}\right)$, 则
 $$
 \boldsymbol{A}+\boldsymbol{B}=\left(\begin{array}{cc}
@@ -273,7 +274,7 @@ $$
 \end{array} ) .
 \end{gathered}
 $$
-\end{example}
+</p>
 
 
 
@@ -306,9 +307,8 @@ $$
 
 
 
-\medskip
-
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 设 $
 \boldsymbol{A}=\left(\begin{array}{cccc}
 1 & 0 & 0 & 0 \\
@@ -321,14 +321,16 @@ $$
 1 & 0 \\
 -1 & -1
 \end{array}\right)$, 求$\boldsymbol{A} \boldsymbol{B}$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 令 $\boldsymbol{A}_{1}=\left(\begin{array}{cc}-1 & 2 \\ 1 & 1\end{array}\right)$, 则 $\boldsymbol{A}=\left(\begin{array}{cc}\boldsymbol{I} & \boldsymbol{O} \\ \boldsymbol{A}_{1} & \boldsymbol{I}\end{array}\right)$. 再将 $\boldsymbol{B}$ 分块为
 $$
 \boldsymbol{B}=\left(\begin{array}{cc}
 1 & 0 \\
--1 & 2 \\\hdashline[1pt/1pt]
+-1 & 2 \\\hdashline 
 1 & 0 \\
 -1 & -1
 \end{array}\right)=\left(\begin{array}{c}
@@ -354,12 +356,15 @@ $$
 -1 & 1
 \end{array}\right).
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 若 $n$ 阶矩阵 $\boldsymbol{A}, \boldsymbol{B}$ 为同型块对角矩阵, 即
 $$
 \boldsymbol{A}=\operatorname{diag}\left(\boldsymbol{A}_{1}, \boldsymbol{A}_{2}, \cdots, \boldsymbol{A}_{t}\right), \quad \boldsymbol{B}=\operatorname{diag}\left(\boldsymbol{B}_{1}, \boldsymbol{B}_{2}, \cdots, \boldsymbol{B}_{t}\right),
@@ -373,7 +378,7 @@ $$
 & & & \boldsymbol{A}_{t}\boldsymbol{B}_{t}
 \end{array}\right).
 $$
-\end{example}
+</p>
 
 
 
@@ -422,17 +427,19 @@ $$
 即除了把子块的行与列对换外, 每个子块还要进行转置.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 若乘法 $\boldsymbol{A B}$ 有意义, $\boldsymbol{B}$ 按列分块, $\boldsymbol{B}=\left(b_{1}, b_{2}, \cdots, b_{n}\right)$, 则 
 $$
 \boldsymbol{AB}=\boldsymbol{A}\left(\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \cdots, \boldsymbol{b}_{n}\right)=\left(\boldsymbol{A} \boldsymbol{b}_{1}, \boldsymbol{A} \boldsymbol{b}_{2}, \cdots, \boldsymbol{A} \boldsymbol{b}_{n}\right).
 $$
 
 可见, 若 $\boldsymbol{A} \boldsymbol{B}=\boldsymbol{O}$, 则 $\boldsymbol{A} \boldsymbol{b}_{i}=\boldsymbol{0}$, $i=1,2, \cdots, n$. 即 $\boldsymbol{B}$ 的每一列 $\boldsymbol{b}_{i}(i=1,2, \cdots, n)$ 都是齐次线性方程组 $\boldsymbol{AX}=\boldsymbol{0}$ 的解.
-\end{example}
+</p>
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 设 $m \times n$ 矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)$, 则
 $$
 \begin{gathered}
@@ -455,7 +462,7 @@ $$
 \end{array}\right) .
 \end{gathered}
 $$
-\end{example}
+</p>
 
 
 </ul>
