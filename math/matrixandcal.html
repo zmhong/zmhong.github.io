@@ -1,0 +1,1433 @@
+
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<title>矩阵及其运算</title>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: '运行'});
+    </script>
+
+</head>
+<body>
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+$1.1$ 矩阵及其运算
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="C0"><strong>目录:</strong></a><br></h2>
+
+<ul>
+<li><a href="#C1">1.1.1 矩阵的概念</a></li>
+<li><a href="#C2">1.1.2 矩阵的线性运算</a></li>
+<li><a href="#C3">1.1.3 矩阵的乘法</a></li>
+<li><a href="#C4">1.1.4 矩阵的转置</a></li>
+</ul>
+
+
+  
+
+<h2><a name="C1">$1.1.1$ 矩阵的概念</a></h2>
+
+
+
+<ul>
+
+
+<p style="text-indent: 2em;">在物资调运中, 某类物资有 $3$ 个产地、 $5$ 个销地, 它的调运方案如下.
+
+
+<center>
+<table border="1" align="center">
+<caption>表1.1 物资调运方案 （单位: t）</caption>
+<thead>
+<tr>
+<td>调运数</td><td>销地I</td><td>销地II</td><td>销地III</td><td>销地IV</td><td>销地V</td>
+</tr>
+</thead>
+<tbody align="center">
+<tr><td>产地I</td><td>0</td><td> 3</td><td> 4</td><td> 7</td><td> 5</td></tr>
+<tr><td>产地II</td><td>8</td><td> 2</td><td> 3</td><td> 0</td><td> 2</td></tr>
+<tr><td>产地III</td><td>5</td><td> 4</td><td> 0</td><td> 6</td><td> 6</td></tr>
+</tbody>
+</table>
+</center>
+
+
+
+<p style="text-indent: 2em;">如果我们用 $a_{i j}(i=1,2,3 ;\, j=1,2,3,4,5)$ 表示从第 $i$ 个产地运往第 $j$ 个销地的运量 (如 $a_{12}=3, a_{35}=6$ ), 这样就能把调运方案表简写成一个 $3$ 行 $5$ 列的数表
+$$
+\left(\begin{array}{lllll}
+0 & 3 & 4 & 7 & 5 \\
+8 & 2 & 3 & 0 & 2 \\
+5 & 4 & 0 & 6 & 6
+\end{array}\right).
+$$
+用这种数表来表达某种状态或数量关系, 在自然科学、技术科学以及实际生活中都是常见的. 
+这种数表我们称为<font color=red>矩阵</font>.
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>由 $m \times n$ 个数排成的 $m$ 行 $n$ 列数表
+$$
+\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right)
+$$
+称为一个 $m$ 行 $n$ 列矩阵, 简称为 $m \times n$ 矩阵, 其中 $a_{i j}$ 表示第 $i$ 行第 $j$ 列处的元 (或称元素), $i$ 称为 $a_{i j}$ 的行指标, $j$ 称为 $a_{i j}$ 的列指标.
+</p>
+
+
+
+<p style="text-indent: 2em;">元是实数的矩阵称为实矩阵, 元是复数的矩阵称为复矩阵. 本书中的矩阵除特别说明外, 都指实矩阵. 
+
+
+
+<p style="text-indent: 2em;">通常用大写黑体字母 $\boldsymbol{A}, \boldsymbol{B}, \cdots$ 或者 $\left(a_{i j}\right),\left(b_{i j}\right), \cdots$ 表示矩阵. 若需指明矩阵的行数 和列数, 常写为 $\boldsymbol{A}_{m \times n}$ 或 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}$.
+
+
+
+<p style="text-indent: 2em;">例如, $\boldsymbol{A}=\left(\begin{array}{ccc}0 & -1 & 2 \\ 1 & 2 & 3\end{array}\right)$ 为一个 $2 \times 3$ 矩阵.
+
+
+
+<p style="text-indent: 2em;">$n$元线性方程组
+
+$$
+
+\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1}, \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
+\cdots \cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}
+\end{array}\right.
+
+$$
+
+的系数可以组成一个 $m$ 行 $n$ 列矩阵
+
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right),
+$$
+称为方程组的系数矩阵; 而系数及常数项可以组成一个 $m$ 行 $n+1$ 列矩阵
+$$
+\overline{\boldsymbol{A}}=\left(\begin{array}{ccccc}
+a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\
+a_{21} & a_{22} & \cdots & a_{2 n} & b_{2} \\
+\vdots & \vdots & & \vdots & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n} & b_{m}
+\end{array}\right),
+$$
+称为方程组的增广矩阵. 我们将利用矩阵这一工具来研究线性方程组.
+
+
+
+<p style="text-indent: 2em;">元全为零的矩阵称为零矩阵, 记作 $\boldsymbol{O}_{m \times n}$ 或 $\boldsymbol{O}$. 如
+$$
+\boldsymbol{O}_{2 \times 2}=\left(\begin{array}{cc}
+0 & 0 \\
+0 & 0
+\end{array}\right), \quad \boldsymbol{O}_{2 \times 3}=\left(\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right).
+$$
+
+
+
+<p style="text-indent: 2em;">当 $m=n$ 时, 称 $\boldsymbol{A}$ 为 $n$ 阶矩阵 (或 $n$ 阶方阵).
+
+
+
+<p style="text-indent: 2em;">只有 $1$ 行 $(1 \times n)$ 或 $1$ 列 $(m \times 1)$ 的矩阵
+$$
+\left(a_{11}, a_{12}, \cdots, a_{1 n}\right),\left(\begin{array}{c}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{m 1}
+\end{array}\right)
+$$
+分别称为行矩阵和列矩阵.
+
+
+
+<p style="text-indent: 2em;">若方阵 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 的元 $a_{i j}=0(i \neq j)$, 则称 $\boldsymbol{A}$ 为对角矩阵, $a_{i i}(i=1,2, \cdots, n)$ 称为 $\boldsymbol{A}$ 的对角元, 记作 $\boldsymbol{A}=\operatorname{diag}\left(a_{11}, a_{22}, \cdots, a_{n n}\right)$. 例如,
+$$
+\boldsymbol{A}=\left(\begin{array}{cc}
+-1 & 0 \\
+0 & 5
+\end{array}\right)=\operatorname{diag}(-1,5)
+$$
+
+为二阶对角矩阵.
+
+
+
+<p style="text-indent: 2em;">对角元全为数 $1$ 的对角矩阵称为单位矩阵, $n$ 阶单位矩阵记为 $\boldsymbol{I}_{n}$, 在不致混淆时也 记为 $\boldsymbol{I}$, 即
+$$
+\boldsymbol{I}=\operatorname{diag}(1,1, \cdots, 1)=\left(\begin{array}{llll}
+1 & & & \\
+& 1 & & \\
+& & \ddots & \\
+& & & 1
+\end{array}\right) .
+$$
+形如
+$$
+\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+0 & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & a_{n n}
+\end{array}\right), \quad\left(\begin{array}{cccc}
+a_{11} & 0 & \cdots & 0 \\
+a_{21} & a_{22} & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)
+$$
+
+的矩阵分别称为上三角形矩阵和下三角形矩阵.
+
+
+
+
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+
+<h2><a name="C2">$1.1.2$ 矩阵的线性运算</a></h2>
+
+
+<ul>
+
+
+<p style="text-indent: 2em;">矩阵是线性代数的基本运算对象之一, 为了讨论矩阵的运算, 我们首先给出矩阵相等的概念.
+
+<p style="text-indent: 2em;">如果 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 都是 $m \times n$ 矩阵, 就称 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 为同型矩阵.
+
+<p style="text-indent: 2em;">两个矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 和 $\boldsymbol{B}=\left(b_{i j}\right)$, 如果它们为同型矩阵, 且对应元相等, 即
+$$
+a_{i j}=b_{i j} \quad(i=1,2, \cdots, m ; j=1,2, \cdots, n),
+$$
+就称 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 相等, 记为 $\boldsymbol{A}=\boldsymbol{B}$.
+
+<p style="text-indent: 2em;">例如,
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+0 & x & -1 \\
+3 & 4 & y
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ccc}
+z & 3 & -1 \\
+3 & 4 & 2
+\end{array}\right),
+$$
+若 $\boldsymbol{A}=\boldsymbol{B}$, 则立即得 $x=3, y=2, z=0$.
+
+<p style="text-indent: 2em;">现在我们介绍矩阵的加法运算及矩阵与数的乘积.
+
+<p style="text-indent: 2em;">设有两种物资 (单位: t), 要从三个产地运往四个销地, 其调运方案分别为矩阵 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ :
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+30 & 25 & 17 & 0 \\
+20 & 0 & 14 & 23 \\
+0 & 20 & 20 & 30
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{cccc}
+10 & 15 & 13 & 30 \\
+0 & 40 & 16 & 17 \\
+50 & 10 & 0 & 10
+\end{array}\right),
+$$
+那么, 从各产地运往各销地两种物资的总运量是 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的和, 即
+$$
+\boldsymbol{A}+\boldsymbol{B}=\left(\begin{array}{cccc}
+40 & 40 & 30 & 30 \\
+20 & 40 & 30 & 40 \\
+50 & 30 & 20 & 40
+\end{array}\right).
+$$
+
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $2$：(矩阵的加法) </b></font>
+设矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{cccc}
+b_{11} & b_{12} & \cdots & b_{1 n} \\
+b_{21} & b_{22} & \cdots & b_{2 n} \\
+\vdots & \vdots & & \vdots \\
+b_{m 1} & b_{m 2} & \cdots & b_{m n}
+\end{array}\right)
+$$
+是两个 $m \times n$ 矩阵, 将它们的对应元相加, 得到一个新的 $m \times n$ 矩阵
+$$
+\boldsymbol{C}=\left(\begin{array}{cccc}
+a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1 n}+b_{1 n} \\
+a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2 n}+b_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1}+b_{m 1} & a_{m 2}+b_{m 2} & \cdots & a_{m n}+b_{m n}
+\end{array}\right),
+$$
+则称矩阵 $\boldsymbol{C}$ 是矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的和, 记为 $\boldsymbol{C}=\boldsymbol{A}+\boldsymbol{B}$.
+</p>
+
+<p style="text-indent: 2em;">值得注意的是, 只有同型矩阵才能相加, 且同型矩阵之和仍为同型矩阵. 如
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+2 & 0 & -1 \\
+0 & 1 & 2
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{l}
+1 \\
+2 \\
+1
+\end{array}\right),
+$$
+$\boldsymbol{A}$ 与 $\boldsymbol{B}$ 不能相加.
+
+
+<p style="text-indent: 2em;">设矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$, 若把它的每一元换为其相反数, 得到的矩阵
+$$
+\left(\begin{array}{cccc}
+-a_{11} & -a_{12} & \cdots & -a_{1 n} \\
+-a_{21} & -a_{22} & \cdots & -a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+-a_{m 1} & -a_{m 2} & \cdots & -a_{m n}
+\end{array}\right)
+$$
+称为 $\boldsymbol{A}$ 的负矩阵, 记为 $-\boldsymbol{A}$. 显然有 $\boldsymbol{A}+(-\boldsymbol{A})=\boldsymbol{O}$.
+
+
+<p style="text-indent: 2em;">利用矩阵的加法与负矩阵的概念, 我们可以定义两个 $m \times n$ 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的差, 即矩阵的减法:
+$$
+\boldsymbol{A}-\boldsymbol{B}=\boldsymbol{A}+(-\boldsymbol{B}),
+$$
+就是把 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的对应元相减. 显然, $\boldsymbol{A}-\boldsymbol{B}=\boldsymbol{O}$ 与 $\boldsymbol{A}=\boldsymbol{B}$ 等价.
+
+<p style="text-indent: 2em;">下面介绍矩阵与数的乘积.
+
+<p style="text-indent: 2em;">设从某三个地区分别到另两个地区的距离 (单位: $\mathrm{km}$ ) 可用下列 $3 \times 2$ 的矩阵表示为
+$$
+\boldsymbol{A}=\begin{array}{c}\left(\begin{array}{rr}
+90 & 60 \\
+120 & 70 \\
+80 & 55
+\end{array}\right) \begin{array}{c}
+\mathrm{I} \\
+\mathrm{II}\\
+\mathrm{III}
+\end{array}\\
+\begin{array}{llll}
+\text{甲} & \text{乙} & & \\
+\end{array}
+\end{array}
+$$
+已知货物的运费为 $2$ 元 $/(\mathrm{t} \cdot \mathrm{km})$, 那么, 各地区之间每吨货物的运费只要将 $\boldsymbol{A}$ 中每一元都乘 $2$, 即得
+$$
+\begin{array}{c}\left(\begin{array}{rr}
+180 & 120 \\
+240 & 140 \\
+160 & 110
+\end{array}\right) \begin{array}{c}
+\mathrm{I} \\
+\mathrm{II}\\
+\mathrm{III}
+\end{array}\\
+\begin{array}{llll}
+\text{甲} & \text{乙} & &\\
+\end{array}
+\end{array}
+$$
+
+
+
+<p style="text-indent: 2em;">矩阵与数的乘积的定义如下:
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $3$：(矩阵的数乘) </b></font>
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}$ 是一个 $m \times n$ 矩阵, $k$ 是一个数, 则称矩阵
+$$
+\left(\begin{array}{cccc}
+k a_{11} & k a_{12} & \cdots & k a_{1 n} \\
+k a_{21} & k a_{22} & \cdots & k a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+k a_{m 1} & k a_{m 2} & \cdots & k a_{m n}
+\end{array}\right)
+$$
+为矩阵 $\boldsymbol{A}$ 与数 $k$ 的乘积 (简称矩阵的数乘), 记为 $k \boldsymbol{A}$.
+</p>
+
+
+<p style="text-indent: 2em;">也就是说, 用数 $k$ 乘矩阵 $\boldsymbol{A}$ 就是将 $\boldsymbol{A}$ 中的每一元都乘 $k$.
+
+<p style="text-indent: 2em;">矩阵的加法与数乘统称为矩阵的线性运算.
+
+<p style="text-indent: 2em;">容易证明, 设 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 为同型矩阵, $k, l$ 为数, 那么矩阵的线性运算满足下列八条性质:
+
+<p style="text-indent: 2em;">
+$
+\begin{array}{ll}
+1^{\circ} & \boldsymbol{A}+\boldsymbol{B}=\boldsymbol{B}+\boldsymbol{A} ; \\
+2^{\circ} & (\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C}=\boldsymbol{A}+(\boldsymbol{B}+\boldsymbol{C}) ; \\
+3^{\circ} & \boldsymbol{A}+\boldsymbol{O}=\boldsymbol{A} ; \\
+4^{\circ} & \boldsymbol{A}+(-\boldsymbol{A})=\boldsymbol{O} ; \\
+5^{\circ} & 1 \boldsymbol{A}=\boldsymbol{A} ; \\
+6^{\circ} & k(l \boldsymbol{A})=(k l) \boldsymbol{A} ; \\
+7^{\circ} & k(\boldsymbol{A}+\boldsymbol{B})=k \boldsymbol{A}+k \boldsymbol{B} ; \\
+8^{\circ} & (k+l) \boldsymbol{A}=k \boldsymbol{A}+l \boldsymbol{A} .
+\end{array}
+$
+
+
+<p>
+</p>
+
+<center>
+<iframe src="https://textbooks.math.gatech.edu/ila/demos/twobytwo.html?mat=0,-1,1,0&closed=true&pic=theo8.jpg&vers=224734"  width="100%" height="100%" title="Interactive Figure">
+</iframe>
+</center>
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
+设矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+3 & -1 & 2 \\
+1 & 5 & 7
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ccc}
+7 & 5 & -4 \\
+5 & 1 & 9
+\end{array}\right)
+$$
+且 $\boldsymbol{A}+2 \boldsymbol{X}=\boldsymbol{B}$, 求矩阵 $\boldsymbol{X}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+由 $\boldsymbol{A}+2 \boldsymbol{X}=\boldsymbol{B}$ 得
+$$
+\boldsymbol{X}=\frac{1}{2}(\boldsymbol{B}-\boldsymbol{A})=\frac{1}{2}\left(\begin{array}{ccc}
+7-3 & 5-(-1) & -4-2 \\
+5-1 & 1-5 & 9-7
+\end{array}\right)=\left(\begin{array}{ccc}
+2 & 3 & -3 \\
+2 & -2 & 1
+\end{array}\right).
+$$
+</p>
+</div> 
+</p>
+
+
+
+<p style="text-indent: 2em;">前面学习了矩阵的相关概念, 我们很自然地用矩阵表示数字图像和用矩阵运算处理数字图像. 例如, 矩阵 $\boldsymbol{A}$ 表示猫的图像, 矩阵 $\boldsymbol{B}$ 表示老虎的图像, 它们的线性运算结果表示合成的图像 (见图<a href="fig1.2">1.2</a>). 我们观察到随着系数变化合成的图像也相应变化.
+
+<center>
+<figure>
+  <img src="fig1.2.jpg" width="40%">
+ <figcaption><a name="fig1.2">图1.2</a> </figcaption>
+</figure>
+</center>
+
+
+
+
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+
+<h2><a name="C3">$1.1.3$ 矩阵的乘法</a></h2>
+
+
+<ul>
+
+
+<p style="text-indent: 2em;">设甲、乙两家公司生产 I、II、III 三种型号的计算机, 月产量 (单位: 台) 为
+$$
+\begin{array}{c}
+\begin{array}{ccccc}
+\mathrm{I} & \mathrm{II} & \mathrm{III} & & \\
+\end{array}\\
+\left(\begin{array}{ccc}
+25 & 20 & 18\\
+24 & 16 & 27\\
+\end{array}\right)
+\begin{array}{c}
+\text{甲} \\
+\text{乙} \\
+\end{array},
+\end{array}
+$$
+若生产这三种型号的计算机每台的利润 (单位: 万元/台) 为
+$$
+\left(\begin{array}{l}
+0.5 \\
+0.2 \\
+0.7
+\end{array}\right) \begin{array}{c}
+\text{I} \\
+\text{II} \\
+\text{III}
+\end{array},
+$$
+则这两家公司的月利润 (单位:万元) 应为
+$$
+\left(\begin{array}{l}
+25 \times 0.5+20 \times 0.2+18 \times 0.7 \\
+24 \times 0.5+16 \times 0.2+27 \times 0.7
+\end{array}\right)=\left(\begin{array}{c}
+29.1 \\
+34.1
+\end{array}\right) \begin{array}{c}
+\text{甲} \\
+\text{乙}
+\end{array} .
+$$
+可见, 甲公司每月的利润为 $29.1$ 万元, 乙公司每月的利润为 $34.1$ 万元.
+
+<p style="text-indent: 2em;">矩阵的乘法的定义如下:
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $4$：(矩阵的乘法) </b></font>
+设 $m \times p$ 矩阵 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times p}, p \times n$ 矩阵 $\boldsymbol{B}=\left(b_{i j}\right)_{p \times n}$, 则由元
+$$
+c_{i j}=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+\cdots+a_{i p} b_{p j}=\sum_{k=1}^{p} a_{i k} b_{k j} \, (i=1,2, \cdots, m ; j=1,2, \cdots, n)
+$$
+构成的 $m \times n$ 矩阵 $\boldsymbol{C}=\left(c_{i j}\right)_{m \times n}$ 称为矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的乘积, 记为 $\boldsymbol{C}=\boldsymbol{A B}$.
+</p>
+
+
+<p style="text-indent: 2em;">由定义可知:
+
+<p style="text-indent: 2em;">(1) $\boldsymbol{A}$ 的列数必须等于 $\boldsymbol{B}$ 的行数, $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 才能相乘;
+
+<p style="text-indent: 2em;">(2) 乘积 $\boldsymbol{C}$ 的行数等于 $\boldsymbol{A}$ 的行数, $\boldsymbol{C}$ 的列数等于 $\boldsymbol{B}$ 的列数;
+
+<p style="text-indent: 2em;">(3) 乘积 $\boldsymbol{C}$ 中第 $i$ 行第 $j$ 列元 $c_{i j}$ 等于 $\boldsymbol{A}$ 的第 $i$ 行元与 $\boldsymbol{B}$ 的第 $j$ 列元对应乘积之 和, 即 $c_{i j}=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+\cdots+a_{i p} b_{p j}$.
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
+设 $\boldsymbol{A}=\left(\begin{array}{lll}1 & 2 & 3 \\ 3 & 2 & 1\end{array}\right), \boldsymbol{B}=\left(\begin{array}{ll}1 & 3 \\ 3 & 1 \\ 2 & 2\end{array}\right), \boldsymbol{D}=\left(\begin{array}{cc}1 & 0 \\ 3 & 2\end{array}\right)$, 求 $\boldsymbol{A B}, \boldsymbol{A D}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+$$
+\boldsymbol{A B}=\left(\begin{array}{ll}
+1 \times 1+2 \times 3+3 \times 2 & 1 \times 3+2 \times 1+3 \times 2 \\
+3 \times 1+2 \times 3+1 \times 2 & 3 \times 3+2 \times 1+1 \times 2
+\end{array}\right)=\left(\begin{array}{cc}
+13 & 11 \\
+11 & 13
+\end{array}\right)
+$$
+$\boldsymbol{A D}$ 无意义.
+</p>
+</div> 
+</p>
+
+<li>利用SageMath在线代码模块求例 $2$ 中的矩阵 $\boldsymbol{AB}$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex2").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex2").style.display="none"'> 
+<div id= "divIDdaimaex2" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,2,3],[3,2,1]])    #输入矩阵A
+B = matrix([[1,3],[3,1],[2,2]])  #输入矩阵B
+show(A)                #显示矩阵A
+show(B)                #显示矩阵B
+show(A*B)              #求矩阵AB
+ </script></div>
+</div>
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
+对于线性方程组
+\begin{equation}\label{eq:1.1}
+\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1}, \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
+\cdots \cdots \cdots \cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}
+\end{array}\right.
+\end{equation}
+若令矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right), \quad \boldsymbol{X}=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right), \quad \boldsymbol{b}=\left(\begin{array}{c}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{array}\right),
+$$
+则
+$$
+\boldsymbol{A X}=\left(\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n} \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n} \\
+\cdots \cdots \cdots\cdots \cdots \cdots  \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}
+\end{array}\right)=\left(\begin{array}{c}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{array}\right)=\boldsymbol{b},
+$$
+即方程组 (\ref{eq:1.1}) 可表为矩阵形式 $\boldsymbol{A X}=\boldsymbol{b}$.
+</p>
+
+
+
+
+<p style="text-indent: 2em;">矩阵乘法满足下列运算规律:
+<p style="text-indent: 2em;">
+$1^{\circ}\quad$ 结合律 $(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{A}(\boldsymbol{B C})$;
+<p style="text-indent: 2em;">
+$2^{\circ}\quad$ 数乘结合律 $k(\boldsymbol{A B})=(k \boldsymbol{A}) \boldsymbol{B}=\boldsymbol{A}(k \boldsymbol{B}), k$ 为数;
+<p style="text-indent: 2em;">
+$3^{\circ}\quad$ 分配律 $\boldsymbol{A}(\boldsymbol{B}+\boldsymbol{C})=\boldsymbol{A B}+\boldsymbol{A C},(\boldsymbol{B}+\boldsymbol{C}) \boldsymbol{A}=\boldsymbol{B A}+\boldsymbol{C A}$.
+<p></p>
+
+<p style="text-indent: 2em;">这里只证明结合律, 其他两条请读者自证.
+<p style="text-indent: 2em;">
+设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵, $\boldsymbol{B}$ 是 $n \times p$ 矩阵, $\boldsymbol{C}$ 是 $p \times s$ 矩阵, 则 $\boldsymbol{A B}$ 是 $m \times p$ 矩阵,
+$\boldsymbol{B C}$ 是 $n \times s$ 矩阵, 故 $(\boldsymbol{A B}) \boldsymbol{C}$ 与 $\boldsymbol{A}(\boldsymbol{B C})$ 都是 $m \times s$ 矩阵, 因而是同型矩阵.
+<p style="text-indent: 2em;">
+现在比较它们的对应元. 矩阵 $(\boldsymbol{A B}) \boldsymbol{C}$ 的第 $i$ 行第 $j$ 列元为
+$$
+\sum_{k=1}^{p}\left(\sum_{l=1}^{n} a_{i l} b_{l k}\right) c_{k j}=\sum_{k=1}^{p} \sum_{l=1}^{n} a_{i l} b_{l k} c_{k j} .
+$$
+矩阵 $\boldsymbol{A}(\boldsymbol{B C})$ 的第 $i$ 行第 $j$ 列元为
+$$
+\sum_{l=1}^{n} a_{i l}\left(\sum_{k=1}^{p} b_{l k} c_{k j}\right)=\sum_{l=1}^{n} \sum_{k=1}^{p} a_{i l} b_{l k} c_{k j}=\sum_{k=1}^{p} \sum_{l=1}^{n} a_{i l} b_{l k} c_{k j},
+$$
+上式成立是由于双重有限项求和符号可以交换次序, 因此 $(\boldsymbol{A B}) \boldsymbol{C}$ 与 $\boldsymbol{A}(\boldsymbol{B C})$ 的对应元 相等, 故有 $(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{A}(\boldsymbol{B C})$.
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
+设 $\boldsymbol{A}=\left(\begin{array}{cc}1 & 1 \\ -1 & -1\end{array}\right), \boldsymbol{B}=\left(\begin{array}{cc}1 & -1 \\ -1 & 1\end{array}\right)$, 求 $\boldsymbol{A B}$ 和 $\boldsymbol{B} \boldsymbol{A}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+显然
+$$
+\boldsymbol{A} \boldsymbol{B}=\left(\begin{array}{ll}
+0 & 0 \\
+0 & 0
+\end{array}\right), \quad \boldsymbol{B} \boldsymbol{A}=\left(\begin{array}{cc}
+2 & 2 \\
+-2 & -2
+\end{array}\right) .
+$$
+</p>
+</div> 
+</p>
+
+<li>利用SageMath在线代码模块求例 $4$ 中的矩阵 $\boldsymbol{AB}$.</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex4").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex4").style.display="none"'> 
+<div id= "divIDdaimaex4" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,1],[-1,-1]])  #输入矩阵A
+B = matrix([[1,-1],[-1,1]])  #输入矩阵B
+show(A)                #显示矩阵A
+show(B)                #显示矩阵B
+show(A*B)              #求矩阵AB
+ </script></div>
+</div>
+
+
+<p style="text-indent: 2em;">
+在例 $4$ 中, 我们已经看出矩阵乘法一般不满足交换律, 即一般 $\boldsymbol{A B} \neq \boldsymbol{BA}$.
+<p style="text-indent: 2em;">
+当 $\boldsymbol{A B} \neq \boldsymbol{BA}$ 时, 称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 不可交换; 当 $\boldsymbol{A B}=\boldsymbol{BA}$ 时, 称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 可交换.
+
+<p style="text-indent: 2em;">
+从例 $4$ 还可见, $\boldsymbol{A}, \boldsymbol{B}$ 都是非零矩阵, 但 $\boldsymbol{A B}=\boldsymbol{O}$. 由此可知, 矩阵的乘法不满足消去律, 即 $\boldsymbol{A} \neq \boldsymbol{O}$ 时, 由 $\boldsymbol{A B}=\boldsymbol{A C}$ 不 能推出 $\boldsymbol{B}=\boldsymbol{C}$. 事实上, 由 $\boldsymbol{A B}-\boldsymbol{A C}=\boldsymbol{A}(\boldsymbol{B}-\boldsymbol{C})=\boldsymbol{O}$ 不能推出 $\boldsymbol{B}-\boldsymbol{C}=\boldsymbol{O}$.
+<p style="text-indent: 2em;">
+矩阵乘法一般不满足交换律, 但是, 容易得到如下常用结果:
+$$
+\boldsymbol{I}_{m} \boldsymbol{A}_{m \times n}=\boldsymbol{A}_{m \times n}, \quad \boldsymbol{A}_{m \times n} \boldsymbol{I}_{n}=\boldsymbol{A}_{m \times n} .
+$$
+可见, 单位矩阵在矩阵乘法中的作用与数 $1$ 在数的乘法中的作用类似.
+<p style="text-indent: 2em;">
+我们称
+$$
+k\boldsymbol{I}=\operatorname{diag}(k, k, \cdots, k)=\left(\begin{array}{llll}
+k & & & \\
+& k & & \\
+& &\ddots & \\
+& & & k
+\end{array}\right) \quad(k \neq 0)
+$$
+为数量矩阵.
+<p style="text-indent: 2em;">
+$n$ 阶数量矩阵 $k \boldsymbol{I}$ 与任意 $n$ 阶矩阵 $\boldsymbol{A}$ 也是可交换的. 这是因为
+$$
+(k \boldsymbol{I}) \boldsymbol{A}=k(\boldsymbol{I} \boldsymbol{A})=k \boldsymbol{A}, \boldsymbol{A}(k \boldsymbol{I})=k(\boldsymbol{A I})=k \boldsymbol{A} .
+$$
+
+
+<p style="text-indent: 2em;">我们还可定义方阵的幂和方阵的多项式.
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $5$：</b></font>
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, $k$ 为正整数, 定义
+$$
+\left\{\begin{array}{l}
+\boldsymbol{A}^{1}=\boldsymbol{A}, \\
+\boldsymbol{A}^{k+1}=\boldsymbol{A}^{k} \boldsymbol{A}, \quad k=1,2, \cdots .
+\end{array}\right.
+$$
+</p>
+
+<p style="text-indent: 2em;">由定义可以证明: 当 $m, k$ 为正整数时,
+$$
+\boldsymbol{A}^{m} \boldsymbol{A}^{k}=\boldsymbol{A}^{m+k},\left(\boldsymbol{A}^{m}\right)^{k}=\boldsymbol{A}^{m k} .
+$$
+但需注意, 一般 $(\boldsymbol{AB})^{k} \neq \boldsymbol{A}^{k} \boldsymbol{B}^{k}$.
+
+<p style="text-indent: 2em;">当 $\boldsymbol{AB}=\boldsymbol{BA}$ 时, $(\boldsymbol{AB})^{k}=\boldsymbol{A}^{k} \boldsymbol{B}^{k}=\boldsymbol{B}^{k} \boldsymbol{A}^{k}$, 但其逆不真.
+
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $6$：</b></font>
+设 $f(x)=a_{k} x^{k}+a_{k-1} x^{k-1}+\cdots+a_{1} x+a_{0}$ 是 $x$ 的 $k$ 次多项式, $\boldsymbol{A}$ 是 $n$ 阶方阵, 则
+$$
+f(\boldsymbol{A})=a_{k} \boldsymbol{A}^{k}+a_{k-1} \boldsymbol{A}^{k-1}+\cdots+a_{1} \boldsymbol{A}+a_{0} \boldsymbol{I}
+$$
+称为方阵 $\boldsymbol{A}$ 的 $k$ 次多项式.
+</p>
+
+
+
+<p style="text-indent: 2em;">由定义容易证明: 若 $f(x), g(x)$ 为多项式, $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵, 则
+$$
+f(\boldsymbol{A}) g(\boldsymbol{A})=g(\boldsymbol{A}) f(\boldsymbol{A}) .
+$$
+
+<p style="text-indent: 2em;">例如
+$$
+(\boldsymbol{A}+3 \boldsymbol{I})(2 \boldsymbol{A}-\boldsymbol{I})=(2 \boldsymbol{A}-\boldsymbol{I})(\boldsymbol{A}+3 \boldsymbol{I})=2 \boldsymbol{A}^{2}+5 \boldsymbol{A}-3 \boldsymbol{I} .
+$$
+但是一般情况下
+$$
+f(\boldsymbol{A}) g(\boldsymbol{B}) \neq g(\boldsymbol{B}) f(\boldsymbol{A}).
+$$
+这里要注意, 一般来说
+$$
+\begin{gathered}
+(\boldsymbol{A}+\boldsymbol{B})^{2} \neq\boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}, \\
+(\boldsymbol{A}+\boldsymbol{B})(\boldsymbol{A}-\boldsymbol{B}) \neq(\boldsymbol{A}-\boldsymbol{B})(\boldsymbol{A}+\boldsymbol{B}) \neq \boldsymbol{A}^{2}-\boldsymbol{B}^{2},
+\end{gathered}
+$$
+等等. 但是, 由于 $\boldsymbol{A I}=\boldsymbol{I A}$, 因而
+$$
+\begin{gathered}
+(\boldsymbol{A}+\boldsymbol{I})^{2}=\boldsymbol{A}^{2}+2 \boldsymbol{A I}+\boldsymbol{I}^{2}=\boldsymbol{A}^{2}+2 \boldsymbol{A}+\boldsymbol{I}, \\
+(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-\boldsymbol{I})=\boldsymbol{A}^{2}-\boldsymbol{I}^{2}=\boldsymbol{A}^{2}-\boldsymbol{I},
+\end{gathered}
+$$
+等等.
+
+
+
+<p style="text-indent: 2em;">由于数量矩阵 $\lambda \boldsymbol{I}$ 与任意方阵可交换, 因此下式可按二项式定理展开
+$$
+(\boldsymbol{A}+\lambda \boldsymbol{I})^{n}=\boldsymbol{A}^{n}+\mathrm{C}_{n}^{1} \lambda \boldsymbol{A}^{n-1}+\mathrm{C}_{n}^{2} \lambda^{2} \boldsymbol{A}^{n-2}+\cdots+\mathrm{C}_{n}^{n-1} \lambda^{n-1} \boldsymbol{A}+\lambda^{n} \boldsymbol{I} .
+$$
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
+求与 $\boldsymbol{A}=\left(\begin{array}{ccc}1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)$ 可交换的矩阵 $\boldsymbol{B}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+设 $\boldsymbol{B}=\left(\begin{array}{ccc}a_{1} & a_{2} & a_{3} \\ b_{1} & b_{2} & b_{3} \\ c_{1} & c_{2} & c_{3}\end{array}\right)$, 则
+$$
+\boldsymbol{A B}=\left(\begin{array}{ccc}
+a_{1}+b_{1} & a_{2}+b_{2} & a_{3}+b_{3} \\
+b_{1} & b_{2} & b_{3} \\
+c_{1} & c_{2} & c_{3}
+\end{array}\right), \quad \boldsymbol{B A}=\left(\begin{array}{ccc}
+a_{1} & a_{1}+a_{2} & a_{3} \\
+b_{1} & b_{1}+b_{2} & b_{3} \\
+c_{1} & c_{1}+c_{2} & c_{3}
+\end{array}\right).
+$$
+由 $\boldsymbol{A B}=\boldsymbol{B A}$ 得
+$$
+\begin{array}{rrr}
+a_{1}+b_{1}=a_{1}, &a_{2}+b_{2}=a_{1}+a_{2}, &a_{3}+b_{3}=a_{3},\\
+b_{1}=b_{1}, & b_{2}=b_{1}+b_{2}, & b_{3}=b_{3}, \\
+c_{1}=c_{1}, & c_{2}=c_{1}+c_{2}, & c_{3}=c_{3} .
+\end{array}
+$$
+所以 $b_{1}=b_{3}=0, c_{1}=0, b_{2}=a_{1}$, 于是与 $\boldsymbol{A}$ 可交换的矩阵
+$$
+\boldsymbol{B}=\left(\begin{array}{ccc}
+a_{1} & a_{2} & a_{3} \\
+0 & a_{1} & 0 \\
+0 & c_{2} & c_{3}
+\end{array}\right),
+$$
+其中 $a_{1}, a_{2}, a_{3}, c_{2}, c_{3}$ 为任意数.
+</p>
+</div> 
+</p>
+
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+1 & a & b \\
+0 & 1 & a \\
+0 & 0 & 1
+\end{array}\right),
+$$
+求 $\boldsymbol{A}^{n}$ $($ $n$ 为正整数 $)$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+$$
+\begin{gathered}
+\boldsymbol{A}^{2}=\left(\begin{array}{ccc}
+1 & a & b \\
+0 & 1 & a \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+1 & a & b \\
+0 & 1 & a \\
+0 & 0 & 1
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 2 a & a^{2}+2 b \\
+0 & 1 & 2 a \\
+0 & 0 & 1
+\end{array}\right), \\
+\boldsymbol{A}^{3}=\left(\begin{array}{ccc}
+1 & 2 a & a^{2}+2 b \\
+0 & 1 & 2 a \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+1 & a & b \\
+0 & 1 & a \\
+0 & 0 & 1
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 3 a & (1+2) a^{2}+3 b \\
+0 & 1 & 3 a \\
+0 & 0 & 1
+\end{array}\right), \\
+\cdots
+\end{gathered}
+$$
+设
+$$
+\boldsymbol{A}^{k}=\left(\begin{array}{ccc}
+1 & k a & {[1+2+\cdots+(k-1)] a^{2}+k b} \\
+0 & 1 & k a \\
+0 & 0 & 1
+\end{array}\right)
+$$
+成立, 有
+$$
+\begin{aligned}
+\boldsymbol{A}^{k+1} &=\left(\begin{array}{ccc}
+1 & k a & {[1+2+\cdots+(k-1)] a^{2}+k b} \\
+0 & 1 & k a \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+1 & a & b \\
+0 & 1 & a \\
+0 & 0 & 1
+\end{array}\right) \\
+&=\left(\begin{array}{ccc}
+1 & (k+1) a & (1+2+\cdots+k) a^{2}+(k+1) b \\
+0 & 1 & (k+1) a \\
+0 & 0 & 1
+\end{array}\right).
+\end{aligned}
+$$
+由数学归纳法知
+$$
+\boldsymbol{A}^{n}=\left(\begin{array}{ccc}
+1 & n a & {[1+2+\cdots+(n-1)] a^{2}+n b} \\
+0 & 1 & n a \\
+0 & 0 & 1
+\end{array}\right) .
+$$
+</p>
+</div> 
+</p>
+
+<li>利用SageMath在线代码模块求例 $6$ 中的矩阵 $\boldsymbol{A}^n$.</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex6").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex6").style.display="none"'> 
+<div id= "divIDdaimaex6" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("a b n")
+A = matrix([[1,a,b],[0,1,a],[0,0,1]])  #输入矩阵A
+show(A)                #显示矩阵A
+show(A^n)              #显示矩阵A^n
+ </script></div>
+</div>
+
+<p style="text-indent: 2em;">
+$n$ 个变量 $x_{1}, x_{2}, \cdots, x_{n}$ 与 $m$ 个变量 $y_{1}, y_{2}, \cdots, y_{m}$ 之间的关系式
+$$
+\left\{\begin{array}{c}
+y_{1}=a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}, \\
+y_{2}=a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}, \\
+\quad \cdots \cdots \cdots \cdots \\
+y_{m}=a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}
+\end{array}\right.
+$$
+称为从变量 $x_{1}, x_{2}, \cdots, x_{n}$ 到变量 $y_{1}, y_{2}, \cdots, y_{m}$ 的线性变换, 其中 $a_{i j}$ 为常数. 可以看出, 上述变换可写为 $\boldsymbol{Y}=\boldsymbol{A X}$, 其中
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right), \quad \boldsymbol{X}=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right), \quad \boldsymbol{Y}=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{m}
+\end{array}\right) .
+$$
+
+<p style="text-indent: 2em;">当 $\boldsymbol{A}=\boldsymbol{I}$ 时, $\boldsymbol{Y}=\boldsymbol{A X}=\boldsymbol{X}$ 为恒等变换.
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
+在平面直角坐标系中, 线性变换
+$$
+\left(\begin{array}{l}
+x^{\prime} \\
+y^{\prime}
+\end{array}\right)=\left(\begin{array}{cc}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{array}\right)\left(\begin{array}{l}
+x \\
+y
+\end{array}\right)
+$$
+是将点 $(x, y)$ 逆时针旋转 $\theta$ 角得到新点 $\left(x^{\prime}, y^{\prime}\right)$ 的旋转变换.
+</p>
+
+
+
+<p style="text-indent: 2em;">下面我们通过一个例子来直观理解矩阵和矩阵的乘积. 给定矩阵 $\boldsymbol{A}$ 和矩阵 $\boldsymbol{X}$,
+$$
+\boldsymbol{A}=\left(\begin{array}{cc}
+0.5 & 0 \\
+0 & 1
+\end{array}\right), \quad \boldsymbol{X}=\left(\begin{array}{c}
+-6 \\
+-7
+\end{array}\right),
+$$
+则矩阵 $\boldsymbol{A}$ 与矩阵 $\boldsymbol{X}$ 的乘积可以直观理解为将二维空间的点 $\boldsymbol{X}$ 变换为二维空间的点 $\boldsymbol{A X}(x$ 轴坐标缩小一半, $y$ 轴坐标保持不变 $)$. 矩阵 $\boldsymbol{A}$ 与矩阵
+$$
+\left(\begin{array}{c}
+-6 \\
+-7
+\end{array}\right),\left(\begin{array}{c}
+-6 \\
+2
+\end{array}\right),\left(\begin{array}{c}
+-7 \\
+1
+\end{array}\right),\left(\begin{array}{l}
+0 \\
+8
+\end{array}\right),\left(\begin{array}{l}
+7 \\
+1
+\end{array}\right),\left(\begin{array}{l}
+6 \\
+2
+\end{array}\right),\left(\begin{array}{c}
+6 \\
+-7
+\end{array}\right),\left(\begin{array}{c}
+-3 \\
+-7
+\end{array}\right),\left(\begin{array}{c}
+-3 \\
+-2
+\end{array}\right),\left(\begin{array}{c}
+0 \\
+-2
+\end{array}\right),\left(\begin{array}{c}
+0 \\
+-7
+\end{array}\right)
+$$
+的乘积可以直观理解为将二维空间的一组点变换为二维空间的另一组点. 我们观察到变 换前的点连接起来是房子的形状 (如图<a href="#fig1.3">1.3</a>(a)所示), 而变换后的点连接起来是 $x$ 轴坐标缩小一半和 $y$ 轴坐标保持不变的房子形状 (如图<a href="#fig1.3">1.3</a>(b)所示).
+
+
+<center>
+<figure>
+  <img src="fig1.3.jpg" width="40%">
+ <figcaption><a name="fig1.3">图1.3</a> </figcaption>
+</figure>
+</center>
+
+
+
+
+<p style="text-indent: 2em;">进一步考虑如下变换矩阵:
+$$
+\boldsymbol{A}_{1}=\left(\begin{array}{cc}
+2 & 0 \\
+0 & -1
+\end{array}\right), \quad \boldsymbol{A}_{2}=\left(\begin{array}{ll}
+1 & 0 \\
+0 & 0
+\end{array}\right), \quad \boldsymbol{A}_{3}=\left(\begin{array}{cc}
+\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\[10pt]
+\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}
+\end{array}\right),
+$$
+则变换后的点连接起来是什么形状呢?
+
+
+
+
+
+
+
+<p></p>
+
+<font color=blue><b>应用实例一: 职工轮训</b></font>
+
+<p></p>
+<p style="text-indent: 2em;">某公司为了实现技术更新, 计划对职工实行分批脱产轮训. 现有不脱产职工 $8000$ 人, 脱产轮训职工 $2000$ 人. 若每年从不脱产职工中抽调 $30 \%$ 的人脱产轮训, 同时又有 $60 \%$ 脱产轮训职工结业回到生产岗位, 若职工总数保持不变, 一年后不脱产职工及脱产轮训 职工各有多少? 两年后又怎样?
+
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexampleSL1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexampleSL1").style.display="none"'> 
+<div id= "divIDexampleSL1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+令
+$$
+\boldsymbol{A}=\left(\begin{array}{ll}
+0.70 & 0.60 \\
+0.30 & 0.40
+\end{array}\right), \quad \boldsymbol{X}=\left(\begin{array}{l}
+8000 \\
+2000
+\end{array}\right),
+$$
+则一年后不脱产职工及脱产轮训职工人数可用 $\boldsymbol{A X}$ 表示:
+$$
+\boldsymbol{A} \boldsymbol{X}=\left(\begin{array}{ll}
+0.70 & 0.60 \\
+0.30 & 0.40
+\end{array}\right)\left(\begin{array}{l}
+8000 \\
+2000
+\end{array}\right)=\left(\begin{array}{l}
+6800 \\
+3200
+\end{array}\right) \text {. }
+$$
+两年后不脱产职工及脱产轮训职工人数可用 $\boldsymbol{A}^{2} \boldsymbol{X}$ 表示:
+$$
+\boldsymbol{A}^{2} \boldsymbol{X}=\boldsymbol{A}(\boldsymbol{A X})=\left(\begin{array}{ll}
+0.70 & 0.60 \\
+0.30 & 0.40
+\end{array}\right)\left(\begin{array}{l}
+6800 \\
+3200
+\end{array}\right)=\left(\begin{array}{l}
+6680 \\
+3320
+\end{array}\right),
+$$
+故两年后脱产轮训职工人数约占不脱产职工人数的一半.
+</p>
+</div> 
+
+
+
+<p></p>
+
+<font color=blue><b>应用实例二: 神经网络</b></font>
+
+<p></p>
+
+
+
+<p style="text-indent: 2em;">深度神经网络是人工智能的重要研究方向之一. 神经元是构成神经网络的基本单元, 用以模拟生物神经元特性, 接收一组输入信号并产出输出. 如图<a href="#fig1.4">1.4</a>所示, $a_{j}^{l-1}$ 是第 $l-1$ 层第 $j$ 个神经元的输出, $a_{i}^{l}$ 是第 $l$ 层神经元第 $i$ 个神经元的输入, $w_{i j}^{l}$ 是第 $l-1$ 层第 $j$ 个神经元到第 $l$ 层第 $i$ 个神经元的连接权重.
+
+
+<center>
+<figure>
+  <img src="fig1.4.jpg" width="25%">
+ <figcaption><a name="fig1.4">图1.4</a> </figcaption>
+</figure>
+</center>
+
+
+
+<p style="text-indent: 2em;">我们可以用矩阵和矩阵的乘积表示神经网络第 $l-1$ 层和第 $l$ 层神经元的关系为
+$$
+\left(\begin{array}{c}
+a_{1}^{l} \\
+a_{2}^{l} \\
+\vdots \\
+a_{i}^{l}
+\end{array}\right)=\left(\begin{array}{cccc}
+w_{11}^{l} & w_{12}^{l} & \cdots & w_{1 j}^{l} \\
+w_{21}^{l} & w_{22}^{l} & \cdots & w_{2 j}^{l} \\
+\vdots & \vdots & & \vdots \\
+w_{i 1}^{l} & w_{i 2}^{l} & \cdots & w_{i j}^{l}
+\end{array}\right)\left(\begin{array}{c}
+a_{1}^{l-1} \\
+a_{2}^{l-1} \\
+\vdots \\
+a_{j}^{l-1}
+\end{array}\right),
+$$
+简记为 $\boldsymbol{a}^{l}=\boldsymbol{W} \boldsymbol{a}^{l-1}$, 其中向量 $\boldsymbol{a}^{l-1}$ 表示第 $l-1$ 层神经元的输出, $\boldsymbol{a}^{l}$ 表示第 $l$ 层神经 元的输入, 矩阵 $\boldsymbol{W}$ 表示神经元的连接权重.
+
+
+
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+
+<h2><a name="C4">$1.1.4$ 矩阵的转置</a></h2>
+
+
+<ul>
+
+
+<p style="text-indent: 2em;">把一个矩阵 $\boldsymbol{A}$ 的行列互换, 所得到的矩阵称为 $\boldsymbol{A}$ 的转置, 记为 $\boldsymbol{A}^{\mathrm{T}}$. 确切的定义如下:
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $7$：</b></font>
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right),
+$$
+则称
+$$
+\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{cccc}
+a_{11} & a_{21} & \cdots & a_{m 1} \\
+a_{12} & a_{22} & \cdots & a_{m 2} \\
+\vdots & \vdots & & \vdots \\
+a_{1 n} & a_{2 n} & \cdots & a_{m n}
+\end{array}\right)
+$$
+为 $\boldsymbol{A}$ 的转置.
+</p>
+
+
+
+
+<p style="text-indent: 2em;">显然, $m \times n$ 矩阵的转置是 $n \times m$ 矩阵.
+
+<p style="text-indent: 2em;">矩阵的转置满足以下规律:
+<p style="text-indent: 2em;">
+$
+\begin{array}{ll}
+1^{\circ} & \left(\boldsymbol{A}^{\mathrm{T}}\right)^{\mathrm{T}}=\boldsymbol{A} ; \\
+2^{\circ} & (\boldsymbol{A}+\boldsymbol{B})^{\mathrm{T}}=\boldsymbol{A}^{\mathrm{T}}+\boldsymbol{B}^{\mathrm{T}} ; \\
+3^{\circ} & (k \boldsymbol{A})^{\mathrm{T}}=\boldsymbol{k} \boldsymbol{A}^{\mathrm{T}}, k \text { 为数; } \\
+4^{\circ} & (\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}} .
+\end{array}
+$
+
+<p style="text-indent: 2em;">
+$1^{\circ}, 2^{\circ}, 3^{\circ}$ 都容易证明. 下面证明 $4^{\circ}$. 设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}, \boldsymbol{B}=\left(b_{i j}\right)_{n \times s}$. 因为 $\boldsymbol{A B}$ 是 $m \times s$ 矩阵, 所以 $(\boldsymbol{A B})^{\mathrm{T}}$ 是 $s \times m$ 矩阵, 而 $\boldsymbol{B}^{\mathrm{T}}$ 是 $s \times n$ 矩阵, $\boldsymbol{A}^{\mathrm{T}}$ 是 $n \times m$ 矩阵, 因此 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$ 是 $s \times m$ 矩阵, 故 $(\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}$ 与 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$ 是同型矩阵.
+
+<p style="text-indent: 2em;">现比较它们的对应元. $(\boldsymbol{A B})^{\mathrm{T}}$ 的第 $i$ 行第 $j$ 列元, 也就是 $\boldsymbol{A B}$ 的第 $j$ 行第 $i$ 列元, 即为
+$$
+\sum_{k=1}^{n} a_{j k} b_{k i} .
+$$
+另一方面, $\boldsymbol{B}^{\mathrm{T}}$ 的第 $i$ 行第 $k$ 列元是 $b_{k i}, \boldsymbol{A}^{\mathrm{T}}$ 的第 $k$ 行第 $j$ 列元是 $a_{j k}$, 因此, $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$ 的 第 $i$ 行第 $j$ 列元为
+$$
+\sum_{k=1}^{n} b_{k i} a_{j k}=\sum_{k=1}^{n} a_{j k} b_{k i},
+$$
+从而 $(\boldsymbol{A B})^{\mathrm{T}}$ 与 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$ 的对应元相等, 故有 $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$.
+
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+1 & -1 & 2 \\
+0 & 1 & 3 \\
+1 & 2 & 1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{cc}
+3 & 1 \\
+2 & 2 \\
+1 & -1
+\end{array}\right),
+$$
+求 $\boldsymbol{A}^{\mathrm{T}}, \boldsymbol{B}^{\mathrm{T}}, \boldsymbol{A} \boldsymbol{B}, \boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+$$
+\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{ccc}
+1 & 0 & 1 \\
+-1 & 1 & 2 \\
+2 & 3 & 1
+\end{array}\right), \quad \boldsymbol{B}^{\mathrm{T}}=\left(\begin{array}{ccc}
+3 & 2 & 1 \\
+1 & 2 & -1
+\end{array}\right),
+$$
+$$
+\boldsymbol{A} \boldsymbol{B}=\left(\begin{array}{ccc}
+1 & -1 & 2 \\
+0 & 1 & 3 \\
+1 & 2 & 1
+\end{array}\right)\left(\begin{array}{cc}
+3 & 1 \\
+2 & 2 \\
+1 & -1
+\end{array}\right)=\left(\begin{array}{cc}
+3 & -3 \\
+5 & -1 \\
+8 & 4
+\end{array}\right),
+$$
+$$
+\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=(\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}=\left(\begin{array}{ccc}
+3 & 5 & 8 \\
+-3 & -1 & 4
+\end{array}\right).
+$$
+</p>
+</div> 
+</p>
+
+
+<li>利用SageMath在线代码模块求例 $8$ 中的矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex8").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex8").style.display="none"'> 
+<div id= "divIDdaimaex8" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,-1,2],[0,1,3],[1,2,1]])  #输入矩阵A
+B = matrix([[3,1],[2,2],[1,-1]])        #输入矩阵B
+show(A.transpose())     #求矩阵A的转置 
+show(B.transpose())     #求矩阵A的转置 
+show(A*B)               #求矩阵AB 
+show(B.transpose()*A.transpose())       #求矩阵B^TA^T 
+ </script></div>
+</div>
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $9$：</b></font>
+证明 $(\boldsymbol{A} \boldsymbol{B C})^{\mathrm{T}}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=green><b>证明：</b></font>
+$(\boldsymbol{A} \boldsymbol{B} \boldsymbol{C})^{\mathrm{T}}=[(\boldsymbol{A} \boldsymbol{B}) \boldsymbol{C}]^{\mathrm{T}}=\boldsymbol{C}^{\mathrm{T}}(\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}} .$
+</p>
+</div> 
+</p>
+
+<p style="text-indent: 2em;">对于有限多个矩阵乘积的转置, 用数学归纳法容易证明
+$$
+\left(\boldsymbol{A}_{1} \boldsymbol{A}_{2} \cdots \boldsymbol{A}_{k}\right)^{\mathrm{T}}=\boldsymbol{A}_{k}^{\mathrm{T}} \boldsymbol{A}_{k-1}^{\mathrm{T}} \cdots \boldsymbol{A}_{1}^{\mathrm{T}} .
+$$
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $8$：</b></font>
+若 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 则称 $\boldsymbol{A}$ 为对称矩阵; 若 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 则称 $\boldsymbol{A}$ 为反称矩阵.
+</p>
+
+
+<p style="text-indent: 2em;">显然, 对称矩阵和反称矩阵都是方阵, 对称矩阵 $\boldsymbol{A}$ 中的元之间有关系 $a_{i j}=a_{j i}$,
+反称矩阵 $\boldsymbol{A}$ 的元之间有关系 $a_{i i}=0$, $a_{i j}=-a_{j i}$, $i \neq j$.
+
+
+<p style="text-indent: 2em;">例如, $\left(\begin{array}{cc}0 & 2 \\ -2 & 0\end{array}\right),\left(\begin{array}{lll}1 & 0 & 3 \\ 0 & 2 & 1 \\ 3 & 1 & 4\end{array}\right)$ 分别为反称矩阵和对称矩阵.
+
+<p style="text-indent: 2em;">显然, 数乘对称矩阵仍为对称矩阵; 同阶对称矩阵之和仍为对称矩阵. 但是, 对称矩阵的乘积未必是对称矩阵.
+
+<p style="text-indent: 2em;">例如, $\left(\begin{array}{cc}0 & -1 \\ -1 & 1\end{array}\right)$ 和 $\left(\begin{array}{ll}1 & 1 \\ 1 & 1\end{array}\right)$ 均为对称矩阵, 但
+$$
+\left(\begin{array}{cc}
+0 & -1 \\
+-1 & 1
+\end{array}\right)\left(\begin{array}{ll}
+1 & 1 \\
+1 & 1
+\end{array}\right)=\left(\begin{array}{cc}
+-1 & -1 \\
+0 & 0
+\end{array}\right)
+$$
+为非对称矩阵.
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $10$：</b></font>
+设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 为两个 $n$ 阶对称矩阵, 证明 $\boldsymbol{A B}$ 为对称矩阵的充要条件是 $\boldsymbol{A B}=\boldsymbol{B A}$.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample10").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample10").style.display="none"'> 
+<div id= "divIDexample10" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
+若 $\boldsymbol{A} \boldsymbol{B}=\boldsymbol{B} \boldsymbol{A}$, 则 $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B A}=\boldsymbol{A B}$, 即 $\boldsymbol{A B}$ 为对称矩阵. 反之, 若 $\boldsymbol{A B}$ 为对称矩阵, 即 $(\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}=\boldsymbol{A} \boldsymbol{B}$, 则 $\boldsymbol{A B}=(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B} \boldsymbol{A}$, 即 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 可交换.
+</p>
+</div> 
+</p>
+
+
+<p style="text-indent: 2em;">容易证明, 对任意矩阵 $\boldsymbol{A}, \boldsymbol{A}\boldsymbol{A}^{\mathrm{T}}$ 和 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}$ 都是对称矩阵.
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $11$：</b></font>
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为同阶方阵, $\boldsymbol{A}$ 为反称矩阵, $\boldsymbol{B}$ 为对称矩阵, 则 $\boldsymbol{A B}-\boldsymbol{B A}$ 为对称矩阵.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
+$$
+\begin{aligned}
+(\boldsymbol{A} \boldsymbol{B}-\boldsymbol{B} \boldsymbol{A})^{\mathrm{T}} &=(\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}-(\boldsymbol{B} \boldsymbol{A})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}-\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}^{\mathrm{T}} \\
+&=\boldsymbol{B}(-\boldsymbol{A})-(-\boldsymbol{A}) \boldsymbol{B}=\boldsymbol{A} \boldsymbol{B}-\boldsymbol{B} \boldsymbol{A}.
+\end{aligned}
+$$
+即 $\boldsymbol{AB}-\boldsymbol{BA}$ 为对称矩阵.
+</p>
+</div> 
+</p>
+
+
+
+
+
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+
+
+
+<br>
+<center>
+Copyright &copy; 2023 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
+
+
