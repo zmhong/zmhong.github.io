@@ -522,23 +522,24 @@ $$
 设 $m$ 个 $n$ 元方程组成的齐次线性方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{0}$, 若 $m < n$, 则方程组必有非零解.
 </p>
 
-<p style="text-indent: 2em;">最后需要指出: 初等变换是可逆变换. 初等变换和它的逆变换对比如表 \ref{tab:1.2} 所示:
+<p style="text-indent: 2em;">最后需要指出: 初等变换是可逆变换. 初等变换和它的逆变换对比如表 1.2 所示:
 
+<center>
+<table border="1" align="center">
+<caption>表1.2 初等变换及其逆变换的对比</caption>
+<thead>
+<tr>
+<td>类型</td><td>初等变换</td><td>逆变换</td>
+</tr>
+</thead>
+<tbody align="center">
+<tr><td>$\mathrm{I}$</td><td>交换两行 (列)</td><td>交换同样的两行 (列)</td></tr>
+<tr><td>$\mathrm{II}$</td><td>用 $k \neq 0$ 乘某一行 (列)</td><td>用 $\frac{1}{k}$ 乘同一行 $($ 列 $)$</td></tr>
+<tr><td>$\mathrm{III}$</td><td>把第 $i$ 行 (列) 的 $k$ 倍加到第 $j$ 行 (列) 上</td><td>把第 $i$ 行 (列) 的 $-k$ 倍加到第 $j$ 行 (列) 上</td></tr>
+</tbody>
+</table>
+</center>
 
-\begin{table}[!ht]
-    \centering
-    \caption{\textcolor{structurecolor}{\textbf{初等变换及其逆变换的对比}}}
-    %\setlength{\tabcolsep}{20pt} % Default value: 6pt
-    \renewcommand{\arraystretch}{2} % Default value: 1
-\begin{tabular}{c|c|c}
-\hline 类型 & 初等变换  &  逆变换  \\
-\hline $\mathrm{I}$ & 交换两行 (列) & 交换同样的两行 (列) \\
-\hline $\mathrm{II}$ & 用 $k \neq 0$ 乘某一行 (列) & 用 $\frac{1}{k}$ 乘同一行 $($ 列 $)$ \\[5pt]
-\hline $\mathrm{III}$ & 把第 $i$ 行 (列) 的 $k$ 倍加到第 $j$ 行 (列) 上 & 把第 $i$ 行 (列) 的 $-k$ 倍加到第 $j$ 行 (列) 上 \\
-\hline
-\end{tabular}
-\label{tab:1.2}
-\end{table}
 
 
 <p style="text-indent: 2em;">如果矩阵 $\boldsymbol{A}$ 经过有限次初等变换变成矩阵 $\boldsymbol{B}$, 就称矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 记作 $\boldsymbol{A} \cong \boldsymbol{B}$. 若使用的是行 (列) 初等变换, 则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 行 (列) 等价.
