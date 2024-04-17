@@ -780,6 +780,19 @@ $$
 </div> 
 </p>
 
+<li>利用SageMath在线代码模块求例 $4$ 中的矩阵</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaima8").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaima8").style.display="none"'> 
+<div id= "divIDdaima8" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("c k")        #定义符号变量c和k
+P1 = matrix([[1,0,3,1],[0,2,1,-1],[1,2,1,2],[2,1,0,1]]);    #矩阵P1按行输入
+P2 = matrix([[1,0,0,0],[0,1,0,0],[0,0,1,0],[c,0,0,1]]);    #矩阵P2按行输入
+P3 = matrix([[1,0,0,0],[0,k,0,0],[0,0,1,0],[0,0,0,1]]);    #矩阵P3按行输入
+show(P1*P2*P3)                #显示矩阵P1*P2*P3
+ </script></div>
+</div> 
+
 </ul>
 <a href="#CC0">返回顶部</a>
 
