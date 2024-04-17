@@ -11,6 +11,9 @@
     },
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
+    window.MathJax = {
+  tex: {packages: {'[-]': ['require', 'autoload']}}
+};
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
 </script>
@@ -26,6 +29,8 @@
     sagecell.makeSagecell({inputLocation: 'div.compute',
                            evalButtonText: '运行'});
     </script>
+
+
 
 </head>
 <body>
@@ -439,7 +444,7 @@ $$
 
 
 <p style="border: 2px solid green; border-radius: 5px">
-<font color=green><b>例 $4$：</b></font>
+<font color=green><b>例 $5$：</b></font>
 设 $m \times n$ 矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)$, 则
 $$
 \begin{gathered}
