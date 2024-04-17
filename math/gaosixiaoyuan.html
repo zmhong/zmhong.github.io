@@ -1,0 +1,899 @@
+
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<title>高斯消元法与矩阵的初等变换</title>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: '运行'});
+    </script>
+
+</head>
+<body>
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+$1.2$ 高斯消元法与矩阵的初等变换
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="CC0"><strong>目录:</strong></a><br></h2>
+
+<ul>
+<li><a href="#CC1">1.2.1 高斯消元法</a></li>
+<li><a href="#CC2">1.2.2 矩阵的初等变换</a></li>
+<li><a href="#CC3">1.2.3 初等矩阵</a></li>
+<li><a href="#CC4">1.2.4 应用案例一：卷积</a></li>
+<li><a href="#CC5">1.2.5 应用案例二：计算机断层成像</a></li>
+</ul>
+
+
+  
+
+<h2><a name="CC1">$1.2.1$ 高斯消元法</a></h2>
+
+
+
+<ul>
+
+
+<p style="text-indent: 2em;">在初等数学中, 解二元、三元线性方程组用的是加减消元法和代入消元法. 本节所讲的一般线性方程组的消元法, 就是将中学所用的方法加以一般化和规范化.
+
+我们先从一些例子来说明解线性方程组的消元法:
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
+解线性方程组
+$$
+\left\{\begin{array}{c}
+3 x_{1}-x_{2}+5 x_{3}=3, \\
+x_{1}-x_{2}+2 x_{3}=1, \\
+x_{1}-2 x_{2}-x_{3}=2.
+\end{array}\right.
+$$
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+将方程组中的第一个与第三个方程交换位置, 得方程组
+$$
+\left\{\begin{array}{rcrcrcc}
+x_{1}&-&2 x_{2}&-&x_{3}&=&2, \\
+x_{1}&-&x_{2}&+&2 x_{3}&=&1, \\
+3 x_{1}&-&x_{2}&+&5 x_{3}&=&3.
+\end{array}\right.
+$$
+
+将方程组的第一个方程的 $-1$ 倍加到第二个方程, 然后将第一个方程的 $-3$ 倍加到
+第三个方程, 得方程组
+$$
+\left\{\begin{aligned}
+x_{1}-&2 x_{2}-&x_{3} &=&2, \\
+&x_{2}+&3 x_{3} &=&-1, \\
+&5 x_{2}+&8 x_{3} &=&-3 .
+\end{aligned}\right.
+$$
+
+再将方程组中第二个方程的 $-5$ 倍加到第三个方程, 得方程组
+$$
+\left\{\begin{aligned}
+x_{1}-2 x_{2}-x_{3} &=2, \\
+x_{2}+3 x_{3} &=-1, \\
+-7 x_{3} &=2.
+\end{aligned}\right.
+$$
+
+最后将方程组的第三个方程乘 $-\frac{1}{7}$, 得方程组
+$$
+\left\{\begin{aligned}
+x_{1}-2 x_{2}-x_{3} &=2, \\
+x_{2}+3 x_{3} &=-1, \\
+x_{3} &=-\frac{2}{7} .
+\end{aligned}\right.
+$$
+这就是高斯消元过程. 于是得方程组的惟一解为
+$$
+\left\{\begin{array}{l}
+x_{1}=\frac{10}{7}, \\[5pt]
+x_{2}=-\frac{1}{7}, \\[5pt]
+x_{3}=-\frac{2}{7} .
+\end{array}\right.
+$$
+</p>
+</div> 
+</p>
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
+解线性方程组
+$$
+\left\{\begin{array}{rr}
+x_{1}+3 x_{2}+4 x_{3}=&-2, \\
+2 x_{1}+5 x_{2}+9 x_{3}=& 3, \\
+3 x_{1}+7 x_{2}+14 x_{3}=& 8, \\
+-x_{2}+x_{3}=& 7 .
+\end{array}\right.
+$$
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+将第一个方程的 $-2$ 倍加到第二个方程, 第一个方程的 $-3$ 倍加到第三个方程, 得方程组
+$$
+\left\{\begin{array}{rr}
+x_{1}+3 x_{2}+4 x_{3}=&-2, \\
+-x_{2}+x_{3}=& 7, \\
+-2 x_{2}+2 x_{3}=& 14, \\
+-x_{2}+x_{3}=& 7 .
+\end{array}\right.
+$$
+
+先将第二个方程乘 $-1$, 再将第二个方程的 $2$ 倍加到第三个方程, 最后将第二个方程
+加到第四个方程, 得方程组
+$$
+\left\{\begin{array}{rr}
+x_{1}+3 x_{2}+4 x_{3} =&-2, \\
+x_{2}-x_{3} =&-7, \\
+0 =&0, \\
+0 =&0 .
+\end{array}\right.
+$$
+即
+$$
+\left\{\begin{array}{r}
+x_{1}+3 x_{2}+4 x_{3}=-2, \\
+x_{2}-x_{3}=-7 .
+\end{array}\right.
+$$
+
+为求方程组的解, 将第二个方程改写为 $x_{2}=x_{3}-7$, 再将它代入第一个方程, 得 $x_{1}=-7 x_{3}+19$. 于是得
+$$
+\left\{\begin{array}{lr}
+x_{1}=&-7 x_{3}+19, \\
+x_{2}=&x_{3}-7,
+\end{array}\right.
+$$
+其中 $x_{3}$ 可以任意取值. 我们称 $x_{3}$ 为自由未知量. 因为 $x_{3}$ 可以任意取值, 所以方程组有 无穷多个解.
+
+</p>
+</div> 
+</p>
+
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
+解线性方程组
+$$
+\left\{\begin{array}{c}
+x_{1}-2 x_{2}+3 x_{3}-x_{4}+2 x_{5}=2, \\
+3 x_{1}-x_{2}+5 x_{3}-3 x_{4}-x_{5}=6, \\
+2 x_{1}+x_{2}+2 x_{3}-2 x_{4}-3 x_{5}=8 .
+\end{array}\right.
+$$
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+将方程组的第一个方程的 $-3$ 倍加到第二个方程, 将第一个方程的 $-2$ 倍加到 第三个方程, 得方程组
+$$
+\left\{\begin{array}{rr}
+x_{1}-2 x_{2}+3 x_{3}&-x_{4}+2 x_{5}=2, \\
+5 x_{2}-4 x_{3}&-7 x_{5}=0, \\
+5 x_{2}-4 x_{3}&-7 x_{5}=4.
+\end{array}\right.
+$$
+
+再将方程组的第二个方程的 $-1$ 倍加到第三个方程, 得方程组
+$$
+\left\{\begin{array}{rr}
+x_{1}-2 x_{2}+3 x_{3}&-x_{4}+2 x_{5}=2, \\
+5 x_{2}-4 x_{3}&-7 x_{5}=0, \\
+& 0 x_{5}=4 .
+\end{array}\right.
+$$
+因为方程组的第三个方程无解, 所以所给方程组无解.
+</p>
+</div> 
+</p>
+
+
+<p style="text-indent: 2em;">
+前面三个例子在解方程组的过程中, 我们总要先通过一些变换, 将方程组化为容易 求解的同解方程组, 这些变换可以归纳为以下三种变换:
+
+<p style="text-indent: 2em;">$1^{\circ}$ 交换两个方程的位置;
+
+<p style="text-indent: 2em;">$2^{\circ}$ 用一个非零数乘某一个方程;
+
+<p style="text-indent: 2em;">$3^{\circ}$ 把一个方程的适当倍数加到另一个方程上去.
+
+
+<p style="text-indent: 2em;">为了后面叙述方便, 我们称这三种变换为线性方程组的初等变换.
+
+<p style="text-indent: 2em;">高斯消元法的过程就是反复施行初等变换的过程, 且总是将方程组变成同解方程组.
+
+
+
+
+
+</ul>
+
+<a href="#CC0">返回顶部</a>
+
+
+
+<h2><a name="CC2">$1.2.2$ 矩阵的初等变换</a></h2>
+
+
+<ul>
+
+<p style="text-indent: 2em;">在解线性方程组的过程中, 我们已经看到, 如果线性方程组各个方程的系数和常数项定了, 那么这个线性方程组的解就完全确定了. 至于一个方程组的未知量用什么符号是无关紧要的.
+由于线性方程组由多个方程的未知量的系数与常数项完全决定, 因此可将方程组的系数与常数项用矩阵表示, 整个消元过程都可在矩阵上进行. 为此, 我们比照线性方程组 的初等变换引入矩阵的初等变换的概念.
+
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
+矩阵的行 (列) 初等变换指对矩阵施以下列三种变换:
+<br>
+$1^{\circ}$ 交换两行 (列) 的位置;
+<br>
+$2^{\circ}$ 用一非零数乘某一行 (列) 的所有元;
+<br>
+$3^{\circ}$ 把矩阵的某一行 (列) 的适当倍数加到另一行 (列) 上去.
+</p>
+
+
+
+现在解线性方程组可用对增广矩阵施以行初等变换来代替, 这样在书写上更方便.
+
+为方便计算, 用 $r_{i}$ 表示矩阵的第 $i$ 行, 交换 $i, j$ 两行, 记为 $r_{i} \leftrightarrow r_{j}$; 数 $k$ 乘第 $i$ 行,
+记为 $k r_{i}$; 数 $k$ 乘第 $i$ 行加到第 $j$ 行, 记为 $k r_{i}+r_{j}$.
+
+现在我们对前面三个例子用矩阵的行初等变换来求解.
+
+先解例 1 的方程组
+$$
+\left\{\begin{aligned}
+3 x_{1}-x_{2}+5 x_{3} &=3, \\
+x_{1}-x_{2}+2 x_{3} &=1, \\
+x_{1}-2 x_{2}-x_{3} &=2.
+\end{aligned}\right.
+$$
+
+对增广矩阵施以行初等变换:
+$$
+\begin{aligned}
+\overline{\boldsymbol{A}}=&\left(\begin{array}{ccc;{2pt/2pt}c}
+3 & -1 & 5 & 3 \\
+1 & -1 & 2 & 1 \\
+1 & -2 & -1 & 2
+\end{array}\right) \stackrel{r_{1} \leftrightarrow r_{3}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & -2 & -1 & 2 \\
+1 & -1 & 2 & 1 \\
+3 & -1 & 5 & 3
+\end{array}\right)\\[10pt]
+&\stackrel{-r_1+r_2}{\underset{-r_{1}+r_{3}}{\longrightarrow{}}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & -2 & -1 & 2 \\
+0 & 1 & 3 & -1 \\
+0 & 5 & 8 & -3
+\end{array}\right) \stackrel{-5 r_{2}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & -2 & -1 & 2 \\
+0 & 1 & 3 & -1 \\
+0 & 0 & -7 & 2
+\end{array}\right)\\[10pt]
+&\stackrel{-\frac{1}{7} r_{3}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & -2 & -1 & 2 \\
+0 & 1 & 3 & -1 \\[10pt]
+0 & 0 & 1 & -\frac{2}{7}
+\end{array}\right) \stackrel{r_{3}+r_{1}}{\underset{-3 r_{3}+r_{2}}{\longrightarrow{}}}
+\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & -2 & 0 & \frac{12}{7} \\[10pt]
+0 & 1 & 0 & -\frac{1}{7} \\[10pt]
+0 & 0 & 1 & -\frac{2}{7}
+\end{array}\right)\\[10pt]
+&\stackrel{2 r_{2}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & 0 & 0 & \frac{10}{7} \\[10pt]
+0 & 1 & 0 & -\frac{1}{7} \\[10pt]
+0 & 0 & 1 & -\frac{2}{7}
+\end{array}\right).
+\end{aligned}
+$$
+于是得原方程组的解为
+$$
+\left\{\begin{array}{l}
+x_{1}=\frac{10}{7}, \\[10pt]
+x_{2}=-\frac{1}{7}, \\[10pt]
+x_{3}=-\frac{2}{7}.
+\end{array}\right.
+$$
+
+注意, 最后两步初等变换我们使用了高斯消元法的改进方法高斯 - 若尔当消元法, 即在行阶梯形矩阵基础上进一步化为简化行阶梯形矩阵.
+
+
+若一个矩阵每个非零行的非零首元都出现在上一行非零首元的右边, 同时没有一个非零行出现在零行之下, 则称这种矩阵为行阶梯形矩阵. 若行阶梯形矩阵的每一个非零行的非零首元都是 $1$, 且非零首元所在列的其余元都为 $0$ , 则称这种矩阵为简化行阶梯形矩阵.
+
+
+例如下面两个矩阵都是行阶梯形矩阵:
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrrr}
+1 & 2 & 0 & 0 & 2 \\
+0 & 0 & 1 & 0 & -1 \\
+0 & 0 & 0 & 1 & 0
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{cccc}
+1 & 3 & 0 & -1 \\
+0 & 2 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)
+$$
+且 $\boldsymbol{A}$ 为简化行阶梯形矩阵, 而 $\boldsymbol{B}$ 不是简化行阶梯形矩阵.
+
+显然, 用有限次行初等变换可以把任何矩阵化为一个简化行阶梯形矩阵, 以后还会知道, 所得到的简化行阶梯形矩阵是惟一的. 于是, 这就为用行初等变换将增广矩阵化简的过程提供了一个明确的目标.
+
+
+再解例 $2$ 的方程组
+$$
+\left\{\begin{array}{rr}
+x_{1}+3 x_{2}+4 x_{3}=&-2, \\
+2 x_{1}+5 x_{2}+9 x_{3}=& 3, \\
+3 x_{1}+7 x_{2}+14 x_{3}=& 8, \\
+-x_{2}+x_{3}=& 7.
+\end{array}\right.
+$$
+
+对增广矩阵施以行初等变换:
+$$
+\begin{aligned}
+\overline{\boldsymbol{A}}=& \left(\begin{array}{ccc;{2pt/2pt}c}
+1 & 3 & 4 & -2 \\ 
+2 & 5 & 9 & 3 \\ 
+3 & 7 & 14 & 8 \\ 
+0 & -1 & 1 & 7\end{array}\right)\stackrel{-2 r_{1}+r_{2}}{\underset{-3 r_{1}+r_{3}}{\longrightarrow{}}}
+\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & 3 & 4 & -2 \\ 
+0 & -1 & 1 & 7 \\
+0 & -2 & 2 & 14 \\ 
+0 & -1 & 1 & 7\end{array}\right)\\
+& \stackrel{(-1) r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & 3 & 4 & -2 \\ 
+0 & 1 & -1 & -7 \\ 
+0 & -2 & 2 & 14 \\ 
+0 & -1 & 1 & 7\end{array}\right)\stackrel{2 r_{2}+r_{3}}{\underset{r_{2}+r_{4}}{\longrightarrow{}}} 
+\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & 3 & 4 & -2 \\ 
+0 & 1 & -1 & -7 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}\right)\\
+& \stackrel{-3 r_{2}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}c}
+1 & 0 & 7 & 19 \\
+0 & 1 & -1 & -7 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) .
+\end{aligned}
+$$
+
+与矩阵对应的方程组为
+$$
+\left\{\begin{array}{r}
+x_{1}+7 x_{3}=19, \\
+x_{2}-x_{3}=-7,
+\end{array}\right.
+$$
+令 $x_{3}=k$ ( $k$ 为任意数 $)$, 则方程组的通解为
+$$
+\left\{\begin{array}{lr}
+x_{1}=&-7 k+19, \\
+x_{2}=&k-7, \\
+x_{3}=& k .
+\end{array}\right.
+$$
+
+
+最后解例 3 的方程组
+$$
+\left\{\begin{array}{c}
+x_{1}-2 x_{2}+3 x_{3}-x_{4}+2 x_{5}=2, \\
+3 x_{1}-x_{2}+5 x_{3}-3 x_{4}-x_{5}=6, \\
+2 x_{1}+x_{2}+2 x_{3}-2 x_{4}-3 x_{5}=8.
+\end{array}\right.
+$$
+
+对增广矩阵施以行初等变换:
+$$
+\begin{aligned}
+\overline{\boldsymbol{A}}=&\left(\begin{array}{ccccc;{2pt/2pt}c}
+1 & -2 & 3 & -1 & 2 & 2 \\
+3 & -1 & 5 & -3 & -1 & 6 \\
+2 & 1 & 2 & -2 & -3 & 8
+\end{array}\right) 
+\stackrel{-3 r_{1}+r_{2}}{\underset{-2 r_{1}+r_{3}}{\longrightarrow{}}}\left(\begin{array}{ccccc;{2pt/2pt}c}
+1 & -2 & 3 & -1 & 2 & 2 \\
+0 & 5 & -4 & 0 & -7 & 0 \\
+0 & 5 & -4 & 0 & -7 & 4
+\end{array}\right)\\
+&  \stackrel{-r_{2}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccccc;{2pt/2pt}c}
+1 & -2 & 3 & -1 & 2 & 2 \\
+0 & 5 & -4 & 0 & -7 & 0 \\
+0 & 0 & 0 & 0 & 0 & 4
+\end{array}\right).
+\end{aligned}
+$$
+
+与矩阵对应的方程组为
+$$
+\left\{\begin{array}{rr}
+x_{1}-2 x_{2}+3 x_{3}&-x_{4}+2 x_{5} =2, \\
+5 x_{2}-4 x_{3}&-7 x_{5} =0, \\
+&0 x_{5} =4,
+\end{array}\right.
+$$
+由第三个方程知方程组无解.
+
+
+
+从上面的三个例子可见, 对于一般的线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$, 通过消元步骤, 即对增广 矩阵作三种行初等变换, 可将其化为简化行阶梯形矩阵. 为了便于作一般的讨论, 不妨假设$\overline{\boldsymbol{A}}=(\boldsymbol{A},\boldsymbol{b})$ 化为如下的简化阶梯形矩阵: 
+\begin{equation}\label{eq:1.2}
+\overline{\boldsymbol{A}}=(\boldsymbol{A}, \boldsymbol{b}) \rightarrow\left(\begin{array}{ccccccc;{2pt/2pt}c}
+c_{11} & 0 & \cdots & 0 & c_{1, r+1} & \cdots & c_{1 n} & d_{1} \\
+0 & c_{22} & \cdots & 0 & c_{2, r+1} & \cdots & c_{2 n} & d_{2} \\
+\vdots & \vdots & & \vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & \cdots & c_{r r} & c_{r, r+1} & \cdots & c_{r n} & d_{r} \\
+0 & 0 & \cdots & 0 & 0 & \cdots & 0 & d_{r+1} \\
+0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 0 \\
+\vdots & \vdots & & \vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 0
+\end{array}\right),
+\end{equation}
+其中 $c_{i i}=1(i=1,2, \cdots, r)$.
+
+与这个矩阵对应的非齐次线性方程组与 $\boldsymbol{A X}=\boldsymbol{b}$ 是同解方程组. 由矩阵易见, 方程组有解的充要条件是 $d_{r+1}=0$. 这是因为当 $d_{r+1} \neq 0$ 时, 式 (\ref{eq:1.2}) 中第 $r+1$ 行对应的方程 $0 x_{1}+0 x_{2}+\cdots+0 x_{n}=d_{r+1}$ 是无解的.
+
+当 $d_{r+1}=0$ 时, 即在有解的情况下, 又分两种情况:
+
+$(1)$ 当 $r=n$ 时, 有惟一解
+$$
+\left\{\begin{aligned}
+x_{1} & & &=d_{1}, \\
+& x_{2} & &=d_{2}, \\
+& &\cdots \cdots \cdots   & \\
+& & x_{n} &=d_{n};
+\end{aligned}\right.
+$$
+
+$(2)$ 当 $r < n$ 时, 有无穷多个解, 求解时, 把矩阵中每行第一个非零元 $c_{i i}(i=1,2, \cdots, r)$ 所在列对应的未知量 $($ 这里是 $x_{1}, x_{2}, \cdots, x_{r}$ $)$ 取为基本未知量, 
+其余未知量 $($ 这里是 $x_{r+1}, x_{r+2}, \cdots, x_{n}$ $)$ 取为自由未知量, 然后将 $n-r$ 个自由未知量依次取任意常数 $k_{1}, k_{2}, \cdots$, $k_{n-r}$, 
+即可解得 $x_{1}, x_{2}, \cdots, x_{r}$, 从而得到方程组的全部解.
+
+<p></p>
+将上述结果总结为如下定理:
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
+设 $n$ 元非齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$, 对它的增广矩阵施以行初等变换, 得到简化行阶梯形矩阵 $(\ref{eq:1.2})$, 若 $d_{r+1} \neq 0$, 则方程组无解; 若 $d_{r+1}=0$, 则方程组有解, 而且当 $r=n$ 时有惟一解, 当 $r < n$ 时有无穷多解.
+</p>
+
+
+
+用不同的消元步骤, 将增广矩阵化为行阶梯形矩阵时, 行阶梯形矩阵的形式不是惟 一的, 但行阶梯形矩阵的非零行的行数是惟一确定的. 当方程组有解时, 表明解中任意常数的个数是相同的, 但解的表示式不是惟一的, 然而每一种解的表示式中, 包含的无穷多
+个解的集合又是相等的. 这些重要的结论, 在第三章研究了向量组的线性相关性理论后
+才能给以严格的论证.
+
+
+关于齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$, 我们知道它总有平凡解 (零解)
+$$
+x_{1}=x_{2}=\cdots=x_{n}=0 .
+$$
+
+当 $r < n$ 时, 有无穷多解, 求解的方法与非齐次线性方程组相同. 如果齐次线性方程组的方程个数 $m$ 小于未知量个数 $n$, 则必有 $r \leqslant m < n$, 因而必有无穷多个非零解, 于是有如下定理:
+
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
+设 $m$ 个 $n$ 元方程组成的齐次线性方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{0}$, 若 $m < n$, 则方程组必有非零解.
+</p>
+
+最后需要指出: 初等变换是可逆变换. 初等变换和它的逆变换对比如表 \ref{tab:1.2} 所示:
+
+
+\begin{table}[!ht]
+    \centering
+    \caption{\textcolor{structurecolor}{\textbf{初等变换及其逆变换的对比}}}
+    %\setlength{\tabcolsep}{20pt} % Default value: 6pt
+    \renewcommand{\arraystretch}{2} % Default value: 1
+\begin{tabular}{c|c|c}
+\hline 类型 & 初等变换  &  逆变换  \\
+\hline $\mathrm{I}$ & 交换两行 (列) & 交换同样的两行 (列) \\
+\hline $\mathrm{II}$ & 用 $k \neq 0$ 乘某一行 (列) & 用 $\frac{1}{k}$ 乘同一行 $($ 列 $)$ \\[5pt]
+\hline $\mathrm{III}$ & 把第 $i$ 行 (列) 的 $k$ 倍加到第 $j$ 行 (列) 上 & 把第 $i$ 行 (列) 的 $-k$ 倍加到第 $j$ 行 (列) 上 \\
+\hline
+\end{tabular}
+\label{tab:1.2}
+\end{table}
+
+
+如果矩阵 $\boldsymbol{A}$ 经过有限次初等变换变成矩阵 $\boldsymbol{B}$, 就称矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 记作 $\boldsymbol{A} \cong \boldsymbol{B}$. 若使用的是行 (列) 初等变换, 则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 行 (列) 等价.
+不难证明, 矩阵的等价关系具有
+
+(1) 反身性: $\boldsymbol{A} \cong \boldsymbol{A}$;
+
+(2) 对称性: 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $\boldsymbol{B} \cong \boldsymbol{A}$;
+
+(3) 传递性: 若 $\boldsymbol{A} \cong \boldsymbol{B}, \boldsymbol{B} \cong \boldsymbol{C}$, 则 $\boldsymbol{A} \cong \boldsymbol{C}$.
+
+
+
+</ul>
+
+<a href="#CC0">返回顶部</a>
+
+
+
+<h2><a name="CC3">$1.2.3$ 初等矩阵</a></h2>
+
+
+<ul>
+
+
+<p style="text-indent: 2em;">初等变换在矩阵理论中具有十分重要的作用. 根据矩阵乘法运算的特定含义, 我们 可以把矩阵的初等变换表示为矩阵的乘法运算. 先看几个矩阵的乘法运算.
+
+设
+$\boldsymbol{A}=\left(\begin{array}{llll}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+a_{31} & a_{32} & \cdots & a_{3 n}
+\end{array}\right)$,  则 
+$$
+\left(\begin{array}{lll}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{llll}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+a_{31} & a_{32} & \cdots & a_{3 n}
+\end{array}\right)=\left(\begin{array}{llll}
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{31} & a_{32} & \cdots & a_{3 n}
+\end{array}\right),
+$$
+$$
+\begin{gathered}
+\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & c & 0 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{llll}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+a_{31} & a_{32} & \cdots & a_{3 n}
+\end{array}\right)=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+c a_{21} & c a_{22} & \cdots & c a_{2 n} \\
+a_{31} & a_{32} & \cdots & a_{3 n}
+\end{array}\right), \\
+\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+c & 0 & 1
+\end{array}\right)\left(\begin{array}{llll}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+a_{31} & a_{32} & \cdots & a_{3 n}
+\end{array}\right)=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+c a_{11}+a_{31} & c a_{12}+a_{32} & \cdots & c a_{1 n}+a_{3 n}
+\end{array}\right) .
+\end{gathered}
+$$
+
+由此可见, 上面左边三个三阶矩阵左乘 $\boldsymbol{A}$, 分别使 $\boldsymbol{A}$ 作了三种行初等变换 (第 $1, 2$ 行交换; 第 $2$ 行乘 $c$; 第 $1$ 行乘 $c$ 加到第 $3$ 行). 这三个三阶矩阵本身又是单位矩阵作同 样的行初等变换 (即对 $\boldsymbol{A}$ 所作的三种行初等变换) 而得到的, 它们称为初等矩阵. 上面三个式子表明 $\boldsymbol{A}$ 的行初等变换可以表示成相应的初等矩阵左乘 $\boldsymbol{A}$ 的运算.
+
+下面给出初等矩阵的一般定义, 并讨论矩阵的行 (列) 初等变换如何表示为矩阵与初等矩阵的乘法运算.
+
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $2$：</b></font>
+将单位矩阵作一次初等变换得到的矩阵, 称为初等矩阵.
+</p>
+
+
+对应于三种初等变换有三种类型的初等矩阵.
+
+$1^{\circ}$\quad 
+$
+\boldsymbol{E}_{ij}=\left(\begin{array}{ccccccc}
+1 & & & & & & \\
+& \ddots & & & & & \\
+& & 0 & \cdots & 1 & & \\
+& & \vdots & & \vdots & & \\
+& & 1 & \cdots & 0 & & \\
+& & & & & \ddots & \\
+& & & & & & 1
+\end{array}\right)
+\begin{array}{c}
+ \\
+ \\
+\leftarrow \text { 第 }\, i \text { 行 }  \\
+ \\
+\leftarrow \text { 第 }\,  j \text { 行 } \\
+ \\
+ \\
+\end{array}.
+$
+
+$\boldsymbol{E}_{i j}$ 是由单位矩阵第 $i, j$ 行 (或列) 交换而得到的. 
+
+$2^{\circ}$\quad 
+$
+\boldsymbol{E}_{i}(c)=\left(\begin{array}{ccccccc}
+1 & & & & & & \\
+& \ddots & & & & & \\
+& & 1 &   &   & & \\
+& & & c &   & & \\
+& & & & 1 & & \\
+& & & & & \ddots & \\
+& & & & & & 1
+\end{array}\right)
+\begin{array}{c}
+ \\
+ \\
+ \\
+\leftarrow \text { 第 }\,  i \text { 行 } \\
+ \\
+ \\
+ \\
+\end{array}.
+$
+
+其中 $c \neq 0, \boldsymbol{E}_{i}(c)$ 是由单位矩阵第 $i$ 行 (或列) 乘 $c$ 而得到的.
+
+$3^{\circ}$\quad 
+$
+\boldsymbol{E}_{i j}(c)=\left(\begin{array}{ccccccc}
+1 & & & & & & \\
+& \ddots & & & & & \\
+& & 1 &  &   & & \\
+& & \vdots & \ddots &  & & \\
+& & c & \cdots & 1 & & \\
+& & & & & \ddots & \\
+& & & & & & 1
+\end{array}\right) 
+\begin{array}{c}
+ \\
+ \\
+\leftarrow \text { 第 }\,  i \text { 行 }  \\
+ \\
+\leftarrow \text { 第 }\,  j \text { 行 } \\
+ \\
+ \\
+\end{array}.
+$
+
+$\boldsymbol{E}_{i j}(c)$ 是由单位矩阵第 $i$ 行乘 $c$ 加到第 $j$ 行而得到的, 或由第 $j$ 列乘 $c$ 加到第 $i$ 列而得 到的.
+
+
+由矩阵乘法定义立即可得如下定理:
+
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>
+对一个 $m \times n$ 矩阵 $\boldsymbol{A}$ 作一次行初等变换就相当于在 $\boldsymbol{A}$ 的左边乘上相应 的 $m \times m$ 初等矩阵; 对 $\boldsymbol{A}$ 作一次列初等变换就相当于在 $\boldsymbol{A}$ 的右边乘上相应的 $n \times n$ 初等矩阵.
+</p>
+
+
+若矩阵 $\boldsymbol{B}$ 是由 $\boldsymbol{A}$ 经过有限次行初等变换得到的, 则必存在有限个初等矩阵 $\boldsymbol{E}_{1}$, $\boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 $\boldsymbol{B}=\boldsymbol{E}_{k} \boldsymbol{E}_{k-1} \cdots \boldsymbol{E}_{1} \boldsymbol{A}$.
+
+若矩阵 $\boldsymbol{B}$ 是由 $\boldsymbol{A}$ 经过有限次列初等变换得到的, 则必存在有限个初等矩阵 $\boldsymbol{E}_{1}^{\prime}$, $\boldsymbol{E}_{2}^{\prime}, \cdots, \boldsymbol{E}_{s}^{\prime}$, 使得 $\boldsymbol{B}=\boldsymbol{A} \boldsymbol{E}_{1}^{\prime} \boldsymbol{E}_{2}^{\prime} \cdots \boldsymbol{E}_{s}^{\prime}$.
+
+若矩阵 $\boldsymbol{B}$ 是由 $\boldsymbol{A}$ 经过有限次初等变换得到的, 则必存在有限个初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{k}$ 与 $\boldsymbol{Q}_{1}, \boldsymbol{Q}_{2}, \cdots, \boldsymbol{Q}_{l}$, 使得 $\boldsymbol{B}=\boldsymbol{P}_{k} \boldsymbol{P}_{k-1} \cdots \boldsymbol{P}_{1} \boldsymbol{A} \boldsymbol{Q}_{1} \cdots \boldsymbol{Q}_{l-1} \boldsymbol{Q}_{l}$.
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
+设
+$$
+\boldsymbol{P}_{1}=\left(\begin{array}{cccc}
+1 & 0 & 3 & 1 \\
+0 & 2 & 1 & -1 \\
+1 & 2 & 1 & 2 \\
+2 & 1 & 0 & 1
+\end{array}\right), 
+\boldsymbol{P}_{2}=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+c & 0 & 0 & 1
+\end{array}\right), 
+\boldsymbol{P}_{3}=\left(\begin{array}{llll}
+1 & & & \\
+& k & & \\
+& & 1 & \\
+& & & 1
+\end{array}\right), 
+$$
+求 $\boldsymbol{P}_{1} \boldsymbol{P}_{2} \boldsymbol{P}_{3}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+$$
+\begin{aligned}
+\boldsymbol{P}_{1} \boldsymbol{P}_{2} \boldsymbol{P}_{3}
+ =\left(\boldsymbol{P}_{1} \boldsymbol{P}_{2}\right) \boldsymbol{P}_{3}
+& =\left(\begin{array}{cccc}
+1+c & 0 & 3 & 1 \\
+-c & 2 & 1 & -1 \\
+1+2 c & 2 & 1 & 2 \\
+2+c & 1 & 0 & 1
+\end{array}\right)\left(\begin{array}{cccc}
+1 & & \\
+& k & & \\
+& & 1 & \\
+& & & 1
+\end{array}\right)\\
+& =\left(\begin{array}{cccc}
+1+c & 0 & 3 & 1 \\
+-c & 2 k & 1 & -1 \\
+1+2 c & 2 k & 1 & 2 \\
+2+c & k & 0 & 1
+\end{array}\right).
+\end{aligned}
+$$
+</p>
+</div> 
+</p>
+
+</ul>
+<a href="#CC0">返回顶部</a>
+
+<h2><a name="CC4">$1.2.4$ 应用案例一: 卷积</a></h2>
+
+<ul>
+<p style="text-indent: 2em;">
+卷积神经网络在计算机视觉等领域有重要应用, 其核心是经典的卷积运算. 设卷积核 $\boldsymbol{w}=(w(-a)$,  $w(-a+1), \cdots, w(a))^{\mathrm{T}}$, 信号 $\boldsymbol{f}=(f(1), f(2), \cdots, f(n))^{\mathrm{T}}, \boldsymbol{w}$ 和 $\boldsymbol{f}$ 的卷积定义为 $g=(g(1), g(2), \cdots, g(n))^{\mathrm{T}}$, 其中
+$$
+g(x)=w(x) * f(x)=\sum_{s=-a}^{a} w(s) f(x-s), \quad x=1,2, \cdots, n,
+$$
+$*$表示卷积运算. 例如 $\boldsymbol{w}=(w(-1), w(0), w(1))^{\mathrm{T}}$ 和 $\boldsymbol{f}=(f(1), f(2), f(3), f(4), f(5))^{\mathrm{T}}$, 根据卷积的定义有
+$$
+\begin{aligned}
+&g(1)=w(1) f(0)+w(0) f(1)+w(-1) f(2), \\
+&g(2)=w(1) f(1)+w(0) f(2)+w(-1) f(3), \\
+&g(3)=w(1) f(2)+w(0) f(3)+w(-1) f(4), \\
+&g(4)=w(1) f(3)+w(0) f(4)+w(-1) f(5), \\
+&g(5)=w(1) f(4)+w(0) f(5)+w(-1) f(6),
+\end{aligned}
+$$
+假设满足零边界条件, 即 $f(0)=f(6)=0$. 我们可以用矩阵和矩阵的乘积将 $\boldsymbol{w}$ 和 $\boldsymbol{f}$ 的卷积简洁地表示为
+$$
+\left(\begin{array}{l}
+g(1) \\
+g(2) \\
+g(3) \\
+g(4) \\
+g(5)
+\end{array}\right)=\left(\begin{array}{ccccc}
+w(0) & w(-1) & & & \\
+w(1) & w(0) & w(-1) & & \\
+& w(1) & w(0) & w(-1) & \\
+& & w(1) & w(0) & w(-1) \\
+& & & w(1) & w(0)
+\end{array}\right)\left(\begin{array}{c}
+f(1) \\
+f(2) \\
+f(3) \\
+f(4) \\
+f(5)
+\end{array}\right) .
+$$
+来看一个现实世界的例子, 图 \ref{fig:1.5} (a) 中曲线表示存在噪声污染的脑电信号 $\boldsymbol{f}$, 图 \ref{fig:1.5} (b) 中曲线表示卷积核 $\boldsymbol{w}=\left(\frac{1}{3}, \frac{1}{3}, \frac{1}{3}\right)^{\mathrm{T}}$ 和 $\boldsymbol{f}$ 的卷积. 我们观察到此卷积核和脑电 信号的卷积更加平滑.
+
+
+本质上, 给定卷积核 $\boldsymbol{w}$ 和信号 $\boldsymbol{f}$, 计算其卷积 $\boldsymbol{g}$ 是计算矩阵和矩阵的乘积. 反之, 给 定卷积核 $\boldsymbol{w}$ 和卷积 $\boldsymbol{g}$, 计算信号 $\boldsymbol{f}$ (即反卷积) 是求解线性方程组.
+
+\medskip
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.25]{image/imageLA2022/fig1.5.pdf}
+    \caption{}
+    \label{fig:1.5}
+\end{figure}
+
+
+
+</ul>
+<a href="#CC0">返回顶部</a>
+
+<h2><a name="CC5">$1.2.5$ 应用案例二: 计算机断层成像(Computed Tomography)</a></h2>
+
+<ul>
+
+基于不同的密度组织对 $\rm{X}$ 射线的吸收能力不同的原理, 计算机断层成像利用计算机 将不同角度的 X 射线观测合成为特定区域的断层面图像. 由于其在诊断和治疗方面的巨 大价值, 计算机断层成像获 1979 年诺贝尔生理学或医学奖. 计算机断层成像问题可以建 模为
+$$
+y_{i}=a_{i 1} x_{1}+a_{i 2} x_{2}+\cdots+a_{i n} x_{n},
+$$
+其中 $y_{i}$ 表示射线 $i$ 的观测值, $x_{j}$ 表示区域内的像素 $j$ 的密度, $a_{i j}$ 表示射线 $i$ 经过像素 $j$ 的长度 (见图 \ref{fig:1.6} (a)).
+
+
+对于每条射线 $i$, 可以列出一个线性方程. 对于不同角度的射线 (见图 \ref{fig:1.6} (b)), 就可以列出线性方程组
+$$
+\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=y_{1}, \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=y_{2}, \\
+\cdots \cdots \cdots \cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=y_{m}.
+\end{array}\right.
+$$
+通过计算线性方程组的解 $\boldsymbol{X}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)^{\mathrm{T}}$, 我们就能知道特定区域的密度.
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.25]{image/imageLA2022/fig1.6.pdf}
+    \caption{}
+    \label{fig:1.6}
+\end{figure}
+
+
+
+</ul>
+
+<a href="#CC0">返回顶部</a>
+
+
+
+
+
+
+
+<br>
+<center>
+Copyright &copy; 2023 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
+
