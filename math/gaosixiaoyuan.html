@@ -613,7 +613,6 @@ a_{31} & a_{32} & \cdots & a_{3 n}
 \end{array}\right),
 $$
 $$
-\begin{gathered}
 \left(\begin{array}{lll}
 1 & 0 & 0 \\
 0 & c & 0 \\
@@ -626,8 +625,11 @@ a_{31} & a_{32} & \cdots & a_{3 n}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
 c a_{21} & c a_{22} & \cdots & c a_{2 n} \\
 a_{31} & a_{32} & \cdots & a_{3 n}
-\end{array}\right), \\
-\left(\begin{array}{lll}
+\end{array}\right), 
+$$
+$$
+\begin{align*}
+&\left(\begin{array}{lll}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 c & 0 & 1
@@ -635,12 +637,13 @@ c & 0 & 1
 a_{11} & a_{12} & \cdots & a_{1 n} \\
 a_{21} & a_{22} & \cdots & a_{2 n} \\
 a_{31} & a_{32} & \cdots & a_{3 n}
-\end{array}\right)=\left(\begin{array}{cccc}
+\end{array}\right)\\
+=&\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
 a_{21} & a_{22} & \cdots & a_{2 n} \\
 c a_{11}+a_{31} & c a_{12}+a_{32} & \cdots & c a_{1 n}+a_{3 n}
 \end{array}\right) .
-\end{gathered}
+\end{align*}
 $$
 
 <p style="text-indent: 2em;">由此可见, 上面左边三个三阶矩阵左乘 $\boldsymbol{A}$, 分别使 $\boldsymbol{A}$ 作了三种行初等变换 (第 $1, 2$ 行交换; 第 $2$ 行乘 $c$; 第 $1$ 行乘 $c$ 加到第 $3$ 行). 这三个三阶矩阵本身又是单位矩阵作同 样的行初等变换 (即对 $\boldsymbol{A}$ 所作的三种行初等变换) 而得到的, 它们称为初等矩阵. 上面三个式子表明 $\boldsymbol{A}$ 的行初等变换可以表示成相应的初等矩阵左乘 $\boldsymbol{A}$ 的运算.
