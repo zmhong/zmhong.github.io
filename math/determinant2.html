@@ -45,12 +45,11 @@ $2.2$ 行列式的性质与计算
 <h2><a name="C0"><strong>目录:</strong></a><br></h2>
 
 <ul>
-<li><a href="https://zmhong.github.io/math/linearalgebra.html">返回主页</a></li>
-<li><a href="#C1">2.2.1 行列式的性质</a></li>
-<li><a href="#C2">2.2.2 行列式的计算</a></li>
-<li><a href="#C3">2.2.3 方阵乘积的行列式</a></li>
-<li><a href="#C4">2.2.4 </a></li>
-<li><a href="#C5">2.2.5 </a></li>
+<li><a href="https://zmhong.github.io/math/linearalgebra.html" style="text-decoration:none>返回主页</a></li>
+<li><a href="#C1" style="text-decoration:none>2.2.1 行列式的性质</a></li>
+<li><a href="#C2" style="text-decoration:none>2.2.2 行列式的计算</a></li>
+<li><a href="#C3" style="text-decoration:none>2.2.3 方阵乘积的行列式</a></li>
+<li><a href="#C4" style="text-decoration:none>习题 2.2</a></li>
 </ul>
 
 
@@ -61,7 +60,313 @@ $2.2$ 行列式的性质与计算
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">为了进一步讨论$n$阶行列式, 简化行列式的计算, 下面介绍$n$阶行列式的性质. 
+
+\begin{property}
+$n$阶矩阵$\boldsymbol{A}$的行列式按任一行展开, 其值相等, 即
+$$
+\operatorname{det} \boldsymbol{A}=a_{i1} A_{i1}+a_{i2} A_{i2}+\cdots+a_{i n} A_{in}=\sum_{j=1}^{n} a_{ij} A_{ij} \quad (i=1,2,\cdots,n), 
+$$
+其中$A_{ij}=(-1)^{i+j}M_{ij}$, $M_{ij}$是$\operatorname{det} \boldsymbol{A}$中去掉第$i$行和第$j$列元所成的$n-1$阶行列式, 称为元$a_{ij}$的余子式, $A_{ij}$称为元$a_{ij}$的代数余子式. 
+\end{property}
+
+证明从略. 
+
+\begin{corollary}
+若行列式的某行元全为零, 则行列式等于零. 
+\end{corollary}
+
+
+\begin{example}
+计算$n$阶上三角行列式 (即当$i>j$时, $a_{ij}=0$).
+$$
+D_n = \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n}  \\
+           & a_{22} & \cdots & a_{2n}  \\
+           &        & \ddots & \vdots  \\   
+           &        &        & a_{nn}  
+\end{array}
+\right|.
+$$
+\end{example}
+
+\begin{solution}
+先将 $D_{n}$ 按第 $n$ 行展开, 以后每次都按最后一行展开.
+$$
+\begin{aligned}
+D_{n}&=a_{n n}\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1, n-1} \\ & a_{22} & \cdots & a_{2, n-1} \\ & & \ddots & \vdots \\ & & & a_{n-1, n-1}\end{array}\right|\\
+&=a_{n n} a_{n-1, n-1}\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1, n-2} \\ & a_{22} & \cdots & a_{2, n-2} \\ & & \ddots & \vdots \\ & & & a_{n-2, n-2}\end{array}\right|\\
+&=\cdots=a_{11} a_{22} \cdots a_{n n} .
+\end{aligned}
+$$
+\end{solution}
+
+
+
+
+\begin{example}
+计算四阶行列式
+$$
+D=\left|\begin{array}{cccc}
+6 & 1 & 0 & 0 \\
+5 & -1 & 3 & -2 \\
+0 & 2 & 0 & 0 \\
+1 & 3 & 4 & -3
+\end{array}\right|.
+$$
+\end{example}
+
+\begin{solution}
+由于第 $3$ 行除 $a_{32}=2$ 外, 其他元均为零, 故由性质 $1$ 得
+$$
+D=a_{32} A_{32}=2 \times(-1)^{3+2}\left|\begin{array}{ccc}
+6 & 0 & 0 \\
+5 & 3 & -2 \\
+1 & 4 & -3
+\end{array}\right|,
+$$
+再按第 $1$ 行展开有
+$$
+D=-2 \times 6 \times(-1)^{1+1}\left|\begin{array}{lr}
+3 & -2 \\
+4 & -3
+\end{array}\right|=-12 \times(-9+8)=12 .
+$$
+\end{solution}
+
+
+\begin{property}
+若 $n$ 阶行列式某两行对应元全相等, 则行列式为零.
+\end{property}
+
+即当 $a_{i k}=a_{j k}, i \neq j, k=1,2, \cdots, n$ 时, $\operatorname{det} \boldsymbol{A}=0$.
+
+\begin{proof}
+用数学归纳法证明. 结论对二阶行列式显然成立. 当 $n \geqslant 3$ 时, 假设结论对 $n-1$ 阶行列式成立, 在 $n$ 阶的情况下, 对第 $k$ 行展开 $(k \neq i, j)$, 则
+$$
+\operatorname{det} \boldsymbol{A}=a_{k 1} A_{k 1}+a_{k 2} A_{k 2}+\cdots+a_{k n} A_{k n}=\sum_{l=1}^{n} a_{k l} A_{k l},
+$$
+因为 $M_{k l}$ $(l=1,2, \cdots, n)$ 是 $n-1$ 阶行列式, 且其中都有两行元全相等, 所以
+$$
+A_{kl} =(-1)^{k+l} M_{kl} = 0 \quad (k=1,2, \cdots, n), 
+$$
+故$\operatorname{det} \boldsymbol{A} = 0$.
+\end{proof}
+
+
+\begin{property}
+$$
+\left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots &        & \vdots \\
+    b_{i1}+c_{i1} & b_{i2}+c_{i2} & \cdots & b_{in}+c_{in} \\
+    \vdots & \vdots &        & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{array}\right|
+= \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots &        & \vdots \\
+    b_{i1} & b_{i2} & \cdots & b_{in} \\
+    \vdots & \vdots &        & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{array}\right| + 
+\left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots &        & \vdots \\
+    c_{i1} & c_{i2} & \cdots & c_{in} \\
+    \vdots & \vdots &        & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{array}\right|.
+$$
+% $$
+% \begin{aligned}
+% &\left|\begin{array}{cccc}
+%     a_{11} & a_{12} & \cdots & a_{1n} \\
+%     \vdots & \vdots &        & \vdots \\
+%     b_{i1}+c_{i1} & b_{i2}+c_{i2} & \cdots & b_{in}+c_{in} \\
+%     \vdots & \vdots &        & \vdots \\
+%     a_{n1} & a_{n2} & \cdots & a_{nn} \\
+% \end{array}\right|\\
+% =& \left|\begin{array}{cccc}
+%     a_{11} & a_{12} & \cdots & a_{1n} \\
+%     \vdots & \vdots &        & \vdots \\
+%     b_{i1} & b_{i2} & \cdots & b_{in} \\
+%     \vdots & \vdots &        & \vdots \\
+%     a_{n1} & a_{n2} & \cdots & a_{nn} \\
+% \end{array}\right| + 
+% \left|\begin{array}{cccc}
+%     a_{11} & a_{12} & \cdots & a_{1n} \\
+%     \vdots & \vdots &        & \vdots \\
+%     c_{i1} & c_{i2} & \cdots & c_{in} \\
+%     \vdots & \vdots &        & \vdots \\
+%     a_{n1} & a_{n2} & \cdots & a_{nn} \\
+% \end{array}\right|.
+% \end{aligned}
+% $$
+\end{property}
+
+\begin{proof}
+由性质$1$, 将上式左端行列式按第$i$行展开得
+$$
+\begin{aligned}
+\text{左} & = (b_{i1}+c_{i1})A_{i1} + (b_{i2}+c_{i2})A_{i2} + \cdots + (b_{in}+c_{in})A_{in}\\
+& = (b_{i1}A_{i1}+b_{i2}A_{i2}+\cdots +b_{in}A_{in}) + (c_{i1}A_{i1}+c_{i2}A_{i2}+\cdots +c_{in}A_{in})\\
+& = \left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots &        & \vdots \\
+    b_{i1} & b_{i2} & \cdots & b_{in} \\
+    \vdots & \vdots &        & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{array}\right| + 
+\left|\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    \vdots & \vdots &        & \vdots \\
+    c_{i1} & c_{i2} & \cdots & c_{in} \\
+    \vdots & \vdots &        & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{array}\right|.
+\end{aligned}
+$$
+\end{proof}
+
+
+性质$3$说明: 如果行列式的某一行是两组数的和, 那么这个行列式就等于两个行列式的和, 这两个行列式分别以这两组数为这一行的元, 其他各行与原来行列式的对应各行不变.
+
+
+\begin{property}[行列式的初等变换]
+若把行初等变换施于$n$阶矩阵$\boldsymbol{A}$上:
+
+$(1)$ 将$\boldsymbol{A}$的某一行乘数$k$得到$\boldsymbol{A}_1$, 则$\operatorname{det} \boldsymbol{A}_1=k(\operatorname{det} \boldsymbol{A})$;
+
+$(2)$ 将$\boldsymbol{A}$的某一行的$k$倍加到另一行得到$\boldsymbol{A}_2$, 则$\operatorname{det} \boldsymbol{A}_2=\operatorname{det} \boldsymbol{A}$;
+
+$(3)$ 交换$\boldsymbol{A}$的两行得到$\boldsymbol{A}_3$, 则$\operatorname{det} \boldsymbol{A}_3=-\operatorname{det} \boldsymbol{A}$.
+\end{property}
+
+\begin{proof}
+$(1)$ 利用性质$1$, 按乘数$k$的那一行展开, 即得$\operatorname{det} \boldsymbol{A}_1=k(\operatorname{det} \boldsymbol{A})$.
+
+$(2)$ 由性质$3$及$(1)$得
+$$
+\begin{aligned}
+\operatorname{det} \boldsymbol{A}_{2} 
+& = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ a_{i 1} & \cdots & a_{i n} \\ \vdots & & \vdots \\ a_{j 1}+k a_{i 1} & \cdots & a_{j n}+k a_{i n} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right|
+ = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ a_{i 1} & \cdots & a_{i n} \\ \vdots & & \vdots \\ a_{j 1} & \cdots & a_{j n} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right|+\left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ a_{i 1} & \cdots & a_{i n} \\ \vdots & & \vdots \\ k a_{i 1} & \cdots & k a_{i n} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right|\\
+& = \operatorname{det} \boldsymbol{A}+k \cdot 0=\operatorname{det} \boldsymbol{A}. 
+\end{aligned}
+$$
+$(3)$ 由 $(2)$ 可知
+$$
+\begin{aligned}
+\operatorname{det} \boldsymbol{A}_{3} 
+& = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ a_{j 1} & \cdots & a_{j n} \\ \vdots & & \vdots \\ a_{i 1} & \cdots & a_{i n} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right|\begin{array}{l}
+ \\
+ \\
+    \text{第 $i$ 行}  \\
+    \\
+    \text{第 $j$ 行}  \\
+ \\
+ \\
+\end{array}
+= \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ a_{j 1} & \cdots & a_{j n} \\ \vdots & & \vdots \\  a_{j1}+a_{i1} & \cdots &  a_{jn} + a_{in} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right|\\
+& = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ -a_{i 1} & \cdots & -a_{i n} \\ \vdots & & \vdots \\  a_{j1}+a_{i1} & \cdots &  a_{jn} + a_{in} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right| = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ -a_{i 1} & \cdots & -a_{i n} \\ \vdots & & \vdots \\ a_{j 1} & \cdots & a_{j n} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right| = - \operatorname{det} \boldsymbol{A}.
+\end{aligned}
+$$
+\end{proof}
+
+
+\begin{corollary}
+若行列式某两行对应元成比例, 则行列式的值为零.
+\end{corollary}
+
+由性质 $4$ 可知下列常用结论成立, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则
+$$
+\operatorname{det}(k \boldsymbol{A})=k^{n}(\operatorname{det} \boldsymbol{A}) .
+$$
+
+必须指出, 不能把矩阵的初等变换与行列式的初等变换混淆, 首先矩阵是数表, 行列式是数; 其次, 前者是保持两矩阵的等价关系, 不是相等, 而后者是保持两行列式的等值关系.
+
+为了研究矩阵转置的行列式, 我们先来讨论初等矩阵的行列式. 对于三个初等矩阵 $\boldsymbol{E}_{i j}, \boldsymbol{E}_{i}(c)$ 和 $\boldsymbol{E}_{i j}(c)$, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 由性质 $4$ 有
+$$
+\begin{gathered}
+\operatorname{det}\left(\boldsymbol{E}_{i j}\right)=\operatorname{det}\left(\boldsymbol{E}_{i j} \boldsymbol{I}\right)=-\operatorname{det} \boldsymbol{I}=-1, \\
+\operatorname{det} \boldsymbol{E}_{i}(c)=c \neq 0, \\
+\operatorname{det} \boldsymbol{E}_{i j}(c)=1 .
+\end{gathered}
+$$
+于是, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 由性质 $4$ 得
+$$
+\begin{gathered}
+\operatorname{det}\left(\boldsymbol{E}_{i j} \boldsymbol{A}\right)=-\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{i j}\right)(\operatorname{det} \boldsymbol{A}), \\
+\operatorname{det}\left(\boldsymbol{E}_{i}(c) \boldsymbol{A}\right)=c(\operatorname{det} \boldsymbol{A})=\left(\operatorname{det} \boldsymbol{E}_{i}(c)\right)(\operatorname{det} \boldsymbol{A}), \\
+\operatorname{det}\left(\boldsymbol{E}_{i j}(c) \boldsymbol{A}\right)=\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{i j}(c)\right)(\operatorname{det} \boldsymbol{A}) .
+\end{gathered}
+$$
+故对任一初等矩阵 $\boldsymbol{E}$, 都有
+$$
+\operatorname{det}(\boldsymbol{E} \boldsymbol{A})=(\operatorname{det} \boldsymbol{E})(\operatorname{det} \boldsymbol{A}).
+$$
+一般地, 设 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$ 为初等矩阵, 则
+$$
+\operatorname{det}\left(\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{A}\right)=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right)(\operatorname{det} \boldsymbol{A}) .
+$$
+
+
+
+\begin{property}
+$n$ 阶矩阵 $\boldsymbol{A}$ 的行列式 $\operatorname{det} \boldsymbol{A}$ 与其转置矩阵的行列式 $\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right)$ 的值相等, 即
+$$
+\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right)=\operatorname{det} \boldsymbol{A} .
+$$
+\end{property}
+
+\begin{proof}
+由于 $\boldsymbol{A}^{\mathrm{T}}$ 可逆的充要条件为 $\boldsymbol{A}$ 可逆, 当 $\boldsymbol{A}$ 不可逆时 $\boldsymbol{A}^{\mathrm{T}}$ 也不可逆. 设 $\boldsymbol{A}$ 经行初等变换化为行阶梯形矩阵 $\boldsymbol{R}$, $\boldsymbol{R}$ 的最后一行的元全为零, 即存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$, 使得
+$$
+\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R}.
+$$
+由性质 $1$ 的推论知 $\operatorname{det} \boldsymbol{R}=0$, 因而
+$$
+\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right)(\operatorname{det} \boldsymbol{R})=0 .
+$$
+又 $\boldsymbol{A}^{\mathrm{T}}$ 也不可逆, 同理, $\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right)=0$. 故 $\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right)=\operatorname{det} \boldsymbol{A}$.
+
+当 $\boldsymbol{A}$ 可逆时, 由 $\S 1.3$ 的定理 3 , 存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{s}$, 使得 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{s}$, 从而
+$$
+\begin{aligned}
+\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right) &=\operatorname{det}\left(\boldsymbol{E}_{s}^{\mathrm{T}} \cdots \boldsymbol{E}_{2}^{\mathrm{T}} \boldsymbol{E}_{1}^{\mathrm{T}}\right) \\
+&=\left(\operatorname{det} \boldsymbol{E}_{s}^{\mathrm{T}}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{2}^{\mathrm{T}}\right)\left(\operatorname{det}\boldsymbol{E}_{1}^{\mathrm{T}}\right),
+\end{aligned}
+$$
+又由于对于三种初等矩阵, 显然其行列式均分别等于它们转置的行列式, 因而
+$$
+\begin{aligned}
+\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right) &=\left(\operatorname{det} \boldsymbol{E}_{s}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{2}\right)\left(\operatorname{det} \boldsymbol{E}_{1}\right)\\
+&=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots \left(\operatorname{det} \boldsymbol{E}_{s}\right)\\
+&=\operatorname{det}\left(\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{s}\right) \\
+&=\operatorname{det} \boldsymbol{A}.
+\end{aligned}
+$$
+\end{proof}
+
+
+
+性质 $5$ 说明, 行列式对行成立的性质对列也成立. 于是, 由性质 $1$ 和性质 $5$ 知, $n$ 阶行列式 $\operatorname{det} \boldsymbol{A}$ 可按任一行或任一列展开, 即
+$$
+\operatorname{det} \boldsymbol{A}=\sum_{k=1}^{n} a_{k j} A_{k j} \quad(j=1,2, \cdots, n) .
+$$
+
+\begin{example}
+试证: 奇数阶反称矩阵的行列式必为零.
+\end{example}
+
+\begin{proof}
+设 $\boldsymbol{A}$ 为 $n$ 阶反称矩阵 ($n$ 为奇数), 则 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 因而
+$$
+\operatorname{det} \boldsymbol{A}=\operatorname{det} \boldsymbol{A}^{\mathrm{T}}=\operatorname{det}(-\boldsymbol{A})=(-1)^{n} \operatorname{det} \boldsymbol{A}=-\operatorname{det} \boldsymbol{A},
+$$
+故 $\operatorname{det} \boldsymbol{A}=0$.
+\end{proof}
 
 
 
@@ -76,7 +381,325 @@ $2.2$ 行列式的性质与计算
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">计算行列式的一个基本方法是利用行列式的性质, 把行列式化成上三角形行列式. 由于这一方法程序固定, 故适合在计算机上使用, 而且计算工作量比按定义展开的方要少.
+
+
+\begin{example}
+计算行列式
+$$
+D=\left|\begin{array}{cccc}
+1 & 1 & -1 & 3 \\
+-1 & -1 & 2 & 1 \\
+2 & 5 & 2 & 4 \\
+\frac{1}{2} & 1 & \frac{3}{2} & 1
+\end{array}\right|.
+$$
+\end{example}
+
+\begin{solution}
+$$
+\begin{aligned}
+D & = \frac{1}{2} \left|\begin{array}{cccc}
+1 & 1 & -1 & 3 \\
+-1 & -1 & 2 & 1 \\
+2 & 5 & 2 & 4 \\
+1 & 2 & 3 & 2
+\end{array}\right| \xlongequal{\substack{r_{1}+ r_{2} \\ -2r_{1}+ r_{3} \\ -r_{1}+ r_{4}}}
+\frac{1}{2} \left|\begin{array}{cccc}1 & 1 & -1 & 3 \\0 & 0 & 1 & 4 \\0 & 3 & 4 & -2 \\0 & 1 & 4 & -1\end{array}\right| \\
+& \xlongequal{r_{2} \leftrightarrow r_{4}} -\frac{1}{2}\left|\begin{array}{cccc}1 & 1 & -1 & 3 \\0 & 1 & 4 & -1 \\0 & 3 & 4 & -2 \\0 & 0 & 1 & 4\end{array}\right| 
+\xlongequal{-3 r_{2}+r_{3}}-\frac{1}{2}\left|
+\begin{array}{cccc}
+1 & 1 & -1 & 3 \\0 & 1 & 4 & -1 \\
+0 & 0 & -8 & 1 \\0 & 0 & 1 & 4\end{array}\right|\\
+& \xlongequal{r_{3} \leftrightarrow r_{4}} \frac{1}{2}\left|\begin{array}{cccc}
+1 & 1 & -1 & 3 \\
+0 & 1 & 4 & -1 \\
+0 & 0 & 1 & 4 \\
+0 & 0 & -8 & 1
+\end{array}\right|\xlongequal{8r_{3} + r_{4}} \frac{1}{2}\left|\begin{array}{cccc}
+1 & 1 & -1 & 3 \\
+0 & 1 & 4 & -1 \\
+0 & 0 & 1 & 4 \\
+0 & 0 & 0 & 33
+\end{array}\right|=\frac{33}{2}.
+\end{aligned}
+$$
+\end{solution}
+
+计算行列式的另一基本方法是, 恰当地利用性质, 将某一行 (列) 的元尽可能化为零, 然后按该行 (列) 展开, 降阶后再计算.
+
+\begin{example}
+计算四阶行列式
+$$
+D=\left|\begin{array}{cccc}
+5 & 2 & -6 & -3 \\
+-4 & 7 & -2 & 4 \\
+-2 & 3 & 4 & 1 \\
+7 & -8 & -10 & -5
+\end{array}\right|.
+$$
+\end{example}
+
+\begin{solution}
+$$
+\begin{aligned}
+D & \xlongequal{\substack{2 c_{4}+c_{1} \\ -3c_{4}+c_{2}\\
+-4c_{4}+c_{3}}} \left|\begin{array}{cccc}
+-1 & 11 & 6 & -3 \\
+4 & -5 & -18 & 4 \\
+0 & 0 & 0 & 1 \\
+-3 & 7 & 10 & -5
+\end{array}\right|\\
+& \xlongequal{\text{按$r_3$展开}} 1\times (-1)^{3+4} \left|\begin{array}{ccc}
+-1 & 11 & 6  \\
+4 & -5 & -18  \\
+-3 & 7 & 10 
+\end{array}\right| \xlongequal{\substack{4 r_{1}+r_{2} \\ -3r_{1}+r_{3}\\}} - \left|\begin{array}{ccc}
+-1 & 11 & 6  \\
+0 & 39 & 6  \\
+0 & -26 & -8 
+\end{array}\right|\\
+& =-(-1)(-1)^{1+1}\left|\begin{array}{cc}
+39 & 6 \\
+-26 & -8
+\end{array}\right|=-156 .
+\end{aligned}
+$$
+这里 $c_{i}$ 表示第 $i$ 列.
+\end{solution}
+
+
+
+
+\begin{example}
+计算 $n$ 阶行列式
+$$
+D_{n}=\left|\begin{array}{ccccc}
+x & y & y & \cdots & y \\
+y & x & y & \cdots & y \\
+\vdots & \vdots & \vdots & & \vdots \\
+y & y & y & \cdots & x
+\end{array}\right|.
+$$
+\end{example}
+
+\begin{solution}
+注意到每行除了一个 $x$ 外, 其余 $n-1$ 个数全为 $y$, 故将第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n$ 列都加到第 $1$ 列, 得
+$$
+\begin{aligned}
+D_n & = \left|\begin{array}{cccc}
+x+(n-1) y & y  & \cdots & y \\
+x+(n-1) y & x  & \cdots & y \\
+\vdots & \vdots &  & \vdots \\
+x+(n-1) y & y  & \cdots & x
+\end{array}\right| = [x+(n-1)y] \left|\begin{array}{cccc}
+1 & y  & \cdots & y \\
+1 & x  & \cdots & y \\
+\vdots & \vdots &  & \vdots \\
+1 & y  & \cdots & x
+\end{array}\right|\\
+&\xlongequal{-r_{1}+r_{i}(i=2, \cdots, n)}[x+(n-1) y]\left|\begin{array}{cccc}
+1 & y & \cdots & y \\
+0 & x-y & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & x-y
+\end{array}\right| \\
+&=[x+(n-1) y](x-y)^{n-1} .
+\end{aligned}
+$$
+\end{solution}
+
+
+
+
+\begin{example}
+证明
+$$
+\left|\begin{array}{lll}
+a_{1}+b_{1} & b_{1}+c_{1} & c_{1}+a_{1} \\
+a_{2}+b_{2} & b_{2}+c_{2} & c_{2}+a_{2} \\
+a_{3}+b_{3} & b_{3}+c_{3} & c_{3}+a_{3}
+\end{array}\right|=2\left|\begin{array}{ccc}
+a_{1} & b_{1} & c_{1} \\
+a_{2} & b_{2} & c_{2} \\
+a_{3} & b_{3} & c_{3}
+\end{array}\right| .
+$$
+\end{example}
+
+\begin{proof}
+\textcolor{second}{证一}\quad 把左端行列式的第 $2, 3$ 列加到第 $1$ 列, 提取公因子 $2$, 再把第 $1$ 列乘 $-1$ 加到第 $2, 3$ 列得
+$$
+\text { 左式 }=2\left|\begin{array}{lll}
+a_{1}+b_{1}+c_{1} & -a_{1} & -b_{1} \\
+a_{2}+b_{2}+c_{2} & -a_{2} & -b_{2} \\
+a_{3}+b_{3}+c_{3} & -a_{3} & -b_{3}
+\end{array}\right|.
+$$
+把第 $2, 3$ 列加到第 $1$ 列, 然后分别提取 $2, 3$ 列的公因数 $-1$, 再作两次列对换, 等式得证.
+
+
+\textcolor{second}{证二}\quad $$
+\begin{aligned}
+\text { 左式 } &=\left|\begin{array}{lll}
+a_{1} & b_{1}+c_{1} & c_{1}+a_{1} \\
+a_{2} & b_{2}+c_{2} & c_{2}+a_{2} \\
+a_{3} & b_{3}+c_{3} & c_{3}+a_{3}
+\end{array}\right|+\left|\begin{array}{ccc}
+b_{1} & b_{1}+c_{1} & c_{1}+a_{1} \\
+b_{2} & b_{2}+c_{2} & c_{2}+a_{2} \\
+b_{3} & b_{3}+c_{3} & c_{3}+a_{3}
+\end{array}\right| \\
+&=\left|\begin{array}{lll}
+a_{1} & b_{1} & c_{1}+a_{1} \\
+a_{2} & b_{2} & c_{2}+a_{2} \\
+a_{3} & b_{3} & c_{3}+a_{3}
+\end{array}\right|+\left|\begin{array}{lll}
+a_{1} & c_{1} & c_{1}+a_{1} \\
+a_{2} & c_{2} & c_{2}+a_{2} \\
+a_{3} & c_{3} & c_{3}+a_{3}
+\end{array}\right|+\left|\begin{array}{ccc}
+b_{1} & b_{1} & c_{1}+a_{1} \\
+b_{2} & b_{2} & c_{2}+a_{2} \\
+b_{3} & b_{3} & c_{3}+a_{3}
+\end{array}\right|+\left|\begin{array}{ccc}
+b_{1} & c_{1} & c_{1}+a_{1} \\
+b_{2} & c_{2} & c_{2}+a_{2} \\
+b_{3} & c_{3} & c_{3}+a_{3}
+\end{array}\right| \\
+&=\left|\begin{array}{lll}
+a_{1} & b_{1} & c_{1} \\
+a_{2} & b_{2} & c_{2} \\
+a_{3} & b_{3} & c_{3}
+\end{array}\right|+0+0+0+0+0+0+\left|\begin{array}{lll}
+b_{2} & c_{2} & a_{2} \\
+b_{3} & c_{3} & a_{3}
+\end{array}\right|=\text {右式} .
+\end{aligned}
+$$
+\end{proof}
+
+
+
+
+\begin{example}
+证明范德蒙德 (Vandermonde) 行列式
+$$
+V_{n}=\left|\begin{array}{ccccc}
+1 & 1 & 1 & \cdots & 1 \\
+x_{1} & x_{2} & x_{3} & \cdots & x_{n} \\
+x_{1}^{2} & x_{2}^{2} & x_{3}^{2} & \cdots & x_{n}^{2} \\
+\vdots & \vdots & \vdots & & \vdots \\
+x_{1}^{n-1} & x_{2}^{n-1} & x_{3}^{n-1} & \cdots & x_{n}^{n-1}
+\end{array}\right|=\prod_{1 \leqslant j<i \leqslant n}\left(x_{i}-x_{j}\right),
+$$
+其中 $n \geqslant 2$, 连乘积
+$$
+\begin{aligned}
+& \prod_{1 \leqslant j<i \leqslant n}\left(x_{i}-x_{j}\right) \\
+=&\left(x_{2}-x_{1}\right)\left(x_{3}-x_{1}\right) \cdots\left(x_{n}-x_{1}\right)\left(x_{3}-x_{2}\right) \cdots\left(x_{n}-x_{2}\right) \cdots \\
+&\left(x_{n-1}-x_{n-2}\right)\left(x_{n}-x_{n-2}\right)\left(x_{n}-x_{n-1}\right)
+\end{aligned}
+$$
+是满足条件 $1 \leqslant j<i \leqslant n$ 的所有因子 $\left(x_{i}-x_{j}\right)$ 的乘积.
+\end{example}
+
+\begin{proof}
+对行列式的阶数 $n$ 作数学归纳法.
+
+当 $n=2$ 时, 有
+$$
+\left|\begin{array}{cc}
+1 & 1 \\
+x_{1} & x_{2}
+\end{array}\right|=x_{2}-x_{1},
+$$
+结论成立.
+
+假设对于 $n-1$ 阶范德蒙德行列式结论成立. 下证对 $n$ 阶范德蒙德行列式结论也成立.
+
+在 $V_{n}$ 中从第 $n$ 行开始, 逐行减去上一行的 $x_{1}$ 倍, 可得
+$$
+\begin{aligned}
+V_{n} &=\left|\begin{array}{ccccc}1 & 1 & 1 & \cdots & 1 \\0 & x_{2}-x_{1} & x_{3}-x_{1} & \cdots & x_{n}-x_{1} \\0 & x_{2}\left(x_{2}-x_{1}\right) & x_{3}\left(x_{3}-x_{1}\right) & \cdots & x_{n}\left(x_{n}-x_{1}\right) \\\vdots & \vdots & \vdots & & \vdots \\0 & x_{2}^{n-2}\left(x_{2}-x_{1}\right) & x_{3}^{n-2}\left(x_{3}-x_{1}\right) & \cdots & x_{n}^{n-2}\left(x_{n}-x_{1}\right)\end{array}\right| \\
+& =\left|\begin{array}{cccc}x_{2}-x_{1} & x_{3}-x_{1} & \cdots & x_{n}-x_{1} \\x_{2}\left(x_{2}-x_{1}\right) & x_{3}\left(x_{3}-x_{1}\right) & \cdots & x_{n}\left(x_{n}-x_{1}\right) \\\vdots & \vdots & & \vdots \\x_{2}^{n-2}\left(x_{2}-x_{1}\right) & x_{3}^{n-2}\left(x_{3}-x_{1}\right) & \cdots & x_{n}^{n-2}\left(x_{n}-x_{1}\right)\end{array}\right| \\
+& =\left(x_{2}-x_{1}\right)\left(x_{3}-x_{1}\right) \cdots\left(x_{n}-x_{1}\right)\left|\begin{array}{cccc}1 & 1 & \cdots & 1 \\x_{2} & x_{3} & \cdots & x_{n} \\x_{2}^{2} & x_{3}^{2} & \cdots & x_{n}^{2} \\\vdots & \vdots & & \vdots \\x_{2}^{n-2} & x_{3}^{n-2} & \cdots & x_{n}^{n-2}\end{array}\right|,
+\end{aligned}
+$$
+上式右端的行列式是一个 $n-1$ 阶范德蒙德行列式, 根据归纳假设有
+$$
+V_{n}=\left(x_{2}-x_{1}\right)\left(x_{3}-x_{1}\right) \cdots\left(x_{n}-x_{1}\right) \prod_{2 \leqslant j<i \leqslant n}\left(x_{i}-x_{j}\right)=\prod_{1 \leqslant j<i \leqslant n}\left(x_{i}-x_{j}\right),
+$$
+由归纳法, 结论成立.
+
+显然, $V_{n} \neq 0$ 的充要条件是 $x_{1}, x_{2}, \cdots, x_{n}$ 互不相同.
+\end{proof}
+
+
+
+
+由上例可见, 利用数学归纳法证明行列式时, 在降阶过程中注意保持行列式的 “原形” 是很重要的.
+
+在 $n$ 阶行列式的计算中, 一般都将高阶行列式转化为低阶行列式来计算. 但对某些特殊的行列式, 也常采用 “加边” 法.
+
+
+\begin{example}
+计算 $n$ 阶行列式
+$$
+D_{n}=\left|\begin{array}{cccc}
+x_{1}-m & x_{2} & \cdots & x_{n} \\
+x_{1} & x_{2}-m & \cdots & x_{n} \\
+\vdots & \vdots & & \vdots \\
+x_{1} & x_{2} & \cdots & x_{n}-m
+\end{array}\right| .
+$$
+\end{example}
+
+\begin{solution}
+我们利用如下的加边法:
+$$
+D_{n}=\left|\begin{array}{ccccc}
+1 & x_{1} & x_{2} & \cdots & x_{n} \\
+0 & x_{1}-m & x_{2} & \cdots & x_{n} \\
+0 & x_{1} & x_{2}-m & \cdots & x_{n} \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & x_{1} & x_{2} & \cdots & x_{n}-m
+\end{array}\right|,
+$$
+将第 $1$ 行的 $-1$ 倍分别加到第 $2$ 行, 第 $3$ 行, $\cdots$, 第 $n+1$ 行, 得
+$$
+D_{n}=\left|\begin{array}{ccccc}
+1 & x_{1} & x_{2} & \cdots & x_{n} \\
+-1 & -m & 0 & \cdots & 0 \\
+-1 & 0 & -m & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+-1 & 0 & 0 & \cdots & -m
+\end{array}\right|,
+$$
+
+若 $m=0$, 则
+$$
+D_{n}=\left\{\begin{array}{cc}
+x_{1}, & n=1, \\
+0, & n>1 .
+\end{array}\right.
+$$
+
+若 $m \neq 0$, 则将 $D_{n}$ 中第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n+1$ 列都乘 $-\frac{1}{m}$ 后加到第 $1$ 列得
+$$
+\begin{aligned}
+D_{n} & =\left|\begin{array}{ccccc}
+1-\sum_{i=1}^{n} \frac{x_{i}}{m} & x_{1} & x_{2} & \cdots & x_{n} \\
+0 & -m & 0 & \cdots & 0 \\
+0 & 0 & -m & \cdots & 0 \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & \cdots & -m
+\end{array}\right|\\
+&=(-m)^{n}\left(1-\frac{1}{m} \sum_{i=1}^{n} x_{i}\right) \\
+&=(-1)^{n-1} m^{n-1}\left(\sum_{i=1}^{n} x_{i}-m\right) .
+\end{aligned}
+$$
+\end{solution}
 
 
 
@@ -91,7 +714,143 @@ $2.2$ 行列式的性质与计算
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">我们来进一步讨论方阵乘积的行列式以及用行列式来刻画矩阵可逆的充要条件.
+
+\begin{theorem}
+$n$ 阶矩阵 $\boldsymbol{A}$ 可逆的充要条件为 $\operatorname{det} \boldsymbol{A} \neq 0$.
+\end{theorem}
+
+\begin{proof}
+设 $\boldsymbol{A}$ 经行初等变换化为简化行阶梯形矩阵 $\boldsymbol{R}$, 即存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$, 使得
+$$
+\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R} .
+$$
+若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{R}=\boldsymbol{I}$, 因此
+$$
+\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right)(\operatorname{det} \boldsymbol{I}) \neq 0 .
+$$
+反之, 若 $\operatorname{det} \boldsymbol{A} \neq 0$, 但 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{R}$ 的最后一行的元全为零, 因此由行列式的性质知 $\operatorname{det} \boldsymbol{R}=0$, 则
+$$
+\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right)(\operatorname{det} \boldsymbol{R})=0
+$$
+矛盾, 故 $\boldsymbol{A}$ 可逆.
+\end{proof}
+
+
+下面我们证明一个重要结果: 两个 $n$ 阶矩阵乘积的行列式等于这两个矩阵的行列式的乘积.
+
+
+
+\begin{theorem}
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶矩阵, 则 $\operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$.
+\end{theorem}
+
+\begin{proof}
+设 $\boldsymbol{A}$ 经行初等变换化为简化行阶梯形矩阵 $\boldsymbol{R}$, 即存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$, 使得 
+$$\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R},$$
+则
+$$
+\begin{aligned}
+\operatorname{det}(\boldsymbol{A B}) &=\operatorname{det}\left(\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R B}\right) \\
+&=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right)(\operatorname{det}(\boldsymbol{RB})).
+\end{aligned}
+$$
+
+若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{R}=\boldsymbol{I}$. 此时 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t}$, 于是
+$$
+\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right),
+$$
+故
+$$
+\operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det}(\boldsymbol{I} \boldsymbol{B}))=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B}) .
+$$
+
+若 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{R}$ 的最后一行全为零, 因而 $\boldsymbol{R B}$ 的最后一行也全为零, 故由行列 式性质, $\operatorname{det}(\boldsymbol{R B})=0$, 从而 $\operatorname{det}(\boldsymbol{A B})=0$. 又由定理 $1$ 知 $\operatorname{det} \boldsymbol{A}=0$, 故 $\operatorname{det}(\boldsymbol{A B})= (\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$. 
+\end{proof}
+
+
+
+\begin{corollary}
+设 $\boldsymbol{A}_{i}$ $(i=1,2, \cdots, r)$ 均为 $n$ 阶矩阵, 则
+$$
+\operatorname{det}\left(\boldsymbol{A}_{1} \boldsymbol{A}_{2} \cdots \boldsymbol{A}_{r}\right)=\left(\operatorname{det} \boldsymbol{A}_{1}\right)\left(\operatorname{det} \boldsymbol{A}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{A}_{r}\right) .
+$$
+\end{corollary}
+
+
+
+\begin{corollary}
+若 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶矩阵, 且 $\boldsymbol{A B}=\boldsymbol{I}$ (或 $\boldsymbol{B A}=\boldsymbol{I}$ ), 则 $\boldsymbol{B}=\boldsymbol{A}^{-1}$.
+\end{corollary}
+
+\begin{proof}
+因为 $\operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})=\operatorname{det} \boldsymbol{I}=1$, 所以 $\operatorname{det} \boldsymbol{A} \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 于是
+$$
+\boldsymbol{B}=\boldsymbol{I B}=\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right) \boldsymbol{B}=\boldsymbol{A}^{-1}(\boldsymbol{A B})=\boldsymbol{A}^{-1} \boldsymbol{I}=\boldsymbol{A}^{-1} .
+$$
+\end{proof}
+
+设 $\boldsymbol{A}$ 为可逆矩阵, 则 $\operatorname{det} \boldsymbol{A} \neq 0$. 由定理 $2$ 和 $\boldsymbol{A A}^{-1}=\boldsymbol{I}$ 有
+$$
+(\operatorname{det} \boldsymbol{A})\left(\operatorname{det}\left(\boldsymbol{A}^{-1}\right)\right)=\operatorname{det} \boldsymbol{I}=1,
+$$
+因而 $\operatorname{det}\left(\boldsymbol{A}^{-1}\right)=(\operatorname{det} \boldsymbol{A})^{-1}$.
+
+这说明 $\boldsymbol{A}$ 的逆矩阵的行列式等于 $\boldsymbol{A}$ 的行列式的倒数.
+
+
+\begin{example}
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+1 & 2 & 4 \\
+0 & -2 & 7 \\
+0 & 0 & -3
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ccc}
+4 & 9 & 5 \\
+0 & 1 & -7 \\
+0 & 0 & 2
+\end{array}\right),
+$$
+求 $\operatorname{det}\left(\boldsymbol{A B}^{\mathrm{T}}\right), \operatorname{det}(\boldsymbol{A}+\boldsymbol{B}), \operatorname{det}(2 \boldsymbol{A}), \operatorname{det}\left(\boldsymbol{A}^{-1}\right), \operatorname{det}\left(2 \boldsymbol{A}^{2} \boldsymbol{B}^{-1}\right)$. 
+\end{example}
+
+\begin{solution}
+显然 $\operatorname{det} \boldsymbol{A}=6 \neq 0, \operatorname{det} \boldsymbol{B}=8 \neq 0$, 故 $\boldsymbol{A}, \boldsymbol{B}$ 可逆, 且
+$$
+\begin{gathered}
+\operatorname{det}\left(\boldsymbol{A} \boldsymbol{B}^{\mathrm{T}}\right)=(\operatorname{det} \boldsymbol{A})\left(\operatorname{det} \boldsymbol{B}^{\mathrm{T}}\right)=48, \\
+\operatorname{det}(\boldsymbol{A}+\boldsymbol{B})=\left|\begin{array}{ccc}
+5 & 11 & 9 \\
+0 & -1 & 0 \\
+0 & 0 & -1
+\end{array}\right|=5, \\
+\operatorname{det}(2 \boldsymbol{A})=2^{3} \operatorname{det} \boldsymbol{A}=48, \\
+\operatorname{det}\left(\boldsymbol{A}^{-1}\right)=\frac{1}{\operatorname{det} \boldsymbol{A}}=\frac{1}{6}, \\
+\left(2 \boldsymbol{A}^{2} \boldsymbol{B}^{-1}\right)=2^{3} \operatorname{det}\left(\boldsymbol{A}^{2}\right)\left(\operatorname{det} \boldsymbol{B}^{-1}\right)=2^{3}(\operatorname{det} \boldsymbol{A})^{2} \cdot \frac{1}{\operatorname{det} \boldsymbol{B}}=36 .
+\end{gathered}
+$$
+\end{solution}
+
+
+
+
+
+\begin{example}
+已知矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3}\right), \boldsymbol{B}=\left(\boldsymbol{\beta}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3}\right)$, 其中 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3}$ 都是 $4 \times 1$ 矩阵. 设 $|\boldsymbol{A}|=4,|\boldsymbol{B}|=1$, 求 $\left|\boldsymbol{A}^{\mathrm{T}}+\boldsymbol{B}^{\mathrm{T}}\right|$.
+\end{example}
+
+\begin{solution}
+$$
+\begin{aligned}
+\left|\boldsymbol{A}^{\mathrm{T}}+\boldsymbol{B}^{\mathrm{T}}\right| 
+& = \left|(\boldsymbol{A}+\boldsymbol{B})^{\mathrm{T}}\right| = \left|\boldsymbol{A}+\boldsymbol{B}\right|\\
+& = \left|(\boldsymbol{\alpha}+\boldsymbol{\beta}, 2\boldsymbol{\nu}_{1}, 2\boldsymbol{\nu}_{2}, 2\boldsymbol{\nu}_{3})\right|\\
+& = \left|(\boldsymbol{\alpha}, 2\boldsymbol{\nu}_{1}, 2\boldsymbol{\nu}_{2}, 2\boldsymbol{\nu}_{3})\right| +  \left|(\boldsymbol{\beta}, 2\boldsymbol{\nu}_{1}, 2\boldsymbol{\nu}_{2}, 2\boldsymbol{\nu}_{3})\right|\\ 
+& = 2^3\left|(\boldsymbol{\alpha}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3})\right| +  2^3\left|(\boldsymbol{\beta}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3})\right| = 40.
+\end{aligned}
+$$
+\end{solution}
 
 
 
@@ -101,30 +860,112 @@ $2.2$ 行列式的性质与计算
 <a href="#C0">返回顶部</a>
 
 
-<h2><a name="C4">$2.2.4$  </a></h2>
+<h2><a name="C4">习题 $2.2$</a></h2>
 
 
-<ul>
+<ol>
 
-<p style="text-indent: 2em;">
+<li>
+计算下列行列式: 
+<br>
+$(1)$ $\left|\begin{array}{llll}0 & 1 & 1 & 1 \\ 1 & 0 & 1 & 1 \\ 1 & 1 & 0 & 1 \\ 1 & 1 & 1 & 0\end{array}\right|$; 
+<br>
+$(2)$ $\left|\begin{array}{cccc}1 & 1 & 1 & 1 \\ 1 & -1 & 1 & 1 \\ 1 & 1 & -1 & 1 \\ 1 & 1 & 1 & -1\end{array}\right|$;
+<br>
+$(3)$ $\left|\begin{array}{cccc}5 & 0 & 4 & 2 \\ 1 & -1 & 2 & 1 \\ 4 & 1 & 2 & 0 \\ 1 & 1 & 1 & 1\end{array}\right|$;
+<br>  
+$(4)$ $\left|\begin{array}{llll}0 & a & b & c \\ a & 0 & c & b \\ b & c & 0 & a \\ c & b & a & 0\end{array}\right|$;
+<br>
+$(5)$ $\left|\begin{array}{ccccc}1 & 2 & 2 & \cdots & 2 \\ 2 & 2 & 2 & \cdots & 2 \\ 2 & 2 & 3 & \cdots & 2 \\ \vdots & \vdots & \vdots & & \vdots \\ 2 & 2 & 2 & \cdots & n\end{array}\right|$;
+<br>  
+$(6)$ $\left|\begin{array}{cccc}1+a_{1} b_{1} & 1+a_{1} b_{2} & 1+a_{1} b_{3} & 1+a_{1} b_{4} \\ 1+a_{2} b_{1} & 1+a_{2} b_{2} & 1+a_{2} b_{3} & 1+a_{2} b_{4} \\ 1+a_{3} b_{1} & 1+a_{3} b_{2} & 1+a_{3} b_{3} & 1+a_{3} b_{4} \\ 1+a_{4} b_{1} & 1+a_{4} b_{2} & 1+a_{4} b_{3} & 1+a_{4} b_{4}\end{array}\right|$;
+<br>
+$(7)$ $\left|\begin{array}{cccccc}
+1 & 2 & 3 & \cdots & n-1 & n \\
+1 & -1 & 0 & \cdots & 0 & 0 \\
+0 & 2 & -2 & \cdots & 0 & 0 \\
+\vdots & \vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & 0 & \cdots & n-1 & -(n-1)
+\end{array}\right|$.
+</li>
+
+<li>证明下列等式:
+<br>
+$(1)$ $\left|\begin{array}{lll}
+a_{1}+b_{1} x & a_{1} x+b_{1} & c_{1} \\
+a_{2}+b_{2} x & a_{2} x+b_{2} & c_{2} \\
+a_{3}+b_{3} x & a_{3} x+b_{3} & c_{3}
+\end{array}\right|=\left(1-x^{2}\right)\left|\begin{array}{lll}
+a_{1} & b_{1} & c_{1} \\
+a_{2} & b_{2} & c_{2} \\
+a_{3} & b_{3} & c_{3}
+\end{array}\right|$; 
+<br>
+$(2)$ $\left|\begin{array}{lll}
+a x+b y & a y+b z & a z+b x \\
+a y+b z & a z+b x & a x+b y \\
+a z+b x & a x+b y & a y+b z
+\end{array}\right|=\left(a^{3}+b^{3}\right)\left|\begin{array}{lll}
+x & y & z \\
+y & z & x \\
+z & x & y
+\end{array}\right|$;
+<br>
+$(3)$ $D_{n}=\left|\begin{array}{cccccc}\cos \theta & 1 & 0 & \cdots & 0 & 0 \\ 1 & 2 \cos \theta & 1 & \cdots & 0 & 0 \\ 0 & 1 & 2 \cos \theta & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & 0 & \cdots & 2 \cos \theta & 1 \\ 0 & 0 & 0 & \cdots & 1 & 2 \cos \theta\end{array}\right|=\cos n \theta$.
+</li>
+  
+<li>计算下列行列式: 
+<br>
+$(1)$
+$\left|\begin{array}{cccc}
+a_{1}+\lambda_{1} & a_{2} & \cdots & a_{n} \\
+a_{1} & a_{2}+\lambda_{2} & \cdots & a_{n} \\
+\vdots & \vdots & & \vdots \\
+a_{1} & a_{2} & \cdots & a_{n}+\lambda_{n}
+\end{array}\right| \quad\left(\lambda_{i} \neq 0, i=1,2, \cdots, n\right)$;
+<br>
+
+$(2)$ $\left|\begin{array}{ccccc}
+a_{1}^{n} & a_{1}^{n-1} b_{1} & \cdots & a_{1} b_{1}^{n-1} & b_{1}^{n} \\
+a_{2}^{n} & a_{2}^{n-1} b_{2} & \cdots & a_{2} b_{2}^{n-1} & b_{2}^{n} \\
+\vdots & \vdots & & \vdots & \vdots \\
+a_{n}^{n} & a_{n}^{n-1} b_{n} & \cdots & a_{n} b_{n}^{n-1} & b_{n}^{n} \\
+a_{n+1}^{n} & a_{n+1}^{n-1} b_{n+1} & \cdots & a_{n+1} b_{n+1}^{n-1} & b_{n+1}^{n}
+\end{array}\right| \quad\left(a_{i} \neq 0, i=1,2, \cdots, n+1\right).
+$
+</li>
+
+<li>若 $\boldsymbol{A}$ 为 $n$ 阶矩阵, $\boldsymbol{A A}^{\mathrm{T}}=\boldsymbol{I}$, 试求 $\operatorname{det} \boldsymbol{A}$.
+</li>
+  
+<li>设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, $\boldsymbol{A A}^{\mathrm{T}}=\boldsymbol{I}, \operatorname{det} \boldsymbol{A}=-1$,  证明 $\operatorname{det}(\boldsymbol{I}+\boldsymbol{A})=0$.
+</li>
+  
+<li>设 $\boldsymbol{A}=\boldsymbol{B}=-\boldsymbol{C}=\boldsymbol{D}^{\mathrm{T}}=\left(\begin{array}{ll}1 & 0 \\ 0 & 1\end{array}\right)$, 求 $\left|\begin{array}{cc} \boldsymbol{A} & \boldsymbol{B} \\ \boldsymbol{C} & \boldsymbol{D}\end{array}\right|,\left|\begin{array}{cc}|\boldsymbol{A}| & |\boldsymbol{B}| \\ |\boldsymbol{C}| & |\boldsymbol{D}|\end{array}\right|$.
+</li>
+  
+<li>设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 4 阶矩阵, $|\boldsymbol{A}|=-2$, $|\boldsymbol{B}|=3$, 计算
+<br>
+$(1)$ $\left|\frac{1}{2} \boldsymbol{A B}^{-1}\right|$;
+<br>
+$(2)$ $\left|-\boldsymbol{A B}^{\mathrm{T}}\right|$;
+<br>
+$(3)$ $\left|(\boldsymbol{A B})^{-1}\right|$;
+<br>
+$(4)$ $\left|\left[(\boldsymbol{A B})^{\mathrm{T}}\right]^{-1}\right|$.
+</li>
+  
+<li>已知 $n$ 阶矩阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{2}=\boldsymbol{A}$, 证明 $\boldsymbol{A}=\boldsymbol{I}$ 或 $\operatorname{det} \boldsymbol{A}=0$.
+</li>
 
 
 
 
-</ul>
+</ol>
 
 <a href="#C0">返回顶部</a>
   
 
-  
-<h2><a name="C5">$2.2.5$  </a></h2>
-<ul>
-<p style="text-indent: 2em;">
-
-
-</ul>
-
-<a href="#C0">返回顶部</a>
 
 <br>
 <center>
