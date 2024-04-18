@@ -62,19 +62,21 @@ $2.2$ 行列式的性质与计算
 
 <p style="text-indent: 2em;">为了进一步讨论$n$阶行列式, 简化行列式的计算, 下面介绍$n$阶行列式的性质. 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $1$：</b></font>
 $n$阶矩阵$\boldsymbol{A}$的行列式按任一行展开, 其值相等, 即
 $$
 \operatorname{det} \boldsymbol{A}=a_{i1} A_{i1}+a_{i2} A_{i2}+\cdots+a_{i n} A_{in}=\sum_{j=1}^{n} a_{ij} A_{ij} \quad (i=1,2,\cdots,n), 
 $$
 其中$A_{ij}=(-1)^{i+j}M_{ij}$, $M_{ij}$是$\operatorname{det} \boldsymbol{A}$中去掉第$i$行和第$j$列元所成的$n-1$阶行列式, 称为元$a_{ij}$的余子式, $A_{ij}$称为元$a_{ij}$的代数余子式. 
-\end{property}
+</p>
 
 <p style="text-indent: 2em;">证明从略. 
 
-\begin{corollary}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $1$：</b></font>
 若行列式的某行元全为零, 则行列式等于零. 
-\end{corollary}
+</p>
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -145,13 +147,16 @@ $$
 </p>
 
 
-\begin{property}
-若 $n$ 阶行列式某两行对应元全相等, 则行列式为零.
-\end{property}
-
-<p style="text-indent: 2em;">即当 $a_{i k}=a_{j k}, i \neq j, k=1,2, \cdots, n$ 时, $\operatorname{det} \boldsymbol{A}=0$.
-
-\begin{proof}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $2$：</b></font>
+若 $n$ 阶行列式某两行对应元全相等, 则行列式为零. 
+<br>
+即当 $a_{i k}=a_{j k}, i \neq j, k=1,2, \cdots, n$ 时, $\operatorname{det} \boldsymbol{A}=0$.
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty2").style.display="none"'> 
+<div id= "divIDproperty2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 用数学归纳法证明. 结论对二阶行列式显然成立. 当 $n \geqslant 3$ 时, 假设结论对 $n-1$ 阶行列式成立, 在 $n$ 阶的情况下, 对第 $k$ 行展开 $(k \neq i, j)$, 则
 $$
 \operatorname{det} \boldsymbol{A}=a_{k 1} A_{k 1}+a_{k 2} A_{k 2}+\cdots+a_{k n} A_{k n}=\sum_{l=1}^{n} a_{k l} A_{k l},
@@ -161,10 +166,13 @@ $$
 A_{kl} =(-1)^{k+l} M_{kl} = 0 \quad (k=1,2, \cdots, n), 
 $$
 故$\operatorname{det} \boldsymbol{A} = 0$.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $3$：</b></font>
 $$
 \left|\begin{array}{cccc}
     a_{11} & a_{12} & \cdots & a_{1n} \\
@@ -188,9 +196,11 @@ $$
     a_{n1} & a_{n2} & \cdots & a_{nn} \\
 \end{array}\right|.
 $$
-\end{property}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty3").style.display="none"'> 
+<div id= "divIDproperty3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由性质$1$, 将上式左端行列式按第$i$行展开得
 $$
 \begin{aligned}
@@ -212,25 +222,29 @@ $$
 \end{array}\right|.
 \end{aligned}
 $$
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 <p style="text-indent: 2em;">性质$3$说明: 如果行列式的某一行是两组数的和, 那么这个行列式就等于两个行列式的和, 这两个行列式分别以这两组数为这一行的元, 其他各行与原来行列式的对应各行不变.
 
-
-\begin{property}[行列式的初等变换]
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $4$：(行列式的初等变换)</b></font>
 若把行初等变换施于$n$阶矩阵$\boldsymbol{A}$上:
-
+<br>
 $(1)$ 将$\boldsymbol{A}$的某一行乘数$k$得到$\boldsymbol{A}_1$, 则$\operatorname{det} \boldsymbol{A}_1=k(\operatorname{det} \boldsymbol{A})$;
-
+<br>
 $(2)$ 将$\boldsymbol{A}$的某一行的$k$倍加到另一行得到$\boldsymbol{A}_2$, 则$\operatorname{det} \boldsymbol{A}_2=\operatorname{det} \boldsymbol{A}$;
-
+<br>
 $(3)$ 交换$\boldsymbol{A}$的两行得到$\boldsymbol{A}_3$, 则$\operatorname{det} \boldsymbol{A}_3=-\operatorname{det} \boldsymbol{A}$.
-\end{property}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty4").style.display="none"'> 
+<div id= "divIDproperty4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 $(1)$ 利用性质$1$, 按乘数$k$的那一行展开, 即得$\operatorname{det} \boldsymbol{A}_1=k(\operatorname{det} \boldsymbol{A})$.
-
+<br>
 $(2)$ 由性质$3$及$(1)$得
 $$
 \begin{aligned}
@@ -240,6 +254,7 @@ $$
 & = \operatorname{det} \boldsymbol{A}+k \cdot 0=\operatorname{det} \boldsymbol{A}. 
 \end{aligned}
 $$
+  
 $(3)$ 由 $(2)$ 可知
 $$
 \begin{aligned}
@@ -257,12 +272,15 @@ $$
 & = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ -a_{i 1} & \cdots & -a_{i n} \\ \vdots & & \vdots \\  a_{j1}+a_{i1} & \cdots &  a_{jn} + a_{in} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right| = \left|\begin{array}{ccc}a_{11} & \cdots & a_{1 n} \\ \vdots & & \vdots \\ -a_{i 1} & \cdots & -a_{i n} \\ \vdots & & \vdots \\ a_{j 1} & \cdots & a_{j n} \\ \vdots & & \vdots \\ a_{n 1} & \cdots & a_{n n}\end{array}\right| = - \operatorname{det} \boldsymbol{A}.
 \end{aligned}
 $$
-\end{proof}
+</p>
+</div> 
+</p>
 
 
-\begin{corollary}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $2$：</b></font>
 若行列式某两行对应元成比例, 则行列式的值为零.
-\end{corollary}
+</p>
 
 <p style="text-indent: 2em;">由性质 $4$ 可知下列常用结论成立, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则
 $$
@@ -298,14 +316,17 @@ $$
 
 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $5$：</b></font>
 $n$ 阶矩阵 $\boldsymbol{A}$ 的行列式 $\operatorname{det} \boldsymbol{A}$ 与其转置矩阵的行列式 $\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right)$ 的值相等, 即
 $$
 \operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}}\right)=\operatorname{det} \boldsymbol{A} .
 $$
-\end{property}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty5").style.display="none"'> 
+<div id= "divIDproperty5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由于 $\boldsymbol{A}^{\mathrm{T}}$ 可逆的充要条件为 $\boldsymbol{A}$ 可逆, 当 $\boldsymbol{A}$ 不可逆时 $\boldsymbol{A}^{\mathrm{T}}$ 也不可逆. 设 $\boldsymbol{A}$ 经行初等变换化为行阶梯形矩阵 $\boldsymbol{R}$, $\boldsymbol{R}$ 的最后一行的元全为零, 即存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$, 使得
 $$
 \boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R}.
@@ -332,7 +353,9 @@ $$
 &=\operatorname{det} \boldsymbol{A}.
 \end{aligned}
 $$
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 
@@ -736,11 +759,14 @@ $$
 
 <p style="text-indent: 2em;">我们来进一步讨论方阵乘积的行列式以及用行列式来刻画矩阵可逆的充要条件.
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 $n$ 阶矩阵 $\boldsymbol{A}$ 可逆的充要条件为 $\operatorname{det} \boldsymbol{A} \neq 0$.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 经行初等变换化为简化行阶梯形矩阵 $\boldsymbol{R}$, 即存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$, 使得
 $$
 \boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R} .
@@ -754,18 +780,23 @@ $$
 \operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right)(\operatorname{det} \boldsymbol{R})=0
 $$
 矛盾, 故 $\boldsymbol{A}$ 可逆.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 <p style="text-indent: 2em;">下面我们证明一个重要结果: 两个 $n$ 阶矩阵乘积的行列式等于这两个矩阵的行列式的乘积.
 
 
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
 设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶矩阵, 则 $\operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
+<div id= "divIDthm2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 经行初等变换化为简化行阶梯形矩阵 $\boldsymbol{R}$, 即存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{t}$, 使得 
 $$\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t} \boldsymbol{R},$$
 则
@@ -776,7 +807,7 @@ $$
 \end{aligned}
 $$
 
-<p style="text-indent: 2em;">若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{R}=\boldsymbol{I}$. 此时 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t}$, 于是
+若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{R}=\boldsymbol{I}$. 此时 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t}$, 于是
 $$
 \operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right),
 $$
@@ -785,23 +816,27 @@ $$
 \operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det}(\boldsymbol{I} \boldsymbol{B}))=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B}) .
 $$
 
-<p style="text-indent: 2em;">若 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{R}$ 的最后一行全为零, 因而 $\boldsymbol{R B}$ 的最后一行也全为零, 故由行列 式性质, $\operatorname{det}(\boldsymbol{R B})=0$, 从而 $\operatorname{det}(\boldsymbol{A B})=0$. 又由定理 $1$ 知 $\operatorname{det} \boldsymbol{A}=0$, 故 $\operatorname{det}(\boldsymbol{A B})= (\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$. 
-\end{proof}
+若 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{R}$ 的最后一行全为零, 因而 $\boldsymbol{R B}$ 的最后一行也全为零, 故由行列 式性质, $\operatorname{det}(\boldsymbol{R B})=0$, 从而 $\operatorname{det}(\boldsymbol{A B})=0$. 又由定理 $1$ 知 $\operatorname{det} \boldsymbol{A}=0$, 故 $\operatorname{det}(\boldsymbol{A B})= (\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$. 
+</p>
+</div> 
+</p>
 
 
 
-\begin{corollary}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $3：</b></font>
 设 $\boldsymbol{A}_{i}$ $(i=1,2, \cdots, r)$ 均为 $n$ 阶矩阵, 则
 $$
 \operatorname{det}\left(\boldsymbol{A}_{1} \boldsymbol{A}_{2} \cdots \boldsymbol{A}_{r}\right)=\left(\operatorname{det} \boldsymbol{A}_{1}\right)\left(\operatorname{det} \boldsymbol{A}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{A}_{r}\right) .
 $$
-\end{corollary}
+</p>
 
 
 
-\begin{corollary}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $4$：</b></font>
 若 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶矩阵, 且 $\boldsymbol{A B}=\boldsymbol{I}$ (或 $\boldsymbol{B A}=\boldsymbol{I}$ ), 则 $\boldsymbol{B}=\boldsymbol{A}^{-1}$.
-\end{corollary}
+</p>
 
 \begin{proof}
 因为 $\operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})=\operatorname{det} \boldsymbol{I}=1$, 所以 $\operatorname{det} \boldsymbol{A} \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 于是
