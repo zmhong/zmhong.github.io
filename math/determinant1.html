@@ -45,12 +45,10 @@ $2.1$ $n$阶行列式的定义
 <h2><a name="C0"><strong>目录:</strong></a><br></h2>
 
 <ul>
-<li><a href="https://zmhong.github.io/math/linearalgebra.html">返回主页</a></li>
-<li><a href="#C1">2.1.1 二阶、三阶行列式的定义</a></li>
-<li><a href="#C2">2.1.2 $n$阶行列式的定义</a></li>
-<li><a href="#C3">2.1.3 拉普拉斯定理</a></li>
-<li><a href="#C4">2.1.4 克拉默法则</a></li>
-<li><a href="#C5">2.1.5 矩阵的秩</a></li>
+<li><a href="https://zmhong.github.io/math/linearalgebra.html" style="text-decoration:none">返回主页</a></li>
+<li><a href="#C1" style="text-decoration:none">2.1.1 二阶、三阶行列式的定义</a></li>
+<li><a href="#C2" style="text-decoration:none">2.1.2 $n$阶行列式的定义</a></li>
+<li><a href="#C3" style="text-decoration:none">习题 2.1</a></li>
 </ul>
 
 
@@ -61,7 +59,140 @@ $2.1$ $n$阶行列式的定义
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">我们先从解二元及三元线性方程组引入二阶、三阶行列式的概念及计算.
+
+<p style="text-indent: 2em;">考虑二元线性方程组
+$$
+\left\{\begin{array}{l}
+a_{11} x_{1}+a_{12} x_{2}=b_{1}, \\
+a_{21} x_{1}+a_{22} x_{2}=b_{2},
+\end{array}\right.
+$$
+如果 $a_{11} a_{22}-a_{12} a_{21} \neq 0$, 那么方程组的解为
+$$
+\left\{\begin{array}{l}
+x_{1}=\dfrac{b_{1} a_{22}-a_{12} b_{2}}{a_{11} a_{22}-a_{12} a_{21}}, \\[10pt]
+x_{2}=\dfrac{a_{11} b_{2}-b_{1} a_{21}}{a_{11} a_{22}-a_{12} a_{21}} .
+\end{array}\right.
+$$
+如果对于方程组的系数矩阵
+$$
+\bm{A}=\left(\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right),
+$$
+引入行列式记号 “$|\quad |$” 和 $\operatorname{det} \bm{A}$, 那么就可以得到一个二阶行列式, 并规定 $\bm{A}$ 的行列式的值为
+$$
+\operatorname{det} \bm{A}=\left|\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|=a_{11} a_{22}-a_{12} a_{21} .
+$$
+系数矩阵 $\bm{A}$ 的行列式 $\operatorname{det} \bm{A}$ 称为方程组的系数行列式.
+
+<p style="text-indent: 2em;">记
+$$
+\operatorname{det} \bm{A}_{1}=\left|\begin{array}{ll}
+b_{1} & a_{12} \\
+b_{2} & a_{22}
+\end{array}\right|, \quad \operatorname{det} \bm{A}_{2}=\left|\begin{array}{cc}
+a_{11} & b_{1} \\
+a_{21} & b_{2}
+\end{array}\right|,
+$$
+那么二元线性方程组的解可写成
+$$
+x_{1}=\frac{\operatorname{det} \bm{A}_{1}}{\operatorname{det} \bm{A}}, \quad x_{2}=\frac{\operatorname{det} \bm{A}_{2}}{\operatorname{det} \bm{A}} .
+$$
+
+<p style="text-indent: 2em;">类似地, 三元线性方程组
+$$
+\left\{\begin{array}{l}
+a_{11} x_{1}+a_{12} x_{2}+a_{13} x_{3}=b_{1}, \\
+a_{21} x_{1}+a_{22} x_{2}+a_{23} x_{3}=b_{2}, \\
+a_{31} x_{1}+a_{32} x_{2}+a_{33} x_{3}=b_{3}
+\end{array}\right.
+$$
+的系数矩阵 $\bm{A}$ 的行列式规定为
+$$
+\begin{aligned}
+\operatorname{det} \bm{A}=
+\left|\begin{array}{lll}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|=&a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}\\
+&-a_{11} a_{23} a_{32}-a_{12} a_{21} a_{33}-a_{13} a_{22} a_{31} .
+\end{aligned}
+$$
+那么, 当 $\operatorname{det} \bm{A} \neq 0$ 时, 方程组的解也可写成
+$$
+x_{1}=\frac{\operatorname{det} \bm{A}_{1}}{\operatorname{det} \bm{A}}, \quad x_{2}=\frac{\operatorname{det} \bm{A}_{2}}{\operatorname{det} \bm{A}}, \quad x_{3}=\frac{\operatorname{det} \bm{A}_{3}}{\operatorname{det} \bm{A}},
+$$
+其中 $\operatorname{det} \bm{A}_{1}, \operatorname{det} \bm{A}_{2}, \operatorname{det} \bm{A}_{3}$ 是将系数行列式的第 1 列、第 2 列、第 3 列分别换成常数列所得的行列式.
+
+<p style="text-indent: 2em;">三阶行列式的计算方法可用图示记忆法 (如图 \ref{fig:2.2} 所示). 凡是实线上三个元相乘所得到的项带正号, 凡是虚线上三个元相乘所得到的项带负号.
+
+
+\begin{figure}[!ht]
+\begin{center}
+\renewcommand\figurename{\footnotesize 图}
+%\includegraphics[scale=0.8]{image/imageLA2022/fig2.2.jpg}
+\includegraphics[scale=0.3]{image/imageLA2022/fig2.2.pdf}
+\caption{}
+\label{fig:2.2}
+\end{center}
+\end{figure}
+
+
+<p style="text-indent: 2em;">对 $n$ 元线性方程组的解要得到类似的结果, 显然要对 $n$ 阶行列式给出合理的定义. 
+
+<p style="text-indent: 2em;">观察三阶行列式的值, 我们不难看出可以将三阶行列式写成如下展开式形式:
+\begin{align}\label{eq:2.1}
+\left|\begin{array}{lll}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right| &=a_{11}\left|\begin{array}{ll}
+a_{22} & a_{23} \\
+a_{32} & a_{33}
+\end{array}\right|-a_{12}\left|\begin{array}{ll}
+a_{21} & a_{23} \\
+a_{31} & a_{33}
+\end{array}\right|+a_{13}\left|\begin{array}{ll}
+a_{21} & a_{22} \\
+a_{31} & a_{32}
+\end{array}\right| \nonumber \\
+&=a_{11} A_{11}+a_{12} A_{12}+a_{13} A_{13},
+\end{align}
+其中 $A_{11}, A_{12}, A_{13}$ 分别称为 $a_{11}, a_{12}, a_{13}$ 的代数余子式,
+$$
+A_{11}=(-1)^{1+1}\left|\begin{array}{ll}
+a_{22} & a_{23} \\
+a_{32} & a_{33}
+\end{array}\right|, \quad A_{12}=(-1)^{1+2}\left|\begin{array}{cc}
+a_{21} & a_{23} \\
+a_{31} & a_{33}
+\end{array}\right|, \quad A_{13}=(-1)^{1+3}\left|\begin{array}{ll}
+a_{21} & a_{22} \\
+a_{31} & a_{32}
+\end{array}\right|.
+$$
+
+<p style="text-indent: 2em;">二阶行列式的展开式 $\left|\begin{array}{ll}a_{11} & a_{12} \\ a_{21} & a_{22}\end{array}\right|=a_{11} a_{22}-a_{12} a_{21}$ 也可视为按第 $1$ 行展开, 且 $a_{22}$ 恰为 $a_{11}$ 的代数余子式, $-a_{21}$ 恰为 $a_{12}$ 的代数余子式, 即
+\begin{equation}\label{eq:2.2}
+\left|\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|=a_{11} A_{11}+a_{12} A_{12} .
+\end{equation}
+
+<p style="text-indent: 2em;">如果把 $(\ref{eq:2.1})$, $(\ref{eq:2.2})$ 两式分别作为三阶和二阶行列式的定义, 显然这种定义的方法是统一的, 都是用低阶行列式定义高一阶的行列式. 因此, 我们自然也就希望用这种递归的方法来定义一般的 $n$ 阶行列式.
+
+
+
+
 
 
 
@@ -76,7 +207,208 @@ $2.1$ $n$阶行列式的定义
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">\begin{definition}
+设 $\bm{A}$ 为一个 $n$ 阶矩阵, $\bm{A}$ 的行列式
+$$
+\operatorname{det} \bm{A}=\left|\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right|
+$$
+是由 $\bm{A}$ 确定的一个数:
+<br>
+(1) 当 $n=1$ 时, $\operatorname{det} \bm{A}=\operatorname{det}\left(a_{11}\right)=a_{11}$;
+<br>
+(2) 当 $n \geqslant 2$ 时, $\operatorname{det} \bm{A}=a_{11} A_{11}+a_{12} A_{12}+\cdots+a_{1 n} A_{1 n}=\sum_{j=1}^{n} a_{1 j} A_{1 j}$, 其中 $A_{1 j}=(-1)^{1+j} M_{1 j}$, 
+$$
+M_{1 j}=\left|\begin{array}{cccccc}
+a_{21} & \cdots & a_{2, j-1} & a_{2, j+1} & \cdots & a_{2 n} \\
+a_{31} & \cdots & a_{3, j-1} & a_{3, j+1} & \cdots & a_{3 n} \\
+\vdots & & \vdots & \vdots & & \vdots \\
+a_{n 1} & \cdots & a_{n, j-1} & a_{n, j+1} & \cdots & a_{n n}
+\end{array}\right| \quad(j=1,2, \cdots, n),
+$$
+称 $M_{1 j}$ 为元 $a_{1 j}$ 的余子式, 即为划掉 $\bm{A}$ 的第 $1$ 行第 $j$ 列后所得的 $n-1$ 阶行列式, $A_{1 j}$ 称为 $a_{1 j}$ 的代数余子式.
+\end{definition}
+
+
+<p style="text-indent: 2em;">为了书写方便, 在不引起混淆的时候, 本书也用 $|\bm{A}|$ 表示矩阵 $\bm{A}$ 的行列式.
+
+<p style="text-indent: 2em;">由定义可以看出, 行列式是由行列式不同行不同列的元乘积构成的和式, 这种定义方法称为归纳定义. 通常, 把上述定义简称为按行列式的第 $1$ 行展开.
+
+
+
+\begin{example}
+计算
+$$
+D_{4}=\left|\begin{array}{llll}
+2 & 0 & 0 & 4 \\
+7 & 1 & 0 & 5 \\
+2 & 6 & 1 & 0 \\
+8 & 4 & 3 & 5
+\end{array}\right|.
+$$
+\end{example}
+
+\begin{solution}
+因为 $a_{12}=a_{13}=0$, 所以由定义
+$$
+\begin{aligned}
+D_{4}=& a_{11} A_{11}+a_{14} A_{14} \\
+=&2 \times(-1)^{1+1}\left|\begin{array}{lll}
+1 & 0 & 5 \\
+6 & 1 & 0 \\
+4 & 3 & 5
+\end{array}\right|+4 \times(-1)^{1+4}\left|\begin{array}{lll}
+7 & 1 & 0 \\
+2 & 6 & 1 \\
+8 & 4 & 3
+\end{array}\right| \\
+=&2\left[1 \times(-1)^{1+1}\left|\begin{array}{cc}
+1 & 0 \\
+3 & 5
+\end{array}\right|+5 \times(-1)^{1+3}\left|\begin{array}{cc}
+6 & 1 \\
+4 & 3
+\end{array}\right|\right] \\
+&-4\left[7 \times(-1)^{1+1}\left|\begin{array}{ll}
+6 & 1 \\
+4 & 3
+\end{array}\right|+1 \times(-1)^{1+2}\left|\begin{array}{ll}
+2 & 1 \\
+8 & 3
+\end{array}\right|\right] \\
+=&2[5+5(18-4)]-4[7(18-4)-(6-8)]=-250 .
+\end{aligned}
+$$
+\end{solution}
+
+
+
+\begin{example}
+考虑如图 \ref{fig:2.3} 所示的黑白图像 (每个小方块表示一个像素). 若记黑色和白色像素分别为 $0$ 和 $1$ , 则其对应矩阵为
+$$
+\bm{A}=\left(\begin{array}{llll}
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0
+\end{array}\right), 
+$$
+计算矩阵 $\bm{A}$ 的行列式 $\operatorname{det} \bm{A}$.
+\end{example}
+
+
+\begin{figure}[!ht]
+\begin{center}
+\renewcommand\figurename{\footnotesize 图}
+%\includegraphics[scale=0.8]{image/imageLA2022/fig2.3.jpg}
+\includegraphics[scale=0.3]{image/imageLA2022/fig2.3.pdf}
+\caption{}
+\label{fig:2.3}
+\end{center}
+\end{figure}
+
+
+\begin{solution}
+因为 $a_{11}=a_{13}=0$, 所以由行列式定义有
+$$
+\operatorname{det} \bm{A}=a_{12} A_{12}+a_{14} A_{14}=1 \times(-1)^{1+2}\left|\begin{array}{lll}1 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 0\end{array}\right|+1 \times(-1)^{1+4}\left|\begin{array}{lll}1 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 1\end{array}\right|=0.
+$$
+\end{solution}
+
+
+
+\begin{example}
+计算行列式
+$$
+D_{n}=\left|\begin{array}{cccc}
+a_{11} & & & \\
+a_{21} & a_{22} & & \\
+\vdots & \vdots & \ddots & \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right| \text {, }
+$$
+其中未写出的元均为 0 (以下同).
+\end{example}
+
+\begin{solution}
+由定义, 将 $D_{n}$ 按第一行展开, 得
+$$
+\begin{aligned}
+D_{n} &=a_{11}\left|\begin{array}{cccc}
+a_{22} & & & \\
+a_{32} & a_{33} & & \\
+\vdots & \vdots & \ddots & \\
+a_{n 2} & a_{n 3} & \cdots & a_{n n}
+\end{array}\right|=a_{11} a_{22}\left|\begin{array}{cccc}
+a_{33} & & & \\
+a_{43} & a_{44} & & \\
+\vdots & \vdots & \ddots & \\
+a_{n 3} & a_{n 4} & \cdots & a_{n n}
+\end{array}\right| \\
+&=\cdots=a_{11} a_{22} \cdots a_{n n} .
+\end{aligned}
+$$
+同理可得
+$$
+\left|\begin{array}{llll}
+a_{11} & & & \\
+& a_{22} & & \\
+& & \ddots & \\
+& & & a_{n n}
+\end{array}\right|=a_{11} a_{22} \cdots a_{n n}.
+$$
+单位矩阵 $\bm{I}$ 和数量矩阵的行列式分别为
+$$
+\operatorname{det} \bm{I}=1, \quad \operatorname{det}\left(k \bm{I}_{n}\right)=k^{n} .
+$$
+\end{solution}
+
+
+
+\begin{example}
+计算 $n$ 阶下三角形行列式
+$$
+D_{n}=\left|\begin{array}{cccc} 
+& & & a_{n} \\
+& & \begin{sideways}$\ddots$\end{sideways} & \\
+& a_{2} & * &  \\
+a_{1} & & &
+\end{array}\right|.
+$$
+\end{example}
+
+\begin{solution}
+由行列式定义有
+$$
+\begin{aligned}
+D_n &=a_n(-1)^{1+n} \left|\begin{array}{cccc} 
+& & & a_{n-1} \\
+& & \begin{sideways}$\ddots$\end{sideways} & \\
+& a_{2} & * &  \\
+a_{1} & & &
+\end{array}\right|\\ 
+&=(-1)^{n-1} a_{n} D_{n-1}\\
+&=(-1)^{n-1} a_{n}(-1)^{n-2} a_{n-1} D_{n-2}\\
+&=\cdots=(-1)^{(n-1)+(n-2)+\cdots+2+1} a_{n} a_{n-1} \cdots a_{2} a_{1}\\
+&=(-1)^{\frac{n(n-1)}{2}} a_{1} a_{2} \cdots a_{n} .
+\end{aligned}
+$$
+\end{solution}
+
+<p style="text-indent: 2em;">同理
+$$
+D_{n}=\left|\begin{array}{cccc} 
+& & & a_{n} \\
+& * & \begin{sideways}$\ddots$\end{sideways} & \\
+& a_{2} & &  \\
+a_{1} & & &
+\end{array}\right|=(-1)^{\frac{n(n-1)}{2}} a_{1} a_{2} \cdots a_{n} .
+$$
+
 
 
 
@@ -86,49 +418,39 @@ $2.1$ $n$阶行列式的定义
 <a href="#C0">返回顶部</a>
 
 
-<h2><a name="C3">$2.1.3$ 行列式的性质与计算</a></h2>
+<h2><a name="C3">习题 $2.1$</a></h2>
 
 
-<ul>
+<ol>
 
-<p style="text-indent: 2em;">
+<li>
+用行列式的定义计算下列行列式: 
+<br>
+(1) $\left|\begin{array}{cccc}1 & 2 & 0 & 0 \\ 3 & 4 & 0 & 0 \\ 0 & 0 & -1 & 3 \\ 0 & 0 & 5 & 1\end{array}\right|$; $\quad$
+(2) $\left|\begin{array}{cccc}1 & 0 & 2 & 0 \\ -1 & 0 & 3 & 0 \\ 0 & 2 & 0 & -1 \\ 0 & 1 & 0 & 3\end{array}\right|$
+<br>
+(3) $\left|\begin{array}{llll}0 & 0 & 0 & 4 \\ 0 & 0 & 4 & 3 \\ 0 & 4 & 3 & 2 \\ 4 & 3 & 2 & 1\end{array}\right|$; $\quad$
+(4) $\left|\begin{array}{cccccc}0 & 0 & \cdots & 0 & 1 & 0 \\ 0 & 0 & \cdots & 2 & 0 & 0 \\ \vdots & \vdots & & \vdots & \vdots & \vdots \\ 0 & 8 & \cdots & 0 & 0 & 0 \\ 9 & 0 & \cdots & 0 & 0 & 0 \\ 0 & 0 & \cdots & 0 & 0 & 10\end{array}\right|$.
+</li>
 
-
-
-
-</ul>
-
-<a href="#C0">返回顶部</a>
-
-
-<h2><a name="C4">$2.1.4$ 行列式的性质与计算</a></h2>
-
-
-<ul>
-
-<p style="text-indent: 2em;">
-
-
+<li>用行列式的定义计算下列行列式:
+<br>
+(1) $\left|\begin{array}{llll}a & 0 & 0 & b \\ 0 & c & d & 0 \\ 0 & e & f & 0 \\ g & 0 & 0 & h\end{array}\right|$; 
+<br>
+(2) $\left|\begin{array}{cccccc}x & y & 0 & \cdots & 0 & 0 \\ 0 & x & y & \cdots & 0 & 0 \\ 0 & 0 & x & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & 0 & \cdots & x & y \\ y & 0 & 0 & \cdots & 0 & x\end{array}\right|$.
+</li>
 
 
-</ul>
+</ol>
 
 <a href="#C0">返回顶部</a>
-  
-
-  
-<h2><a name="C5">$2.1.5$ 应用案例：图像旋转变换与动画制作</a></h2>
-<ul>
-<p style="text-indent: 2em;">
 
 
-</ul>
 
-<a href="#C0">返回顶部</a>
 
 <br>
 <center>
-Copyright &copy; 2023 Hong  All Rights Reserved
+Copyright &copy; 2024 Hong  All Rights Reserved
 </center>
 
 </font>
