@@ -623,7 +623,8 @@ $$
 <p style="text-indent: 2em;">在 $n$ 阶行列式的计算中, 一般都将高阶行列式转化为低阶行列式来计算. 但对某些特殊的行列式, 也常采用 “加边” 法.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
 计算 $n$ 阶行列式
 $$
 D_{n}=\left|\begin{array}{cccc}
@@ -633,9 +634,11 @@ x_{1} & x_{2}-m & \cdots & x_{n} \\
 x_{1} & x_{2} & \cdots & x_{n}-m
 \end{array}\right| .
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 我们利用如下的加边法:
 $$
 D_{n}=\left|\begin{array}{ccccc}
@@ -657,7 +660,7 @@ D_{n}=\left|\begin{array}{ccccc}
 \end{array}\right|,
 $$
 
-<p style="text-indent: 2em;">若 $m=0$, 则
+若 $m=0$, 则
 $$
 D_{n}=\left\{\begin{array}{cc}
 x_{1}, & n=1, \\
@@ -665,7 +668,7 @@ x_{1}, & n=1, \\
 \end{array}\right.
 $$
 
-<p style="text-indent: 2em;">若 $m \neq 0$, 则将 $D_{n}$ 中第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n+1$ 列都乘 $-\frac{1}{m}$ 后加到第 $1$ 列得
+若 $m \neq 0$, 则将 $D_{n}$ 中第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n+1$ 列都乘 $-\frac{1}{m}$ 后加到第 $1$ 列得
 $$
 \begin{aligned}
 D_{n} & =\left|\begin{array}{ccccc}
@@ -679,7 +682,9 @@ D_{n} & =\left|\begin{array}{ccccc}
 &=(-1)^{n-1} m^{n-1}\left(\sum_{i=1}^{n} x_{i}-m\right) .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
