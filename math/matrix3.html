@@ -347,34 +347,34 @@ $$
 因
 $$
 \begin{aligned}
-(\boldsymbol{A}, \boldsymbol{I})&=\left(\begin{array}{ccc;{2pt/2pt}ccc}
+(\boldsymbol{A}, \boldsymbol{I})&=\left(\begin{array}{ccc:ccc}
 0 & 2 & -1 & 1 & 0 & 0 \\
 1 & 1 & 2 & 0 & 1 & 0 \\
 -1 & -1 & -1 & 0 & 0 & 1
-\end{array}\right) \stackrel{r_{1} \leftrightarrow r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+\end{array}\right) \stackrel{r_{1} \leftrightarrow r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc:ccc}
 1 & 1 & 2 & 0 & 1 & 0 \\
 0 & 2 & -1 & 1 & 0 & 0 \\
 -1 & -1 & -1 & 0 & 0 & 1
 \end{array}\right)\\
-&\stackrel{r_{1}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+&\stackrel{r_{1}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccc:ccc}
 1 & 1 & 2 & 0 & 1 & 0 \\
 0 & 2 & -1 & 1 & 0 & 0 \\
 0 & 0 & 1 & 0 & 1 & 1
-\end{array}\right) \stackrel{r_{3}+r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+\end{array}\right) \stackrel{r_{3}+r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc:ccc}
 1 & 1 & 2 & 0 & 1 & 0 \\
 0 & 2 & 0 & 1 & 1 & 1 \\
 0 & 0 & 1 & 0 & 1 & 1
 \end{array}\right)\\
-& \stackrel{-2 r_{3}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+& \stackrel{-2 r_{3}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc:ccc}
 1 & 1 & 0 & 0 & -1 & -2 \\
 0 & 2 & 0 & 1 & 1 & 1 \\
 0 & 0 & 1 & 0 & 1 & 1
-\end{array}\right) \stackrel{\frac{1}{2} r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+\end{array}\right) \stackrel{\frac{1}{2} r_{2}}{\longrightarrow{}}\left(\begin{array}{ccc:ccc}
 1 & 1 & 0 & 0 & -1 & -2 \\[5pt]
 0 & 1 & 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\[5pt]
 0 & 0 & 1 & 0 & 1 & 1
 \end{array}\right)\\
-& \stackrel{-r_{2}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc;{2pt/2pt}ccc}
+& \stackrel{-r_{2}+r_{1}}{\longrightarrow{}}\left(\begin{array}{ccc:ccc}
 1 & 0 & 0 & -\frac{1}{2} & -\frac{3}{2} & -\frac{5}{2} \\
 0 & 1 & 0 & \frac{1}{2} & \frac{1}{2} & \frac{1}{2} \\
 0 & 0 & 1 & 0 & 1 & 1
@@ -423,16 +423,16 @@ show(B.rref())         #求矩阵(A, I)的简化行阶梯形矩阵
 <font color=green><b>解：</b></font>
 $$
 \begin{aligned}
-(\boldsymbol{A}, \boldsymbol{I}) &=\left(\begin{array}{ccc;{2pt/2pt}ccc}
+(\boldsymbol{A}, \boldsymbol{I}) &=\left(\begin{array}{ccc:ccc}
 1 & -2 & 1 & 1 & 0 & 0 \\
 2 & 0 & 1 & 0 & 1 & 0 \\
 0 & 4 & -1 & 0 & 0 & 1
-\end{array}\right) \rightarrow\left(\begin{array}{ccc;{2pt/2pt}ccc}
+\end{array}\right) \rightarrow\left(\begin{array}{ccc:ccc}
 1 & -2 & 1 & 1 & 0 & 0 \\
 0 & 4 & -1 & -2 & 1 & 0 \\
 0 & 4 & -1 & 0 & 0 & 1
 \end{array}\right) \\
-& \rightarrow\left(\begin{array}{ccc;{2pt/2pt}ccc}
+& \rightarrow\left(\begin{array}{ccc:ccc}
 1 & -2 & 1 & 1 & 0 & 0 \\
 0 & 4 & -1 & -2 & 1 & 0 \\
 0 & 0 & 0 & 2 & -1 & 1
