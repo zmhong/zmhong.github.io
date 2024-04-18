@@ -174,6 +174,7 @@ $$
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $3$：</b></font>
 $$
+\begin{aligned}
 \left|\begin{array}{cccc}
     a_{11} & a_{12} & \cdots & a_{1n} \\
     \vdots & \vdots &        & \vdots \\
@@ -181,20 +182,21 @@ $$
     \vdots & \vdots &        & \vdots \\
     a_{n1} & a_{n2} & \cdots & a_{nn} \\
 \end{array}\right|
-= \left|\begin{array}{cccc}
+= & \left|\begin{array}{cccc}
     a_{11} & a_{12} & \cdots & a_{1n} \\
     \vdots & \vdots &        & \vdots \\
     b_{i1} & b_{i2} & \cdots & b_{in} \\
     \vdots & \vdots &        & \vdots \\
     a_{n1} & a_{n2} & \cdots & a_{nn} \\
-\end{array}\right| + 
-\left|\begin{array}{cccc}
+\end{array}\right| \\
+  & + \left|\begin{array}{cccc}
     a_{11} & a_{12} & \cdots & a_{1n} \\
     \vdots & \vdots &        & \vdots \\
     c_{i1} & c_{i2} & \cdots & c_{in} \\
     \vdots & \vdots &        & \vdots \\
     a_{n1} & a_{n2} & \cdots & a_{nn} \\
 \end{array}\right|.
+\end{aligned}
 $$
 <input type=button value= "显示证明" onclick='document.getElementById("divIDproperty3").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDproperty3").style.display="none"'> 
