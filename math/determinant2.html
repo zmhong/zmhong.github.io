@@ -535,8 +535,8 @@ $$
 <input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
 <div id= "divIDexample7" style= "display:none"> 
 <p style="border: 2px solid green; border-radius: 5px">
-<font color=green><b>解：</b></font>
-\textcolor{second}{证一}\quad 把左端行列式的第 $2, 3$ 列加到第 $1$ 列, 提取公因子 $2$, 再把第 $1$ 列乘 $-1$ 加到第 $2, 3$ 列得
+<font color=green><b>解：证一  </b></font>
+$\quad$ 把左端行列式的第 $2, 3$ 列加到第 $1$ 列, 提取公因子 $2$, 再把第 $1$ 列乘 $-1$ 加到第 $2, 3$ 列得
 $$
 \text { 左式 }=2\left|\begin{array}{lll}
 a_{1}+b_{1}+c_{1} & -a_{1} & -b_{1} \\
@@ -547,7 +547,7 @@ $$
 把第 $2, 3$ 列加到第 $1$ 列, 然后分别提取 $2, 3$ 列的公因数 $-1$, 再作两次列对换, 等式得证.
 
 
-\textcolor{second}{证二}\quad $$
+<font color=green><b>证二</b></font> $\quad$
 \begin{aligned}
 \text { 左式 } &=\left|\begin{array}{lll}
 a_{1} & b_{1}+c_{1} & c_{1}+a_{1} \\
@@ -819,7 +819,8 @@ $$
 <p style="text-indent: 2em;">这说明 $\boldsymbol{A}$ 的逆矩阵的行列式等于 $\boldsymbol{A}$ 的行列式的倒数.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $10$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{ccc}
@@ -833,9 +834,11 @@ $$
 \end{array}\right),
 $$
 求 $\operatorname{det}\left(\boldsymbol{A B}^{\mathrm{T}}\right), \operatorname{det}(\boldsymbol{A}+\boldsymbol{B}), \operatorname{det}(2 \boldsymbol{A}), \operatorname{det}\left(\boldsymbol{A}^{-1}\right), \operatorname{det}\left(2 \boldsymbol{A}^{2} \boldsymbol{B}^{-1}\right)$. 
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample10").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample10").style.display="none"'> 
+<div id= "divIDexample10" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 显然 $\operatorname{det} \boldsymbol{A}=6 \neq 0, \operatorname{det} \boldsymbol{B}=8 \neq 0$, 故 $\boldsymbol{A}, \boldsymbol{B}$ 可逆, 且
 $$
 \begin{gathered}
@@ -850,17 +853,22 @@ $$
 \left(2 \boldsymbol{A}^{2} \boldsymbol{B}^{-1}\right)=2^{3} \operatorname{det}\left(\boldsymbol{A}^{2}\right)\left(\operatorname{det} \boldsymbol{B}^{-1}\right)=2^{3}(\operatorname{det} \boldsymbol{A})^{2} \cdot \frac{1}{\operatorname{det} \boldsymbol{B}}=36 .
 \end{gathered}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $11$：</b></font>
 已知矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3}\right), \boldsymbol{B}=\left(\boldsymbol{\beta}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3}\right)$, 其中 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3}$ 都是 $4 \times 1$ 矩阵. 设 $|\boldsymbol{A}|=4,|\boldsymbol{B}|=1$, 求 $\left|\boldsymbol{A}^{\mathrm{T}}+\boldsymbol{B}^{\mathrm{T}}\right|$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \begin{aligned}
 \left|\boldsymbol{A}^{\mathrm{T}}+\boldsymbol{B}^{\mathrm{T}}\right| 
@@ -870,7 +878,9 @@ $$
 & = 2^3\left|(\boldsymbol{\alpha}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3})\right| +  2^3\left|(\boldsymbol{\beta}, \boldsymbol{\nu}_{1}, \boldsymbol{\nu}_{2}, \boldsymbol{\nu}_{3})\right| = 40.
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
