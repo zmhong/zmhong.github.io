@@ -462,17 +462,17 @@ $$
 对增广矩阵施以行初等变换:
 $$
 \begin{aligned}
-\overline{\boldsymbol{A}}=&\left(\begin{array}{ccccc;{2pt/2pt}c}
+\overline{\boldsymbol{A}}=&\left(\begin{array}{ccccc:c}
 1 & -2 & 3 & -1 & 2 & 2 \\
 3 & -1 & 5 & -3 & -1 & 6 \\
 2 & 1 & 2 & -2 & -3 & 8
 \end{array}\right) \\
-& \stackrel{-3 r_{1}+r_{2}}{\underset{-2 r_{1}+r_{3}}{\longrightarrow{}}}\left(\begin{array}{ccccc;{2pt/2pt}c}
+& \stackrel{-3 r_{1}+r_{2}}{\underset{-2 r_{1}+r_{3}}{\longrightarrow{}}}\left(\begin{array}{ccccc:c}
 1 & -2 & 3 & -1 & 2 & 2 \\
 0 & 5 & -4 & 0 & -7 & 0 \\
 0 & 5 & -4 & 0 & -7 & 4
 \end{array}\right)\\
-&  \stackrel{-r_{2}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccccc;{2pt/2pt}c}
+&  \stackrel{-r_{2}+r_{3}}{\longrightarrow{}}\left(\begin{array}{ccccc:c}
 1 & -2 & 3 & -1 & 2 & 2 \\
 0 & 5 & -4 & 0 & -7 & 0 \\
 0 & 0 & 0 & 0 & 0 & 4
@@ -497,7 +497,7 @@ $$
 
 <p style="text-indent: 2em;">从上面的三个例子可见, 对于一般的线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$, 通过消元步骤, 即对增广 矩阵作三种行初等变换, 可将其化为简化行阶梯形矩阵. 为了便于作一般的讨论, 不妨假设$\overline{\boldsymbol{A}}=(\boldsymbol{A},\boldsymbol{b})$ 化为如下的简化阶梯形矩阵: 
 \begin{equation}\label{eq:1.2}
-\overline{\boldsymbol{A}}=(\boldsymbol{A}, \boldsymbol{b}) \rightarrow\left(\begin{array}{ccccccc;{2pt/2pt}c}
+\overline{\boldsymbol{A}}=(\boldsymbol{A}, \boldsymbol{b}) \rightarrow\left(\begin{array}{ccccccc:c}
 c_{11} & 0 & \cdots & 0 & c_{1, r+1} & \cdots & c_{1 n} & d_{1} \\
 0 & c_{22} & \cdots & 0 & c_{2, r+1} & \cdots & c_{2 n} & d_{2} \\
 \vdots & \vdots & & \vdots & \vdots & & \vdots & \vdots \\
