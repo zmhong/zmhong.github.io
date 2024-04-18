@@ -207,7 +207,8 @@ a_{21} & a_{22}
 
 <ul>
 
-<p style="text-indent: 2em;">\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 设 $\boldsymbol{A}$ 为一个 $n$ 阶矩阵, $\boldsymbol{A}$ 的行列式
 $$
 \operatorname{det} \boldsymbol{A}=\left|\begin{array}{cccc}
@@ -231,7 +232,7 @@ a_{n 1} & \cdots & a_{n, j-1} & a_{n, j+1} & \cdots & a_{n n}
 \end{array}\right| \quad(j=1,2, \cdots, n),
 $$
 称 $M_{1 j}$ 为元 $a_{1 j}$ 的余子式, 即为划掉 $\boldsymbol{A}$ 的第 $1$ 行第 $j$ 列后所得的 $n-1$ 阶行列式, $A_{1 j}$ 称为 $a_{1 j}$ 的代数余子式.
-\end{definition}
+</p>
 
 
 <p style="text-indent: 2em;">为了书写方便, 在不引起混淆的时候, 本书也用 $|\boldsymbol{A}|$ 表示矩阵 $\boldsymbol{A}$ 的行列式.
@@ -394,7 +395,7 @@ $$
 $$
 D_{n}=\left|\begin{array}{cccc} 
 & & & a_{n} \\
-& & \begin{sideways}$\ddots$\end{sideways} & \\
+& &  \cdots  & \\
 & a_{2} & * &  \\
 a_{1} & & &
 \end{array}\right|.
@@ -409,7 +410,7 @@ $$
 \begin{aligned}
 D_n &=a_n(-1)^{1+n} \left|\begin{array}{cccc} 
 & & & a_{n-1} \\
-& & \begin{sideways}$\ddots$\end{sideways} & \\
+& &  \cdots & \\
 & a_{2} & * &  \\
 a_{1} & & &
 \end{array}\right|\\ 
@@ -427,7 +428,7 @@ $$
 $$
 D_{n}=\left|\begin{array}{cccc} 
 & & & a_{n} \\
-& * & \begin{sideways}$\ddots$\end{sideways} & \\
+& * &  \cdots  & \\
 & a_{2} & &  \\
 a_{1} & & &
 \end{array}\right|=(-1)^{\frac{n(n-1)}{2}} a_{1} a_{2} \cdots a_{n} .
