@@ -70,7 +70,7 @@ $$
 其中$A_{ij}=(-1)^{i+j}M_{ij}$, $M_{ij}$是$\operatorname{det} \boldsymbol{A}$中去掉第$i$行和第$j$列元所成的$n-1$阶行列式, 称为元$a_{ij}$的余子式, $A_{ij}$称为元$a_{ij}$的代数余子式. 
 \end{property}
 
-证明从略. 
+<p style="text-indent: 2em;">证明从略. 
 
 \begin{corollary}
 若行列式的某行元全为零, 则行列式等于零. 
@@ -139,7 +139,7 @@ $$
 若 $n$ 阶行列式某两行对应元全相等, 则行列式为零.
 \end{property}
 
-即当 $a_{i k}=a_{j k}, i \neq j, k=1,2, \cdots, n$ 时, $\operatorname{det} \boldsymbol{A}=0$.
+<p style="text-indent: 2em;">即当 $a_{i k}=a_{j k}, i \neq j, k=1,2, \cdots, n$ 时, $\operatorname{det} \boldsymbol{A}=0$.
 
 \begin{proof}
 用数学归纳法证明. 结论对二阶行列式显然成立. 当 $n \geqslant 3$ 时, 假设结论对 $n-1$ 阶行列式成立, 在 $n$ 阶的情况下, 对第 $k$ 行展开 $(k \neq i, j)$, 则
@@ -178,31 +178,6 @@ $$
     a_{n1} & a_{n2} & \cdots & a_{nn} \\
 \end{array}\right|.
 $$
-% $$
-% \begin{aligned}
-% &\left|\begin{array}{cccc}
-%     a_{11} & a_{12} & \cdots & a_{1n} \\
-%     \vdots & \vdots &        & \vdots \\
-%     b_{i1}+c_{i1} & b_{i2}+c_{i2} & \cdots & b_{in}+c_{in} \\
-%     \vdots & \vdots &        & \vdots \\
-%     a_{n1} & a_{n2} & \cdots & a_{nn} \\
-% \end{array}\right|\\
-% =& \left|\begin{array}{cccc}
-%     a_{11} & a_{12} & \cdots & a_{1n} \\
-%     \vdots & \vdots &        & \vdots \\
-%     b_{i1} & b_{i2} & \cdots & b_{in} \\
-%     \vdots & \vdots &        & \vdots \\
-%     a_{n1} & a_{n2} & \cdots & a_{nn} \\
-% \end{array}\right| + 
-% \left|\begin{array}{cccc}
-%     a_{11} & a_{12} & \cdots & a_{1n} \\
-%     \vdots & \vdots &        & \vdots \\
-%     c_{i1} & c_{i2} & \cdots & c_{in} \\
-%     \vdots & \vdots &        & \vdots \\
-%     a_{n1} & a_{n2} & \cdots & a_{nn} \\
-% \end{array}\right|.
-% \end{aligned}
-% $$
 \end{property}
 
 \begin{proof}
@@ -230,7 +205,7 @@ $$
 \end{proof}
 
 
-性质$3$说明: 如果行列式的某一行是两组数的和, 那么这个行列式就等于两个行列式的和, 这两个行列式分别以这两组数为这一行的元, 其他各行与原来行列式的对应各行不变.
+<p style="text-indent: 2em;">性质$3$说明: 如果行列式的某一行是两组数的和, 那么这个行列式就等于两个行列式的和, 这两个行列式分别以这两组数为这一行的元, 其他各行与原来行列式的对应各行不变.
 
 
 \begin{property}[行列式的初等变换]
@@ -279,14 +254,14 @@ $$
 若行列式某两行对应元成比例, 则行列式的值为零.
 \end{corollary}
 
-由性质 $4$ 可知下列常用结论成立, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则
+<p style="text-indent: 2em;">由性质 $4$ 可知下列常用结论成立, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则
 $$
 \operatorname{det}(k \boldsymbol{A})=k^{n}(\operatorname{det} \boldsymbol{A}) .
 $$
 
-必须指出, 不能把矩阵的初等变换与行列式的初等变换混淆, 首先矩阵是数表, 行列式是数; 其次, 前者是保持两矩阵的等价关系, 不是相等, 而后者是保持两行列式的等值关系.
+<p style="text-indent: 2em;">必须指出, 不能把矩阵的初等变换与行列式的初等变换混淆, 首先矩阵是数表, 行列式是数; 其次, 前者是保持两矩阵的等价关系, 不是相等, 而后者是保持两行列式的等值关系.
 
-为了研究矩阵转置的行列式, 我们先来讨论初等矩阵的行列式. 对于三个初等矩阵 $\boldsymbol{E}_{i j}, \boldsymbol{E}_{i}(c)$ 和 $\boldsymbol{E}_{i j}(c)$, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 由性质 $4$ 有
+<p style="text-indent: 2em;">为了研究矩阵转置的行列式, 我们先来讨论初等矩阵的行列式. 对于三个初等矩阵 $\boldsymbol{E}_{i j}, \boldsymbol{E}_{i}(c)$ 和 $\boldsymbol{E}_{i j}(c)$, 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 由性质 $4$ 有
 $$
 \begin{gathered}
 \operatorname{det}\left(\boldsymbol{E}_{i j}\right)=\operatorname{det}\left(\boldsymbol{E}_{i j} \boldsymbol{I}\right)=-\operatorname{det} \boldsymbol{I}=-1, \\
@@ -351,7 +326,7 @@ $$
 
 
 
-性质 $5$ 说明, 行列式对行成立的性质对列也成立. 于是, 由性质 $1$ 和性质 $5$ 知, $n$ 阶行列式 $\operatorname{det} \boldsymbol{A}$ 可按任一行或任一列展开, 即
+<p style="text-indent: 2em;">性质 $5$ 说明, 行列式对行成立的性质对列也成立. 于是, 由性质 $1$ 和性质 $5$ 知, $n$ 阶行列式 $\operatorname{det} \boldsymbol{A}$ 可按任一行或任一列展开, 即
 $$
 \operatorname{det} \boldsymbol{A}=\sum_{k=1}^{n} a_{k j} A_{k j} \quad(j=1,2, \cdots, n) .
 $$
@@ -426,7 +401,7 @@ D & = \frac{1}{2} \left|\begin{array}{cccc}
 $$
 \end{solution}
 
-计算行列式的另一基本方法是, 恰当地利用性质, 将某一行 (列) 的元尽可能化为零, 然后按该行 (列) 展开, 降阶后再计算.
+<p style="text-indent: 2em;">计算行列式的另一基本方法是, 恰当地利用性质, 将某一行 (列) 的元尽可能化为零, 然后按该行 (列) 展开, 降阶后再计算.
 
 \begin{example}
 计算四阶行列式
@@ -591,7 +566,7 @@ x_{1} & x_{2} & x_{3} & \cdots & x_{n} \\
 x_{1}^{2} & x_{2}^{2} & x_{3}^{2} & \cdots & x_{n}^{2} \\
 \vdots & \vdots & \vdots & & \vdots \\
 x_{1}^{n-1} & x_{2}^{n-1} & x_{3}^{n-1} & \cdots & x_{n}^{n-1}
-\end{array}\right|=\prod_{1 \leqslant j<i \leqslant n}\left(x_{i}-x_{j}\right),
+\end{array}\right|=\prod_{1 \leqslant j < i \leqslant n} \left(x_{i}-x_{j}\right),
 $$
 其中 $n \geqslant 2$, 连乘积
 $$
@@ -607,7 +582,7 @@ $$
 \begin{proof}
 对行列式的阶数 $n$ 作数学归纳法.
 
-当 $n=2$ 时, 有
+<p style="text-indent: 2em;">当 $n=2$ 时, 有
 $$
 \left|\begin{array}{cc}
 1 & 1 \\
@@ -616,9 +591,9 @@ x_{1} & x_{2}
 $$
 结论成立.
 
-假设对于 $n-1$ 阶范德蒙德行列式结论成立. 下证对 $n$ 阶范德蒙德行列式结论也成立.
+<p style="text-indent: 2em;">假设对于 $n-1$ 阶范德蒙德行列式结论成立. 下证对 $n$ 阶范德蒙德行列式结论也成立.
 
-在 $V_{n}$ 中从第 $n$ 行开始, 逐行减去上一行的 $x_{1}$ 倍, 可得
+<p style="text-indent: 2em;">在 $V_{n}$ 中从第 $n$ 行开始, 逐行减去上一行的 $x_{1}$ 倍, 可得
 $$
 \begin{aligned}
 V_{n} &=\left|\begin{array}{ccccc}1 & 1 & 1 & \cdots & 1 \\0 & x_{2}-x_{1} & x_{3}-x_{1} & \cdots & x_{n}-x_{1} \\0 & x_{2}\left(x_{2}-x_{1}\right) & x_{3}\left(x_{3}-x_{1}\right) & \cdots & x_{n}\left(x_{n}-x_{1}\right) \\\vdots & \vdots & \vdots & & \vdots \\0 & x_{2}^{n-2}\left(x_{2}-x_{1}\right) & x_{3}^{n-2}\left(x_{3}-x_{1}\right) & \cdots & x_{n}^{n-2}\left(x_{n}-x_{1}\right)\end{array}\right| \\
@@ -632,15 +607,15 @@ V_{n}=\left(x_{2}-x_{1}\right)\left(x_{3}-x_{1}\right) \cdots\left(x_{n}-x_{1}\r
 $$
 由归纳法, 结论成立.
 
-显然, $V_{n} \neq 0$ 的充要条件是 $x_{1}, x_{2}, \cdots, x_{n}$ 互不相同.
+<p style="text-indent: 2em;">显然, $V_{n} \neq 0$ 的充要条件是 $x_{1}, x_{2}, \cdots, x_{n}$ 互不相同.
 \end{proof}
 
 
 
 
-由上例可见, 利用数学归纳法证明行列式时, 在降阶过程中注意保持行列式的 “原形” 是很重要的.
+<p style="text-indent: 2em;">由上例可见, 利用数学归纳法证明行列式时, 在降阶过程中注意保持行列式的 “原形” 是很重要的.
 
-在 $n$ 阶行列式的计算中, 一般都将高阶行列式转化为低阶行列式来计算. 但对某些特殊的行列式, 也常采用 “加边” 法.
+<p style="text-indent: 2em;">在 $n$ 阶行列式的计算中, 一般都将高阶行列式转化为低阶行列式来计算. 但对某些特殊的行列式, 也常采用 “加边” 法.
 
 
 \begin{example}
@@ -677,7 +652,7 @@ D_{n}=\left|\begin{array}{ccccc}
 \end{array}\right|,
 $$
 
-若 $m=0$, 则
+<p style="text-indent: 2em;">若 $m=0$, 则
 $$
 D_{n}=\left\{\begin{array}{cc}
 x_{1}, & n=1, \\
@@ -685,7 +660,7 @@ x_{1}, & n=1, \\
 \end{array}\right.
 $$
 
-若 $m \neq 0$, 则将 $D_{n}$ 中第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n+1$ 列都乘 $-\frac{1}{m}$ 后加到第 $1$ 列得
+<p style="text-indent: 2em;">若 $m \neq 0$, 则将 $D_{n}$ 中第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n+1$ 列都乘 $-\frac{1}{m}$ 后加到第 $1$ 列得
 $$
 \begin{aligned}
 D_{n} & =\left|\begin{array}{ccccc}
@@ -737,7 +712,7 @@ $$
 \end{proof}
 
 
-下面我们证明一个重要结果: 两个 $n$ 阶矩阵乘积的行列式等于这两个矩阵的行列式的乘积.
+<p style="text-indent: 2em;">下面我们证明一个重要结果: 两个 $n$ 阶矩阵乘积的行列式等于这两个矩阵的行列式的乘积.
 
 
 
@@ -756,7 +731,7 @@ $$
 \end{aligned}
 $$
 
-若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{R}=\boldsymbol{I}$. 此时 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t}$, 于是
+<p style="text-indent: 2em;">若 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{R}=\boldsymbol{I}$. 此时 $\boldsymbol{A}=\boldsymbol{E}_{1} \boldsymbol{E}_{2} \cdots \boldsymbol{E}_{t}$, 于是
 $$
 \operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{E}_{1}\right)\left(\operatorname{det} \boldsymbol{E}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{E}_{t}\right),
 $$
@@ -765,7 +740,7 @@ $$
 \operatorname{det}(\boldsymbol{A B})=(\operatorname{det} \boldsymbol{A})(\operatorname{det}(\boldsymbol{I} \boldsymbol{B}))=(\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B}) .
 $$
 
-若 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{R}$ 的最后一行全为零, 因而 $\boldsymbol{R B}$ 的最后一行也全为零, 故由行列 式性质, $\operatorname{det}(\boldsymbol{R B})=0$, 从而 $\operatorname{det}(\boldsymbol{A B})=0$. 又由定理 $1$ 知 $\operatorname{det} \boldsymbol{A}=0$, 故 $\operatorname{det}(\boldsymbol{A B})= (\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$. 
+<p style="text-indent: 2em;">若 $\boldsymbol{A}$ 不可逆, 则 $\boldsymbol{R}$ 的最后一行全为零, 因而 $\boldsymbol{R B}$ 的最后一行也全为零, 故由行列 式性质, $\operatorname{det}(\boldsymbol{R B})=0$, 从而 $\operatorname{det}(\boldsymbol{A B})=0$. 又由定理 $1$ 知 $\operatorname{det} \boldsymbol{A}=0$, 故 $\operatorname{det}(\boldsymbol{A B})= (\operatorname{det} \boldsymbol{A})(\operatorname{det} \boldsymbol{B})$. 
 \end{proof}
 
 
@@ -790,13 +765,13 @@ $$
 $$
 \end{proof}
 
-设 $\boldsymbol{A}$ 为可逆矩阵, 则 $\operatorname{det} \boldsymbol{A} \neq 0$. 由定理 $2$ 和 $\boldsymbol{A A}^{-1}=\boldsymbol{I}$ 有
+<p style="text-indent: 2em;">设 $\boldsymbol{A}$ 为可逆矩阵, 则 $\operatorname{det} \boldsymbol{A} \neq 0$. 由定理 $2$ 和 $\boldsymbol{A A}^{-1}=\boldsymbol{I}$ 有
 $$
 (\operatorname{det} \boldsymbol{A})\left(\operatorname{det}\left(\boldsymbol{A}^{-1}\right)\right)=\operatorname{det} \boldsymbol{I}=1,
 $$
 因而 $\operatorname{det}\left(\boldsymbol{A}^{-1}\right)=(\operatorname{det} \boldsymbol{A})^{-1}$.
 
-这说明 $\boldsymbol{A}$ 的逆矩阵的行列式等于 $\boldsymbol{A}$ 的行列式的倒数.
+<p style="text-indent: 2em;">这说明 $\boldsymbol{A}$ 的逆矩阵的行列式等于 $\boldsymbol{A}$ 的行列式的倒数.
 
 
 \begin{example}
