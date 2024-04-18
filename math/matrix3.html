@@ -1016,38 +1016,96 @@ end
 <ol>
 
 <li>
-解下列线性方程组:
-<br>
-(1) $\left\{\begin{array}{r}x_{1}+2 x_{2}+3 x_{3}=8, \\ 2 x_{1}+5 x_{2}+9 x_{3}=16, \\ 3 x_{1}-4 x_{2}-5 x_{3}=32 ;\end{array} \quad\right.$  
-<br>
-(2) $\left\{\begin{array}{r}x_{1}+2 x_{2}+3 x_{3}=4, \\ 3 x_{1}+5 x_{2}+7 x_{3}=9, \\ 5 x_{1}+8 x_{2}+11 x_{3}=14; \end{array}\right.$
-<br>
-(3) $\left\{\begin{array}{l}2 x_{1}+x_{2}+3 x_{3}=6, \\ 3 x_{1}+2 x_{2}+x_{3}=1, \\ 5 x_{1}+3 x_{2}+4 x_{3}=27;\end{array}\right.$  
-<br>
-(4) $\left\{\begin{aligned} x_{1}+x_{2}+x_{3} &=1, \\ x_{1}+2 x_{2}-5 x_{3} &=2, \\ 2 x_{1}+3 x_{2}-4 x_{3} &=5; \end{aligned}\right.$
-<br>
-(5) $\left\{\begin{array}{rrr}
-x_{1}-x_{2}&+2 x_{4}&+x_{5}  =0, \\ 
-3 x_{1}-3 x_{2}&+7 x_{4}&  =0, \\ 
-x_{1}-x_{2}&+2 x_{3}+3 x_{4}&+2 x_{5}  =0, \\ 
-2 x_{1}-2 x_{2}&+2 x_{3}+7 x_{4}&-3 x_{5}  =0.
-\end{array}\right.$
+设 $\boldsymbol{A}=
+\left(\begin{array}{cc}
+1 & 2 \\ 
+-3 & 4\end{array}\right), 
+\boldsymbol{B}=\left(\begin{array}{cc}
+\frac{4}{10} & x \\ [5pt]
+\frac{3}{10} & y\end{array}\right)$, 
+确定 $x, y$, 使 $\boldsymbol{B}$ 成为 $\boldsymbol{A}$ 的逆矩阵.
 </li>
 
-
-<li>用初等变换将矩阵$\bm{A}$变为单位矩阵: 
-<br>
-(1) $\bm{A}=\left(\begin{array}{llll}1 & 0 & 0 & 0 \\ 1 & 1 & 0 & 0 \\ 1 & 1 & 1 & 0 \\ 1 & 1 & 1 & 1\end{array}\right)$;  
-<br>
-(2) $\bm{A}=\left(\begin{array}{cccc}1 & 1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & 1 & -1 \\ 1 & -1 & -1 & 1\end{array}\right)$;
-<br>
-(3) $\bm{A}=\left(\begin{array}{ll}2 & a \\ b & 2\end{array}\right), a b \neq 4$.
+<li> 若 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶可逆矩阵, 问 $\boldsymbol{A}-\boldsymbol{B}, \boldsymbol{A} \boldsymbol{B}, \boldsymbol{A} \boldsymbol{B}^{-1}$ 是否一定为可逆矩阵? 若不 是, 请举例说明.
 </li>
 
-<li>讨论 $\lambda$ 为何值时, $\bm{A}=\left(\begin{array}{cccc}3 & 1 & 1 & 4 \\ \lambda & 4 & 10 & 1 \\ 1 & 7 & 17 & 3 \\ 2 & 2 & 4 & 3\end{array}\right)$ 经行初等变换所得行阶梯形矩阵分别有 两个、三个非零行.
+<li> 已知 $\boldsymbol{A}^{-1}=\left(\begin{array}{lll}1 & 2 & 1 \\ 0 & 1 & 3 \\ 1 & 2 & 4\end{array}\right), \boldsymbol{B}^{-1}=\left(\begin{array}{ccc}2 & 1 & 0 \\ -1 & 2 & 1 \\ -2 & 3 & 1\end{array}\right)$, 求 $(\boldsymbol{A B})^{-1},\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}\right)^{-1},\left[(\boldsymbol{A} \boldsymbol{B})^{\mathrm{T}}\right]^{-1}$.
 </li>
 
-<li>设 $\bm{A}$ 是 $3$ 阶矩阵, 将 $\bm{A}$ 的第 $1$ 列与第 $2$ 列交换得 $\bm{B}$, 再把 $\bm{B}$ 的第 $2$ 列加到第 $3$ 列得 $\bm{C}$, 求矩阵 $\bm{Q}$, 使得 $\bm{A Q}=\bm{C}$.
+<li> 利用行初等变换求矩阵的逆:
+<br>
+(1) $\left(\begin{array}{ccc}1 & 1 & -1 \\ 2 & 1 & 0 \\ 1 & -1 & 0\end{array}\right)$;
+<br>
+(2) $\left(\begin{array}{ccc}2 & 2 & 3 \\ 1 & -1 & 0 \\ -1 & 2 & 1\end{array}\right)$;
+<br>
+(3) $\left(\begin{array}{cccc}1 & 1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & 1 & -1 \\ 1 & -1 & -1 & 1\end{array}\right)$;
+<br>
+(4) $\left(\begin{array}{cccc}0 & 0 & 1 & -1 \\ 0 & 3 & 1 & 4 \\ 2 & 7 & 6 & -1 \\ 1 & 2 & 2 & -1\end{array}\right)$.
+</li>
+
+<li> 设 $\boldsymbol{A}$ 是 $n$ 阶矩阵.
+<br>
+(1) 若 $\boldsymbol{A}$ 满足矩阵方程 $\boldsymbol{A}^{2}-\boldsymbol{A}+\boldsymbol{I}=\boldsymbol{O}$, 证明 $\boldsymbol{A}$ 和 $\boldsymbol{I}-\boldsymbol{A}$ 都可逆, 并求它们的逆矩阵;
+<br>
+(2) 若 $\boldsymbol{A}$ 满足矩阵方程 $\boldsymbol{A}^{2}-2 \boldsymbol{A}-4 \boldsymbol{I}=\boldsymbol{O}$, 证明 $\boldsymbol{A}+\boldsymbol{I}$ 和 $\boldsymbol{A}-3 \boldsymbol{I}$ 都可逆, 并求它们的逆矩阵.
+</li>
+  
+<li> 设 $n$ 阶矩阵 $\boldsymbol{A}$ 满足条件 $\boldsymbol{A}^{k}=\boldsymbol{O}, k$ 为正整数, 证明 $\boldsymbol{I}-\boldsymbol{A}$ 可逆, 且 $(\boldsymbol{I}-\boldsymbol{A})^{-1}=\boldsymbol{I}+\boldsymbol{A}+\boldsymbol{A}^{2}+\cdots+\boldsymbol{A}^{k-1} .$
+</li>
+
+<li> 设 $f(x)=a_{k} x^{k}+a_{k-1} x^{k-1}+\cdots+a_{0}, a_{0} \neq 0, \boldsymbol{A}$ 为 $n$ 阶矩阵, 证明: 若 $f(\boldsymbol{A})=\boldsymbol{O}$, 则 $\boldsymbol{A}$ 可逆, 并写出 $\boldsymbol{A}^{-1}$.
+</li>
+
+<li> 求下列各矩阵方程中的 $\boldsymbol{X}$ :
+<br>
+(1) $\left(\begin{array}{ccc}1 & 1 & -1 \\ 0 & 2 & 2 \\ 1 & -1 & 0\end{array}\right) \boldsymbol{X}=\left(\begin{array}{cc}1 & -1 \\ 1 & 1 \\ 2 & 1\end{array}\right)$;
+<br>
+(2) $\boldsymbol{X}\left(\begin{array}{ccc}1 & 1 & -1 \\ 0 & 2 & 2 \\ 1 & -1 & 0\end{array}\right)=\left(\begin{array}{ccc}1 & -1 & 1 \\ 1 & 1 & 0\end{array}\right)$; 
+<br>
+(3) $\left(\begin{array}{ccc}1 & 1 & -1 \\ 0 & 2 & 2 \\ 1 & -1 & 0\end{array}\right) \boldsymbol{X}+\left(\begin{array}{ll}0 & 1 \\ 1 & 0 \\ 4 & 3\end{array}\right)=\left(\begin{array}{cc}1 & -1 \\ 1 & 1 \\ 2 & 1\end{array}\right)$.
+</li>
+
+<li> 设
+$$
+\boldsymbol{B}=\left(\begin{array}{cccc}
+1 & -1 & 0 & 0 \\
+0 & 1 & -1 & 0 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 1
+\end{array}\right), \quad \boldsymbol{C}=\left(\begin{array}{llll}
+2 & 1 & 3 & 4 \\
+0 & 2 & 1 & 3 \\
+0 & 0 & 2 & 1 \\
+0 & 0 & 0 & 2
+\end{array}\right),
+$$
+且 $\boldsymbol{A}$ 满足 $\boldsymbol{A}\left(\boldsymbol{I}-\boldsymbol{C}^{-1} \boldsymbol{B}\right)^{\mathrm{T}} \boldsymbol{C}^{\mathrm{T}}=\boldsymbol{I}$, 求 $\boldsymbol{A}$.
+</li>
+<li> 设 $\boldsymbol{A}, \boldsymbol{B}$ 都是可逆矩阵, 证明
+<br>
+(1) 若 $\boldsymbol{A X}=\boldsymbol{A Y}$, 则 $\boldsymbol{X}=\boldsymbol{Y}$;
+<br>
+(2) 若 $\boldsymbol{X} \boldsymbol{A}=\boldsymbol{Y A}$, 则 $\boldsymbol{X}=\boldsymbol{Y}$.
+</li>
+
+<li> 证明可逆对称矩阵 $\boldsymbol{A}$ 的逆矩阵 $\boldsymbol{A}^{-1}$ 也是对称矩阵.
+</li>
+
+<li> 设 $\boldsymbol{A}=\boldsymbol{P} \boldsymbol{B} \boldsymbol{P}^{-1}$, 证明 $f(\boldsymbol{A})=\boldsymbol{P} f(\boldsymbol{B}) \boldsymbol{P}^{-1}$, 其中 $f$ 是一个多项式.
+</li>
+
+<li> 设 $\boldsymbol{P}^{-1} \boldsymbol{A} \boldsymbol{P}=\boldsymbol{B}, \boldsymbol{P}=\left(\begin{array}{cc}-1 & -4 \\ 1 & 1\end{array}\right), \boldsymbol{B}=\left(\begin{array}{cc}-1 & 0 \\ 0 & 2\end{array}\right)$, 求 $\boldsymbol{A}^{11}$.
+</li>
+
+<li> (1) 设 $\boldsymbol{u}$ 和 $\boldsymbol{v}$ 均是 $n \times 1$ 矩阵, $1+\boldsymbol{v}^{\mathrm{T}} \boldsymbol{u} \neq 0$, 证明
+$$
+\left(\boldsymbol{I}+\boldsymbol{u} \boldsymbol{v}^{\mathrm{T}}\right)^{-1}=\boldsymbol{I}-\frac{\boldsymbol{u} \boldsymbol{v}^{\mathrm{T}}}{1+\boldsymbol{v}^{\mathrm{T}} \boldsymbol{u}} .
+$$
+
+(2) 设 $\boldsymbol{U}, \boldsymbol{V}$ 均是 $n \times k$ 矩阵, $\boldsymbol{I}+\boldsymbol{V}^{\mathrm{T}} \boldsymbol{U}$ 可逆, 证明
+$$
+\left(\boldsymbol{I}+\boldsymbol{U} \boldsymbol{V}^{\mathrm{T}}\right)^{-1}=\boldsymbol{I}-\boldsymbol{U}\left(\boldsymbol{I}+\boldsymbol{V}^{\mathrm{T}} \boldsymbol{U}\right)^{-1} \boldsymbol{V}^{\mathrm{T}} .
+$$
 </li> 
 </ol>
   
