@@ -77,7 +77,8 @@ $$
 \end{corollary}
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 计算$n$阶上三角行列式 (即当$i>j$时, $a_{ij}=0$).
 $$
 D_n = \left|\begin{array}{cccc}
@@ -88,9 +89,11 @@ D_n = \left|\begin{array}{cccc}
 \end{array}
 \right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 先将 $D_{n}$ 按第 $n$ 行展开, 以后每次都按最后一行展开.
 $$
 \begin{aligned}
@@ -99,12 +102,15 @@ D_{n}&=a_{n n}\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1, n-1} \\ 
 &=\cdots=a_{11} a_{22} \cdots a_{n n} .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 计算四阶行列式
 $$
 D=\left|\begin{array}{cccc}
@@ -114,9 +120,11 @@ D=\left|\begin{array}{cccc}
 1 & 3 & 4 & -3
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于第 $3$ 行除 $a_{32}=2$ 外, 其他元均为零, 故由性质 $1$ 得
 $$
 D=a_{32} A_{32}=2 \times(-1)^{3+2}\left|\begin{array}{ccc}
@@ -132,7 +140,9 @@ D=-2 \times 6 \times(-1)^{1+1}\left|\begin{array}{lr}
 4 & -3
 \end{array}\right|=-12 \times(-9+8)=12 .
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 \begin{property}
@@ -331,17 +341,22 @@ $$
 \operatorname{det} \boldsymbol{A}=\sum_{k=1}^{n} a_{k j} A_{k j} \quad(j=1,2, \cdots, n) .
 $$
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 试证: 奇数阶反称矩阵的行列式必为零.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 设 $\boldsymbol{A}$ 为 $n$ 阶反称矩阵 ($n$ 为奇数), 则 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 因而
 $$
 \operatorname{det} \boldsymbol{A}=\operatorname{det} \boldsymbol{A}^{\mathrm{T}}=\operatorname{det}(-\boldsymbol{A})=(-1)^{n} \operatorname{det} \boldsymbol{A}=-\operatorname{det} \boldsymbol{A},
 $$
 故 $\operatorname{det} \boldsymbol{A}=0$.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 
@@ -359,7 +374,8 @@ $$
 <p style="text-indent: 2em;">计算行列式的一个基本方法是利用行列式的性质, 把行列式化成上三角形行列式. 由于这一方法程序固定, 故适合在计算机上使用, 而且计算工作量比按定义展开的方要少.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 计算行列式
 $$
 D=\left|\begin{array}{cccc}
@@ -369,9 +385,11 @@ D=\left|\begin{array}{cccc}
 \frac{1}{2} & 1 & \frac{3}{2} & 1
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \begin{aligned}
 D & = \frac{1}{2} \left|\begin{array}{cccc}
@@ -399,11 +417,14 @@ D & = \frac{1}{2} \left|\begin{array}{cccc}
 \end{array}\right|=\frac{33}{2}.
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 <p style="text-indent: 2em;">计算行列式的另一基本方法是, 恰当地利用性质, 将某一行 (列) 的元尽可能化为零, 然后按该行 (列) 展开, 降阶后再计算.
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 计算四阶行列式
 $$
 D=\left|\begin{array}{cccc}
@@ -413,9 +434,11 @@ D=\left|\begin{array}{cccc}
 7 & -8 & -10 & -5
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \begin{aligned}
 D & \xlongequal{\substack{2 c_{4}+c_{1} \\ -3c_{4}+c_{2}\\
@@ -441,12 +464,15 @@ D & \xlongequal{\substack{2 c_{4}+c_{1} \\ -3c_{4}+c_{2}\\
 \end{aligned}
 $$
 这里 $c_{i}$ 表示第 $i$ 列.
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 计算 $n$ 阶行列式
 $$
 D_{n}=\left|\begin{array}{ccccc}
@@ -456,9 +482,11 @@ y & x & y & \cdots & y \\
 y & y & y & \cdots & x
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 注意到每行除了一个 $x$ 外, 其余 $n-1$ 个数全为 $y$, 故将第 $2$ 列, 第 $3$ 列, $\cdots$, 第 $n$ 列都加到第 $1$ 列, 得
 $$
 \begin{aligned}
@@ -482,12 +510,15 @@ x+(n-1) y & y  & \cdots & x
 &=[x+(n-1) y](x-y)^{n-1} .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 证明
 $$
 \left|\begin{array}{lll}
@@ -500,9 +531,11 @@ a_{2} & b_{2} & c_{2} \\
 a_{3} & b_{3} & c_{3}
 \end{array}\right| .
 $$
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 \textcolor{second}{证一}\quad 把左端行列式的第 $2, 3$ 列加到第 $1$ 列, 提取公因子 $2$, 再把第 $1$ 列乘 $-1$ 加到第 $2, 3$ 列得
 $$
 \text { 左式 }=2\left|\begin{array}{lll}
@@ -552,13 +585,15 @@ b_{3} & c_{3} & a_{3}
 \end{array}\right|=\text {右式} .
 \end{aligned}
 $$
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 
 
 <p style="border: 2px solid green; border-radius: 5px">
-<font color=green><b>例 $7$：</b></font>
+<font color=green><b>例 $8$：</b></font>
 证明范德蒙德 (Vandermonde) 行列式
 $$
 V_{n}=\left|\begin{array}{ccccc}
@@ -578,9 +613,9 @@ $$
 \end{aligned}
 $$
 是满足条件 $1 \leqslant j < i \leqslant n$ 的所有因子 $\left(x_{i}-x_{j}\right)$ 的乘积.
-<input type=button value= "显示证明" onclick='document.getElementById("divIDexample7").style.display="block"'> 
-<input type=button value= "收起证明" onclick='document.getElementById("divIDexample7").style.display="none"'> 
-<div id= "divIDexample7" style= "display:none"> 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>证明：</b></font>
 对行列式的阶数 $n$ 作数学归纳法.
@@ -624,7 +659,7 @@ $$
 
 
 <p style="border: 2px solid green; border-radius: 5px">
-<font color=green><b>例 $8$：</b></font>
+<font color=green><b>例 $9$：</b></font>
 计算 $n$ 阶行列式
 $$
 D_{n}=\left|\begin{array}{cccc}
@@ -634,9 +669,9 @@ x_{1} & x_{2}-m & \cdots & x_{n} \\
 x_{1} & x_{2} & \cdots & x_{n}-m
 \end{array}\right| .
 $$
-<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
-<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
-<div id= "divIDexample8" style= "display:none"> 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>解：</b></font>
 我们利用如下的加边法:
