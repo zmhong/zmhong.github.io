@@ -77,33 +77,33 @@ x_{2}=\dfrac{a_{11} b_{2}-b_{1} a_{21}}{a_{11} a_{22}-a_{12} a_{21}} .
 $$
 如果对于方程组的系数矩阵
 $$
-\bm{A}=\left(\begin{array}{ll}
+\boldsymbol{A}=\left(\begin{array}{ll}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{array}\right),
 $$
-引入行列式记号 “$|\quad |$” 和 $\operatorname{det} \bm{A}$, 那么就可以得到一个二阶行列式, 并规定 $\bm{A}$ 的行列式的值为
+引入行列式记号 “$|\quad |$” 和 $\operatorname{det} \boldsymbol{A}$, 那么就可以得到一个二阶行列式, 并规定 $\boldsymbol{A}$ 的行列式的值为
 $$
-\operatorname{det} \bm{A}=\left|\begin{array}{ll}
+\operatorname{det} \boldsymbol{A}=\left|\begin{array}{ll}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
 \end{array}\right|=a_{11} a_{22}-a_{12} a_{21} .
 $$
-系数矩阵 $\bm{A}$ 的行列式 $\operatorname{det} \bm{A}$ 称为方程组的系数行列式.
+系数矩阵 $\boldsymbol{A}$ 的行列式 $\operatorname{det} \boldsymbol{A}$ 称为方程组的系数行列式.
 
 <p style="text-indent: 2em;">记
 $$
-\operatorname{det} \bm{A}_{1}=\left|\begin{array}{ll}
+\operatorname{det} \boldsymbol{A}_{1}=\left|\begin{array}{ll}
 b_{1} & a_{12} \\
 b_{2} & a_{22}
-\end{array}\right|, \quad \operatorname{det} \bm{A}_{2}=\left|\begin{array}{cc}
+\end{array}\right|, \quad \operatorname{det} \boldsymbol{A}_{2}=\left|\begin{array}{cc}
 a_{11} & b_{1} \\
 a_{21} & b_{2}
 \end{array}\right|,
 $$
 那么二元线性方程组的解可写成
 $$
-x_{1}=\frac{\operatorname{det} \bm{A}_{1}}{\operatorname{det} \bm{A}}, \quad x_{2}=\frac{\operatorname{det} \bm{A}_{2}}{\operatorname{det} \bm{A}} .
+x_{1}=\frac{\operatorname{det} \boldsymbol{A}_{1}}{\operatorname{det} \boldsymbol{A}}, \quad x_{2}=\frac{\operatorname{det} \boldsymbol{A}_{2}}{\operatorname{det} \boldsymbol{A}} .
 $$
 
 <p style="text-indent: 2em;">类似地, 三元线性方程组
@@ -114,10 +114,10 @@ a_{21} x_{1}+a_{22} x_{2}+a_{23} x_{3}=b_{2}, \\
 a_{31} x_{1}+a_{32} x_{2}+a_{33} x_{3}=b_{3}
 \end{array}\right.
 $$
-的系数矩阵 $\bm{A}$ 的行列式规定为
+的系数矩阵 $\boldsymbol{A}$ 的行列式规定为
 $$
 \begin{aligned}
-\operatorname{det} \bm{A}=
+\operatorname{det} \boldsymbol{A}=
 \left|\begin{array}{lll}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23} \\
@@ -126,11 +126,11 @@ a_{31} & a_{32} & a_{33}
 &-a_{11} a_{23} a_{32}-a_{12} a_{21} a_{33}-a_{13} a_{22} a_{31} .
 \end{aligned}
 $$
-那么, 当 $\operatorname{det} \bm{A} \neq 0$ 时, 方程组的解也可写成
+那么, 当 $\operatorname{det} \boldsymbol{A} \neq 0$ 时, 方程组的解也可写成
 $$
-x_{1}=\frac{\operatorname{det} \bm{A}_{1}}{\operatorname{det} \bm{A}}, \quad x_{2}=\frac{\operatorname{det} \bm{A}_{2}}{\operatorname{det} \bm{A}}, \quad x_{3}=\frac{\operatorname{det} \bm{A}_{3}}{\operatorname{det} \bm{A}},
+x_{1}=\frac{\operatorname{det} \boldsymbol{A}_{1}}{\operatorname{det} \boldsymbol{A}}, \quad x_{2}=\frac{\operatorname{det} \boldsymbol{A}_{2}}{\operatorname{det} \boldsymbol{A}}, \quad x_{3}=\frac{\operatorname{det} \boldsymbol{A}_{3}}{\operatorname{det} \boldsymbol{A}},
 $$
-其中 $\operatorname{det} \bm{A}_{1}, \operatorname{det} \bm{A}_{2}, \operatorname{det} \bm{A}_{3}$ 是将系数行列式的第 1 列、第 2 列、第 3 列分别换成常数列所得的行列式.
+其中 $\operatorname{det} \boldsymbol{A}_{1}, \operatorname{det} \boldsymbol{A}_{2}, \operatorname{det} \boldsymbol{A}_{3}$ 是将系数行列式的第 1 列、第 2 列、第 3 列分别换成常数列所得的行列式.
 
 <p style="text-indent: 2em;">三阶行列式的计算方法可用图示记忆法 (如图 \ref{fig:2.2} 所示). 凡是实线上三个元相乘所得到的项带正号, 凡是虚线上三个元相乘所得到的项带负号.
 
@@ -208,20 +208,20 @@ a_{21} & a_{22}
 <ul>
 
 <p style="text-indent: 2em;">\begin{definition}
-设 $\bm{A}$ 为一个 $n$ 阶矩阵, $\bm{A}$ 的行列式
+设 $\boldsymbol{A}$ 为一个 $n$ 阶矩阵, $\boldsymbol{A}$ 的行列式
 $$
-\operatorname{det} \bm{A}=\left|\begin{array}{cccc}
+\operatorname{det} \boldsymbol{A}=\left|\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
 a_{21} & a_{22} & \cdots & a_{2 n} \\
 \vdots & \vdots & & \vdots \\
 a_{n 1} & a_{n 2} & \cdots & a_{n n}
 \end{array}\right|
 $$
-是由 $\bm{A}$ 确定的一个数:
+是由 $\boldsymbol{A}$ 确定的一个数:
 <br>
-(1) 当 $n=1$ 时, $\operatorname{det} \bm{A}=\operatorname{det}\left(a_{11}\right)=a_{11}$;
+(1) 当 $n=1$ 时, $\operatorname{det} \boldsymbol{A}=\operatorname{det}\left(a_{11}\right)=a_{11}$;
 <br>
-(2) 当 $n \geqslant 2$ 时, $\operatorname{det} \bm{A}=a_{11} A_{11}+a_{12} A_{12}+\cdots+a_{1 n} A_{1 n}=\sum_{j=1}^{n} a_{1 j} A_{1 j}$, 其中 $A_{1 j}=(-1)^{1+j} M_{1 j}$, 
+(2) 当 $n \geqslant 2$ 时, $\operatorname{det} \boldsymbol{A}=a_{11} A_{11}+a_{12} A_{12}+\cdots+a_{1 n} A_{1 n}=\sum_{j=1}^{n} a_{1 j} A_{1 j}$, 其中 $A_{1 j}=(-1)^{1+j} M_{1 j}$, 
 $$
 M_{1 j}=\left|\begin{array}{cccccc}
 a_{21} & \cdots & a_{2, j-1} & a_{2, j+1} & \cdots & a_{2 n} \\
@@ -230,17 +230,18 @@ a_{31} & \cdots & a_{3, j-1} & a_{3, j+1} & \cdots & a_{3 n} \\
 a_{n 1} & \cdots & a_{n, j-1} & a_{n, j+1} & \cdots & a_{n n}
 \end{array}\right| \quad(j=1,2, \cdots, n),
 $$
-称 $M_{1 j}$ 为元 $a_{1 j}$ 的余子式, 即为划掉 $\bm{A}$ 的第 $1$ 行第 $j$ 列后所得的 $n-1$ 阶行列式, $A_{1 j}$ 称为 $a_{1 j}$ 的代数余子式.
+称 $M_{1 j}$ 为元 $a_{1 j}$ 的余子式, 即为划掉 $\boldsymbol{A}$ 的第 $1$ 行第 $j$ 列后所得的 $n-1$ 阶行列式, $A_{1 j}$ 称为 $a_{1 j}$ 的代数余子式.
 \end{definition}
 
 
-<p style="text-indent: 2em;">为了书写方便, 在不引起混淆的时候, 本书也用 $|\bm{A}|$ 表示矩阵 $\bm{A}$ 的行列式.
+<p style="text-indent: 2em;">为了书写方便, 在不引起混淆的时候, 本书也用 $|\boldsymbol{A}|$ 表示矩阵 $\boldsymbol{A}$ 的行列式.
 
 <p style="text-indent: 2em;">由定义可以看出, 行列式是由行列式不同行不同列的元乘积构成的和式, 这种定义方法称为归纳定义. 通常, 把上述定义简称为按行列式的第 $1$ 行展开.
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 计算
 $$
 D_{4}=\left|\begin{array}{llll}
@@ -250,9 +251,11 @@ D_{4}=\left|\begin{array}{llll}
 8 & 4 & 3 & 5
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 因为 $a_{12}=a_{13}=0$, 所以由定义
 $$
 \begin{aligned}
@@ -283,22 +286,38 @@ D_{4}=& a_{11} A_{11}+a_{14} A_{14} \\
 =&2[5+5(18-4)]-4[7(18-4)-(6-8)]=-250 .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
-\begin{example}
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 考虑如图 \ref{fig:2.3} 所示的黑白图像 (每个小方块表示一个像素). 若记黑色和白色像素分别为 $0$ 和 $1$ , 则其对应矩阵为
 $$
-\bm{A}=\left(\begin{array}{llll}
+\boldsymbol{A}=\left(\begin{array}{llll}
 0 & 1 & 0 & 1 \\
 1 & 0 & 1 & 0 \\
 0 & 1 & 0 & 1 \\
 1 & 0 & 1 & 0
 \end{array}\right), 
 $$
-计算矩阵 $\bm{A}$ 的行列式 $\operatorname{det} \bm{A}$.
-\end{example}
+计算矩阵 $\boldsymbol{A}$ 的行列式 $\operatorname{det} \boldsymbol{A}$.
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
+因为 $a_{11}=a_{13}=0$, 所以由行列式定义有
+$$
+\operatorname{det} \boldsymbol{A}=a_{12} A_{12}+a_{14} A_{14}=1 \times(-1)^{1+2}\left|\begin{array}{lll}1 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 0\end{array}\right|+1 \times(-1)^{1+4}\left|\begin{array}{lll}1 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 1\end{array}\right|=0.
+$$
+</p>
+</div> 
+</p>
+
 
 
 \begin{figure}[!ht]
@@ -312,16 +331,12 @@ $$
 \end{figure}
 
 
-\begin{solution}
-因为 $a_{11}=a_{13}=0$, 所以由行列式定义有
-$$
-\operatorname{det} \bm{A}=a_{12} A_{12}+a_{14} A_{14}=1 \times(-1)^{1+2}\left|\begin{array}{lll}1 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 0\end{array}\right|+1 \times(-1)^{1+4}\left|\begin{array}{lll}1 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 1\end{array}\right|=0.
-$$
-\end{solution}
 
 
 
-\begin{example}
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 计算行列式
 $$
 D_{n}=\left|\begin{array}{cccc}
@@ -332,9 +347,11 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 \end{array}\right| \text {, }
 $$
 其中未写出的元均为 0 (以下同).
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由定义, 将 $D_{n}$ 按第一行展开, 得
 $$
 \begin{aligned}
@@ -361,15 +378,18 @@ a_{11} & & & \\
 & & & a_{n n}
 \end{array}\right|=a_{11} a_{22} \cdots a_{n n}.
 $$
-单位矩阵 $\bm{I}$ 和数量矩阵的行列式分别为
+单位矩阵 $\boldsymbol{I}$ 和数量矩阵的行列式分别为
 $$
-\operatorname{det} \bm{I}=1, \quad \operatorname{det}\left(k \bm{I}_{n}\right)=k^{n} .
+\operatorname{det} \boldsymbol{I}=1, \quad \operatorname{det}\left(k \boldsymbol{I}_{n}\right)=k^{n} .
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 计算 $n$ 阶下三角形行列式
 $$
 D_{n}=\left|\begin{array}{cccc} 
@@ -379,9 +399,11 @@ D_{n}=\left|\begin{array}{cccc}
 a_{1} & & &
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由行列式定义有
 $$
 \begin{aligned}
@@ -397,7 +419,9 @@ a_{1} & & &
 &=(-1)^{\frac{n(n-1)}{2}} a_{1} a_{2} \cdots a_{n} .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 <p style="text-indent: 2em;">同理
 $$
