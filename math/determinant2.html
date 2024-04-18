@@ -557,7 +557,8 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 证明范德蒙德 (Vandermonde) 行列式
 $$
 V_{n}=\left|\begin{array}{ccccc}
@@ -577,9 +578,11 @@ $$
 \end{aligned}
 $$
 是满足条件 $1 \leqslant j < i \leqslant n$ 的所有因子 $\left(x_{i}-x_{j}\right)$ 的乘积.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 对行列式的阶数 $n$ 作数学归纳法.
 
 <p style="text-indent: 2em;"> 当 $n=2$ 时, 有
@@ -608,7 +611,9 @@ $$
 由归纳法, 结论成立.
 
 <p style="text-indent: 2em;"> 显然, $V_{n} \neq 0$ 的充要条件是 $x_{1}, x_{2}, \cdots, x_{n}$ 互不相同.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 
