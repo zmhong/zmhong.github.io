@@ -422,17 +422,17 @@ D & = \frac{1}{2} \left|\begin{array}{cccc}
 1 & 2 & 3 & 2
 \end{array}\right| \stackrel{\substack{r_{1}+ r_{2} \\ -2r_{1}+ r_{3} \\ -r_{1}+ r_{4}}}{==}
 \frac{1}{2} \left|\begin{array}{cccc}1 & 1 & -1 & 3 \\0 & 0 & 1 & 4 \\0 & 3 & 4 & -2 \\0 & 1 & 4 & -1\end{array}\right| \\
-& \overrightarrow{sss}\longequal{r_{2} \leftrightarrow r_{4}} -\frac{1}{2}\left|\begin{array}{cccc}1 & 1 & -1 & 3 \\0 & 1 & 4 & -1 \\0 & 3 & 4 & -2 \\0 & 0 & 1 & 4\end{array}\right| 
-\xlongequal{-3 r_{2}+r_{3}}-\frac{1}{2}\left|
+& \stackrel{r_{2} \leftrightarrow r_{4}}{==} -\frac{1}{2}\left|\begin{array}{cccc}1 & 1 & -1 & 3 \\0 & 1 & 4 & -1 \\0 & 3 & 4 & -2 \\0 & 0 & 1 & 4\end{array}\right| 
+\stackrel{-3 r_{2}+r_{3}}{==}-\frac{1}{2}\left|
 \begin{array}{cccc}
 1 & 1 & -1 & 3 \\0 & 1 & 4 & -1 \\
 0 & 0 & -8 & 1 \\0 & 0 & 1 & 4\end{array}\right|\\
-& \xlongequal{r_{3} \leftrightarrow r_{4}} \frac{1}{2}\left|\begin{array}{cccc}
+& \stackrel{r_{3} \leftrightarrow r_{4}}{==} \frac{1}{2}\left|\begin{array}{cccc}
 1 & 1 & -1 & 3 \\
 0 & 1 & 4 & -1 \\
 0 & 0 & 1 & 4 \\
 0 & 0 & -8 & 1
-\end{array}\right|\xlongequal{8r_{3} + r_{4}} \frac{1}{2}\left|\begin{array}{cccc}
+\end{array}\right| \stackrel{8r_{3} + r_{4}}{==} \frac{1}{2}\left|\begin{array}{cccc}
 1 & 1 & -1 & 3 \\
 0 & 1 & 4 & -1 \\
 0 & 0 & 1 & 4 \\
@@ -464,18 +464,18 @@ $$
 <font color=green><b>解：</b></font>
 $$
 \begin{aligned}
-D & \xlongequal{\substack{2 c_{4}+c_{1} \\ -3c_{4}+c_{2}\\
--4c_{4}+c_{3}}} \left|\begin{array}{cccc}
+D & \stackrel{\substack{2 c_{4}+c_{1} \\ -3c_{4}+c_{2}\\
+-4c_{4}+c_{3}}}{==} \left|\begin{array}{cccc}
 -1 & 11 & 6 & -3 \\
 4 & -5 & -18 & 4 \\
 0 & 0 & 0 & 1 \\
 -3 & 7 & 10 & -5
 \end{array}\right|\\
-& \xlongequal{\text{按$r_3$展开}} 1\times (-1)^{3+4} \left|\begin{array}{ccc}
+& \stackrel{\text{按$r_3$展开}}{==} 1\times (-1)^{3+4} \left|\begin{array}{ccc}
 -1 & 11 & 6  \\
 4 & -5 & -18  \\
 -3 & 7 & 10 
-\end{array}\right| \xlongequal{\substack{4 r_{1}+r_{2} \\ -3r_{1}+r_{3}\\}} - \left|\begin{array}{ccc}
+\end{array}\right| \stackrel{\substack{4 r_{1}+r_{2} \\ -3r_{1}+r_{3}\\}}{==} - \left|\begin{array}{ccc}
 -1 & 11 & 6  \\
 0 & 39 & 6  \\
 0 & -26 & -8 
@@ -524,7 +524,7 @@ x+(n-1) y & y  & \cdots & x
 \vdots & \vdots &  & \vdots \\
 1 & y  & \cdots & x
 \end{array}\right|\\
-&\xlongequal{-r_{1}+r_{i}(i=2, \cdots, n)}[x+(n-1) y]\left|\begin{array}{cccc}
+&\stackrel{-r_{1}+r_{i}(i=2, \cdots, n)}{==} [x+(n-1) y]\left|\begin{array}{cccc}
 1 & y & \cdots & y \\
 0 & x-y & \cdots & 0 \\
 \vdots & \vdots & & \vdots \\
