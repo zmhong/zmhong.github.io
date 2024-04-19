@@ -97,7 +97,7 @@ $$
 
 <p style="text-indent: 2em;">由行列式的性质可知, $\boldsymbol{A}$ 中所有 $r+1$ 阶子式全等于零时, 所有高于 $r+1$ 阶的子式 也全等于零, 因此 $\boldsymbol{A}$ 的秩 $R(\boldsymbol{A})$ 就是 $\boldsymbol{A}$ 中不等于零的子式的最高阶数.
 
-<p style="text-indent: 2em;">显然, 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})$ 是惟一的, 但其最高阶非零子式一般是不惟一的.
+<p style="text-indent: 2em;">显然, 对任意矩阵 $\boldsymbol{A}$, $R(\boldsymbol{A})$ 是惟一的, 但其最高阶非零子式一般是不惟一的.
 
 <p style="text-indent: 2em;">定义 $2$ 实际上包含两部分: 一部分是, $R(\boldsymbol{A}) \geqslant r$ 的充要条件是 $\boldsymbol{A}$ 有一个 $r$ 阶子式不为零; 另一部分是, $R(\boldsymbol{A}) \leqslant r$ 的充要条件是 $\boldsymbol{A}$ 的所有 $r+1$ 阶子式全为零.
 
@@ -223,7 +223,7 @@ $$
 若 $B_{t}$ 不包含第 $2$ 行元, 则上面两个行列式中至少有一个非零; 若 $B_{t}$ 包含第 $2$ 行元, 则右端第一个行列式非零, 而以上两种情况的非零行列式均为 $\boldsymbol{A}$ 中的 $t$ 阶子式, 所以 $R(\boldsymbol{A}) \geqslant t$.
 
 <br>
-总之, 归纳以上得到的结论: 若由矩阵 $\boldsymbol{A}$ 经第三种行初等变换得到矩阵 $\boldsymbol{B}$, 则 $R(\boldsymbol{B}) \leqslant R(\boldsymbol{A})$. 但事实上, 我们又能从 $\boldsymbol{B}$ 出发经初等变换得到 $\boldsymbol{A}$ (即只要把 $\boldsymbol{B}$ 的 第 $2$ 行的 $-k$ 倍加到第 $1$ 行 $)$, 因此根据上面的结论又有 $R(\boldsymbol{A}) \leqslant R(\boldsymbol{B})$. 故
+$\qquad$ 总之, 归纳以上得到的结论: 若由矩阵 $\boldsymbol{A}$ 经第三种行初等变换得到矩阵 $\boldsymbol{B}$, 则 $R(\boldsymbol{B}) \leqslant R(\boldsymbol{A})$. 但事实上, 我们又能从 $\boldsymbol{B}$ 出发经初等变换得到 $\boldsymbol{A}$ (即只要把 $\boldsymbol{B}$ 的 第 $2$ 行的 $-k$ 倍加到第 $1$ 行 $)$, 因此根据上面的结论又有 $R(\boldsymbol{A}) \leqslant R(\boldsymbol{B})$. 故
 $
 R(\boldsymbol{A})=R(\boldsymbol{B}).
 $
@@ -330,18 +330,15 @@ $$
 </p>
 
 
-<p style="text-indent: 2em;">计算图 \ref{fig:2.4} 中黑白图像对应矩阵的行列式和秩. 尝试比较行列式与秩的相似和不同之处.
+<p style="text-indent: 2em;">计算图<a href="#fig2.4">2.4</a>中黑白图像对应矩阵的行列式和秩. 尝试比较行列式与秩的相似和不同之处.
 
 
-\begin{figure}[!ht]
-\begin{center}
-\renewcommand\figurename{\footnotesize 图}
-%\includegraphics[scale=0.8]{image/imageLA2022/fig2.4.jpg}
-\includegraphics[scale=0.3]{image/imageLA2022/fig2.4.pdf}
-\caption{}
-\label{fig:2.4}
-\end{center}
-\end{figure}
+<center>
+<figure>
+  <img src="fig2.4.jpg" width="60%">
+ <figcaption><a name="fig2.4">图2.4</a> </figcaption>
+</figure>
+</center>
 
 <p style="text-indent: 2em;">事实上, 将矩阵 $\boldsymbol{A}$ 用行初等变换化为行阶梯形矩阵, 则行阶梯形矩阵非零行的行数就是 $\boldsymbol{A}$ 的秩,
 即: 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则 $R(\boldsymbol{A})=r$ 的充要条件是通过行初等变换能将 $\boldsymbol{A}$ 化为具有 $r$ 个非零行的行阶梯形矩阵.
