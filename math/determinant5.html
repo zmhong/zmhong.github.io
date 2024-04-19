@@ -63,11 +63,12 @@ $2.5$ 矩阵的秩
 <p style="text-indent: 2em;">
 矩阵的秩是矩阵的一个重要数值特征, 是线性代数中的一个重要概念. 为了建立矩阵的秩的概念, 先给出矩阵的子式的定义.
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 在 $m \times n$ 矩阵 $\boldsymbol{A}$ 中, 位于任意取定的 $k$ 行和 $k$ 列 $(1 \leqslant k \leqslant \min \{m, n\})$ 交叉点上的 $k^{2}$ 个元, 按原来的相对位置组成的 $k$ 阶行列式, 称为 $\boldsymbol{A}$ 的一个 $k$ 阶子式.
-\end{definition}
+</p>
 
-例如, 在矩阵
+<p style="text-indent: 2em;">例如, 在矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
 3 & 2 & -1 & -3 \\
@@ -85,28 +86,32 @@ $$
 为 $\boldsymbol{A}$ 的一个二阶子式.
 
 
-有了子式的概念, 就可以定义矩阵的秩.
+<p style="text-indent: 2em;">有了子式的概念, 就可以定义矩阵的秩.
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $2$：</b></font>
 设在矩阵 $\boldsymbol{A}$ 中有一个不等于零的 $r$ 阶子式 $D$, 且没有不等于零的 $r+1$ 阶子式, 那么 $D$ 称为 $\boldsymbol{A}$ 的最高阶非零子式, 数 $r$ 称为矩阵 $\boldsymbol{A}$ 的秩, 记作 $R(\boldsymbol{A})$. 并规定零矩阵的秩等于零.
-\end{definition}
+</p>
 
 
-由行列式的性质可知, $\boldsymbol{A}$ 中所有 $r+1$ 阶子式全等于零时, 所有高于 $r+1$ 阶的子式 也全等于零, 因此 $\boldsymbol{A}$ 的秩 $R(\boldsymbol{A})$ 就是 $\boldsymbol{A}$ 中不等于零的子式的最高阶数.
+<p style="text-indent: 2em;">由行列式的性质可知, $\boldsymbol{A}$ 中所有 $r+1$ 阶子式全等于零时, 所有高于 $r+1$ 阶的子式 也全等于零, 因此 $\boldsymbol{A}$ 的秩 $R(\boldsymbol{A})$ 就是 $\boldsymbol{A}$ 中不等于零的子式的最高阶数.
 
-显然, 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})$ 是惟一的, 但其最高阶非零子式一般是不惟一的.
+<p style="text-indent: 2em;">显然, 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})$ 是惟一的, 但其最高阶非零子式一般是不惟一的.
 
-定义 $2$ 实际上包含两部分: 一部分是, $R(\boldsymbol{A}) \geqslant r$ 的充要条件是 $\boldsymbol{A}$ 有一个 $r$ 阶子式不为零; 另一部分是, $R(\boldsymbol{A}) \leqslant r$ 的充要条件是 $\boldsymbol{A}$ 的所有 $r+1$ 阶子式全为零.
+<p style="text-indent: 2em;">定义 $2$ 实际上包含两部分: 一部分是, $R(\boldsymbol{A}) \geqslant r$ 的充要条件是 $\boldsymbol{A}$ 有一个 $r$ 阶子式不为零; 另一部分是, $R(\boldsymbol{A}) \leqslant r$ 的充要条件是 $\boldsymbol{A}$ 的所有 $r+1$ 阶子式全为零.
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 求矩阵 $\boldsymbol{A}=\left(\begin{array}{cccc}
 3 & 1 & 0 & 2 \\ 
 1 & -1 & 2 & -1 \\ 
 1 & 3 & -4 & 4\end{array}\right)$ 的秩.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $\boldsymbol{A}$ 有 $12$ 个一阶子式. 例如, 由第 $2$ 行、第 $2$ 列交点上的元构成的一阶子式
 $$
 \operatorname{det}(-1)=-1 \neq 0 .
@@ -145,10 +150,12 @@ $$
 \end{aligned}
 $$
 故由定义, $R(\boldsymbol{A})=2$.
-\end{solution}
+</p>
+</div> 
+</p>
 
 
-从例 $1$ 可看出, 根据定义求秩是很困难的, 下面给出求矩阵秩的初等变换法.
+<p style="text-indent: 2em;">从例 $1$ 可看出, 根据定义求秩是很困难的, 下面给出求矩阵秩的初等变换法.
 
 
 
@@ -170,9 +177,9 @@ $$
 
 \begin{proof}
 只就行初等变换加以证明, 列初等变换的情形同理可证.
-
+<br>
 对于行初等变换中的第一种和第二种变换, 由于变换后矩阵中的每一个于式均能在原来的矩阵中找到相应的子式, 它们之间或只是行的次序不同, 或只是某一行扩大了 $k$ 倍, 因此相应子式或同为零, 或同为非零, 所以矩阵的秩不变.
-
+<br>
 对于第三种行初等变换, 设
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
@@ -214,6 +221,7 @@ a_{i_{t} j_{1}} & \cdots & a_{i_{t} j_{t}}
 $$
 若 $B_{t}$ 不包含第 $2$ 行元, 则上面两个行列式中至少有一个非零; 若 $B_{t}$ 包含第 $2$ 行元, 则右端第一个行列式非零, 而以上两种情况的非零行列式均为 $\boldsymbol{A}$ 中的 $t$ 阶子式, 所以 $R(\boldsymbol{A}) \geqslant t$.
 
+<br>
 总之, 归纳以上得到的结论: 若由矩阵 $\boldsymbol{A}$ 经第三种行初等变换得到矩阵 $\boldsymbol{B}$, 则 $R(\boldsymbol{B}) \leqslant R(\boldsymbol{A})$. 但事实上, 我们又能从 $\boldsymbol{B}$ 出发经初等变换得到 $\boldsymbol{A}$ (即只要把 $\boldsymbol{B}$ 的 第 $2$ 行的 $-k$ 倍加到第 $1$ 行 $)$, 因此根据上面的结论又有 $R(\boldsymbol{A}) \leqslant R(\boldsymbol{B})$. 故
 $
 R(\boldsymbol{A})=R(\boldsymbol{B}).
@@ -222,7 +230,8 @@ $
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 求矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{ccccc}
@@ -233,9 +242,11 @@ $$
 \end{array}\right)
 $$
 的秩.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对 $\boldsymbol{A}$ 作行初等变换
 $$
 \boldsymbol{A}=\left(\begin{array}{ccccc}
@@ -264,12 +275,15 @@ $$
 \end{array}\right|=-12 \neq 0,
 $$
 显然 $\boldsymbol{B}$ 中所有四阶子式全为零, 所以 $R(\boldsymbol{B})=3$. 故 $R(\boldsymbol{A})=R(\boldsymbol{B})=3$.
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 求 $\S 2.1$ 例 $2$ 中黑白图像对应的矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{llll}
@@ -280,9 +294,11 @@ $$
 \end{array}\right)
 $$
 的秩.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \boldsymbol{A}=\left(\begin{array}{llll}
 0 & 1 & 0 & 1 \\
@@ -302,10 +318,12 @@ $$
 \end{array}\right),
 $$
 所以 $R(\boldsymbol{A})=2$.
-\end{solution}
+</p>
+</div> 
+</p>
 
 
-计算图 \ref{fig:2.4} 中黑白图像对应矩阵的行列式和秩. 尝试比较行列式与秩的相似和不同之处.
+<p style="text-indent: 2em;">计算图 \ref{fig:2.4} 中黑白图像对应矩阵的行列式和秩. 尝试比较行列式与秩的相似和不同之处.
 
 
 \begin{figure}[!ht]
@@ -318,10 +336,11 @@ $$
 \end{center}
 \end{figure}
 
-事实上, 将矩阵 $\boldsymbol{A}$ 用行初等变换化为行阶梯形矩阵, 则行阶梯形矩阵非零行的行数就是 $\boldsymbol{A}$ 的秩,
+<p style="text-indent: 2em;">事实上, 将矩阵 $\boldsymbol{A}$ 用行初等变换化为行阶梯形矩阵, 则行阶梯形矩阵非零行的行数就是 $\boldsymbol{A}$ 的秩,
 即: 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则 $R(\boldsymbol{A})=r$ 的充要条件是通过行初等变换能将 $\boldsymbol{A}$ 化为具有 $r$ 个非零行的行阶梯形矩阵.
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{ccc}
@@ -332,9 +351,11 @@ $$
 \end{array}\right),
 $$
 已知 $R(\boldsymbol{A})=2$, 求 $t$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对 $\boldsymbol{A}$ 作行初等变换得
 $$
 \boldsymbol{A} \rightarrow\left(\begin{array}{ccc}
@@ -345,7 +366,9 @@ $$
 \end{array}\right)=\boldsymbol{B} .
 $$
 由 $R(\boldsymbol{A})=R(\boldsymbol{B})=2$, 知 $\boldsymbol{B}$ 中第 $2$ 行、第 $3$ 行成比例. 于是由 $\frac{-2}{2+t}=\frac{-4}{6}$ 得 $t=1$. 
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
@@ -366,7 +389,8 @@ $$
 \end{proof}
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -380,11 +404,15 @@ $$
 \end{array}\right),
 $$
 求 $R(\boldsymbol{A B})$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 因为 $|\boldsymbol{A}| \neq 0$, 所以 $\boldsymbol{A}$ 可逆. 显然 $R(\boldsymbol{B})=2$. 故 $R(\boldsymbol{A} \boldsymbol{B})=R(\boldsymbol{B})=2$.
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
@@ -403,21 +431,21 @@ $$
 
 \begin{theorem}
 $(1)$ 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则 $\boldsymbol{A}$ 可逆的充要条件是 $R(\boldsymbol{A})=n$;
-
+<br>
 $(2)$ 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})=R\left(\boldsymbol{A}^{\mathrm{T}}\right)$;
-
+<br>
 $(3)$ 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则 $0 \leqslant R(\boldsymbol{A}) \leqslant \min \{m, n\}$;
-
+<br>
 $(4)$ 对任意矩阵 $\boldsymbol{A}, R(k \boldsymbol{A})= \begin{cases}0, & k=0, \\ R(\boldsymbol{A}), & k \neq 0 .\end{cases}$
 \end{theorem}
 
 \begin{proof}
 $(3)$ 和 $(4)$ 是显然的. 我们证明 $(1)$ 和 $(2)$.
-
+<br>
 $(1)$ 若 $\boldsymbol{A}$ 可逆, 则 $\operatorname{det} \boldsymbol{A} \neq 0$, 因此由定义 $2$ 知 $R(\boldsymbol{A})=n$.
-
+<br>
 反之, 若 $R(\boldsymbol{A})=n$, 由定义 $2$ 易知 $\operatorname{det} \boldsymbol{A} \neq 0$, 故 $\boldsymbol{A}$ 可逆.
-
+<br>
 $(2)$ $\boldsymbol{A}$ 的任一子式的转置就是 $\boldsymbol{A}^{\mathrm{T}}$ 的子式; 反之, $\boldsymbol{A}^{\mathrm{T}}$ 的任一子式的转置就是 $\boldsymbol{A}$ 的子式. 根据行列式的性质,
 $\boldsymbol{A}$ 中不为零的最高阶子式就是 $\boldsymbol{A}^{\mathrm{T}}$ 中不为零的最高阶子式, 反之亦然. 故
 $$
@@ -425,17 +453,21 @@ R(\boldsymbol{A})=R\left(\boldsymbol{A}^{\mathrm{T}}\right) .
 $$
 \end{proof}
 
-由定理 $2$ 的 $(1)$ 知, 对于 $n$ 阶矩阵 $\boldsymbol{A}$, $\operatorname{det} \boldsymbol{A}=0$ 的充要条件是 $R(\boldsymbol{A}) < n$. 因而, 可逆矩阵又称为满秩矩阵, 不可逆矩阵又称为降秩矩阵或退化矩阵.
+<p style="text-indent: 2em;">由定理 $2$ 的 $(1)$ 知, 对于 $n$ 阶矩阵 $\boldsymbol{A}$, $\operatorname{det} \boldsymbol{A}=0$ 的充要条件是 $R(\boldsymbol{A}) < n$.
+因而, 可逆矩阵又称为满秩矩阵, 不可逆矩阵又称为降秩矩阵或退化矩阵.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵 $(n \geqslant 2)$, 证明
 $$
 R\left(\boldsymbol{A}^{*}\right)= \begin{cases}n, & R(\boldsymbol{A})=n, \\ 0, & R(\boldsymbol{A}) < n-1 .\end{cases}
 $$
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 若 $R(\boldsymbol{A})=n$, 即 $\operatorname{det} \boldsymbol{A} \neq 0$, 由 $\boldsymbol{A} \boldsymbol{A}^{*}=(\operatorname{det} \boldsymbol{A}) \boldsymbol{I}$ 有 
 $$
 (\operatorname{det} \boldsymbol{A})\left(\operatorname{det} \boldsymbol{A}^{*}\right)=\operatorname{det}\left(\boldsymbol{A} \boldsymbol{A}^{*}\right)=\operatorname{det}((\operatorname{det} \boldsymbol{A}) \boldsymbol{I})=(\operatorname{det} \boldsymbol{A})^{n} \neq 0,
@@ -452,9 +484,11 @@ A_{1 n} & A_{2 n} & \cdots & A_{n n}
 \end{array}\right)=\boldsymbol{O},
 $$
 即 $R\left(\boldsymbol{A}^{*}\right)=0$.
-\end{proof}
+</p>
+</div> 
+</p>
 
-对于例 $6$ 中 $R(\boldsymbol{A})=n-1$ 的情形, 将在 $\S 3.4$ 的例 $5$ 中给出.
+<p style="text-indent: 2em;">对于例 $6$ 中 $R(\boldsymbol{A})=n-1$ 的情形, 将在 $\S 3.4$ 的例 $5$ 中给出.
 
 \begin{theorem}
 对任意矩阵 $\boldsymbol{A}_{m \times n}$, 都存在可逆矩阵 $\boldsymbol{P}_{m \times m}, \boldsymbol{Q}_{n \times n}$, 使得
@@ -492,7 +526,7 @@ $$
 $$
 \end{proof}
 
-定理 $3$ 也说明, 对任意矩阵 $\boldsymbol{A}$, 存在可逆矩阵 $\boldsymbol{K}, \boldsymbol{S}$, 使
+<p style="text-indent: 2em;">定理 $3$ 也说明, 对任意矩阵 $\boldsymbol{A}$, 存在可逆矩阵 $\boldsymbol{K}, \boldsymbol{S}$, 使
 $$
 \boldsymbol{A}=\boldsymbol{K}\left(\begin{array}{ll}
 \boldsymbol{I}_{r} & \boldsymbol{O} \\
@@ -506,11 +540,14 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 设 $\boldsymbol{A}=\left(\begin{array}{ccc}1 & -2 & 1 \\ -1 & 1 & 1 \\ 1 & -3 & 3\end{array}\right)$, 求 $\boldsymbol{A}$ 的标准形.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \boldsymbol{A}=\left(\begin{array}{ccc}
 1 & -2 & 1 \\
@@ -541,16 +578,21 @@ $$
 0 & 0 & 0
 \end{array}\right).
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
 证明 $R\left(\left(\begin{array}{ll}\boldsymbol{A} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{B}\end{array}\right)\right)=R(\boldsymbol{A})+R(\boldsymbol{B})$.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $R(\boldsymbol{A})=r_{1}, R(\boldsymbol{B})=r_{2}$. 由定理 $3$ , 存在可逆矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \boldsymbol{Q}_{1}, \boldsymbol{Q}_{2}$, 使得
 $$
 \boldsymbol{A}=\boldsymbol{P}_{1}\left(\begin{array}{cc}
@@ -611,8 +653,9 @@ R\left(\left(\begin{array}{ll}
 \end{array}\right)
 \end{array}\right)\right)=r_{1}+r_{2} .
 $$
-\end{proof}
-
+</p>
+</div> 
+</p>
 
 </ul>
 
