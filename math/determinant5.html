@@ -75,7 +75,7 @@ $$
 4 & 5 & -5 & -6
 \end{array}\right)
 $$
-中, 取第 1, 2 行和第 2, 4 列交叉点上的元, 组成的二阶行列式
+中, 取第 $1, 2$ 行和第 $2, 4$ 列交叉点上的元, 组成的二阶行列式
 $$
 \left|\begin{array}{rr}
 2 & -3 \\
@@ -97,7 +97,7 @@ $$
 
 显然, 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})$ 是惟一的, 但其最高阶非零子式一般是不惟一的.
 
-定义 2 实际上包含两部分: 一部分是, $R(\boldsymbol{A}) \geqslant r$ 的充要条件是 $\boldsymbol{A}$ 有一个 $r$ 阶子式 不为零; 另一部分是, $R(\boldsymbol{A}) \leqslant r$ 的充要条件是 $\boldsymbol{A}$ 的所有 $r+1$ 阶子式全为零.
+定义 $2$ 实际上包含两部分: 一部分是, $R(\boldsymbol{A}) \geqslant r$ 的充要条件是 $\boldsymbol{A}$ 有一个 $r$ 阶子式不为零; 另一部分是, $R(\boldsymbol{A}) \leqslant r$ 的充要条件是 $\boldsymbol{A}$ 的所有 $r+1$ 阶子式全为零.
 
 \begin{example}
 求矩阵 $\boldsymbol{A}=\left(\begin{array}{cccc}
@@ -107,13 +107,13 @@ $$
 \end{example}
 
 \begin{solution}
-$\boldsymbol{A}$ 有 12 个一阶子式. 例如, 由第 2 行、第 2 列交点上的元构成的一阶子式
+$\boldsymbol{A}$ 有 $12$ 个一阶子式. 例如, 由第 $2$ 行、第 $2$ 列交点上的元构成的一阶子式
 $$
 \operatorname{det}(-1)=-1 \neq 0 .
 $$
 
 再看一下 $\boldsymbol{A}$ 的二阶子式, 可以知道 $\boldsymbol{A}$ 有 $\mathrm{C}_{3}^{2} \mathrm{C}_{4}^{2}=3 \times 6=18$ 个二阶子式, 其中由第
-1, 2 行和第 1, 2 列交又点上的元构成的二阶子式
+$1, 2$ 行和第 $1, 2$ 列交又点上的元构成的二阶子式
 $$
 \left|\begin{array}{rr}
 3 & 1 \\
@@ -182,7 +182,7 @@ a_{21} & a_{22} & \cdots & a_{2 n} \\
 a_{m 1} & a_{m 2} & \cdots & a_{m n}
 \end{array}\right),
 $$
-不妨考虑把 $\boldsymbol{A}$ 的第 2 行的 $k$ 倍加至第 1 行上, 得
+不妨考虑把 $\boldsymbol{A}$ 的第 $2$ 行的 $k$ 倍加至第 $1$ 行上, 得
 $$
 \boldsymbol{B}=\left(\begin{array}{cccc}
 a_{11}+k a_{21} & a_{12}+k a_{22} & \cdots & a_{1 n}+k a_{2 n} \\
@@ -191,7 +191,8 @@ a_{21} & a_{22} & \cdots & a_{2 n} \\
 a_{m 1} & a_{m 2} & \cdots & a_{m n}
 \end{array}\right),
 $$
-设 $R(\boldsymbol{B})=t$, 即 $\boldsymbol{B}$ 中有 $t$ 阶子式 $B_{t}$ 不为零. 若 $B_{t}$ 不包含第 1 行的元, 则在 $\boldsymbol{A}$ 中能找 到与 $B_{t}$ 完全相同的 $t$ 阶子式, 因此 $R(\boldsymbol{A}) \geqslant t$; 若 $B_{t}$ 包含第 1 行的元, 即
+设 $R(\boldsymbol{B})=t$, 即 $\boldsymbol{B}$ 中有 $t$ 阶子式 $B_{t}$ 不为零. 若 $B_{t}$ 不包含第 $1$ 行的元, 则在 $\boldsymbol{A}$ 中能找到与 $B_{t}$ 完全相同的 $t$ 阶子式,
+因此 $R(\boldsymbol{A}) \geqslant t$; 若 $B_{t}$ 包含第 $1$ 行的元, 即
 $$
 0 \neq B_{t}=\left|\begin{array}{ccc}
 a_{1 j_{1}}+k a_{2 j_{1}} & \cdots & a_{1 j_{t}}+k a_{2 j_{t}} \\
@@ -211,9 +212,9 @@ a_{2 j_{1}} & \cdots & a_{2 j_{t}} \\
 a_{i_{t} j_{1}} & \cdots & a_{i_{t} j_{t}}
 \end{array}\right|,
 $$
-若 $B_{t}$ 不包含第 2 行元, 则上面两个行列式中至少有一个非零; 若 $B_{t}$ 包含第 2 行元, 则右端第一个行列式非零, 而以上两种情况的非零行列式均为 $\boldsymbol{A}$ 中的 $t$ 阶子式, 所以 $R(\boldsymbol{A}) \geqslant t$.
+若 $B_{t}$ 不包含第 $2$ 行元, 则上面两个行列式中至少有一个非零; 若 $B_{t}$ 包含第 $2$ 行元, 则右端第一个行列式非零, 而以上两种情况的非零行列式均为 $\boldsymbol{A}$ 中的 $t$ 阶子式, 所以 $R(\boldsymbol{A}) \geqslant t$.
 
-总之, 归纳以上得到的结论: 若由矩阵 $\boldsymbol{A}$ 经第三种行初等变换得到矩阵 $\boldsymbol{B}$, 则 $R(\boldsymbol{B}) \leqslant R(\boldsymbol{A})$. 但事实上, 我们又能从 $\boldsymbol{B}$ 出发经初等变换得到 $\boldsymbol{A}$ (即只要把 $\boldsymbol{B}$ 的 第 2 行的 $-k$ 倍加到第 1 行 $)$, 因此根据上面的结论又有 $R(\boldsymbol{A}) \leqslant R(\boldsymbol{B})$. 故
+总之, 归纳以上得到的结论: 若由矩阵 $\boldsymbol{A}$ 经第三种行初等变换得到矩阵 $\boldsymbol{B}$, 则 $R(\boldsymbol{B}) \leqslant R(\boldsymbol{A})$. 但事实上, 我们又能从 $\boldsymbol{B}$ 出发经初等变换得到 $\boldsymbol{A}$ (即只要把 $\boldsymbol{B}$ 的 第 $2$ 行的 $-k$ 倍加到第 $1$ 行 $)$, 因此根据上面的结论又有 $R(\boldsymbol{A}) \leqslant R(\boldsymbol{B})$. 故
 $
 R(\boldsymbol{A})=R(\boldsymbol{B}).
 $
@@ -343,7 +344,7 @@ $$
 0 & 0 & 0
 \end{array}\right)=\boldsymbol{B} .
 $$
-由 $R(\boldsymbol{A})=R(\boldsymbol{B})=2$, 知 $\boldsymbol{B}$ 中第 2 行、第 3 行成比例. 于是由 $\frac{-2}{2+t}=\frac{-4}{6}$ 得 $t=1$. 
+由 $R(\boldsymbol{A})=R(\boldsymbol{B})=2$, 知 $\boldsymbol{B}$ 中第 $2$ 行、第 $3$ 行成比例. 于是由 $\frac{-2}{2+t}=\frac{-4}{6}$ 得 $t=1$. 
 \end{solution}
 
 
@@ -357,7 +358,7 @@ $$
 \end{corollary}
 
 \begin{proof}
-因为 $\boldsymbol{P}$ 可逆, 所以存在有限个初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 $\boldsymbol{P}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1}$, 从而 $\boldsymbol{P} \boldsymbol{A}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1} \boldsymbol{A}$, 即 $\boldsymbol{P} \boldsymbol{A}$ 为对 $\boldsymbol{A}$ 施以 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$ 相对应的行初等变换所 得矩阵, 于是由定理 1 知,
+因为 $\boldsymbol{P}$ 可逆, 所以存在有限个初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 $\boldsymbol{P}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1}$, 从而 $\boldsymbol{P} \boldsymbol{A}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1} \boldsymbol{A}$, 即 $\boldsymbol{P} \boldsymbol{A}$ 为对 $\boldsymbol{A}$ 施以 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$ 相对应的行初等变换所 得矩阵, 于是由定理 $1$ 知,
 $$
 R(\boldsymbol{P} \boldsymbol{A})=R(\boldsymbol{A}),
 $$
