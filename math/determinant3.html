@@ -62,15 +62,17 @@ $2.3$ 拉普拉斯定理
 <p style="text-indent: 2em;">拉普拉斯 (Laplace) 定理是行列式按一行 (列) 展开的推广. 下面我们先将余子式与代数余子式的概念加以推广.
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 在 $n$ 阶行列式 $D$ 中, 任取 $k$ 行、 $k$ 列 $(1 \leqslant k \leqslant n)$, 位于这 $k$ 行、 $k$ 列的交点上的 $k^{2}$ 个元按原来的相对位置组成的 $k$ 阶行列式 $S$, 称为 $D$ 的一个 $k$ 阶子式. 
   在 $D$ 中划去 $S$ 所在的 $k$ 行与 $k$ 列, 余下的元按原来的相对位置组成的 $n-k$ 阶行列式 $M$ 称为 $S$ 的余子式.  
-  设 $S$ 的各行位于 $D$ 中第 $i_{1}, i_{2}, \cdots, i_{k}$ 行 $\left(i_{1}<i_{2} < \cdots < i_{k}\right), S$ 的各列位于 $D$ 中第 $j_{1}, j_{2}, \cdots, j_{k}$ 列 $\left(j_{1} < j_{2} < \cdots<j_{k}\right)$, 则称
+  设 $S$ 的各行位于 $D$ 中第 $i_{1}, i_{2}, \cdots, i_{k}$ 行 $\left(i_{1} < i_{2} < \cdots < i_{k}\right)$, 
+$S$ 的各列位于 $D$ 中第 $j_{1}, j_{2}, \cdots, j_{k}$ 列 $\left(j_{1} < j_{2} < \cdots<j_{k}\right)$, 则称
 $$
 A = (-1)^{\left(i_{1}+i_{2}+\cdots+i_{k}\right)+\left(j_{1}+j_{2}+\cdots+j_{k}\right)} M
 $$
 为 $S$ 的代数余子式.
-\end{definition}
+</p>
 
 
 <p style="text-indent: 2em;">例如, 在四阶行列式
@@ -106,10 +108,10 @@ $$
 
 <p style="text-indent: 2em;">由于从 $n$ 个行中任取 $k$ 行, 共有 $\mathrm{C}_{n}^{k}$ 种取法, 从 $n$ 个列中任取 $k$ 列, 也有 $\mathrm{C}_{n}^{k}$ 种取法, 故 $n$ 阶行列式 $D$ 的 $k (1 \leqslant k \leqslant n)$ 阶子式共有 $(\mathrm{C}_{n}^{k})^{2}$ 个. 而对 $D$ 的每一个子式 $S$, 它的余子式 $M$ 和代数余子式 $A$ 都由 $S$ 惟一确定.
 
-
-\begin{theorem}[拉普拉斯定理]
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：(拉普拉斯定理)</b></font>
 若在行列式 $D$ 中任意取定 $k$ 个行 (列) $(1 \leqslant k \leqslant n-1)$, 则由这 $k$ 个行 (列) 组成的所有 $k$ 阶子式与它们的代数余子式的乘积之和等于 $D$.
-\end{theorem}
+</p>
 
 <p style="text-indent: 2em;">设 $D$ 的某 $k$ 行 (列) 组成的所有 $k$ 阶子式分别为 $S_{1}, S_{2}, \cdots, S_{t}\left(t=\mathrm{C}_{n}^{k}\right)$, 它们相应的代数余子式分别为 $A_{1}, A_{2}, \cdots, A_{t}$, 
 则 $D=S_{1} A_{1}+S_{2} A_{2}+\cdots+S_{t} A_{t}$.
@@ -119,7 +121,8 @@ $$
 <p style="text-indent: 2em;">当 $k=1$ 时, 拉普拉斯定理就是行列式按一行 (列) 展开, 因此拉普拉斯定理是行列式按一行 (列) 展开性质的推广, 它是行列式按某 $k$ 行 (列) 的展开.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 计算
 $$
 D=\left|\begin{array}{lllll}
@@ -130,9 +133,11 @@ D=\left|\begin{array}{lllll}
 0 & 0 & 0 & 1 & 2
 \end{array}\right| .
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 按第 $1, 2$ 行展开, 这两行元共组成 $\mathrm{C}_{5}^{2}=10$ 个二阶子式, 但其中不为 $0$ 的二阶子式只有 $3$ 个, 即
 $$
 S_{1}=\left|\begin{array}{ll}
@@ -170,7 +175,10 @@ $$
 $$
 D=S_{1} A_{1}+S_{2} A_{2}+S_{3} A_{3}=6 .
 $$
-\end{solution}
+</p>
+</div> 
+</p>
+
 
 
 
@@ -223,11 +231,14 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 设分块矩阵 $\boldsymbol{A}=\left(\begin{array}{ll}\boldsymbol{B} & \boldsymbol{O} \\ \boldsymbol{C} & \boldsymbol{D}\end{array}\right)$, 其中 $\boldsymbol{O}$ 是零矩阵, $\boldsymbol{B}$ 和 $\boldsymbol{D}$ 是可逆矩阵, 求 $\boldsymbol{A}^{-1}$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 根据拉普拉斯定理 $\operatorname{det} \boldsymbol{A}=(\operatorname{det} \boldsymbol{B})(\operatorname{det} \boldsymbol{D}) \neq 0$, 所以 $\boldsymbol{A}$ 可逆.
 
 设 $\boldsymbol{A}^{-1}$ 对应的分块矩阵为 $\boldsymbol{A}^{-1}=\left(\begin{array}{cc}\boldsymbol{X}_{1} & \boldsymbol{X}_{2} \\ \boldsymbol{X}_{3} & \boldsymbol{X}_{4}\end{array}\right)$, 其中 $\boldsymbol{X}_{1}$ 与 $\boldsymbol{B}$ 是同型矩阵, $\boldsymbol{X}_{4}$ 与 $\boldsymbol{D}$ 是同型矩阵, 则根据分块矩阵的乘法有
@@ -274,7 +285,10 @@ $$
 -\boldsymbol{D}^{-1} \boldsymbol{CB}^{-1} & \boldsymbol{D}^{-1}
 \end{array}\right).
 $$
-\end{solution}
+</p>
+</div> 
+</p>
+
 
 
 
@@ -307,19 +321,19 @@ $(4)$ $\left|\begin{array}{cccccccc}
     & & &#8944; & & & \ddots & & \\
     & b & & & & & a & \\ 
     b & & & & & & & a \\
-\end{array} \right| \hspace{-10pt} \begin{array}{ll}
+\end{array} \right| \hspace{-5pt} \begin{array}{ll}
 \left.\begin{array}{c}
    \\
    \\
    \\
    \\
-\end{array}\right\} & \hspace{-5pt}\text{$n$\,行}\\
+\end{array}\right\} & \hspace{-5pt}\text{$n$ 行}\\
 \left.\begin{array}{c}
    \\
    \\
    \\
    \\
-\end{array}\right\} & \hspace{-5pt}\text{$n$\,行}
+\end{array}\right\} & \hspace{-5pt}\text{$n$ 行}
 \end{array}$.
 </li>
  
