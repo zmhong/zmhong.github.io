@@ -69,21 +69,21 @@ $m$ 个 $n$ 维向量形成的向量组的线性相关性是就全体 $m$ 个向
 <p style="text-indent: 2em;">从该例可以看出, 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 这两个线性无关向量组中, 如果再添加一个向量进去, 那么它们就变成线性相关的了. 可见它们在该向量组中作为一个线性无关向量组, 所包含的向量个数达到了最多. 为此, 我们引出向量组的秩与极大无关组的概念.
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 设向量组 $T$ 满足
 <br>
 $1^{\circ}$ 在 $T$ 中有 $r$ 个向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关;
 <br>
 $2^{\circ}$ $T$ 中任意 $r+1$ 个向量 (如果 $T$ 中有 $r+1$ 个向量) 都线性相关; 则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是向量组 $T$ 的一个极大线性无关组, 简称为极大无关组, 数 $r$ 称为向量组 $T$ 的秩.
-\end{definition}
+</p>
 
 
 <p style="text-indent: 2em;">规定, 只含零向量的向量组的秩为零.
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $1$：</b></font>
-求向量组 $\boldsymbol{\alpha}_{1}=(2,1,3,-1), \boldsymbol{\alpha}_{2}=(3,-1,2,0), \boldsymbol{\alpha}_{3}=(1,3,4,-2), \boldsymbol{\alpha}_{4}=(4,-3, 1,1)$
-的秩和一个极大无关组.
+求向量组 $\boldsymbol{\alpha}_{1}=(2,1,3,-1)$, $\boldsymbol{\alpha}_{2}=(3,-1,2,0)$, $\boldsymbol{\alpha}_{3}=(1,3,4,-2)$, $\boldsymbol{\alpha}_{4}=(4,-3, 1,1)$ 的秩和一个极大无关组.
 <input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
 <input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
 <div id= "divIDexample1" style= "display:none"> 
@@ -119,7 +119,7 @@ $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$; $\boldsymbol{\alpha}_{3}, \b
 <p style="text-indent: 2em;">由定义易知, 一个向量组若线性无关, 则其极大无关组就是它本身, 秩就是向量组中向量的个数. 从而, 我们有
 
 <center>
-<b>向量组线性无关 (相关) $\Leftrightarrow$ 向量组的秩等于 (小于) 向量组所含向量的个数.</b>
+<font color=blue><b>向量组线性无关 (相关) $\Leftrightarrow$ 向量组的秩等于 (小于) 向量组所含向量的个数.</b></font>
 </center>
 
 
@@ -144,7 +144,7 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 <font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 任取 $\boldsymbol{A}$ 的 $k(1 \leqslant k \leqslant n)$ 个列向量得矩阵 $\boldsymbol{A}_{k}, \boldsymbol{A}_{k}$ 经有限次行初等变换后化为 $\boldsymbol{B}_k$.
 由于行初等变换保持齐次线性方程组同解, 因而齐次线性方程组 $\boldsymbol{A}_{k} \boldsymbol{X}=\mathbf{0}$ 与 $\boldsymbol{B}_{k} \boldsymbol{X}=\mathbf{0}$ 同时具有非零解或只有零解.
-故由 $\S 3.2$ 的定理 $2$ 知, $\boldsymbol{A}_{k}$ 的列 向量组与 $\boldsymbol{B}_k$ 的列向量组有相同的线性相关性.
+故由 $\S 3.2$ 的定理 $2$ 知, $\boldsymbol{A}_{k}$ 的列向量组与 $\boldsymbol{B}_k$ 的列向量组有相同的线性相关性.
 </p>
 </div>
 </p>
@@ -169,12 +169,12 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 <font color=red><b>证明：</b></font>
 设 $R(\boldsymbol{A})=r$,
 $$
-\boldsymbol{A} \xrightarrow[]{\,\,\text{\small 行初等变换}\,\,} \boldsymbol{B}\,\,\text{(行阶梯形矩阵)}, 
+\boldsymbol{A} \xrightarrow[]{\,\,\text{行初等变换}\,\,} \boldsymbol{B}\,\,\text{(行阶梯形矩阵)}, 
 $$
-则$\boldsymbol{B}$中有且仅有 $r$ 个非零行, 由$\S 3.2$ 的定理 $2$  及定义知, $\boldsymbol{B}$ 的$r$个非零行的非零首元所在$r$个列向量是线性无关的,
-且为$\boldsymbol{B}$的列向量组的一个极大无关组. 根据定理 $1$, $\boldsymbol{A}$中与这 $r$ 个列向量相对应的 $r$ 个列向量也是 $\boldsymbol{A}$ 的列向量组的一个极大无关组. 故 $\boldsymbol{A}$ 的列秩等于r.
+则 $\boldsymbol{B}$ 中有且仅有 $r$ 个非零行, 由 $\S 3.2$ 的定理 $2$  及定义知, $\boldsymbol{B}$ 的 $r$ 个非零行的非零首元所在 $r$ 个列向量是线性无关的,
+且为 $\boldsymbol{B}$ 的列向量组的一个极大无关组. 根据定理 $1$, $\boldsymbol{A}$中与这 $r$ 个列向量相对应的 $r$ 个列向量也是 $\boldsymbol{A}$ 的列向量组的一个极大无关组. 故 $\boldsymbol{A}$ 的列秩等于 $r$.
 <br>
-$\boldsymbol{A}$的行向量即$\boldsymbol{A}^{\mathrm{T}}$的列向量, 于是由 $R(\boldsymbol{A}^{\mathrm{T}}) =R(\boldsymbol{A})$知, $\boldsymbol{A}$的行秩也等于$r$.
+$\quad$ $\boldsymbol{A}$ 的行向量即 $\boldsymbol{A}^{\mathrm{T}}$ 的列向量, 于是由 $R(\boldsymbol{A}^{\mathrm{T}}) =R(\boldsymbol{A})$ 知, $\boldsymbol{A}$ 的行秩也等于 $r$.
 </p>
 </div>
 </p>
@@ -214,7 +214,10 @@ $$
 所以 $R(\boldsymbol{A})=2$, 即 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的秩为 $2$,
 因而 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 
 且由定理 $2$ 的证明知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的一个极大无关组. 
-\end{solution}
+</p>
+</div>
+</p>
+
 
 
 
@@ -268,7 +271,9 @@ $$
 $$
 \boldsymbol{\alpha}_{3}=\frac{1}{2} \boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \quad \boldsymbol{\alpha}_{4}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}.
 $$
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
@@ -468,7 +473,7 @@ $$
 设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}} \neq \mathbf{0}$, 则 $\boldsymbol{\alpha}$ 张成一个一维子空间 $L(\boldsymbol{\alpha})=\{k \boldsymbol{\alpha} \mid k \in \mathbf{R}\}$.
 一向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha})$ 的充要条件是点 $(a, b, c)$ 在由坐标原点 $(0,0,0)$ 和点 $\left(x_{1}, x_{2}, x_{3}\right)$ 决定的直线上. 因此, $\mathbf{R}^{3}$ 的一维子空间可用过坐标原点的一直线表示.
 <br> 
-设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}}, \boldsymbol{\beta}=\left(y_{1}, y_{2}, y_{3}\right)^{\mathrm{T}}$ 线性无关, 则
+$\quad$ 设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}}, \boldsymbol{\beta}=\left(y_{1}, y_{2}, y_{3}\right)^{\mathrm{T}}$ 线性无关, 则
 $$
 L(\boldsymbol{\alpha}, \boldsymbol{\beta})=\left\{k_{1} \boldsymbol{\alpha}+k_{2} \boldsymbol{\beta} \mid k_{1}, k_{2} \in \mathbf{R}\right\}
 $$
@@ -530,7 +535,7 @@ $$
 这就是向量 $\boldsymbol{\alpha}$ 在两组基下的坐标变换公式.
 
 
-<p style="text-indent: 2em;">例如, 在 $\mathbf{R}^{3}$ 中, 从基 $\boldsymbol{\varepsilon}_{1}$, $\boldsymbol{\varepsilon}_{2}$, $\boldsymbol{\varepsilon}_{3}$ 到基 $\boldsymbol{\alpha}_{1}=(-1,-2,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}=(-2,-1,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{3}= (3,2,-3)^{\mathrm{T}}$ 的过渡矩阵为 $\left(\begin{array}{ccc}-1 & -2 & 3 \\ -2 & -1 & 2 \\ 2 & 2 & -3\end{array}\right)$.
+<p style="text-indent: 2em;">例如, 在 $\mathbf{R}^{3}$ 中, 从基 $\boldsymbol{\varepsilon}_{1}$, $\boldsymbol{\varepsilon}_{2}$, $\boldsymbol{\varepsilon}_{3}$ 到基 $\boldsymbol{\alpha}_{1}=(-1,-2,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}=(-2,-1,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{3}= (3,2,-3)^{\mathrm{T}}$ 的过渡矩阵为 $$\left(\begin{array}{ccc}-1 & -2 & 3 \\ -2 & -1 & 2 \\ 2 & 2 & -3\end{array}\right).$$
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -554,7 +559,8 @@ $$
 $$
 $$
 \begin{aligned}
-\boldsymbol{A}&=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}\right)^{-1}\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}\right)=\left(\begin{array}{ccc}
+\boldsymbol{A}&=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}\right)^{-1}\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}\right)\\
+&=\left(\begin{array}{ccc}
 -1 & -2 & 3 \\
 -2 & -1 & 2 \\
 2 & 2 & -3
