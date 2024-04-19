@@ -80,12 +80,15 @@ $2^{\circ}$ $T$ 中任意 $r+1$ 个向量 (如果 $T$ 中有 $r+1$ 个向量) �
 
 <p style="text-indent: 2em;">规定, 只含零向量的向量组的秩为零.
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 求向量组 $\boldsymbol{\alpha}_{1}=(2,1,3,-1), \boldsymbol{\alpha}_{2}=(3,-1,2,0), \boldsymbol{\alpha}_{3}=(1,3,4,-2), \boldsymbol{\alpha}_{4}=(4,-3, 1,1)$
 的秩和一个极大无关组.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 显然 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 而
 $$
 \boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}^{\mathrm{T}}, \boldsymbol{\alpha}_{2}^{\mathrm{T}}, \boldsymbol{\alpha}_{3}^{\mathrm{T}}\right)=\left(\begin{array}{ccc}
@@ -106,7 +109,9 @@ $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 也�
 故 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 的一个极大无关组, 秩为 $2$.
 此外, 由同样方法可知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{3}$; $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{4}$; $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$;
 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$; $\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 分别也都是向量组的极大无关组.
-\end{solution}
+</p>
+</div>
+</p>
 
 <p style="text-indent: 2em;">我们知道矩阵的最高阶非零子式可能不止一个, 但矩阵的秩是惟一的; 类似地, 由定 义及例 $1$ 知, 向量组的极大无关组也可能不止一个, 但向量组的秩是惟一的.
 
@@ -119,9 +124,10 @@ $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$; $\boldsymbol{\alpha}_{3}, \b
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量均为 $\mathbf{R}^{n}$ 的一个极大无关组.
-\end{example}
+</p>
 
 
 <p style="text-indent: 2em;">事实上, 因为任意 $n+1$ 个 $n$ 维向量必线性相关, 所以任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一个极大无关组.
@@ -166,12 +172,14 @@ $\boldsymbol{A}$的行向量即$\boldsymbol{A}^{\mathrm{T}}$的列向量, 于是
 <p style="text-indent: 2em;">值得注意的是, 定理 $2$ 的证明实际上还给出了如何方便地利用行初等变换求出向量组的秩和极大无关组的方法.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 设向量组 $\boldsymbol{\alpha}_{1}=(1,3,1,4), \boldsymbol{\alpha}_{2}=(2,12,-2,12), \boldsymbol{\alpha}_{3}=$ $(2,-3,8,2)$, 求向量组的秩和一个极大无关组, 并判断向量组的线性相关性.
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 $$
 \begin{aligned}
 \boldsymbol{A} &=\left(\boldsymbol{\alpha}_{1}^{\mathrm{T}}, \boldsymbol{\alpha}_{2}^{\mathrm{T}}, \boldsymbol{\alpha}_{3}^{\mathrm{T}}\right)=\left(\begin{array}{ccc}
@@ -200,16 +208,18 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 求向量组
 $$
 \boldsymbol{\alpha}_{1}=(2,4,2), \quad \boldsymbol{\alpha}_{2}=(1,1,0), \quad \boldsymbol{\alpha}_{3}=(2,3,1), \quad \boldsymbol{\alpha}_{4}=(3,5,2)
 $$
 的秩和一个极大无关组, 判断向量组的线性相关性, 并把其余向量用该极大无关组线性表出.
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 作
 $$
 \begin{aligned}
@@ -252,16 +262,20 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 设数 $a \neq b$, 求 $(1,2), (1, a), (1, b)$ 的一个极大无关组.
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 这三个二维向量一定线性相关. 又因为 $a \neq b$, 所以 $\left|\begin{array}{ll}1 & 1 \\ a & b\end{array}\right| \neq 0$,
 从而 $\left(\begin{array}{l}1 \\ a\end{array}\right)$, $\left(\begin{array}{l}1 \\ b\end{array}\right)$ 线性无关.
 因而该向量组的秩为 $2,\left(\begin{array}{l}1 \\ a\end{array}\right),\left(\begin{array}{l}1 \\ b\end{array}\right)$ 为一个极大无关组.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
@@ -330,15 +344,17 @@ $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{
 <p style="text-indent: 2em;">定理 $2$ 告诉我们, 矩阵的秩和向量组的秩有着本质的联系, 因而关于二者的问题常常相互转化. 例如, 对于如下关于矩阵秩的重要不等式, 我们用向量组的理论可以容易地加以证明.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 设 $\boldsymbol{A}, \boldsymbol{B}$ 分别为 $m \times r, r \times n$ 矩阵, 证明
 $$
 R(\boldsymbol{A} \boldsymbol{B}) \leqslant \min \{R(\boldsymbol{A}), R(\boldsymbol{B})\} .
 $$
-\end{example}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=#FF5809><b>证明：</b></font>
 设 $\boldsymbol{C}_{m \times n}=\boldsymbol{A}_{m \times r} \boldsymbol{B}_{r \times n}$, 即
 $$
 \left(\boldsymbol{c}_{1}, \cdots, \boldsymbol{c}_{k}, \cdots, \boldsymbol{c}_{n}\right)=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}\right)\left(\begin{array}{ccccc}
@@ -359,7 +375,9 @@ $$
 R(\boldsymbol{C})=R\left(\boldsymbol{C}^{\mathrm{T}}\right)=R\left(\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}\right) \leqslant R\left(\boldsymbol{B}^{\mathrm{T}}\right)=R(\boldsymbol{B}) .
 $$
 故 $R(\boldsymbol{A B}) \leqslant \min \{R(\boldsymbol{A}), R(\boldsymbol{B})\}$.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 
@@ -423,7 +441,8 @@ $$
 <p style="text-indent: 2em;">基是能张成空间的 “最小” 向量组, 也是 “最大” 的线性无关组.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}} \neq \mathbf{0}$, 则 $\boldsymbol{\alpha}$ 张成一个一维子空间 $L(\boldsymbol{\alpha})=\{k \boldsymbol{\alpha} \mid k \in \mathbf{R}\}$.
 一向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha})$ 的充要条件是点 $(a, b, c)$ 在由坐标原点 $(0,0,0)$ 和点 $\left(x_{1}, x_{2}, x_{3}\right)$ 决定的直线上. 因此, $\mathbf{R}^{3}$ 的一维子空间可用过坐标原点的一直线表示.
 <br> 
@@ -432,12 +451,13 @@ $$
 L(\boldsymbol{\alpha}, \boldsymbol{\beta})=\left\{k_{1} \boldsymbol{\alpha}+k_{2} \boldsymbol{\beta} \mid k_{1}, k_{2} \in \mathbf{R}\right\}
 $$
 是 $\mathbf{R}^{3}$ 的二维子空间. 向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 的充要条件是点 $(a, b, c)$ 位于由点 $(0,0,0)$, $\left(x_{1}, x_{2}, x_{3}\right)$ 和 $\left(y_{1}, y_{2}, y_{3}\right)$ 决定的平面上. 因此, $\mathbf{R}^{3}$ 的二维子空间可表为一过原点的平面.
-\end{example}
+</p>
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
 对于 $\S 3.2$ 的例 $5$ 中的向量, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为 $\mathbf{R}^{3}$ 的一组基, $\boldsymbol{\beta}$ 在该基下的坐标为 $(1,2,-1)$.
-\end{example}
+</p>
 
 <p style="text-indent: 2em;">任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一组基, 不同的基之间有什么关系呢? 同 一向量在不同基下的坐标一般是不相同的, 它们之间的关系又是怎样的呢? 这就是所谓 的基变换和坐标变换的问题.
 
@@ -491,7 +511,8 @@ $$
 <p style="text-indent: 2em;">例如, 在 $\mathbf{R}^{3}$ 中, 从基 $\boldsymbol{\varepsilon}_{1}$, $\boldsymbol{\varepsilon}_{2}$, $\boldsymbol{\varepsilon}_{3}$ 到基 $\boldsymbol{\alpha}_{1}=(-1,-2,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}=(-2,-1,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{3}= (3,2,-3)^{\mathrm{T}}$ 的过渡矩阵为 $\left(\begin{array}{ccc}-1 & -2 & 3 \\ -2 & -1 & 2 \\ 2 & 2 & -3\end{array}\right)$.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $9$：</b></font>
 在 $\mathbf{R}^{3}$ 中取两组基
 $$
 \begin{gathered}
@@ -500,10 +521,11 @@ $$
 \end{gathered}
 $$
 求从基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 到基 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 的过渡矩阵.
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 设 $\boldsymbol{A}$ 是从 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 到 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 的过渡矩阵. 则
 $$
 \left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}\right)=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}\right) \boldsymbol{A},
@@ -534,7 +556,9 @@ $$
 \end{array}\right).
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
