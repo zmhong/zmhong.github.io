@@ -574,20 +574,20 @@ x_{1}-x_{2}-2 x_{3}+2 x_{4}=&-\frac{1}{2},
 \begin{solution}
 $$
 \begin{aligned}
-\overline{\boldsymbol{A}} &=\left(\begin{array}{cccc;{2pt/2pt}c}
+\overline{\boldsymbol{A}} &=\left(\begin{array}{cccc:c}
 1 & -1 & 1 & -1 & 1 \\
 1 & -1 & -1 & 1 & 0 \\
 1 & -1 & -2 & 2 & -\frac{1}{2}
-\end{array}\right) \rightarrow\left(\begin{array}{cccc;{2pt/2pt}c}
+\end{array}\right) \rightarrow\left(\begin{array}{cccc:c}
 1 & -1 & 1 & -1 & 1 \\
 0 & 0 & -2 & 2 & -1 \\
 0 & 0 & -3 & 3 & -\frac{3}{2}
 \end{array}\right) \\
-& \rightarrow\left(\begin{array}{cccc;{2pt/2pt}c}
+& \rightarrow\left(\begin{array}{cccc:c}
 1 & -1 & 1 & -1 & 1 \\
 0 & 0 & 1 & -1 & \frac{1}{2} \\
 0 & 0 & 0 & 0 & 0
-\end{array}\right) \rightarrow\left(\begin{array}{cccc;{2pt/2pt}c}
+\end{array}\right) \rightarrow\left(\begin{array}{cccc:c}
 1 & -1 & 0 & 0 & \frac{1}{2} \\
 0 & 0 & 1 & -1 & \frac{1}{2} \\
 0 & 0 & 0 & 0 & 0
@@ -626,36 +626,36 @@ $$
 
 \begin{solution}
 \begin{align}\label{eq:3.13}
-\overline{\boldsymbol{A}} &=\left(\begin{array}{ccc;{2pt/2pt}c}
+\overline{\boldsymbol{A}} &=\left(\begin{array}{ccc:c}
 \lambda & 1 & 1 & 1 \\
 1 & \lambda & 1 & \lambda \\
 1 & 1 & \lambda & \lambda^{2}
-\end{array}\right) \rightarrow\left(\begin{array}{ccc;{2pt/2pt}c}
+\end{array}\right) \rightarrow\left(\begin{array}{ccc:c}
 1 & 1 & \lambda & \lambda^{2} \\
 1 & \lambda & 1 & \lambda \\
 \lambda & 1 & 1 & 1
 \end{array}\right) \nonumber\\
-& \rightarrow\left(\begin{array}{ccc;{2pt/2pt}c}
+& \rightarrow\left(\begin{array}{ccc:c}
 1 & 1 & \lambda & \lambda^{2} \\
 0 & \lambda-1 & 1-\lambda & \lambda(1-\lambda) \\
 0 & 1-\lambda & 1-\lambda^{2} & 1-\lambda^{3}
 \end{array}\right) \nonumber\\
-& \rightarrow\left(\begin{array}{ccc;{2pt/2pt}c}
+& \rightarrow\left(\begin{array}{ccc:c}
 1 & 1 & \lambda & \lambda^2 \\
 0 & \lambda-1 & 1-\lambda & \lambda(1-\lambda) \\
 0 & 0 & 2-\lambda-\lambda^{2} & 1-\lambda^{2}+\lambda-\lambda^{3}
 \end{array}\right) \nonumber\\
-& \rightarrow\left(\begin{array}{ccc;{2pt/2pt}c}
+& \rightarrow\left(\begin{array}{ccc:c}
 1 & 1 & \lambda & \lambda^2 \\
 0 & \lambda-1 & 1-\lambda & \lambda(1-\lambda) \\
 0 & 0 & (1-\lambda)(\lambda+2) & (1+\lambda)^{2}(1-\lambda)
 \end{array}\right).
 \end{align}
 
-
-(1) 当 $\lambda=1$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=1<n=3$, 有无穷多解. 此时
+<br>
+(1) 当 $\lambda=1$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=1 < n=3$, 有无穷多解. 此时
 $$
-\overline{\boldsymbol{A}} \rightarrow\left(\begin{array}{ccc;{2pt/2pt}c}
+\overline{\boldsymbol{A}} \rightarrow\left(\begin{array}{ccc:c}
 1 & 1 & 1 & 1 \\
 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0
@@ -666,9 +666,9 @@ $$
 \boldsymbol{\xi}_{1}=(-1,1,0)^{\mathrm{T}}, \quad \boldsymbol{\xi}_{2}=(-1,0,1)^{\mathrm{T}} .
 $$
 取 $x_{2}=x_{3}=0$ 得非齐次线性方程组的特解 $\boldsymbol{\gamma}_{0}=(1,0,0)^{\mathrm{T}}$, 故原方程组的通解为 $\boldsymbol{X}=$ $\boldsymbol{\gamma}_{0}+k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}, k_{1}, k_{2}$ 为任意数.
-
+<br>
 (2) 当 $\lambda=-2$ 时, $R(\boldsymbol{A})=2 \neq R(\overline{\boldsymbol{A}})=3$, 无解.
-
+<br>
 (3) 当 $\lambda \neq 1,-2$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=3=n$, 所以有惟一解. 此时由式 $(\ref{eq:3.13})$ 直接得
 $$
 \left\{\begin{aligned}
@@ -716,7 +716,7 @@ a_{n 1} x_{1}+a_{n 2} x_{2}+\cdots+a_{n n} x_{n}=b_{n}
 \begin{solution}
 增广矩阵
 $$
-\overline{\boldsymbol{A}}=\left(\begin{array}{cccc;{2pt/2pt}c}
+\overline{\boldsymbol{A}}=\left(\begin{array}{cccc:c}
 a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\
 a_{21} & a_{22} & \cdots & a_{2 n} & b_{2} \\
 \vdots & \vdots & & \vdots & \vdots \\
@@ -758,12 +758,12 @@ $$
 \boldsymbol{A}=\left(\begin{array}{lll}
 a_{1} & b_{1} & c_{1} \\
 a_{2} & b_{2} & c_{2}
-\end{array}\right), \quad \overline{\boldsymbol{A}}=\left(\begin{array}{ccc;{2pt/2pt}c}
+\end{array}\right), \quad \overline{\boldsymbol{A}}=\left(\begin{array}{ccc:c}
 a_{1} & b_{1} & c_{1} & d_{1} \\
 a_{2} & b_{2} & c_{2} & d_{2}
 \end{array}\right).
 $$
-当 $R(\boldsymbol{A})=2$ 时, 非齐次线性方程组有解, 但 $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2<n=3$, 因而有无穷多解. 所以两平面相交于一直线;
+当 $R(\boldsymbol{A})=2$ 时, 非齐次线性方程组有解, 但 $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2 < n=3$, 因而有无穷多解. 所以两平面相交于一直线;
 
 当 $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=2$ 时, 非齐次线性方程组无解, 所以两平面平行;
 
@@ -792,43 +792,50 @@ $$
 a_{1} & b_{1} & c_{1} \\
 a_{2} & b_{2} & c_{2} \\
 a_{3} & b_{3} & c_{3}
-\end{array}\right), \quad \overline{\boldsymbol{A}}=\left(\begin{array}{ccc;{2pt/2pt}c}
+\end{array}\right), \quad \overline{\boldsymbol{A}}=\left(\begin{array}{ccc:c}
 a_{1} & b_{1} & c_{1} & d_{1} \\
 a_{2} & b_{2} & c_{2} & d_{2} \\
 a_{3} & b_{3} & c_{3} & d_{3}
 \end{array}\right).
 $$
 现在我们利用向量组的线性相关性及线性方程组的理论来讨论这三个平面的位置关系.
-
+<br>
 1. $R(\boldsymbol{A})=3$.
-
+<br>
 这时 $R(\overline{\boldsymbol{A}})=3$, 根据克拉默法则知, 上面方程组有惟一解, 所以三个平面交于一点 (见图 \ref{fig:3.8} (a)).
 
-
+<br>
 2. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=3$.
-
-此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=2$, 所以 $\boldsymbol{A}$ 的三个行向量 $a_{1}, a_{2}, a_{3}$ (它们也是三个平面的法向量) 线性相关, 即存在不全为零的实数 $k_{1}, k_{2}, k_{3}$, 使 得 $k_{1} a_{1}+k_{2} a_{2}+k_{3} a_{3}=0$. 当 $k_{1}, k_{2}, k_{3}$ 都不为零时, 有 $a_{i} \times a_{j} \neq 0(i \neq j)$, 即任意两个 平面相交, 且由
+<br>
+此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=2$, 所以 $\boldsymbol{A}$ 的三个行向量 $a_{1}, a_{2}, a_{3}$ (它们也是三个平面的法向量) 线性相关,
+即存在不全为零的实数 $k_{1}, k_{2}, k_{3}$, 使得 $k_{1} a_{1}+k_{2} a_{2}+k_{3} a_{3}=0$. 当 $k_{1}, k_{2}, k_{3}$ 都不为零时, 有 $a_{i} \times a_{j} \neq 0(i \neq j)$, 即任意两个平面相交, 且由
 $$
 a_{1} \cdot\left(a_{2} \times a_{3}\right)=\left[\begin{array}{lll}
 a_{1} & a_{2} & a_{3}
 \end{array}\right]=\operatorname{det} \boldsymbol{A}=0
 $$
-知 $\pi_{2}$ 和 $\pi_{3}$ 的交线与 $\pi_{1}$ 平行. 同理可知, $\pi_{1}$ 和 $\pi_{3}$ 的交线与 $\pi_{2}$ 平行; $\pi_{1}$ 和 $\pi_{2}$ 的交线与 $\pi_{3}$ 平行. 因此三个平面形成一个三棱柱 (见图 \ref{fig:3.8} (b)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三个平面中有两个平面平行, 另一平面与这两个平面相交 (见图 \ref{fig:3.8} (c)).
+知 $\pi_{2}$ 和 $\pi_{3}$ 的交线与 $\pi_{1}$ 平行. 同理可知, $\pi_{1}$ 和 $\pi_{3}$ 的交线与 $\pi_{2}$ 平行; $\pi_{1}$ 和 $\pi_{2}$ 的交线与 $\pi_{3}$ 平行.
+因此三个平面形成一个三棱柱 (见图 \ref{fig:3.8} (b)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三个平面中有两个平面平行, 另一平面与这两个平面相交 (见图 \ref{fig:3.8} (c)).
 
-
+<br>
 3. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=2$.
+<br>
+这时方程组有解, 且解里仅含一个参数, 故三个平面相交于一条直线. 又因为 $R(\overline{\boldsymbol{A}})= 2$, 
+所以 $\overline{\boldsymbol{A}}$ 的三个行向量 $\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \boldsymbol{b}_{3}$ 线性相关, 
+即存在不全为零的实数 $k_{1}, k_{2}, k_{3}$, 使得 $k_{1} b_{1}+k_{2} b_{2}+k_{3} b_{3}=0$. 当 $k_{1}, k_{2}, k_{3}$ 都不为零时,
+三个平面互异 (见图 \ref{fig:3.8} (d)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三平面中有两个平面重合 (见图 \ref{fig:3.8} (e)).
 
-这时方程组有解, 且解里仅含一个参数, 故三个平面相交于一条直线. 又因为 $R(\overline{\boldsymbol{A}})=$ 2 , 所以 $\overline{\boldsymbol{A}}$ 的三个行向量 $\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \boldsymbol{b}_{3}$ 线性相关, 即存在不全为零的实数 $k_{1}, k_{2}, k_{3}$, 使得 $k_{1} b_{1}+k_{2} b_{2}+k_{3} b_{3}=0$. 当 $k_{1}, k_{2}, k_{3}$ 都不为零时, 三个平面互异 (见图 \ref{fig:3.8} (d)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三平面中有两个平面重合 (见图 \ref{fig:3.8} (e)).
-
-
+<br>
 4. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=2$.
+<br>
+此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=1$, 所以三个平面平行; 
+而由 $R(\overline{\boldsymbol{A}})=2$ 知三个平面中至少有两个平面互异. 即三个平面平行, 并且互异 (见图 \ref{fig:3.8} (f)); 或三个平面平行, 
+其中有两个平面重合 (见图 \ref{fig:3.8} (g)).
 
-此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=1$, 所以三个平面平行; 而由 $R(\overline{\boldsymbol{A}})=2$ 知三个平面中至少有两个平面互异. 即三个平面平行, 并且互异 (见图 \ref{fig:3.8} (f)); 或三个平面平行, 其中有两个平面重合 (见图 \ref{fig:3.8} (g)).
-
-
+<br>
 5. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=1$.
-
-这时方程组有解, 且解里含两个参数, 故这些解所对应的点必在一个平面内, 即三个 平面重合 (见图 \ref{fig:3.8} (h)).
+<br>
+这时方程组有解, 且解里含两个参数, 故这些解所对应的点必在一个平面内, 即三个平面重合 (见图 \ref{fig:3.8} (h)).
 
 三个平面总共有上述八种不同的位置.
 \end{solution}
