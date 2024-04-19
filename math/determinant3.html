@@ -45,12 +45,10 @@ $2.3$ 拉普拉斯定理
 <h2><a name="C0"><strong>目录:</strong></a><br></h2>
 
 <ul>
-<li><a href="https://zmhong.github.io/math/linearalgebra.html">返回主页</a></li>
-<li><a href="#C1">2.3.1 拉普拉斯定理</a></li>
-<li><a href="#C2">2.3.2 拉普拉斯定理的应用</a></li>
-<li><a href="#C3">2.3.3 </a></li>
-<li><a href="#C4">2.3.4 </a></li>
-<li><a href="#C5">2.3.5 </a></li>
+<li><a href="https://zmhong.github.io/math/linearalgebra.html" style="text-decoration:none">返回主页</a></li>
+<li><a href="#C1" style="text-decoration:none">2.3.1 拉普拉斯定理</a></li>
+<li><a href="#C2" style="text-decoration:none">2.3.2 拉普拉斯定理的应用</a></li>
+<li><a href="#C3" style="text-decoration:none">习题 2.3</a></li>
 </ul>
 
 
@@ -61,7 +59,118 @@ $2.3$ 拉普拉斯定理
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">拉普拉斯 (Laplace) 定理是行列式按一行 (列) 展开的推广. 下面我们先将余子式与代数余子式的概念加以推广.
+
+
+\begin{definition}
+在 $n$ 阶行列式 $D$ 中, 任取 $k$ 行、 $k$ 列 $(1 \leqslant k \leqslant n)$, 位于这 $k$ 行、 $k$ 列的交点上的 $k^{2}$ 个元按原来的相对位置组成的 $k$ 阶行列式 $S$, 称为 $D$ 的一个 $k$ 阶子式. 在 $D$ 中划去 $S$ 所在的 $k$ 行与 $k$ 列, 余下的元按原来的相对位置组成的 $n-k$ 阶行列式 $M$ 称为 $S$ 的余子式.  设 $S$ 的各行位于 $D$ 中第 $i_{1}, i_{2}, \cdots, i_{k}$ 行 $\left(i_{1}<i_{2}<\cdots<i_{k}\right), S$ 的各列位于 $D$ 中第 $j_{1}, j_{2}, \cdots, j_{k}$ 列 $\left(j_{1}<j_{2}<\cdots<j_{k}\right)$, 则称
+$$
+A = (-1)^{\left(i_{1}+i_{2}+\cdots+i_{k}\right)+\left(j_{1}+j_{2}+\cdots+j_{k}\right)} M
+$$
+为 $S$ 的代数余子式.
+\end{definition}
+
+
+<p style="text-indent: 2em;">例如, 在四阶行列式
+$$
+D=\left|\begin{array}{llll}
+1 & 2 & 1 & 4 \\
+3 & 1 & 4 & 4 \\
+0 & 0 & 2 & 1 \\
+1 & 1 & 1 & 4
+\end{array}\right|
+$$
+中选取第 $1, 3$ 行, 第 $2, 4$ 列得一个二阶子式
+$$
+S=\left|\begin{array}{ll}
+2 & 4 \\
+0 & 1
+\end{array}\right|=2,
+$$
+$S$ 的余子式为
+$$
+M=\left|\begin{array}{ll}
+3 & 4 \\
+1 & 1
+\end{array}\right|=-1,
+$$
+$S$ 的代数余子式为
+$$
+A=(-1)^{(1+3)+(2+4)} M=\left|\begin{array}{ll}
+3 & 4 \\
+1 & 1
+\end{array}\right|=-1.
+$$
+
+<p style="text-indent: 2em;">由于从 $n$ 个行中任取 $k$ 行, 共有 $\mathrm{C}_{n}^{k}$ 种取法, 从 $n$ 个列中任取 $k$ 列, 也有 $\mathrm{C}_{n}^{k}$ 种取法, 故 $n$ 阶行列式 $D$ 的 $k (1 \leqslant k \leqslant n)$ 阶子式共有 $(\mathrm{C}_{n}^{k})^{2}$ 个. 而对 $D$ 的每一个子式 $S$, 它的余子式 $M$ 和代数余子式 $A$ 都由 $S$ 惟一确定.
+
+
+\begin{theorem}[拉普拉斯定理]
+若在行列式 $D$ 中任意取定 $k$ 个行 (列) $(1 \leqslant k \leqslant n-1)$, 则由这 $k$ 个行 (列) 组成的所有 $k$ 阶子式与它们的代数余子式的乘积之和等于 $D$.
+\end{theorem}
+
+<p style="text-indent: 2em;">设 $D$ 的某 $k$ 行 (列) 组成的所有 $k$ 阶子式分别为 $S_{1}, S_{2}, \cdots, S_{t}\left(t=\mathrm{C}_{n}^{k}\right)$, 它们相应的代数余子式分别为 $A_{1}, A_{2}, \cdots, A_{t}$, 
+则 $D=S_{1} A_{1}+S_{2} A_{2}+\cdots+S_{t} A_{t}$.
+
+
+
+<p style="text-indent: 2em;">当 $k=1$ 时, 拉普拉斯定理就是行列式按一行 (列) 展开, 因此拉普拉斯定理是行列式按一行 (列) 展开性质的推广, 它是行列式按某 $k$ 行 (列) 的展开.
+
+
+\begin{example}
+计算
+$$
+D=\left|\begin{array}{lllll}
+2 & 1 & 0 & 0 & 0 \\
+1 & 2 & 1 & 0 & 0 \\
+0 & 1 & 2 & 1 & 0 \\
+0 & 0 & 1 & 2 & 1 \\
+0 & 0 & 0 & 1 & 2
+\end{array}\right| .
+$$
+\end{example}
+
+\begin{solution}
+按第 $1, 2$ 行展开, 这两行元共组成 $\mathrm{C}_{5}^{2}=10$ 个二阶子式, 但其中不为 $0$ 的二阶子式只有 $3$ 个, 即
+$$
+S_{1}=\left|\begin{array}{ll}
+2 & 1 \\
+1 & 2
+\end{array}\right|=3, \quad S_{2}=\left|\begin{array}{ll}
+2 & 0 \\
+1 & 1
+\end{array}\right|=2, \quad S_{3}=\left|\begin{array}{ll}
+1 & 0 \\
+2 & 1
+\end{array}\right|=1,
+$$
+它们对应的代数余子式为
+$$
+\begin{aligned}
+&A_{1}=(-1)^{(1+2)+(1+2)}\left|\begin{array}{lll}
+2 & 1 & 0 \\
+1 & 2 & 1 \\
+0 & 1 & 2
+\end{array}\right|=4, \\
+&A_{2}=(-1)^{(1+2)+(1+3)}\left|\begin{array}{lll}
+1 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 1 & 2
+\end{array}\right|=-3, \\
+&A_{3}=(-1)^{(1+2)+(2+3)}\left|\begin{array}{lll}
+0 & 1 & 0 \\
+0 & 2 & 1 \\
+0 & 1 & 2
+\end{array}\right|=0,
+\end{aligned}
+$$
+故由拉普拉斯定理
+$$
+D=S_{1} A_{1}+S_{2} A_{2}+S_{3} A_{3}=6 .
+$$
+\end{solution}
+
+
 
 
 
@@ -76,7 +185,95 @@ $2.3$ 拉普拉斯定理
 
 <ul>
 
-<p style="text-indent: 2em;">
+<p style="text-indent: 2em;">由拉普拉斯定理可得下列常用结果: 分块下三角形矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{cc}
+\boldsymbol{B}_{m \times m} & \boldsymbol{O} \\
+* & \boldsymbol{C}_{n \times n}
+\end{array}\right)
+$$
+或分块上三角形矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{cc}
+\boldsymbol{B}_{m \times m} & * \\
+\boldsymbol{O} & \boldsymbol{C}_{n \times n}
+\end{array}\right)
+$$
+的行列式 $\operatorname{det} \boldsymbol{A}=(\operatorname{det} \boldsymbol{B})(\operatorname{det} \boldsymbol{C})$.
+
+<p style="text-indent: 2em;">事实上, 对于
+$$
+\boldsymbol{A}=\left(\begin{array}{cc}
+\boldsymbol{B}_{m \times m} & \boldsymbol{O} \\
+* & \boldsymbol{C}_{n \times n}
+\end{array}\right),
+$$
+在 $\operatorname{det} \boldsymbol{A}$ 的前 $m$ 行的所有 $m$ 阶子式中, 只有一个可能不为零, 故由拉普拉斯定理, 按前 $m$ 行展开, 易知 $\operatorname{det} \boldsymbol{A}=(\operatorname{det} \boldsymbol{B})(\operatorname{det} \boldsymbol{C})$ 成立. 同理, 对于
+$$
+\boldsymbol{A}=\left(\begin{array}{cc}
+\boldsymbol{B}_{m \times m} & * \\
+\boldsymbol{O} & \boldsymbol{C}_{n \times n}
+\end{array}\right),
+$$
+按 $\operatorname{det} \boldsymbol{A}$ 的前 $m$ 列展开便知结论成立.
+
+<p style="text-indent: 2em;">特别地, 分块对角矩阵行列式的常用结果: 设 $\boldsymbol{A}=\operatorname{diag}\left(\boldsymbol{A}_{1}, \boldsymbol{A}_{2}, \cdots, \boldsymbol{A}_{t}\right)$, 其中 $\boldsymbol{A}_{i}(i=$ $1,2, \cdots, t)$ 为方阵, 则 $\operatorname{det} \boldsymbol{A}=\left(\operatorname{det} \boldsymbol{A}_{1}\right)\left(\operatorname{det} \boldsymbol{A}_{2}\right) \cdots\left(\operatorname{det} \boldsymbol{A}_{t}\right)$.
+
+
+
+\begin{example}
+设分块矩阵 $\boldsymbol{A}=\left(\begin{array}{ll}\boldsymbol{B} & \boldsymbol{O} \\ \boldsymbol{C} & \boldsymbol{D}\end{array}\right)$, 其中 $\boldsymbol{O}$ 是零矩阵, $\boldsymbol{B}$ 和 $\boldsymbol{D}$ 是可逆矩阵, 求 $\boldsymbol{A}^{-1}$.
+\end{example}
+
+\begin{solution}
+根据拉普拉斯定理 $\operatorname{det} \boldsymbol{A}=(\operatorname{det} \boldsymbol{B})(\operatorname{det} \boldsymbol{D}) \neq 0$, 所以 $\boldsymbol{A}$ 可逆.
+
+设 $\boldsymbol{A}^{-1}$ 对应的分块矩阵为 $\boldsymbol{A}^{-1}=\left(\begin{array}{cc}\boldsymbol{X}_{1} & \boldsymbol{X}_{2} \\ \boldsymbol{X}_{3} & \boldsymbol{X}_{4}\end{array}\right)$, 其中 $\boldsymbol{X}_{1}$ 与 $\boldsymbol{B}$ 是同型矩阵, $\boldsymbol{X}_{4}$ 与 $\boldsymbol{D}$ 是同型矩阵, 则根据分块矩阵的乘法有
+$$
+\begin{aligned}
+\boldsymbol{AA}^{-1} &=\left(\begin{array}{ll}
+\boldsymbol{B} & \boldsymbol{O} \\
+\boldsymbol{C} & \boldsymbol{D}
+\end{array}\right)\left(\begin{array}{cc}
+\boldsymbol{X}_{1} & \boldsymbol{X}_{2} \\
+\boldsymbol{X}_{3} & \boldsymbol{X}_{4}
+\end{array}\right) \\
+&=\left(\begin{array}{cc}
+\boldsymbol{B} \boldsymbol{X}_{1} & \boldsymbol{B} \boldsymbol{X}_{2} \\
+\boldsymbol{C} \boldsymbol{X}_{1}+\boldsymbol{D} \boldsymbol{X}_{3} & \boldsymbol{C} \boldsymbol{X}_{2}+\boldsymbol{D} \boldsymbol{X}_{4}
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{I} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{I}
+\end{array}\right)=\boldsymbol{I},
+\end{aligned}
+$$
+故
+$$
+\left\{\begin{array}{l}
+\boldsymbol{B} \boldsymbol{X}_{1}=\boldsymbol{I}, \\
+\boldsymbol{B} \boldsymbol{X}_{2}=\boldsymbol{O}, \\
+\boldsymbol{C} \boldsymbol{X}_{1}+D \boldsymbol{X}_{3}=\boldsymbol{O}, \\
+\boldsymbol{C} \boldsymbol{X}_{2}+D \boldsymbol{X}_{4}=\boldsymbol{I} .
+\end{array}\right.
+$$
+解得
+$$
+\left\{\begin{array}{l}
+\boldsymbol{X}_{1}=\boldsymbol{B}^{-1}, \\
+\boldsymbol{X}_{2}=\boldsymbol{O}, \\
+\boldsymbol{X}_{3}=-\boldsymbol{D}^{-1} \boldsymbol{CB}^{-1}, \\
+\boldsymbol{X}_{4}=\boldsymbol{D}^{-1}.
+\end{array}\right.
+$$
+故
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{cc}
+\boldsymbol{B}^{-1} & \boldsymbol{O} \\
+-\boldsymbol{D}^{-1} \boldsymbol{CB}^{-1} & \boldsymbol{D}^{-1}
+\end{array}\right).
+$$
+\end{solution}
+
 
 
 
@@ -86,45 +283,73 @@ $2.3$ 拉普拉斯定理
 <a href="#C0">返回顶部</a>
 
 
-<h2><a name="C3">$2.3.3$ </a></h2>
+<h2><a name="C3">习题 $2.3$</a></h2>
 
 
-<ul>
+<ol>
 
-<p style="text-indent: 2em;">
-
-
-
-
-</ul>
-
-<a href="#C0">返回顶部</a>
-
-
-<h2><a name="C4">$2.3.4$  </a></h2>
-
-
-<ul>
-
-<p style="text-indent: 2em;">
-
-
-
-
-</ul>
-
-<a href="#C0">返回顶部</a>
+<li>
+计算下列行列式:
+<br>
+$(1)$ $\left|\begin{array}{cccc}1 & 2 & 0 & 0 \\ 3 & 4 & 0 & 0 \\ 0 & 0 & -1 & 3 \\ 0 & 0 & 5 & 1\end{array}\right|$; $\quad$ 
+$(2)$ $\left|\begin{array}{cccc}1 & 0 & 2 & 0 \\ -1 & 0 & 3 & 0 \\ 0 & 2 & 0 & -1 \\ 0 & 1 & 0 & 3\end{array}\right|$; 
+<br> 
+$(3)$ $\left|\begin{array}{cccccc}0 & 0 & 0 & 1 & -1 & 2 \\ 0 & 0 & 0 & 3 & 0 & 2 \\ 0 & 0 & 0 & 2 & 4 & 0 \\ 0 & 0 & 1 & 2 & 0 & 4 \\ 0 & 2 & 3 & 0 & 2 & 3 \\ 3 & 1 & 2 & 1 & 4 & 0\end{array}\right|$;
+<br>
+$(4)$ $\left|\begin{array}{cccccccc}
+    a & & & & & & & b \\
+    & a & & & & & b & \\
+    & & \ddots & & & \begin{sideways}$\ddots$\end{sideways} & & \\
+    & & & a & b & & & \\
+    & & & b & a & & & \\ 
+    & & \begin{sideways}$\ddots$\end{sideways} & & & \ddots & & \\
+    & b & & & & & a & \\ 
+    b & & & & & & & a \\
+\end{array} \right| \hspace{-10pt} \begin{array}{ll}
+\left.\begin{array}{c}
+   \\
+   \\
+   \\
+   \\
+\end{array}\right\} & \hspace{-5pt}\text{$n$\,行}\\
+\left.\begin{array}{c}
+   \\
+   \\
+   \\
+   \\
+\end{array}\right\} & \hspace{-5pt}\text{$n$\,行}
+\end{array}$.
+</li>
+ 
+<li> 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶可逆矩阵, 证明 $\left(\begin{array}{ll}\boldsymbol{O} & \boldsymbol{A} \\ \boldsymbol{B} & \boldsymbol{O}\end{array}\right)$ 可逆, 并求其逆矩阵.
+</li>
   
-
+<li> 设 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 都是可逆矩阵, 求 $\left(\begin{array}{ll}\boldsymbol{C} & \boldsymbol{A} \\ \boldsymbol{B} & \boldsymbol{O}\end{array}\right)$ 的逆矩阵.
+</li>
   
-<h2><a name="C5">$2.3.5$  </a></h2>
-<ul>
-<p style="text-indent: 2em;">
+<li> 求下列矩阵的逆矩阵:
+<br>
+$(1)$ $\left(\begin{array}{lllll}1 & 3 & 0 & 0 & 0 \\ 2 & 8 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 1 \\ 0 & 0 & 2 & 3 & 2 \\ 0 & 0 & 3 & 1 & 1\end{array}\right)$; 
+<br>  
+$(2)$ $\left(\begin{array}{lllll}1 & 3 & 0 & 0 & 0 \\ 2 & 8 & 0 & 0 & 0 \\ 1 & 0 & 1 & 0 & 1 \\ 0 & 1 & 2 & 3 & 2 \\ 2 & 3 & 3 & 1 & 1\end{array}\right)$; 
+<br>  
+$(3)$ $\left(\begin{array}{lllll}0 & 0 & 0 & 4 & 4 \\ 0 & 0 & 0 & 7 & 8 \\ 1 & 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0\end{array}\right)$.
+</li>
+  
+<li> 设 $\boldsymbol{A}=(\begin{array}{ll}\boldsymbol{B} & \boldsymbol{C}\end{array})$ 是 $n \times m$ 矩阵, $\boldsymbol{B}$ 是 $n \times s$ 子矩阵, 且 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{C}=\boldsymbol{O}$. 证明
+$$
+\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\right)=\operatorname{det}\left(\boldsymbol{B}^{\mathrm{T}} \boldsymbol{B}\right) \operatorname{det}\left(\boldsymbol{C}^{\mathrm{T}} \boldsymbol{C}\right) .
+$$
+</li>
 
 
-</ul>
+
+</ol>
 
 <a href="#C0">返回顶部</a>
+
+
+
 
 <br>
 <center>
