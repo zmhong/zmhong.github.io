@@ -456,12 +456,13 @@ $1^{\circ}$\quad $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \bol
 
 $2^{\circ}$\quad $\boldsymbol{A X}=\boldsymbol{0}$ 有非零解;
 
-$3^{\circ}$\quad $R(\boldsymbol{A})<n$.
+$3^{\circ}$\quad $R(\boldsymbol{A}) < n$.
 \end{theorem}
 
 
 \begin{proof}
-设向量组 $(\ref{eq:3.3})$ 线性相关, 据定义 $3$, 有不全为零的数 $x_{1}, x_{2}, \cdots, x_{n}$ 使式 $(\ref{eq:3.4})$ 成立, 即方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 有非零解. 上述步骤可逆, 故 $1^{\circ}$ 与 $2^{\circ}$ 等价.
+设向量组 $(\ref{eq:3.3})$ 线性相关, 据定义 $3$, 有不全为零的数 $x_{1}, x_{2}, \cdots, x_{n}$ 使式 $(\ref{eq:3.4})$ 成立, 即方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 有非零解. 
+上述步骤可逆, 故 $1^{\circ}$ 与 $2^{\circ}$ 等价.
 
 另一方面, 将 $\boldsymbol{A}$ 作行初等变换可得
 $$
@@ -474,7 +475,9 @@ c_{11} & \cdots & c_{1 s} & \cdots & c_{1 n} \\
 0 & \cdots & 0 & \cdots & 0
 \end{array}\right)=\boldsymbol{B} .
 $$
-$\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 与 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 同解, 且 $R(\boldsymbol{A})=R(\boldsymbol{B})=r$. 由 $\S 1.2$ 的定理 2 知, 当 $r<n$ 时, $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 有非零解; 又当 $r=n$ 时, $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 显然只有零解. 故 $\boldsymbol{A X}=\mathbf{0}$ 有非零解的充 要条件是 $R(\boldsymbol{A})<n$. 即 $2^{\circ}$ 与 $3^{\circ}$ 等价.
+$\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 与 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 同解, 且 $R(\boldsymbol{A})=R(\boldsymbol{B})=r$. 由 $\S 1.2$ 的定理 2 知,
+当 $r < n$ 时, $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 有非零解; 又当 $r=n$ 时, $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 显然只有零解. 
+故 $\boldsymbol{A X}=\mathbf{0}$ 有非零解的充要条件是 $R(\boldsymbol{A}) < n$. 即 $2^{\circ}$ 与 $3^{\circ}$ 等价.
 \end{proof}
 
 
@@ -492,7 +495,7 @@ $3^{\circ}$\quad $\operatorname{det} \boldsymbol{A}=0(\neq 0)$.
 \end{corollary}
 
 
-对于向量个数大于向量维数的向量组 (即 $n>m$ ) 有
+对于向量个数大于向量维数的向量组 (即 $n > m$ ) 有
 
 
 \begin{corollary}
