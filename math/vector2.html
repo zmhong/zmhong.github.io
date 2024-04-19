@@ -357,15 +357,17 @@ k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{m} \boldsy
 
 <p style="text-indent: 2em;">$(1)$ 对于只含一个向量 $\boldsymbol{\alpha}$ 的向量组, 线性相关的充要条件是这个向量为零向量; 线性 无关的充要条件是这个向量不是零向量.
 
-<p style="text-indent: 2em;">事实上, 由定义 3 , 若 $\boldsymbol{\alpha}$ 线性相关, 则存在数 $k \neq 0$, 使得 $k \boldsymbol{\alpha}=0$, 因此, $\boldsymbol{\alpha}=0$; 反 之, 若 $\boldsymbol{\alpha}=\boldsymbol{0}$, 则取 $k=1 \neq 0$, 即有 $1 \boldsymbol{\alpha}=0$, 因而 $\boldsymbol{\alpha}$ 线性相关.
+<p style="text-indent: 2em;">事实上, 由定义 3 , 若 $\boldsymbol{\alpha}$ 线性相关, 则存在数 $k \neq 0$, 使得 $k \boldsymbol{\alpha}=\boldsymbol{0}$,
+因此, $\boldsymbol{\alpha}=\boldsymbol{0}$; 反 之, 若 $\boldsymbol{\alpha}=\boldsymbol{0}$, 则取 $k=1 \neq 0$, 即有 $1 \boldsymbol{\alpha}=\boldsymbol{0}$, 因而 $\boldsymbol{\alpha}$ 线性相关.
 
 <p style="text-indent: 2em;">$(2)$ 两个向量线性相关 (无关) 的充要条件是它们的各分量对应成 (不成) 比例.
 
-<p style="text-indent: 2em;">事实上, 若 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}=0$, 且 $k_{1} \neq 0$, 则
+<p style="text-indent: 2em;">事实上, 若 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}=\boldsymbol{0}$, 且 $k_{1} \neq 0$, 则
 $$
 \boldsymbol{\alpha}_{1}=-\frac{k_{2}}{k_{1}} \boldsymbol{\alpha}_{2},
 $$
-因而 $\boldsymbol{\alpha}_{1}$ 各分量与 $\boldsymbol{\alpha}_{2}$ 各对应分量成比例; 反之, 若有数 $k$ 使 $\boldsymbol{\alpha}_{1}=k \boldsymbol{\alpha}_{2}$, 即 $1 \boldsymbol{\alpha}_{1}-k \boldsymbol{\alpha}_{2}=0$, 因而 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性相关.
+因而 $\boldsymbol{\alpha}_{1}$ 各分量与 $\boldsymbol{\alpha}_{2}$ 各对应分量成比例; 反之, 若有数 $k$ 使 $\boldsymbol{\alpha}_{1}=k \boldsymbol{\alpha}_{2}$, 
+即 $1 \boldsymbol{\alpha}_{1}-k \boldsymbol{\alpha}_{2}=\boldsymbol{0}$, 因而 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性相关.
 
 
 <p style="text-indent: 2em;">可见, 在 $\mathbf{R}^{2}$ 和 $\mathbf{R}^{3}$ 中, 两向量共线 (或平行) 的充要条件是它们线性相关.
@@ -421,7 +423,7 @@ $$
 <div id= "divIDexample7" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=#FF5809><b>证明：</b></font>
-设向量组为 $0, \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$, 因为 $1\boldsymbol{0}+0 \boldsymbol{\alpha}_{1}+\cdots+0 \boldsymbol{\alpha}_{m}=0$, 所以结论成立. 
+设向量组为 $\boldsymbol{0}, \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$, 因为 $1\boldsymbol{0}+0 \boldsymbol{\alpha}_{1}+\cdots+0 \boldsymbol{\alpha}_{m}=\boldsymbol{0}$, 所以结论成立. 
 </p>
 </div>
 </p>
@@ -490,7 +492,7 @@ $3^{\circ}$  $R(\boldsymbol{A}) < n$.
 <font color=red><b>证明：</b></font>
 设向量组 $(\ref{eq:3.3})$ 线性相关, 据定义 $3$, 有不全为零的数 $x_{1}, x_{2}, \cdots, x_{n}$ 使式 $(\ref{eq:3.4})$ 成立, 即方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 有非零解. 
 上述步骤可逆, 故 $1^{\circ}$ 与 $2^{\circ}$ 等价.
-
+<br>
 $\qquad$ 另一方面, 将 $\boldsymbol{A}$ 作行初等变换可得
 $$
 \boldsymbol{A} \rightarrow\left(\begin{array}{ccccc}
