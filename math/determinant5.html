@@ -61,7 +61,94 @@ $2.5$ 矩阵的秩
 <ul>
 
 <p style="text-indent: 2em;">
+矩阵的秩是矩阵的一个重要数值特征, 是线性代数中的一个重要概念. 为了建立矩阵的秩的概念, 先给出矩阵的子式的定义.
 
+\begin{definition}
+在 $m \times n$ 矩阵 $\boldsymbol{A}$ 中, 位于任意取定的 $k$ 行和 $k$ 列 $(1 \leqslant k \leqslant \min \{m, n\})$ 交叉点上的 $k^{2}$ 个元, 按原来的相对位置组成的 $k$ 阶行列式, 称为 $\boldsymbol{A}$ 的一个 $k$ 阶子式.
+\end{definition}
+
+例如, 在矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+3 & 2 & -1 & -3 \\
+2 & -1 & 3 & 1 \\
+4 & 5 & -5 & -6
+\end{array}\right)
+$$
+中, 取第 1, 2 行和第 2, 4 列交叉点上的元, 组成的二阶行列式
+$$
+\left|\begin{array}{rr}
+2 & -3 \\
+-1 & 1
+\end{array}\right|
+$$
+为 $\boldsymbol{A}$ 的一个二阶子式.
+
+
+有了子式的概念, 就可以定义矩阵的秩.
+
+
+\begin{definition}
+设在矩阵 $\boldsymbol{A}$ 中有一个不等于零的 $r$ 阶子式 $D$, 且没有不等于零的 $r+1$ 阶子式, 那么 $D$ 称为 $\boldsymbol{A}$ 的最高阶非零子式, 数 $r$ 称为矩阵 $\boldsymbol{A}$ 的秩, 记作 $R(\boldsymbol{A})$. 并规定零矩阵的秩等于零.
+\end{definition}
+
+
+由行列式的性质可知, $\boldsymbol{A}$ 中所有 $r+1$ 阶子式全等于零时, 所有高于 $r+1$ 阶的子式 也全等于零, 因此 $\boldsymbol{A}$ 的秩 $R(\boldsymbol{A})$ 就是 $\boldsymbol{A}$ 中不等于零的子式的最高阶数.
+
+显然, 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})$ 是惟一的, 但其最高阶非零子式一般是不惟一的.
+
+定义 2 实际上包含两部分: 一部分是, $R(\boldsymbol{A}) \geqslant r$ 的充要条件是 $\boldsymbol{A}$ 有一个 $r$ 阶子式 不为零; 另一部分是, $R(\boldsymbol{A}) \leqslant r$ 的充要条件是 $\boldsymbol{A}$ 的所有 $r+1$ 阶子式全为零.
+
+\begin{example}
+求矩阵 $\boldsymbol{A}=\left(\begin{array}{cccc}
+3 & 1 & 0 & 2 \\ 
+1 & -1 & 2 & -1 \\ 
+1 & 3 & -4 & 4\end{array}\right)$ 的秩.
+\end{example}
+
+\begin{solution}
+$\boldsymbol{A}$ 有 12 个一阶子式. 例如, 由第 2 行、第 2 列交点上的元构成的一阶子式
+$$
+\operatorname{det}(-1)=-1 \neq 0 .
+$$
+
+再看一下 $\boldsymbol{A}$ 的二阶子式, 可以知道 $\boldsymbol{A}$ 有 $\mathrm{C}_{3}^{2} \mathrm{C}_{4}^{2}=3 \times 6=18$ 个二阶子式, 其中由第
+1, 2 行和第 1, 2 列交又点上的元构成的二阶子式
+$$
+\left|\begin{array}{rr}
+3 & 1 \\
+1 & -1
+\end{array}\right|=-4 \neq 0 .
+$$
+
+最后, 再考察一下 $\boldsymbol{A}$ 的三阶子式, $\boldsymbol{A}$ 有 $4$ 个三阶子式, 分别计算有
+$$
+\begin{aligned}
+&\left|\begin{array}{ccc}
+3 & 1 & 0 \\
+1 & -1 & 2 \\
+1 & 3 & -4
+\end{array}\right|=0, \quad\left|\begin{array}{ccc}
+3 & 1 & 2 \\
+1 & -1 & -1 \\
+1 & 3 & 4
+\end{array}\right|=0, \\
+&\left|\begin{array}{ccc}
+3 & 0 & 2 \\
+1 & 2 & -1 \\
+1 & -4 & 4
+\end{array}\right|=0, \quad\left|\begin{array}{rrr}
+1 & 0 & 2 \\
+-1 & 2 & -1 \\
+3 & -4 & 4
+\end{array}\right|=0 .
+\end{aligned}
+$$
+故由定义, $R(\boldsymbol{A})=2$.
+\end{solution}
+
+
+从例 $1$ 可看出, 根据定义求秩是很困难的, 下面给出求矩阵秩的初等变换法.
 
 
 
@@ -76,7 +163,227 @@ $2.5$ 矩阵的秩
 <ul>
 
 <p style="text-indent: 2em;">
+\begin{theorem}
+初等变换不改变矩阵的秩.
+\end{theorem}
 
+
+\begin{proof}
+只就行初等变换加以证明, 列初等变换的情形同理可证.
+
+对于行初等变换中的第一种和第二种变换, 由于变换后矩阵中的每一个于式均能在原来的矩阵中找到相应的子式, 它们之间或只是行的次序不同, 或只是某一行扩大了 $k$ 倍, 因此相应子式或同为零, 或同为非零, 所以矩阵的秩不变.
+
+对于第三种行初等变换, 设
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right),
+$$
+不妨考虑把 $\boldsymbol{A}$ 的第 2 行的 $k$ 倍加至第 1 行上, 得
+$$
+\boldsymbol{B}=\left(\begin{array}{cccc}
+a_{11}+k a_{21} & a_{12}+k a_{22} & \cdots & a_{1 n}+k a_{2 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right),
+$$
+设 $R(\boldsymbol{B})=t$, 即 $\boldsymbol{B}$ 中有 $t$ 阶子式 $B_{t}$ 不为零. 若 $B_{t}$ 不包含第 1 行的元, 则在 $\boldsymbol{A}$ 中能找 到与 $B_{t}$ 完全相同的 $t$ 阶子式, 因此 $R(\boldsymbol{A}) \geqslant t$; 若 $B_{t}$ 包含第 1 行的元, 即
+$$
+0 \neq B_{t}=\left|\begin{array}{ccc}
+a_{1 j_{1}}+k a_{2 j_{1}} & \cdots & a_{1 j_{t}}+k a_{2 j_{t}} \\
+\vdots & & \vdots \\
+a_{i_{t} j_{1}} & \cdots & a_{i_{t} j_{t}}
+\end{array}\right|,
+$$
+则由行列式的性质知
+$$
+0 \neq B_{t}=\left|\begin{array}{ccc}
+a_{1 j_{1}} & \cdots & a_{1 j_{t}} \\
+\vdots & & \vdots \\
+a_{i_{t} j_{1}} & \cdots & a_{i_{t} j_{t}}
+\end{array}\right|+k\left|\begin{array}{ccc}
+a_{2 j_{1}} & \cdots & a_{2 j_{t}} \\
+\vdots & & \vdots \\
+a_{i_{t} j_{1}} & \cdots & a_{i_{t} j_{t}}
+\end{array}\right|,
+$$
+若 $B_{t}$ 不包含第 2 行元, 则上面两个行列式中至少有一个非零; 若 $B_{t}$ 包含第 2 行元, 则右端第一个行列式非零, 而以上两种情况的非零行列式均为 $\boldsymbol{A}$ 中的 $t$ 阶子式, 所以 $R(\boldsymbol{A}) \geqslant t$.
+
+总之, 归纳以上得到的结论: 若由矩阵 $\boldsymbol{A}$ 经第三种行初等变换得到矩阵 $\boldsymbol{B}$, 则 $R(\boldsymbol{B}) \leqslant R(\boldsymbol{A})$. 但事实上, 我们又能从 $\boldsymbol{B}$ 出发经初等变换得到 $\boldsymbol{A}$ (即只要把 $\boldsymbol{B}$ 的 第 2 行的 $-k$ 倍加到第 1 行 $)$, 因此根据上面的结论又有 $R(\boldsymbol{A}) \leqslant R(\boldsymbol{B})$. 故
+$
+R(\boldsymbol{A})=R(\boldsymbol{B}).
+$
+\end{proof}
+
+
+
+\begin{example}
+求矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{ccccc}
+1 & -1 & 2 & 1 & 0 \\
+2 & -2 & 4 & 2 & 0 \\
+3 & 0 & 6 & -1 & 1 \\
+0 & 3 & 0 & 0 & 1
+\end{array}\right)
+$$
+的秩.
+\end{example}
+
+\begin{solution}
+对 $\boldsymbol{A}$ 作行初等变换
+$$
+\boldsymbol{A}=\left(\begin{array}{ccccc}
+1 & -1 & 2 & 1 & 0 \\
+2 & -2 & 4 & 2 & 0 \\
+3 & 0 & 6 & -1 & 1 \\
+0 & 3 & 0 & 0 & 1
+\end{array}\right) \rightarrow\left(\begin{array}{ccccc}
+1 & -1 & 2 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 3 & 0 & -4 & 1 \\
+0 & 3 & 0 & 0 & 1
+\end{array}\right) \rightarrow\left(\begin{array}{ccccc}
+1 & -1 & 2 & 1 & 0 \\
+0 & 3 & 0 & 0 & 1 \\
+0 & 0 & 0 & -4 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right)=\boldsymbol{B},
+$$
+$\boldsymbol{B}$ 中有三阶子式
+$$
+\left|\begin{array}{ccc}
+1 & -1 & 1 \\
+0 & 3 & 0 \\
+0 & 0 & -4
+\end{array}\right|=-12 \neq 0,
+$$
+显然 $\boldsymbol{B}$ 中所有四阶子式全为零, 所以 $R(\boldsymbol{B})=3$. 故 $R(\boldsymbol{A})=R(\boldsymbol{B})=3$.
+\end{solution}
+
+
+
+
+\begin{example}
+求 $\S 2.1$ 例 $2$ 中黑白图像对应的矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{llll}
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0
+\end{array}\right)
+$$
+的秩.
+\end{example}
+
+\begin{solution}
+$$
+\boldsymbol{A}=\left(\begin{array}{llll}
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0
+\end{array}\right) \rightarrow\left(\begin{array}{llll}
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \rightarrow\left(\begin{array}{llll}
+1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right),
+$$
+所以 $R(\boldsymbol{A})=2$.
+\end{solution}
+
+
+计算图 \ref{fig:2.4} 中黑白图像对应矩阵的行列式和秩. 尝试比较行列式与秩的相似和不同之处.
+
+
+\begin{figure}[!ht]
+\begin{center}
+\renewcommand\figurename{\footnotesize 图}
+%\includegraphics[scale=0.8]{image/imageLA2022/fig2.4.jpg}
+\includegraphics[scale=0.3]{image/imageLA2022/fig2.4.pdf}
+\caption{}
+\label{fig:2.4}
+\end{center}
+\end{figure}
+
+事实上, 将矩阵 $\boldsymbol{A}$ 用行初等变换化为行阶梯形矩阵, 则行阶梯形矩阵非零行的行数就是 $\boldsymbol{A}$ 的秩,
+即: 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则 $R(\boldsymbol{A})=r$ 的充要条件是通过行初等变换能将 $\boldsymbol{A}$ 化为具有 $r$ 个非零行的行阶梯形矩阵.
+
+\begin{example}
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+1 & 2 & 1 \\
+2 & 2 & -2 \\
+-1 & t & 5 \\
+1 & 0 & -3
+\end{array}\right),
+$$
+已知 $R(\boldsymbol{A})=2$, 求 $t$.
+\end{example}
+
+\begin{solution}
+对 $\boldsymbol{A}$ 作行初等变换得
+$$
+\boldsymbol{A} \rightarrow\left(\begin{array}{ccc}
+1 & 2 & 1 \\
+0 & -2 & -4 \\
+0 & 2+t & 6 \\
+0 & 0 & 0
+\end{array}\right)=\boldsymbol{B} .
+$$
+由 $R(\boldsymbol{A})=R(\boldsymbol{B})=2$, 知 $\boldsymbol{B}$ 中第 2 行、第 3 行成比例. 于是由 $\frac{-2}{2+t}=\frac{-4}{6}$ 得 $t=1$. 
+\end{solution}
+
+
+
+\begin{corollary}
+设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则
+$$
+R(\boldsymbol{P} \boldsymbol{A})=R(\boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{P} \boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{A}),
+$$
+其中 $\boldsymbol{P}, \boldsymbol{Q}$ 分别为 $m$ 阶和 $n$ 阶可逆矩阵.
+\end{corollary}
+
+\begin{proof}
+因为 $\boldsymbol{P}$ 可逆, 所以存在有限个初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 $\boldsymbol{P}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1}$, 从而 $\boldsymbol{P} \boldsymbol{A}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1} \boldsymbol{A}$, 即 $\boldsymbol{P} \boldsymbol{A}$ 为对 $\boldsymbol{A}$ 施以 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$ 相对应的行初等变换所 得矩阵, 于是由定理 1 知,
+$$
+R(\boldsymbol{P} \boldsymbol{A})=R(\boldsymbol{A}),
+$$
+同理可证 $R(\boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{P} \boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{A})$.
+\end{proof}
+
+
+\begin{example}
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+3 & 4 & 1 \\
+0 & 2 & 0 \\
+5 & 1 & 3
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ccc}
+2 & -1 & 3 \\
+0 & 3 & 1 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+求 $R(\boldsymbol{A B})$.
+\end{example}
+
+\begin{solution}
+因为 $|\boldsymbol{A}| \neq 0$, 所以 $\boldsymbol{A}$ 可逆. 显然 $R(\boldsymbol{B})=2$. 故 $R(\boldsymbol{A} \boldsymbol{B})=R(\boldsymbol{B})=2$.
+\end{solution}
 
 
 
@@ -91,8 +398,219 @@ $2.5$ 矩阵的秩
 <ul>
 
 <p style="text-indent: 2em;">
+关于矩阵的秩, 有如下性质:
+
+\begin{theorem}
+$(1)$ 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则 $\boldsymbol{A}$ 可逆的充要条件是 $R(\boldsymbol{A})=n$;
+
+$(2)$ 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})=R\left(\boldsymbol{A}^{\mathrm{T}}\right)$;
+
+$(3)$ 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则 $0 \leqslant R(\boldsymbol{A}) \leqslant \min \{m, n\}$;
+
+$(4)$ 对任意矩阵 $\boldsymbol{A}, R(k \boldsymbol{A})= \begin{cases}0, & k=0, \\ R(\boldsymbol{A}), & k \neq 0 .\end{cases}$
+\end{theorem}
+
+\begin{proof}
+$(3)$ 和 $(4)$ 是显然的. 我们证明 $(1)$ 和 $(2)$.
+
+$(1)$ 若 $\boldsymbol{A}$ 可逆, 则 $\operatorname{det} \boldsymbol{A} \neq 0$, 因此由定义 $2$ 知 $R(\boldsymbol{A})=n$.
+
+反之, 若 $R(\boldsymbol{A})=n$, 由定义 $2$ 易知 $\operatorname{det} \boldsymbol{A} \neq 0$, 故 $\boldsymbol{A}$ 可逆.
+
+$(2)$ $\boldsymbol{A}$ 的任一子式的转置就是 $\boldsymbol{A}^{\mathrm{T}}$ 的子式; 反之, $\boldsymbol{A}^{\mathrm{T}}$ 的任一子式的转置就是 $\boldsymbol{A}$ 的子式. 根据行列式的性质,
+$\boldsymbol{A}$ 中不为零的最高阶子式就是 $\boldsymbol{A}^{\mathrm{T}}$ 中不为零的最高阶子式, 反之亦然. 故
+$$
+R(\boldsymbol{A})=R\left(\boldsymbol{A}^{\mathrm{T}}\right) .
+$$
+\end{proof}
+
+由定理 $2$ 的 $(1)$ 知, 对于 $n$ 阶矩阵 $\boldsymbol{A}$, $\operatorname{det} \boldsymbol{A}=0$ 的充要条件是 $R(\boldsymbol{A}) < n$. 因而, 可逆矩阵又称为满秩矩阵, 不可逆矩阵又称为降秩矩阵或退化矩阵.
 
 
+\begin{example}
+设 $\boldsymbol{A}$ 为 $n$ 阶矩阵 $(n \geqslant 2)$, 证明
+$$
+R\left(\boldsymbol{A}^{*}\right)= \begin{cases}n, & R(\boldsymbol{A})=n, \\ 0, & R(\boldsymbol{A}) < n-1 .\end{cases}
+$$
+\end{example}
+
+\begin{proof}
+若 $R(\boldsymbol{A})=n$, 即 $\operatorname{det} \boldsymbol{A} \neq 0$, 由 $\boldsymbol{A} \boldsymbol{A}^{*}=(\operatorname{det} \boldsymbol{A}) \boldsymbol{I}$ 有 
+$$
+(\operatorname{det} \boldsymbol{A})\left(\operatorname{det} \boldsymbol{A}^{*}\right)=\operatorname{det}\left(\boldsymbol{A} \boldsymbol{A}^{*}\right)=\operatorname{det}((\operatorname{det} \boldsymbol{A}) \boldsymbol{I})=(\operatorname{det} \boldsymbol{A})^{n} \neq 0,
+$$
+故 $\operatorname{det} \boldsymbol{A}^{*} \neq 0$, 即 $R\left(\boldsymbol{A}^{*}\right)=n$.
+
+若 $R(\boldsymbol{A}) < n-1$, 则 $\boldsymbol{A}$ 中最高阶非零子式的阶数小于 $n-1$, 因而 $\boldsymbol{A}$ 中任意 $n-1$ 阶子式均为零, 所以
+$$
+\boldsymbol{A}^{*}=\left(\begin{array}{cccc}
+A_{11} & A_{21} & \cdots & A_{n 1} \\
+A_{12} & A_{22} & \cdots & A_{n 2} \\
+\vdots & \vdots & & \vdots \\
+A_{1 n} & A_{2 n} & \cdots & A_{n n}
+\end{array}\right)=\boldsymbol{O},
+$$
+即 $R\left(\boldsymbol{A}^{*}\right)=0$.
+\end{proof}
+
+对于例 $6$ 中 $R(\boldsymbol{A})=n-1$ 的情形, 将在 $\S 3.4$ 的例 $5$ 中给出.
+
+\begin{theorem}
+对任意矩阵 $\boldsymbol{A}_{m \times n}$, 都存在可逆矩阵 $\boldsymbol{P}_{m \times m}, \boldsymbol{Q}_{n \times n}$, 使得
+$$
+\boldsymbol{P} \boldsymbol{A} \boldsymbol{Q}=\left(\begin{array}{ll}
+\boldsymbol{I}_{r} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right)_{m \times n}, \quad R(\boldsymbol{A})=r, 
+$$
+其中 $\left(\begin{array}{ll}\boldsymbol{I}_{r} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{O}\end{array}\right)_{m \times n}$ 称为 $\boldsymbol{A}$ 的标准形. 即任何矩阵 $\boldsymbol{A}$ 都等价于其标准形.
+\end{theorem}
+
+\begin{proof}
+对任意的 $\boldsymbol{A}_{m \times n}$, 总可经有限次行初等变换化为简化行阶梯形矩阵, 然后通过有限次列初等变换便可得到
+$$
+\left(\begin{array}{ll}
+\boldsymbol{I}_{r} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) .
+$$
+
+又由于行阶梯形矩阵非零行的行数 $r$ 即 $\boldsymbol{A}$ 的秩, 因而 $R(\boldsymbol{A})=r$. 故存在初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{s}$, $\widetilde{\boldsymbol{E}}_{1}, \tilde{\boldsymbol{E}}_{2}, \cdots, \tilde{\boldsymbol{E}}_{t}$, 使得
+$$
+\boldsymbol{E}_{s} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1} \boldsymbol{A} \widetilde{\boldsymbol{E}}_{1} \tilde{\boldsymbol{E}}_{2} \cdots \tilde{\boldsymbol{E}}_{t}=\left(\begin{array}{cc}
+\boldsymbol{I}_{r} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right).
+$$
+记 $\boldsymbol{P}=\boldsymbol{E}_{s} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1}, \boldsymbol{Q}=\widetilde{\boldsymbol{E}}_{1} \widetilde{\boldsymbol{E}}_{2} \cdots \widetilde{\boldsymbol{E}}_{t}$, 则 $\boldsymbol{P}, \boldsymbol{Q}$ 可逆且
+$$
+\boldsymbol{P} \boldsymbol{A Q}=\left(\begin{array}{ll}
+\boldsymbol{I}_{r} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right).
+$$
+\end{proof}
+
+定理 $3$ 也说明, 对任意矩阵 $\boldsymbol{A}$, 存在可逆矩阵 $\boldsymbol{K}, \boldsymbol{S}$, 使
+$$
+\boldsymbol{A}=\boldsymbol{K}\left(\begin{array}{ll}
+\boldsymbol{I}_{r} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) \boldsymbol{S}, \quad R(\boldsymbol{A})=r.
+$$
+
+\begin{corollary}
+同型矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价的充要条件是 $R(\boldsymbol{A})=R(\boldsymbol{B})$.
+\end{corollary}
+
+
+
+\begin{example}
+设 $\boldsymbol{A}=\left(\begin{array}{ccc}1 & -2 & 1 \\ -1 & 1 & 1 \\ 1 & -3 & 3\end{array}\right)$, 求 $\boldsymbol{A}$ 的标准形.
+\end{example}
+
+\begin{solution}
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+1 & -2 & 1 \\
+-1 & 1 & 1 \\
+1 & -3 & 3
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+0 & -1 & 2 \\
+-1 & 1 & 1 \\
+0 & -2 & 4
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+0 & -1 & 2 \\
+-1 & 1 & 1 \\
+0 & 0 & 0
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+-1 & 1 & 1 \\
+0 & -1 & 2 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+所以 $R(\boldsymbol{A})=2$, 故 $\boldsymbol{A}$ 的标准形必为
+$$
+\left(\begin{array}{ll}
+\boldsymbol{I}_{2} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right)=\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right).
+$$
+\end{solution}
+
+
+
+
+\begin{example}
+证明 $R\left(\left(\begin{array}{ll}\boldsymbol{A} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{B}\end{array}\right)\right)=R(\boldsymbol{A})+R(\boldsymbol{B})$.
+\end{example}
+
+\begin{proof}
+设 $R(\boldsymbol{A})=r_{1}, R(\boldsymbol{B})=r_{2}$. 由定理 $3$ , 存在可逆矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \boldsymbol{Q}_{1}, \boldsymbol{Q}_{2}$, 使得
+$$
+\boldsymbol{A}=\boldsymbol{P}_{1}\left(\begin{array}{cc}
+\boldsymbol{I}_{r_{1}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) \boldsymbol{Q}_{1}, \quad \boldsymbol{B}=\boldsymbol{P}_{2}\left(\begin{array}{cc}
+\boldsymbol{I}_{r_{2}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) \boldsymbol{Q}_{2},
+$$
+于是
+$$
+\begin{aligned}
+\left(\begin{array}{ll}
+\boldsymbol{A} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{B}
+\end{array}\right) & =\left(\begin{array}{cc}
+\boldsymbol{P}_{1}\left(\begin{array}{cc}
+\boldsymbol{I}_{r_{1}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) \boldsymbol{Q}_{1} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{P}_{2}\left(\begin{array}{cc}
+\boldsymbol{I}_{r_{2}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right)\boldsymbol{Q}_{2}
+\end{array}\right) \\
+&=\left(\begin{array}{ll}
+\boldsymbol{P}_{1} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{P}_{2}
+\end{array}\right)\left(\begin{array}{cc}
+\left(\begin{array}{cc}
+\boldsymbol{I}_{r_{1}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) & \boldsymbol{O} \\
+\boldsymbol{O} & \left(\begin{array}{cc}
+\boldsymbol{I}_{r_{2}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right)
+\end{array}\right)\left(\begin{array}{cc}
+\boldsymbol{Q}_{1} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{Q}_{2}
+\end{array}\right),
+\end{aligned}
+$$
+由 $\left(\begin{array}{cc}\boldsymbol{P}_{1} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{P}_{2}\end{array}\right),\left(\begin{array}{cc}\boldsymbol{Q}_{1} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{Q}_{2}\end{array}\right)$ 可逆, 知
+$$
+R\left(\left(\begin{array}{ll}
+\boldsymbol{A} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{B}
+\end{array}\right)\right)=R\left(\left(\begin{array}{cc}
+\left(\begin{array}{cc}
+\boldsymbol{I}_{r_{1}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right) & \boldsymbol{O} \\
+\boldsymbol{O} & \left(\begin{array}{cc}
+\boldsymbol{I}_{r_{2}} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right)
+\end{array}\right)\right)=r_{1}+r_{2} .
+$$
+\end{proof}
 
 
 </ul>
@@ -103,14 +621,43 @@ $2.5$ 矩阵的秩
 <h2><a name="C4">习题 $2.5$</a></h2>
 
 
-<ul>
+<ol>
 
-<p style="text-indent: 2em;">
+<li>
+求下列矩阵的秩:
+<br>
+$(1)$ $\left(\begin{array}{cccc}2 & -3 & 8 & 2 \\ 2 & 12 & -2 & 12 \\ 1 & 3 & 1 & 4\end{array}\right)$ ; 
+<br>  
+$(2)$ $\left(\begin{array}{ccc}4 & -2 & 1 \\ 1 & 2 & -1 \\ -1 & 8 & -7 \\ 2 & 14 & 13\end{array}\right)$ ; 
+<br>  
+$(3)$ $\left(\begin{array}{ccccc}1 & -1 & 2 & 1 & 0 \\ 2 & -2 & 4 & -2 & 0 \\ 3 & 0 & 6 & -1 & 1 \\ 0 & 3 & 0 & 0 & 1\end{array}\right)$.
+</li>
+
+<li> 求下列矩阵的标准形:
+<br>
+$(1)$ $\left(\begin{array}{ccc}1 & 1 & -1 \\ 3 & 1 & 0 \\ 4 & 4 & 1 \\ 1 & -2 & 1\end{array}\right)$; 
+<br>
+$(2)$ $\left(\begin{array}{ccccc}1 & -1 & 0 & 1 & 2 \\ 2 & 0 & 1 & 1 & 0 \\ 3 & 1 & 0 & 0 & 4 \\ 2 & 2 & 0 & -1 & -2\end{array}\right)$.
+</li>
+
+<li> 讨论 $\lambda$ 的取值范围, 确定 $\boldsymbol{A}=\left(\begin{array}{cccc}3 & 1 & 1 & 4 \\ \lambda & 4 & 10 & 1 \\ 1 & 7 & 17 & 3 \\ 2 & 2 & 4 & 3\end{array}\right)$ 的秩.
+</li>
+
+<li> 在秩为 $r$ 的矩阵中, 有没有等于零的 $r-1$ 阶子式? 有没有等于零的 $r$ 阶子式? 有没有不等于零的 $r+1$ 阶子式?
+</li>
+
+<li> 证明任何秩为 $r$ 的矩阵均可表成 $r$ 个秩为 $1$ 的矩阵之和.
+</li>
+
+<li> 设 $\boldsymbol{A}, \boldsymbol{B}$ 分别与 $\boldsymbol{C}, \boldsymbol{D}$ 等价, 证明 $\left(\begin{array}{cc}\boldsymbol{A} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{B}\end{array}\right)$ 与 $\left(\begin{array}{ll}\boldsymbol{C} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{D}\end{array}\right)$ 等价.
+</li>
+
+<li> 求 $n(n>1)$ 阶矩阵 $\boldsymbol{A}=\left(\begin{array}{cccc}a & b & \cdots & b \\ b & a & \cdots & b \\ \vdots & \vdots & & \vdots \\ b & b & \cdots & a\end{array}\right)$ 的秩.
+</li>
 
 
 
-
-</ul>
+</ol>
 
 <a href="#C0">返回顶部</a>
   
