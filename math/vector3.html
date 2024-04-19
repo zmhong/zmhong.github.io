@@ -63,22 +63,22 @@ $3.3$ 向量组的秩与极大无关组
 $m$ 个 $n$ 维向量形成的向量组的线性相关性是就全体 $m$ 个向量而言的. 但是, 其中最多有多少个向量是线性无关的呢?
 
 
-例如, 设 $\boldsymbol{\alpha}_{1}=(1,0,1), \boldsymbol{\alpha}_{2}=(1,-1,1), \boldsymbol{\alpha}_{3}=(2,0,2)$, 可以验证, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线 性相关. 但其中部分向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是线性无关的, 它们都含有两个线性无关的向量.
+<p style="text-indent: 2em;">例如, 设 $\boldsymbol{\alpha}_{1}=(1,0,1), \boldsymbol{\alpha}_{2}=(1,-1,1), \boldsymbol{\alpha}_{3}=(2,0,2)$, 可以验证, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线 性相关. 但其中部分向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是线性无关的, 它们都含有两个线性无关的向量.
 
 
-从该例可以看出, 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 这两个线性无关向量组中, 如果再添加一个向量进去, 那么它们就变成线性相关的了. 可见它们在该向量组中作为一个线性无关向量组, 所包含的向量个数达到了最多. 为此, 我们引出向量组的秩与极大无关组的概念.
+<p style="text-indent: 2em;">从该例可以看出, 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 这两个线性无关向量组中, 如果再添加一个向量进去, 那么它们就变成线性相关的了. 可见它们在该向量组中作为一个线性无关向量组, 所包含的向量个数达到了最多. 为此, 我们引出向量组的秩与极大无关组的概念.
 
 
 \begin{definition}
 设向量组 $T$ 满足
-
-$1^{\circ}$\quad 在 $T$ 中有 $r$ 个向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关;
-
-$2^{\circ}$\quad $T$ 中任意 $r+1$ 个向量 (如果 $T$ 中有 $r+1$ 个向量) 都线性相关; 则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是向量组 $T$ 的一个极大线性无关组, 简称为极大无关组, 数 $r$ 称为向量组 $T$ 的秩.
+<br>
+$1^{\circ}$ 在 $T$ 中有 $r$ 个向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关;
+<br>
+$2^{\circ}$ $T$ 中任意 $r+1$ 个向量 (如果 $T$ 中有 $r+1$ 个向量) 都线性相关; 则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是向量组 $T$ 的一个极大线性无关组, 简称为极大无关组, 数 $r$ 称为向量组 $T$ 的秩.
 \end{definition}
 
 
-规定, 只含零向量的向量组的秩为零.
+<p style="text-indent: 2em;">规定, 只含零向量的向量组的秩为零.
 
 \begin{example}
 求向量组 $\boldsymbol{\alpha}_{1}=(2,1,3,-1), \boldsymbol{\alpha}_{2}=(3,-1,2,0), \boldsymbol{\alpha}_{3}=(1,3,4,-2), \boldsymbol{\alpha}_{4}=(4,-3, 1,1)$
@@ -108,13 +108,14 @@ $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 也�
 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$; $\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 分别也都是向量组的极大无关组.
 \end{solution}
 
-我们知道矩阵的最高阶非零子式可能不止一个, 但矩阵的秩是惟一的; 类似地, 由定 义及例 $1$ 知, 向量组的极大无关组也可能不止一个, 但向量组的秩是惟一的.
+<p style="text-indent: 2em;">我们知道矩阵的最高阶非零子式可能不止一个, 但矩阵的秩是惟一的; 类似地, 由定 义及例 $1$ 知, 向量组的极大无关组也可能不止一个, 但向量组的秩是惟一的.
 
 
-由定义易知, 一个向量组若线性无关, 则其极大无关组就是它本身, 秩就是向量组中向量的个数. 从而, 我们有
-\begin{center}
-向量组线性无关 (相关) $\Leftrightarrow$ 向量组的秩等于 (小于) 向量组所含向量的个数.
-\end{center}
+<p style="text-indent: 2em;">由定义易知, 一个向量组若线性无关, 则其极大无关组就是它本身, 秩就是向量组中向量的个数. 从而, 我们有
+
+<center>
+<b>向量组线性无关 (相关) $\Leftrightarrow$ 向量组的秩等于 (小于) 向量组所含向量的个数.</b>
+</center>
 
 
 
@@ -123,7 +124,7 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 \end{example}
 
 
-事实上, 因为任意 $n+1$ 个 $n$ 维向量必线性相关, 所以任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一个极大无关组.
+<p style="text-indent: 2em;">事实上, 因为任意 $n+1$ 个 $n$ 维向量必线性相关, 所以任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一个极大无关组.
 
 
 
@@ -138,13 +139,13 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 \end{proof}
 
 
-类似地, 我们还可就列初等变换同样地得到相应的结果.
+<p style="text-indent: 2em;">类似地, 我们还可就列初等变换同样地得到相应的结果.
 
-给定一个向量组, 我们可以由它们作为一个矩阵的行 (或列) 向量组来确定一个矩阵; 反之, 给定一个矩阵 $\boldsymbol{A}$, 我们可以得到 $\boldsymbol{A}$ 的行 (列) 向量组. 那么, 向量组的秩与矩阵的秩有什么关系呢?
+<p style="text-indent: 2em;">给定一个向量组, 我们可以由它们作为一个矩阵的行 (或列) 向量组来确定一个矩阵; 反之, 给定一个矩阵 $\boldsymbol{A}$, 我们可以得到 $\boldsymbol{A}$ 的行 (列) 向量组. 那么, 向量组的秩与矩阵的秩有什么关系呢?
 
-我们把矩阵 $\boldsymbol{A}$ 的列向量组的秩称为 $\boldsymbol{A}$ 的列秩, 其行向量组的秩称为 $\boldsymbol{A}$ 的行秩.
+<p style="text-indent: 2em;">我们把矩阵 $\boldsymbol{A}$ 的列向量组的秩称为 $\boldsymbol{A}$ 的列秩, 其行向量组的秩称为 $\boldsymbol{A}$ 的行秩.
 
-关于矩阵 $\boldsymbol{A}$ 的秩、列秩和行秩, 我们有
+<p style="text-indent: 2em;">关于矩阵 $\boldsymbol{A}$ 的秩、列秩和行秩, 我们有
 
 
 \begin{theorem}
@@ -158,11 +159,11 @@ $$
 $$
 则$\boldsymbol{B}$中有且仅有 $r$ 个非零行, 由$\S 3.2$ 的定理 $2$  及定义知, $\boldsymbol{B}$ 的$r$个非零行的非零首元所在$r$个列向量是线性无关的,
 且为$\boldsymbol{B}$的列向量组的一个极大无关组. 根据定理 $1$, $\boldsymbol{A}$中与这 $r$ 个列向量相对应的 $r$ 个列向量也是 $\boldsymbol{A}$ 的列向量组的一个极大无关组. 故 $\boldsymbol{A}$ 的列秩等于r.
-
+<br>
 $\boldsymbol{A}$的行向量即$\boldsymbol{A}^{\mathrm{T}}$的列向量, 于是由 $R(\boldsymbol{A}^{\mathrm{T}}) =R(\boldsymbol{A})$知, $\boldsymbol{A}$的行秩也等于$r$.
 \end{proof}
 
-值得注意的是, 定理 $2$ 的证明实际上还给出了如何方便地利用行初等变换求出向量组的秩和极大无关组的方法.
+<p style="text-indent: 2em;">值得注意的是, 定理 $2$ 的证明实际上还给出了如何方便地利用行初等变换求出向量组的秩和极大无关组的方法.
 
 
 \begin{example}
@@ -264,9 +265,9 @@ $$
 
 
 
-由极大无关组的定义容易看出, 向量组与其任一极大无关组等价, 因而, 一向量组的 任意两个极大无关组都是等价的, 任意两个极大无关组所含向量个数是相同的, 均为向量组的秩.
+<p style="text-indent: 2em;">由极大无关组的定义容易看出, 向量组与其任一极大无关组等价, 因而, 一向量组的 任意两个极大无关组都是等价的, 任意两个极大无关组所含向量个数是相同的, 均为向量组的秩.
 
-下面我们来讨论两向量组的秩的关系, 先证如下常用定理:
+<p style="text-indent: 2em;">下面我们来讨论两向量组的秩的关系, 先证如下常用定理:
 
 \begin{theorem}
 若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表出,
@@ -302,17 +303,17 @@ $$
 \end{proof}
 
 
-定理 3 的等价说法是, 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表出, 
+<p style="text-indent: 2em;">定理 $3$ 的等价说法是, 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表出, 
 如果 $r > s$, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关.
 
-由定理 3 可得向量组秩的性质: 设向量组 (I) 的秩为 $r_{1}$, 向量组 (II) 的秩为 $r_{2}$, 若 (I) 能由 (II) 线性表出, 则 $r_{1} \leqslant r_{2}$.
+<p style="text-indent: 2em;">由定理 $3$ 可得向量组秩的性质: 设向量组 (I) 的秩为 $r_{1}$, 向量组 (II) 的秩为 $r_{2}$, 若 (I) 能由 (II) 线性表出, 则 $r_{1} \leqslant r_{2}$.
 
-事实上, 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 为 (I) 的极大无关组,
+<p style="text-indent: 2em;">事实上, 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 为 (I) 的极大无关组,
 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{2}}$ 为 (II) 的极大无关 组, 因 (I) 可由 (II) 线性表出,
 据向量组与其极大无关组的等价性知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{2}}$ 线性表出, 
 且由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 线性无关和定理 $3$, 有 $r_{1} \leqslant r_{2}$.
 
-由此可知, 任何两个等价的向量组必有相同的秩.
+<p style="text-indent: 2em;">由此可知, 任何两个等价的向量组必有相同的秩.
 
 
 \begin{theorem}
@@ -326,7 +327,7 @@ $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{
 \textcolor{second}{必要性}\quad 若 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大无关组, 则当 $j \in\left\{j_{1}\right.$, $\left.j_{2}, \cdots, j_{r}\right\}$ 时, 显然 $\boldsymbol{\alpha}_{j}(j=1,2, \cdots, s)$ 可由 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出; 当 $j \notin\left\{j_{1}\right.$, $\left.j_{2}, \cdots, j_{r}\right\}$ 时, $\boldsymbol{\alpha}_{j}, \boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性相关, 又 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性无关, 因而 $\boldsymbol{\alpha}_{j}(j=1,2, \cdots, s)$ 可由 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出.
 \end{proof}
 
-定理 2 告诉我们, 矩阵的秩和向量组的秩有着本质的联系, 因而关于二者的问题常常相互转化. 例如, 对于如下关于矩阵秩的重要不等式, 我们用向量组的理论可以容易地 加以证明.
+<p style="text-indent: 2em;">定理 $2$ 告诉我们, 矩阵的秩和向量组的秩有着本质的联系, 因而关于二者的问题常常相互转化. 例如, 对于如下关于矩阵秩的重要不等式, 我们用向量组的理论可以容易地加以证明.
 
 
 \begin{example}
@@ -352,8 +353,8 @@ $$
 \boldsymbol{c}_{k}=b_{1 k} \boldsymbol{\alpha}_{1}+b_{2 k} \boldsymbol{\alpha}_{2}+\cdots+b_{r k} \boldsymbol{\alpha}_{r} \quad(k=1,2, \cdots, n) .
 $$
 即 $\boldsymbol{A B}$ 的列向量组 $\boldsymbol{c}_{1}, \boldsymbol{c}_{2}, \cdots, \boldsymbol{c}_{n}$ 可由 $\boldsymbol{A}$ 的列向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性表出, 故有 $R(\boldsymbol{C}) \leqslant R(\boldsymbol{A})$.
-
-另一方面, 由以上结果便得
+<br>
+$\qquad$另一方面, 由以上结果便得
 $$
 R(\boldsymbol{C})=R\left(\boldsymbol{C}^{\mathrm{T}}\right)=R\left(\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}\right) \leqslant R\left(\boldsymbol{B}^{\mathrm{T}}\right)=R(\boldsymbol{B}) .
 $$
@@ -362,7 +363,7 @@ $$
 
 
 
-大家可能已经注意到, 我们在定理 3 的证明和例 6 的证明中两次用到向量组 $\boldsymbol{\beta}_{1}$,
+<p style="text-indent: 2em;">大家可能已经注意到, 我们在定理 $3$ 的证明和例 $6$ 的证明中两次用到向量组 $\boldsymbol{\beta}_{1}$,
 $\boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 线性表出, 也就是存在矩阵 $\boldsymbol{K}_{p \times q}$, 使得
 $$
 \left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}\right) \boldsymbol{K}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}\right),
@@ -370,27 +371,27 @@ $$
 这里假设向量是列向量.
 
 
-如果设矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}\right), \boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}\right)$, 上式也就等价于矩阵方程 $\boldsymbol{A X}=\boldsymbol{B}$ 有解. 于是, 由 $\S 3.2$ 定理 1 我们便有如下结论:
+<p style="text-indent: 2em;">如果设矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}\right), \boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}\right)$, 上式也就等价于矩阵方程 $\boldsymbol{A X}=\boldsymbol{B}$ 有解. 于是, 由 $\S 3.2$ 定理 1 我们便有如下结论:
 
 
-向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 线性表出的充要条件是 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})$;
+<p style="text-indent: 2em;">向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 线性表出的充要条件是 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})$;
 
 
-两向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 等价的充要条件是
+<p style="text-indent: 2em;">两向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 等价的充要条件是
 $$
 R(\boldsymbol{A})=R(\boldsymbol{B})=R(\boldsymbol{A}, \boldsymbol{B}) .
 $$
 
 
-也就是说, 我们把 $\S 3.2$ 的定理 $1$ 推广成了如下三命题等价:
+<p style="text-indent: 2em;">也就是说, 我们把 $\S 3.2$ 的定理 $1$ 推广成了如下三命题等价:
 
-$1^{\circ}$\quad 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 线性表出;
+<p style="text-indent: 2em;">$1^{\circ}$ 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 线性表出;
 
-$2^{\circ}$\quad $\boldsymbol{A X}=\boldsymbol{B}$ 有解;
+<p style="text-indent: 2em;">$2^{\circ}$ $\boldsymbol{A X}=\boldsymbol{B}$ 有解;
 
-$3^{\circ}$ \quad $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})$.
+<p style="text-indent: 2em;">$3^{\circ}$ $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})$.
 
-有关例题不再列举, 留作习题.
+
 
 
 
@@ -411,20 +412,21 @@ $$
 $$
 
 
-如果在 $\mathbf{R}^{3}$ 中, $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, 那么它们构成 $\mathbf{R}^{3}$ 的一组基, 且 $\mathbf{R}^{3}=L(\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma})$. 因此, 任何第四个向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma})$.
+<p style="text-indent: 2em;">如果在 $\mathbf{R}^{3}$ 中, $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, 那么它们构成 $\mathbf{R}^{3}$ 的一组基, 且 $\mathbf{R}^{3}=L(\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma})$. 因此, 任何第四个向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma})$.
 
 
-设 $\boldsymbol{\alpha} \in \mathbf{R}^{n}, \boldsymbol{\alpha}=x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}$, 则称 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 为 $\boldsymbol{\alpha}$ 在基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 下的坐标. 由 $\S 3.2$ 的定理 5 知坐标是惟一的.
+<p style="text-indent: 2em;">设 $\boldsymbol{\alpha} \in \mathbf{R}^{n}, \boldsymbol{\alpha}=x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}$, 则称 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 为 $\boldsymbol{\alpha}$ 在基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 下的坐标. 由 $\S 3.2$ 的定理 5 知坐标是惟一的.
 
-对于 $\mathbf{R}^{n}$ 的子空间 $V$, 也可类似地定义基、维数 (记为 $\operatorname{dim} V$ ) 和坐标.
-一个向量组是某空间的一组基, 必须满足两个条件: (1) 向量组线性无关, (2) 向量组能张成该空间. 
+<p style="text-indent: 2em;">对于 $\mathbf{R}^{n}$ 的子空间 $V$, 也可类似地定义基、维数 (记为 $\operatorname{dim} V$ ) 和坐标.
+一个向量组是某空间的一组基, 必须满足两个条件: $(1)$ 向量组线性无关, $(2)$ 向量组能张成该空间. 
 
-基是能张成空间的 “最小” 向量组, 也是 “最大” 的线性无关组.
+<p style="text-indent: 2em;">基是能张成空间的 “最小” 向量组, 也是 “最大” 的线性无关组.
 
 
 \begin{example}
-设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}} \neq \mathbf{0}$, 则 $\boldsymbol{\alpha}$ 张成一个一维子空间 $L(\boldsymbol{\alpha})=\{k \boldsymbol{\alpha} \mid k \in \mathbf{R}\}$. 一向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha})$ 的充要条件是点 $(a, b, c)$ 在由坐标原点 $(0,0,0)$ 和点 $\left(x_{1}, x_{2}, x_{3}\right)$ 决定的直线上. 因此, $\mathbf{R}^{3}$ 的一维子空间可用过坐标原点的一直线表示.
-
+设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}} \neq \mathbf{0}$, 则 $\boldsymbol{\alpha}$ 张成一个一维子空间 $L(\boldsymbol{\alpha})=\{k \boldsymbol{\alpha} \mid k \in \mathbf{R}\}$.
+一向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha})$ 的充要条件是点 $(a, b, c)$ 在由坐标原点 $(0,0,0)$ 和点 $\left(x_{1}, x_{2}, x_{3}\right)$ 决定的直线上. 因此, $\mathbf{R}^{3}$ 的一维子空间可用过坐标原点的一直线表示.
+<br> 
 设 $\boldsymbol{\alpha}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}}, \boldsymbol{\beta}=\left(y_{1}, y_{2}, y_{3}\right)^{\mathrm{T}}$ 线性无关, 则
 $$
 L(\boldsymbol{\alpha}, \boldsymbol{\beta})=\left\{k_{1} \boldsymbol{\alpha}+k_{2} \boldsymbol{\beta} \mid k_{1}, k_{2} \in \mathbf{R}\right\}
@@ -434,20 +436,20 @@ $$
 
 
 \begin{example}
-对于 $\S 3.2$ 的例 5 中的向量, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为 $\mathbf{R}^{3}$ 的一组基, $\boldsymbol{\beta}$ 在该基下的坐标 为 $(1,2,-1)$.
+对于 $\S 3.2$ 的例 $5$ 中的向量, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为 $\mathbf{R}^{3}$ 的一组基, $\boldsymbol{\beta}$ 在该基下的坐标为 $(1,2,-1)$.
 \end{example}
 
-任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一组基, 不同的基之间有什么关系呢? 同 一向量在不同基下的坐标一般是不相同的, 它们之间的关系又是怎样的呢? 这就是所谓 的基变换和坐标变换的问题.
+<p style="text-indent: 2em;">任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一组基, 不同的基之间有什么关系呢? 同 一向量在不同基下的坐标一般是不相同的, 它们之间的关系又是怎样的呢? 这就是所谓 的基变换和坐标变换的问题.
 
 
-设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}$ 分别为 $\mathbf{R}^{n}$ 的基, 由于 $\mathbf{R}^{n}$ 的任两组基都是等 价的, 所以存在可逆矩阵 $\boldsymbol{A}$, 使得
+<p style="text-indent: 2em;">设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}$ 分别为 $\mathbf{R}^{n}$ 的基, 由于 $\mathbf{R}^{n}$ 的任两组基都是等 价的, 所以存在可逆矩阵 $\boldsymbol{A}$, 使得
 $$
 \left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right)=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right) \boldsymbol{A},
 $$
 我们称 $\boldsymbol{A}$ 为从基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 到基 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}$ 的过渡矩阵.
 
 
-设向量 $\boldsymbol{\alpha} \in \mathbf{R}^{n}$ 在两组基下的坐标分别为 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 和 $\left(x_{1}^{\prime}, x_{2}^{\prime}, \cdots, x_{n}^{\prime}\right)$, 即
+<p style="text-indent: 2em;">设向量 $\boldsymbol{\alpha} \in \mathbf{R}^{n}$ 在两组基下的坐标分别为 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 和 $\left(x_{1}^{\prime}, x_{2}^{\prime}, \cdots, x_{n}^{\prime}\right)$, 即
 $$
 \begin{gathered}
 \boldsymbol{\alpha}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)\left(\begin{array}{c}
@@ -486,7 +488,7 @@ $$
 这就是向量 $\boldsymbol{\alpha}$ 在两组基下的坐标变换公式.
 
 
-例如, 在 $\mathbf{R}^{3}$ 中, 从基 $\boldsymbol{\varepsilon}_{1}, \boldsymbol{\varepsilon}_{2}, \boldsymbol{\varepsilon}_{3}$ 到基 $\boldsymbol{\alpha}_{1}=(-1,-2,2)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(-2,-1,2)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=$ $(3,2,-3)^{\mathrm{T}}$ 的过渡矩阵为 $\left(\begin{array}{ccc}-1 & -2 & 3 \\ -2 & -1 & 2 \\ 2 & 2 & -3\end{array}\right)$.
+<p style="text-indent: 2em;">例如, 在 $\mathbf{R}^{3}$ 中, 从基 $\boldsymbol{\varepsilon}_{1}$, $\boldsymbol{\varepsilon}_{2}$, $\boldsymbol{\varepsilon}_{3}$ 到基 $\boldsymbol{\alpha}_{1}=(-1,-2,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}=(-2,-1,2)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{3}= (3,2,-3)^{\mathrm{T}}$ 的过渡矩阵为 $\left(\begin{array}{ccc}-1 & -2 & 3 \\ -2 & -1 & 2 \\ 2 & 2 & -3\end{array}\right)$.
 
 
 \begin{example}
@@ -558,11 +560,11 @@ $$
 
 <li> 求下列向量组的秩和一个极大无关组, 判定向量组的线性相关性, 并将其余向量 用极大无关组线性表出.
 <br>
-(1) $\boldsymbol{\alpha}_{1}=(1,0,0,1), \boldsymbol{\alpha}_{2}=(0,1,0,1), \boldsymbol{\alpha}_{3}=(0,1,0,-1), \boldsymbol{\alpha}_{4}=(2,-1,1,0)$;
+$(1)$ $\boldsymbol{\alpha}_{1}=(1,0,0,1), \boldsymbol{\alpha}_{2}=(0,1,0,1), \boldsymbol{\alpha}_{3}=(0,1,0,-1), \boldsymbol{\alpha}_{4}=(2,-1,1,0)$;
 <br>
-(2) $\boldsymbol{\alpha}_{1}=(1,2,1,3), \boldsymbol{\alpha}_{2}=(4,-1,-5,-6), \boldsymbol{\alpha}_{3}=(1,-3,-4,-7)$;
+$(2)$ $\boldsymbol{\alpha}_{1}=(1,2,1,3), \boldsymbol{\alpha}_{2}=(4,-1,-5,-6), \boldsymbol{\alpha}_{3}=(1,-3,-4,-7)$;
 <br>
-(3) $\boldsymbol{\alpha}_{1}=(1,1,0), \boldsymbol{\alpha}_{2}=(0,2,0), \boldsymbol{\alpha}_{3}=(0,0,3)$.
+$(3)$ $\boldsymbol{\alpha}_{1}=(1,1,0), \boldsymbol{\alpha}_{2}=(0,2,0), \boldsymbol{\alpha}_{3}=(0,0,3)$.
 </li>
 
 <li> $s$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 且可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 线性表出, 证 明: 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 的秩为 $s$.
@@ -581,9 +583,9 @@ $$
 $$
 \max \{R(\boldsymbol{A}), R(\boldsymbol{B})\} \leqslant R[(\boldsymbol{A}, \boldsymbol{B})] \leqslant R(\boldsymbol{A})+R(\boldsymbol{B}) .
 $$
+</li>
 
-
-\item 证明 $\boldsymbol{\alpha}_{1}=(1,-1,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(2,1,3)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(3,1,2)^{\mathrm{T}}$ 为 $\mathbf{R}^{3}$ 的一组基, 并求 $\boldsymbol{\beta}_{1}=(5,0,7)^{\mathrm{T}}, \boldsymbol{\beta}_{2}=(-9,-8,-13)^{\mathrm{T}}$ 在该基下的坐标.
+<li> 证明 $\boldsymbol{\alpha}_{1}=(1,-1,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(2,1,3)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(3,1,2)^{\mathrm{T}}$ 为 $\mathbf{R}^{3}$ 的一组基, 并求 $\boldsymbol{\beta}_{1}=(5,0,7)^{\mathrm{T}}, \boldsymbol{\beta}_{2}=(-9,-8,-13)^{\mathrm{T}}$ 在该基下的坐标.
 </li>
 
 <li> 在 $\mathbf{R}^{3}$ 中
@@ -599,13 +601,13 @@ $$
 \end{array}\right.\right.
 $$
 <br>
-(1) 证明 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 都是 $\mathbf{R}^{3}$ 的基;
+$(1)$ 证明 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 都是 $\mathbf{R}^{3}$ 的基;
 <br>
-(2) 求从 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 到 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 的过渡矩阵;
+$(2)$ 求从 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 到 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 的过渡矩阵;
 <br>
-(3) 求 $\boldsymbol{\alpha}=(2,1,1)^{\mathrm{T}}$ 在 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 下的坐标;
+$(3)$ 求 $\boldsymbol{\alpha}=(2,1,1)^{\mathrm{T}}$ 在 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 下的坐标;
 <br>
-(4) 求 $\boldsymbol{\alpha}$ 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 下的坐标.
+$(4)$ 求 $\boldsymbol{\alpha}$ 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 下的坐标.
 </li>
 
 
