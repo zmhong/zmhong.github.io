@@ -169,13 +169,14 @@ $$
 
 <ul>
 
-<p style="text-indent: 2em;">
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 初等变换不改变矩阵的秩.
-\end{theorem}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 只就行初等变换加以证明, 列初等变换的情形同理可证.
 <br>
 对于行初等变换中的第一种和第二种变换, 由于变换后矩阵中的每一个于式均能在原来的矩阵中找到相应的子式, 它们之间或只是行的次序不同, 或只是某一行扩大了 $k$ 倍, 因此相应子式或同为零, 或同为非零, 所以矩阵的秩不变.
@@ -226,7 +227,10 @@ $$
 $
 R(\boldsymbol{A})=R(\boldsymbol{B}).
 $
-\end{proof}
+</p>
+</div> 
+</p>
+
 
 
 
@@ -372,21 +376,27 @@ $$
 
 
 
-\begin{corollary}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $1$：</b></font>
 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则
 $$
 R(\boldsymbol{P} \boldsymbol{A})=R(\boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{P} \boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{A}),
 $$
 其中 $\boldsymbol{P}, \boldsymbol{Q}$ 分别为 $m$ 阶和 $n$ 阶可逆矩阵.
-\end{corollary}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDcorollary1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDcorollary1").style.display="none"'> 
+<div id= "divIDcorollary1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 因为 $\boldsymbol{P}$ 可逆, 所以存在有限个初等矩阵 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$, 使得 $\boldsymbol{P}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1}$, 从而 $\boldsymbol{P} \boldsymbol{A}=\boldsymbol{E}_{k} \cdots \boldsymbol{E}_{2} \boldsymbol{E}_{1} \boldsymbol{A}$, 即 $\boldsymbol{P} \boldsymbol{A}$ 为对 $\boldsymbol{A}$ 施以 $\boldsymbol{E}_{1}, \boldsymbol{E}_{2}, \cdots, \boldsymbol{E}_{k}$ 相对应的行初等变换所 得矩阵, 于是由定理 $1$ 知,
 $$
 R(\boldsymbol{P} \boldsymbol{A})=R(\boldsymbol{A}),
 $$
 同理可证 $R(\boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{P} \boldsymbol{A} \boldsymbol{Q})=R(\boldsymbol{A})$.
-\end{proof}
+</p>
+</div> 
+</p>
+
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -429,7 +439,8 @@ $$
 <p style="text-indent: 2em;">
 关于矩阵的秩, 有如下性质:
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
 $(1)$ 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则 $\boldsymbol{A}$ 可逆的充要条件是 $R(\boldsymbol{A})=n$;
 <br>
 $(2)$ 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})=R\left(\boldsymbol{A}^{\mathrm{T}}\right)$;
@@ -437,9 +448,11 @@ $(2)$ 对任意矩阵 $\boldsymbol{A}, R(\boldsymbol{A})=R\left(\boldsymbol{A}^{
 $(3)$ 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则 $0 \leqslant R(\boldsymbol{A}) \leqslant \min \{m, n\}$;
 <br>
 $(4)$ 对任意矩阵 $\boldsymbol{A}, R(k \boldsymbol{A})= \begin{cases}0, & k=0, \\ R(\boldsymbol{A}), & k \neq 0 .\end{cases}$
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
+<div id= "divIDthm2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 $(3)$ 和 $(4)$ 是显然的. 我们证明 $(1)$ 和 $(2)$.
 <br>
 $(1)$ 若 $\boldsymbol{A}$ 可逆, 则 $\operatorname{det} \boldsymbol{A} \neq 0$, 因此由定义 $2$ 知 $R(\boldsymbol{A})=n$.
@@ -451,7 +464,10 @@ $\boldsymbol{A}$ 中不为零的最高阶子式就是 $\boldsymbol{A}^{\mathrm{T
 $$
 R(\boldsymbol{A})=R\left(\boldsymbol{A}^{\mathrm{T}}\right) .
 $$
-\end{proof}
+</p>
+</div> 
+</p>
+
 
 <p style="text-indent: 2em;">由定理 $2$ 的 $(1)$ 知, 对于 $n$ 阶矩阵 $\boldsymbol{A}$, $\operatorname{det} \boldsymbol{A}=0$ 的充要条件是 $R(\boldsymbol{A}) < n$.
 因而, 可逆矩阵又称为满秩矩阵, 不可逆矩阵又称为降秩矩阵或退化矩阵.
@@ -490,7 +506,8 @@ $$
 
 <p style="text-indent: 2em;">对于例 $6$ 中 $R(\boldsymbol{A})=n-1$ 的情形, 将在 $\S 3.4$ 的例 $5$ 中给出.
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>
 对任意矩阵 $\boldsymbol{A}_{m \times n}$, 都存在可逆矩阵 $\boldsymbol{P}_{m \times m}, \boldsymbol{Q}_{n \times n}$, 使得
 $$
 \boldsymbol{P} \boldsymbol{A} \boldsymbol{Q}=\left(\begin{array}{ll}
@@ -499,9 +516,11 @@ $$
 \end{array}\right)_{m \times n}, \quad R(\boldsymbol{A})=r, 
 $$
 其中 $\left(\begin{array}{ll}\boldsymbol{I}_{r} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{O}\end{array}\right)_{m \times n}$ 称为 $\boldsymbol{A}$ 的标准形. 即任何矩阵 $\boldsymbol{A}$ 都等价于其标准形.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm3").style.display="none"'> 
+<div id= "divIDthm3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 对任意的 $\boldsymbol{A}_{m \times n}$, 总可经有限次行初等变换化为简化行阶梯形矩阵, 然后通过有限次列初等变换便可得到
 $$
 \left(\begin{array}{ll}
@@ -524,7 +543,10 @@ $$
 \boldsymbol{O} & \boldsymbol{O}
 \end{array}\right).
 $$
-\end{proof}
+</p>
+</div> 
+</p>
+
 
 <p style="text-indent: 2em;">定理 $3$ 也说明, 对任意矩阵 $\boldsymbol{A}$, 存在可逆矩阵 $\boldsymbol{K}, \boldsymbol{S}$, 使
 $$
@@ -534,9 +556,10 @@ $$
 \end{array}\right) \boldsymbol{S}, \quad R(\boldsymbol{A})=r.
 $$
 
-\begin{corollary}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $2$：</b></font>
 同型矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价的充要条件是 $R(\boldsymbol{A})=R(\boldsymbol{B})$.
-\end{corollary}
+</p>
 
 
 
