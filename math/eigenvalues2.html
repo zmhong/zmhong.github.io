@@ -309,7 +309,10 @@ $$
 -2 & & \\
 & 1 & \\
 & & 1
-\end{array}\right) \boldsymbol{P}^{-1}, \quad \boldsymbol{P}^{-1}=\left(\begin{array}{ccc}
+\end{array}\right) \boldsymbol{P}^{-1}, 
+$$
+$$
+\boldsymbol{P}^{-1}=\left(\begin{array}{ccc}
 1 & 2 & 0 \\
 -1 & -1 & 0 \\
 -1 & -2 & 1
@@ -427,7 +430,7 @@ $$
 设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k}$ 是矩阵 $\boldsymbol{A}$ 的互异特征值, $\boldsymbol{\alpha}_{i 1}, \boldsymbol{\alpha}_{i 2}, \cdots, \boldsymbol{\alpha}_{i r_{i}}$ 是对应于特征 值 $\lambda_{i}$ 的线性无关的特征向量, 则 $\boldsymbol{\alpha}_{11}, \cdots, \boldsymbol{\alpha}_{1 r_{1}}, \cdots, \boldsymbol{\alpha}_{k 1}, \cdots, \boldsymbol{\alpha}_{k r_{k}}$ 也线性无关.
 </p>
 
-<p style="text-indent: 2em;">设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 是 $n$ 阶矩阵 $\boldsymbol{A}$ 的全部互异特征值, $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值 $(k_{i} \geqslant 1)$, 则 $k_{1}+k_{2}+\cdots+k_{r}=n$. 若对每一个特征值 $\lambda_{i}(i=1,2, \cdots, r)$, $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的基础解系由 $k_{i}$ 个解向量组成, 即 $\lambda_{i}$ 恰有 $k_{i}$ 个线性无关的特征向量, 则由推论 2 可知, $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量. 而 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系所含解向量个数不大于 $k_{i}$, 故可得下面的定理:
+<p style="text-indent: 2em;">设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 是 $n$ 阶矩阵 $\boldsymbol{A}$ 的全部互异特征值, $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值 $(k_{i} \geqslant 1)$, 则 $k_{1}+k_{2}+\cdots+k_{r}=n$. 若对每一个特征值 $\lambda_{i}(i=1,2, \cdots, r)$, $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的基础解系由 $k_{i}$ 个解向量组成, 即 $\lambda_{i}$ 恰有 $k_{i}$ 个线性无关的特征向量, 则由推论 $2$ 可知, $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量. 而 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系所含解向量个数不大于 $k_{i}$, 故可得下面的定理:
 
 
 
@@ -436,7 +439,7 @@ $$
 $n$ 阶矩阵 $\boldsymbol{A}$ 与对角矩阵相似的充要条件是对于 $\boldsymbol{A}$ 的每一个 $k_{i}$ 重特征根 $\lambda_{i}$, 齐次线性方程组 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系由 $k_{i}$ 个解向量组成.
 </p>
 
-<p style="text-indent: 2em;">$\lambda_{i} \boldsymbol{I}-\boldsymbol{A}$ 是齐次线性方程组 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵, 由系数矩阵的秩与基础解系所含解向量的个数的关系可以得到定理 5 的一个推论.
+<p style="text-indent: 2em;">$\lambda_{i} \boldsymbol{I}-\boldsymbol{A}$ 是齐次线性方程组 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵, 由系数矩阵的秩与基础解系所含解向量的个数的关系可以得到定理 $5$ 的一个推论.
 
 
 <p style="border: 2px solid red; border-radius: 5px">
@@ -453,11 +456,11 @@ $$
 1 & 2 & 2 \\
 2 & 1 & -2 \\
 -2 & -2 & 1
-\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{rrr}
+\end{array}\right), \, \boldsymbol{B}=\left(\begin{array}{rrr}
 3 & -1 & -2 \\
 2 & 0 & -2 \\
 2 & -1 & -1
-\end{array}\right), \quad \boldsymbol{C}=\left(\begin{array}{rrr}
+\end{array}\right), \, \boldsymbol{C}=\left(\begin{array}{rrr}
 3 & 1 & 0 \\
 -4 & -1 & 0 \\
 4 & -8 & -2
@@ -469,11 +472,15 @@ $$
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>解： </b></font>
 $$
-\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=\left|\begin{array}{ccc}
+\begin{aligned}
+\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})
+  & =\left|\begin{array}{ccc}
 \lambda-1 & -2 & -2 \\
 -2 & \lambda-1 & 2 \\
 2 & 2 & \lambda-1
-\end{array}\right|=(\lambda-1)(\lambda+1)(\lambda-3),
+\end{array}\right|\\
+  & =(\lambda-1)(\lambda+1)(\lambda-3),
+\end{aligned}
 $$
 $\boldsymbol{A}$的特征值都是单根, 故$\boldsymbol{A}$能与对角矩阵相似.
 $$
