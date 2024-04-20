@@ -68,7 +68,7 @@ $$
 \end{array}\right) \boldsymbol{P}^{-1}.
 $$
 
-对于同阶方阵 $\boldsymbol{A}, \boldsymbol{B}$, 如果存在可逆矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{-1} \boldsymbol{AP}=\boldsymbol{B}$, 那么对于 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 之间的这种关系, 我们给出如下定义:
+<p style="text-indent: 2em;">对于同阶方阵 $\boldsymbol{A}, \boldsymbol{B}$, 如果存在可逆矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{-1} \boldsymbol{AP}=\boldsymbol{B}$, 那么对于 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 之间的这种关系, 我们给出如下定义:
 
 
 
@@ -77,17 +77,17 @@ $$
 \end{definition}
 
 
-矩阵之间的相似关系具有以下性质:
+<p style="text-indent: 2em;">矩阵之间的相似关系具有以下性质:
 
-$1^{\circ}$\quad 反身性: $\boldsymbol{A} \sim \boldsymbol{A}$;
+<p style="text-indent: 2em;">$1^{\circ}$  <font color=blue><b>反身性:</b></font> $\boldsymbol{A} \sim \boldsymbol{A}$;
 
-$2^{\circ}$\quad 对称性: 若 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $\boldsymbol{B} \sim \boldsymbol{A}$;
+<p style="text-indent: 2em;">$2^{\circ}$  <font color=blue><b>对称性:</b></font> 若 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $\boldsymbol{B} \sim \boldsymbol{A}$;
 
-$3^{\circ}$\quad 传递性: 若 $\boldsymbol{A} \sim \boldsymbol{B}$ 且 $\boldsymbol{B} \sim \boldsymbol{C}$, 则 $\boldsymbol{A} \sim \boldsymbol{C}$.
+<p style="text-indent: 2em;">$3^{\circ}$  <font color=blue><b>传递性:</b></font> 若 $\boldsymbol{A} \sim \boldsymbol{B}$ 且 $\boldsymbol{B} \sim \boldsymbol{C}$, 则 $\boldsymbol{A} \sim \boldsymbol{C}$.
 
-$1^{\circ}$ 和 $2^{\circ}$ 的证明是很显然的. $3^{\circ}$ 的证明如下:
+<p style="text-indent: 2em;">$1^{\circ}$ 和 $2^{\circ}$ 的证明是很显然的. $3^{\circ}$ 的证明如下:
 
-设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则存在可逆矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{-1} \boldsymbol{AP}=\boldsymbol{B}$, 又 $\boldsymbol{B} \sim \boldsymbol{C}$, 则存在可逆矩阵 $\boldsymbol{Q}$,
+<p style="text-indent: 2em;">设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则存在可逆矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{-1} \boldsymbol{AP}=\boldsymbol{B}$, 又 $\boldsymbol{B} \sim \boldsymbol{C}$, 则存在可逆矩阵 $\boldsymbol{Q}$,
 使 $\boldsymbol{Q}^{-1} \boldsymbol{B} \boldsymbol{Q}=\boldsymbol{C}$. 所以
 $$
 \boldsymbol{Q}^{-1} \boldsymbol{P}^{-1} \boldsymbol{APQ}=(\boldsymbol{PQ})^{-1} \boldsymbol{A}(\boldsymbol{PQ})=\boldsymbol{C},
@@ -137,7 +137,7 @@ $$
 \end{solution}
 
 
-我们自然要提出的问题是, 什么样的矩阵 $\boldsymbol{A}$ 可以与对角矩阵相似? 或者说, 对于给定的矩阵 $\boldsymbol{A}$, 在什么条件下存在对角矩阵 $\boldsymbol{\varLambda}$ 与可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ ? 如果这样的矩阵 $\boldsymbol{\varLambda}$ 与 $\boldsymbol{P}$ 存在, 那么又应该怎样求出? 下面就讨论这些问题.
+<p style="text-indent: 2em;">我们自然要提出的问题是, 什么样的矩阵 $\boldsymbol{A}$ 可以与对角矩阵相似? 或者说, 对于给定的矩阵 $\boldsymbol{A}$, 在什么条件下存在对角矩阵 $\boldsymbol{\varLambda}$ 与可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ ? 如果这样的矩阵 $\boldsymbol{\varLambda}$ 与 $\boldsymbol{P}$ 存在, 那么又应该怎样求出? 下面就讨论这些问题.
 
 
 
@@ -166,10 +166,10 @@ $$
 所以 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{\varLambda}$ 的全部特征值, 也就是 $\boldsymbol{A}$ 的全部特征值.
 \end{proof}
 
-定理 $2$ 指出, 若 $\boldsymbol{A}$ 与对角矩阵 $\boldsymbol{\varLambda}$ 相似, 则 $\boldsymbol{\varLambda}$ 的主对角线上的元就是 $\boldsymbol{A}$ 的全部特征值, 那么, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ 的矩阵 $\boldsymbol{P}$ 又是怎样构成的呢?
+<p style="text-indent: 2em;">定理 $2$ 指出, 若 $\boldsymbol{A}$ 与对角矩阵 $\boldsymbol{\varLambda}$ 相似, 则 $\boldsymbol{\varLambda}$ 的主对角线上的元就是 $\boldsymbol{A}$ 的全部特征值, 那么, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ 的矩阵 $\boldsymbol{P}$ 又是怎样构成的呢?
 
 
-设 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right), \boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 是 $\boldsymbol{P}$ 的列向量组, 则
+<p style="text-indent: 2em;">设 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right), \boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 是 $\boldsymbol{P}$ 的列向量组, 则
 $$
 \boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}, \quad \boldsymbol{A P}=\boldsymbol{P} \boldsymbol{\varLambda},
 $$
@@ -185,7 +185,7 @@ $$
 $$
 因为 $\boldsymbol{P}$ 可逆, 所以 $\boldsymbol{p}_{i} \neq \mathbf{0}$ $(i=1,2, \cdots, n)$, 于是, $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 是 $\boldsymbol{A}$ 的 $n$ 个线性无关 的特征向量.
 
-反之, 若 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$, 即 $\boldsymbol{A} \boldsymbol{p}_{i}=\lambda_{i} \boldsymbol{p}_{i}(i=$ $1,2, \cdots, n)$, 设 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right)$, 则 $\boldsymbol{P}$ 可逆, 且
+<p style="text-indent: 2em;">反之, 若 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$, 即 $\boldsymbol{A} \boldsymbol{p}_{i}=\lambda_{i} \boldsymbol{p}_{i}(i=$ $1,2, \cdots, n)$, 设 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right)$, 则 $\boldsymbol{P}$ 可逆, 且
 $$
 \begin{aligned}
 \boldsymbol{A P}
@@ -201,7 +201,7 @@ $$
 所以 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$, 即 $\boldsymbol{A}$ 与对角矩阵 $\boldsymbol{\varLambda}$ 相似.
 
 
-由以上讨论可得
+<p style="text-indent: 2em;">由以上讨论可得
 
 
 
@@ -211,7 +211,7 @@ $n$ 阶矩阵 $\boldsymbol{A}$ 能与对角矩阵 $\boldsymbol{\varLambda}$ 相�
 \end{theorem}
 
 
-由此定理可知, 若 $n$ 阶矩阵 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量
+<p style="text-indent: 2em;">由此定理可知, 若 $n$ 阶矩阵 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量
 $$
 \boldsymbol{A} \boldsymbol{p}_{i}=\lambda_{i} \boldsymbol{p}_{i} \quad(i=1,2, \cdots, n),
 $$
@@ -226,9 +226,9 @@ $$
 $$
 其中 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的全部特征值.
 
-值得注意的是, $\boldsymbol{P}$ 中列向量 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 的排列顺序要与 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 的排列顺序一致.
+<p style="text-indent: 2em;">值得注意的是, $\boldsymbol{P}$ 中列向量 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 的排列顺序要与 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 的排列顺序一致.
 
-由于 $\boldsymbol{p}_{i}$ 是 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系中的解向量, 故 $\boldsymbol{p}_{i}$ 的取法不是惟一的, 因此 $\boldsymbol{P}$ 也不是惟一的. 而 $f_{\boldsymbol{A}}(\lambda)=\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$ 的根只有 $n$ 个 (重根按重数计算), 所以, 若不计 $\lambda_{i}$ 的排列顺序, 则 $\boldsymbol{\varLambda}$ 是惟一确定的.
+<p style="text-indent: 2em;">由于 $\boldsymbol{p}_{i}$ 是 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系中的解向量, 故 $\boldsymbol{p}_{i}$ 的取法不是惟一的, 因此 $\boldsymbol{P}$ 也不是惟一的. 而 $f_{\boldsymbol{A}}(\lambda)=\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$ 的根只有 $n$ 个 (重根按重数计算), 所以, 若不计 $\lambda_{i}$ 的排列顺序, 则 $\boldsymbol{\varLambda}$ 是惟一确定的.
 
 
 
@@ -239,8 +239,8 @@ $$
 
 \begin{solution}
 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=\left|\begin{array}{ccc}\lambda-4 & -6 & 0 \\ 3 & \lambda+5 & 0 \\ 3 & 6 & \lambda-1\end{array}\right|=(\lambda+2)(\lambda-1)^{2}$, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=-2, \lambda_{2}=1(2$ 重).
-
-对于 $\lambda_{1}=-2$, $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的系数矩阵为
+<br>
+$\quad$ 对于 $\lambda_{1}=-2$, $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的系数矩阵为
 $$
 \left(\begin{array}{rrr}
 -6 & -6 & 0 \\
@@ -257,8 +257,8 @@ $$
 \end{array}\right),
 $$
 对应的齐次线性方程组为 $\left\{\begin{array}{l}x_{1}=-x_{3}, \\ x_{2}=x_{3},\end{array}\right.$ 其基础解系为 $\boldsymbol{\alpha}_{1}=(-1,1,1)^{\mathrm{T}}$.
-
-对于 $\lambda_{2}=1$, $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的系数矩阵为
+<br>
+$\quad$ 对于 $\lambda_{2}=1$, $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的系数矩阵为
 $$
 \left(\begin{array}{rrr}
 -3 & -6 & 0 \\
@@ -271,8 +271,8 @@ $$
 \end{array}\right),
 $$
 对应的齐次线性方程组为 $x_{1}=-2 x_{2}+0 x_{3}$, 其基础解系为 $\boldsymbol{\alpha}_{2}=\left(\begin{array}{r}-2 \\ 1 \\ 0\end{array}\right), \boldsymbol{\alpha}_{3}=\left(\begin{array}{l}0 \\ 0 \\ 1\end{array}\right)$. 
-
-令
+<br>
+$\quad$ 令
 $$
 \boldsymbol{P}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}\right)=\left(\begin{array}{rrr}
 -1 & -2 & 0 \\
@@ -331,7 +331,7 @@ $$
 \end{proof}
 
 
-定理 $3$ 给出了 $n$ 阶矩阵与对角矩阵相似的充要条件, 但是对于一个具体的 $n$ 阶矩阵, 要直接判断它是否有 $n$ 个线性无关的特征向量一般是很困难的, 下面我们进一步讨论什么样的 $n$ 阶矩阵能与对角矩阵相似.
+<p style="text-indent: 2em;">定理 $3$ 给出了 $n$ 阶矩阵与对角矩阵相似的充要条件, 但是对于一个具体的 $n$ 阶矩阵, 要直接判断它是否有 $n$ 个线性无关的特征向量一般是很困难的, 下面我们进一步讨论什么样的 $n$ 阶矩阵能与对角矩阵相似.
 
 
 
@@ -342,15 +342,17 @@ $$
 \begin{proof}
 用数学归纳法证明.
 当 $m=1$ 时, 结论显然成立. 因为特征向量 $\boldsymbol{\alpha}_{1} \neq \mathbf{0}$, 所以一个非零向量是线性无关的.
+<br>
+$\quad$ 假设对 $m-1$ 个互异特征值结论成立.
 
-假设对 $m-1$ 个互异特征值结论成立.
-
-对 $m$ 个互异特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}$ 以及它们所对应的特征向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$, 设
+<br>
+$\quad$ 对 $m$ 个互异特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}$ 以及它们所对应的特征向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$, 设
 \begin{equation}\label{eq:4.9}
 k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{m} \boldsymbol{\alpha}_{m}=\mathbf{0},
 \end{equation}
 
-用 $\boldsymbol{A}$ 左乘式 $(\ref{eq:4.9})$ 两端得
+<br>
+$\quad$ 用 $\boldsymbol{A}$ 左乘式 $(\ref{eq:4.9})$ 两端得
 $$
 k_{1}\left(\boldsymbol{A} \boldsymbol{\alpha}_{1}\right)+k_{2}\left(\boldsymbol{A} \boldsymbol{\alpha}_{2}\right)+\cdots+k_{m}\left(\boldsymbol{A} \boldsymbol{\alpha}_{m}\right)=\mathbf{0},
 $$
@@ -382,13 +384,13 @@ $$
 因为 $\boldsymbol{A}$ 的特征值都是 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$ 的单根, 所以 $\boldsymbol{A}$ 有 $n$ 个互异特征值. 互异特征值对应的特征向量是线性无关的, 故 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量, 因而 $\boldsymbol{A}$ 能与对角矩阵相似.
 \end{proof}
 
-与定理 $4$ 的证明类似, 我们可以得到下面的推论:
+<p style="text-indent: 2em;">与定理 $4$ 的证明类似, 我们可以得到下面的推论:
 
 \begin{corollary}
 设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k}$ 是矩阵 $\boldsymbol{A}$ 的互异特征值, $\boldsymbol{\alpha}_{i 1}, \boldsymbol{\alpha}_{i 2}, \cdots, \boldsymbol{\alpha}_{i r_{i}}$ 是对应于特征 值 $\lambda_{i}$ 的线性无关的特征向量, 则 $\boldsymbol{\alpha}_{11}, \cdots, \boldsymbol{\alpha}_{1 r_{1}}, \cdots, \boldsymbol{\alpha}_{k 1}, \cdots, \boldsymbol{\alpha}_{k r_{k}}$ 也线性无关.
 \end{corollary}
 
-设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 是 $n$ 阶矩阵 $\boldsymbol{A}$ 的全部互异特征值, $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值 $(k_{i} \geqslant 1)$, 则 $k_{1}+k_{2}+\cdots+k_{r}=n$. 若对每一个特征值 $\lambda_{i}(i=1,2, \cdots, r)$, $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的基础解系由 $k_{i}$ 个解向量组成, 即 $\lambda_{i}$ 恰有 $k_{i}$ 个线性无关的特征向量, 则由推论 2 可知, $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量. 而 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系所含解向量个数不大于 $k_{i}$, 故可得下面的定理:
+<p style="text-indent: 2em;">设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 是 $n$ 阶矩阵 $\boldsymbol{A}$ 的全部互异特征值, $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值 $(k_{i} \geqslant 1)$, 则 $k_{1}+k_{2}+\cdots+k_{r}=n$. 若对每一个特征值 $\lambda_{i}(i=1,2, \cdots, r)$, $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的基础解系由 $k_{i}$ 个解向量组成, 即 $\lambda_{i}$ 恰有 $k_{i}$ 个线性无关的特征向量, 则由推论 2 可知, $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量. 而 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系所含解向量个数不大于 $k_{i}$, 故可得下面的定理:
 
 
 
@@ -396,7 +398,7 @@ $$
 $n$ 阶矩阵 $\boldsymbol{A}$ 与对角矩阵相似的充要条件是对于 $\boldsymbol{A}$ 的每一个 $k_{i}$ 重特征根 $\lambda_{i}$, 齐次线性方程组 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系由 $k_{i}$ 个解向量组成.
 \end{theorem}
 
-$\lambda_{i} \boldsymbol{I}-\boldsymbol{A}$ 是齐次线性方程组 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵, 由系数矩阵的秩与基础解系所含解向量的个数的关系可以得到定理 5 的一个推论.
+<p style="text-indent: 2em;">$\lambda_{i} \boldsymbol{I}-\boldsymbol{A}$ 是齐次线性方程组 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵, 由系数矩阵的秩与基础解系所含解向量的个数的关系可以得到定理 5 的一个推论.
 
 
 \begin{corollary}
@@ -516,7 +518,7 @@ $$
 <ol>
 
 <li>
-在习题 $4.1$ 第 $1$ 题中, 哪些矩阵可与对角矩阵相似? 对于能与对角矩阵相似者, 求 出可逆矩阵 $\boldsymbol{P}$ 与对角矩阵 $\boldsymbol{\varLambda}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$.
+在习题 $4.1$ 第 $1$ 题中, 哪些矩阵可与对角矩阵相似? 对于能与对角矩阵相似者, 求出可逆矩阵 $\boldsymbol{P}$ 与对角矩阵 $\boldsymbol{\varLambda}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$.
 </li>
 
 <li> 设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 是上三角形矩阵, $\boldsymbol{A}$ 的主对角线元相等, 且至少有一个元素 $a_{i j} \neq 0(i < j)$, 证明 $\boldsymbol{A}$ 不能与对角矩阵相似.
@@ -545,9 +547,9 @@ $$
 
 <li> 设 $\boldsymbol{A}$ 是 $3$ 阶矩阵, 且 $\boldsymbol{I}+\boldsymbol{A}$, $3 \boldsymbol{I}-\boldsymbol{A}$, $\boldsymbol{I}-3 \boldsymbol{A}$ 均不可逆. 证明
   <br>
-  (1) $\boldsymbol{A}$ 是可逆矩阵; 
+  $(1)$ $\boldsymbol{A}$ 是可逆矩阵; 
   <br>
-  (2) $\boldsymbol{A}$ 与对角矩阵相似.
+  $(2)$ $\boldsymbol{A}$ 与对角矩阵相似.
 </li>
 
 <li> 证明相似矩阵的行列式相等.
