@@ -59,7 +59,8 @@ $4.1$ 特征值与特征向量的概念与计算
 
 <ul>
 
-<p style="text-indent: 2em;">在实际问题中, 常常碰到这样的问题, 即对于一个给定的 $n$ 阶方阵 $\boldsymbol{A}$, 是否存在非零的 $n$ 维向量 $\boldsymbol{\alpha}$, 使得 $\boldsymbol{A} \boldsymbol{\alpha}$ 与 $\boldsymbol{\alpha}$ 平行, 即存在常数 $\lambda$, 使得 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$ 成立. 在数学上, 这就是特征值与特征向量的问题.
+<p style="text-indent: 2em;">在实际问题中, 常常碰到这样的问题, 即对于一个给定的 $n$ 阶方阵 $\boldsymbol{A}$, 是否存在非零的 $n$ 维向量 $\boldsymbol{\alpha}$,
+使得 $\boldsymbol{A} \boldsymbol{\alpha}$ 与 $\boldsymbol{\alpha}$ 平行, 即存在常数 $\lambda$, 使得 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$ 成立. 在数学上, 这就是特征值与特征向量的问题.
 
 
 
@@ -73,7 +74,8 @@ $4.1$ 特征值与特征向量的概念与计算
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 设
 $\boldsymbol{A}=\left(\begin{array}{rr}3 & -2 \\ 1 & 0\end{array}\right), \quad \boldsymbol{\alpha}_{1}=\left(\begin{array}{l}1 \\ 1\end{array}\right), \quad \boldsymbol{\alpha}_{2}=\left(\begin{array}{l}2 \\ 1\end{array}\right), \quad \boldsymbol{\beta}=\left(\begin{array}{r}-1 \\ 1\end{array}\right)$, 有
 $$
@@ -116,11 +118,12 @@ $$
 \end{array}\right) .
 \end{gathered}
 $$
+<br>
+$\quad$ 由定义可知, $1$ 与 $2$ 就是 $\boldsymbol{A}$ 的两个特征值, $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 就是 $\boldsymbol{A}$ 分别对应于特征值 $1$ 与 $2$ 的特征向量; 而 $\boldsymbol{\beta}$ 则不是 $\boldsymbol{A}$ 的特征向量.
 
-由定义可知, $1$ 与 $2$ 就是 $\boldsymbol{A}$ 的两个特征值, $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 就是 $\boldsymbol{A}$ 分别对应于特征值 $1$ 与 $2$ 的特征向量; 而 $\boldsymbol{\beta}$ 则不是 $\boldsymbol{A}$ 的特征向量.
-
-从几何上看, 矩阵 $\boldsymbol{A}$ 分别乘向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 与 $\boldsymbol{\beta}$ 的结果如图 \ref{fig:4.2} 所示, $\boldsymbol{A} \boldsymbol{\alpha}_{2}$ 相当于将向量 $\boldsymbol{\alpha}_{2}$ 增大一倍. 这说明, 如果 $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 的特征向量, 那么 $\boldsymbol{A} \boldsymbol{\alpha}$ 相当于对 $\boldsymbol{\alpha}$ 作一次 “伸缩” 变换.
-\end{example}
+<br>
+$\quad$ 从几何上看, 矩阵 $\boldsymbol{A}$ 分别乘向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 与 $\boldsymbol{\beta}$ 的结果如图 \ref{fig:4.2} 所示, $\boldsymbol{A} \boldsymbol{\alpha}_{2}$ 相当于将向量 $\boldsymbol{\alpha}_{2}$ 增大一倍. 这说明, 如果 $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 的特征向量, 那么 $\boldsymbol{A} \boldsymbol{\alpha}$ 相当于对 $\boldsymbol{\alpha}$ 作一次 “伸缩” 变换.
+</p>
 
 
 \begin{figure}[!ht]
@@ -133,11 +136,14 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 设方阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{2}=\boldsymbol{A}$, 试证 $\boldsymbol{A}$ 的特征值只有 $0$ 或 $1$.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\lambda$ 是 $\boldsymbol{A}$ 的特征值, $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 对应于 $\lambda$ 的特征向量, 则
 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$ $(\boldsymbol{\alpha} \neq \mathbf{0})$. 于是
 $$
@@ -146,16 +152,18 @@ $$
 所以
 $$\left(\lambda^{2}-\lambda\right) \boldsymbol{\alpha}=\mathbf{0}.$$
 因为 $\boldsymbol{\alpha} \neq \mathbf{0}$, 所以 $\lambda^{2}-\lambda=\lambda(\lambda-1)=0$, 即 $\lambda=0$ 或 $\lambda=1$.
-\end{proof}
+</p>
+</div>
+</p>
 
 
-对于 $n$ 阶方阵 $\boldsymbol{A}$, 如果 $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的一个特征向量, 那么对任意的 $k \neq 0$
+<p style="text-indent: 2em;">对于 $n$ 阶方阵 $\boldsymbol{A}$, 如果 $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的一个特征向量, 那么对任意的 $k \neq 0$
 $$
 \boldsymbol{A}(k \boldsymbol{\alpha})=k(\boldsymbol{A} \boldsymbol{\alpha})=k(\lambda \boldsymbol{\alpha})=\lambda(k \boldsymbol{\alpha}),
 $$
 所以, $k \boldsymbol{\alpha}$ 也是 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的特征向量.
 
-设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 都是 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的特征向量, 且 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}$ $\neq \mathbf{0}$, 则
+<p style="text-indent: 2em;">设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 都是 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的特征向量, 且 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}$ $\neq \mathbf{0}$, 则
 $$
 \begin{aligned}
 \boldsymbol{A}\left(k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}\right) &=k_{1}\left(\boldsymbol{A} \boldsymbol{\alpha}_{1}\right)+k_{2}\left(\boldsymbol{A} \boldsymbol{\alpha}_{2}\right)+\cdots+k_{r}\left(\boldsymbol{A} \boldsymbol{\alpha}_{r}\right) \\
@@ -165,15 +173,15 @@ $$
 $$
 所以 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}$ 也是 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的特征向量.
 
-设 $V_{\lambda}$ 是 $n$ 阶方阵 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的所有特征向量以及零向量所组成的集合, 即
+<p style="text-indent: 2em;">设 $V_{\lambda}$ 是 $n$ 阶方阵 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的所有特征向量以及零向量所组成的集合, 即
 $$
 V_{\lambda}=\left\{\boldsymbol{\alpha} \mid \boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}, \lambda \in \mathbf{C}, \boldsymbol{\alpha} \in \mathbf{C}^{n}\right\}.
 $$
 由以上分析可知 $V_{\lambda}$ 对向量的加法和数乘封闭, 故 $V_{\lambda}$ 构成子空间. 我们称 $V_{\lambda}$ 为 $\boldsymbol{A}$ 的\textbf{特征子空间}.
 
-在例 $1$ 中, $\boldsymbol{A} \boldsymbol{\alpha}_{1}=\boldsymbol{\alpha}_{1}, \boldsymbol{A} \boldsymbol{\alpha}_{2}=2 \boldsymbol{\alpha}_{2}$, 不难证明 $\boldsymbol{A}$ 对应于特征值 $\lambda_{1}=1$ 的所有特征向量都可以由 $\boldsymbol{\alpha}_{1}$ 线性表出, 对应于 $\lambda_{2}=2$ 的所有特征向量都可以由 $\boldsymbol{\alpha}_{2}$ 线性表出.
+<p style="text-indent: 2em;">在例 $1$ 中, $\boldsymbol{A} \boldsymbol{\alpha}_{1}=\boldsymbol{\alpha}_{1}, \boldsymbol{A} \boldsymbol{\alpha}_{2}=2 \boldsymbol{\alpha}_{2}$, 不难证明 $\boldsymbol{A}$ 对应于特征值 $\lambda_{1}=1$ 的所有特征向量都可以由 $\boldsymbol{\alpha}_{1}$ 线性表出, 对应于 $\lambda_{2}=2$ 的所有特征向量都可以由 $\boldsymbol{\alpha}_{2}$ 线性表出.
 
-从几何上看, $V_{\lambda_{1}}$ 对应于过原点与点 $(1,1)$ 的直线 $l_{1}, V_{\lambda_{2}}$ 对应于过原点与点 $(2,1)$ 的直线 $l_{2}$ (图 \ref{fig:4.3} ), 即
+<p style="text-indent: 2em;">从几何上看, $V_{\lambda_{1}}$ 对应于过原点与点 $(1,1)$ 的直线 $l_{1}, V_{\lambda_{2}}$ 对应于过原点与点 $(2,1)$ 的直线 $l_{2}$ (图 \ref{fig:4.3} ), 即
 $$
 V_{\lambda_{1}}=\left\{l_{1} \text{上的所有向量} \right\}, V_{\lambda_{2}}=\left\{l_{2} \text{上的所有向量} \right\}.
 $$
@@ -201,7 +209,7 @@ $$
 
 <p style="text-indent: 2em;">下面讨论对于给定的方阵 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$, 怎样求 $\boldsymbol{A}$ 的特征值与特征向量. 
 
-设 $\boldsymbol{\alpha}$ 是方阵 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的特征向量, 即 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha} \quad(\boldsymbol{\alpha} \neq \mathbf{0}),(\lambda \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{\alpha}=\boldsymbol{0}$. 于是, $\boldsymbol{\alpha}$ 是齐次线性方程组 $(\lambda \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{X}=\mathbf{0}$ 即
+<p style="text-indent: 2em;">设 $\boldsymbol{\alpha}$ 是方阵 $\boldsymbol{A}$ 对应于特征值 $\lambda$ 的特征向量, 即 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha} \quad(\boldsymbol{\alpha} \neq \mathbf{0}),(\lambda \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{\alpha}=\boldsymbol{0}$. 于是, $\boldsymbol{\alpha}$ 是齐次线性方程组 $(\lambda \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{X}=\mathbf{0}$ 即
 $$
 \left\{\begin{array}{c}
 \left(\lambda-a_{11}\right) x_{1}-a_{12} x_{2}-\cdots-a_{1 n} x_{n}=0, \\
@@ -216,42 +224,52 @@ $$
 $$
 $(\lambda \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{X}=\mathbf{0}$ 的基础解系为 $V_{\lambda}$ 的基.
 
-因为齐次线性方程组有非零解的充要条件是系数行列式等于零, 所以
+<p style="text-indent: 2em;">因为齐次线性方程组有非零解的充要条件是系数行列式等于零, 所以
 $$
 \operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0 .
 $$
 我们将方程 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$ 称为方阵 $\boldsymbol{A}$ 的\textbf{特征方程}. 特征方程的根就是特征值, 故有时又将特征值称为特征根. 若 $\lambda$ 是单根, 则称 $\lambda$ 为 $\boldsymbol{A}$ 的单特征根; 若 $\lambda$ 是 $k$ 重根, 则称 $\lambda$ 为 $\boldsymbol{A}$ 的 $k$ 重特征根.
 
-由以上分析可得求方阵 $\boldsymbol{A}$ 的特征值与特征向量的计算步骤如下:
+<p style="text-indent: 2em;">由以上分析可得求方阵 $\boldsymbol{A}$ 的特征值与特征向量的计算步骤如下:
 
-$1^{\circ}$\quad 求特征方程 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$ 的全部相异根 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k}(k \leqslant n)$;
+<p style="text-indent: 2em;">$1^{\circ}$ 求特征方程 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=0$ 的全部相异根 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k}(k \leqslant n)$;
 
-$2^{\circ}$\quad 分别求 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}(i=1,2, \cdots, k)$ 的基础解系 $\boldsymbol{\alpha}_{i 1}, \boldsymbol{\alpha}_{i 2}, \cdots, \boldsymbol{\alpha}_{i r_{i}}$, 则 $k_{1} \boldsymbol{\alpha}_{i 1}+k_{2} \boldsymbol{\alpha}_{i 2}+\cdots+k_{r_{i}} \boldsymbol{\alpha}_{i r_{i}}$ ( $k_{1}, k_{2}, \cdots, k_{r_{i}}$ 不全为零 ) 就是 $\boldsymbol{A}$ 对应于特征值 $\lambda_{i}$ 的全部特征向量.
-
-
+<p style="text-indent: 2em;">$2^{\circ}$ 分别求 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}(i=1,2, \cdots, k)$ 的基础解系 $\boldsymbol{\alpha}_{i 1}, \boldsymbol{\alpha}_{i 2}, \cdots, \boldsymbol{\alpha}_{i r_{i}}$, 则 $k_{1} \boldsymbol{\alpha}_{i 1}+k_{2} \boldsymbol{\alpha}_{i 2}+\cdots+k_{r_{i}} \boldsymbol{\alpha}_{i r_{i}}$ ( $k_{1}, k_{2}, \cdots, k_{r_{i}}$ 不全为零 ) 就是 $\boldsymbol{A}$ 对应于特征值 $\lambda_{i}$ 的全部特征向量.
 
 
 
 
-\begin{example}
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 求方阵 $\boldsymbol{A}=\left(\begin{array}{rr}3 & -2 \\ 1 & 0\end{array}\right)$ 的特征值与特征向量.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=\left|\begin{array}{cc}\lambda-3 & 2 \\ -1 & \lambda\end{array}\right|=\lambda^{2}-3 \lambda+2=(\lambda-1)(\lambda-2), \boldsymbol{A}$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=2$.
+<br>
+$\quad$ 对于 $\lambda_{1}=1$, 齐次线性方程组 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为 $\left(\begin{array}{cc}-2 & 2 \\ -1 & 1\end{array}\right)$, 
+相应简化的齐次线性方程组为 $x_{1}-x_{2}=0$, 其基础解系为 $\boldsymbol{\alpha}_{1}=(1,1)^{\mathrm{T}}$, 故对应于 $\lambda_{1}=1$ 的 $\boldsymbol{A}$ 的全部特征向量为 $k_{1} \boldsymbol{\alpha}_{1}\left(k_{1} \neq 0\right)$.
+<br>
+$\quad$ 对于 $\lambda_{2}=2$, 齐次线性方程组 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为 $\left(\begin{array}{cc}-1 & 2 \\ -1 & 2\end{array}\right)$, 
+相应简化的齐次线性方程组为 $x_{1}-2 x_{2}=0$, 其基础解系为 $\boldsymbol{\alpha}_{2}=(2,1)^{\mathrm{T}}$, 故对应于 $\lambda_{2}=2$ 的 $\boldsymbol{A}$ 的全部特征向量为 $k_{2} \boldsymbol{\alpha}_{2}\left(k_{2} \neq 0\right)$.
+</p>
+</div>
+</p>
 
-对于 $\lambda_{1}=1$, 齐次线性方程组 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为 $\left(\begin{array}{cc}-2 & 2 \\ -1 & 1\end{array}\right)$, 相应简 化的齐次线性方程组为 $x_{1}-x_{2}=0$, 其基础解系为 $\boldsymbol{\alpha}_{1}=(1,1)^{\mathrm{T}}$, 故对应于 $\lambda_{1}=1$ 的 $\boldsymbol{A}$ 的全部特征向量为 $k_{1} \boldsymbol{\alpha}_{1}\left(k_{1} \neq 0\right)$.
-
-对于 $\lambda_{2}=2$, 齐次线性方程组 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为 $\left(\begin{array}{cc}-1 & 2 \\ -1 & 2\end{array}\right)$, 相应简 化的齐次线性方程组为 $x_{1}-2 x_{2}=0$, 其基础解系为 $\boldsymbol{\alpha}_{2}=(2,1)^{\mathrm{T}}$, 故对应于 $\lambda_{2}=2$ 的 $\boldsymbol{A}$ 的全部特征向量为 $k_{2} \boldsymbol{\alpha}_{2}\left(k_{2} \neq 0\right)$.
-\end{solution}
 
 
-
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 求 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & -2 & 2 \\ -2 & -2 & 4 \\ 2 & 4 & -2\end{array}\right)$ 的特征值与特征向量.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 $$
 \begin{aligned}
 \operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A}) &=\left|\begin{array}{ccc}
@@ -276,7 +294,8 @@ $$
 $$
 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2$ ($2$ 重), $\lambda_{2}=-7$.
 
-对于 $\lambda_{1}=2$, 齐次线性方程组 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为
+<br>
+$\quad$ 对于 $\lambda_{1}=2$, 齐次线性方程组 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为
 $$
 \left(\begin{array}{rrr}
 1 & 2 & -2 \\
@@ -290,7 +309,8 @@ $$
 $$
 相应简化的齐次线性方程组为 $x_{1}=-2 x_{2}+2 x_{3}$, 其基础解系为 $\boldsymbol{\alpha}_{1}=(-2,1,0)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}= (2,0,1)^{\mathrm{T}}$, $\boldsymbol{A}$ 对应于 $\lambda_{1}=2$ 的全部特征向量为 $k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}$ ($k_{1}, k_{2}$ 不全为零).
 
-对于 $\lambda_{2}=-7$, 齐次线性方程组 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为
+<br>
+$\quad$ 对于 $\lambda_{2}=-7$, 齐次线性方程组 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的系数矩阵为
 $$
 \left(\begin{array}{rrr}
 -8 & 2 & -2 \\
@@ -303,16 +323,21 @@ $$
 \end{array}\right),
 $$
 相应简化的齐次线性方程组为 $\left\{\begin{array}{l}x_{1}=-\frac{1}{2} x_{3}, \\ x_{2}=-x_{3},\end{array}\right.$ 其基础解系为 $\boldsymbol{\alpha}_{3}=(1,2,-2)^{\mathrm{T}}, \boldsymbol{A}$ 对应于 $\lambda_{2}=-7$ 的全部特征向量为 $k_{3} \boldsymbol{\alpha}_{3}\left(k_{3} \neq 0\right)$.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 求方阵 $\boldsymbol{A}=\left(\begin{array}{rrr}-1 & 1 & 0 \\ -4 & 3 & 0 \\ 1 & 0 & 2\end{array}\right)$ 的特征值与特征向量.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 $$
 \operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=\left|\begin{array}{ccc}
 \lambda+1 & -1 & 0 \\
@@ -322,7 +347,8 @@ $$
 $$
 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2$, $\lambda_{2}=1$ ( $2$ 重).
 
-对于 $\lambda_{1}=2$, 对应的齐次线性方程组 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 为
+<br>
+$\quad$ 对于 $\lambda_{1}=2$, 对应的齐次线性方程组 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 为
 \begin{equation}\label{eq:4.2}
 \left\{\begin{array}{lr}
 3 x_{1}-x_{2}&=0, \\
@@ -332,9 +358,11 @@ $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2$, $\lambda_{2}=1$ ( $2$ 重).
 \end{equation}
 其基础解系为 $\boldsymbol{\alpha}_{1}=(0,0,1)^{\mathrm{T}}$. $\boldsymbol{A}$ 对应于 $\lambda_{1}=2$ 的全部特征向量为 $k_{1} \boldsymbol{\alpha}_{1}\left(k_{1} \neq 0\right)$.
 
-注意, 方程组 $(\ref{eq:4.2})$ 实质上是一个三元线性方程组, 其中 $x_{3}$ 的系数全部为零. 取 $x_{3}$ 为自由未知量, 则当 $x_{3}=1$ 时, $x_{1}=x_{2}=0$.
+<br>
+$\quad$ 注意, 方程组 $(\ref{eq:4.2})$ 实质上是一个三元线性方程组, 其中 $x_{3}$ 的系数全部为零. 取 $x_{3}$ 为自由未知量, 则当 $x_{3}=1$ 时, $x_{1}=x_{2}=0$.
 
-对于 $\lambda_{2}=1$, 相应的齐次线性方程组 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 为
+<br>
+$\quad$ 对于 $\lambda_{2}=1$, 相应的齐次线性方程组 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 为
 $$
 \left\{\begin{array}{lr}
 2 x_{1}-x_{2} &=0, \\
@@ -343,30 +371,36 @@ $$
 \end{array}\right.
 $$
 其基础解系为 $\boldsymbol{\alpha}_{2}=(1,2,-1)^{\mathrm{T}}, \boldsymbol{A}$ 对应于 $\lambda_{2}=1$ 的全部特征向量为 $k_{2} \boldsymbol{\alpha}_{2}\left(k_{2} \neq 0\right)$.
-\end{solution}
+</p>
+</div>
+</p>
 
 
-在例 $4$ 中, $\lambda_{1}=2$ 是 $\boldsymbol{A}$ 的 $2$ 重特征根, $\boldsymbol{A}$ 对应于 $\lambda_{1}$ 的线性无关的特征向量有两个, 即 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系由两个解向量组成. 在例 $5$ 中, $\lambda_{2}=1$ 也是 $\boldsymbol{A}$ 的 $2$ 重特征根, 但 $\boldsymbol{A}$ 对应于 $\lambda_{2}=1$ 的线性无关的特征向量却只有一个, 即 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系只由一个解向量组成.
+<p style="text-indent: 2em;">在例 $4$ 中, $\lambda_{1}=2$ 是 $\boldsymbol{A}$ 的 $2$ 重特征根, $\boldsymbol{A}$ 对应于 $\lambda_{1}$ 的线性无关的特征向量有两个, 即 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系由两个解向量组成. 在例 $5$ 中, $\lambda_{2}=1$ 也是 $\boldsymbol{A}$ 的 $2$ 重特征根, 但 $\boldsymbol{A}$ 对应于 $\lambda_{2}=1$ 的线性无关的特征向量却只有一个, 即 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系只由一个解向量组成.
 
 
-设 $n$ 阶矩阵 $\boldsymbol{A}$ 的特征多项式为
+<p style="text-indent: 2em;">设 $n$ 阶矩阵 $\boldsymbol{A}$ 的特征多项式为
 $$
 f(\lambda)=|\lambda \boldsymbol{I}-\boldsymbol{A}|=\left(\lambda-\lambda_{1}\right)^{k_{1}}\left(\lambda-\lambda_{2}\right)^{k_{2}} \cdots\left(\lambda-\lambda_{r}\right)^{k_{r}},
 $$
 其中 $\lambda_{i} \neq \lambda_{j}(i \neq j), \sum_{i=1}^{r} k_{i}=n$, 则 $k_{i}$ 称为特征值 $\lambda_{i}$ 的\textbf{代数重数}, 而 $\lambda_{i}$ 的特征子空间 $V_{\lambda_{i}}$ 的维数称为 $\lambda_{i}$ 的\textbf{几何重数}.
 
-可以证明: 特征值的几何重数不大于它的代数重数. 即如果 $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值, 则 $\boldsymbol{A}$ 对应于 $\lambda_{i}$ 的线性无关的特征向量的个数不大于 $k_{i}$, 也就是 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基 础解系所含解向量个数不大于 $k_{i}$.
+<p style="text-indent: 2em;">可以证明: 特征值的几何重数不大于它的代数重数. 即如果 $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值, 则 $\boldsymbol{A}$ 对应于 $\lambda_{i}$ 的线性无关的特征向量的个数不大于 $k_{i}$, 也就是 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基 础解系所含解向量个数不大于 $k_{i}$.
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 设 $\boldsymbol{A}=\left(\begin{array}{rr}1 & -1 \\ 1 & 1\end{array}\right)$, 求 $\boldsymbol{A}$ 的特征值与特征向量.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=\left|\begin{array}{cc}\lambda-1 & 1 \\ -1 & \lambda-1\end{array}\right|=\lambda^{2}-2 \lambda+2$, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=1+\mathrm{i}$, $\lambda_{2}=1-\mathrm{i}$.
 
-对于 $\lambda_{1}=1+\mathrm{i},\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的系数矩阵为
+<br>
+$\quad$ 对于 $\lambda_{1}=1+\mathrm{i},\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的系数矩阵为
 $$
 \left(\begin{array}{rr}
 \mathrm{i} & 1 \\
@@ -378,16 +412,19 @@ $$
 $$
 其基础解系为 $\boldsymbol{\alpha}_{1}=\left(\begin{array}{r}1 \\ -\mathrm{i}\end{array}\right), \boldsymbol{A}$ 对应于 $\lambda_{1}=1+\mathrm{i}$ 的全部特征向量为 $k_{1} \boldsymbol{\alpha}_{1}\left(k_{1} \neq 0\right)$. 
 
-对于 $\lambda_{2}=1-\mathrm{i}$, $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系为 $\boldsymbol{\alpha}_{2}=\left(\begin{array}{l}1 \\ \mathrm{i}\end{array}\right), \boldsymbol{A}$ 对应于 $\lambda_{2}=1-\mathrm{i}$ 的全部特征向量为 $k_{2} \boldsymbol{\alpha}_{2}\left(k_{2} \neq 0\right)$.
-\end{solution}
+<br>
+$\quad$ 对于 $\lambda_{2}=1-\mathrm{i}$, $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系为 $\boldsymbol{\alpha}_{2}=\left(\begin{array}{l}1 \\ \mathrm{i}\end{array}\right), \boldsymbol{A}$ 对应于 $\lambda_{2}=1-\mathrm{i}$ 的全部特征向量为 $k_{2} \boldsymbol{\alpha}_{2}\left(k_{2} \neq 0\right)$.
+</p>
+</div>
+</p>
 
 
-我们将行列式 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})$ 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 记为 $f_{\boldsymbol{A}}(\lambda)$, 即
+<p style="text-indent: 2em;">我们将行列式 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})$ 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 记为 $f_{\boldsymbol{A}}(\lambda)$, 即
 $$
 f_{\boldsymbol{A}}(\lambda)=\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A}) .
 $$
 
-下面进一步讨论特征多项式 $f_{\boldsymbol{A}}(\lambda)$ 的性质:
+<p style="text-indent: 2em;">下面进一步讨论特征多项式 $f_{\boldsymbol{A}}(\lambda)$ 的性质:
 $$
 f_{\boldsymbol{A}}(\lambda)=\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})=\left|\begin{array}{cccc}
 \lambda-a_{11} & -a_{12} & \cdots & -a_{1 n} \\
@@ -401,7 +438,7 @@ $$
 f_{\boldsymbol{A}}(\lambda)=\lambda^{n}+\alpha_{n-1} \lambda^{n-1}+\cdots+\alpha_{1} \lambda+\alpha_{0} .
 \end{equation}
 
-利用行列式性质将 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})$ 展开可得
+<p style="text-indent: 2em;">利用行列式性质将 $\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A})$ 展开可得
 \begin{align}\label{eq:4.4}
 f_{\boldsymbol{A}}(\lambda) &=\operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A}) \nonumber\\
 &=\lambda^{n}-\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\cdots+(-1)^{n} \operatorname{det} \boldsymbol{A} .
@@ -427,14 +464,17 @@ $$
 $$
 因此, 方阵的 $n$ 个特征值之和等于方阵的主对角元之和; $n$ 个特征值之积等于方阵的行 列式; $n$ 阶方阵 $\boldsymbol{A}$ 可逆的充要条件是 $\boldsymbol{A}$ 的所有特征值全不为零.
 
-在多项式理论中可以证明: 整系数多项式的整数根一定是常数项的整数因子. 利用这个结论, 可以确定某些矩阵是否有整数特征值.
+<p style="text-indent: 2em;">在多项式理论中可以证明: 整系数多项式的整数根一定是常数项的整数因子. 利用这个结论, 可以确定某些矩阵是否有整数特征值.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 设 $\lambda_{1}=12$ 是矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}7 & 4 & -1 \\ 4 & 7 & -1 \\ -4 & a & 4\end{array}\right)$ 的一个特征值, 求常数 $a$ 及矩阵 $\boldsymbol{A}$ 的其余特征值.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 因为 $\lambda_{1}=12$ 是矩阵 $\boldsymbol{A}$ 的一个特征值, 所以,
 $$
 \operatorname{det}\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right)=\left|\begin{array}{rrr}
@@ -452,7 +492,9 @@ $$
 \lambda_{1} \lambda_{2} \lambda_{3}=\operatorname{det} \boldsymbol{A}=108, 
 \end{equation}
 将 $\lambda_{1}=12$ 代入式 $(\ref{eq:4.6})$, $(\ref{eq:4.7})$, 可得 $\lambda_{2}=\lambda_{3}=3$.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
@@ -470,14 +512,14 @@ $$
 <li>
 求下列矩阵的特征值与特征向量:
 <br>
-(1) $\left(\begin{array}{ll}3 & 4 \\ 5 & 2\end{array}\right)$; $\quad$
-(2) $\left(\begin{array}{rr}0 & a \\ -a & 0\end{array}\right)$; $\quad$
-(3) $\left(\begin{array}{lll}1 & 2 & 3 \\ 2 & 1 & 3 \\ 3 & 3 & 6\end{array}\right)$;
+$(1)$ $\left(\begin{array}{ll}3 & 4 \\ 5 & 2\end{array}\right)$; $\quad$
+$(2)$ $\left(\begin{array}{rr}0 & a \\ -a & 0\end{array}\right)$; $\quad$
+$(3)$ $\left(\begin{array}{lll}1 & 2 & 3 \\ 2 & 1 & 3 \\ 3 & 3 & 6\end{array}\right)$;
 <br>
-(4) $\left(\begin{array}{lll}2 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & 1 & 1\end{array}\right)$; $\quad$
-(5) $\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{array}\right)$;
+$(4)$ $\left(\begin{array}{lll}2 & 0 & 0 \\ 1 & 1 & 0 \\ 1 & 1 & 1\end{array}\right)$; $\quad$
+$(5)$ $\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{array}\right)$;
 <br>
-(6) $\left(\begin{array}{rrrr}1 & 1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & 1 & -1 \\ 1 & -1 & -1 & 1\end{array}\right)$.
+$(6)$ $\left(\begin{array}{rrrr}1 & 1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & 1 & -1 \\ 1 & -1 & -1 & 1\end{array}\right)$.
 </li>
   
 <li> 设 $\lambda$ 是方阵 $\boldsymbol{A}$ 的特征值, 证明 $\lambda^{m}$ 是 $\boldsymbol{A}^{m}$ 的特征值.
