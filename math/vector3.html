@@ -63,10 +63,13 @@ $3.3$ 向量组的秩与极大无关组
 $m$ 个 $n$ 维向量形成的向量组的线性相关性是就全体 $m$ 个向量而言的. 但是, 其中最多有多少个向量是线性无关的呢?
 
 
-<p style="text-indent: 2em;">例如, 设 $\boldsymbol{\alpha}_{1}=(1,0,1), \boldsymbol{\alpha}_{2}=(1,-1,1), \boldsymbol{\alpha}_{3}=(2,0,2)$, 可以验证, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线 性相关. 但其中部分向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是线性无关的, 它们都含有两个线性无关的向量.
+<p style="text-indent: 2em;">例如, 设 $\boldsymbol{\alpha}_{1}=(1,0,1), \boldsymbol{\alpha}_{2}=(1,-1,1), \boldsymbol{\alpha}_{3}=(2,0,2)$,
+可以验证, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
+但其中部分向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是线性无关的, 它们都含有两个线性无关的向量.
 
 
-<p style="text-indent: 2em;">从该例可以看出, 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 这两个线性无关向量组中, 如果再添加一个向量进去, 那么它们就变成线性相关的了. 可见它们在该向量组中作为一个线性无关向量组, 所包含的向量个数达到了最多. 为此, 我们引出向量组的秩与极大无关组的概念.
+<p style="text-indent: 2em;">从该例可以看出, 在 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 及 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 这两个线性无关向量组中, 如果再添加一个向量进去, 那么它们就变成线性相关的了. 可见它们在该向量组中作为一个线性无关向量组, 所包含的向量个数达到了最多.
+为此, 我们引出向量组的秩与极大无关组的概念.
 
 
 <p style="border: 2px solid blue; border-radius: 5px">
@@ -115,7 +118,7 @@ $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$; $\boldsymbol{\alpha}_{3}, \b
 </div>
 </p>
 
-<p style="text-indent: 2em;">我们知道矩阵的最高阶非零子式可能不止一个, 但矩阵的秩是惟一的; 类似地, 由定 义及例 $1$ 知, 向量组的极大无关组也可能不止一个, 但向量组的秩是惟一的.
+<p style="text-indent: 2em;">我们知道矩阵的最高阶非零子式可能不止一个, 但矩阵的秩是惟一的; 类似地, 由定义及例 $1$ 知, 向量组的极大无关组也可能不止一个, 但向量组的秩是惟一的.
 
 
 <p style="text-indent: 2em;">由定义易知, 一个向量组若线性无关, 则其极大无关组就是它本身, 秩就是向量组中向量的个数. 从而, 我们有
@@ -138,7 +141,7 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $1$：</b></font>
-若矩阵 $\boldsymbol{A}$ 经有限次行初等变换变成 $\boldsymbol{B}$, 则 $\boldsymbol{A}$ 的任意 $k(1 \leqslant k \leqslant n)$ 个列 向量与 $\boldsymbol{B}$ 的对应的 $k$ 个列向量有相同的线性相关性.
+若矩阵 $\boldsymbol{A}$ 经有限次行初等变换变成 $\boldsymbol{B}$, 则 $\boldsymbol{A}$ 的任意 $k(1 \leqslant k \leqslant n)$ 个列向量与 $\boldsymbol{B}$ 的对应的 $k$ 个列向量有相同的线性相关性.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
 <div id= "divIDthm1" style= "display:none"> 
@@ -296,7 +299,7 @@ $$
 
 
 
-<p style="text-indent: 2em;">由极大无关组的定义容易看出, 向量组与其任一极大无关组等价, 因而, 一向量组的 任意两个极大无关组都是等价的, 任意两个极大无关组所含向量个数是相同的, 均为向量组的秩.
+<p style="text-indent: 2em;">由极大无关组的定义容易看出, 向量组与其任一极大无关组等价, 因而, 一向量组的任意两个极大无关组都是等价的, 任意两个极大无关组所含向量个数是相同的, 均为向量组的秩.
 
 <p style="text-indent: 2em;">下面我们来讨论两向量组的秩的关系, 先证如下常用定理:
 
@@ -453,7 +456,7 @@ $$
 <ul>
 
 <p style="text-indent: 2em;">
-$n$ 维向量的全体 $\mathbf{R}^{n}$ 的一个极大无关组也称为 $n$ 维向量空间 $\mathbf{R}^{n}$ 的一组基, 其 任一极大无关组所含向量个数又称为 $n$ 维向量空间 $\mathbf{R}^{n}$ 的维数, 记为 $\operatorname{dim} \mathbf{R}^{n}$. 显然 $\operatorname{dim} \mathbf{R}^{n}=n$. 单位向量组 $\boldsymbol{\varepsilon}_{1}, \boldsymbol{\varepsilon}_{2}, \cdots, \boldsymbol{\varepsilon}_{n}$ 称为 $\mathbf{R}^{n}$ 的一个标准基. $i, j, k$ 为 $\mathbf{R}^{3}$ 的一个标准基. 可见, $\mathbf{R}^{n}$ 中任一向量均为其基的线性组合. 即设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 为 $\mathbf{R}^{n}$ 的一组基, 则
+$n$ 维向量的全体 $\mathbf{R}^{n}$ 的一个极大无关组也称为 $n$ 维向量空间 $\mathbf{R}^{n}$ 的一组基, 其任一极大无关组所含向量个数又称为 $n$ 维向量空间 $\mathbf{R}^{n}$ 的维数, 记为 $\operatorname{dim} \mathbf{R}^{n}$. 显然 $\operatorname{dim} \mathbf{R}^{n}=n$. 单位向量组 $\boldsymbol{\varepsilon}_{1}, \boldsymbol{\varepsilon}_{2}, \cdots, \boldsymbol{\varepsilon}_{n}$ 称为 $\mathbf{R}^{n}$ 的一个标准基. $i, j, k$ 为 $\mathbf{R}^{3}$ 的一个标准基. 可见, $\mathbf{R}^{n}$ 中任一向量均为其基的线性组合. 即设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 为 $\mathbf{R}^{n}$ 的一组基, 则
 $$
 \mathbf{R}^{n}=L\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right) .
 $$
@@ -488,10 +491,11 @@ $$
 对于 $\S 3.2$ 的例 $5$ 中的向量, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为 $\mathbf{R}^{3}$ 的一组基, $\boldsymbol{\beta}$ 在该基下的坐标为 $(1,2,-1)$.
 </p>
 
-<p style="text-indent: 2em;">任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一组基, 不同的基之间有什么关系呢? 同 一向量在不同基下的坐标一般是不相同的, 它们之间的关系又是怎样的呢? 这就是所谓 的基变换和坐标变换的问题.
+<p style="text-indent: 2em;">任意 $n$ 个线性无关的 $n$ 维向量都是 $\mathbf{R}^{n}$ 的一组基, 不同的基之间有什么关系呢? 同一向量在不同基下的坐标一般是不相同的, 它们之间的关系又是怎样的呢? 这就是所谓的基变换和坐标变换的问题.
 
 
-<p style="text-indent: 2em;">设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}$ 分别为 $\mathbf{R}^{n}$ 的基, 由于 $\mathbf{R}^{n}$ 的任两组基都是等 价的, 所以存在可逆矩阵 $\boldsymbol{A}$, 使得
+<p style="text-indent: 2em;">设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}$ 分别为 $\mathbf{R}^{n}$ 的基, 
+由于 $\mathbf{R}^{n}$ 的任两组基都是等价的, 所以存在可逆矩阵 $\boldsymbol{A}$, 使得
 $$
 \left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right)=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right) \boldsymbol{A},
 $$
@@ -609,10 +613,10 @@ $$
 <li> 设 $n$ 维单位向量组 $\boldsymbol{\varepsilon}_{1}, \boldsymbol{\varepsilon}_{2}, \cdots, \boldsymbol{\varepsilon}_{n}$ 可由 $n$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表出, 证 明 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性无关.
 </li>
 
-<li> 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是一组 $n$ 维向量, 证明它们线性无关的充要条件是任一 $n$ 维 向量都可由它们线性表出.
+<li> 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是一组 $n$ 维向量, 证明它们线性无关的充要条件是任一 $n$ 维向量都可由它们线性表出.
 </li>
 
-<li> 求下列向量组的秩和一个极大无关组, 判定向量组的线性相关性, 并将其余向量 用极大无关组线性表出.
+<li> 求下列向量组的秩和一个极大无关组, 判定向量组的线性相关性, 并将其余向量用极大无关组线性表出.
 <br>
 $(1)$ $\boldsymbol{\alpha}_{1}=(1,0,0,1)$, $\boldsymbol{\alpha}_{2}=(0,1,0,1)$, $\boldsymbol{\alpha}_{3}=(0,1,0,-1)$, $\boldsymbol{\alpha}_{4}=(2,-1,1,0)$;
 <br>
@@ -621,7 +625,7 @@ $(2)$ $\boldsymbol{\alpha}_{1}=(1,2,1,3)$, $\boldsymbol{\alpha}_{2}=(4,-1,-5,-6)
 $(3)$ $\boldsymbol{\alpha}_{1}=(1,1,0)$, $\boldsymbol{\alpha}_{2}=(0,2,0)$, $\boldsymbol{\alpha}_{3}=(0,0,3)$.
 </li>
 
-<li> $s$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 且可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 线性表出, 证 明: 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 的秩为 $s$.
+<li> $s$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 且可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 线性表出, 证明: 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 的秩为 $s$.
 </li>
 
 <li> 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 求 $\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{1}$ 的一个极大无关组.
