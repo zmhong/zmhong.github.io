@@ -140,7 +140,7 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 
 
 <p style="border: 2px solid red; border-radius: 5px">
-<font color=red><b>定理 $1$：</b></font>
+<font color=red><b>$1$：</b></font>
 若矩阵 $\boldsymbol{A}$ 经有限次行初等变换变成 $\boldsymbol{B}$, 则 $\boldsymbol{A}$ 的任意 $k(1 \leqslant k \leqslant n)$ 个列向量与 $\boldsymbol{B}$ 的对应的 $k$ 个列向量有相同的线性相关性.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
@@ -149,7 +149,7 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 <font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 任取 $\boldsymbol{A}$ 的 $k(1 \leqslant k \leqslant n)$ 个列向量得矩阵 $\boldsymbol{A}_{k}, \boldsymbol{A}_{k}$ 经有限次行初等变换后化为 $\boldsymbol{B}_k$.
 由于行初等变换保持齐次线性方程组同解, 因而齐次线性方程组 $\boldsymbol{A}_{k} \boldsymbol{X}=\mathbf{0}$ 与 $\boldsymbol{B}_{k} \boldsymbol{X}=\mathbf{0}$ 同时具有非零解或只有零解.
-故由 $\S 3.2$ 的定理 $2$ 知, $\boldsymbol{A}_{k}$ 的列向量组与 $\boldsymbol{B}_k$ 的列向量组有相同的线性相关性.
+故由 $\S 3.2$ 的$2$ 知, $\boldsymbol{A}_{k}$ 的列向量组与 $\boldsymbol{B}_k$ 的列向量组有相同的线性相关性.
 </p>
 </div>
 </p>
@@ -165,7 +165,7 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 
 
 <p style="border: 2px solid red; border-radius: 5px">
-<font color=red><b>定理 $2$：</b></font>
+<font color=red><b>$2$：</b></font>
 矩阵的行秩等于列秩, 也等于矩阵的秩.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
@@ -176,15 +176,15 @@ $\mathbf{R}^{n}$ 的秩为 $n$, 且任意 $n$ 个线性无关的 $n$ 维向量�
 $$
 \boldsymbol{A} \xrightarrow[]{\,\,\text{行初等变换}\,\,} \boldsymbol{B}\,\,\text{(行阶梯形矩阵)}, 
 $$
-则 $\boldsymbol{B}$ 中有且仅有 $r$ 个非零行, 由 $\S 3.2$ 的定理 $2$  及定义知, $\boldsymbol{B}$ 的 $r$ 个非零行的非零首元所在 $r$ 个列向量是线性无关的,
-且为 $\boldsymbol{B}$ 的列向量组的一个极大无关组. 根据定理 $1$, $\boldsymbol{A}$中与这 $r$ 个列向量相对应的 $r$ 个列向量也是 $\boldsymbol{A}$ 的列向量组的一个极大无关组. 故 $\boldsymbol{A}$ 的列秩等于 $r$.
+则 $\boldsymbol{B}$ 中有且仅有 $r$ 个非零行, 由 $\S 3.2$ 的$2$  及定义知, $\boldsymbol{B}$ 的 $r$ 个非零行的非零首元所在 $r$ 个列向量是线性无关的,
+且为 $\boldsymbol{B}$ 的列向量组的一个极大无关组. 根据$1$, $\boldsymbol{A}$中与这 $r$ 个列向量相对应的 $r$ 个列向量也是 $\boldsymbol{A}$ 的列向量组的一个极大无关组. 故 $\boldsymbol{A}$ 的列秩等于 $r$.
 <br>
 $\quad$ $\boldsymbol{A}$ 的行向量即 $\boldsymbol{A}^{\mathrm{T}}$ 的列向量, 于是由 $R(\boldsymbol{A}^{\mathrm{T}}) =R(\boldsymbol{A})$ 知, $\boldsymbol{A}$ 的行秩也等于 $r$.
 </p>
 </div>
 </p>
 
-<p style="text-indent: 2em;">值得注意的是, 定理 $2$ 的证明实际上还给出了如何方便地利用行初等变换求出向量组的秩和极大无关组的方法.
+<p style="text-indent: 2em;">值得注意的是, $2$ 的证明实际上还给出了如何方便地利用行初等变换求出向量组的秩和极大无关组的方法.
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -218,7 +218,7 @@ $$
 $$
 所以 $R(\boldsymbol{A})=2$, 即 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的秩为 $2$,
 因而 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 
-且由定理 $2$ 的证明知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的一个极大无关组. 
+且由$2$ 的证明知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的一个极大无关组. 
 </p>
 </div>
 </p>
@@ -304,7 +304,7 @@ $$
 <p style="text-indent: 2em;">下面我们来讨论两向量组的秩的关系, 先证如下常用定理:
 
 <p style="border: 2px solid red; border-radius: 5px">
-<font color=red><b>定理 $3$：</b></font>
+<font color=red><b>$3$：</b></font>
 若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表出,
 且 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关, 则 $r \leqslant s$.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm3").style.display="block"'> 
@@ -335,7 +335,7 @@ x_{r}
 \end{array}\right)=\boldsymbol{K} \boldsymbol{X}=\mathbf{0},
 $$
 这里 $\boldsymbol{X}=\left(x_{1}, x_{2}, \cdots, x_{r}\right)^{\mathrm{T}}$. 因此 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{B K} \boldsymbol{X}=\boldsymbol{B} \boldsymbol{0}=\boldsymbol{0}$.
-即方程组 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 有非零解, 由 $\S 3.2$ 的定理 $2$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关, 与定理假设矛盾. 
+即方程组 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 有非零解, 由 $\S 3.2$ 的$2$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关, 与定理假设矛盾. 
 故 $r > s$ 不成立, 即 $r \leqslant s$.
 </p>
 </div>
@@ -343,21 +343,21 @@ $$
 
 
 
-<p style="text-indent: 2em;">定理 $3$ 的等价说法是, 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表出, 
+<p style="text-indent: 2em;">$3$ 的等价说法是, 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表出, 
 如果 $r > s$, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关.
 
-<p style="text-indent: 2em;">由定理 $3$ 可得向量组秩的性质: 设向量组 (I) 的秩为 $r_{1}$, 向量组 (II) 的秩为 $r_{2}$, 若 (I) 能由 (II) 线性表出, 则 $r_{1} \leqslant r_{2}$.
+<p style="text-indent: 2em;">由$3$ 可得向量组秩的性质: 设向量组 (I) 的秩为 $r_{1}$, 向量组 (II) 的秩为 $r_{2}$, 若 (I) 能由 (II) 线性表出, 则 $r_{1} \leqslant r_{2}$.
 
 <p style="text-indent: 2em;">事实上, 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 为 (I) 的极大无关组,
 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{2}}$ 为 (II) 的极大无关 组, 因 (I) 可由 (II) 线性表出,
 据向量组与其极大无关组的等价性知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{2}}$ 线性表出, 
-且由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 线性无关和定理 $3$, 有 $r_{1} \leqslant r_{2}$.
+且由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r_{1}}$ 线性无关和$3$, 有 $r_{1} \leqslant r_{2}$.
 
 <p style="text-indent: 2em;">由此可知, 任何两个等价的向量组必有相同的秩.
 
 
 <p style="border: 2px solid red; border-radius: 5px">
-<font color=red><b>定理 $4$：</b></font>
+<font color=red><b>$4$：</b></font>
 设 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的线性无关部分组,
 它是极大无关组的充要条件是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中每一个向量均可由 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm4").style.display="block"'> 
@@ -365,7 +365,7 @@ $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r_{
 <div id= "divIDthm4" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明： 充分性</b></font>
-  若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 可由线性无关的部分组 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出, 则据定理 3 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中任何 $r+1$ 个向量都线性相关, 因而 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 是极大无关组.
+  若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 可由线性无关的部分组 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出, 则据定理 $3$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中任何 $r+1$ 个向量都线性相关, 因而 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 是极大无关组.
 <br>
 $\qquad$  <font color=red><b>必要性</b></font>
 若 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大无关组, 则当 $j \in\left\{j_{1}\right.$, $\left.j_{2}, \cdots, j_{r}\right\}$ 时, 显然 $\boldsymbol{\alpha}_{j}(j=1,2, \cdots, s)$ 可由 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出; 当 $j \notin\left\{j_{1}\right.$, $\left.j_{2}, \cdots, j_{r}\right\}$ 时, $\boldsymbol{\alpha}_{j}, \boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性相关, 又 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性无关, 因而 $\boldsymbol{\alpha}_{j}(j=1,2, \cdots, s)$ 可由 $\boldsymbol{\alpha}_{j_{1}}, \boldsymbol{\alpha}_{j_{2}}, \cdots, \boldsymbol{\alpha}_{j_{r}}$ 线性表出.
@@ -421,7 +421,8 @@ $$
 这里假设向量是列向量.
 
 
-<p style="text-indent: 2em;">如果设矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}\right), \boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}\right)$, 上式也就等价于矩阵方程 $\boldsymbol{A X}=\boldsymbol{B}$ 有解. 于是, 由 $\S 3.2$ 定理 1 我们便有如下结论:
+<p style="text-indent: 2em;">如果设矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}\right), \boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}\right)$, 上式也就等价于矩阵方程 $\boldsymbol{A X}=\boldsymbol{B}$ 有解. 
+于是, 由 $\S 3.2$ 定理 $1$ 我们便有如下结论:
 
 
 <p style="text-indent: 2em;">向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{q}$ 可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{p}$ 线性表出的充要条件是 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})$;
@@ -465,7 +466,8 @@ $$
 <p style="text-indent: 2em;">如果在 $\mathbf{R}^{3}$ 中, $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, 那么它们构成 $\mathbf{R}^{3}$ 的一组基, 且 $\mathbf{R}^{3}=L(\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma})$. 因此, 任何第四个向量 $(a, b, c)^{\mathrm{T}} \in L(\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma})$.
 
 
-<p style="text-indent: 2em;">设 $\boldsymbol{\alpha} \in \mathbf{R}^{n}, \boldsymbol{\alpha}=x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}$, 则称 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 为 $\boldsymbol{\alpha}$ 在基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 下的坐标. 由 $\S 3.2$ 的定理 5 知坐标是惟一的.
+<p style="text-indent: 2em;">设 $\boldsymbol{\alpha} \in \mathbf{R}^{n}, \boldsymbol{\alpha}=x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}$, 则称 $\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 为 $\boldsymbol{\alpha}$ 在基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 下的坐标.
+由 $\S 3.2$ 的定理 $5$ 知坐标是惟一的.
 
 <p style="text-indent: 2em;">对于 $\mathbf{R}^{n}$ 的子空间 $V$, 也可类似地定义基、维数 (记为 $\operatorname{dim} V$ ) 和坐标.
 一个向量组是某空间的一组基, 必须满足两个条件: $(1)$ 向量组线性无关, $(2)$ 向量组能张成该空间. 
