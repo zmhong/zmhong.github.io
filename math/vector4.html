@@ -488,7 +488,7 @@ $$
 <br>
 $(1)$ 当 $r=3$ 时, 由 $\S 3.2$ 的定理 $2$ 知, 线性方程组只有零解, 即三平面相交于一点的充要条件是 $R(\boldsymbol{A})=3$, 即 $\operatorname{det} \boldsymbol{A} \neq 0$.
 <br>
-$(2)$ 当 $r=2$ 时, 三平面有两平面相交于一直线, 另一平面或通过这一交线, 或与其中一平面重合. 这是因为假如 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是 $\boldsymbol{A}$ 的行向量, 由 $R(\boldsymbol{A})=2$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相 关, 而其中有两个向量线性无关. 假设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 那么 $a_{1}, b_{1}, c_{1}$ 与 $a_{2}, b_{2}, c_{2}$ 不成比 例, 因此平面 $\pi_{1}$ 与 $\pi_{2}$ 交于一条直线. 由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 可知 $\boldsymbol{\alpha}_{3}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}$, 当 $k_{1} k_{2} \neq 0$ 时, 平面 $\pi_{3}$ 通过 $\pi_{1}, \pi_{2}$ 两平面的交线. 当 $k_{1} k_{2}=0$ 时, 若 $k_{1}=0$, 则 $\boldsymbol{\alpha}_{3}=k_{2} \boldsymbol{\alpha}_{2}$, 这时 $\pi_{2}, \pi_{3}$ 平行, 又因为它们都过原点, 所以 $\pi_{2}, \pi_{3}$ 两平面重合. 同理, 若 $k_{2}=0$, 则有 $\pi_{1}, \pi_{3}$ 两平面重合.
+$(2)$ 当 $r=2$ 时, 三平面有两平面相交于一直线, 另一平面或通过这一交线, 或与其中一平面重合. 这是因为假如 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是 $\boldsymbol{A}$ 的行向量, 由 $R(\boldsymbol{A})=2$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 而其中有两个向量线性无关. 假设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 那么 $a_{1}, b_{1}, c_{1}$ 与 $a_{2}, b_{2}, c_{2}$ 不成比 例, 因此平面 $\pi_{1}$ 与 $\pi_{2}$ 交于一条直线. 由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 可知 $\boldsymbol{\alpha}_{3}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}$, 当 $k_{1} k_{2} \neq 0$ 时, 平面 $\pi_{3}$ 通过 $\pi_{1}, \pi_{2}$ 两平面的交线. 当 $k_{1} k_{2}=0$ 时, 若 $k_{1}=0$, 则 $\boldsymbol{\alpha}_{3}=k_{2} \boldsymbol{\alpha}_{2}$, 这时 $\pi_{2}, \pi_{3}$ 平行, 又因为它们都过原点, 所以 $\pi_{2}, \pi_{3}$ 两平面重合. 同理, 若 $k_{2}=0$, 则有 $\pi_{1}, \pi_{3}$ 两平面重合.
 <br>
 $(3)$ 当 $r=1$ 时, $\boldsymbol{A}$ 的三个行向量两两线性相关, 从而三平面两两平行, 又因为它们都过原点, 因而重合.
 </p>
@@ -592,7 +592,7 @@ $$
 \begin{equation}\label{eq:3.11} 
 \boldsymbol{\gamma}=\boldsymbol{\gamma}_{0}+\boldsymbol{\xi},
 \end{equation}
-其中 $\boldsymbol{\xi}$ 为 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个解. 因此, 对于 $\boldsymbol{A X}=\boldsymbol{b}$ 的任一特解 $\boldsymbol{\gamma}_{0}$, 当 $\boldsymbol{\xi}$ 取遍它的导出 组的全部解时, 式 $(\ref{eq:3.11})$ 就给出 $\boldsymbol{A X}=\boldsymbol{b}$ 的全部解.
+其中 $\boldsymbol{\xi}$ 为 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个解. 因此, 对于 $\boldsymbol{A X}=\boldsymbol{b}$ 的任一特解 $\boldsymbol{\gamma}_{0}$, 当 $\boldsymbol{\xi}$ 取遍它的导出组的全部解时, 式 $(\ref{eq:3.11})$ 就给出 $\boldsymbol{A X}=\boldsymbol{b}$ 的全部解.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDproperty6").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDproperty6").style.display="none"'> 
 <div id= "divIDproperty6" style= "display:none"> 
@@ -608,7 +608,7 @@ $$
 </p>
 
 
-<p style="text-indent: 2em;">性质 $6$ 说明, 想要找出非齐次线性方程组的全部解, 我们只要找到它的一个特解以 及它的导出组的全部解就行了. 若 $\boldsymbol{\gamma}_{0}$ 是非齐次方程组的一个特解, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是其 导出组的一个基础解系, 则非齐次方程组的任意一个解都可以表示成
+<p style="text-indent: 2em;">性质 $6$ 说明, 想要找出非齐次线性方程组的全部解, 我们只要找到它的一个特解以及它的导出组的全部解就行了. 若 $\boldsymbol{\gamma}_{0}$ 是非齐次方程组的一个特解, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是其 导出组的一个基础解系, 则非齐次方程组的任意一个解都可以表示成
 $$
 \boldsymbol{X}=\boldsymbol{\gamma}_{0}+k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+\cdots+k_{n-r} \boldsymbol{\xi}_{n-r},
 $$
