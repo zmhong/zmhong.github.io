@@ -179,7 +179,7 @@ x_{1}=-b_{11} x_{r+1}-\cdots-b_{1, n-r} x_{n}, \\
 x_{r}=-b_{r 1} x_{r+1}-\cdots-b_{r, n-r} x_{n} .
 \end{array}\right.
 \end{equation}
-方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 与方程组 (\ref{eq:3.8}) 同解. 在方程组 $(\ref{eq:3.8})$ 中, 任给 $x_{r+1}, \cdots, x_{n}$ 一组 值, 则惟一确定 $x_{1}, x_{2}, \cdots, x_{r}$ 的值, 就得方程组 $(\ref{eq:3.8})$ 的一个解,
+方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 与方程组 (\ref{eq:3.8}) 同解. 在方程组 (\ref{eq:3.8}) 中, 任给 $x_{r+1}, \cdots, x_{n}$ 一组 值, 则惟一确定 $x_{1}, x_{2}, \cdots, x_{r}$ 的值, 就得方程组 (\ref{eq:3.8}) 的一个解,
 也就是方程组 $\boldsymbol{A X}=\mathbf{0}$ 的解. 令 $x_{r+1}, \cdots, x_{n}$ 取下列 $n-r$ 组数
 $$
 \left(\begin{array}{c}
@@ -295,7 +295,7 @@ $\quad$ 值得注意的是, 该定理的证明实际上就是一个具体求基�
 </div>
 </p>
 
-<p style="text-indent: 2em;">例如, 任取 $n-r$ 个线性无关的 $n-r$ 维向量, 并使 $\left(\begin{array}{c}x_{r+1} \\ x_{r+2} \\ \vdots \\ x_{n}\end{array}\right)$ 分别等于这些向量, 再通过方程组 $(3.8)$ 求出 $x_{1}, x_{2}, \cdots, x_{r}$, 便得一个基础解系.
+<p style="text-indent: 2em;">例如, 任取 $n-r$ 个线性无关的 $n-r$ 维向量, 并使 $\left(\begin{array}{c}x_{r+1} \\ x_{r+2} \\ \vdots \\ x_{n}\end{array}\right)$ 分别等于这些向量, 再通过方程组 (\ref{eq:3.8}) 求出 $x_{1}, x_{2}, \cdots, x_{r}$, 便得一个基础解系.
 
 
 <p style="text-indent: 2em;">设求得 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 为 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个基础解系, 则该方程组的任一解可表示为
@@ -628,7 +628,8 @@ x_{1}-x_{2}-2 x_{3}+2 x_{4}=&-\frac{1}{2},
 <div id= "divIDexample7" style= "display:none"> 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>解： </b></font>
-\begin{align}
+$$
+\begin{aligned}
 \overline{\boldsymbol{A}} &=\left(\begin{array}{cccc:c}
 1 & -1 & 1 & -1 & 1 \\
 1 & -1 & -1 & 1 & 0 \\
@@ -647,7 +648,8 @@ x_{1}-x_{2}-2 x_{3}+2 x_{4}=&-\frac{1}{2},
 0 & 0 & 1 & -1 & \frac{1}{2} \\
 0 & 0 & 0 & 0 & 0
 \end{array}\right),
-\end{align}
+\end{aligned}
+$$
 所以 $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2$, 因而原方程组有解, 且得同解方程组
 \begin{equation}\label{eq:3.12} 
 \left\{\begin{array}{l}
