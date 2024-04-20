@@ -390,25 +390,29 @@ $$
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $3$：</b></font>
 试证明与 $\boldsymbol{A X}=\boldsymbol{0}$ 基础解系等价的线性无关的向量组也是该方程组的基础解系.
-\end{example}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=#FF5809><b>证明：</b></font>
 两个等价的线性无关的向量组所含向量个数是相等的.
 设 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 是 $\boldsymbol{A X}=\mathbf{0}$ 的一个基础解系, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 与之等价, 则 $\boldsymbol{\alpha}_{i}(i=$ $1,2, \cdots, s)$ 可由 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 线性表出, 从而 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, s)$ 也是 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 的解.
-
-因齐次线性方程组任一解 $\boldsymbol{\beta}$ 均可由基础解系 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 线性表出, 从而由题 设知 $\boldsymbol{\beta}$ 也可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性表出, 又 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 于是由定义知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\boldsymbol{s}}$ 为一个基础解系.
-\end{proof}
+<br>
+$\quad$ 因齐次线性方程组任一解 $\boldsymbol{\beta}$ 均可由基础解系 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 线性表出, 从而由题 设知 $\boldsymbol{\beta}$ 也可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性表出, 又 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 于是由定义知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\boldsymbol{s}}$ 为一个基础解系.
+</p>
+</div>
+</p>
 
 
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $4$：</b></font>
 设 $n$ 阶矩阵 $\boldsymbol{A}, \boldsymbol{B}$ 满足 $\boldsymbol{A} \boldsymbol{B}=\boldsymbol{O}$, 证明 $R(\boldsymbol{A})+R(\boldsymbol{B}) \leqslant n$.
-\end{example}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=#FF5809><b>证明：</b></font>
 将 $\boldsymbol{B}$ 分块为 $\boldsymbol{B}=\left(\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \cdots, \boldsymbol{b}_{n}\right)$, 其中 $\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \cdots, \boldsymbol{b}_{n}$ 为 $\boldsymbol{B}$ 的列向量组, 则
 $$
 \boldsymbol{A B}=\boldsymbol{A}\left(\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \cdots, \boldsymbol{b}_{n}\right)=\left(\boldsymbol{Ab}_{1}, \boldsymbol{Ab}_{2}, \cdots, \boldsymbol{Ab}_{n}\right)=\boldsymbol{O},
@@ -422,7 +426,9 @@ $$
 R\left(\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \cdots, \boldsymbol{b}_{n}\right) \leqslant R\left(\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}\right)=n-R(\boldsymbol{A}),
 $$
 即 $R(\boldsymbol{B}) \leqslant n-R(\boldsymbol{A})$, 也就是 $R(\boldsymbol{A})+R(\boldsymbol{B}) \leqslant n$.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 本节定理揭示了 $\boldsymbol{A}$ 的秩和 $\boldsymbol{A X}=\boldsymbol{0}$ 的解的关系, 它不仅对求解 $\boldsymbol{A X}=\boldsymbol{0}$ 具有重要意义, 而且如例 4 所表明的那样, 常常可以通过研究齐次线性方程组的解来讨论系数矩 阵的秩.
@@ -431,16 +437,20 @@ $$
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $5$：</b></font>
 设 $n$ 阶矩阵 $\boldsymbol{A}$ 的秩 $R(\boldsymbol{A})=n-1(n \geqslant 2)$, 证明 $R\left(\boldsymbol{A}^{*}\right)=1$.
-\end{example}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=#FF5809><b>证明：</b></font>
 由 $R(\boldsymbol{A})=n-1$ 知 $\operatorname{det} \boldsymbol{A}=0$, 于是 $\boldsymbol{A} \boldsymbol{A}^{*}=(\operatorname{det} \boldsymbol{A}) \boldsymbol{I}=\boldsymbol{O}$. 便有
 $$
 R(\boldsymbol{A})+R\left(\boldsymbol{A}^{*}\right) \leqslant n .
 $$
 所以 $R\left(\boldsymbol{A}^{*}\right) \leqslant n-R(\boldsymbol{A})=1$. 又由 $R(\boldsymbol{A})=n-1$ 知 $\boldsymbol{A}$ 中有 $n-1$ 阶子式不为零, 因而 $\boldsymbol{A}^{*} \neq \boldsymbol{O}$, 便有 $R\left(\boldsymbol{A}^{*}\right) \geqslant 1$. 这样我们就证得 $R\left(\boldsymbol{A}^{*}\right)=1$.
-\end{proof}
+</p>
+</div>
+</p>
+
 
 
 综合例 $5$ 和 $\S 2.5$ 的例 $6$, 我们证明了如下常用结果: 若 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则
@@ -582,9 +592,11 @@ x_{1}-x_{2}-x_{3}+x_{4}=&0, \\
 x_{1}-x_{2}-2 x_{3}+2 x_{4}=&-\frac{1}{2},
 \end{array}\right.$
 的通解.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 $$
 \begin{aligned}
 \overline{\boldsymbol{A}} &=\left(\begin{array}{cccc:c}
@@ -614,31 +626,35 @@ x_{1}=\frac{1}{2}+x_{2}, \\[5pt]
 x_{3}=\frac{1}{2}+x_{4},
 \end{array}\right.
 \end{equation}
-
-(1) 求对应齐次线性方程组的一个基础解系.
-
-由方程组 $(\ref{eq:3.12})$ 的对应齐次线性方程组分别取 $x_{2}=1, x_{4}=0$ 和 $x_{2}=0, x_{4}=1$ 得 基础解系
+<br>
+$\quad$ $(1)$ 求对应齐次线性方程组的一个基础解系.
+<br>
+$\quad$ 由方程组 $(\ref{eq:3.12})$ 的对应齐次线性方程组分别取 $x_{2}=1, x_{4}=0$ 和 $x_{2}=0, x_{4}=1$ 得 基础解系
 $$
 \boldsymbol{\xi}_{1}=(1,1,0,0)^{\mathrm{T}}, \quad \boldsymbol{\xi}_{2}=(0,0,1,1)^{\mathrm{T}} .
 $$
-
-(2) 求非齐次线性方程组的一个特解.
-
-由式 $(\ref{eq:3.12})$, 取 $x_{2}=x_{4}=0$ 得
+<br>
+$\quad$ $(2)$ 求非齐次线性方程组的一个特解.
+<br>
+$\quad$ 由式 $(\ref{eq:3.12})$, 取 $x_{2}=x_{4}=0$ 得
 $$
 \boldsymbol{\gamma}_{0}=\left(\frac{1}{2}, 0, \frac{1}{2}, 0\right)^{\mathrm{T}}
 $$
 故原方程组的通解为 $\boldsymbol{X}=\boldsymbol{\gamma}_{0}+k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}, k_{1}, k_{2}$ 为任意数. 
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $8$：</b></font>
 问 $\lambda$ 为何值时, 方程组 $\left\{\begin{aligned} \lambda x_{1}+x_{2}+x_{3} &=1, \\ x_{1}+\lambda x_{2}+x_{3} &=\lambda,  \\ x_{1}+x_{2}+\lambda x_{3} &=\lambda^{2} \end{aligned}\right.$ 有惟一解? 有无穷多解? 无解? 有解时并求解. 
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 \begin{align}\label{eq:3.13}
 \overline{\boldsymbol{A}} &=\left(\begin{array}{ccc:c}
 \lambda & 1 & 1 & 1 \\
@@ -667,7 +683,7 @@ $$
 \end{align}
 
 <br>
-(1) 当 $\lambda=1$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=1 < n=3$, 有无穷多解. 此时
+$\quad$ $(1)$ 当 $\lambda=1$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=1 < n=3$, 有无穷多解. 此时
 $$
 \overline{\boldsymbol{A}} \rightarrow\left(\begin{array}{ccc:c}
 1 & 1 & 1 & 1 \\
@@ -681,9 +697,9 @@ $$
 $$
 取 $x_{2}=x_{3}=0$ 得非齐次线性方程组的特解 $\boldsymbol{\gamma}_{0}=(1,0,0)^{\mathrm{T}}$, 故原方程组的通解为 $\boldsymbol{X}=$ $\boldsymbol{\gamma}_{0}+k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}, k_{1}, k_{2}$ 为任意数.
 <br>
-(2) 当 $\lambda=-2$ 时, $R(\boldsymbol{A})=2 \neq R(\overline{\boldsymbol{A}})=3$, 无解.
+$\quad$ $(2)$ 当 $\lambda=-2$ 时, $R(\boldsymbol{A})=2 \neq R(\overline{\boldsymbol{A}})=3$, 无解.
 <br>
-(3) 当 $\lambda \neq 1,-2$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=3=n$, 所以有惟一解. 此时由式 $(\ref{eq:3.13})$ 直接得
+$\quad$ $(3)$ 当 $\lambda \neq 1,-2$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=3=n$, 所以有惟一解. 此时由式 $(\ref{eq:3.13})$ 直接得
 $$
 \left\{\begin{aligned}
 x_{1}=& \frac{-\lambda-1}{\lambda+2}, \\
@@ -691,16 +707,20 @@ x_{2}=& \frac{1}{\lambda+2}, \\
 x_{3}=& \frac{(\lambda+1)^{2}}{\lambda+2}.
 \end{aligned}\right.
 $$
-\end{solution}
+</p>
+</div>
+</p>
  
  
  
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $9$：</b></font>
 判断方程组 $\left\{\begin{aligned} x_{1}+x_{2} &=1, \\ a x_{1}+b x_{2} &=c,  \\ a^{2} x_{1}+b^{2} x_{2} &=c^{2} \end{aligned}\right.$是否有解, 其中 $a, b, c$ 互不相等. 
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 因
 $$
 \operatorname{det} \overline{\boldsymbol{A}}=\left|\begin{array}{ccc}
@@ -710,7 +730,9 @@ a^{2} & b^{2} & c^{2}
 \end{array}\right|=(b-a)(c-a)(c-b),
 $$
 由题设知 $\operatorname{det} \overline{\boldsymbol{A}} \neq 0$, 因而 $R(\overline{\boldsymbol{A}})=3$, 而 $R(\boldsymbol{A})=2$, 故 $R(\boldsymbol{A}) \neq R(\overline{\boldsymbol{A}})$, 于是方程组无解. 
-\end{solution}
+</p>
+</div>
+</p>
 
 
  
@@ -727,9 +749,11 @@ a_{n 1} x_{1}+a_{n 2} x_{2}+\cdots+a_{n n} x_{n}=b_{n}
 \end{equation}
 的系数矩阵 $\boldsymbol{A}$ 的秩等于 $\boldsymbol{B}=\left(\begin{array}{ccccc}a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\ \vdots & \vdots & & \vdots & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n} & b_{n} \\ b_{1} & b_{2} & \cdots & b_{n} & 0\end{array}\right)$
 的秩, 证明方程组 $(\ref{eq:3.14})$ 有解.
-\end{example}
- 
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample10").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample10").style.display="none"'> 
+<div id= "divIDexample10" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 增广矩阵
 $$
 \overline{\boldsymbol{A}}=\left(\begin{array}{cccc:c}
@@ -752,7 +776,9 @@ R(\boldsymbol{A})=R(\boldsymbol{B}) \geqslant R(\overline{\boldsymbol{A}}) .
 R(\boldsymbol{A}) \leqslant R(\overline{\boldsymbol{A}}) .
 \end{equation}
 由式 $(\ref{eq:3.15})$, $(\ref{eq:3.16})$ 得 $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})$. 故方程组 $(3.14)$ 有解.
-\end{solution}
+</p>
+</div>
+</p>
  
  
  
@@ -766,10 +792,11 @@ $$
 \end{array}
 $$
 之间的关系. 
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -781,11 +808,13 @@ a_{2} & b_{2} & c_{2} & d_{2}
 \end{array}\right).
 $$
 当 $R(\boldsymbol{A})=2$ 时, 非齐次线性方程组有解, 但 $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2 < n=3$, 因而有无穷多解. 所以两平面相交于一直线;
-
+<br>
 当 $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=2$ 时, 非齐次线性方程组无解, 所以两平面平行;
-
+<br>
 当 $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=1$ 时, 显然 $\overline{\boldsymbol{A}}$ 的两个行向量线性相关, 即 $a_{1}, b_{1}, c_{1}, d_{1}$ 与 $a_{2}, b_{2}, c_{2}, d_{2}$ 成比例, 所以两平面重合.
-\end{solution}
+</p>
+</div>
+</p>
 
 
  
@@ -800,10 +829,11 @@ $$
 \end{array}
 $$
 的位置关系. 
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample12").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample12").style.display="none"'> 
+<div id= "divIDexample12" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{ccc}
@@ -818,12 +848,12 @@ a_{3} & b_{3} & c_{3} & d_{3}
 $$
 现在我们利用向量组的线性相关性及线性方程组的理论来讨论这三个平面的位置关系.
 <br>
-1. $R(\boldsymbol{A})=3$.
+$1$. $R(\boldsymbol{A})=3$.
 <br>
 这时 $R(\overline{\boldsymbol{A}})=3$, 根据克拉默法则知, 上面方程组有惟一解, 所以三个平面交于一点 (见图 \ref{fig:3.8} (a)).
 
 <br>
-2. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=3$.
+$2$. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=3$.
 <br>
 此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=2$, 所以 $\boldsymbol{A}$ 的三个行向量 $a_{1}, a_{2}, a_{3}$ (它们也是三个平面的法向量) 线性相关,
 即存在不全为零的实数 $k_{1}, k_{2}, k_{3}$, 使得 $k_{1} a_{1}+k_{2} a_{2}+k_{3} a_{3}=0$. 当 $k_{1}, k_{2}, k_{3}$ 都不为零时, 有 $a_{i} \times a_{j} \neq 0(i \neq j)$, 即任意两个平面相交, 且由
@@ -836,7 +866,7 @@ $$
 因此三个平面形成一个三棱柱 (见图 \ref{fig:3.8} (b)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三个平面中有两个平面平行, 另一平面与这两个平面相交 (见图 \ref{fig:3.8} (c)).
 
 <br>
-3. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=2$.
+$3$. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=2$.
 <br>
 这时方程组有解, 且解里仅含一个参数, 故三个平面相交于一条直线. 又因为 $R(\overline{\boldsymbol{A}})= 2$, 
 所以 $\overline{\boldsymbol{A}}$ 的三个行向量 $\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \boldsymbol{b}_{3}$ 线性相关, 
@@ -844,19 +874,21 @@ $$
 三个平面互异 (见图 \ref{fig:3.8} (d)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三平面中有两个平面重合 (见图 \ref{fig:3.8} (e)).
 
 <br>
-4. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=2$.
+$4$. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=2$.
 <br>
 此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=1$, 所以三个平面平行; 
 而由 $R(\overline{\boldsymbol{A}})=2$ 知三个平面中至少有两个平面互异. 即三个平面平行, 并且互异 (见图 \ref{fig:3.8} (f)); 或三个平面平行, 
 其中有两个平面重合 (见图 \ref{fig:3.8} (g)).
 
 <br>
-5. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=1$.
+$5$. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=1$.
 <br>
 这时方程组有解, 且解里含两个参数, 故这些解所对应的点必在一个平面内, 即三个平面重合 (见图 \ref{fig:3.8} (h)).
-
+<br>
 三个平面总共有上述八种不同的位置.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 \begin{figure}[!ht]
