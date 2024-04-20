@@ -63,25 +63,32 @@ $4.4$ 实对称矩阵的相似对角化
 <p style="text-indent: 2em;">在 $\S 4.2$ 中所讨论的一般 $n$ 阶矩阵相似对角化的结论对于实对称矩阵当然成立. 而 实对称矩阵的相似对角化又有其自身的特殊性. 实对称矩阵的一个重要特性就是它的特
 征值都是实数. 为了证明这个结论, 我们先介绍复矩阵的共轭矩阵概念及其基本性质.
 
-设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}, a_{i j} \in \mathbf{C}$, 我们把 $\overline{\boldsymbol{A}}=\left(\overline{a}_{i j}\right)_{m \times n}$ 称为 $\boldsymbol{A}$ 的共轭矩阵, 其中 $\overline{a}_{i j}$ 是 $a_{i j}$ 的共轭复数.
+<p style="text-indent: 2em;">设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}, a_{i j} \in \mathbf{C}$, 我们把 $\overline{\boldsymbol{A}}=\left(\overline{a}_{i j}\right)_{m \times n}$ 称为 $\boldsymbol{A}$ 的共轭矩阵, 其中 $\overline{a}_{i j}$ 是 $a_{i j}$ 的共轭复数.
 
-由共轭矩阵的定义及共轭复数的运算性质, 容易证明共轭矩阵有以下性质: 
+<p style="text-indent: 2em;">由共轭矩阵的定义及共轭复数的运算性质, 容易证明共轭矩阵有以下性质: 
 
-$1^{\circ}$\quad $\overline{\boldsymbol{A}^{\mathrm{T}}}=\overline{\boldsymbol{A}}^{\mathrm{T}}$; \quad $2^{\circ}$ \quad $\overline{k \boldsymbol{A}}=\overline{k} \overline{\boldsymbol{A}}$; \quad $3^{\circ}$ \quad $\overline{\boldsymbol{A B}}=\overline{\boldsymbol{A}}~\overline{\boldsymbol{B}}$.
+<p style="text-indent: 2em;">$1^{\circ}$ $\overline{\boldsymbol{A}^{\mathrm{T}}}=\overline{\boldsymbol{A}}^{\mathrm{T}}$; 
 
-现在我们利用上述性质证明以下定理:
+<p style="text-indent: 2em;">$2^{\circ}$ $\overline{k \boldsymbol{A}}=\overline{k} \overline{\boldsymbol{A}}$;
+
+<p style="text-indent: 2em;">$3^{\circ}$ $\overline{\boldsymbol{A B}}=\overline{\boldsymbol{A}}~\overline{\boldsymbol{B}}$.
+
+<p style="text-indent: 2em;">现在我们利用上述性质证明以下定理:
 
 
 
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 实对称矩阵的特征值都是实数.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\lambda$ 是实对称矩阵 $\boldsymbol{A}$ 的任一特征值, 则有非零向量 $\boldsymbol{\alpha}$, 使得 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$.
-
-欲证 $\lambda$ 是实数, 只需证明 $\overline{\lambda}=\lambda$. 在 $\boldsymbol{A \alpha}=\lambda \boldsymbol{\alpha}$ 两端取共轭, 得 $\overline{\boldsymbol{A \alpha}}=\overline{\boldsymbol{\lambda \alpha}}$, 由共轭矩阵的性质 $2^{\circ}$ 及性质 $3^{\circ}$, 有 $\overline{\boldsymbol{A}} \overline{\boldsymbol{\alpha}}=\overline{\lambda} \overline{\boldsymbol{\alpha}}$. 因为 $\boldsymbol{A}$ 是实对称矩阵, 所以 $\overline{\boldsymbol{A}}=\boldsymbol{A}, \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 于是有
+<br>
+$\quad$ 欲证 $\lambda$ 是实数, 只需证明 $\overline{\lambda}=\lambda$. 在 $\boldsymbol{A \alpha}=\lambda \boldsymbol{\alpha}$ 两端取共轭, 得 $\overline{\boldsymbol{A \alpha}}=\overline{\boldsymbol{\lambda \alpha}}$, 由共轭矩阵的性质 $2^{\circ}$ 及性质 $3^{\circ}$, 有 $\overline{\boldsymbol{A}} \overline{\boldsymbol{\alpha}}=\overline{\lambda} \overline{\boldsymbol{\alpha}}$. 因为 $\boldsymbol{A}$ 是实对称矩阵, 所以 $\overline{\boldsymbol{A}}=\boldsymbol{A}, \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 于是有
 $$
 \boldsymbol{A}^{\mathrm{T}} \overline{\boldsymbol{\alpha}}=\overline{\lambda} \overline{\boldsymbol{\alpha}},
 $$
@@ -106,16 +113,21 @@ a_{n}
 \end{array}\right)=\sum_{i=1}^{n} \overline{a}_{i} a_{i}>0,
 $$
 故 $\lambda-\overline{\lambda}=0$, $\lambda=\overline{\lambda}$, 即 $\lambda$ 为实数.
-\end{proof}
+</p>
+</div>
+</p>
 
 
-任一 $n$ 阶矩阵的不同特征值的特征向量是线性无关的, 对于实对称矩阵则有下面更进一步的结论:
+<p style="text-indent: 2em;">任一 $n$ 阶矩阵的不同特征值的特征向量是线性无关的, 对于实对称矩阵则有下面更进一步的结论:
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
 设 $\boldsymbol{A}$ 为一个实对称矩阵, 那么对应于 $\boldsymbol{A}$ 的不同特征值的特征向量彼此正交.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
+<div id= "divIDthm2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\lambda_{1}, \lambda_{2}$ 是 $\boldsymbol{A}$ 的两个不同的特征值, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 是 $\boldsymbol{A}$ 分别属于 $\lambda_{1}, \lambda_{2}$ 的特征向 量, 于是有
 $$
 \boldsymbol{A \alpha}_{1}=\lambda_{1} \boldsymbol{\alpha}_{1}, \quad \boldsymbol{A\alpha}_{2}=\lambda_{2} \boldsymbol{\alpha}_{2},
@@ -129,7 +141,9 @@ $$
 \lambda_{1} \boldsymbol{\alpha}_{1}^{\mathrm{T}} \boldsymbol{\alpha}_{2}=\boldsymbol{\alpha}_{1}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{\alpha}_{2}=\boldsymbol{\alpha}_{1}^{\mathrm{T}} \lambda_{2} \boldsymbol{\alpha}_{2}=\lambda_{2} \boldsymbol{\alpha}_{1}^{\mathrm{T}} \boldsymbol{\alpha}_{2},
 $$
 即 $\left(\lambda_{1}-\lambda_{2}\right) \boldsymbol{\alpha}_{1}^{\mathrm{T}} \boldsymbol{\alpha}_{2}=0$. 又因为 $\lambda_{1} \neq \lambda_{2}$, 所以有 $\boldsymbol{\alpha}_{1}^{\mathrm{T}} \boldsymbol{\alpha}_{2}=0$, 即 $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 正交.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 
@@ -151,34 +165,38 @@ $$
 
 
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>
 对任意 $n$ 阶实对称矩阵 $\boldsymbol{A}$, 都存在一个 $n$ 阶正交矩阵 $\boldsymbol{C}$, 使得
 $$
 \boldsymbol{C}^{\mathrm{T}} \boldsymbol{AC} = \boldsymbol{C}^{-1} \boldsymbol{AC}
 $$
 为对角矩阵.
-\end{theorem}
+</p>
 
 
-证明从略.
-
-由定理 3 可知实对称矩阵的对角化问题, 实质上是求正交矩阵 $\boldsymbol{C}$ 的问题. 计算 $\boldsymbol{C}$ 的步骤如下:
-
-$1^{\circ}$\quad 求出实对称矩阵 $\boldsymbol{A}$ 的全部特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$;
-
-$2^{\circ}$\quad 对于各个不同的特征值 $\lambda_{i}$, 求出齐次线性方程组 $\left(\lambda_{i} I-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系. 对基础解系进行正交化和单位化, 得到 $\boldsymbol{A}$ 对于 $\lambda_{i}$ 的一组标准正交的特征向量. 由 $\S 4.2$ 的推论 $3$ 可知, 这个向量组所含向量的个数恰好是 $\lambda_{i}$ 作为 $\boldsymbol{A}$ 的特征值的重数;
-
-$3^{\circ}$\quad 将 $\lambda_{i}(i=1,2, \cdots, r)$ 的所有标准正交的特征向量构成一组 $\mathbf{R}^{n}$ 的标准正交基 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{n}$
-
-$4^{\circ}$\quad 取 $\boldsymbol{C}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{n}\right)$, 则 $\boldsymbol{C}$ 为正交矩阵且使得 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{AC}\left(=\boldsymbol{C}^{-1} \boldsymbol{AC}\right)$ 为对角矩阵, 对角线上的元为相应特征向量的特征值.
 
 
-\begin{example}
+<p style="text-indent: 2em;">由定理 $3$ 可知实对称矩阵的对角化问题, 实质上是求正交矩阵 $\boldsymbol{C}$ 的问题. 计算 $\boldsymbol{C}$ 的步骤如下:
+
+<p style="text-indent: 2em;">$1^{\circ}$ 求出实对称矩阵 $\boldsymbol{A}$ 的全部特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$;
+
+<p style="text-indent: 2em;">$2^{\circ}$ 对于各个不同的特征值 $\lambda_{i}$, 求出齐次线性方程组 $\left(\lambda_{i} I-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系. 对基础解系进行正交化和单位化, 得到 $\boldsymbol{A}$ 对于 $\lambda_{i}$ 的一组标准正交的特征向量. 由 $\S 4.2$ 的推论 $3$ 可知, 这个向量组所含向量的个数恰好是 $\lambda_{i}$ 作为 $\boldsymbol{A}$ 的特征值的重数;
+
+<p style="text-indent: 2em;">$3^{\circ}$ 将 $\lambda_{i}(i=1,2, \cdots, r)$ 的所有标准正交的特征向量构成一组 $\mathbf{R}^{n}$ 的标准正交基 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{n}$
+
+<p style="text-indent: 2em;">$4^{\circ}$ 取 $\boldsymbol{C}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{n}\right)$, 则 $\boldsymbol{C}$ 为正交矩阵且使得 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{AC}\left(=\boldsymbol{C}^{-1} \boldsymbol{AC}\right)$ 为对角矩阵, 对角线上的元为相应特征向量的特征值.
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 设 $\boldsymbol{A}=\left(\begin{array}{rrr}2 & 2 & -2 \\ 2 & 5 & -4 \\ -2 & -4 & 5\end{array}\right)$, 求正交矩阵 $\boldsymbol{C}$, 使
 $\boldsymbol{C}^{-1} \boldsymbol{AC}$ 为对角矩阵.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \begin{aligned}
 \operatorname{det}(\lambda \boldsymbol{I}-\boldsymbol{A}) &=\left|\begin{array}{ccc}
@@ -200,8 +218,8 @@ $$
 \end{array}\right|=(\lambda-1)^{2}(\lambda-10) .
 \end{aligned}
 $$
-
-对于 $\lambda_{1}=1$ (2 重), 由 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$, 即
+<br>
+$\quad$ 对于 $\lambda_{1}=1$ ($2$ 重), 由 $\left(\lambda_{1} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$, 即
 $$
 \left(\begin{array}{rrr}
 -1 & -2 & 2 \\
@@ -231,8 +249,8 @@ $$
 \boldsymbol{\gamma}_{2}=\frac{1}{\left\|\boldsymbol{\beta}_{2}\right\|} \boldsymbol{\beta}_{2}=\left(\frac{2}{3 \sqrt{5}}, \frac{4}{3 \sqrt{5}}, \frac{5}{3 \sqrt{5}}\right)^{\mathrm{T}}.
 \end{gathered}
 $$
-
-对于 $\lambda_{2}=10$, 由 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 解得 $\boldsymbol{\alpha}_{3}=(1,2,-2)^{\mathrm{T}}$, 将 $\boldsymbol{\alpha}_{3}$ 单位化, 有
+<br>
+$\quad$ 对于 $\lambda_{2}=10$, 由 $\left(\lambda_{2} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 解得 $\boldsymbol{\alpha}_{3}=(1,2,-2)^{\mathrm{T}}$, 将 $\boldsymbol{\alpha}_{3}$ 单位化, 有
 $$
 \boldsymbol{\gamma}_{3}=\frac{1}{\left\|\boldsymbol{\alpha}_{3}\right\|} \boldsymbol{\alpha}_{3}=\left(\frac{1}{3}, \frac{2}{3},-\frac{2}{3}\right)^{\mathrm{T}}.
 $$
@@ -248,32 +266,39 @@ $$
 \left(\begin{array}{lll}
 1 & & \\ & 1 & \\ & & 10
 \end{array}\right)$.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 设 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶实对称矩阵, 证明 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似的充要条件是 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值.
-\end{example}
-
-
-\begin{proof}
-\textcolor{second}{充分性}\quad 设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$, 则存在可逆矩阵 $\boldsymbol{P}, \boldsymbol{Q}$, 使
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明： 充分性</b></font>
+设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$, 则存在可逆矩阵 $\boldsymbol{P}, \boldsymbol{Q}$, 使
 $$
 \boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}=\boldsymbol{Q}^{-1} \boldsymbol{B} \boldsymbol{Q},
 $$
 其中 $\boldsymbol{A}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)$. 由矩阵相似的传递性可知 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似.
-
-必要性的证明与 $\S 4.2$ 定理 1 的证明相同.
+<br>
+$\quad$ 必要性的证明与 $\S 4.2$ 定理 $1$ 的证明相同.
 \end{proof}
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 设 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶实对称矩阵, 若存在正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A T}, \boldsymbol{T}^{-1} \boldsymbol{B T}$ 都是对角矩阵, 则 $\boldsymbol{A} \boldsymbol{B}$ 是实对称矩阵.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由 $(\boldsymbol{AB})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}}\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B} \boldsymbol{A}$ 可知, $\boldsymbol{AB}$ 对称的充要条件是 $\boldsymbol{AB}$ 可交换. 因此只 需证 $\boldsymbol{AB}=\boldsymbol{BA}$. 据已知, 设
 $$
 \boldsymbol{T}^{-1} \boldsymbol{A T}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right), \boldsymbol{T}^{-1} \boldsymbol{B T}=\operatorname{diag}\left(\mu_{1}, \mu_{2}, \cdots, \mu_{n}\right),
@@ -283,7 +308,9 @@ $$
 \left(\boldsymbol{T}^{-1} \boldsymbol{A T}\right)\left(\boldsymbol{T}^{-1} \boldsymbol{B T}\right)=\left(\boldsymbol{T}^{-1} \boldsymbol{B T}\right)\left(\boldsymbol{T}^{-1} \boldsymbol{A T}\right)=\operatorname{diag}\left(\lambda_{1} \mu_{1}, \cdots, \lambda_{n} \mu_{n}\right),
 $$
 所以 $\boldsymbol{AB}=\boldsymbol{BA}$. 故 $\boldsymbol{AB}$ 是实对称矩阵.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 
