@@ -74,7 +74,9 @@ $$
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $1$：</b></font>
-对于 $n$ 阶矩阵 $\boldsymbol{A}, \boldsymbol{B}$, 若存在可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{AP}=\boldsymbol{B}$, 则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 记为 $\boldsymbol{A} \sim \boldsymbol{B}$.
+对于 $n$ 阶矩阵 $\boldsymbol{A}, \boldsymbol{B}$, 若存在可逆矩阵 $\boldsymbol{P}$, 使 
+$$\boldsymbol{P}^{-1} \boldsymbol{AP}=\boldsymbol{B},$$ 
+则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 记为 $\boldsymbol{A} \sim \boldsymbol{B}$.
 </p>
 
 
@@ -198,7 +200,7 @@ $$
 $$
 \boldsymbol{A} \boldsymbol{p}_{i}=\lambda_{i} \boldsymbol{p}_{i} \quad(i=1,2, \cdots, n) .
 $$
-因为 $\boldsymbol{P}$ 可逆, 所以 $\boldsymbol{p}_{i} \neq \mathbf{0}$ $(i=1,2, \cdots, n)$, 于是, $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 是 $\boldsymbol{A}$ 的 $n$ 个线性无关 的特征向量.
+因为 $\boldsymbol{P}$ 可逆, 所以 $\boldsymbol{p}_{i} \neq \mathbf{0}$ $(i=1,2, \cdots, n)$, 于是, $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 是 $\boldsymbol{A}$ 的 $n$ 个线性无关的特征向量.
 
 <p style="text-indent: 2em;">反之, 若 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$, 即 $\boldsymbol{A} \boldsymbol{p}_{i}=\lambda_{i} \boldsymbol{p}_{i}(i=$ $1,2, \cdots, n)$, 设 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right)$, 则 $\boldsymbol{P}$ 可逆, 且
 $$
@@ -223,7 +225,7 @@ $$
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $3$：</b></font>
-$n$ 阶矩阵 $\boldsymbol{A}$ 能与对角矩阵 $\boldsymbol{\varLambda}$ 相似的充要条件是 $\boldsymbol{A}$ 有 $n$ 个线性无关的特 征向量.
+$n$ 阶矩阵 $\boldsymbol{A}$ 能与对角矩阵 $\boldsymbol{\varLambda}$ 相似的充要条件是 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量.
 </p>
 
 
@@ -403,7 +405,9 @@ $$
 $$
 k_{1}\left(\lambda_{1}-\lambda_{m}\right)=k_{2}\left(\lambda_{2}-\lambda_{m}\right)=\cdots=k_{m-1}\left(\lambda_{m-1}-\lambda_{m}\right)=0 .
 $$
-又因为 $\lambda_{i}-\lambda_{m} \neq 0$ $(i=1,2, \cdots, m-1)$, 所以只有 $k_{1}=k_{2}=\cdots=k_{m-1}=0$, 代入式 $(\ref{eq:4.9})$ 得 $k_{m} \boldsymbol{\alpha}_{m}=\mathbf{0}$, 由 $\boldsymbol{\alpha}_{m} \neq \mathbf{0}$ 可得 $k_{m}=0$, 于是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关. 
+又因为 $\lambda_{i}-\lambda_{m} \neq 0$ $(i=1,2, \cdots, m-1)$, 所以只有 
+$$k_{1}=k_{2}=\cdots=k_{m-1}=0,$$ 
+代入式 $(\ref{eq:4.9})$ 得 $k_{m} \boldsymbol{\alpha}_{m}=\mathbf{0}$, 由 $\boldsymbol{\alpha}_{m} \neq \mathbf{0}$ 可得 $k_{m}=0$, 于是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关. 
 </p>
 </div>
 </p>
@@ -427,7 +431,8 @@ $$
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $2$：</b></font>
-设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k}$ 是矩阵 $\boldsymbol{A}$ 的互异特征值, $\boldsymbol{\alpha}_{i 1}, \boldsymbol{\alpha}_{i 2}, \cdots, \boldsymbol{\alpha}_{i r_{i}}$ 是对应于特征 值 $\lambda_{i}$ 的线性无关的特征向量, 则 $\boldsymbol{\alpha}_{11}, \cdots, \boldsymbol{\alpha}_{1 r_{1}}, \cdots, \boldsymbol{\alpha}_{k 1}, \cdots, \boldsymbol{\alpha}_{k r_{k}}$ 也线性无关.
+设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{k}$ 是矩阵 $\boldsymbol{A}$ 的互异特征值, $\boldsymbol{\alpha}_{i 1}$, $\boldsymbol{\alpha}_{i 2}$, $\cdots$, $\boldsymbol{\alpha}_{i r_{i}}$ 是对应于特征值 $\lambda_{i}$ 的线性无关的特征向量,
+则 $\boldsymbol{\alpha}_{11}, \cdots, \boldsymbol{\alpha}_{1 r_{1}}$, $\cdots$, $\boldsymbol{\alpha}_{k 1}, \cdots, \boldsymbol{\alpha}_{k r_{k}}$ 也线性无关.
 </p>
 
 <p style="text-indent: 2em;">设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 是 $n$ 阶矩阵 $\boldsymbol{A}$ 的全部互异特征值, $\lambda_{i}$ 是 $\boldsymbol{A}$ 的 $k_{i}$ 重特征值 $(k_{i} \geqslant 1)$, 则 $k_{1}+k_{2}+\cdots+k_{r}=n$. 若对每一个特征值 $\lambda_{i}(i=1,2, \cdots, r)$, $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\boldsymbol{0}$ 的基础解系由 $k_{i}$ 个解向量组成, 即 $\lambda_{i}$ 恰有 $k_{i}$ 个线性无关的特征向量, 则由推论 $2$ 可知, $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量. 而 $\left(\lambda_{i} \boldsymbol{I}-\boldsymbol{A}\right) \boldsymbol{X}=\mathbf{0}$ 的基础解系所含解向量个数不大于 $k_{i}$, 故可得下面的定理:
@@ -456,11 +461,11 @@ $$
 1 & 2 & 2 \\
 2 & 1 & -2 \\
 -2 & -2 & 1
-\end{array}\right), \, \boldsymbol{B}=\left(\begin{array}{rrr}
+\end{array}\right)\!,\boldsymbol{B}=\left(\begin{array}{rrr}
 3 & -1 & -2 \\
 2 & 0 & -2 \\
 2 & -1 & -1
-\end{array}\right), \, \boldsymbol{C}=\left(\begin{array}{rrr}
+\end{array}\right)\!,\boldsymbol{C}=\left(\begin{array}{rrr}
 3 & 1 & 0 \\
 -4 & -1 & 0 \\
 4 & -8 & -2
@@ -523,7 +528,7 @@ $$
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $5$：</b></font>
-已知 $\boldsymbol{\alpha}=\left(\begin{array}{r}1 \\ 1 \\ -1\end{array}\right)$ 是矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}2 & -1 & 2 \\ 5 & a & 3 \\ -1 & b & -2\end{array}\right)$ 的 特征向量, 试确定 $a, b$ 的值与 $\boldsymbol{\alpha}$ 所对应的特征值, 并讨论 $\boldsymbol{A}$ 能否与对角矩阵相似.
+已知 $\boldsymbol{\alpha}=\left(\begin{array}{r}1 \\ 1 \\ -1\end{array}\right)$ 是矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}2 & -1 & 2 \\ 5 & a & 3 \\ -1 & b & -2\end{array}\right)$ 的特征向量, 试确定 $a, b$ 的值与 $\boldsymbol{\alpha}$ 所对应的特征值, 并讨论 $\boldsymbol{A}$ 能否与对角矩阵相似.
 <input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
 <input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
 <div id= "divIDexample5" style= "display:none"> 
