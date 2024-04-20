@@ -880,7 +880,7 @@ $$
 <br>
 $1$. $R(\boldsymbol{A})=3$.
 <br>
-这时 $R(\overline{\boldsymbol{A}})=3$, 根据克拉默法则知, 上面方程组有惟一解, 所以三个平面交于一点 (见图 \ref{fig:3.8} (a)).
+这时 $R(\overline{\boldsymbol{A}})=3$, 根据克拉默法则知, 上面方程组有惟一解, 所以三个平面交于一点 (见图 <a href="#fig3.8">3.8</a> (a)).
 
 <br>
 $2$. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=3$.
@@ -893,7 +893,7 @@ a_{1} & a_{2} & a_{3}
 \end{array}\right]=\operatorname{det} \boldsymbol{A}=0
 $$
 知 $\pi_{2}$ 和 $\pi_{3}$ 的交线与 $\pi_{1}$ 平行. 同理可知, $\pi_{1}$ 和 $\pi_{3}$ 的交线与 $\pi_{2}$ 平行; $\pi_{1}$ 和 $\pi_{2}$ 的交线与 $\pi_{3}$ 平行.
-因此三个平面形成一个三棱柱 (见图 \ref{fig:3.8} (b)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三个平面中有两个平面平行, 另一平面与这两个平面相交 (见图 \ref{fig:3.8} (c)).
+因此三个平面形成一个三棱柱 (见图 <a href="#fig3.8">3.8</a> (b)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三个平面中有两个平面平行, 另一平面与这两个平面相交 (见图 <a href="#fig3.8">3.8</a> (c)).
 
 <br>
 $3$. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=2$.
@@ -901,19 +901,19 @@ $3$. $R(\boldsymbol{A})=2, R(\overline{\boldsymbol{A}})=2$.
 这时方程组有解, 且解里仅含一个参数, 故三个平面相交于一条直线. 又因为 $R(\overline{\boldsymbol{A}})= 2$, 
 所以 $\overline{\boldsymbol{A}}$ 的三个行向量 $\boldsymbol{b}_{1}, \boldsymbol{b}_{2}, \boldsymbol{b}_{3}$ 线性相关, 
 即存在不全为零的实数 $k_{1}, k_{2}, k_{3}$, 使得 $k_{1} b_{1}+k_{2} b_{2}+k_{3} b_{3}=0$. 当 $k_{1}, k_{2}, k_{3}$ 都不为零时,
-三个平面互异 (见图 \ref{fig:3.8} (d)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三平面中有两个平面重合 (见图 \ref{fig:3.8} (e)).
+三个平面互异 (见图 <a href="#fig3.8">3.8</a> (d)). 当 $k_{1}, k_{2}, k_{3}$ 中有一个为零时, 三平面中有两个平面重合 (见图 <a href="#fig3.8">3.8</a> (e)).
 
 <br>
 $4$. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=2$.
 <br>
 此时方程组无解, 所以三个平面不相交. 又因为 $R(\boldsymbol{A})=1$, 所以三个平面平行; 
-而由 $R(\overline{\boldsymbol{A}})=2$ 知三个平面中至少有两个平面互异. 即三个平面平行, 并且互异 (见图 \ref{fig:3.8} (f)); 或三个平面平行, 
-其中有两个平面重合 (见图 \ref{fig:3.8} (g)).
+而由 $R(\overline{\boldsymbol{A}})=2$ 知三个平面中至少有两个平面互异. 即三个平面平行, 并且互异 (见图 <a href="#fig3.8">3.8</a> (f)); 或三个平面平行, 
+其中有两个平面重合 (见图 <a href="#fig3.8">3.8</a> (g)).
 
 <br>
 $5$. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=1$.
 <br>
-这时方程组有解, 且解里含两个参数, 故这些解所对应的点必在一个平面内, 即三个平面重合 (见图 \ref{fig:3.8} (h)).
+这时方程组有解, 且解里含两个参数, 故这些解所对应的点必在一个平面内, 即三个平面重合 (见图 <a href="#fig3.8">3.8</a> (h)).
 <br>
 三个平面总共有上述八种不同的位置.
 </p>
@@ -921,14 +921,12 @@ $5$. $R(\boldsymbol{A})=1, R(\overline{\boldsymbol{A}})=1$.
 </p>
 
 
-\begin{figure}[!ht]
-\begin{center}
-\renewcommand\figurename{\footnotesize 图}
-\includegraphics[scale=1.1]{image/imageLA2022/fig3.8.pdf}
-\caption{}
-\label{fig:3.8}
-\end{center}
-\end{figure}
+<center>
+<figure>
+  <img src="fig3.8.png" width="50%">
+ <figcaption><a name="fig3.8">图3.8</a> </figcaption>
+</figure>
+</center>
 
 
 
@@ -1014,9 +1012,9 @@ $$
 
 <li> 设 $\boldsymbol{\eta}^{*}$ 是非齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$ 的一个解, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是对应的齐次线性方程组的一个基础解系. 证明:
 <br>
-(1) $\boldsymbol{\eta}^{*}, \boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 线性无关;
+$(1)$ $\boldsymbol{\eta}^{*}, \boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 线性无关;
 <br>
-(2) $\boldsymbol{\eta}^{*}, \boldsymbol{\eta}^{*}+\boldsymbol{\xi}_{1}, \boldsymbol{\eta}^{*}+\boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\eta}^{*}+\boldsymbol{\xi}_{n-r}$ 线性无关.
+$(2)$ $\boldsymbol{\eta}^{*}, \boldsymbol{\eta}^{*}+\boldsymbol{\xi}_{1}, \boldsymbol{\eta}^{*}+\boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\eta}^{*}+\boldsymbol{\xi}_{n-r}$ 线性无关.
 </li>
 
 <li> 设四元非齐次线性方程组的系数矩阵的秩为 $3$, 已知 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}, \boldsymbol{\eta}_{3}$ 是它的三个解向量, 且
