@@ -107,31 +107,40 @@ a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=0,
 
 关于 $\boldsymbol{A X}=\boldsymbol{0}$ 的解, 有如下性质:
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $1$：</b></font>
 若 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}$ 为齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 的解, 则 $\boldsymbol{X}=\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是 $\boldsymbol{A X}=\boldsymbol{0}$ 的解.
-\end{property}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty1").style.display="none"'> 
+<div id= "divIDproperty1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由于 $\boldsymbol{A}\left(\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}\right)=\boldsymbol{A} \boldsymbol{\xi}_{1}+\boldsymbol{A} \boldsymbol{\xi}_{2}=\boldsymbol{0}+\boldsymbol{0}=\boldsymbol{0}$, 因而 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是 $\boldsymbol{A X}=\boldsymbol{0}$ 的解. 
-\end{proof}
+</p>
+</div>
+</p>
 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $2$：</b></font>
 若 $\boldsymbol{\xi}$ 为齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 的解, $k$ 为数, 则 $\boldsymbol{X}=k \boldsymbol{\xi}$ 也是 $\boldsymbol{A X}=\boldsymbol{0}$ 的解.
-\end{property}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty2").style.display="none"'> 
+<div id= "divIDproperty2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由 $\boldsymbol{A}(k \boldsymbol{\xi})=k \boldsymbol{A} \boldsymbol{\xi}=k \mathbf{0}=\mathbf{0}$ 知结论成立.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 由性质 $1, 2$ 立即得
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $3$：</b></font>
 齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 解向量的线性组合也为 $\boldsymbol{A X}=\boldsymbol{0}$ 的解. 即设 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 为 $\boldsymbol{A X}=\boldsymbol{0}$ 的解, 则对任意 $s$ 个数 $k_{1}, k_{2}, \cdots, k_{s}$, $k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+\cdots+k_{s} \boldsymbol{\xi}_{s}$ 也是 $\boldsymbol{A X}=\boldsymbol{0}$ 的解.
-\end{property}
+</p>
 
 将齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 的解的全体记为 $W$, 即
 $$
@@ -143,12 +152,14 @@ $$
 易见, 仅当 $\boldsymbol{A X}=\boldsymbol{0}$ 有非零解时才有基础解系.
 
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 设齐次线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的系数矩阵 $\boldsymbol{A}$ 的秩 $R(\boldsymbol{A})=r < n$, 则方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 有基础解系且所含解向量个数为 $n-r$, 即 $W$ 的维数为 $n-r$, 这里 $n$ 为方程组中未知数的个数.
-\end{theorem}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设系数矩阵 $\boldsymbol{A}$ 的秩为 $r$, 不妨设 $\boldsymbol{A}$ 的前 $r$ 个列向量线性无关, 于是由 $\boldsymbol{A}$ 经行 初等变换可得
 $$
 \boldsymbol{B}=\left(\begin{array}{cccccc}
@@ -241,9 +252,11 @@ $$
 1
 \end{array}\right) .
 $$
-下面证明 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 就是基础解系.
+<br>
+$\quad$ 下面证明 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 就是基础解系.
 
-首先, 因 $\left(x_{r+1}, x_{r+2}, \cdots, x_{n}\right)^{\mathrm{T}}$ 所取的 $n-r$ 个 $n-r$ 维向量
+<br>
+$\quad$ 首先, 因 $\left(x_{r+1}, x_{r+2}, \cdots, x_{n}\right)^{\mathrm{T}}$ 所取的 $n-r$ 个 $n-r$ 维向量
 $$
 \left(\begin{array}{c}
 1 \\
@@ -264,7 +277,8 @@ $$
 $$
 线性无关, 所以在每个向量前面添加 $r$ 个分量而得到的 $n-r$ 个 $n$ 维向量 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 也线性无关 (参见习题 $3.2$ 的题 $10$).
 
-其次, 证明方程组 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 的任一解 $\boldsymbol{X}=\left(l_{1}, \cdots, l_{r}, l_{r+1}, \cdots, l_{n}\right)^{\mathrm{T}}$ 都可由 $\boldsymbol{\xi}_{1}$, $\boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 线性表出. 为此, 作向量
+<br>
+$\quad$ 其次, 证明方程组 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 的任一解 $\boldsymbol{X}=\left(l_{1}, \cdots, l_{r}, l_{r+1}, \cdots, l_{n}\right)^{\mathrm{T}}$ 都可由 $\boldsymbol{\xi}_{1}$, $\boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 线性表出. 为此, 作向量
 $$
 \boldsymbol{\eta}=l_{r+1} \boldsymbol{\xi}_{1}+l_{r+2} \boldsymbol{\xi}_{2}+\cdots+l_{n} \boldsymbol{\xi}_{n-r},
 $$
@@ -275,8 +289,11 @@ $$
 $$
 于是由定义知, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 为 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{0}$ 的基础解系.
 
-值得注意的是, 该定理的证明实际上就是一个具体求基础解系的方法. 因为齐次线性方程组的基础解系实质上就是向量组 $W$ 的一个极大无关组, 因而一般不惟一, 但是基础解系中向量个数必为 $n-r$.
-\end{proof}
+<br>
+$\quad$ 值得注意的是, 该定理的证明实际上就是一个具体求基础解系的方法. 因为齐次线性方程组的基础解系实质上就是向量组 $W$ 的一个极大无关组, 因而一般不惟一, 但是基础解系中向量个数必为 $n-r$.
+</p>
+</div>
+</p>
 
 例如, 任取 $n-r$ 个线性无关的 $n-r$ 维向量, 并使 $\left(\begin{array}{c}x_{r+1} \\ x_{r+2} \\ \vdots \\ x_{n}\end{array}\right)$ 分别等于这些向量, 再通过方程组 $(3.8)$ 求出 $x_{1}, x_{2}, \cdots, x_{r}$, 便得一个基础解系.
 
@@ -536,45 +553,58 @@ $$
 下面来讨论 $\boldsymbol{A X}=\boldsymbol{b}$ 解的结构. 方程组 $(\ref{eq:3.10})$ 对应的齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{0}$ 称为方程组 $(\ref{eq:3.10})$ 的导出组. 非齐次线性方程组的解有如下性质:
 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $4$：</b></font>
 设 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}$ 为非齐次线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$ 的两个解, 则 $\boldsymbol{\eta}_{2}-\boldsymbol{\eta}_{1}$ 为其导出组的解.
-\end{property}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty4").style.display="none"'> 
+<div id= "divIDproperty4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 因为 $\boldsymbol{A}\left(\boldsymbol{\eta}_{2}-\boldsymbol{\eta}_{1}\right)=\boldsymbol{A} \boldsymbol{\eta}_{2}-\boldsymbol{A} \boldsymbol{\eta}_{1}=\boldsymbol{b}-\boldsymbol{b}=\mathbf{0}$, 所以 $\boldsymbol{\eta}_{2}-\boldsymbol{\eta}_{1}$ 为导出组的解. 
-\end{proof}
+</p>
+</div>
+</p>
 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $5$：</b></font>
 设 $\boldsymbol{\eta}$ 为 $\boldsymbol{A X}=\boldsymbol{b}$ 的解, $\boldsymbol{\xi}$ 为 $\boldsymbol{A X}=\boldsymbol{0}$ 的解, 则 $\boldsymbol{\eta}+\boldsymbol{\xi}$ 为 $\boldsymbol{A X}=\boldsymbol{b}$ 的解.
-\end{property}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty5").style.display="none"'> 
+<div id= "divIDproperty5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由 $\boldsymbol{A}(\boldsymbol{\eta}+\boldsymbol{\xi})=\boldsymbol{A\eta}+\boldsymbol{A\xi}=\boldsymbol{b}+\boldsymbol{0}=\boldsymbol{b}$, 知 $\boldsymbol{\eta}+\boldsymbol{\xi}$ 为 $\boldsymbol{A X}=\boldsymbol{b}$ 的解.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 $\boldsymbol{A X}=\boldsymbol{b}$ 的任意一个解, 我们都称之为 $\boldsymbol{A X}=\boldsymbol{b}$ 的一个特解. 于是由以上两个性质得:
 
 
 
-\begin{property}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $6$：</b></font>
 若 $\boldsymbol{\gamma}_{0}$ 为 $\boldsymbol{A X}=\boldsymbol{b}$ 的一个特解, 则 $\boldsymbol{A X}=\boldsymbol{b}$ 的任一解 $\boldsymbol{\gamma}$ 都可表示成
 \begin{equation}\label{eq:3.11} 
 \boldsymbol{\gamma}=\boldsymbol{\gamma}_{0}+\boldsymbol{\xi},
 \end{equation}
 其中 $\boldsymbol{\xi}$ 为 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个解. 因此, 对于 $\boldsymbol{A X}=\boldsymbol{b}$ 的任一特解 $\boldsymbol{\gamma}_{0}$, 当 $\boldsymbol{\xi}$ 取遍它的导出 组的全部解时, 式 $(\ref{eq:3.11})$ 就给出 $\boldsymbol{A X}=\boldsymbol{b}$ 的全部解.
-\end{property}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty6").style.display="none"'> 
+<div id= "divIDproperty6" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 显然
 $$
 \boldsymbol{\gamma}=\boldsymbol{\gamma}_{0}+\left(\boldsymbol{\gamma}-\boldsymbol{\gamma}_{0}\right),
 $$
 由性质 $4$, $\boldsymbol{\gamma}-\boldsymbol{\gamma}_{0}$ 是 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个解, 令 $\boldsymbol{\xi}=\boldsymbol{\gamma}-\boldsymbol{\gamma}_{0}$, 就得性质的结论. 既然 $\boldsymbol{A X}=\boldsymbol{b}$ 的任一解都能表示成式 $(\ref{eq:3.11})$ 的形式, 当然在 $\boldsymbol{\xi}$ 取谝 $\boldsymbol{A X}=\boldsymbol{0}$ 的全部解时, $\boldsymbol{\gamma}=\boldsymbol{\gamma}_{0}+\boldsymbol{\xi}$ 就取遍 $\boldsymbol{A X}=\boldsymbol{b}$ 的全部解.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 性质 $6$ 说明, 想要找出非齐次线性方程组的全部解, 我们只要找到它的一个特解以 及它的导出组的全部解就行了. 若 $\boldsymbol{\gamma}_{0}$ 是非齐次方程组的一个特解, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是其 导出组的一个基础解系, 则非齐次方程组的任意一个解都可以表示成
