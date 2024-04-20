@@ -60,8 +60,8 @@ $4.4$ 实对称矩阵的相似对角化
 
 <ul>
 
-<p style="text-indent: 2em;">在 $\S 4.2$ 中所讨论的一般 $n$ 阶矩阵相似对角化的结论对于实对称矩阵当然成立. 而 实对称矩阵的相似对角化又有其自身的特殊性. 实对称矩阵的一个重要特性就是它的特
-征值都是实数. 为了证明这个结论, 我们先介绍复矩阵的共轭矩阵概念及其基本性质.
+<p style="text-indent: 2em;">在 $\S 4.2$ 中所讨论的一般 $n$ 阶矩阵相似对角化的结论对于实对称矩阵当然成立. 而实对称矩阵的相似对角化又有其自身的特殊性. 
+实对称矩阵的一个重要特性就是它的特征值都是实数. 为了证明这个结论, 我们先介绍复矩阵的共轭矩阵概念及其基本性质.
 
 <p style="text-indent: 2em;">设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}, a_{i j} \in \mathbf{C}$, 我们把 $\overline{\boldsymbol{A}}=\left(\overline{a}_{i j}\right)_{m \times n}$ 称为 $\boldsymbol{A}$ 的共轭矩阵, 其中 $\overline{a}_{i j}$ 是 $a_{i j}$ 的共轭复数.
 
@@ -215,7 +215,8 @@ $$
 \end{array}\right|=(\lambda-1)\left|\begin{array}{cc}
 \lambda-2 & 4 \\
 2 & \lambda-9
-\end{array}\right|=(\lambda-1)^{2}(\lambda-10) .
+\end{array}\right|\\
+& =(\lambda-1)^{2}(\lambda-10) .
 \end{aligned}
 $$
 <br>
@@ -237,10 +238,14 @@ x_{3}
 $$
 解得基础解系为 $\boldsymbol{\alpha}_{1}=(-2,1,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(2,0,1)^{\mathrm{T}}$. 将 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 正交化, 有
 $$
-\begin{gathered}
-\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=(-2,1,0)^{\mathrm{T}}, \\
-\boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-\frac{\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)} \boldsymbol{\beta}_{1}=(2,0,1)^{\mathrm{T}}-\frac{-4}{5}(-2,1,0)^{\mathrm{T}}=\frac{1}{5}(2,4,5)^{\mathrm{T}}.
-\end{gathered}
+\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=(-2,1,0)^{\mathrm{T}}, 
+$$
+$$
+\begin{aligned}
+\boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-\frac{\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)} \boldsymbol{\beta}_{1}
+  &=(2,0,1)^{\mathrm{T}}-\frac{-4}{5}(-2,1,0)^{\mathrm{T}}\\
+  &=\frac{1}{5}(2,4,5)^{\mathrm{T}}.
+\end{aligned}
 $$
 再将 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}$ 单位化, 有
 $$
@@ -287,7 +292,9 @@ $$
 其中 $\boldsymbol{A}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)$. 由矩阵相似的传递性可知 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似.
 <br>
 $\quad$ 必要性的证明与 $\S 4.2$ 定理 $1$ 的证明相同.
-\end{proof}
+</p>
+</div>
+</p>
 
 
 
@@ -301,11 +308,18 @@ $\quad$ 必要性的证明与 $\S 4.2$ 定理 $1$ 的证明相同.
 <font color=red><b>证明：</b></font>
 由 $(\boldsymbol{AB})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}}\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B} \boldsymbol{A}$ 可知, $\boldsymbol{AB}$ 对称的充要条件是 $\boldsymbol{AB}$ 可交换. 因此只 需证 $\boldsymbol{AB}=\boldsymbol{BA}$. 据已知, 设
 $$
-\boldsymbol{T}^{-1} \boldsymbol{A T}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right), \boldsymbol{T}^{-1} \boldsymbol{B T}=\operatorname{diag}\left(\mu_{1}, \mu_{2}, \cdots, \mu_{n}\right),
+\boldsymbol{T}^{-1} \boldsymbol{A T}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right), 
+$$
+$$
+\boldsymbol{T}^{-1} \boldsymbol{B T}=\operatorname{diag}\left(\mu_{1}, \mu_{2}, \cdots, \mu_{n}\right),
 $$
 则
 $$
-\left(\boldsymbol{T}^{-1} \boldsymbol{A T}\right)\left(\boldsymbol{T}^{-1} \boldsymbol{B T}\right)=\left(\boldsymbol{T}^{-1} \boldsymbol{B T}\right)\left(\boldsymbol{T}^{-1} \boldsymbol{A T}\right)=\operatorname{diag}\left(\lambda_{1} \mu_{1}, \cdots, \lambda_{n} \mu_{n}\right),
+\begin{aligned}
+\left(\boldsymbol{T}^{-1} \boldsymbol{A T}\right)\left(\boldsymbol{T}^{-1} \boldsymbol{B T}\right)\\
+ & =\left(\boldsymbol{T}^{-1} \boldsymbol{B T}\right)\left(\boldsymbol{T}^{-1} \boldsymbol{A T}\right)\\
+ & =\operatorname{diag}\left(\lambda_{1} \mu_{1}, \cdots, \lambda_{n} \mu_{n}\right),
+\end{aligned}
 $$
 所以 $\boldsymbol{AB}=\boldsymbol{BA}$. 故 $\boldsymbol{AB}$ 是实对称矩阵.
 </p>
