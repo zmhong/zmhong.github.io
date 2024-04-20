@@ -64,24 +64,26 @@ $4.3$ $n$ 维向量空间的正交性
 <p style="text-indent: 2em;">在几何空间中, 我们讨论过向量的长度与向量间的夹角等度量概念, 这些概念也可以引入到 $n$ 维向量空间 $\mathbf{R}^{n}$ 中, 而长度与夹角都可以用内积来定义.
   为此, 我们先将几何空间中内积的概念推广到 $n$ 维向量空间 $\mathbf{R}^{n}$, 再进一步讨论向量的长度、夹角以及向量的正交性.
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 设 $\boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)$, $\boldsymbol{\beta}=\left(b_{1}, b_{2}, \cdots, b_{n}\right)$ 是 $\mathbf{R}^{n}$ 中的两个向量, 则实数 $a_{1} b_{1}+a_{2} b_{2}+\cdots+a_{n} b_{n}$ 称为 $\boldsymbol{\alpha}$ 与
 $\boldsymbol{\beta}$ 的内积, 记为 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$. 
-\end{definition}
+</p>
 
-在 $\mathbf{R}^{3}$ 中, 也将 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 记为 $\boldsymbol{\alpha} \cdot \boldsymbol{\beta}$.
+<p style="text-indent: 2em;">在 $\mathbf{R}^{3}$ 中, 也将 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 记为 $\boldsymbol{\alpha} \cdot \boldsymbol{\beta}$.
 
-利用矩阵的乘法, 若将 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 看作行矩阵, 则  $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 又可表示为 $\boldsymbol{\alpha} \boldsymbol{\beta}^{\mathrm{T}}$. 若将 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 记 为列向量的形式, 则 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 可表示为 $\boldsymbol{\alpha}^{\mathrm{T}} \boldsymbol{\beta}$.
+<p style="text-indent: 2em;">利用矩阵的乘法, 若将 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 看作行矩阵, 则  $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 又可表示为 $\boldsymbol{\alpha} \boldsymbol{\beta}^{\mathrm{T}}$.
+若将 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 记为列向量的形式, 则 $(\boldsymbol{\alpha}, \boldsymbol{\beta})$ 可表示为 $\boldsymbol{\alpha}^{\mathrm{T}} \boldsymbol{\beta}$.
 
-根据内积的定义, 容易证明内积具有以下性质:
+<p style="text-indent: 2em;">根据内积的定义, 容易证明内积具有以下性质:
 
-$1^{\circ}$\quad 非负性: $(\boldsymbol{\alpha}, \boldsymbol{\alpha}) \geqslant 0$, 当且仅当 $\boldsymbol{\alpha}=\boldsymbol{0}$ 时等号成立;
+<p style="text-indent: 2em;">$1^{\circ}$  <font color=blue><b>非负性: </b></font> $(\boldsymbol{\alpha}, \boldsymbol{\alpha}) \geqslant 0$, 当且仅当 $\boldsymbol{\alpha}=\boldsymbol{0}$ 时等号成立;
 
-$2^{\circ}$\quad 对称性: $(\boldsymbol{\alpha}, \boldsymbol{\beta})=(\boldsymbol{\beta}, \boldsymbol{\alpha})$;
+<p style="text-indent: 2em;">$2^{\circ}$  <font color=blue><b>对称性: </b></font> $(\boldsymbol{\alpha}, \boldsymbol{\beta})=(\boldsymbol{\beta}, \boldsymbol{\alpha})$;
 
-$3^{\circ}$\quad 线性性: $(\boldsymbol{\alpha}+\boldsymbol{\beta}, \boldsymbol{\gamma})=(\boldsymbol{\alpha}, \boldsymbol{\gamma})+(\boldsymbol{\beta}, \boldsymbol{\gamma}),(k \boldsymbol{\alpha}, \boldsymbol{\beta})=k(\boldsymbol{\alpha}, \boldsymbol{\beta})$, 其中 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 为 $\mathbf{R}^{n}$ 中任意三个向量, $k$ 为任意实数.
+<p style="text-indent: 2em;">$3^{\circ}$  <font color=blue><b>线性性: </b></font> $(\boldsymbol{\alpha}+\boldsymbol{\beta}, \boldsymbol{\gamma})=(\boldsymbol{\alpha}, \boldsymbol{\gamma})+(\boldsymbol{\beta}, \boldsymbol{\gamma}),(k \boldsymbol{\alpha}, \boldsymbol{\beta})=k(\boldsymbol{\alpha}, \boldsymbol{\beta})$, 其中 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 为 $\mathbf{R}^{n}$ 中任意三个向量, $k$ 为任意实数.
 
-由上述性质与定义不难看出, 内积还满足以下关系:
+<p style="text-indent: 2em;">由上述性质与定义不难看出, 内积还满足以下关系:
 $$
 \begin{gathered}
 (\boldsymbol{\alpha}, l \boldsymbol{\beta})=l(\boldsymbol{\alpha}, \boldsymbol{\beta}), \quad l \in \mathbf{R}, \\
@@ -89,35 +91,36 @@ $$
 \end{gathered}
 $$
 
-利用内积可以定义向量的长度.
+<p style="text-indent: 2em;">利用内积可以定义向量的长度.
 
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $2$：</b></font>
 设 $\boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right) \in \mathbf{R}^{n}$, 则 $\sqrt{(\boldsymbol{\alpha}, \boldsymbol{\alpha})}=\sqrt{a_{1}^{2}+a_{2}^{2}+\cdots+a_{n}^{2}}$ 称为 $\boldsymbol{\alpha}$ 的长度, 记为 $\|\boldsymbol{\alpha}\|$.
-\end{definition}
+</p>
 
-向量的长度具有以下性质:
+<p style="text-indent: 2em;">向量的长度具有以下性质:
 
-$1^{\circ}$\quad 非负性: $\|\boldsymbol{\alpha}\| \geqslant 0$, 当且仅当 $\boldsymbol{\alpha}=\mathbf{0}$ 时 $\|\boldsymbol{\alpha}\|=0$;
+<p style="text-indent: 2em;">$1^{\circ}$  <font color=blue><b>非负性:</b></font> $\|\boldsymbol{\alpha}\| \geqslant 0$, 当且仅当 $\boldsymbol{\alpha}=\mathbf{0}$ 时 $\|\boldsymbol{\alpha}\|=0$;
 
-$2^{\circ}$\quad 齐次性: $\|k \boldsymbol{\alpha}\|=|k|\|\boldsymbol{\alpha}\|, \quad k \in \mathbf{R}$;
+<p style="text-indent: 2em;">$2^{\circ}$  <font color=blue><b>齐次性:</b></font> $\|k \boldsymbol{\alpha}\|=|k|\|\boldsymbol{\alpha}\|, \quad k \in \mathbf{R}$;
 
-$3^{\circ}$\quad 三角不等式: $\|\boldsymbol{\alpha}+\boldsymbol{\beta}\| \leqslant\|\boldsymbol{\alpha}\|+\|\boldsymbol{\beta}\|$.
+<p style="text-indent: 2em;">$3^{\circ}$  <font color=blue><b>三角不等式:</b></font> $\|\boldsymbol{\alpha}+\boldsymbol{\beta}\| \leqslant\|\boldsymbol{\alpha}\|+\|\boldsymbol{\beta}\|$.
 
-当 $\|\boldsymbol{\alpha}\|=1$ 时, 称 $\boldsymbol{\alpha}$ 为单位向量.
+<p style="text-indent: 2em;">当 $\|\boldsymbol{\alpha}\|=1$ 时, 称 $\boldsymbol{\alpha}$ 为单位向量.
 
 
-若 $\boldsymbol{\alpha} \neq \mathbf{0}$, 则由 $\left(\frac{1}{\|\boldsymbol{\alpha}\|} \boldsymbol{\alpha}, \frac{1}{\|\boldsymbol{\alpha}\|} \boldsymbol{\alpha}\right)=\frac{1}{\|\boldsymbol{\alpha}\|^{2}}(\boldsymbol{\alpha}, \boldsymbol{\alpha})=1$ 可知, $\frac{1}{\|\boldsymbol{\alpha}\|} \boldsymbol{\alpha}$ 是单位向量. 
+<p style="text-indent: 2em;">若 $\boldsymbol{\alpha} \neq \mathbf{0}$, 则由 $\left(\frac{1}{\|\boldsymbol{\alpha}\|} \boldsymbol{\alpha}, \frac{1}{\|\boldsymbol{\alpha}\|} \boldsymbol{\alpha}\right)=\frac{1}{\|\boldsymbol{\alpha}\|^{2}}(\boldsymbol{\alpha}, \boldsymbol{\alpha})=1$ 可知, $\frac{1}{\|\boldsymbol{\alpha}\|} \boldsymbol{\alpha}$ 是单位向量. 
 
-向量的内积还满足以下关系式:
+<p style="text-indent: 2em;">向量的内积还满足以下关系式:
 $$
 (\boldsymbol{\alpha}, \boldsymbol{\beta})^{2} \leqslant\|\boldsymbol{\alpha}\|^{2}\|\boldsymbol{\beta}\|^{2},
 $$
 当且仅当 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 线性相关时等号成立. 这个不等式称为柯西$-$施瓦茨不等式.
 
 
-事实上, 若 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性无关, 则对任意实数 $t$, 都有 $t \boldsymbol{\alpha}+\boldsymbol{\beta} \neq \boldsymbol{0}$, 于是
+<p style="text-indent: 2em;">事实上, 若 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性无关, 则对任意实数 $t$, 都有 $t \boldsymbol{\alpha}+\boldsymbol{\beta} \neq \boldsymbol{0}$, 于是
 $$
 (t \boldsymbol{\alpha}+\boldsymbol{\beta}, t \boldsymbol{\alpha}+\boldsymbol{\beta})=(\boldsymbol{\alpha}, \boldsymbol{\alpha}) t^{2}+2(\boldsymbol{\alpha}, \boldsymbol{\beta}) t+(\boldsymbol{\beta}, \boldsymbol{\beta})>0 .
 $$
@@ -130,13 +133,13 @@ $$
 (\boldsymbol{\alpha}, \boldsymbol{\beta})^{2}<\|\boldsymbol{\alpha}\|^{2}\|\boldsymbol{\beta}\|^{2} .
 $$
 
-当 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性相关时, 如果 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 中有一个为 $\boldsymbol{0}$, 那么显然等式成立. 因而不妨设
+<p style="text-indent: 2em;">当 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性相关时, 如果 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 中有一个为 $\boldsymbol{0}$, 那么显然等式成立. 因而不妨设
 $\boldsymbol{\beta}=k \boldsymbol{\alpha} \neq \boldsymbol{0}$, 则有
 $$
 (\boldsymbol{\alpha}, \boldsymbol{\beta})^{2}=(\boldsymbol{\alpha}, k \boldsymbol{\alpha})^{2}=k^{2}(\boldsymbol{\alpha}, \boldsymbol{\alpha})^{2}=(\boldsymbol{\alpha}, \boldsymbol{\alpha})(k \boldsymbol{\alpha}, k \boldsymbol{\alpha})=\|\boldsymbol{\alpha}\|^{2}\|\boldsymbol{\beta}\|^{2} .
 $$
 
-根据柯西$-$施瓦茨不等式, 对于任何非零向量 $\boldsymbol{\alpha}, \boldsymbol{\beta}$, 总有
+<p style="text-indent: 2em;">根据柯西$-$施瓦茨不等式, 对于任何非零向量 $\boldsymbol{\alpha}, \boldsymbol{\beta}$, 总有
 $$
 \left|\frac{(\boldsymbol{\alpha}, \boldsymbol{\beta})}{\|\boldsymbol{\alpha}\|\|\boldsymbol{\beta}\|}\right| \leqslant 1 .
 $$
@@ -145,9 +148,10 @@ $$
 
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $3$：</b></font>
 当 $\boldsymbol{\alpha} \neq \boldsymbol{0}$ 且 $\boldsymbol{\beta} \neq \mathbf{0}$ 时, $\theta=\arccos \frac{(\boldsymbol{\alpha}, \boldsymbol{\beta})}{\|\boldsymbol{\alpha}\|\|\boldsymbol{\beta}\|}$ 称为 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的夹角, 记为 $\langle\boldsymbol{\alpha}, \boldsymbol{\beta}\rangle$.
-\end{definition}
+</p>
 
 
 </ul>
@@ -160,25 +164,30 @@ $$
 
 <ul>
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $4$：</b></font>
 若向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的内积为零, 即 $(\boldsymbol{\alpha}, \boldsymbol{\beta})=0$, 则称 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 正交.
-\end{definition}
+</p>
 
-显然, $\mathbf{R}^{n}$ 中的零向量 $\mathbf{0}$ 与任一向量 $\boldsymbol{\alpha}$ 的内积 $(\boldsymbol{0}, \boldsymbol{\alpha})=0$, 所以零向量与任何向量都正交.
+<p style="text-indent: 2em;">显然, $\mathbf{R}^{n}$ 中的零向量 $\mathbf{0}$ 与任一向量 $\boldsymbol{\alpha}$ 的内积 $(\boldsymbol{0}, \boldsymbol{\alpha})=0$, 所以零向量与任何向量都正交.
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $5$：</b></font>
 若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 中任意两个向量都正交且不含零向量, 则称 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 为正交向量组.
-\end{definition}
+</p>
 
 
-正交向量组是 $\mathbf{R}^{n}$ 中十分重要的概念, 下面讨论正交向量组的有关性质.
+<p style="text-indent: 2em;">正交向量组是 $\mathbf{R}^{n}$ 中十分重要的概念, 下面讨论正交向量组的有关性质.
 
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 正交向量组是线性无关的.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 是正交向量组, 且
 $$
 k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{m} \boldsymbol{\alpha}_{m}=\mathbf{0} .
@@ -193,20 +202,25 @@ $$
 \end{aligned}
 $$
 因为 $\boldsymbol{\alpha}_{1} \neq \mathbf{0}$, 所以 $\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{1}\right)>0$, 于是 $k_{1}=0$.
-
-同理, $k_{2}=\cdots=k_{m}=0$. 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关.
-\end{proof}
-
-
-但是, 线性无关向量组未必是正交向量组. 如 $\boldsymbol{\alpha}_{1}=(1,0,0), \boldsymbol{\alpha}_{2}=(1,1,0), \boldsymbol{\alpha}_{3}=$ $(1,1,1)$ 线性无关, 但其中任何两个向量都不正交.
-
+<br>
+$\quad$ 同理, $k_{2}=\cdots=k_{m}=0$. 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关.
+</p>
+</div>
+</p>
 
 
-\begin{example}
+<p style="text-indent: 2em;">但是, 线性无关向量组未必是正交向量组. 如 $\boldsymbol{\alpha}_{1}=(1,0,0), \boldsymbol{\alpha}_{2}=(1,1,0), \boldsymbol{\alpha}_{3}=$ $(1,1,1)$ 线性无关, 但其中任何两个向量都不正交.
+
+
+
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 在 $\mathbf{R}^{3}$ 中, $\boldsymbol{\alpha}_{1}=(1,1,1), \boldsymbol{\alpha}_{2}=(1,-2,1)$, 求向量 $\boldsymbol{\alpha}_{3}$, 使 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为正交向量组.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 显然 $\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}\right)=0$, 设 $\boldsymbol{\alpha}_{3}=\left(x_{1}, x_{2}, x_{3}\right)$, 则应有
 $$
 \left\{\begin{array}{l}
@@ -215,45 +229,55 @@ $$
 \end{array}\right.
 $$
 其基础解系为 $\boldsymbol{\alpha}_{3}=(-1,0,1)$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为正交向量组.
+<br>
+$\quad$ 因为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是正交向量组, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 于是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是 $\mathbf{R}^{3}$ 的一组基.
+</p>
+</div>
+</p>
 
-因为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是正交向量组, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 于是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是 $\mathbf{R}^{3}$ 的一组基.
-\end{solution}
 
 
 
-
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 在 $\mathbf{R}^{n}$ 中, 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}(r < n )$ 线性无关, 
 且向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 中每一个向量都与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 中每一个向量正交,
 且 $s + r > n$. 证明 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性相关.
-\end{example}
-
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, r)$, $\boldsymbol{\beta}_{j}$ $(j=1,2, \cdots, s)$ 均为列向量, 则
 $$
 \left(\boldsymbol{\alpha}_{i}, \boldsymbol{\beta}_{j}\right)=\boldsymbol{\alpha}_{i}^{\mathrm{T}} \boldsymbol{\beta}_{j}=0 \quad(i=1,2, \cdots, r,\, j=1,2, \cdots, s),
 $$
 又设矩阵 $\boldsymbol{A}=\left(\begin{array}{c}\boldsymbol{\alpha}_{1}^{\mathrm{T}} \\ \boldsymbol{\alpha}_{2}^{\mathrm{T}} \\ \vdots \\ \boldsymbol{\alpha}_{r}^{\mathrm{T}}\end{array}\right)$, 则 $\boldsymbol{A} \boldsymbol{\beta}_{j}=\left(\begin{array}{c}\boldsymbol{\alpha}_{1}^{\mathrm{T}} \boldsymbol{\beta}_{j} \\ \boldsymbol{\alpha}_{2}^{\mathrm{T}} \boldsymbol{\beta}_{j} \\ \vdots \\ \boldsymbol{\alpha}_{r}^{\mathrm{T}} \boldsymbol{\beta}_{j}\end{array}\right)=\left(\begin{array}{c}0 \\ 0 \\ \vdots \\ 0\end{array}\right)$, 即 $\boldsymbol{\beta}_{j}$ 是齐次线性方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{0}$ 的解向量. 而 $\boldsymbol{A X}=\mathbf{0}$ 的基础解系由 $n-R(\boldsymbol{A})=n-r$ 个解向量组成, 所以 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 的秩 $\leqslant n-r$, 由已知条件 $s+r>n$ 可得 $s>n-r$, 所以 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性相关.
-\end{proof}
+</p>
+</div>
+</p>
 
-在正交向量组中, 每一个向量的长度都是 $1$ 的正交向量组在相关讨论中特别重要.
+<p style="text-indent: 2em;">在正交向量组中, 每一个向量的长度都是 $1$ 的正交向量组在相关讨论中特别重要.
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $6$：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 是 $n$ 维向量空间 $\mathbf{R}^{n}$ 的正交向量组, 且 $\left\|\boldsymbol{\alpha}_{i}\right\|=1$ $(i=1,2, \cdots, s)$, 则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 为标准正交向量组. 若 $s=n$, 则称 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots$, $\boldsymbol{\alpha}_{n}$ 为 $\mathbf{R}^{n}$ 的标准正交基.
-\end{definition}
+</p>
 
 
-标准正交向量组又称为规范正交向量组.
+<p style="text-indent: 2em;">标准正交向量组又称为规范正交向量组.
 
-例如, $\boldsymbol{\alpha}_{1}=(1,0,0), \boldsymbol{\alpha}_{2}=(0,1,0), \boldsymbol{\alpha}_{3}=(0,0,1)$ 与 $\boldsymbol{\beta}_{1}=\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$, $\boldsymbol{\beta}_{2}=\left(-\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}},-\frac{1}{\sqrt{6}}\right)$, $\boldsymbol{\beta}_{3}=\left(-\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}}\right)$ 都是 $\mathbf{R}^{3}$ 的标准正交基.
+<p style="text-indent: 2em;">例如, $\boldsymbol{\alpha}_{1}=(1,0,0), \boldsymbol{\alpha}_{2}=(0,1,0), \boldsymbol{\alpha}_{3}=(0,0,1)$ 与 $\boldsymbol{\beta}_{1}=\left(\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)$, $\boldsymbol{\beta}_{2}=\left(-\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}},-\frac{1}{\sqrt{6}}\right)$, $\boldsymbol{\beta}_{3}=\left(-\frac{1}{\sqrt{2}}, 0, \frac{1}{\sqrt{2}}\right)$ 都是 $\mathbf{R}^{3}$ 的标准正交基.
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\mathbf{R}^{n}$ 的一组标准正交基, 求 $\mathbf{R}^{n}$ 中向量 $\boldsymbol{\beta}$ 在该基下的坐标.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 设 $\boldsymbol{\beta}=x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}$, 将此式两边对 $\boldsymbol{\alpha}_{j}$ $(j=1,2, \cdots, n)$ 分别求内积, 得
 $$
 \begin{aligned}
@@ -262,9 +286,11 @@ $$
 \end{aligned}
 $$
 故 $\boldsymbol{\beta}$ 在基 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 下的坐标为 $x_{j}=\left(\boldsymbol{\beta}, \boldsymbol{\alpha}_{j}\right), j=1,2, \cdots, n$.
-
-在 $\mathbf{R}^{3}$ 中, 取 $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$ 为标准正交基, 这里的 $x_{1}, x_{2}, x_{3}$ 就是 $\boldsymbol{\beta}$ 在 $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$ 上的投影.
-\end{solution}
+<br>
+$\quad$ 在 $\mathbf{R}^{3}$ 中, 取 $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$ 为标准正交基, 这里的 $x_{1}, x_{2}, x_{3}$ 就是 $\boldsymbol{\beta}$ 在 $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$ 上的投影.
+</p>
+</div>
+</p>
 
 
 
@@ -282,9 +308,9 @@ $$
 <p style="text-indent: 2em;">
 $n$ 维向量空间 $\mathbf{R}^{n}$ 中任意 $n$ 个线性无关的向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 都可以作为 $\mathbf{R}^{n}$ 的一组基, 这组基未必是标准正交基. 但是, 任何一组线性无关的向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$, 都可以通过适当的方法化为一组任意两个向量都正交的单位向量 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{s}$, 且 $\boldsymbol{\gamma}_{1}$, $\boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{s}$ 与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 等价. 这种方法就是施密特 (Schmidt) 正交化方法.
 
-我们首先考虑由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 组成的线性无关向量组.
+<p style="text-indent: 2em;">我们首先考虑由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 组成的线性无关向量组.
 
-令 $\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}, \boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}+k \boldsymbol{\beta}_{1}$, 选择适当的 $k$, 使得 $\left(\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{1}\right)=0$, 即
+<p style="text-indent: 2em;">令 $\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}, \boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}+k \boldsymbol{\beta}_{1}$, 选择适当的 $k$, 使得 $\left(\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{1}\right)=0$, 即
 $$
 \left(\boldsymbol{\alpha}_{2}+k \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)=\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{1}\right)+k\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)=0,
 $$
@@ -296,7 +322,7 @@ k=-\frac{\left(\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{1}\right)}{\left(\bo
 \end{gathered}
 $$
 
-令 $\boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}+k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}$, 为使 $\left(\boldsymbol{\beta}_{3}, \boldsymbol{\beta}_{1}\right)=0,\left(\boldsymbol{\beta}_{3}, \boldsymbol{\beta}_{2}\right)=0$, 则可推出
+<p style="text-indent: 2em;">令 $\boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}+k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}$, 为使 $\left(\boldsymbol{\beta}_{3}, \boldsymbol{\beta}_{1}\right)=0,\left(\boldsymbol{\beta}_{3}, \boldsymbol{\beta}_{2}\right)=0$, 则可推出
 $$
 k_{1}=-\frac{\left(\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)}, \quad k_{2}=-\frac{\left(\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{2}\right)}{\left(\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{2}\right)},
 $$
@@ -305,7 +331,7 @@ $$
 \boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}-\frac{\left(\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{1}\right)}{\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right)} \boldsymbol{\beta}_{1}-\frac{\left(\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{2}\right)}{\left(\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{2}\right)} \boldsymbol{\beta}_{2}.
 $$
 
-一般地, 把线性无关向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 化为与之等价的标准正交向量组的施密特正交化过程如下:
+<p style="text-indent: 2em;">一般地, 把线性无关向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 化为与之等价的标准正交向量组的施密特正交化过程如下:
 $$
 \begin{gathered}
 \boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}, \\
@@ -328,11 +354,14 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 设 $\boldsymbol{\alpha}_{1}=(1,1,1)$, 在 $\mathbf{R}^{3}$ 中求 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$, 使 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为正交向量组.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 由 $\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}\right)=0$, $\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{3}\right)=0$ 可知, $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 都应满足方程 $x_{1}+x_{2}+x_{3}=0$, 其基础解系为 $\boldsymbol{\xi}_{1}=(1,0,-1)$, $\boldsymbol{\xi}_{2}=(0,1,-1)$. 将 $\boldsymbol{\xi}_{1}$, $\boldsymbol{\xi}_{2}$ 正交化:
 $$
 \boldsymbol{\alpha}_{2}=\boldsymbol{\xi}_{1}=(1,0,-1),
@@ -344,16 +373,21 @@ $$
 \end{aligned}
 $$
 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为所求的正交向量组.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 在 $\mathbf{R}^{3}$ 中, 将基 $\boldsymbol{\alpha}_{1}=(1,1,1), \boldsymbol{\alpha}_{2}=(1,2,1), \boldsymbol{\alpha}_{3}=(0,-1,1)$ 化为标准正交基.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解： </b></font>
 先正交化, 令
 $$
 \boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=(1,1,1), 
@@ -376,7 +410,9 @@ $$
 \end{aligned}
 $$
 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}$ 就是$\mathbf{R}^{3}$的一组标准正交基.
-\end{solution}
+</p>
+</div>
+</p>
 
 
 
@@ -402,26 +438,27 @@ $$
 
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $7$：</b></font>
 如果 $n$ 阶实矩阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{I}$, 则称 $\boldsymbol{A}$ 为正交矩阵. 
-\end{definition}
+</p>
 
 
-由定义 $7$ 可知正交矩阵必为方阵且具有以下性质:
+<p style="text-indent: 2em;">由定义 $7$ 可知正交矩阵必为方阵且具有以下性质:
 
-$1^{\circ}$ \quad $\boldsymbol{A}^{-1}=\boldsymbol{A}^{\mathrm{T}}$. 
+<p style="text-indent: 2em;">$1^{\circ}$   $\boldsymbol{A}^{-1}=\boldsymbol{A}^{\mathrm{T}}$. 
 
-$2^{\circ}$ \quad $\operatorname{det} \boldsymbol{A}=\pm 1$.
+<p style="text-indent: 2em;">$2^{\circ}$   $\operatorname{det} \boldsymbol{A}=\pm 1$.
 
-事实上, $\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\right)=\left(\operatorname{det} \boldsymbol{A}^{\mathrm{T}}\right)(\operatorname{det} \boldsymbol{A})=(\operatorname{det} \boldsymbol{A})^{2}=\operatorname{det} \boldsymbol{I}=1$, 故有 $\operatorname{det} \boldsymbol{A}=\pm 1$. 
+<p style="text-indent: 3em;"> 事实上, $\operatorname{det}\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\right)=\left(\operatorname{det} \boldsymbol{A}^{\mathrm{T}}\right)(\operatorname{det} \boldsymbol{A})=(\operatorname{det} \boldsymbol{A})^{2}=\operatorname{det} \boldsymbol{I}=1$, 故有 $\operatorname{det} \boldsymbol{A}=\pm 1$. 
 
-$3^{\circ}$ \quad 若 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶正交矩阵, 则 $\boldsymbol{A B}$ 也是正交矩阵.
+<p style="text-indent: 2em;">$3^{\circ}$  若 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶正交矩阵, 则 $\boldsymbol{A B}$ 也是正交矩阵.
 
-这个性质的证明留给读者.
+<p style="text-indent: 2em;">这个性质的证明留给读者.
 
-$4^{\circ}$ \quad $n$ 阶矩阵 $\boldsymbol{A}$ 为正交矩阵的充要条件是 $\boldsymbol{A}$ 的行 (列) 向量组是标准正交向量组.
+<p style="text-indent: 2em;">$4^{\circ}$   $n$ 阶矩阵 $\boldsymbol{A}$ 为正交矩阵的充要条件是 $\boldsymbol{A}$ 的行 (列) 向量组是标准正交向量组.
 
-事实上, 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\boldsymbol{A}$ 的行向量组, 故
+<p style="text-indent: 2em;">事实上, 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\boldsymbol{A}$ 的行向量组, 故
 $$
 \boldsymbol{A}=\left(\begin{array}{c}
 \boldsymbol{\alpha}_{1} \\
@@ -446,7 +483,8 @@ $$
 
 
 
-\begin{example}
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{rrr}
@@ -460,7 +498,7 @@ $$
 \end{array}\right) .
 $$
 $\boldsymbol{A}$ 的行向量组是标准正交向量组, 故 $\boldsymbol{A}$ 是正交矩阵. $\boldsymbol{B}$ 的各行向量虽然两两正交, 但 $\boldsymbol{\alpha}_{1}=(2,0,0)$ 不是单位向量, 故 $\boldsymbol{B}$ 不是正交矩阵.
-\end{example}
+</p>
 
 
 
@@ -476,11 +514,11 @@ $\boldsymbol{A}$ 的行向量组是标准正交向量组, 故 $\boldsymbol{A}$ �
 <li>
 在 $\mathbf{R}^{4}$ 中求下列向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的夹角:
 <br>
-(1) $\boldsymbol{\alpha}=(2,1,3,2), \quad \boldsymbol{\beta}=(1,2,-2,1)$;
+$(1)$ $\boldsymbol{\alpha}=(2,1,3,2), \quad \boldsymbol{\beta}=(1,2,-2,1)$;
 <br>
-(2) $\boldsymbol{\alpha}=(1,2,2,3), \quad \boldsymbol{\beta}=(3,1,5,1)$;
+$(2)$ $\boldsymbol{\alpha}=(1,2,2,3), \quad \boldsymbol{\beta}=(3,1,5,1)$;
 <br>
-(3) $\boldsymbol{\alpha}=(1,1,1,2), \quad \boldsymbol{\beta}=(3,1,-1,0)$.
+$(3)$ $\boldsymbol{\alpha}=(1,1,1,2), \quad \boldsymbol{\beta}=(3,1,-1,0)$.
 </li>
   
 <li> 在 $\mathbf{R}^{4}$ 中求一个与 $\boldsymbol{\alpha}_{1}=(1,1,-1,1), \boldsymbol{\alpha}_{2}=(1,-1,-1,1), \boldsymbol{\alpha}_{3}=(2,1,1,3)$ 正交的单位向量 $\boldsymbol{\alpha}$.
@@ -488,23 +526,23 @@ $\boldsymbol{A}$ 的行向量组是标准正交向量组, 故 $\boldsymbol{A}$ �
   
 <li> 设 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}$ 是 $\mathbf{R}^{3}$ 的一组标准正交基, 且 $\boldsymbol{\alpha}=3 \boldsymbol{\gamma}_{1}+2 \boldsymbol{\gamma}_{2}+4 \boldsymbol{\gamma}_{3}, \boldsymbol{\beta}=\boldsymbol{\gamma}_{1}-2 \boldsymbol{\gamma}_{2}$.
 <br>
-(1) 求与 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 都正交的全部向量;
+$(1)$ 求与 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 都正交的全部向量;
 <br>
-(2) 求与 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 都正交的单位向量.
+$(2)$ 求与 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 都正交的单位向量.
 </li>
   
 <li> 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\mathbf{R}^{n}$ 的一组基, 证明
 <br>
-(1) 若 $\boldsymbol{\beta} \in \mathbf{R}^{n}$, 且 $\left(\boldsymbol{\beta}, \boldsymbol{\alpha}_{i}\right)=0$ $(i=1,2, \cdots, n)$, 则 $\boldsymbol{\beta}=\mathbf{0}$;
+$(1)$ 若 $\boldsymbol{\beta} \in \mathbf{R}^{n}$, 且 $\left(\boldsymbol{\beta}, \boldsymbol{\alpha}_{i}\right)=0$ $(i=1,2, \cdots, n)$, 则 $\boldsymbol{\beta}=\mathbf{0}$;
 <br>
-(2) 若 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2} \in \mathbf{R}^{n}$, 使 $\left(\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{i}\right)=\left(\boldsymbol{\beta}_{2}, \boldsymbol{\alpha}_{i}\right)(i=1,2, \cdots, n)$, 则 $\boldsymbol{\beta}_{1}=\boldsymbol{\beta}_{2}$.
+$(2)$ 若 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2} \in \mathbf{R}^{n}$, 使 $\left(\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{i}\right)=\left(\boldsymbol{\beta}_{2}, \boldsymbol{\alpha}_{i}\right)(i=1,2, \cdots, n)$, 则 $\boldsymbol{\beta}_{1}=\boldsymbol{\beta}_{2}$.
 </li>
   
 <li> 用施密特正交化方法将下列向量组分别标准正交化:
 <br>
-(1) $\boldsymbol{\alpha}_{1}=(1,1,1), \quad \boldsymbol{\alpha}_{2}=(1,2,3), \quad \boldsymbol{\alpha}_{3}=(1,4,9)$;
+$(1)$ $\boldsymbol{\alpha}_{1}=(1,1,1), \quad \boldsymbol{\alpha}_{2}=(1,2,3), \quad \boldsymbol{\alpha}_{3}=(1,4,9)$;
 <br>
-(2) $\boldsymbol{\alpha}_{1}=(1,0,-1,1), \quad \boldsymbol{\alpha}_{2}=(1,-1,0,1), \quad \boldsymbol{\alpha}_{3}=(-1,1,1,0)$.
+$(2)$ $\boldsymbol{\alpha}_{1}=(1,0,-1,1), \quad \boldsymbol{\alpha}_{2}=(1,-1,0,1), \quad \boldsymbol{\alpha}_{3}=(-1,1,1,0)$.
 </li>
   
 <li> 设 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}$ 是 $\mathbf{R}^{3}$ 的一组标准正交基, 证明
