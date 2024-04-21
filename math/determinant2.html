@@ -493,7 +493,15 @@ $$
 </div> 
 </p>
 
-
+<li>利用SageMath在线代码模块求解例 $5$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex5").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex5").style.display="none"'> 
+<div id= "divIDdaimaex5" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[5,2,-6,-3],[-4,7,-2,4],[-2,3,4,1],[7,-8,-10,-5]])   #按行输入四阶矩阵
+show(det(A))         #求解并显示行列式 
+</script></div>
+</div>
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -539,7 +547,23 @@ $$
 </div> 
 </p>
 
-
+<li>利用SageMath在线代码模块求解例 $6$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex6").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex6").style.display="none"'> 
+<div id= "divIDdaimaex6" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("x y")     #定义符号变量
+A3 = matrix([[x,y,y],[y,x,y],[y,y,x]]) #三阶矩阵
+A4 = matrix([[x,y,y,y],[y,x,y,y],[y,y,x,y],[y,y,y,x]]) #四阶矩阵
+A5 = matrix([[x,y,y,y,y],[y,x,y,y,y],[y,y,x,y,y],[y,y,y,x,y],[y,y,y,y,x]]) #五阶矩阵
+show(det(A3))            #显示三阶行列式 
+show(det(A4))            #显示四阶行列式 
+show(det(A5))            #显示五阶行列式 
+show(factor(det(A3)))    #因式分解三阶行列式 
+show(factor(det(A4)))    #因式分解四阶行列式 
+show(factor(det(A5)))    #因式分解五阶行列式 
+</script></div>
+</div>
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -751,7 +775,23 @@ $$
 </div> 
 </p>
 
-
+<li>利用SageMath在线代码模块求解例 $9$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex9").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex9").style.display="none"'> 
+<div id= "divIDdaimaex9" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("x1 x2 x3 x4 x5 m")      #定义符号变量
+A3 = matrix([[x1-m,x2,x3],[x1,x2-m,x3],[x1,x2,x3-m]]) #三阶矩阵
+A4 = matrix([[x1-m,x2,x3,x4],[x1,x2-m,x3,x4],[x1,x2,x3-m,x4],[x1,x2,x3,x4-m]])   #四阶矩阵
+A5 = matrix([[x1-m,x2,x3,x4,x5],[x1,x2-m,x3,x4,x5],[x1,x2,x3-m,x4,x5],[x1,x2,x3,x4-m,x5],[x1,x2,x3,x4,x5-m]])   #五阶矩阵
+show(det(A3))         #显示三阶行列式 
+show(det(A4))         #显示四阶行列式 
+show(det(A5))         #显示五阶行列式
+show(factor(det(A3)))  #因式分解三阶行列式 
+show(factor(det(A4)))  #因式分解四阶行列式 
+show(factor(det(A5)))  #因式分解五阶行列式  
+</script></div>
+</div>
 
 
 </ul>
