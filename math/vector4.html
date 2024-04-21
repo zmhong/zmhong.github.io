@@ -364,6 +364,16 @@ $$
 </p>
 
 
+<li>利用SageMath在线代码模块求解例 $1$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex1").style.display="none"'> 
+<div id= "divIDdaimaex1" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[2,1,-2,3],[3,2,-1,2],[1,1,1,-1]])  #按行输入矩阵A
+show(A)                                         #显示矩阵A
+show(A.rref())                                  #显示矩阵A的简化行阶梯形矩阵
+</script></div>
+</div>
 
 <li>利用SageMath在线代码模块求例 $1$ 中齐次线性方程组的通解</li>
 <div class="compute"><script type="text/x-sage">
