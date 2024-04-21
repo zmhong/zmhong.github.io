@@ -1,0 +1,453 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8_sig">
+    <meta name="viewport" content="width=device-width">
+    <title>SageMathCell</title>
+    <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: '运行'});
+    </script>
+  </head>
+  <body>
+
+
+
+
+<h1>
+<font color=#FF5809; size=8; face=楷体>
+利用SageMath在线代码模块求解线性代数中的问题
+</font>
+</h1>
+
+ <h2><li>求行列式</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix(QQ, [[13,-2,5],[-2,10,2], [5,2,13]])
+show(A)
+show(det(A)) #矩阵A的行列式
+ </script></div>
+
+ <h2><li>矩阵的运算</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix([[5,-2,1],[3,4,-1],[1,2,4]])
+B = matrix([[-3,2,0],[-2,0,1],[3,1,2]])
+show(A);show(B)
+show(3*A-4*B)
+show(A.transpose()*B) #A的转置乘以B
+show(A^5)             #A的5次幂
+ </script></div>
+
+ <h2><li>将矩阵化为行阶梯形矩阵和简化行阶梯形矩阵</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix([[5,-2,1],[3,4,-1],[1,2,4]])
+show(A)
+show(A.echelon_form()) #行阶梯形矩阵
+show(A.rref())         #简化行阶梯形矩阵
+ </script></div>
+
+ <h2><li>求逆矩阵</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix(QQ, [[13,-2,5],[-2,10,2], [5,2,13]])
+show(A)
+show(A^-1)
+ </script></div>
+
+ <h2><li>求矩阵的秩</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix(QQ, [[5,-2,1],[3,4,-2],[1,2,-1]])
+show(A)
+show(A.rank())            #矩阵A的秩
+show(A.right_nullity())   #矩阵A的零维数=A的零特征值的重数
+ </script></div>
+
+ <h2><li>特征值与特征向量</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix(QQ, [[13,-2,5],[-2,10,2], [5,2,13]])
+show(A)
+show(characteristic_polynomial(A)) #特征多项式
+show(A.eigenvalues())              #特征值
+show(A.eigenvectors_left())        #特征向量
+show(A.eigenmatrix_right())        #可对角化时返回对角阵和可逆矩阵P
+ </script></div>
+
+ <h2><li>Gram-Schmidt正交化</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix([[1,1,1],[1,2,1],[0,-1,1]])
+show(A.gram_schmidt())
+ </script></div>
+
+ <h2><li>解矩阵方程</li></h2>
+ <div class="compute"><script type="text/x-sage">
+A = matrix(QQ, [[13,-2,5],[-2,10,2], [5,2,13]])
+B = matrix([[5,-2,1],[3,4,-1],[1,2,4]])
+show(A); show(B)
+show(A.solve_right(B)) #求矩阵方程A*X = B的解X
+show(A.solve_left(B))  #求矩阵方程X*A = B的解X
+ </script></div>
+
+
+ <h2><li>求齐次线性方程组的通解</li></h2>
+ <div class="compute"><script type="text/x-sage">
+#教材122页例1
+from sage.misc.html import HtmlFragment
+
+def HSLE_as_latex(A, variables):
+    nvars = A.ncols()
+    pretty_print(HtmlFragment( 
+    r'$$\left\{\begin{array}{%s}'%('r'*(nvars+1))+
+    r'\\'.join('%s=&0'%( 
+        ' & '.join((r'%s%s\cdot %s'%('+' if c>0 else '',c,v) if c else '') for c,v in zip(row, variables))
+        if not row.is_zero() else '&'*(nvars-1)+'0' 
+               ) for row in A)+
+    r'\end{array}\right.$$'))
+
+@interact
+def SEL(A='[(2,1,-2,3),(3,2,-1,2),(1,1,1,-1)]',
+        auto_update=False
+    ):
+    M = A = matrix(eval(A))
+    neqs = M.nrows()
+    nvars = M.ncols()
+    var_names = ','.join('x%d'%j for j in [1..nvars])
+    variables = var(var_names)
+
+    HSLE_as_latex(M, variables)
+    pretty_print(HtmlFragment( '系数矩阵'))
+    show(M)
+
+    pivot = {}
+    ibound_variables = []
+    for m,row in enumerate(M):
+        for k in range(m,nvars):
+            lista = [(abs(M[j,k]),j) for j in range(m,neqs)]
+            maxi, c = max(lista)
+            if maxi > 0:
+                ibound_variables.append(k)
+                if M[m,k]==0:
+                    M[c,:],M[m,:]=M[m,:],M[c,:]
+                    pretty_print( HtmlFragment('交换第%d行和第%d行'%(m+1,c+1)))
+                    show(M)
+                pivot[m] = k
+                break
+
+        a=M[m,k]
+        for n in range(m+1,neqs):
+            if M[n,k]!=0:
+                pretty_print( HtmlFragment("将%s倍的第%d行加到第%d行"%(-M[n,k]/a, m+1, n+1)))
+                M=M.with_added_multiple_of_row(n,m,-M[n,k]/a)
+                show(M)
+
+    pretty_print( HtmlFragment('原方程组同解的方程组'))
+    HSLE_as_latex(M, variables)
+    SEL_type = 'compatible'
+    null_rows = None
+    for k,row in enumerate(M):
+        if row.is_zero():
+            pretty_print( HtmlFragment('移去0=0型恒等式'))
+            M = M[:k,:]
+            HSLE_as_latex(M, variables)
+                
+    ifree_variables = [k for k in range(nvars) if k not in ibound_variables]
+    bound_variables = [variables[k] for k in ibound_variables]
+    free_variables = [variables[k] for k in ifree_variables]
+    pretty_print( HtmlFragment('自由未知量: %s'% free_variables))
+    pretty_print( HtmlFragment('约束未知量: %s'% bound_variables))
+    reduced_eqs = [
+        sum(c*v for c,v in zip(row, variables))==0
+        for row in M
+    ]
+    xvector = vector(variables)
+    if len(bound_variables)==1:
+        soldict = solve(reduced_eqs, bound_variables[0], solution_dict=True)[0]
+    else:
+        soldict = solve(reduced_eqs, bound_variables, solution_dict=True)[0]
+
+    pretty_print( HtmlFragment('方程组参数形式的解'))
+    parametric_sol = matrix(
+        xvector.apply_map(lambda s:s.subs(soldict))
+    ).transpose()
+    show(parametric_sol)
+    pretty_print( HtmlFragment('基础解系'))
+    pretty_print( HtmlFragment(
+        r'$$\left\langle %s\right\rangle$$'%','.join(latex(
+            parametric_sol.subs(dict((variables[k],1 if j==k else 0) for k in ifree_variables))
+        ) for j in ifree_variables)
+    ))
+    pretty_print( HtmlFragment('解空间的维数为%d'%len(free_variables)))
+ </script></div>
+
+ <h2><li>求非齐次线性方程组的通解</li></h2>
+ <div class="compute"><script type="text/x-sage">
+#教材126页例7（系数为分数的先转化为整数）
+from sage.misc.html import HtmlFragment
+
+def SLE_as_latex(A, b, variables):
+    nvars = A.ncols()
+    pretty_print(HtmlFragment( 
+    r'$$\left\{\begin{array}{%s}'%('r'*(nvars+1))+
+    r'\\'.join('%s=&%s'%( 
+        (' & '.join((r'%s%s\cdot %s'%('+' if c>0 else '',c,v) if c else '') for c,v in zip(row, variables))
+        if not row.is_zero() else '&'*(nvars-1)+'0',y) 
+               ) for row,y in zip(A,b))+
+    r'\end{array}\right.$$'))
+
+def extended_matrix_as_latex(M):
+    A = M[:,:-1]
+    b = M.column(-1)
+    nvars = A.ncols()
+    pretty_print(HtmlFragment(
+    r'$$\left(\begin{array}{%s}'%('r'*nvars+ '|r')+
+    r'\\'.join('%s&%s'%( 
+        ' & '.join('%s'%c for c in row)
+        ,y) for row,y in zip(A,b))+
+    r'\end{array}\right)$$'))
+
+@interact
+def SEL(A_text='[(1,-1,1,-1),(1,-1,-1,1), (2,-2,-4,4)]',
+        b_text='[1,0,-1]',
+        auto_update=False
+    ):
+    A = matrix(eval(A_text))
+    b = vector(eval(b_text))
+    M = A.augment(b)
+    neqs = len(b)
+    nvars = A.ncols()
+    var_names = ','.join('x%d'%j for j in [1..nvars])
+    variables = var(var_names)
+    pretty_print(HtmlFragment('变量: %s'% var_names))
+    for row,y in zip(A,b):
+        pretty_print(HtmlFragment(sum(c*v for c,v in zip(row, variables))==y))
+
+    SLE_as_latex(A, b, variables)
+    pretty_print(HtmlFragment( '构造增广矩阵(A,b)'))
+    extended_matrix_as_latex(M)
+
+    pivot = {}
+    ibound_variables = []
+    for m,row in enumerate(A):
+        for k in range(m,nvars):
+            lista = [(abs(M[j,k]),j) for j in range(m,neqs)]
+            maxi, c = max(lista)
+            if maxi > 0:
+                ibound_variables.append(k)
+                if M[m,k]==0:
+                    M[c,:],M[m,:]=M[m,:],M[c,:]
+                    pretty_print( HtmlFragment('交换第%d行和第%d行'%(m+1,c+1)))
+                    extended_matrix_as_latex(M)
+                pivot[m] = k
+                break
+
+        a=M[m,k]
+        for n in range(m+1,neqs):
+            if M[n,k]!=0:
+                pretty_print( HtmlFragment("将%s倍的第%d行加到第%d行上"%(-M[n,k]/a, m+1, n+1)))
+                M=M.with_added_multiple_of_row(n,m,-M[n,k]/a)
+                extended_matrix_as_latex(M)
+
+    A = M[:,:-1]
+    b = M.column(-1)
+    SLE_as_latex(A, b, variables)
+    SEL_type = 'compatible'
+    null_rows = None
+    for k,(row,y) in enumerate(zip(A,b)):
+        if row.is_zero():
+            if y==0 and null_rows is None:
+                null_rows = k
+                break
+            elif y!=0:
+                SEL_type = 'incompatible'
+    if SEL_type == 'incompatible':
+        pretty_print( HtmlFragment('非齐次线性方程组无解'))
+        return
+    if null_rows:
+        pretty_print(HtmlFragment('移去0=0型恒等式'))
+        A = A[:null_rows,:]
+        b = b[:null_rows]
+        SLE_as_latex(A, b, variables)
+
+    ifree_variables = [k for k in range(nvars) if k not in ibound_variables]
+    bound_variables = [variables[k] for k in ibound_variables]
+    free_variables = [variables[k] for k in ifree_variables]
+    pretty_print( HtmlFragment('自由未知量: %s'% free_variables))
+    pretty_print( HtmlFragment('约束未知量: %s'% bound_variables))
+    reduced_eqs = [
+        sum(c*v for c,v in zip(row, variables))==y
+        for row,y in zip(A,b)
+    ]
+    xvector = vector(variables)
+    if len(bound_variables)==1:
+        soldict = solve(reduced_eqs, bound_variables[0], solution_dict=True)[0]
+    else:
+        soldict = solve(reduced_eqs, bound_variables, solution_dict=True)[0]
+    pretty_print( HtmlFragment('方程组参数形式的解'))
+    parametric_sol = matrix(
+        xvector.apply_map(lambda s:s.subs(soldict))
+    ).transpose()
+    show(parametric_sol)
+    pretty_print( HtmlFragment('方程组的解向量'))
+    pretty_print( HtmlFragment(
+        r'$$ %s + \left\langle %s\right\rangle$$'%(
+            latex(parametric_sol.subs(dict(zip(free_variables, [0]*len(free_variables))))),
+            ','.join(latex(
+            parametric_sol.apply_map(lambda s:s.diff(v))
+        ) for v in free_variables) if free_variables else latex(matrix([0]*nvars).transpose()))
+    ))
+    pretty_print( HtmlFragment('解空间的维数为 %d'%len(free_variables)))
+     </script></div>
+
+
+
+
+
+ <h2><li>解方程组</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x y")
+show(solve([x^2+y^2==1, (x-1)^2+y^2==1],x,y))
+ </script></div>
+
+
+
+
+
+<h1>
+<font color=#FF5809; size=8; face=楷体>
+交互显示
+</font>
+</h1>
+
+<h2>输入您的代码并运行</h2>
+<div class="compute"><script type="text/x-sage">
+@interact
+def f(n=(0,10)):
+    print(2^n)
+</script></div>
+
+
+
+
+
+<h1>
+<font color=#FF5809; size=8; face=楷体>
+利用SageMath在线代码模块求解微积分中的问题
+</font>
+</h1>
+
+
+ <h2><li>求极限</li></h2>
+ <div class="compute"><script type="text/x-sage">
+show(limit(sin(x)/x, x=0))
+show(limit((1+sin(x)^2)^(1/(1-cos(x))), x=0))
+show(limit((sqrt(1+sin(x)^2)-1)/((e^(2*x)-1)*arctan(x)),x=0))
+show(limit(1/x, x=0, dir='plus'))   #右极限
+show(limit(1/x, x=0, dir='minus'))  #左极限
+ </script></div>
+
+ <h2><li>求导数</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x y")
+show(diff(x*y + sin(x^2) + e^(-x), x)) #偏导数
+show(diff(x^2*y + y^2 + y, x, 2))      #二阶偏导数
+ </script></div>
+
+ <h2><li>求积分</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x")
+show(integral(x*cos(x^2), x, 0, sqrt(pi/2)))
+ </script></div>
+
+ <h2><li>求泰勒展式</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x")
+show(taylor(sqrt(x+1), x, 0, 5))        #在x=0处的5次泰勒展式
+show((x^2/(x+1)^3).partial_fraction())  #部分分式
+ </script></div>
+
+ <h2><li>因式分解</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x y")
+show((x^3-y^3).factor_list())      #因式分解
+ </script></div>
+
+ <h2><li>数值解和最优化</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x y z")
+show((x^2 - 2).find_root(1,2,x)) #数值解: f.find_root(a, b, x)
+#最大化: 寻找(m; x0) 使f(x0) = m 最大 f.find_maximum_on_interval(a, b, x)
+#最小化: 寻找(m; x0) 使f(x0) = m 最小 f.find_minimum_on_interval(a, b, x)
+show(minimize(x^2+x*y^3+(1-z)^2-1, [1,1,1])) #最小化: minimize(f, start_point)
+ </script></div>
+
+
+ <h2><li>多变量微积分</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x y")
+show((x^2+y^2).gradient([x,y]))    #梯度
+show(jacobian(x^2 - 2*x*y, (x,y))) #Jacobian矩阵
+show((x^2+y^2).hessian())          #Hessian
+ </script></div>
+
+ <h2><li>常微分方程</li></h2>
+ <div class="compute"><script type="text/x-sage">
+y=function('y')(x); 
+f1=desolve(diff(y,x,2) + 3*x == y, dvar = y, ics = [1,1,1])
+show(f1)
+f2=desolve(diff(y,x,2) + 3*x == y, dvar = y)
+show(f2)
+f3=desolve(diff(y,x) + 3*x == y, dvar = y)
+show(f3)
+f4=desolve(diff(y,x) + 3*x == y, dvar = y, ics = [1,1]).expand()
+show(f4)
+ </script></div>
+
+ <h2><li>绘图</li></h2>
+ <div class="compute"><script type="text/x-sage">
+f1 = 1
+f2 = 1-x
+f3 = exp(x)
+f4 = sin(2*x)
+f = piecewise([((0,1),f1), ((1,2),f2), ((2,3),f3), ((3,10),f4)])
+f.plot(x,0,10)
+ </script></div>
+
+
+
+ <h2><li>交互绘图</li></h2>
+ <div class="compute"><script type="text/x-sage">
+@interact
+def f(n=[0..4], s=(1..5), c=Color("red")):
+    var("x");show(plot(sin(n+x^s),-pi,pi,color=c))
+ </script></div>
+
+
+
+
+
+
+<h2>
+<font color=#FF5809; size=8; face=楷体>
+<a href="https://doc.sagemath.org/html/en/constructions/calculus.html" target="_blank" style="text-decoration:none">微积分</a>
+<a href="https://doc.sagemath.org/html/en/constructions/linear_algebra.html" target="_blank" style="text-decoration:none">线性代数</a>
+<a href="https://doc.sagemath.org/html/en/constructions/plotting.html" target="_blank" style="text-decoration:none">绘图</a>
+<a href="https://www.sagemath.org/" target="_blank" style="text-decoration:none">SageMath主页</a>
+</font>
+</h2>
+
+<h2>
+<font color=#FF5809; size=8; face=楷体>
+<a href="https://textbooks.math.gatech.edu/ila/index.html" target="_blank" style="text-decoration:none">交互式线性代数</a>
+<a href="https://immersivemath.com/ila/" target="_blank" style="text-decoration:none">沉浸式线性代数</a>
+<a href="https://octave-online.net/" target="_blank" style="text-decoration:none">Octave在线</a>
+<a href="https://www.wolframalpha.com/" target="_blank" style="text-decoration:none">Wolframalpha</a>
+</font>
+</h2>
+
+
+
+  </body>
+</html>
