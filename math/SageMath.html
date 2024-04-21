@@ -302,7 +302,7 @@ def SEL(A_text='[(1,-1,1,-1),(1,-1,-1,1), (2,-2,-4,4)]',
      </script></div>
 
 
-<li>利用SageMath在线代码模块实现希尔密码加密功能</li>
+<h2><li>利用SageMath在线代码模块实现希尔密码加密功能</li></h2>
  <div class="compute"><script type="text/x-sage">
 #Last edited 12/24/2023 at 11:05pm
 pretty_print(html("<h1>希尔密码加密</h1>"))
@@ -389,7 +389,7 @@ def hill_cipher(Size=['2','3','4']):
             print(e(S(message)))
      </script></div>
 
-<li>利用SageMath在线代码模块实现希尔密码解密功能</li>
+<h2><li>利用SageMath在线代码模块实现希尔密码解密功能</li></h2>
  <div class="compute"><script type="text/x-sage">
 #Last edited 12/24/2023 at 11:05pm
 dictt = {'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7,'h':8,
@@ -492,28 +492,7 @@ def decrypt_hill(size=['2','3','4']):
  </script></div>
 
 
- <h2><li>解方程组</li></h2>
- <div class="compute"><script type="text/x-sage">
-var("x y")
-show(solve([x^2+y^2==1, (x-1)^2+y^2==1],x,y))
- </script></div>
 
-
-
-
-
-<h1>
-<font color=#FF5809; size=8; face=楷体>
-交互显示
-</font>
-</h1>
-
-<h2>输入您的代码并运行</h2>
-<div class="compute"><script type="text/x-sage">
-@interact
-def f(n=(0,10)):
-    print(2^n)
-</script></div>
 
 
 
@@ -591,6 +570,24 @@ show(f3)
 f4=desolve(diff(y,x) + 3*x == y, dvar = y, ics = [1,1]).expand()
 show(f4)
  </script></div>
+
+
+ <h2><li>解方程组</li></h2>
+ <div class="compute"><script type="text/x-sage">
+var("x y")
+show(solve([x^2+y^2==1, (x-1)^2+y^2==1],x,y))
+ </script></div>
+
+
+
+
+
+<h2><li>交互显示</li></h2>
+<div class="compute"><script type="text/x-sage">
+@interact
+def f(n=(0,10)):
+    print(2^n)
+</script></div>
 
  <h2><li>绘图</li></h2>
  <div class="compute"><script type="text/x-sage">
