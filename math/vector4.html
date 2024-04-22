@@ -146,7 +146,7 @@ a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=0,
 $$
 W=\left\{\boldsymbol{X}  \in \mathbf{R}^{n} \mid \boldsymbol{A X}=\boldsymbol{0}\right\} .
 $$
-由性质 $1, 2$ 知 $W$ 为 $\mathrm{R}^{n}$ 的一个子空间, 称为 $\boldsymbol{A X}=\boldsymbol{0}$ 的 解空间, 其任一组基称为 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个基础解系.
+由性质 $1, 2$ 知 $W$ 为 $\mathrm{R}^{n}$ 的一个子空间, 称为 $\boldsymbol{A X}=\boldsymbol{0}$ 的解空间, 其任一组基称为 $\boldsymbol{A X}=\boldsymbol{0}$ 的一个基础解系.
 
 <p style="text-indent: 2em;">于是, 设 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 是 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{0}$ 的一组解向量, 则 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 是 $\boldsymbol{A} \boldsymbol{X}= \boldsymbol{0}$ 的基础解系当且仅当 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 线性无关, 且 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{0}$ 的任一解向量都可表为 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{s}$ 的线性组合.
 易见, 仅当 $\boldsymbol{A X}=\boldsymbol{0}$ 有非零解时才有基础解系.
@@ -160,7 +160,7 @@ $$
 <div id= "divIDthm1" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
-设系数矩阵 $\boldsymbol{A}$ 的秩为 $r$, 不妨设 $\boldsymbol{A}$ 的前 $r$ 个列向量线性无关, 于是由 $\boldsymbol{A}$ 经行 初等变换可得
+设系数矩阵 $\boldsymbol{A}$ 的秩为 $r$, 不妨设 $\boldsymbol{A}$ 的前 $r$ 个列向量线性无关, 于是由 $\boldsymbol{A}$ 经行初等变换可得
 $$
 \boldsymbol{B}=\left(\begin{array}{cccccc}
 1 & \cdots & 0 & b_{11} & \cdots & b_{1, n-r} \\
@@ -590,7 +590,8 @@ $$
 <br>
 $(1)$ 当 $r=3$ 时, 由 $\S 3.2$ 的定理 $2$ 知, 线性方程组只有零解, 即三平面相交于一点的充要条件是 $R(\boldsymbol{A})=3$, 即 $\operatorname{det} \boldsymbol{A} \neq 0$.
 <br>
-$(2)$ 当 $r=2$ 时, 三平面有两平面相交于一直线, 另一平面或通过这一交线, 或与其中一平面重合. 这是因为假如 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是 $\boldsymbol{A}$ 的行向量, 由 $R(\boldsymbol{A})=2$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 而其中有两个向量线性无关. 假设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 那么 $a_{1}, b_{1}, c_{1}$ 与 $a_{2}, b_{2}, c_{2}$ 不成比 例, 因此平面 $\pi_{1}$ 与 $\pi_{2}$ 交于一条直线. 由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 可知 $\boldsymbol{\alpha}_{3}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}$, 当 $k_{1} k_{2} \neq 0$ 时, 平面 $\pi_{3}$ 通过 $\pi_{1}, \pi_{2}$ 两平面的交线. 当 $k_{1} k_{2}=0$ 时, 若 $k_{1}=0$, 则 $\boldsymbol{\alpha}_{3}=k_{2} \boldsymbol{\alpha}_{2}$, 这时 $\pi_{2}, \pi_{3}$ 平行, 又因为它们都过原点, 所以 $\pi_{2}, \pi_{3}$ 两平面重合. 同理, 若 $k_{2}=0$, 则有 $\pi_{1}, \pi_{3}$ 两平面重合.
+$(2)$ 当 $r=2$ 时, 三平面有两平面相交于一直线, 另一平面或通过这一交线, 或与其中一平面重合. 这是因为假如 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是 $\boldsymbol{A}$ 的行向量, 由 $R(\boldsymbol{A})=2$ 知 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 而其中有两个向量线性无关.
+假设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 那么 $a_{1}, b_{1}, c_{1}$ 与 $a_{2}, b_{2}, c_{2}$ 不成比例, 因此平面 $\pi_{1}$ 与 $\pi_{2}$ 交于一条直线. 由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 可知 $\boldsymbol{\alpha}_{3}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}$, 当 $k_{1} k_{2} \neq 0$ 时, 平面 $\pi_{3}$ 通过 $\pi_{1}, \pi_{2}$ 两平面的交线. 当 $k_{1} k_{2}=0$ 时, 若 $k_{1}=0$, 则 $\boldsymbol{\alpha}_{3}=k_{2} \boldsymbol{\alpha}_{2}$, 这时 $\pi_{2}, \pi_{3}$ 平行, 又因为它们都过原点, 所以 $\pi_{2}, \pi_{3}$ 两平面重合. 同理, 若 $k_{2}=0$, 则有 $\pi_{1}, \pi_{3}$ 两平面重合.
 <br>
 $(3)$ 当 $r=1$ 时, $\boldsymbol{A}$ 的三个行向量两两线性相关, 从而三平面两两平行, 又因为它们都过原点, 因而重合.
 </p>
@@ -710,7 +711,7 @@ $$
 </p>
 
 
-<p style="text-indent: 2em;">性质 $6$ 说明, 想要找出非齐次线性方程组的全部解, 我们只要找到它的一个特解以及它的导出组的全部解就行了. 若 $\boldsymbol{\gamma}_{0}$ 是非齐次方程组的一个特解, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是其 导出组的一个基础解系, 则非齐次方程组的任意一个解都可以表示成
+<p style="text-indent: 2em;">性质 $6$ 说明, 想要找出非齐次线性方程组的全部解, 我们只要找到它的一个特解以及它的导出组的全部解就行了. 若 $\boldsymbol{\gamma}_{0}$ 是非齐次方程组的一个特解, $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是其导出组的一个基础解系, 则非齐次方程组的任意一个解都可以表示成
 $$
 \boldsymbol{X}=\boldsymbol{\gamma}_{0}+k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+\cdots+k_{n-r} \boldsymbol{\xi}_{n-r},
 $$
