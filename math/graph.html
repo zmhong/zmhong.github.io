@@ -1,0 +1,471 @@
+
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<title>矩阵及其运算</title>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: '运行'});
+    </script>
+
+<script src="echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+  
+</head>
+<body>
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+$1.1$ 矩阵及其运算
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="C0"><strong>目录:</strong></a><br></h2>
+
+<ul>
+<li><a href="https://zmhong.github.io/math/linearalgebra.html" style="text-decoration:none">返回主页</a></li>
+<li><a href="#C1" style="text-decoration:none">1.1.1 矩阵的概念</a></li>
+<li><a href="#C2" style="text-decoration:none">1.1.2 矩阵的线性运算</a></li>
+<li><a href="#C3" style="text-decoration:none">1.1.3 矩阵的乘法</a></li>
+<li><a href="#C4" style="text-decoration:none">1.1.4 矩阵的转置</a></li>
+<li><a href="#C5" style="text-decoration:none">习题 1.1</a></li>
+</ul>
+
+
+  
+
+<h2><a name="C1">$1.1.1$ 矩阵的概念</a></h2>
+
+
+<div id="main1" style="height:600px;width:600px;float:left;">
+</div>
+<script>
+var chartDom = document.getElementById('main1');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  tooltip: {},
+  backgroundColor: '#fff',
+  visualMap: {
+    show: false,
+    dimension: 2,
+    min: -1,
+    max: 1,
+    inRange: {
+      color: [
+        '#313695',
+        '#4575b4',
+        '#74add1',
+        '#abd9e9',
+        '#e0f3f8',
+        '#ffffbf',
+        '#fee090',
+        '#fdae61',
+        '#f46d43',
+        '#d73027',
+        '#a50026'
+      ]
+    }
+  },
+  xAxis3D: {
+    type: 'value'
+  },
+  yAxis3D: {
+    type: 'value'
+  },
+  zAxis3D: {
+    type: 'value'
+  },
+  grid3D: {
+    viewControl: {
+      // projection: 'orthographic'
+    }
+  },
+  series: [
+    {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x*x-y*y;
+        }
+      }
+    },
+    {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return Math.exp(-x*x-y*y);
+        }
+      }
+    }
+  ]
+};
+
+option && myChart.setOption(option);
+</script>
+
+<p></p>
+
+  
+<div id="main2" style="height:600px;width:600px;float:left;">
+</div>
+<script>
+var chartDom = document.getElementById('main2');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  tooltip: {},
+  backgroundColor: '#fff',
+  visualMap: {
+    show: false,
+    dimension: 1,
+    min: -1,
+    max: 1,
+    inRange: {
+      color: [
+        '#313695',
+        '#4575b4',
+        '#74add1',
+        '#abd9e9',
+        '#e0f3f8',
+        '#ffffbf',
+        '#fee090',
+        '#fdae61',
+        '#f46d43',
+        '#d73027',
+        '#a50026'
+      ]
+    }
+  },
+  xAxis3D: {
+    type: 'value'
+  },
+  yAxis3D: {
+    type: 'value'
+  },
+  zAxis3D: {
+    type: 'value'
+  },
+  grid3D: {
+    viewControl: {
+      // projection: 'orthographic'
+    },
+    boxHeight: 80
+  },
+  series: [
+    {
+      type: 'surface',
+      wireframe: {
+        show: false
+      },
+      shading: 'color',
+      equation: {
+        x: {
+          step: 0.02
+        },
+        y: {
+          step: 0.02
+        },
+        z: function (x, y) {
+          return x * x + y * y;
+        }
+      }
+    },
+    {
+      type: 'surface',
+      //shading: 'color',
+      equation: {
+        x: {
+          step: 0.02
+        },
+        y: {
+          step: 0.02
+        },
+        z: function (x, y) {
+          return Math.exp(-x * x - y * y);
+        }
+      }
+    }
+  ]
+};
+  
+option && myChart.setOption(option);
+</script>
+
+<p></p>
+  
+<div id="main3" style="height:600px;width:600px;float:left;">
+</div>
+<script>
+var chartDom = document.getElementById('main3');
+var myChart = echarts.init(chartDom);
+var option;
+
+option = {
+  tooltip: {},
+  backgroundColor: '#fff',
+  visualMap: {
+    show: false,
+    dimension: 2,
+    min: -1,
+    max: 1,
+    inRange: {
+      color: [
+        '#313695',
+        '#4575b4',
+        '#74add1',
+        '#abd9e9',
+        '#e0f3f8',
+        '#ffffbf',
+        '#fee090',
+        '#fdae61',
+        '#f46d43',
+        '#d73027',
+        '#a50026'
+      ]
+    }
+  },
+  xAxis3D: {
+    type: 'value'
+  },
+  yAxis3D: {
+    type: 'value'
+  },
+  zAxis3D: {
+    type: 'value'
+  },
+  grid3D: {
+    viewControl: {
+      // projection: 'orthographic'
+    }
+  },
+  series: [
+    {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x+y;
+        }
+      }
+    },
+     {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x-y;
+        }
+      }
+    },    
+    {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x+0.5;
+        }
+      }
+    }
+  ]
+};  
+  
+option && myChart.setOption(option);
+</script>
+
+<p></p>
+  
+<div id="main4" style="height:600px;width:600px;float:left;">
+</div>
+<script>
+var chartDom = document.getElementById('main4');
+var myChart = echarts.init(chartDom);
+var option;
+
+const data = [];
+for (let i = 0; i <= 360; i++) {
+  let t = (i / 180) * Math.PI;
+  let r = Math.cos(3 * t);
+  data.push([r, i]);
+}
+option = {
+  title: {
+    text: '三叶玫瑰线'
+  },
+  legend: {
+    data: ['line']
+  },
+  polar: {
+    center: ['50%', '54%']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  angleAxis: {
+    type: 'value',
+    startAngle: 0
+  },
+  radiusAxis: {
+    min: 0
+  },
+  series: [
+    {
+      coordinateSystem: 'polar',
+      name: 'line',
+      type: 'line',
+      showSymbol: false,
+      data: data
+    }
+  ],
+  animationDuration: 2000
+};
+  
+option && myChart.setOption(option);
+</script>
+
+<p></p>
+  
+<div id="main5" style="height:600px;width:600px;float:left;">
+</div>
+<script>
+var chartDom = document.getElementById('main5');
+var myChart = echarts.init(chartDom);
+var option;
+
+const data = [];
+for (let i = 0; i <= 360; i++) {
+  let t = (i / 180) * Math.PI;
+  let r = Math.cos(2 * t);
+  data.push([r, i]);
+}
+option = {
+  title: {
+    text: '四叶玫瑰线'
+  },
+  legend: {
+    data: ['line']
+  },
+  polar: {
+    center: ['50%', '54%']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  angleAxis: {
+    type: 'value',
+    startAngle: 0
+  },
+  radiusAxis: {
+    min: 0
+  },
+  series: [
+    {
+      coordinateSystem: 'polar',
+      name: 'line',
+      type: 'line',
+      showSymbol: false,
+      data: data
+    }
+  ],
+  animationDuration: 2000
+};
+  
+option && myChart.setOption(option);
+</script>
+
+
+
+
+<a href="#C0">返回顶部</a>
+
+<br>
+<center>
+Copyright &copy; 2024 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
+
+
