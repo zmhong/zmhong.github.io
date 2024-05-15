@@ -387,9 +387,114 @@ option = {
 option && myChart.setOption(option);
 </script>
 
+<p></p>
+  
+<div id="main4" style="height:600px;width:600px;float:center;">
+</div>
+<script>
+var chartDom = document.getElementById('main4');
+var myChart = echarts.init(chartDom);
+var option;
+
+const data = [];
+for (let i = 0; i <= 360; i++) {
+  let t = (i / 180) * Math.PI;
+  let r = Math.cos(3 * t);
+  data.push([r, i]);
+}
+option = {
+  title: {
+    text: '三叶玫瑰线'
+  },
+  legend: {
+    data: ['line']
+  },
+  polar: {
+    center: ['50%', '54%']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  angleAxis: {
+    type: 'value',
+    startAngle: 0
+  },
+  radiusAxis: {
+    min: 0
+  },
+  series: [
+    {
+      coordinateSystem: 'polar',
+      name: 'line',
+      type: 'line',
+      showSymbol: false,
+      data: data
+    }
+  ],
+  animationDuration: 2000
+};
+  
+option && myChart.setOption(option);
+</script>
+
+<p></p>
+  
+<div id="main5" style="height:600px;width:600px;float:center;">
+</div>
+<script>
+var chartDom = document.getElementById('main5');
+var myChart = echarts.init(chartDom);
+var option;
+
+const data = [];
+for (let i = 0; i <= 360; i++) {
+  let t = (i / 180) * Math.PI;
+  let r = Math.cos(2 * t);
+  data.push([r, i]);
+}
+option = {
+  title: {
+    text: '四叶玫瑰线'
+  },
+  legend: {
+    data: ['line']
+  },
+  polar: {
+    center: ['50%', '54%']
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross'
+    }
+  },
+  angleAxis: {
+    type: 'value',
+    startAngle: 0
+  },
+  radiusAxis: {
+    min: 0
+  },
+  series: [
+    {
+      coordinateSystem: 'polar',
+      name: 'line',
+      type: 'line',
+      showSymbol: false,
+      data: data
+    }
+  ],
+  animationDuration: 2000
+};
+  
+option && myChart.setOption(option);
+</script>
 
 
-
+  
 </body>
 
 </html>
