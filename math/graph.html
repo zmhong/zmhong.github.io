@@ -397,54 +397,75 @@ option = {
 option && myChart.setOption(option);
 </script>
 
+
+
+  
 <p></p>
   
-<div id="main5" style="height:600px;width:600px;float:left;">
+<div id="main6" style="height:600px;width:600px;float:left;">
 </div>
 <script>
-var chartDom = document.getElementById('main5');
+var chartDom = document.getElementById('main6');
 var myChart = echarts.init(chartDom);
 var option;
 
-const data = [];
-for (let i = 0; i <= 360; i++) {
-  let t = (i / 180) * Math.PI;
-  let r = Math.cos(2 * t);
-  data.push([r, i]);
-}
 option = {
-  title: {
-    text: '四叶玫瑰线'
-  },
-  legend: {
-    data: ['line']
-  },
-  polar: {
-    center: ['50%', '54%']
-  },
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: {
-      type: 'cross'
+  tooltip: {},
+  backgroundColor: '#fff',
+  visualMap: {
+    show: false,
+    dimension: 2,
+    min: -1,
+    max: 1,
+    inRange: {
+      color: [
+        '#313695',
+        '#4575b4',
+        '#74add1',
+        '#abd9e9',
+        '#e0f3f8',
+        '#ffffbf',
+        '#fee090',
+        '#fdae61',
+        '#f46d43',
+        '#d73027',
+        '#a50026'
+      ]
     }
   },
-  angleAxis: {
-    type: 'value',
-    startAngle: 0
+  xAxis3D: {
+    type: 'value'
   },
-  radiusAxis: {
-    min: 0
+  yAxis3D: {
+    type: 'value'
+  },
+  zAxis3D: {
+    type: 'value'
+  },
+  grid3D: {
+    viewControl: {
+      // projection: 'orthographic'
+    }
   },
   series: [
     {
-      coordinateSystem: 'polar',
-      name: 'line',
-      type: 'line',
-      showSymbol: false,
-      data: data
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return Math.sqrt(x*x+y*y);
+        }
+      }
     }
-  ],
-  animationDuration: 2000
+  ]
 };
   
 option && myChart.setOption(option);
