@@ -399,11 +399,11 @@ var chartDom = document.getElementById('main4');
 var myChart = echarts.init(chartDom);
 var option;
 
-const data = [];
+const data2 = [];
 for (let i = 0; i <= 360; i++) {
   let t = (i / 180) * Math.PI;
   let r = Math.cos(3 * t);
-  data.push([r, i]);
+  data2.push([r, i]);
 }
 option = {
   title: {
