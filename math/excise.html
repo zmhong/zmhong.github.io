@@ -18,7 +18,15 @@
     function checkAnswers() {
         var questions = [
             { name: '1', correctAnswer: 'a' },
-            { name: '2', correctAnswer: 'b' }
+            { name: '2', correctAnswer: 'b' },
+            { name: '3', correctAnswer: 'c' },
+            { name: '4', correctAnswer: 'd' },
+            { name: '5', correctAnswer: 'd' },
+            { name: '6', correctAnswer: 'd' },
+            { name: '7', correctAnswer: 'c' },
+            { name: '8', correctAnswer: 'c' },
+            { name: '9', correctAnswer: 'b' },
+            { name: '10', correctAnswer: 'b' }
         ];
         var results = '';
         var score = 0;
@@ -70,7 +78,7 @@
 <p></p> 
 
 <form name="quizForm">
-    <!-- 问题1 -->
+    <!-- 选择题1 -->
     <p><b>1.</b> 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ 都是 $4$ 维列向量, 且 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1\right|=m$, $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\beta}_2, \boldsymbol{\alpha}_3\right|=n$, 则 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1+\boldsymbol{\beta}_2\right|=$ $(\qquad)$.
 </p >
     <input type="radio" name="1" value="a"> $\mathrm{A}$. $m+n$<br>
@@ -78,113 +86,79 @@
     <input type="radio" name="1" value="c"> $\mathrm{C}$. $n-m$<br>
     <input type="radio" name="1" value="d"> $\mathrm{D}$. $m-n$<br>
 
-    <!-- 问题2 -->
+    <!-- 选择题2 -->
     <p><b>2.</b> 若 $\boldsymbol{P}\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)=\left(\begin{array}{ccc}a_{11}-3 a_{31} & a_{12}-3 a_{32} & a_{13}-3 a_{33} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)$, 则 $\boldsymbol{P}= (\qquad)$.
 </p >
     <input type="radio" name="2" value="a"> $\mathrm{A}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ -3 & 0 & 1\end{array}\right)$<br>
     <input type="radio" name="2" value="b"> $\mathrm{B}$. $\left(\begin{array}{ccc}1 & 0 & -3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)$<br>
     <input type="radio" name="2" value="c"> $\mathrm{C}$. $\left(\begin{array}{ccc}0 & 0 & -3 \\ 0 & 1 & 0 \\ 1 & 0 & 1\end{array}\right)$<br>
     <input type="radio" name="2" value="d"> $\mathrm{D}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -3 & 1\end{array}\right)$<br>
+
+    <!-- 选择题3 -->
+    <p><b>3.</b> 齐次线性方程组 $x_1+x_2+\cdots+x_n=0$ 的基础解系所含解向量的个数为 $(\qquad)$. </p >
+    <input type="radio" name="3" value="a"> $\mathrm{A}$. $1$<br>
+    <input type="radio" name="3" value="b"> $\qquad\qquad$$\mathrm{B}$. $2$<br>
+    <input type="radio" name="3" value="c"> $\qquad\qquad$$\mathrm{C}$. $n-1$<br>
+    <input type="radio" name="3" value="d"> $\qquad\qquad$$\mathrm{D}$. $n+1$<br>
+
+    <!-- 选择题4 -->
+    <p><b>4.</b> 设 $\boldsymbol{A}$ 是 $n$ 阶实对称矩阵, 将 $\boldsymbol{A}$ 的第 $i$ 列与第 $j$ 列对换得到 $\boldsymbol{B}$, 再将 $\boldsymbol{B}$ 的第 $i$ 行与第 $j$ 行对换得到 $\boldsymbol{C}$, 则矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{C}$ $(\qquad)$.
+ </p >
+    <input type="radio" name="4" value="a"> $\mathrm{A}$. 等价但不相似<br>
+    <input type="radio" name="4" value="b"> $\mathrm{B}$. 合同但不相似<br>
+    <input type="radio" name="4" value="c"> $\mathrm{C}$. 不合同但相似<br>
+    <input type="radio" name="4" value="d"> $\mathrm{D}$. 等价, 合同且相似<br>
+
+    <!-- 选择题5 -->
+    <p><b>5.</b> 设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 是 $n$ 维列向量组, 则下列结论正确的是 $(\qquad)$. </p >
+    <input type="radio" name="5" value="a"> $\mathrm{A}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 线性相关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性相关
+<br>
+    <input type="radio" name="5" value="b"> $\mathrm{B}$.  若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性相关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性无关
+<br>
+    <input type="radio" name="5" value="c"> $\mathrm{C}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性无关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性相关
+<br>
+    <input type="radio" name="5" value="d"> $\mathrm{D}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性无关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性无关 
+<br>
+
+    <!-- 选择题6 -->
+    <p><b>6.</b>  </p >
+    <input type="radio" name="6" value="a"> <br>
+    <input type="radio" name="6" value="b"> <br>
+    <input type="radio" name="6" value="c"> <br>
+    <input type="radio" name="6" value="d"> <br>
+
+    <!-- 选择题7 -->
+    <p><b>7.</b>  </p >
+    <input type="radio" name="7" value="a"> <br>
+    <input type="radio" name="7" value="b"> <br>
+    <input type="radio" name="7" value="c"> <br>
+    <input type="radio" name="7" value="d"> <br>
+
+    <!-- 选择题8 -->
+    <p><b>8.</b>  </p >
+    <input type="radio" name="8" value="a"> <br>
+    <input type="radio" name="8" value="b"> <br>
+    <input type="radio" name="8" value="c"> <br>
+    <input type="radio" name="8" value="d"> <br>
+
+    <!-- 选择题9 -->
+    <p><b>9.</b>  </p >
+    <input type="radio" name="9" value="a"> <br>
+    <input type="radio" name="9" value="b"> <br>
+    <input type="radio" name="9" value="c"> <br>
+    <input type="radio" name="9" value="d"> <br>
+
+    <!-- 选择题10 -->
+    <p><b>10.</b>  </p >
+    <input type="radio" name="10" value="a"> <br>
+    <input type="radio" name="10" value="b"> <br>
+    <input type="radio" name="10" value="c"> <br>
+    <input type="radio" name="10" value="d"> <br>
   
     <input type="button" value="提交" onclick="checkAnswers()">
 </form>
-
+<div id="results"></div>
   
-<form>
-    <p><b>1.</b> 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ 都是 $4$ 维列向量, 且 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1\right|=m$, $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\beta}_2, \boldsymbol{\alpha}_3\right|=n$, 则 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1+\boldsymbol{\beta}_2\right|=$ $(\qquad)$.
-</p>
-    <input type="radio" id="option1" name="question1" value="incorrect">
-    <label for="option1">$\mathrm{A}$. $m+n$</label><br>
-    <input type="radio" id="option2" name="question1" value="incorrect">
-    <label for="option2">$\mathrm{B}$. $-(m+n)$</label><br>
-    <input type="radio" id="option3" name="question1" value="incorrect">
-    <label for="option3">$\mathrm{C}$. $n-m$</label><br>
-    <input type="radio" id="option4" name="question1" value="correct">
-    <label for="option4">$\mathrm{D}$. $m-n$</label><br><br>
- 
-    <input type="button" value="检查答案" onclick="checkAnswer()">
-</form>
-
-<form>
-    <p><b>2. </b> 若 $\boldsymbol{P}\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)=\left(\begin{array}{ccc}a_{11}-3 a_{31} & a_{12}-3 a_{32} & a_{13}-3 a_{33} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)$, 则 $\boldsymbol{P}= (\qquad)$.
-</p>
-    <input type="radio" id="option1" name="question1" value="incorrect">
-    <label for="option1">$\mathrm{A}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ -3 & 0 & 1\end{array}\right)$</label><br>
-    <input type="radio" id="option2" name="question1" value="correct">
-    <label for="option2">$\mathrm{B}$. $\left(\begin{array}{ccc}1 & 0 & -3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)$</label><br>
-    <input type="radio" id="option3" name="question1" value="incorrect">
-    <label for="option3">$\mathrm{C}$. $\left(\begin{array}{ccc}0 & 0 & -3 \\ 0 & 1 & 0 \\ 1 & 0 & 1\end{array}\right)$</label><br>
-    <input type="radio" id="option4" name="question1" value="incorrect">
-    <label for="option4">$\mathrm{D}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -3 & 1\end{array}\right)$</label><br><br>
- 
-    <input type="button" value="检查答案" onclick="checkAnswer()">
-</form>
-
-<p></p> 
-<li>
-<b>3. </b>  齐次线性方程组 $x_1+x_2+\cdots+x_n=0$ 的基础解系所含解向量的个数为 $(\qquad)$.
-<p></p>
-$\mathrm{A}$. $1$
-
-
-$\qquad\qquad$$\mathrm{B}$. $2$
-
-
-$\qquad\qquad$$\mathrm{C}$. $n-1$
-
-$\qquad\qquad$$\mathrm{D}$. $n+1$
-
-<br><br>
-<input type=button value= "显示答案" onclick='document.getElementById("divID1.3").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divID1.3").style.display="none"'> 
-<div id= "divID1.3" style= "display:none"> 
-正确答案：C
-</div> 
-</li>
-
-<p></p> 
-<li>
-<b>4. </b> 设 $\boldsymbol{A}$ 是 $n$ 阶实对称矩阵, 将 $\boldsymbol{A}$ 的第 $i$ 列与第 $j$ 列对换得到 $\boldsymbol{B}$, 再将 $\boldsymbol{B}$ 的第 $i$ 行与第 $j$ 行对换得到 $\boldsymbol{C}$, 则矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{C}$ $(\qquad)$.
-<p></p>
-$\mathrm{A}$. 等价但不相似
-$\qquad\qquad$$\mathrm{B}$. 合同但不相似
-<p></p>
-$\mathrm{C}$. 不合同但相似
-$\qquad\qquad$$\mathrm{D}$. 等价, 合同且相似
-<br><br>
-<input type=button value= "显示答案" onclick='document.getElementById("divID1.4").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divID1.4").style.display="none"'> 
-<div id= "divID1.4" style= "display:none"> 
-正确答案：D
-</div> 
-</li>
-
-<p></p> 
-<li>
-<b>5. </b> 设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 是 $n$ 维列向量组, 则下列结论正确的是 $(\qquad)$.
-
-<p></p>
-$\mathrm{A}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 线性相关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性相关
-
-
-<p></p>
-$\mathrm{B}$.  若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性相关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性无关
-
-
-<p></p>
-$\mathrm{C}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性无关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性相关
-
-
-<p></p>
-$\mathrm{D}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性无关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性无关 
-<br><br>
-<input type=button value= "显示答案" onclick='document.getElementById("divID1.5").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divID1.5").style.display="none"'> 
-<div id= "divID1.5" style= "display:none"> 
-正确答案：D
-</div> 
-</li>
-
 <p></p> 
 <li>
 <b>6. </b> 假设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵, $(\boldsymbol{A B})^2=\boldsymbol{I}$, 则必有$(\qquad)$.
