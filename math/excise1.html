@@ -1,0 +1,383 @@
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<script>
+    function checkAnswers() {
+        var questions = [
+            { name: '1', correctAnswer: 'a' },
+            { name: '2', correctAnswer: 'b' },
+            { name: '3', correctAnswer: 'c' },
+            { name: '4', correctAnswer: 'd' },
+            { name: '5', correctAnswer: 'd' },
+            { name: '6', correctAnswer: 'd' },
+            { name: '7', correctAnswer: 'c' },
+            { name: '8', correctAnswer: 'c' },
+            { name: '9', correctAnswer: 'b' },
+            { name: '10', correctAnswer: 'b' },
+            { name: '11', correctAnswer: 'c' },
+            { name: '12', correctAnswer: 'd' },
+            { name: '13', correctAnswer: 'c' },
+            { name: '14', correctAnswer: 'c' },
+            { name: '15', correctAnswer: 'c' }
+        ];
+        var results = '';
+        var score = 0;
+
+        questions.forEach(function(question) {
+            var userAnswer = document.querySelector('input[name="' + question.name + '"]:checked');
+            if (userAnswer && userAnswer.value === question.correctAnswer) {
+                score++;
+                results += '<p>第 ' + question.name + ' 题回答正确！</p >';
+            } else {
+                results += '<p>第 ' + question.name + ' 题回答错误。</p >';
+            }
+        });
+
+        results += '<p>你的得分是：' + score + '分。</p >';
+        document.getElementById('results').innerHTML = results;
+    }
+</script>
+<title>线性代数练习题</title>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+欢迎来到线性代数学习网站
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="C0"><strong>典型例题:</strong></a><br></h2>
+
+<ul>
+<li><a href="#C2">选择题</a></li>
+<li><a href="#C3">计算题</a></li>
+</ul>
+
+
+  
+
+<h2><a name="C2">选择题</a></h2>
+
+<ul>
+<p></p> 
+
+<form name="quizForm">
+    <!-- 选择题1 -->
+    <p><b>1.</b> 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ 都是 $4$ 维列向量, 且 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1\right|=m$, $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\beta}_2, \boldsymbol{\alpha}_3\right|=n$, 则 $4$ 阶行列式 $\left|\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\beta}_1+\boldsymbol{\beta}_2\right|=$ $(\qquad)$.
+</p >
+    <input type="radio" name="1" value="a"> $\mathrm{A}$. $m+n$<br>
+    <input type="radio" name="1" value="b"> $\mathrm{B}$. $-(m+n)$<br>
+    <input type="radio" name="1" value="c"> $\mathrm{C}$. $n-m$<br>
+    <input type="radio" name="1" value="d"> $\mathrm{D}$. $m-n$<br>
+
+    <!-- 选择题2 -->
+    <p><b>2.</b> 若 $\boldsymbol{P}\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)=\left(\begin{array}{ccc}a_{11}-3 a_{31} & a_{12}-3 a_{32} & a_{13}-3 a_{33} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)$, 则 $\boldsymbol{P}= (\qquad)$.
+</p >
+    <input type="radio" name="2" value="a"> $\mathrm{A}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ -3 & 0 & 1\end{array}\right)$<br>
+    <input type="radio" name="2" value="b"> $\mathrm{B}$. $\left(\begin{array}{ccc}1 & 0 & -3 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)$<br>
+    <input type="radio" name="2" value="c"> $\mathrm{C}$. $\left(\begin{array}{ccc}0 & 0 & -3 \\ 0 & 1 & 0 \\ 1 & 0 & 1\end{array}\right)$<br>
+    <input type="radio" name="2" value="d"> $\mathrm{D}$. $\left(\begin{array}{ccc}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -3 & 1\end{array}\right)$<br>
+
+    <!-- 选择题3 -->
+    <p><b>3.</b> 齐次线性方程组 $x_1+x_2+\cdots+x_n=0$ 的基础解系所含解向量的个数为 $(\qquad)$. </p >
+    <input type="radio" name="3" value="a"> $\mathrm{A}$. $1$<br>
+    <input type="radio" name="3" value="b"> $\mathrm{B}$. $2$<br>
+    <input type="radio" name="3" value="c"> $\mathrm{C}$. $n-1$<br>
+    <input type="radio" name="3" value="d"> $\mathrm{D}$. $n+1$<br>
+
+    <!-- 选择题4 -->
+    <p><b>4.</b> 设 $\boldsymbol{A}$ 是 $n$ 阶实对称矩阵, 将 $\boldsymbol{A}$ 的第 $i$ 列与第 $j$ 列对换得到 $\boldsymbol{B}$, 再将 $\boldsymbol{B}$ 的第 $i$ 行与第 $j$ 行对换得到 $\boldsymbol{C}$, 则矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{C}$ $(\qquad)$.
+ </p >
+    <input type="radio" name="4" value="a"> $\mathrm{A}$. 等价但不相似<br>
+    <input type="radio" name="4" value="b"> $\mathrm{B}$. 合同但不相似<br>
+    <input type="radio" name="4" value="c"> $\mathrm{C}$. 不合同但相似<br>
+    <input type="radio" name="4" value="d"> $\mathrm{D}$. 等价, 合同且相似<br>
+
+    <!-- 选择题5 -->
+    <p><b>5.</b> 设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 是 $n$ 维列向量组, 则下列结论正确的是 $(\qquad)$. </p >
+    <input type="radio" name="5" value="a"> $\mathrm{A}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 线性相关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性相关
+<br>
+    <input type="radio" name="5" value="b"> $\mathrm{B}$.  若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性相关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性无关
+<br>
+    <input type="radio" name="5" value="c"> $\mathrm{C}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性无关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性相关
+<br>
+    <input type="radio" name="5" value="d"> $\mathrm{D}$. 若 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$  线性无关, 则 $\boldsymbol{A}\boldsymbol{\alpha}_1, \boldsymbol{A}\boldsymbol{\alpha}_2, \cdots, \boldsymbol{A}\boldsymbol{\alpha}_s$ 必线性无关 
+<br>
+
+    <!-- 选择题6 -->
+    <p><b>6.</b>  假设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵, $(\boldsymbol{A B})^2=\boldsymbol{I}$, 则必有$(\qquad)$.</p >
+    <input type="radio" name="6" value="a"> $\mathrm{A}$. $\boldsymbol{A B}=\boldsymbol{I}$ <br>
+    <input type="radio" name="6" value="b"> $\mathrm{B}$. $\boldsymbol{A B}=-\boldsymbol{I}$<br>
+    <input type="radio" name="6" value="c"> $\mathrm{C}$. $\boldsymbol{A}^2\boldsymbol{B}^2=\boldsymbol{I}$ <br>
+    <input type="radio" name="6" value="d"> $\mathrm{D}$.  $(\boldsymbol{BA})^2=\boldsymbol{I}$ <br>
+
+    <!-- 选择题7 -->
+    <p><b>7.</b> 设 $n$ 阶方阵 $\boldsymbol{A}$ 非奇异, $\boldsymbol{A}^*$ 是 $\boldsymbol{A}$ 的伴随矩阵, 则$(\qquad)$. </p >
+    <input type="radio" name="7" value="a"> $\mathrm{A}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n-1}\boldsymbol{A}$ <br>
+    <input type="radio" name="7" value="b"> $\mathrm{B}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n-1} \boldsymbol{A}$ <br>
+    <input type="radio" name="7" value="c"> $\mathrm{C}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n-2} \boldsymbol{A}$ <br>
+    <input type="radio" name="7" value="d"> $\mathrm{D}$. $\left(\boldsymbol{A}^*\right)^*=|\boldsymbol{A}|^{n-2} \boldsymbol{A}$ <br>
+
+    <!-- 选择题8 -->
+    <p><b>8.</b> 设 $\boldsymbol{A}$ 为反对称矩阵 $\left(\boldsymbol{A}^{\rm T}=-\boldsymbol{A}\right)$, 且 $|\boldsymbol{A}| \neq 0, \boldsymbol{B}$ 可逆, $\boldsymbol{A}, \boldsymbol{B}$ 为同阶方阵, $\boldsymbol{A}^*$ 为 $\boldsymbol{A}$ 的伴随矩阵, 则 $\left[\boldsymbol{A}^{\rm T} \boldsymbol{A}^*\left(\boldsymbol{B}^{-1}\right)^{\rm T}\right]^{-1}=(\qquad)$.
+ </p >
+    <input type="radio" name="8" value="a"> $\mathrm{A}$. $-\dfrac{\boldsymbol{B}}{|\boldsymbol{A}|}$<br>
+    <input type="radio" name="8" value="b"> $\mathrm{B}$. $\dfrac{\boldsymbol{B}}{|\boldsymbol{A}|}$<br>
+    <input type="radio" name="8" value="c"> $\mathrm{C}$. $-\dfrac{\boldsymbol{B}^{\rm T}}{|\boldsymbol{A}|}$ <br>
+    <input type="radio" name="8" value="d"> $\mathrm{D}$. $\dfrac{\boldsymbol{B}^{\rm T}}{|\boldsymbol{A}|}$<br>
+
+    <!-- 选择题9 -->
+    <p><b>9.</b> 设 $n$ 维行向量 $\boldsymbol{\alpha}=\left(\dfrac{1}{2}, 0,0, \cdots, 0, \dfrac{1}{2}\right)$, 矩阵 $\boldsymbol{A}=\boldsymbol{I}-\boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}, \boldsymbol{B}=\boldsymbol{I}+2 \boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}$, 其中
+$\boldsymbol{I}$ 为 $n$ 阶单位矩阵, 则 $\boldsymbol{A} \boldsymbol{B}=(\qquad)$. </p>
+    <input type="radio" name="9" value="a"> $\mathrm{A}$. $\boldsymbol{O}$<br>
+    <input type="radio" name="9" value="b"> $\mathrm{B}$. $\boldsymbol{I}$<br>
+    <input type="radio" name="9" value="c"> $\mathrm{C}$. $-\boldsymbol{I}$<br>
+    <input type="radio" name="9" value="d"> $\mathrm{D}$. $\boldsymbol{I}+\boldsymbol{\alpha}^{\rm T} \boldsymbol{\alpha}$<br>
+
+    <!-- 选择题10 -->
+    <p><b>10.</b> 设 $\boldsymbol{A}$ 为$3$阶矩阵, 已知 $|3 \boldsymbol{I}+\boldsymbol{A}|=0$, 矩阵 $2 \boldsymbol{I}-\boldsymbol{A}$ 不可逆, 线性方程组 $(\boldsymbol{I}+\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$ 有非零解, 则 $\left|\boldsymbol{A}^*-\boldsymbol{I}\right|=(\qquad)$.
+ </p >
+    <input type="radio" name="10" value="a"> $\mathrm{A}$. $6$<br>
+    <input type="radio" name="10" value="b"> $\mathrm{B}$. $42$<br>
+    <input type="radio" name="10" value="c"> $\mathrm{C}$. $0$<br>
+    <input type="radio" name="10" value="d"> $\mathrm{D}$. $21$<br>
+
+    <!-- 选择题11 -->
+    <p><b>11.</b> 设矩阵 $\boldsymbol{A}=\left(\begin{array}{ccc}4 & 1 & -2 \\ 1 & 2 & a \\ 3 & 1 & -1\end{array}\right)$ 的一个特征向量为 $\left(\begin{array}{l}1 \\ 1 \\ 2\end{array}\right)$, 则 $\boldsymbol{A}=(\qquad)$.
+ </p >
+    <input type="radio" name="11" value="a"> $\mathrm{A}$. $0$<br>
+    <input type="radio" name="11" value="b"> $\mathrm{B}$. $1$<br>
+    <input type="radio" name="11" value="c"> $\mathrm{C}$. $-1$<br>
+    <input type="radio" name="11" value="d"> $\mathrm{D}$. $2$<br>
+
+    <!-- 选择题12 -->
+    <p><b>12.</b> 设 $\boldsymbol{A}$ 是秩为 $n-1$ 的 $n$ 阶矩阵, $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ 是方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{0}$ 的两个不同的解 向量, 则 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{0}$ 的通解是 $(\qquad)$.
+ </p >
+    <input type="radio" name="12" value="a"> $\mathrm{A}$. $\boldsymbol{\alpha}_1+\boldsymbol{\alpha}_2$<br> 
+    <input type="radio" name="12" value="b"> $\mathrm{B}$. $k \boldsymbol{\alpha}_1$ <br>
+    <input type="radio" name="12" value="c"> $\mathrm{C}$. $k\left(\boldsymbol{\alpha}_1+\boldsymbol{\alpha}_2\right)$<br>
+    <input type="radio" name="12" value="d"> $\mathrm{D}$. $k\left(\boldsymbol{\alpha}_1-\boldsymbol{\alpha}_2\right)$<br>
+
+    <!-- 选择题13 -->
+    <p><b>13.</b> 设 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ 是四元非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 的三个解向量, 且
+$R(\boldsymbol{A})=3$, $\boldsymbol{\alpha}_1=(1,2,3,4)^{\rm T}$, $\boldsymbol{\alpha}_2+\boldsymbol{\alpha}_3=(0,1,2,3)^{\rm T}$, $k$ 表示任意常数, 则线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 的通解为$(\qquad)$.
+ </p >
+    <input type="radio" name="13" value="a"> $\mathrm{A}$. $(1,2,3,4)^{\rm T}+k(1,1,1,1)^{\rm T}$<br>
+    <input type="radio" name="13" value="b"> $\mathrm{B}$. $(1,2,3,4)^{\rm T}+k(0,1,2,3)^{\rm T}$<br>
+    <input type="radio" name="13" value="c"> $\mathrm{C}$. $(1,2,3,4)^{\rm T}+k(2,3,4,5)^{\rm T}$<br>
+    <input type="radio" name="13" value="d"> $\mathrm{D}$. $(1,2,3,4)^{\rm T}+k(3,4,5,6)^{\rm T}$<br>
+
+    <!-- 选择题14 -->
+    <p><b>14.</b>  二次型 $f\left(x_1, x_2, x_3\right)=x_1^2+3 x_2^2+x_3^2+2 x_1 x_2+2 x_2 x_3$, 则 $f$ 的正惯性指数为$(\qquad)$.</p >
+    <input type="radio" name="14" value="a"> $\mathrm{A}$. $0$<br>
+    <input type="radio" name="14" value="b"> $\mathrm{B}$. $1$<br>
+    <input type="radio" name="14" value="c"> $\mathrm{C}$. $2$<br>
+    <input type="radio" name="14" value="d"> $\mathrm{D}$. $3$ <br>
+
+    <!-- 选择题15 -->
+    <p><b>15.</b> 设 $f\left(x_1, x_2, x_3\right)=x_1^2+4 x_2^2+2 x_3^2+2 t x_1 x_2+2 x_1 x_3$ 是正定二次型, 则 $t$ 的取值范围$(\qquad)$. </p >
+    <input type="radio" name="15" value="a"> $\mathrm{A}$. $t>\sqrt{2}$<br>
+    <input type="radio" name="15" value="b"> $\mathrm{B}$. $t<-\sqrt{2}$<br>
+    <input type="radio" name="15" value="c"> $\mathrm{C}$. $-\sqrt{2} < t < \sqrt{2}$<br>
+    <input type="radio" name="15" value="d"> $\mathrm{D}$. $t>0$<br>
+  <p></p>
+    <input type="button" value="提交答案" onclick="checkAnswers()">
+</form>
+<div id="results"></div>
+      
+</ul>
+
+<h2><a name="C3">学习指导书选择题</a></h2>
+
+<ul>
+<li>
+<b>16. </b> 当 $k$ 为何值时, 非齐次线性方程组
+$$
+\left\{\begin{array}{c}
+x_1+2 x_2+3 x_3+3 x_4=1 \\
+3 x_1+2 x_2+x_3+x_4=-1 \\
+2 x_1+3 x_2+4 x_3+4 x_4=k
+\end{array}\right.
+$$
+有解? 并求其通解 (用其导出组的基础解系线性表示). 
+<br><br><b>解答: </b>&nbsp; 
+<input type=button value= "显示答案" onclick='document.getElementById("divID1.16").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID1.16").style.display="none"'> 
+<div id= "divID1.16" style= "display:none"> 
+对增广矩阵进行初等行变换 
+$$\overline{A}=\left(\begin{array}{ccccc}1 & 2 & 3 & 3 & 1 \\ 3 & 2 & 1 & 1 & -1 \\ 2 & 3 & 4 & 4 & k\end{array}\right) \rightarrow \cdots \rightarrow\left(\begin{array}{ccccc}1 & 0 & -1 & -1 & -1 \\ 0 & 1 & 2 & 2 & 1 \\ 0 & 0 & 0 & 0 & k-1\end{array}\right).$$
+<br><br>
+当 $k=1$ 时, $R(\boldsymbol{A})=R(\overline{\boldsymbol{A}})=2<4$, 方程组有无穷多解. 
+<br><br>
+此时对应的方程组为: $\left\{\begin{array}{l}x_1=-1+x_3+x_4 \\ x_2=1-2 x_3-2 x_4\end{array}\right.$, 令 $x_3=x_4=0$ 得其一特解为:
+$$
+\eta^*=(-1,1,0,0)^{\rm T} ;
+$$
+对应的导出组为 $\left\{\begin{array}{c}x_1=x_3+x_4 \\ x_2=-2 x_3-2 x_4\end{array}\right.$, 令 $\left(\begin{array}{l}x_3 \\ x_4\end{array}\right)$ 分别为 $\left(\begin{array}{l}1 \\ 0\end{array}\right),\left(\begin{array}{l}0 \\ 1\end{array}\right)$, 得其一组基础解系为: $$\boldsymbol{\xi}_1=(1,-2,1,0)^{\rm T}, \quad \boldsymbol{\xi}_2=(1,-2,0,1)^{\rm T} ;$$ 
+所以原方程组的通解为 $\eta^*+k_1 \boldsymbol{\xi}_1+k_2 \boldsymbol{\xi}_2$, 其中 $k_1, k_2$ 为任意常数. 
+
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>17. </b>  已知向量组 $\boldsymbol{\alpha}_1=(4,-1,-5,-6)^{\rm T}, \boldsymbol{\alpha}_2=(1,-3,-4,-7)^{\rm T}, \boldsymbol{\alpha}_3=(1,2,1,3)^{\rm T}$, $\boldsymbol{\alpha}_4=(2,1,-1,0)^{\rm T}$ . 
+<br><br>
+(1) 求该向量组的秩, 并判断其线性相关性; 
+<br><br>
+(2) 求该向量组的一个极大线性无关组, 并将其余向量用所求的极大线性无关组线性表示. 
+<br><br><b>解答: </b>&nbsp; 
+<input type=button value= "显示答案" onclick='document.getElementById("divID1.17").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID1.17").style.display="none"'> 
+<div id= "divID1.17" style= "display:none"> 
+对矩阵 $\left(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3, \boldsymbol{\alpha}_4\right)$ 进行行初等变换化为行最简型矩阵
+$$
+\left(\begin{array}{cccc}4 & 1 & 1 & 2 \\ -1 & -3 & 2 & 1 \\ -5 & -4 & 1 & -1 \\ -6 & -7 & 3 & 0\end{array}\right) \rightarrow 
+\left(\begin{array}{cccc}
+0 & -11 & 9 & 6 \\ 
+-1 & -3 & 2 & 1 \\ 
+0 & 11 & -9 & -6 \\ 
+0 & 11 & -9 & -6\end{array}\right) 
+\rightarrow \cdots \rightarrow 
+\left(\begin{array}{cccc}
+1 & 0 & \frac{5}{11} & \frac{7}{11} \\ 
+0 & 1 & -\frac{9}{11} & -\frac{6}{11} \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0\end{array}\right).
+$$
+该向量组的秩为 $2$ , 是线性相关的.  $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ 为它的一个极大无关组, 且 $$\boldsymbol{\alpha}_3=\frac{5}{11} \boldsymbol{\alpha}_1-\frac{9}{11} \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_4=\frac{7}{11} \boldsymbol{\alpha}_1-\frac{6}{11} \boldsymbol{\alpha}_2.$$
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>18. </b> 判断矩阵 $\boldsymbol{A}=\left(\begin{array}{ccc}4 & 0 & -2 \\ 0 & 3 & 0 \\ 3 & 6 & -1\end{array}\right)$ 是否可以对角化, 如可以, 求可逆矩阵 $\boldsymbol{P}$ 和对角矩阵 $\boldsymbol{\varLambda}$, 使得 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}$ .  
+<br><br><b>解答: </b>&nbsp; 
+<input type=button value= "显示答案" onclick='document.getElementById("divID1.18").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID1.18").style.display="none"'> 
+<div id= "divID1.18" style= "display:none"> 
+$$|\lambda \boldsymbol{I}-\boldsymbol{A}|=\left|\begin{array}{ccc}\lambda-4 & 0 & 2 \\ 0 & \lambda-3 & 0 \\ -3 & -6 & \lambda+1\end{array}\right|=(\lambda-1)(\lambda-2)(\lambda-3),$$
+$\boldsymbol{A}$ 的全部特征值为: $\lambda_1=1, \lambda_2=2, \lambda_3=3$ .  当 $\lambda_1=1$ 时, 解方程组 $(\boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, 由
+$$
+\boldsymbol{I}-\boldsymbol{A}=\left(\begin{array}{ccc}
+-3 & 0 & 2 \\
+0 & -2 & 0 \\
+-3 & -6 & 2
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+1 & 0 & -\frac{2}{3} \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+解得其基础解系为: $\boldsymbol{\xi}_1=(2,0,3)^{\rm T}$;
+当 $\lambda_2=2$ 时, 解方程组 $(2 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, 由
+$$
+\boldsymbol{I}-2\boldsymbol{A}=\left(\begin{array}{ccc}
+-2 & 0 & 2 \\
+0 & -1 & 0 \\
+-3 & -6 & 3
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+1 & 0 & -1 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+解得其基础解系为: $\boldsymbol{\xi}_2=(1,0,1)^{\rm T}$;
+当 $\lambda_3=3$ 时, 解方程组 $(3 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{x}=\boldsymbol{0}$, 由
+$$
+\boldsymbol{I}-3\boldsymbol{A}=\left(\begin{array}{ccc}
+-1 & 0 & 2 \\
+0 & 0 & 0 \\
+-3 & -6 & 4
+\end{array}\right) \rightarrow\left(\begin{array}{ccc}
+1 & 0 & -2 \\
+0 & 1 & \frac{1}{3} \\
+0 & 0 & 0
+\end{array}\right),
+$$
+解得其基础解系为: $\boldsymbol{\xi}_3=(6,-1,3)^{\rm T}$;
+因为 $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3$ 线性无关, 因此 $\boldsymbol{A}$ 可对角化. 
+<br><br>
+令 $\boldsymbol{P}=\left(\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3\right)=\left(\begin{array}{ccc}2 & 1 & 6 \\ 0 & 0 & -1 \\ 3 & 1 & 3\end{array}\right)$, 则 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\varLambda}=\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3\end{array}\right)$ . 
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>19. </b> 用配方法化二次型 $f\left(x_1, x_2, x_3\right)=x_1^2+2 x_2^2+2 x_3^2+2 x_1 x_2+2 x_1 x_3+4 x_2 x_3$ 为标准形, 并写出相应的可逆线性变换. 
+<br><br><b>解答: </b>&nbsp; 
+<input type=button value= "显示答案" onclick='document.getElementById("divID1.19").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID1.19").style.display="none"'> 
+<div id= "divID1.19" style= "display:none"> 
+$$
+\begin{aligned}
+f\left(x_1, x_2, x_3\right)&=x_1^2+2 x_2^2+2 x_3^2+2 x_1 x_2+2 x_1 x_3+4 x_2 x_3\\
+& =x_1^2+2 x_1\left(x_2+x_3\right)+\left(x_2+x_3\right)^2-\left(x_2+x_3\right)^2+2 x_2^2+2 x_3^2+4 x_2 x_3 \\
+& =\left(x_1+x_2+x_3\right)^2+x_2^2+x_3^2+2 x_2 x_3 \\
+& =\left(x_1+x_2+x_3\right)^2+\left(x_2+x_3\right)^2, \\
+\end{aligned}
+$$
+令$\left\{\begin{array}{lr}
+y_1= &x_1+x_2+x_3 \\ 
+y_2= & x_2+x_3 \\ 
+y_3= & x_3\end{array}\right.$,
+则 $\left\{\begin{array}{rrrr}
+x_1= & y_1&-y_2 & \\ 
+x_2= &  &y_2&-y_3 \\ 
+x_3= & & &y_3
+\end{array}\right.$, 即 $X=\boldsymbol{C}Y=\left(
+\begin{array}{ccc}
+1 & -1 & 0\\
+0 & 1 & -1\\
+0 & 0 & 1
+\end{array}
+\right)Y$.
+<p></p> 
+可得二次型的标准型为 $f=y_1^2+y_2^2$.
+</div> 
+</li>
+
+</ul>
+<a href="#C0">返回顶部</a>
+
+
+
+
+
+
+<br>
+<center>
+<IMG SRC="http://home.ustc.edu.cn/cgi-bin/Count.cgi?df=zmhong.dat">
+<br> Copyright &copy; 2023 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
+
+
+
