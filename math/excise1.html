@@ -1,0 +1,1684 @@
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<script>
+    function checkAnswers() {
+        var questions = [
+            { name: '1', correctAnswer: 'a' },
+            { name: '2', correctAnswer: 'b' },
+            { name: '3', correctAnswer: 'c' },
+            { name: '4', correctAnswer: 'd' },
+            { name: '5', correctAnswer: 'd' },
+            { name: '6', correctAnswer: 'd' },
+            { name: '7', correctAnswer: 'c' },
+            { name: '8', correctAnswer: 'c' },
+            { name: '9', correctAnswer: 'b' },
+            { name: '10', correctAnswer: 'b' },
+            { name: '11', correctAnswer: 'c' },
+            { name: '12', correctAnswer: 'd' },
+            { name: '13', correctAnswer: 'c' },
+            { name: '14', correctAnswer: 'c' },
+            { name: '15', correctAnswer: 'c' }
+        ];
+        var results = '';
+        var score = 0;
+
+        questions.forEach(function(question) {
+            var userAnswer = document.querySelector('input[name="' + question.name + '"]:checked');
+            if (userAnswer && userAnswer.value === question.correctAnswer) {
+                score++;
+                results += '<p>第 ' + question.name + ' 题回答正确！</p >';
+            } else {
+                results += '<p>第 ' + question.name + ' 题回答错误。</p >';
+            }
+        });
+
+        results += '<p>你的得分是：' + score + '分。</p >';
+        document.getElementById('results').innerHTML = results;
+    }
+</script>
+<title>线性代数练习题</title>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+欢迎来到线性代数学习网站
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="C0"><strong>目录:</strong></a><br></h2>
+
+<ul>
+<li><a href="#C2">返回主页</a></li>
+<li><a href="#C3">选择题</a></li>
+</ul>
+
+
+  
+
+
+
+<h2><a name="C3">学习指导书选择题</a></h2>
+
+<ul>
+<p></p> 
+<li>
+<b>1. </b> 设 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶矩阵,则 $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}$ 的充分必要条件是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}=\boldsymbol{I}$ 
+$\qquad$$\mathrm{B}$. $\boldsymbol{B}=\boldsymbol{O}$ 
+$\qquad$$\mathrm{C}$. $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$ 
+$\qquad$$\mathrm{D}$. $\boldsymbol{A}=\boldsymbol{B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.1").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.1").style.display="none"'> 
+<div id= "divID2.1" style= "display:none"> 
+正确答案：C. 
+<p></p>
+<b>分析：</b> 矩阵运算与代数运算的差异主要有两点: 不满足交换律与消去律, 即一 般地 $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$; $\boldsymbol{A B}=\boldsymbol{O}$ 未必有 $\boldsymbol{A}=\boldsymbol{O}$ 或 $\boldsymbol{B}=\boldsymbol{O}$. 
+A,B,D均为等式 $(\boldsymbol{A}+\boldsymbol{B})^{2}= \boldsymbol{A}^{2}+2 \boldsymbol{A B}+\boldsymbol{B}^{2}$ 成立的充分条件,但非必要条件,故C是正确答案. 
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>2. </b>  设 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶对称矩阵,则下列结论不正确的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}+\boldsymbol{B}$ 也是对称矩阵
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A B}$ 也是对称矩阵
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}^{m}+\boldsymbol{B}^{m}(m$ 为正整数) 也是对称矩阵
+<p></p>
+$\mathrm{D}$. $\boldsymbol{B} \boldsymbol{A}^{\mathrm{T}}+\boldsymbol{A} \boldsymbol{B}^{\mathrm{T}}$ 也是对称矩阵
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.2").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.2").style.display="none"'> 
+<div id= "divID2.2" style= "display:none"> 
+正确答案：B 
+<p></p>
+<b>分析：</b> 逐项计算转置矩阵看是否为对称矩阵即可. 因 $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{B} \boldsymbol{A}$, 但一 般 $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$, 故 B 是正确答案.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>3. </b> 设 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 均为 $n$ 阶方阵,若 $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}, \boldsymbol{A C}=\boldsymbol{C A}$, 则 $\boldsymbol{A B C}$ 等于$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A C B}$
+$\qquad$$\mathrm{B}$. $\boldsymbol{C B A}$
+$\qquad$$\mathrm{C}$. $\boldsymbol{B C A}$
+$\qquad$$\mathrm{D}$. $\boldsymbol{C A B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.3").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.3").style.display="none"'> 
+<div id= "divID2.3" style= "display:none"> 
+正确答案：C
+<p></p>
+<b>分析：</b>$\boldsymbol{A B C}=(\boldsymbol{B} \boldsymbol{A}) \boldsymbol{C}=\boldsymbol{B}(\boldsymbol{A} \boldsymbol{C})=\boldsymbol{B} \boldsymbol{C} \boldsymbol{A}$, 故 C 是正确答案. 
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>4. </b> 设 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 均为 $n$ 阶方阵, 若 $\boldsymbol{A B}=\boldsymbol{B C}=\boldsymbol{C A}=\boldsymbol{I}$, 则 $\boldsymbol{A}^{2}+\boldsymbol{B}^{2}+\boldsymbol{C}^{2}$ 等于$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $3 \boldsymbol{I}$
+$\qquad\qquad$$\mathrm{B}$. $2 \boldsymbol{I}$
+$\qquad\qquad$$\mathrm{C}$. $\boldsymbol{I}$
+$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{O}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.4").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.4").style.display="none"'> 
+<div id= "divID2.4" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b> $\boldsymbol{I}=(\boldsymbol{A B})(\boldsymbol{C A})=\boldsymbol{A}(\boldsymbol{B C}) \boldsymbol{A}=\boldsymbol{A}^{2}, \boldsymbol{I}=(\boldsymbol{B C})(\boldsymbol{A B})=\boldsymbol{B}(\boldsymbol{C A}) \boldsymbol{B}=\boldsymbol{B}^{2}$, $\boldsymbol{I}=(\boldsymbol{C A})(\boldsymbol{B C})=\boldsymbol{C}(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{C}^{2}$, 所以 $\boldsymbol{A}^{2}+\boldsymbol{B}^{2}+\boldsymbol{C}^{2}=3 \boldsymbol{I}$, 故 A 是正确答案.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>5. </b> 设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, 则 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}$ 或 $\boldsymbol{B}$ 可逆,必有 $\boldsymbol{A B}$ 可逆
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 或 $\boldsymbol{B}$ 不可逆, 必有 $\boldsymbol{A B}$ 不可逆
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 且 $\boldsymbol{B}$ 可逆, 必有 $\boldsymbol{A}+\boldsymbol{B}$ 可逆
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 且 $\boldsymbol{B}$ 不可逆, 必有 $\boldsymbol{A}+\boldsymbol{B}$ 不可逆
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.5").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.5").style.display="none"'> 
+<div id= "divID2.5" style= "display:none"> 
+正确答案：B 
+<p></p>
+<b>分析：</b> 若 $\boldsymbol{A}$ 或 $\boldsymbol{B}$ 不可逆, 不妨设 $\boldsymbol{B}$ 不可逆, 则存在 $\boldsymbol{X} \neq \mathbf{0}$, 使得 $\boldsymbol{B X}=\mathbf{0}$. 因此 $\boldsymbol{A B X}=\mathbf{0}$, 即 $\boldsymbol{A B X}=\mathbf{0}$ 有非零解, 必有 $\boldsymbol{A B}$ 不可逆. 故 B 是正确答案.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>6. </b> 设 $\boldsymbol{A}$ 可逆, $\boldsymbol{B}$ 与 $\boldsymbol{A}$ 为同阶方阵, 则 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A B}=\boldsymbol{B A}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 为对称矩阵
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}^{\mathrm{T}}$ 为可交换矩阵
+<p></</p>
+$\mathrm{D}$. $\boldsymbol{A}^{\mathrm{T}}$ 为可逆矩阵
+<br><br> 
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.6").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.6").style.display="none"'> 
+<div id= "divID2.6" style= "display:none"> 
+正确答案：D 
+<p></p>
+<b>分析：</b>$\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$, 故 D 是正确答案. 
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>7. </b> 设 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 均为 $n$ 阶方阵, 且 $\boldsymbol{A B C}=\boldsymbol{I}$, 则必有$(\qquad)$.
+<p></p> 
+$\mathrm{A}$. $\boldsymbol{A C B}=\boldsymbol{I}$
+$\qquad\qquad$$\mathrm{B}$. $\boldsymbol{C B A}=\boldsymbol{I}$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{B AC}=\boldsymbol{I}$
+$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{B C A}=\boldsymbol{I}$
+<br><br> 
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.7").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.7").style.display="none"'> 
+<div id= "divID2.7" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b> 由 $\boldsymbol{A B C}=\boldsymbol{I}$, 说明 $\boldsymbol{A}$ 与 $\boldsymbol{B C}$, 或 $\boldsymbol{A B}$ 与 $\boldsymbol{C}$ 互为逆矩阵, 即 $(\boldsymbol{A B})^{-1}=\boldsymbol{C}$, $\boldsymbol{A}^{-1}=\boldsymbol{B C}$, 故有 $\boldsymbol{A}(\boldsymbol{B C})=(\boldsymbol{B C}) \boldsymbol{A}=(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{C}(\boldsymbol{A B})=\boldsymbol{I}$, 对比选项可知 D 为正确答案. 其余选项因矩阵乘法不满足交换律而不成立.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>8. </b> 设 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{A}+\boldsymbol{B}, \boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$ 均为 $n$ 阶可逆矩阵, 则 $\left(\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}\right)^{-1}$ 等于$(\qquad)$.
+<p></p> 
+$\mathrm{A}$. $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}+\boldsymbol{B}$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}(\boldsymbol{A}+\boldsymbol{B})^{-1} \boldsymbol{B}$
+<p></p>
+$\mathrm{D}$. $(\boldsymbol{A}+\boldsymbol{B})^{-1}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.8").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.8").style.display="none"'> 
+<div id= "divID2.8" style= "display:none"> 
+正确答案：C
+<p></p>
+<b>分析：</b> A 可立即排除, 因为 $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$ 的逆矩阵一般不等于自身; 另外矩阵和的逆并不等于矩阵逆的和, 故 B 错误. 剩下 C, D 直接验证有一定的难度, 不 妨反求答案 C, D 的逆矩阵, 看是否等于 $\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$, 因 $\left[\boldsymbol{A}(\boldsymbol{A}+\boldsymbol{B})^{-1} \boldsymbol{B}\right]^{-1}=$ $\boldsymbol{B}^{-1}(\boldsymbol{A}+\boldsymbol{B}) \boldsymbol{A}^{-1}=\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1},\left[(\boldsymbol{A}+\boldsymbol{B})^{-1}\right]^{-1}=\boldsymbol{A}+\boldsymbol{B}$, 故可知 C 为正确答案.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>9. </b> 设 $\boldsymbol{A}$ 为 $n$ 阶可逆矩阵, 则$(\qquad)$.
+<br><br>
+$\mathrm{A}$. 若 $\boldsymbol{A B}=\boldsymbol{C B}$, 则 $\boldsymbol{A}=\boldsymbol{C}$
+<br><br>
+$\mathrm{B}$. $\boldsymbol{A}$ 总可以经过行初等变换化为 $\boldsymbol{I}$
+<br><br>
+$\mathrm{C}$. 对矩阵 $(\boldsymbol{A}, \boldsymbol{I})$ 施行若干次初等变换, 当 $\boldsymbol{A}$ 变为 $\boldsymbol{I}$ 时,相应地 $\boldsymbol{I}$ 变为 $\boldsymbol{A}^{-1}$
+<br><br>
+$\mathrm{D}$. 以上都不对
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.9").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.9").style.display="none"'> 
+<div id= "divID2.9" style= "display:none"> 
+正确答案：B 
+<p></p>
+<b>分析：</b> 由于矩阵乘法不满足消去律, 当 $\boldsymbol{B}$ 不可逆时,一般 $\boldsymbol{A} \neq \boldsymbol{C}$, 即 A 错误; C 必须限于行初等变换, 在 $\boldsymbol{A}$ 可逆的条件下, $\boldsymbol{A}$ 总可以经过行初等变换化为单位矩阵, 故 B 为正确答案.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>10. </b> 设
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ccc}
+a_{21} & a_{22} & a_{23} \\
+a_{11} & a_{12} & a_{13} \\
+a_{31}+a_{11} & a_{32}+a_{12} & a_{33}+a_{13}
+\end{array}\right), 
+$$
+$$\boldsymbol{P}_{1}=\left(\begin{array}{lll}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{array}\right), \quad \boldsymbol{P}_{2}=\left(\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 1
+\end{array}\right),
+$$
+则必有$(\qquad)$.
+<br><br>
+$\mathrm{A}$. $\boldsymbol{A} \boldsymbol{P}_{1} \boldsymbol{P}_{2}=\boldsymbol{B}$
+$\qquad\qquad$$\mathrm{B}$. $\boldsymbol{A} \boldsymbol{P}_{2} \boldsymbol{P}_{1}=\boldsymbol{B}$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{P}_{1} \boldsymbol{P}_{2} \boldsymbol{A}=\boldsymbol{B}$
+$\qquad\qquad$$\mathrm{D}$. $\boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.10").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.10").style.display="none"'> 
+<div id= "divID2.10" style= "display:none"> 
+正确答案：C 
+<p></p>
+<b>分析：</b> $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 经过把第一行加到第三行, 然后交换第一行与第二行的行初等变换得到的, 因此 C 为正确答案. 本题应注意左乘与右乘初等矩阵$\boldsymbol{P}_{1}, \boldsymbol{P}_{2}$ 分别对应行、列初等变换, 同时还应注意所作初等变换的前后顺序.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>11. </b>  设分块矩阵 $\boldsymbol{X}=\left(\begin{array}{cc}\boldsymbol{A}_{1} & \boldsymbol{\alpha}_{1} \\ \boldsymbol{\beta}_{1} & 1\end{array}\right), \boldsymbol{X}^{-1}=\left(\begin{array}{cc}\boldsymbol{A}_{2} & \boldsymbol{\alpha}_{2} \\ \boldsymbol{\beta}_{2} & \alpha\end{array}\right)$, 其中 $\boldsymbol{A}_{i}$ 为 $n \times n$ 矩阵, $\boldsymbol{\alpha}_{i}$ 为 $n \times 1$ 矩阵, $\boldsymbol{\beta}_{i}$ 为 $1 \times n$ 矩阵, $i=1,2$, $\boldsymbol{\alpha}$ 为实数, 
+  则 $\boldsymbol{\alpha}$ 等于 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{C}$. $\frac{1}{1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}}$
+<p></p>
+$\mathrm{D}$. $\frac{1}{1+\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.11").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.11").style.display="none"'> 
+<div id= "divID2.11" style= "display:none"> 
+正确答案： C. 
+<p></p>
+<b>分析：</b> 由 $\left(\begin{array}{cc}\boldsymbol{A}_{1} & \boldsymbol{\alpha}_{1} \\ \boldsymbol{\beta}_{1} & 1\end{array}\right)\left(\begin{array}{cc}\boldsymbol{A}_{2} & \boldsymbol{\alpha}_{2} \\ \boldsymbol{\beta}_{2} & \alpha\end{array}\right)=\boldsymbol{X} \boldsymbol{X}^{-1}=\left(\begin{array}{cc}\boldsymbol{I} & \boldsymbol{O} \\ \boldsymbol{O} & 1\end{array}\right)$ 得
+$$
+\left\{\begin{array}{c}
+\boldsymbol{A}_{1} \boldsymbol{A}_{2}+\boldsymbol{\alpha}_{1} \boldsymbol{\beta}_{2}=\boldsymbol{I}, \\
+\boldsymbol{A}_{1} \boldsymbol{\alpha}_{2}+\alpha \boldsymbol{\alpha}_{1}=\boldsymbol{O}, \\
+\boldsymbol{\beta}_{1} \boldsymbol{A}_{2}+\boldsymbol{\beta}_{2}=\boldsymbol{O}, \\
+\boldsymbol{\beta}_{1} \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}=1,
+\end{array}\right.
+$$
+由 $\boldsymbol{\beta}_{1} \boldsymbol{\alpha}_{2}+\alpha=1$, 有 $\boldsymbol{\alpha}=1-\boldsymbol{\beta}_{1} \boldsymbol{\alpha}_{2}=1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{A}_{1} \boldsymbol{\alpha}_{2}=1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1}\left(\boldsymbol{A}_{1} \boldsymbol{\alpha}_{2}\right)$. 
+  利用第二个方程得 $\boldsymbol{\alpha}=1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1}\left(-\boldsymbol{\alpha} \boldsymbol{\alpha}_{1}\right)=1+\boldsymbol{\alpha} \boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}$. 
+  故 $\boldsymbol{\alpha}=\frac{1}{1-\boldsymbol{\beta}_{1} \boldsymbol{A}_{1}^{-1} \boldsymbol{\alpha}_{1}}$.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>12. </b>  下列结论不正确的是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. 设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则 $(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-\boldsymbol{I})=\boldsymbol{A}^{2}-\boldsymbol{I}$
+<p></p>
+$\mathrm{B}$. 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n \times 1$ 矩阵, 则 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}$
+<p></p>
+$\mathrm{C}$. 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶矩阵, 且满足 $\boldsymbol{A B}=\boldsymbol{O}$, 则 $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+\boldsymbol{B}^{2}$
+<p></p>
+$\mathrm{D}$. 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶矩阵, 且满足 $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$, 则 $\boldsymbol{A}^{5} \boldsymbol{B}^{3}=\boldsymbol{B}^{3} \boldsymbol{A}^{5}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.12").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.12").style.display="none"'> 
+<div id= "divID2.12" style= "display:none"> 
+正确答案： C
+<p></p>
+<b>分析：</b> 因 $(\boldsymbol{A}+\boldsymbol{I})(\boldsymbol{A}-\boldsymbol{I})=\boldsymbol{A}^{2}-\boldsymbol{A} \boldsymbol{I}+\boldsymbol{I} \boldsymbol{A}-\boldsymbol{I}=\boldsymbol{A}^{2}-\boldsymbol{I}$, 故A正确. 
+<p></p>
+因为 $\boldsymbol{A}, \boldsymbol{B}$  均为 $n \times 1$ 矩阵, 所以 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}, \boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}$ 均为一阶矩阵, 从而 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}=\left(\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}\right)^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}$, 故 B 正确. 
+<p></p>
+由于 $\boldsymbol{A B}=\boldsymbol{O}$ 一般推不出 $\boldsymbol{B} \boldsymbol{A}=\boldsymbol{O}$,  因此 $(\boldsymbol{A}+\boldsymbol{B})^{2}=\boldsymbol{A}^{2}+\boldsymbol{A} \boldsymbol{B}+\boldsymbol{B} \boldsymbol{A}+\boldsymbol{B}^{2} \neq \boldsymbol{A}^{2}+\boldsymbol{B}^{2}$, 故 C 不正确.
+<p></p>
+$\boldsymbol{A}^{4}\left(\boldsymbol{A B}{ }^{3}\right)=\boldsymbol{A}^{4}\left(\boldsymbol{B}^{3} \boldsymbol{A}\right)=\boldsymbol{A}^{3}\left(\boldsymbol{A B}{ }^{3}\right) \boldsymbol{A}=\cdots=\boldsymbol{B}^{3} \boldsymbol{A}^{5}$, 故 D 正确.因此, 应选 C.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>13. </b> 设$n$阶行列式$D_n$, 则$D_n=0$的必要条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $D_{n}$ 中有两行 (或列) 元素对应成比例
+<p></p>
+$\mathrm{B}$. $D_{n}$ 中有一行 (或列) 元素全为零
+<p></p>
+$\mathrm{C}$. $D_{n}$ 中各列元素之和为零
+<p></p>
+$\mathrm{D}$. 以 $D_{n}$ 为系数行列式的齐次线性方程组有非零解 
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.13").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.13").style.display="none"'> 
+<div id= "divID2.13" style= "display:none"> 
+正确答案： D
+<p></p>
+<b>分析：</b> 据行列式的性质及线性方程组的解与系数行列式的关系知, 选 D.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>14. </b>  设 $\left|\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right|=a$, 则 $\left|\begin{array}{ccc}a_{11} & a_{12} & a_{13} \\ 2 a_{21}-3 a_{31} & 2 a_{22}-3 a_{32} & 2 a_{23}-3 a_{33} \\ a_{31} & a_{32} & a_{33}\end{array}\right|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $a$ $\qquad$ $\mathrm{B}$. $2 a$ $\qquad$ $\mathrm{C}$. $-2 a$ $\qquad$ $\mathrm{D}$. $-3 a$
+<br><br> 
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.14").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.14").style.display="none"'> 
+<div id= "divID2.14" style= "display:none"> 
+正确答案： B
+<p></p>
+<b>分析：</b> 据行列式的性质, 经简单计算知
+$$
+  \begin{aligned}
+&\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+2 a_{21}-3 a_{31} & 2 a_{22}-3 a_{32} & 2 a_{23}-3 a_{33} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|\\
+  =&\left|\begin{array}{ccc}
+a_{11} & a_{12} & a_{13} \\
+2 a_{21} & 2 a_{22} & 2 a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{array}\right|=2 a,
+  \end{aligned}
+$$
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>15. </b> 设线性方程组 $\left\{\begin{aligned} b x-a y &=-2 a b, \\-2 c y+3 b z &=b c, \\ c x+a z &=0, \end{aligned}\right.$ 则 $(\qquad )$.
+<p></p>
+$\mathrm{A}$. 当 $a, b, c$ 取任意实数时, 方程组均有解
+<p></p>
+$\mathrm{B}$. 当 $a=0$ 时,方程组无解
+<p></p>
+$\mathrm{C}$. 当 $b=0$ 时, 方程组无解
+<p></p>
+$\mathrm{D}$. 当 $c=0$ 时, 方程组无解
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.15").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.15").style.display="none"'> 
+<div id= "divID2.15" style= "display:none"> 
+正确答案： A
+<p></p>
+<b>分析：</b> 方程组的系数行列式
+$$
+D=\left|\begin{array}{ccc}
+b & -a & 0 \\
+0 & -2 c & 3 b \\
+c & 0 & a
+\end{array}\right|=c\left|\begin{array}{cc}
+-a & 0 \\
+-2 c & 3 b
+\end{array}\right|+a\left|\begin{array}{cc}
+b & -a \\
+0 & -2 c
+\end{array}\right|=-5 a b c .
+$$
+由克拉默法则知, 当 $a b c \neq 0$ 时, 方程组有唯一解; 当 $a b c=0$ (即 $a=0$ 或 $b=0$ 或 $c=0$ ) 时, 方程组均有无穷多个解. 故选 A.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>16. </b>  四阶行列式 $\left|\begin{array}{cccc}a_{1} & 0 & 0 & b_{1} \\ 0 & a_{2} & b_{2} & 0 \\ 0 & b_{3} & a_{3} & 0 \\ b_{4} & 0 & 0 & a_{4}\end{array}\right|$ 的值等于$(\qquad )$.
+<p></p>
+$\mathrm{A}$. $a_{1} a_{2} a_{3} a_{4}-b_{1} b_{2} b_{3} b_{4}$
+<p></p>
+$\mathrm{B}$. $a_{1} a_{2} a_{3} a_{4}+b_{1} b_{2} b_{3} b_{4}$
+<p></p>
+$\mathrm{C}$. $\left(a_{1} a_{2}-b_{1} b_{2}\right)\left(a_{3} a_{4}-b_{3} b_{4}\right)$
+<p></p>
+$\mathrm{D}$. $\left(a_{2} a_{3}-b_{2} b_{3}\right)\left(a_{1} a_{4}-b_{1} b_{4}\right)$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.16").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.16").style.display="none"'> 
+<div id= "divID2.16" style= "display:none"> 
+正确答案： D
+<p></p>
+<b>分析1：</b> 按第一行展开
+$$
+\begin{aligned} 
+D &=a_{1}\left|\begin{array}{ccc}a_{2} & b_{2} & 0 \\ b_{3} & a_{3} & 0 \\ 0 & 0 & a_{4}\end{array}\right|-b_{1}\left|\begin{array}{ccc}0 & a_{2} & b_{2} \\ 0 & b_{3} & a_{3} \\ b_{4} & 0 & 0\end{array}\right|=a_{1} a_{4}\left|\begin{array}{cc}a_{2} & b_{2} \\ b_{3} & a_{3}\end{array}\right|-b_{1} b_{4}\left|\begin{array}{cc}a_{2} & b_{2} \\ b_{3} & a_{3}\end{array}\right| \\ 
+&=\left(a_{1} a_{4}-b_{1} b_{4}\right)\left(a_{2} a_{3}-b_{2} b_{3}\right) . 
+\end{aligned}
+$$
+故选 D.
+<br><br>
+<b>分析2：</b>  用拉普拉斯定理 
+$$
+D =\left|\begin{array}{cc}a_{2} & b_{2} \\ b_{3} & a_{3}\end{array}\right| \cdot(-1)^{(2+3)+(2+3)}\left|\begin{array}{cc}a_{1} & b_{1} \\ b_{4} & a_{4}\end{array}\right|=\left(a_{1} a_{4}-b_{1} b_{4}\right)\left(a_{2} a_{3}-b_{2} b_{3}\right) . 
+$$
+故选(D).
+</div> 
+</li>
+
+
+
+
+<p></p> 
+<li>
+<b>17. </b> 设 $f(x)=\left|\begin{array}{cccc}x-2 & x-1 & x-2 & x-3 \\ 2 x-2 & 2 x-1 & 2 x-2 & 2 x-3 \\ 3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\ 4 x & 4 x-3 & 5 x-7 & 4 x-3\end{array}\right|$, 则方程 $f(x)=0$ 的根的个数为 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1$$\qquad$
+$\mathrm{B}$. $2$$\qquad$
+$\mathrm{C}$. $3$$\qquad$
+$\mathrm{D}$. $4$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.17").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.17").style.display="none"'> 
+<div id= "divID2.17" style= "display:none"> 
+正确答案：B
+<p></p>
+<b>分析：</b> 由行列式的性质知
+$$
+\begin{aligned}
+f(x)&=\left|\begin{array}{cccc}
+x-2 & x-1 & x-2 & x-3 \\
+2 & 1 & 2 & 3 \\
+3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\
+4 x & 4 x-3 & 5 x-7 & 4 x-3
+\end{array}\right|\\
+  &=x\left|\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+2 & 1 & 2 & 3 \\
+3 x-3 & 3 x-2 & 4 x-5 & 3 x-5 \\
+4 x & 4 x-3 & 5 x-7 & 4 x-3
+\end{array}\right|\\
+&=\left|\begin{array}{rrrr}
+1 & 1 & 1 & 1 \\
+2 & 1 & 2 & 3 \\
+-3 & -2 & x-5 & -5 \\
+0 & -3 & x-7 & -3
+\end{array}\right|\\
+  &=x\left|\begin{array}{rrrr}
+1 & 1 & 1 & 1 \\
+0 & -1 & 0 & 1 \\
+0 & 1 & x-2 & -2 \\
+0 & -3 & x-7 & -3
+\end{array}\right|=x\left|\begin{array}{rcr}
+-1 & 0 & 1 \\
+1 & x-2 & -2 \\
+-3 & x-7 & -3
+\end{array}\right| \\
+&=x\left|\begin{array}{rrr}
+-1 & 0 & 1 \\
+0 & x-2 & -1 \\
+0 & x-7 & -6
+\end{array}\right|=5 x(x-1),
+\end{aligned}
+$$
+故 $f(x)=0$ 根的个数为 $2$, 应选 B.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>18. </b> 设 $n$ 阶矩阵的伴随矩阵为 $\boldsymbol{A}^{*},|\boldsymbol{A}|=a \neq 0$, 则 $\left|\boldsymbol{A}^{*}\right|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $a$$\qquad$
+$\mathrm{B}$. $\frac{1}{a}$$\qquad$
+$\mathrm{C}$. $a^{n-1}$$\qquad$
+$\mathrm{D}$. $a^{n}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.18").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.18").style.display="none"'> 
+<div id= "divID2.18" style= "display:none"> 
+正确答案：C
+<p></p>
+<b>分析：</b> 由矩阵与伴随矩阵的关系: $A A^{*}=A^{*} A=(\operatorname{det} A) I$ 可知,
+$$
+\operatorname{det} \boldsymbol{A}^{*}=(\operatorname{det} \boldsymbol{A})^{n-1}=a^{n-1} \text {, }
+$$
+故应选 C.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>19. </b> 设 $3$ 阶矩阵 $\boldsymbol{A}$ 的行列式 $|\boldsymbol{A}|=2$, 则 $\left|\frac{1}{2}(2 \boldsymbol{A})^{*}\right|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\frac{1}{2}$$\qquad$
+$\mathrm{B}$. $4$$\qquad$
+$\mathrm{C}$. $16$$\qquad$
+$\mathrm{D}$. $32$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.19").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.19").style.display="none"'> 
+<div id= "divID2.19" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b> 由伴随矩阵的性质 $(k \boldsymbol{A})^{*}=k^{n-1} \boldsymbol{A}^{*}$ 及 $\operatorname{det} \boldsymbol{A}^{*}=(\operatorname{det} \boldsymbol{A})^{n-1}$ 可知,
+$$
+\left|\frac{1}{2}(2 \boldsymbol{A})^{*}\right|=\left|\frac{1}{2} \cdot\left(2^{2} \boldsymbol{A}^{*}\right)\right|=\left|2 \boldsymbol{A}^{*}\right|=2^{3} \cdot 2^{2}=32 .
+$$
+</div> 
+</li>
+
+
+
+<p></p> 
+<li>
+<b>20. </b>  设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $3$ 阶方阵, $|\boldsymbol{A}|=-2, \boldsymbol{A}^{3}-\boldsymbol{A B A}+2 \boldsymbol{I}=\boldsymbol{O}$, 则 $|\boldsymbol{A}-\boldsymbol{B}|=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $2$$\qquad$
+$\mathrm{B}$. $-2$$\qquad$
+$\mathrm{C}$. $\frac{1}{2}$ $\qquad$ 
+$\mathrm{D}$. $-\frac{1}{2}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.20").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.20").style.display="none"'> 
+<div id= "divID2.20" style= "display:none"> 
+正确答案： B
+<p></p>
+<b>分析：</b>  由 $\boldsymbol{A}^{3}-\boldsymbol{A B A}+2 \boldsymbol{I}=\boldsymbol{O}$, 可得 $\boldsymbol{A}(\boldsymbol{A}-\boldsymbol{B}) \boldsymbol{A}=-2 \boldsymbol{I}$, 两边取行列式得,
+$$
+|\boldsymbol{A}||\boldsymbol{A}-\boldsymbol{B}||\boldsymbol{A}|=|-2 \boldsymbol{I}|=(-2)^{3},
+$$
+故 $|\boldsymbol{A}-\boldsymbol{B}|=\frac{-8}{(-2)^{2}}=-2$, 故选 B.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>21. </b>  设 $n$ 阶行列式 $D_{n}=\left|\begin{array}{ccccc}1 & a & a & \cdots & a \\ a & 1 & a & \cdots & a \\ a & a & 1 & \cdots & a \\ \vdots & \vdots & \vdots & & \vdots \\ a & a & a & \cdots & 1\end{array}\right|=0$, 而 $n-1$ 阶行列式 $D_{n-1} \neq 0$, 则 $a=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1$ $\qquad$ 
+$\mathrm{B}$. $-1$ $\qquad$ 
+$\mathrm{C}$. $\frac{1}{n-1}$ $\qquad$ 
+$\mathrm{D}$. $\frac{1}{1-n}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.21").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.21").style.display="none"'> 
+<div id= "divID2.21" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b>
+$$
+\begin{aligned}
+D_{n} & =\left|\begin{array}{ccccc}
+1+(n-1) a & 1+(n-1) a & 1+(n-1) a & \cdots & 1+(n-1) a \\
+a & 1 & a & \cdots & a \\
+a & a & 1 & \cdots & a \\
+\vdots & \vdots & \vdots & & \vdots \\
+a & a & a & \cdots & 1
+\end{array}\right| \\
+& = [1+(n-1) a]\left|\begin{array}{ccccc}
+1 & 1 & 1 & \cdots & 1 \\
+0 & 1-a & 0 & \cdots & a \\
+0 & 0 & 1-a & \cdots & a \\
+\vdots & \vdots & \vdots & & \vdots \\
+0 & 0 & 0 & \cdots & 1-a
+\end{array}\right|=[1+(n-1) a](1-a)^{n-1}.
+\end{aligned}
+$$
+若 $a=1$, 则 $D_{n-1}=0$, 故 $a=\frac{1}{1-n}$. 选 D.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>22. </b> 设 $D=\left|\begin{array}{llll}1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 1 & 0 & 1 & 1 \\ 0 & 1 & 1 & 1\end{array}\right|$, 则其值为 $(\qquad )$.
+<p></p>
+$\mathrm{A}$. $1$ $\qquad$ $\mathrm{B}$. $2$ $\qquad$ $\mathrm{C}$. $3$ $\qquad$ $\mathrm{D}$. $-3$ 
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.22").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.22").style.display="none"'> 
+<div id= "divID2.22" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b>  $$D=\left|\begin{array}{llll}3 & 1 & 1 & 0 \\ 3 & 1 & 0 & 1 \\ 3 & 0 & 1 & 1 \\ 3 & 1 & 1 & 1\end{array}\right|=3\left|\begin{array}{rrrr}1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 1 \\ 1 & 0 & 1 & 1 \\ 1 & 1 & 1 & 1\end{array}\right|=3\left|\begin{array}{rrrr}1 & 1 & 1 & 0 \\ 0 & 0 & -1 & 1 \\ 0 & -1 & 0 & 1 \\ 0 & 0 & 0 & 1\end{array}\right|
+=-3\left|\begin{array}{rrrr}
+1 & 1 & 1 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 0 & 1
+\end{array}\right|=-3.
+$$
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>23. </b>  
+设 $n$ 阶矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价,则必有$(\qquad )$.
+<p></p>
+$\mathrm{A}$. 当 $|\boldsymbol{A}|=a(a \neq 0)$ 时, $|\boldsymbol{B}|=a$
+<p></p>
+$\mathrm{B}$. 当 $|\boldsymbol{A}|=a(a \neq 0)$ 时, $|\boldsymbol{B}|=-a$
+<p></p>
+$\mathrm{C}$. 当 $|\boldsymbol{A}| \neq 0$ 时, $|\boldsymbol{B}|=0$
+<p></p>
+$\mathrm{D}$. 当 $|\boldsymbol{A}|=0$ 时, $|\boldsymbol{B}|=0$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.23").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.23").style.display="none"'> 
+<div id= "divID2.23" style= "display:none"> 
+正确答案：D 
+<p></p>
+<b>分析：</b>  当 $|\boldsymbol{A}|=0$ 时, $R(\boldsymbol{A}) < n$, 而 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 故 $R(\boldsymbol{B}) = R(\boldsymbol{A}) < n$, 即 $|\boldsymbol{B}| = 0$, 故选 D.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>24. </b>  
+设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, $\boldsymbol{B}$ 为 $n \times m$ 矩阵, 则$(\qquad )$.
+<p></p>
+$\mathrm{A}$. 当 $m>n$ 时, 必有 $|\boldsymbol{A B}| \neq 0$
+<p></p>
+$\mathrm{B}$. 当 $m>n$ 时, 必有 $|\boldsymbol{A B}|=0$
+<p></p>
+$\mathrm{C}$. 当 $n>m$ 时, 必有 $|\boldsymbol{A B}| \neq 0$
+<p></p>
+$\mathrm{D}$. 当 $n>m$ 时, 必有 $|\boldsymbol{A B}|=0$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.24").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.24").style.display="none"'> 
+<div id= "divID2.24" style= "display:none"> 
+正确答案：B
+<p></p>
+<b>分析：</b>  $\boldsymbol{A B}$ 为 $m$ 阶方阵, 且 $R(\boldsymbol{A B}) \leqslant \min \{R(\boldsymbol{A}), R(\boldsymbol{B})\} \leqslant n$, 故当 $m>n$ 时,
+$$
+R(\boldsymbol{A B}) \leqslant \min \{R(\boldsymbol{A}), R(\boldsymbol{B})\} \leqslant n < m,
+$$
+从而有 $|\boldsymbol{A B}|=0$, 故选 B.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>25. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶非零矩阵, 且 $\boldsymbol{A B}=\boldsymbol{O}$, 则 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 的秩 $(\qquad )$.
+<p></p>
+$\mathrm{A}$. 必有一个等于零
+<p></p>
+$\mathrm{B}$. 都小于 $n$
+<p></p>
+$\mathrm{C}$. 一个小于 $n$, 一个等于 $n$
+<p></p>
+$\mathrm{D}$. 都等于 $n$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.25").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.25").style.display="none"'> 
+<div id= "divID2.25" style= "display:none"> 
+正确答案： B
+<p></p>
+<b>分析：</b>  因为 $\boldsymbol{A} \neq \boldsymbol{O}, \boldsymbol{B} \neq \boldsymbol{O}$, 故 $R(\boldsymbol{A}) \geqslant 1, R(\boldsymbol{B}) \geqslant 1$. 
+  由 $\boldsymbol{B}=\left(\beta_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right) \neq \boldsymbol{O}$, 可得存在 $\boldsymbol{\beta}_{l} \neq \mathbf{0}$, 
+  从而由 $\boldsymbol{A B}=\boldsymbol{O}$, 可得 $\boldsymbol{A} \boldsymbol{\beta}_{l}=\mathbf{0}\left(\boldsymbol{\beta}_{l} \neq \mathbf{0}\right)$, 
+  即以 $\boldsymbol{A}$ 为系数的齐次线性方 程组有非零解, 所以 $\boldsymbol{A}$ 对应的行阶梯形矩阵非零行的行数小于 $n$, 故 $R(\boldsymbol{A}) < n$.
+  类似 由 $\boldsymbol{A B}=\boldsymbol{O}$, 可得 $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}} = \boldsymbol{O}$, 可得 $R(\boldsymbol{B}) < n$. 故选 B.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>26. </b>  
+下列$\mathbf{R}^3$的子集合中能构成子空间的是$(\qquad)$. 
+<p></p>
+$\mathrm{A}$. $U_{1}=\left\{\boldsymbol{x}=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1}=\frac{x_{2}}{2}=\frac{x_{3}}{3}\right\}$
+<p></p>
+$\mathrm{B}$. $U_{2}=\left\{\boldsymbol{x}=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1}+x_{2}=1\right\}$
+<p></p>
+$\mathrm{C}$. $U_{3}=\left\{x=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1}=\frac{x_{2}-1}{2}=\frac{x_{3}}{3}\right\}$
+<p></p>
+$\mathrm{D}$. $U_{4}=\left\{\boldsymbol{x}=\left(x_{1}, x_{2}, x_{3}\right) \mid x_{1} x_{2}=0\right\}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.26").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.26").style.display="none"'> 
+<div id= "divID2.26" style= "display:none"> 
+正确答案： A 
+<p></p>
+<b>分析：</b>  显然 $\boldsymbol{0}=(0,0,0) \in U_{1}$, 故 $U_{1}$ 非空. 又若 $\boldsymbol{\alpha}=\left(a_{1}, a_{2}, a_{3}\right), \boldsymbol{\beta}=\left(b_{1}, b_{2}, b_{3}\right) \in$ $U_{1}, k \in \mathbf{R}$, 则
+$$
+\boldsymbol{\alpha}+\boldsymbol{\beta}=\left(a_{1}+b_{1}, a_{2}+b_{2}, a_{3}+b_{3}\right), k \boldsymbol{\alpha}=\left(k a_{1}, k a_{2}, k a_{3}\right) .
+$$
+再由 $a_{1}=\frac{a_{2}}{2}=\frac{a_{3}}{3}, b_{1}=\frac{b_{2}}{2}=\frac{b_{3}}{3}$, 可得
+$$
+a_{1}+b_{1}=\frac{a_{2}+b_{2}}{2}=\frac{a_{3}+b_{3}}{3}, k a_{1}=\frac{k a_{2}}{2}=\frac{k a_{3}}{3} .
+$$
+即 $\boldsymbol{\alpha}+\boldsymbol{\beta} \in U_{1}, k \boldsymbol{\alpha} \in U_{1}$, 故 $U_{1}$ 是 $\mathbf{R}^{3}$ 的子空间.
+容易验证其余几个集合对 $\mathbf{R}^{3}$ 中的加法均不封闭, 故不构成 $\mathbf{R}^{3}$ 的子空间.
+<p></p>
+<b>评注:</b> 构成子空间的充要条件是子集合对线性运算封闭. $U_{1}$ 是齐次方程组解 向量构成的集合, 它对线性运算是封闭的.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>27. </b>  
+向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性无关,则下面向量组中线性无关的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}+\boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}, \boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.27").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.27").style.display="none"'> 
+<div id= "divID2.27" style= "display:none"> 
+正确答案： C
+<p></p>
+<b>分析：</b> 由 A 可知, $\left(\alpha_{1}+\alpha_{2}\right)-\left(\alpha_{2}+\alpha_{3}\right)+\left(\alpha_{3}+\alpha_{4}\right)-\left(\alpha_{4}+\alpha_{1}\right)=0$, 所以向量组线性 相关. 由 B 可知, $\left(\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}\right)+\left(\boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}\right)+\left(\boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}\right)+\left(\boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}\right)=0$, 所以向量组线性相关. 由 D 可知, $\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)-\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}\right)+\left(\boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{4}\right)+\left(\boldsymbol{\alpha}_{4}-\boldsymbol{\alpha}_{1}\right)=0$, 所以向量组线性相关. 只有 C 正确.
+<p></p>
+<b>评注:</b> 
+这一类问题一般不要用向量组线性无关、线性相关的定义来判断, 而尽 量用观察法, 排除选项中一些明显具有线性相关或无关的答案, 再进一步仔细确 认. 另外, 由于是单项选择题, 所以可以用特殊值法来判断. 比如, 本题中也可以假设 这四个向量为 4 个 4 维的单位向量, 通过对特殊向量组的运算来选择答案.
+</div> 
+</li>
+
+
+
+<p></p> 
+<li>
+<b>28. </b>  
+对任意的 $a, b, c$, 线性无关的向量组为$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $(a, 1,2),(2, b, 3),(0,0,0)$
+<p></p>
+$\mathrm{B}$. $(b, 1,1),(2, a, 3),(2,3, c),(a, 0, c)$
+<p></p>
+$\mathrm{C}$. $(1, a, 1,1),(1, b, 1,0),(1, c, 0,0)$
+<p></p>
+$\mathrm{D}$. $(1,1,1, a),(2,2,2, b),(0,0,0, c)$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.28").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.28").style.display="none"'> 
+<div id= "divID2.28" style= "display:none"> 
+正确答案： C
+<p></p>
+<b>分析：</b> A 中有零向量, 故线性相关. B 有 4 个 3 维向量, 故线性相关. 对于
+C, 若令 $c=0$, 则 D 中有零向量, 故线性相关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>29. </b>  
+设向量组 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\delta}$ 线性相关, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\alpha$ 必可由 $\boldsymbol{\beta}, \boldsymbol{\delta}, \gamma$ 线性表出
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\beta}$ 必可由 $\alpha, \delta, \gamma$ 线性表出
+<p></p>
+$\mathrm{C}$. $\boldsymbol{\delta}$ 必可由 $\boldsymbol{\beta}, \boldsymbol{\alpha}, \boldsymbol{\gamma}$ 线性表出
+<p></p>
+$\mathrm{D}$. $\delta$ 必不可由 $\boldsymbol{\beta}, \boldsymbol{\alpha}, \gamma$ 线性表出
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.29").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.29").style.display="none"'> 
+<div id= "divID2.29" style= "display:none"> 
+正确答案：C  
+<p></p>
+<b>分析：</b>  由于 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\delta}$ 线性相关, 则 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \gamma, \boldsymbol{\delta}$ 线性相关. 又因 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}$ 线性无关, 故 $\delta$ 必可由 $\boldsymbol{\beta}, \boldsymbol{\alpha}, \gamma$ 线性表出.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>30. </b>  
+设向量 $\boldsymbol{\beta}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表出, 但不能由向量组(I): $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n-1}$ 线性表出,记向量组(II) : $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n-1}, \boldsymbol{\beta}$, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{\alpha}_{n}$ 不能由向量组(II)线性表出, 也不能由向量组(II)线性表出
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\alpha}_{n}$ 不能由向量组(I)线性表出, 但可由向量组(II)线性表出
+<p></p>
+$\mathrm{C}$. $\boldsymbol{\alpha}_{n}$ 可由向量组(I)线性表出, 也可由向量组(II)线性表出
+<p></p>
+$\mathrm{D}$. $\boldsymbol{\alpha}_{n}$ 可由向量组(I)线性表出, 但不可由向量组(II)线性表出
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.30").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.30").style.display="none"'> 
+<div id= "divID2.30" style= "display:none"> 
+正确答案： B 
+<p></p>
+<b>分析：</b>  由题设有
+$$\boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n} \boldsymbol{\alpha}_{n}. \qquad (4-1)$$
+因 $\boldsymbol{\beta}$ 不能由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n-1}$ 线性表出, 故 $k_{n} \neq 0$. 因此
+$$
+\boldsymbol{\alpha}_{n}=-\frac{1}{k_{n}}\left(-\boldsymbol{\beta}+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n-1} \boldsymbol{\alpha}_{n-1}\right),
+$$
+即 $\boldsymbol{\alpha}_{n}$ 可由向量组(II)线性表出.
+<p></p>
+若 $\boldsymbol{\alpha}_{n}=l_{1} \boldsymbol{\alpha}_{1}+l_{2} \boldsymbol{\alpha}_{2}+\cdots+l_{n-1} \boldsymbol{\alpha}_{n-1}$, 将其代人 (4-1) 式得
+$$
+\boldsymbol{\beta}=\left(k_{1}+k_{n} l_{1}\right) \boldsymbol{\alpha}_{1}+\left(k_{2}+k_{n} l_{2}\right) \boldsymbol{\alpha}_{2}+\cdots+\left(k_{n-1}+k_{n} l_{n-1}\right) \boldsymbol{\alpha}_{n-1},
+$$
+这与 $\boldsymbol{\beta}$ 不能由向量组(I)线性表出矛盾, 所以 $\alpha_{n}$ 不能由向量组(I)线性表出.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>31. </b>  
+已知向量组(I): $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 
+与(II): $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{t}, \boldsymbol{\alpha}_{s+1}, \boldsymbol{\alpha}_{s+1}, \cdots$, $\boldsymbol{\alpha}_{s+1}$, 
+  若向量组的秩 $R(\mathrm{I})=p, R(\mathrm{II})=q$, 则下列条件中不能判定(I)是(II)的最大线性无关组的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $p=q$, (II)可由(I)线性表出
+<p></p>
+$\mathrm{B}$. $s=q$, (I)与(II)为等价向量组
+<p></p>
+$\mathrm{C}$. $p=q$, (I)线性无关
+<p></p>
+$\mathrm{D}$. $p=q=s$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.31").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.31").style.display="none"'> 
+<div id= "divID2.31" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>  A 中仅凭 $p=q$ 不能保证 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关, 所以不能判定(I)是(II)的最大线性无关组. 其余情况均能根据最大无关组的定义确定是正确的.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>32. </b>  
+设线性方程组 $\boldsymbol{A X}=\boldsymbol{b}$ 有 $n$ 个未知量, $m$ 个方程, 且 $R(\boldsymbol{A})=r$, 则此方程组$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $r=m$ 时, 有解
+<p></p>
+$\mathrm{B}$. $r=n$ 时, 有唯一解
+<p></p>
+$\mathrm{C}$. $m=n$ 时, 有唯一解
+<p></p>
+$\mathrm{D}$. $r < n$ 时, 有无穷解
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.32").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.32").style.display="none"'> 
+<div id= "divID2.32" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>  已知 $\boldsymbol{A}$ 是 $m \times n$ 矩阵.
+<br><br>
+$\mathrm{A}$. 若 $R(\boldsymbol{A})=m$, 则必有 $m$ 阶子式不为零,而 $\overline{\boldsymbol{A}}$中不存在 $m+1$ 阶子式, 所以 $R(\overline{\boldsymbol{A}})=m$, 故方程组必有解. 且若 $r=m=n$, 方程组有唯 一解; 
+  若 $r=m < n$, 方程组有无穷多解. 所以 A 正确.
+<br><br>
+$\mathrm{B}$. 若 $R(\boldsymbol{A})=n$, 自然有 $m \geqslant n$. 若 $m=n$, 则 $\boldsymbol{A}$ 是 $n$ 阶可逆矩阵, 由克拉默法 则, 方程组有唯一解. 若 $m>n$, 且 $R(\overline{\boldsymbol{A}})=n=R(\boldsymbol{A})$, 则因 $\boldsymbol{A}$ 的列向量线性无关, 此 时方程组有唯一解.但若 $m>n$, 且 $R(\overline{\boldsymbol{A}})>n$ 时,方程组就无解. 所以 B 不正确. 要注意 $R(\boldsymbol{A})=n$ 时,不能保证 $R(\overline{\boldsymbol{A}})=n$ 必成立.
+<br><br>
+$\mathrm{C}$ 、$\mathrm{D}$ 两种条件下都可能有无解的情况, 故不正确.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>33. </b>  
+设 $n$ 维列向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\mathrm{m}}(m < n)$ 线性无关, 
+则 $n$ 维列向量组 $\boldsymbol{\beta}_{1}$, $\boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 线性无关的充分必要条件为$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性表出
+<p></p>
+$\mathrm{B}$. 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表出
+<p></p>
+$\mathrm{C}$. 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 与向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 等价
+<p></p>
+$\mathrm{D}$. 矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\mathrm{m}}\right)$ 与矩阵 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}\right)$ 等价
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.33").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.33").style.display="none"'> 
+<div id= "divID2.33" style= "display:none"> 
+正确答案：D  
+<p></p>
+<b>分析1：</b> $\mathrm{A}$ 是 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关的充分条件而非必要条件.
+<br><br>
+$\mathrm{B}$. 由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表出不能保证 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots$, $\boldsymbol{\beta}_{m}$ 线性无关.
+<br><br>
+$\mathrm{C}$. 是 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关的充分条件而非必要条件. 例如，取 $m=2$, $\boldsymbol{\alpha}_{1}=(1,0,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(0,1,0)^{\mathrm{T}} ; \boldsymbol{\beta}_{1}=(0,1,0)^{\mathrm{T}}, \boldsymbol{\beta}_{2}=(0,0,1)^{\mathrm{T}}$. 显然这两个向 量组都线性无关, 但它们却不等价.
+<br><br>
+$\mathrm{D}$. 若矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}\right)$ 与矩阵 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}\right)$ 等价, 则 $R(\boldsymbol{A})=$ $R(\boldsymbol{B})=m$, 所以 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关. 反之, 若 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 线性无关, 则 $R(\boldsymbol{B})=$ $m=R(\boldsymbol{A})$, 同型矩阵 $\boldsymbol{A}, \boldsymbol{B}$ 有相同的秩, 所以 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价. 故 D 正确.
+<br><br>
+<b>分析2：</b> 设 $\boldsymbol{\alpha}_{1}=(1,0,0,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(0,1,0,0)^{\mathrm{T}}, \boldsymbol{\beta}_{1}=(0,0,1,0)^{\mathrm{T}}$, $\boldsymbol{\beta}_{2}=(0,0,0,1)^{\mathrm{T}}$, 则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}$ 线性无关, 但 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}$ 不能 互相线性表出, 故排除 A, B, C.
+<br><br>
+<b>评注：</b>矩阵等价与向量组等价的区别:
+<br><br>
+矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}\right)$ 与 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}\right)$ 等价是指这两个矩阵能够通过 初等变换互化,其充分必要条件为 $R(\boldsymbol{A})=R(\boldsymbol{B})$.
+<br><br>
+向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{\mathrm{m}}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{\mathrm{m}}$ 等价
+是指这两个向量组能㿟相互线性表出, 其充分必要条件为 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{B})=R(\boldsymbol{B})$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>34. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为满足 $\boldsymbol{A B}=\boldsymbol{O}$ 的任意两个非零矩阵, 则必有$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}$ 的列向量线性相关, $\boldsymbol{B}$ 的行向量线性相关
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 的列向量线性相关, $\boldsymbol{B}$ 的列向量线性相关
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 的行向量线性相关, $\boldsymbol{B}$ 的行向量线性相关
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 的行向量线性相关, $\boldsymbol{B}$ 的列向量线性相关
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.34").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.34").style.display="none"'> 
+<div id= "divID2.34" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b> 设 $\boldsymbol{A}$ 是 $m \times s$ 矩阵, $\boldsymbol{B}$ 是 $s \times n$ 矩阵. 把矩阵 $\boldsymbol{B}$ 按列分块 $\boldsymbol{B}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right)$, 由题设得 $\boldsymbol{A B}=\boldsymbol{A}\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{n}\right)=\left(\boldsymbol{A} \boldsymbol{\beta}_{1}, \boldsymbol{A} \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{A} \boldsymbol{\beta}_{n}\right)=\boldsymbol{O}$, 即
+$$
+\boldsymbol{A} \boldsymbol{\beta}_{i}=\mathbf{0} \quad(i=1,2, \cdots, n) .
+$$
+$\boldsymbol{\beta}_{i}(i=1,2, \cdots, n)$ 为线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的解. 由 $\boldsymbol{B} \neq \boldsymbol{O}$ 知 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 有非零解, 
+  所以 $R(\boldsymbol{A}) < s$, 所以 $\boldsymbol{A}$ 的列向量组线性相关. 由 $\boldsymbol{A B}=\boldsymbol{O}$ 取转置, 类似可得 $\boldsymbol{B}$ 的行向量组线性相关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>35. </b>  
+设向量组(I)$\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_r$ 可由向量组(II): $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_s$, 线性表出, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 当 $r < s$ 时, 向量组(II)线性相关
+<p></p>
+$\mathrm{B}$. 当 $r > s$ 时, 向量组(II)线性相关
+<p></p>
+$\mathrm{C}$. 当 $r < s$ 时, 向量组(I)线性相关
+<p></p>
+$\mathrm{D}$. 当 $r > s$ 时, 向量组(I)线性相关
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.35").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.35").style.display="none"'> 
+<div id= "divID2.35" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b> 向量组(I)可由向量组(II)线性表出, 则向量组(I)的秩不超过向量 组(II)的秩, 而向量组(II)的秩不超过 $s$, 所以当 $r>s$ 时, 向量组(I)的秩小于向 量组向量的个数, 故向量组(I)线性相关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>36. </b>  
+齐次线性方程组 $\left\{\begin{array}{l}\lambda x_{1}+x_{2}+\lambda^{2} x_{3}=0, \\ x_{1}+\lambda x_{2}+x_{3}=0, \\ x_{1}+x_{2}+\lambda x_{3}=0\end{array}\right.$ 的系数矩阵记为 $\boldsymbol{A}$, 若存在三阶 矩阵 $\boldsymbol{B} \neq \boldsymbol{O}$, 使得 $\boldsymbol{A B}=\boldsymbol{O}$, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\lambda=-2$ 且 $|\boldsymbol{B}|=0$
+<p></p>
+$\mathrm{B}$. $\lambda=-2$ 且 $|\boldsymbol{B}| \neq 0$
+<p></p>
+$\mathrm{C}$. $\lambda=1$ 且 $|\boldsymbol{B}|=0$
+<p></p>
+$\mathrm{D}$. $\lambda=1$ 且 $|\boldsymbol{B}| \neq 0$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.36").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.36").style.display="none"'> 
+<div id= "divID2.36" style= "display:none"> 
+正确答案：C  
+<p></p>
+<b>分析：</b> 由 $\boldsymbol{A B}=\boldsymbol{O}$ 知 $R(\boldsymbol{A})+R(\boldsymbol{B}) \leqslant 3$, 因 $\boldsymbol{B} \neq \boldsymbol{O}$, 故 $R(\boldsymbol{A}) \leqslant 2$. 由 $|\boldsymbol{A}|=\left|\begin{array}{ccc}\lambda & 1 & \lambda^{2} \\ 1 & \lambda & 1 \\ 1 & 1 & \lambda\end{array}\right|=1-\lambda^{2}=0$, 故 $\lambda=\pm 1$, 且有 $R(\boldsymbol{B}) \leqslant 2$, 则 $|\boldsymbol{B}|=0$, 所以 C 正确. 
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>37. </b>  
+设 $\boldsymbol{\alpha}_{1}=\left(\begin{array}{l}a_{1} \\ a_{2} \\ a_{3}\end{array}\right), \boldsymbol{\alpha}_{2}=\left(\begin{array}{l}b_{1} \\ b_{2} \\ b_{3}\end{array}\right), \boldsymbol{\alpha}_{3}=\left(\begin{array}{l}c_{1} \\ c_{2} \\ c_{3}\end{array}\right)$, 则三条直线 $a_{i} x+b_{i} y+c_{i}=0$ (其中$\left.a_{i}^{2}+b_{i}^{2} \neq 0, i=1,2,3\right)$ 交于一点的充分必要条件为$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关
+<p></p>
+$\mathrm{B}$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关
+<p></p>
+$\mathrm{C}$. $R\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}\right)=R\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}\right)$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.37").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.37").style.display="none"'> 
+<div id= "divID2.37" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b> 将三条直线方程组成的方程组用向量形式来表示, 即为 $x \boldsymbol{\alpha}_{1}+y \boldsymbol{\alpha}_{2}=$ $-\boldsymbol{\alpha}_{3}$, 则
+三直线交于一点 $\Leftrightarrow$ 方程组有唯一解 $\Leftrightarrow \boldsymbol{\alpha}_{3}$ 能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 唯一线性表出 $\Leftrightarrow \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
+<p></p>
+<b>评注：</b> 将几何问题转化为代数问题是解决该类题目的关键.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>38. </b>  
+设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵, 线性方程组(I) : $\boldsymbol{A X}=\boldsymbol{b}$ 对应的齐次线性方程组为 (II) : $\boldsymbol{A X}=\mathbf{0}$, 则$(\qquad)$.
+<p></p>
+$\mathrm{A}$. (I) 有无穷多解 $\Rightarrow$ (II) 仅有零解
+<p></p>
+$\mathrm{B}$. (I)有无穷多解 $\Rightarrow$ (II) 有无穷多解
+<p></p>
+$\mathrm{C}$. (II) 仅有零解 $\Rightarrow$ (I) 有唯一解
+<p></p>
+$\mathrm{D}$. (II)有非零解 $\Rightarrow$ (I) 有无穷多解
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.38").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.38").style.display="none"'> 
+<div id= "divID2.38" style= "display:none"> 
+正确答案：B  
+<p></p>
+<b>分析：</b> 由非齐次方程组解的结构知, B 是正确的, A 不正确; C 与 D 不正确的原因是(II)有解时(I)可能无解.
+<p></p>
+<b>评注：</b>非齐次方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{b}$ 有解的充分必要条件是 $R(\boldsymbol{A})=R(\boldsymbol{A}, \boldsymbol{b})$, 与齐次 方程组 $\boldsymbol{A X}=\mathbf{0}$ 有多少解无关.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>39. </b>  
+设有齐次线性方程组 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 和 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$, 其中 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $m \times n$ 矩阵, 现有 4 个命题:
+<p></p>
+(1) 若 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 的解均为 $\boldsymbol{B X}=\mathbf{0}$ 的解, 则 $R(\boldsymbol{A}) \geqslant R(\boldsymbol{B})$;
+<p></p>
+(2) 若 $R(\boldsymbol{A}) \geqslant R(\boldsymbol{B})$, 则 $\boldsymbol{A X}=\mathbf{0}$ 的解均为 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 的解;
+<p></p>
+(3) 若 $\boldsymbol{A} \boldsymbol{X}=\mathbf{0}$ 与 $\boldsymbol{B} \boldsymbol{X}=\mathbf{0}$ 同解, 则 $R(\boldsymbol{A})=R(\boldsymbol{B})$;
+<p></p>
+(4) 若 $R(\boldsymbol{A})=R(\boldsymbol{B})$, 则 $\boldsymbol{A X}=\mathbf{0}$ 与 $\boldsymbol{B X}=\mathbf{0}$ 同解.
+<p></p>
+以上命题正确的是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. (1) (2)$\quad$
+$\mathrm{B}$. (1) (3)$\quad$
+$\mathrm{C}$. (2) (4)$\quad$
+$\mathrm{D}$. (3) (4)
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.39").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.39").style.display="none"'> 
+<div id= "divID2.39" style= "display:none"> 
+正确答案：B 
+<p></p>
+<b>分析：</b> 若 $\boldsymbol{A X}=\mathbf{0}$ 的解均为 $\boldsymbol{B X}=\mathbf{0}$ 的解, 则 $\boldsymbol{A X}=\mathbf{0}$ 的解空间的维数不超过 $\boldsymbol{B X}=\mathbf{0}$ 的解空间的维数, 即 $n-R(\boldsymbol{A}) \leqslant n-R(\boldsymbol{B})$, (1)正确. 而根据两个解空间的维数的大小关系不能得出其对应的齐次线性方程组的解集的包含关系, 所以(2)不成立, 即 A, C 不对. 只需考虑 B, D 两项的正确性. 显然(4)不成立, 故选 B.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>40. </b>  
+设 $n$ 阶矩阵 $\boldsymbol{A}$ 的伴随矩阵 $\boldsymbol{A}^{*} \neq \boldsymbol{O}$, 若 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \boldsymbol{\xi}_{3}, \boldsymbol{\xi}_{4}$ 是非齐次线性方程 组 $\boldsymbol{A X}=\boldsymbol{b}$ 的互不相等的解, 则对应的齐次线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的基础解系$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 不存在
+<p></p>
+$\mathrm{B}$. 仅含一个非零向量
+<p></p>
+$\mathrm{C}$. 含有两个线性无关的向量
+<p></p>
+$\mathrm{D}$. 含有三个线性无关的向量
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.40").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.40").style.display="none"'> 
+<div id= "divID2.40" style= "display:none"> 
+正确答案： B 
+<p></p>
+<b>分析：</b> 矩阵与其伴随矩阵的秩之间的关系为
+$$
+R\left(\boldsymbol{A}^{*}\right)= \begin{cases}0, & R(\boldsymbol{A}) < n-1, \\ 1, & R(\boldsymbol{A})=n-1, \\ n, & R(\boldsymbol{A})=n . \end{cases}
+$$
+因为 $\boldsymbol{A}^{*} \neq \boldsymbol{O}$, 所以 $R\left(\boldsymbol{A}^{*}\right) \neq 0$, 则 $R(\boldsymbol{A})=n$ 或 $n-1$. 因为线性方程组 $\boldsymbol{A} \boldsymbol{X}=\boldsymbol{b}$ 有互不相等的解 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \boldsymbol{\xi}_{3}, \boldsymbol{\xi}_{4}$, 即解不唯一, 则矩阵 $\boldsymbol{A}$ 不是满秩矩阵, 即 $R(\boldsymbol{A}) \neq n$, 从 而 $R(\boldsymbol{A})=n-1$. 故齐次线性方程组 $\boldsymbol{A X}=\mathbf{0}$ 的基础解系仅含一个解向量.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>41. </b>  
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 且 $\boldsymbol{A}^{k}=\boldsymbol{O}$ ($k$ 为一自然数), 则下列说法正确的是 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}=\boldsymbol{O}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 有一不为零的特征值
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 的特征值全部为零
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 有 $n$个线性无关特征向量
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.41").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.41").style.display="none"'> 
+<div id= "divID2.41" style= "display:none"> 
+正确答案：C 
+<p></p>
+<b>分析：</b>  设 $\lambda$ 是矩阵 $\boldsymbol{A}$ 的任一特征值, $\alpha$ 是矩阵 $\boldsymbol{A}$ 的与 $\lambda$ 相对应的特征向量, 则 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha} \Rightarrow \boldsymbol{A}^{k} \boldsymbol{\alpha}=\lambda^{k} \boldsymbol{\alpha}$, 由于 $\boldsymbol{A}^{k}=\boldsymbol{O}$, 所以 $\lambda^{k} \boldsymbol{\alpha}=\mathbf{0}$, 同时 $\boldsymbol{\alpha} \neq \mathbf{0}$, 故有 $\lambda^{k}=0$, 即 $\lambda=0$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>42. </b>  
+设 $n$ 阶方阵 $\boldsymbol{A}$ 的全部特征值为 $2,4, \cdots, 2 n$, 则方阵 $\boldsymbol{I}-\boldsymbol{A}$ 的行列式等于$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1 \times 3 \times \cdots \times(2 n-1)$
+<p></p>
+$\mathrm{B}$. $2^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$
+<p></p>
+$\mathrm{C}$. $(-2)^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$
+<p></p>
+$\mathrm{D}$. $(-1)^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.42").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.42").style.display="none"'> 
+<div id= "divID2.42" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b>  若 $\lambda$ 是矩阵 $\boldsymbol{A}$ 的特征值, 则 $\boldsymbol{I}-\boldsymbol{A}$ 的特征值为 $1-\lambda$, 所以 $\boldsymbol{I}-\boldsymbol{A}$ 的全部特 征值为 $-1,-3, \cdots,-(2 n-1)$, 故 $\operatorname{det}(\boldsymbol{I}-\boldsymbol{A})=(-1)^{n} \times 1 \times 3 \times \cdots \times(2 n-1)$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>43. </b>  
+已知三阶矩阵 $\boldsymbol{A}$ 的特征值为 $-1,1,2$, 则矩阵 $\boldsymbol{B}=\left(3 \boldsymbol{A}^{*}\right)^{-1}$ 的特征值为 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $1,-1,-2$
+<p></p>
+$\mathrm{B}$. $\frac{1}{6},-\frac{1}{6},-\frac{1}{3}$
+<p></p>
+$\mathrm{C}$. $\frac{1}{6},-\frac{1}{6}, \frac{1}{3}$
+<p></p>
+$\mathrm{D}$. $\frac{1}{2},-\frac{1}{2}, -1$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.43").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.43").style.display="none"'> 
+<div id= "divID2.43" style= "display:none"> 
+正确答案：B  
+<p></p>
+<b>分析：</b>  因为 $|\boldsymbol{A}|=\lambda_{1} \lambda_{2} \lambda_{3}=-2$, 则 $\boldsymbol{B}=\left(3 \boldsymbol{A}^{*}\right)^{-1}=\frac{1}{3|\boldsymbol{A}|} \boldsymbol{A}=-\frac{1}{6} \boldsymbol{A}$, 于是 $\boldsymbol{B}=\left(3 \boldsymbol{A}^{*}\right)^{-1}$ 的特征值为 $\frac{1}{6},-\frac{1}{6},-\frac{1}{3}$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>44. </b>  
+设 $\boldsymbol{A}$ 为 $n$ 阶矩阵, 则以下结论正确的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 如果矩阵 $\boldsymbol{A}$ 可逆, 则 $\boldsymbol{A}^{-1}$ 与 $\boldsymbol{A}$ 有相同的特征向量
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 的特征向量的任一线性组合都是 $\boldsymbol{A}$ 的特征向量
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 与 $\boldsymbol{A}^{\mathrm{T}}$ 具有相同的特征向量
+<p></p>
+$\mathrm{D}$. 方程组 $(\boldsymbol{A}-\lambda \boldsymbol{I}) \boldsymbol{X}=\mathbf{0}$ 的解向量都是 $\boldsymbol{A}$ 的特征向量
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.44").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.44").style.display="none"'> 
+<div id= "divID2.44" style= "display:none"> 
+正确答案： A 
+<p></p>
+<b>分析：</b>  A 中, 设 $\boldsymbol{\alpha}$ 是 $\boldsymbol{A}$ 对应特征值 $\lambda$ 的特征向量, 即 $\boldsymbol{A} \boldsymbol{\alpha}=\lambda \boldsymbol{\alpha}$, 如果矩阵 $\boldsymbol{A}$ 可逆, 则 $\alpha=\lambda A^{-1} \alpha$, 且 $\lambda \neq 0$, 从而 $A^{-1} \alpha=\frac{1}{\lambda} \alpha$, 故 $\alpha$ 也是 $A^{-1}$ 特征向量; 同理, $A^{-1}$ 特 征向量也都是 $\boldsymbol{A}$ 的特征向量. 所以 A 正确.
+<p></p>
+B 不正确. 设 $\boldsymbol{A} \boldsymbol{\alpha}_{i}=\lambda_{i} \boldsymbol{\alpha}_{i}(i=1,2), \lambda_{1} \neq \lambda_{2}$, 则 $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}$ 一定不是 $\boldsymbol{A}$ 的特征向 量, 因为若 $\boldsymbol{A}\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)=\lambda\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)$, 则 $\lambda_{1} \boldsymbol{\alpha}_{1}+\lambda_{2} \boldsymbol{\alpha}_{2}=\lambda\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)$, 由于 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无 关, 可得 $\lambda_{1}=\lambda=\lambda_{2}$, 矛盾.
+<p></p>
+C 不正确. 设矩阵 $\boldsymbol{A}=\left(\begin{array}{ll}1 & 1 \\ 0 & 2\end{array}\right)$, 则 $\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{ll}1 & 0 \\ 1 & 2\end{array}\right)$, 易知, $\boldsymbol{\alpha}=\left(\begin{array}{l}1 \\ 0\end{array}\right)$ 是 $\boldsymbol{A}$ 对应于特 征值 $\lambda=1$ 的特征向量,但 $\boldsymbol{\alpha}$ 却不是 $\boldsymbol{A}^{T}$ 的特征向量.
+<p></p>
+D 不正确, 根据特征值和特征向量的定义, 矩阵 $\boldsymbol{A}$ 的特征向量为非零向 量, 故方程组 $(\boldsymbol{A}-\lambda \boldsymbol{I}) \boldsymbol{X}=\mathbf{0}$ 的零向量解不是 $\boldsymbol{A}$ 的特征向量.
+<p></p>
+<b>评注：</b>
+一般结论是: $\boldsymbol{A}$ 与 $\boldsymbol{A}^{-1}$ 有相同的特征向量, 但不一定有相同的特征值; $\boldsymbol{A}$ 与 $A^{\mathrm{T}}$ 有相同的特征值, 但不一定有相同的特征向量; $A$ 的同一特征值对应的特征 向量的任一非零线性组合都是 $A$ 的特征向量, 不同特征值对应的特征向量的非零 线性组合都不是 $\boldsymbol{A}$ 的特征向量.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>45. </b>  
+不是“$-1$ 是 $\boldsymbol{A}$ 的特征值”的充分条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $A^{2}=\boldsymbol{I}$
+<p></p>
+$\mathrm{B}$. $R(\boldsymbol{A}+\boldsymbol{I}) < n$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 中每行元素之和为 $-1$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 且 1 是 $\boldsymbol{A}$ 的特征值
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.45").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.45").style.display="none"'> 
+<div id= "divID2.45" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>   对 A, 取 $A=I$, 显然 $A^{2}=I$, 但 $-1$ 不是 $A$ 的特征值, 故应选 A. 
+<p></p>
+对 B, 由 $R(\boldsymbol{A}+\boldsymbol{I}) < n$ 知, $|\boldsymbol{A}+\boldsymbol{I}|=0 \Rightarrow|-\boldsymbol{I}-\boldsymbol{A}|=0$, 则 $-1$ 是 $\boldsymbol{A}$ 的特征值; 
+<p></p>
+对 C, 记 $\boldsymbol{\alpha}=(1, \cdots, 1)^{\mathrm{T}}$, 则有 $\boldsymbol{A} \boldsymbol{\alpha}=-\boldsymbol{\alpha},-1$ 是 $\boldsymbol{A}$ 的特征值;
+<p></p>
+对 D, 由条件知，
+$$
+0=|\boldsymbol{I}-\boldsymbol{A}|=\left|(\boldsymbol{I}-\boldsymbol{A})^{\mathrm{T}}\right|=\left|\boldsymbol{I}-\boldsymbol{A}^{\mathrm{T}}\right|=|\boldsymbol{I}+\boldsymbol{A}|=(-1)^{n}|-\boldsymbol{I}-\boldsymbol{A}|,
+$$
+得 $|-\boldsymbol{I}-\boldsymbol{A}|=0$, 所以 $-1$ 是 $\boldsymbol{A}$ 的特征值.
+<p></p>
+<b>评注：</b> 判断数 $\lambda$ 是 $n$ 阶 $\boldsymbol{A}$ 矩阵的特征值的常见方法有: $\boldsymbol{A \alpha}=\lambda \boldsymbol{\alpha} ;|\lambda \boldsymbol{I}-\boldsymbol{A}|=0$; $\lambda \boldsymbol{I}-\boldsymbol{A}$ 不可逆; $R(\lambda \boldsymbol{I}-\boldsymbol{A})<n ; \boldsymbol{A}$ 中每行元素之和为 $\lambda$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>46. </b>  
+已知 $\boldsymbol{A}$ 是 3 阶矩阵, $R(\boldsymbol{A})=1$, 则 $\lambda=0$ $(\qquad)$.
+<p></p>
+$\mathrm{A}$. 必是 $\boldsymbol{A}$ 的二重特征值
+<p></p>
+$\mathrm{B}$. 至少是 $\boldsymbol{A}$ 的二重特征值
+<p></p>
+$\mathrm{C}$. 至多是 $\boldsymbol{A}$ 的二重特征值
+<p></p>
+$\mathrm{D}$. 一重、二重、三重特征值都可能
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.46").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.46").style.display="none"'> 
+<div id= "divID2.46" style= "display:none"> 
+正确答案：B  
+<p></p>
+<b>分析：</b>   因为 $R(0 \boldsymbol{I}-\boldsymbol{A})=R(\boldsymbol{A})=1$, 所以 $(0 \boldsymbol{I}-\boldsymbol{A}) \boldsymbol{X}=\mathbf{0}$ 基础解系含有 2 个解向 量, 即 $\boldsymbol{A}$ 对应 $\lambda=0$ 有两个线性无关的特征向量, 根据特征值的代数重数要大于或
+等于其几何重数知, $\lambda=0$ 至少是二重特征值, 也可能是三重. 如 $\boldsymbol{A}=\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)$, $R(\boldsymbol{A})=1 \cdot \lambda=0$ 是三重特征值.
+</div> 
+</li>
+
+
+
+<p></p> 
+<li>
+<b>47. </b>  
+设矩阵 $\boldsymbol{B}=\left(\begin{array}{lll}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0\end{array}\right)$, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 则 $R(\boldsymbol{A}-2 \boldsymbol{I})+R(\boldsymbol{A}-\boldsymbol{I})=(\qquad)$.
+<p></p>
+$\mathrm{A}$. $2$$\qquad$
+$\mathrm{B}$. $3$$\qquad$
+$\mathrm{C}$. $4$$\qquad$
+$\mathrm{D}$. $5$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.47").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.47").style.display="none"'> 
+<div id= "divID2.47" style= "display:none"> 
+正确答案：C  
+<p></p>
+<b>分析：</b>   利用相似矩阵具有相同的秩即可求解. 由 $\boldsymbol{A} \sim \boldsymbol{B}$ 知, $\boldsymbol{A}-2 \boldsymbol{I} \sim \boldsymbol{B}-2 \boldsymbol{I}, \boldsymbol{A}-\boldsymbol{I} \sim$ $\boldsymbol{B}-\boldsymbol{I}$, 易求得 $R(\boldsymbol{B}-2 \boldsymbol{I})=3, R(\boldsymbol{B}-\boldsymbol{I})=1$, 所以
+$$
+R(\boldsymbol{A}-2 \boldsymbol{I})+R(\boldsymbol{A}-\boldsymbol{I})=R(\boldsymbol{B}-2 \boldsymbol{I})+R(\boldsymbol{B}-\boldsymbol{I})=4 .
+$$
+<p></p>
+<b>评注：</b> 
+一般情况有: 设 $g(x)$ 是多项式, 若矩阵 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $g(\boldsymbol{A}) \sim g(\boldsymbol{B})$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>48. </b>  
+设 $n$ 阶方阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值, 则下列说法正确的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A} \sim \boldsymbol{B}$
+<p></p>
+$\mathrm{B}$. 存在对角矩阵 $\boldsymbol{\varLambda}$, 使得 $\boldsymbol{A} \sim \boldsymbol{\varLambda} \sim \boldsymbol{B}$
+<p></p>
+$\mathrm{C}$. $\operatorname{det} \boldsymbol{A}=\operatorname{det} \boldsymbol{B}$
+<p></p>
+$\mathrm{D}$. 存在正交矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{\mathrm{T}} \boldsymbol{A P}=\boldsymbol{B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.48").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.48").style.display="none"'> 
+<div id= "divID2.48" style= "display:none"> 
+正确答案： C 
+<p></p>
+<b>分析：</b>  相似矩阵有相同的特征值, 反之则不成立. 例如二阶单位矩阵 $\boldsymbol{I}$ 和矩
+阵 $\boldsymbol{A}=\left(\begin{array}{ll}1 & 1 \\ 0 & 1\end{array}\right)$ 有相同的特征值 $1$ (二重), 但它们不相似, 因为与单位矩阵相似的 必然是单位矩阵, 所以 A、B、D 均不对. 由于矩阵的行列式等于其所有特征 值的乘积, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值, 所以两矩阵有相同的行列式.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>49. </b>  
+$n$ 阶矩阵 $\boldsymbol{A}$ 能够相似对角化的充要条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}$ 有 $n$ 个不全相同的特征值
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 有 $n$ 个互异的特征值
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 有 $n$ 个不相同的特征向量
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}$ 的任一特征值的重数与其线性无关特征向量的个数相同
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.49").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.49").style.display="none"'> 
+<div id= "divID2.49" style= "display:none"> 
+正确答案： D
+<p></p>
+<b>分析：</b>   A 不正确,如 $\boldsymbol{A}=\boldsymbol{I}, n$ 个特征值全相同,但它与自身相似;
+<p></p>
+B 是矩阵 $\boldsymbol{A}$ 相似于对角矩阵的充分而非必要的条件;
+<p></p>
+C 不正确, 应为 $n$ 个线性无关的特征向量;
+<p></p>
+若 D 成立, 则 $\boldsymbol{A}$ 一定有 $n$ 个线性无关的特征向量, 从而能够相似对角化, 反之亦然.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>50. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, 且 $\boldsymbol{A} \sim \boldsymbol{B}, \boldsymbol{I}$ 为 $n$ 阶单位阵, 则有$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\lambda \boldsymbol{I}-\boldsymbol{A}=\lambda \boldsymbol{I}-\boldsymbol{B}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征值和特征向量
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似于同一对角矩阵
+<p></p>
+$\mathrm{D}$. 对任意常数 $t$, 有 $t \boldsymbol{I}-\boldsymbol{A} \sim \boldsymbol{I}-\boldsymbol{B}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.50").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.50").style.display="none"'> 
+<div id= "divID2.50" style= "display:none"> 
+正确答案： D 
+<p></p>
+<b>分析：</b>   A 中, $\lambda \boldsymbol{I}-\boldsymbol{A}=\lambda \boldsymbol{I}-\boldsymbol{B} \Leftrightarrow \boldsymbol{A}=\boldsymbol{B}$, 显然不对;
+<p></p>
+B 不对,相似矩阵有相同的特征值但末必有相同的特征向量;
+<p></p>
+C 不对, $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 不一定相似于对角形;
+<p></p>
+对 D, 由 $\boldsymbol{A}=\boldsymbol{P}^{-1} B \boldsymbol{B} \Rightarrow t \boldsymbol{I}-\boldsymbol{A}=\boldsymbol{P}^{-1}(t \boldsymbol{I}-\boldsymbol{B}) \boldsymbol{P}$ 正确.
+</div> 
+</li>
+
+<p></p> 
+<li>
+<b>51. </b>  
+设 $\boldsymbol{A}$ 是 $n \geq 2$ 阶实矩阵, 则如下哪一个不是 $\boldsymbol{A}$ 正交的充分必要条件$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{A}^{\rm T} \boldsymbol{A}=\boldsymbol{I}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{A}^{-1}$ 是正交矩阵
+<p></p>
+$\mathrm{C}$. 存在正交矩阵 $\boldsymbol{B}$ 使得 $\boldsymbol{A}=\boldsymbol{B}^{\rm T} \boldsymbol{B}$
+<p></p>
+$\mathrm{D}$. $\boldsymbol{A}^*$ 是正交矩阵
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.51").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.51").style.display="none"'> 
+<div id= "divID2.51" style= "display:none"> 
+正确答案：C
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>52. </b>  
+设 $\boldsymbol{A}$ 是 $n$ 阶实对称矩阵, $\boldsymbol{P}$ 是 $n$ 阶可逆矩阵. 已知 $n$ 维列向量 $\boldsymbol{\alpha}$ 是属于特征 值 $\lambda$ 的特征向量, 则矩阵 $\left(\boldsymbol{P}^{-1} \boldsymbol{AP}\right)^{\rm T}$ 属于特征值 $\lambda$ 的特征向量是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{P}^{-1} \boldsymbol{\alpha}$
+<p></p>
+$\mathrm{B}$. $\boldsymbol{P}^{\rm T}\boldsymbol{\alpha}$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{P}\boldsymbol{\alpha}$
+<p></p>
+$\mathrm{D}$. $\left(\boldsymbol{P}^{-1}\right)^{\rm T}\boldsymbol{\alpha}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.52").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.52").style.display="none"'> 
+<div id= "divID2.52" style= "display:none"> 
+正确答案：B
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>53. </b>  
+已知$\boldsymbol{A}$ 为 $3$ 阶矩阵, $\boldsymbol{A} + 2\boldsymbol{E}$ , $\boldsymbol{A} + 3\boldsymbol{E}$ 和 $\boldsymbol{A} + \boldsymbol{E}$ 均不可逆, 则$\boldsymbol{A} + 5\boldsymbol{E}=$ $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $6$$\qquad$
+$\mathrm{B}$. $-6$$\qquad$
+$\mathrm{C}$. $-24$$\qquad$
+$\mathrm{D}$. $24$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.53").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.53").style.display="none"'> 
+<div id= "divID2.53" style= "display:none"> 
+正确答案：D
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>54. </b>  
+$\boldsymbol{A}=\left(\begin{array}{lll}
+1 & a & 1 \\
+a & b & a \\
+1 & a & 1
+\end{array}\right)$  与 $\boldsymbol{B}=\left(\begin{array}{lll}
+2 & & \\
+& b & \\
+& & 0
+\end{array}\right)$相似的充分必要条件是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $a=0$, $b=2$;
+<p></p>
+$\mathrm{B}$. $a=0$, $b$ 为任意常数;
+<p></p>
+$\mathrm{C}$. $a=2$, $b=0$;
+<p></p>
+$\mathrm{D}$. $a=2$, $b$ 为任意常数.
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.54").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.54").style.display="none"'> 
+<div id= "divID2.54" style= "display:none"> 
+正确答案：B
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>55. </b>  
+设 $\boldsymbol{A}$ 为三阶方阵, $\boldsymbol{A}$ 的特征值为 $1,-2,3$, 则下列矩阵中满秩矩阵是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $\boldsymbol{I}-\boldsymbol{A}$$\quad$
+$\mathrm{B}$. $2 \boldsymbol{I}-\boldsymbol{A}$$\quad$
+$\mathrm{C}$. $2 \boldsymbol{I}+\boldsymbol{A}$$\quad$
+$\mathrm{D}$. $-3 \boldsymbol{I}+\boldsymbol{A}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.55").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.55").style.display="none"'> 
+<div id= "divID2.55" style= "display:none"> 
+正确答案：B
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>56. </b>  
+二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=\left(x_{1}, x_{2}, x_{3}\right)\left(\begin{array}{lll}1 & 2 & 1 \\ 0 & 1 & 0 \\ 1 & 2 & 1\end{array}\right)\left(\begin{array}{l}x_{1} \\ x_{2} \\ x_{3}\end{array}\right)$ 的秩为 $(\qquad)$.
+<p></p>
+$\mathrm{A}$. $0$$\quad$
+$\mathrm{B}$. $2$$\quad$
+$\mathrm{C}$. $1$$\quad$
+$\mathrm{D}$. $3$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.56").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.56").style.display="none"'> 
+<div id= "divID2.56" style= "display:none"> 
+正确答案：C
+<p></p> 
+<b>分析：</b>  二次型的矩阵必须是对称矩阵, 表达式中的矩阵 $\left(\begin{array}{lll}1 & 2 & 1 \\ 0 & 1 & 0 \\ 1 & 2 & 1\end{array}\right)$ 不是二次型的矩阵, 应将其还原为对称矩阵 $\left(\begin{array}{lll}1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1\end{array}\right)$, 再计算秩.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>57. </b>  
+设 $\boldsymbol{A}, \boldsymbol{B}$ 均是 $n$ 阶实对称矩阵, 则正确的命题是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似
+<p></p>
+$\mathrm{B}$. 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似,则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 合同
+<p></p>
+$\mathrm{C}$. 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 合同,则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似
+<p></p>
+$\mathrm{D}$. 若 $\boldsymbol{A}$ 与 $B$ 等价,则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 合同
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.57").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.57").style.display="none"'> 
+<div id= "divID2.57" style= "display:none"> 
+正确答案：B
+<p></p>
+<b>分析：</b>  同型矩阵等价的充要条件是其具有相同的秩.相似的矩阵具有相同的 秩, 相同的特征多项式, 相同的特征值, 相同的行列式. 合同的矩阵具有相同的秩.
+<p></p>
+相似的矩阵必然等价, 合同的矩阵必然等价, 但反过来不一定成立. 相似的矩 阵不一定合同, 合同的矩阵不一定相似.
+<p></p>
+但由于实对称矩阵可以相似对角化, 所以若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 则存在正交矩阵 $\boldsymbol{P}$ 和 $\boldsymbol{Q}$ 使得
+$$
+\boldsymbol{P}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{P}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)=\boldsymbol{Q}^{\mathrm{T}} \boldsymbol{B} \boldsymbol{Q},
+$$
+其中 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 为矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的所有特征值. 从而,
+$$
+\boldsymbol{A}=\left(\boldsymbol{Q P ^ { - 1 }}\right)^{\mathrm{T}} \boldsymbol{B}\left(\boldsymbol{Q P ^ { - 1 }}\right) .
+$$
+所以若两个实对称矩阵相似,则其必然合同.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>58. </b>  
+若二次型的秩为 $r$, 符号差为 $s$ 且 $s$ 为偶数, 则下列结论正确的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. $r$ 为偶数且 $|s| \leqslant r$
+<p></p>
+$\mathrm{B}$. $r$ 为奇数且 $|s| \leqslant r$
+<p></p>
+$\mathrm{C}$. $r$ 为奇数且 $|s|>r$
+<p></p>
+$\mathrm{D}$. $r$ 为偶数且 $|s|>r$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.58").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.58").style.display="none"'> 
+<div id= "divID2.58" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>  设二次型的正惯性指数为 $p$, 则 $s=2 p-r$, 即 $s+r=2 p$, 所以 $r$ 与 $s$ 的奇偶 性相同. 因为 $0 \leqslant p \leqslant r$, 所以 $0 \leqslant s+r \leqslant 2 r$, 于是 $-r \leqslant s \leqslant r$, 即 $|s| \leqslant r$.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>59. </b>  
+已知矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & -1 & -1 \\ -1 & 4 & 2 \\ -1 & 2 & 4\end{array}\right)$, 则矩阵 $\boldsymbol{A}$ 是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 负定的$\quad$
+$\mathrm{B}$. 半负定的$\quad$
+$\mathrm{C}$. 半正定的$\quad$
+$\mathrm{D}$. 正定的
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.59").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.59").style.display="none"'> 
+<div id= "divID2.59" style= "display:none"> 
+正确答案：D
+<p></p>
+<b>分析：</b>  实对称矩阵正定的充分必要条件是其顺序主子式全大于零, 因此, 只需验证矩阵的三个顺序主子式即可.
+</div> 
+</li>
+
+
+<p></p> 
+<li>
+<b>60. </b>  
+下列不是 $n$ 元二次型 $f(\boldsymbol{X})=\boldsymbol{X}^{\top} \boldsymbol{A} \boldsymbol{X}$ 为正定二次型的充分必要条件的是$(\qquad)$.
+<p></p>
+$\mathrm{A}$. 存在正交矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{\mathrm{T}} \boldsymbol{A P}=\boldsymbol{I}$
+<p></p>
+$\mathrm{B}$. 正惯性指数为 $n$
+<p></p>
+$\mathrm{C}$. $\boldsymbol{A}$ 的特征值全为正实数
+<p></p>
+$\mathrm{D}$. $f(\boldsymbol{X})$ 的规范形为 $y_{1}^{2}+y_{2}^{2}+\cdots+y_{n}^{2}$
+<br><br>
+<input type=button value= "显示答案" onclick='document.getElementById("divID2.60").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divID2.60").style.display="none"'> 
+<div id= "divID2.60" style= "display:none"> 
+正确答案：A
+<p></p>
+<b>分析：</b>  二次型 $f(\boldsymbol{X})=\boldsymbol{X}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{X}$ 是正定二次型的几个常见的充分必要条件:
+<p></p>
+$\boldsymbol{A}$ 的特征值全为正实数 $\Leftrightarrow f(\boldsymbol{X})$ 的正惯性指数为 $n \Leftrightarrow \boldsymbol{A}$ 与单位矩阵 $\boldsymbol{I}$ 合同 $\Leftrightarrow \boldsymbol{A}$ 的各阶顺序主子式全大于零.
+<p></p>
+可见 B、C、D 均是正定二次型的充要条件. 
+<p></p>
+A 中的条件只是充分条件而非必要条件, 即从 $f(\boldsymbol{X})=\boldsymbol{X}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{X}$ 是正定二次型 出发, 只能推出存在可逆矩阵 $\boldsymbol{P}$, 使得 $\boldsymbol{P}^{\mathrm{T}} \boldsymbol{A P}=\boldsymbol{I}, \boldsymbol{P}$ 不一定是正交矩阵.
+</div> 
+</li>
+
+
+
+</ul>
+<a href="#C0">返回顶部</a>
+
+
+
+
+<br>
+<center>
+<IMG SRC="http://home.ustc.edu.cn/cgi-bin/Count.cgi?df=zmhong.dat">
+<br> Copyright &copy; 2023 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
