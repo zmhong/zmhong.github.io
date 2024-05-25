@@ -14,42 +14,7 @@
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
 </script>
-<script>
-    function checkAnswers() {
-        var questions = [
-            { name: '1', correctAnswer: 'a' },
-            { name: '2', correctAnswer: 'b' },
-            { name: '3', correctAnswer: 'c' },
-            { name: '4', correctAnswer: 'd' },
-            { name: '5', correctAnswer: 'd' },
-            { name: '6', correctAnswer: 'd' },
-            { name: '7', correctAnswer: 'c' },
-            { name: '8', correctAnswer: 'c' },
-            { name: '9', correctAnswer: 'b' },
-            { name: '10', correctAnswer: 'b' },
-            { name: '11', correctAnswer: 'c' },
-            { name: '12', correctAnswer: 'd' },
-            { name: '13', correctAnswer: 'c' },
-            { name: '14', correctAnswer: 'c' },
-            { name: '15', correctAnswer: 'c' }
-        ];
-        var results = '';
-        var score = 0;
 
-        questions.forEach(function(question) {
-            var userAnswer = document.querySelector('input[name="' + question.name + '"]:checked');
-            if (userAnswer && userAnswer.value === question.correctAnswer) {
-                score++;
-                results += '<p>第 ' + question.name + ' 题回答正确！</p >';
-            } else {
-                results += '<p>第 ' + question.name + ' 题回答错误。</p >';
-            }
-        });
-
-        results += '<p>你的得分是：' + score + '分。</p >';
-        document.getElementById('results').innerHTML = results;
-    }
-</script>
 <title>线性代数练习题</title>
 </head>
 <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
@@ -69,8 +34,12 @@
 <h2><a name="C0"><strong>目录:</strong></a><br></h2>
 
 <ul>
-<li><a href="#C2">返回主页</a></li>
-<li><a href="#C3">选择题</a></li>
+<li><a href="https://zmhong.github.io/math/linearalgebra.html" style="text-decoration:none">返回主页</a></li>
+<li><a href="#C1">第一章选择题</a></li>
+<li><a href="#C2">第二章选择题</a></li>
+<li><a href="#C3">第三章选择题</a></li>
+<li><a href="#C4">第四章选择题</a></li>
+<li><a href="#C5">第五章选择题</a></li>
 </ul>
 
 
@@ -78,7 +47,7 @@
 
 
 
-<h2><a name="C3">学习指导书选择题</a></h2>
+<h2><a name="C1">第一章选择题</a></h2>
 
 <ul>
 <p></p> 
@@ -361,6 +330,14 @@ $\boldsymbol{A}^{4}\left(\boldsymbol{A B}{ }^{3}\right)=\boldsymbol{A}^{4}\left(
 </div> 
 </li>
 
+</ul>
+
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C2">第二章选择题</a></h2>
+
+<ul>
 <p></p> 
 <li>
 <b>13. </b> 设$n$阶行列式$D_n$, 则$D_n=0$的必要条件是$(\qquad)$.
@@ -742,6 +719,14 @@ $\mathrm{D}$. 都等于 $n$
 </div> 
 </li>
 
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C3">第三章选择题</a></h2>
+
+<ul>
 
 <p></p> 
 <li>
@@ -1160,6 +1145,15 @@ $$
 </div> 
 </li>
 
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C4">第四章选择题</a></h2>
+
+<ul>
+
 <p></p> 
 <li>
 <b>41. </b>  
@@ -1535,6 +1529,14 @@ $\mathrm{D}$. $-3 \boldsymbol{I}+\boldsymbol{A}$
 </li>
 
 
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C5">第五章选择题</a></h2>
+
+<ul>
+
 <p></p> 
 <li>
 <b>56. </b>  
@@ -1671,8 +1673,7 @@ A 中的条件只是充分条件而非必要条件, 即从 $f(\boldsymbol{X})=\b
 
 <br>
 <center>
-<IMG SRC="http://home.ustc.edu.cn/cgi-bin/Count.cgi?df=zmhong.dat">
-<br> Copyright &copy; 2023 Hong  All Rights Reserved
+<br> Copyright &copy; 2024 Hong  All Rights Reserved
 </center>
 
 </font>
