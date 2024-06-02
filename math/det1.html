@@ -950,7 +950,8 @@ $$
 
 例如, 以数 $k$ 乘以第 $i$ 行 (列) 的元素加到第 $j$ 行 (列) 的对应元素上, 记作 $r_{j}+k \times r_{i}\left(c_{j}+k \times c_{i}\right)$, 有
 $$
-\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ a_{j 1} & a_{j 2} & \cdots & a_{j n} \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right| \xlongequal{r_{j}+k \times r_{i}}\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ \left(a_{j 1}+k a_{i 1}\right) & \left(a_{j 2}+k a_{i 2}\right) & \cdots & \left(a_{j n}+k a_{i n}\right) \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right| \quad(i \neq j).
+\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ a_{j 1} & a_{j 2} & \cdots & a_{j n} \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right| 
+\stackrel{r_{j}+k \times r_{i}}{=\!=\!=}\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ \left(a_{j 1}+k a_{i 1}\right) & \left(a_{j 2}+k a_{i 2}\right) & \cdots & \left(a_{j n}+k a_{i n}\right) \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right| \quad(i \neq j).
 $$
 
 \textbf{注意:} $r_{j}+k \times r_{i}$ 不能写作 $k \times r_{i}+r_{j}$.
@@ -1070,7 +1071,7 @@ D & =[a+(n-1) b]\left|\begin{array}{ccccc}
 \vdots & \vdots & \vdots &   & \vdots \\
 1 & b & b & \cdots & a
 \end{array}\right| \\
-& \xlongequal[i=2,3, \cdots, n]{r_{i}+(-1) \times r_{1}}[a+(n-1) b]\left|\begin{array}{ccccc}
+& \stackrel{\substack{r_{i}+(-1) \times r_{1} \\ i=2,3, \cdots, n}}{=\!=\!=} [a+(n-1) b]\left|\begin{array}{ccccc}
 1 & b & b & \cdots & b \\
 0 & a-b & 0 & \cdots & 0 \\
 0 & 0 & a-b & \cdots & 0 \\
@@ -1085,14 +1086,14 @@ D & =[a+(n-1) b]\left|\begin{array}{ccccc}
 解法 $2$ $\quad$
 $$
 \begin{aligned}
-D & \xlongequal[i=2,3, \cdots, n]{r_{i}+(-1) \times r_{1}}\left|\begin{array}{ccccc}
+D & \stackrel{\substack{r_{i}+(-1) \times r_{1} \\ i=2,3, \cdots, n}}{=\!=\!=} \left|\begin{array}{ccccc}
 a & b & b & \cdots & b \\
 b-a & a-b & 0 & \cdots & 0 \\
 b-a & 0 & a-b & \cdots & 0 \\
 \vdots & \vdots & \vdots & & \vdots \\
 b-a & 0 & 0 & \cdots & a-b
 \end{array}\right| \\
-& \xlongequal[i=2,3, \cdots, n]{c_{1}+c_{i}}\left|\begin{array}{ccccc}
+& \stackrel{\substack{c_{1}+c_{i} \\ i=2,3, \cdots, n}}{=\!=\!=} \left|\begin{array}{ccccc}
 a+(n-1) b & b & b & \cdots & b \\
 0 & a-b & 0 & \cdots & 0 \\
 0 & 0 & a-b & \cdots & 0 \\
