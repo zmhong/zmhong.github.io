@@ -285,9 +285,19 @@ $$
 </p>
 </div> 
 </p>
-
-
-
+  
+<li>利用SageMath在线代码模块求解例 $2$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex2").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex2").style.display="none"'> 
+<div id= "divIDdaimaex2" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,-1,2,1,0],[2,-2,4,2,0],[3,0,6,-1,1],[0,3,0,0,1]])
+show(A)
+show(A.echelon_form()) #矩阵A的行阶梯形矩阵
+show(A.rref())         #矩阵A的简化行阶梯形矩阵
+show(A.rank())         #矩阵A的秩
+</script></div>
+</div>
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $3$：</b></font>
