@@ -1524,8 +1524,8 @@ D, & i=j, \\
 \end{array}\right.
 $$
 
-
-\begin{example}%例 17 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $17$：</b></font>
 计算 $n$ 阶行列式
 $$
 D_{n}=\left|\begin{array}{cccccc}
@@ -1537,9 +1537,11 @@ x & -1 & 0 & \cdots & 0 & 0 \\
 a_{n} & a_{n-1} & a_{n-2} & \cdots & a_{2} & x+a_{1}
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample17").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample17").style.display="none"'> 
+<div id= "divIDexample17" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>  
 由行列式 $D_{n}$ 可知, $D_{1}=\left|x+a_{1}\right|=x+a_{1}$. 将 $D_{n}$ 按第一列展开, 有
 $$
 D_{n}=x\left|\begin{array}{cccccc}x & -1 & 0 & \cdots & 0 & 0 \\ 0 & x & -1 & \cdots & 0 & 0 \\ \vdots & \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & 0 & \cdots & x & -1 \\ a_{n-1} & a_{n-2} & a_{n-3} & \cdots & a_{2} & x+a_{1}\end{array}\right|+(-1)^{n+1} a_{n}\left|\begin{array}{ccccc}-1 & 0 & \cdots & 0 & 0 \\ x & -1 & \cdots & 0 & 0 \\ 0 & x & \cdots & 0 & 0 \\ \vdots & \vdots & & \vdots & \vdots \\ 0 & 0 & \cdots & x & -1\end{array}\right|,
@@ -1556,12 +1558,15 @@ D_{n} & =x D_{n-1}+a_{n}=x\left(x D_{n-2}+a_{n-1}\right)+a_{n} \\
 & =x^{n}+a_{1} x^{n-1}+a_{2} x^{n-2}+\cdots+a_{n-1} x+a_{n} .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 例 $17$ 是利用已知行列式的特性, 建立起同类型的 $n$ 阶行列式与 $n-1$ 阶 (或更低阶) 行列式间的关系, 即导出递推公式, 然后得出行列式的值. 这种计算行列式的方法称为递推公式法.
 
 
-\begin{example}%例 18 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $18$：</b></font>
 求方程 $f(x)=0$ 的根, 其中
 $$
 f(x)=\left|\begin{array}{cccc}
@@ -1571,9 +1576,11 @@ x-3 & x-6 & x-4 & x-1 \\
 x-4 & x-8 & 2 x-5 & x-2
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample18").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample18").style.display="none"'> 
+<div id= "divIDexample18" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>   
 $x=0$ 是方程 $f(x)=0$ 的一个根, 因为若 $x=0$, 行列式第 $1,2$ 列的完素对应成比例. 要求其他根, 需展开这个行列式, 将第 $1$ 列乘以 $-1$ 分别加到第 $2,3,4$ 列, 再将变换后的第 $2$ 列加到第 $4$ 列, 结合例 $8$ , 即得
 $$
 \begin{aligned}
@@ -1600,7 +1607,9 @@ x-1 & -2
 \end{aligned}
 $$
 所以方程 $f(x)=0$ 有两个根: $0$ 与 $-1$ .
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 </ul>
