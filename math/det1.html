@@ -148,7 +148,8 @@ $$
 
 
 
-\begin{example}%例 1 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 求解二元一次线性方程组
 $$
 \left\{\begin{aligned}
@@ -156,9 +157,11 @@ $$
 x_{1}-2 x_{2} & =3.
 \end{aligned}\right.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于
 $$
 D=\left|\begin{array}{rr}
@@ -183,7 +186,9 @@ $$
 $$
 x_{1}=\frac{D_{1}}{D}=\frac{17}{7},   \quad x_{2}=\frac{D_{2}}{D}=- \frac{2}{7}.
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 类似地,  对于三元一次线性方程组
 \begin{empheq}[left=\empheqlbrace]{align}
@@ -291,7 +296,8 @@ $$
 
 
 
-\begin{example}%例 2 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 求解线性方程组
 $$
 \left\{\begin{array}{l}
@@ -300,9 +306,11 @@ $$
 3 x_{1}-2 x_{2}+4 x_{3}=11.
 \end{array}\right.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 系数行列式为
 $$
 \begin{aligned}
@@ -339,7 +347,9 @@ x_{1}=\frac{D_{1}}{D}=\frac{180}{60}=3,   \quad
 x_{2}=\frac{D_{2}}{D}=\frac{60}{60}=1,   \quad 
 x_{3}=\frac{D_{3}}{D}=\frac{60}{60}=1.
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
@@ -389,15 +399,18 @@ $$
 $$
 
 
-\begin{example}%例 3 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 计算以下各排列的逆序数,  并指出它们的奇偶性:
 
 $(1)$ $42531$ ;
 
 $(2)$ $135 \cdots(2 n-1) 246 \cdots(2 n)$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $(1)$ 对于所给排列,  $4$ 排在首位,  其逆序数为 $0$ ; $2$ 的前面有一个比它大的数,  其逆序数为 $1$ ; $5$ 的前面没有比它大的数,  其逆序数为 $0$ ; $3$ 的前面有两个比它大的数,  其逆序数为 $2$ ; $1$ 的前面有四个比它大的数,  其逆序数为 $4$ . 把这些数加起来,  即
 $$
 0+1+0+2+4=7,
@@ -409,7 +422,9 @@ $$
 \tau[135 \cdots(2 n-1) 246 \cdots(2 n)]=0+(n-1)+(n-2)+\cdots+2+1+0=\frac{n(n-1)}{2}.
 $$
 当 $n=4 k$ 或 $4 k+1$ 时, 所给排列为偶排列; 当 $n=4 k+2$ 或 $4 k+3$ 时, 所给排列为奇排列.
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
@@ -512,7 +527,8 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 下面来看几个例子.
 
 
-\begin{example}%例 4 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 计算四阶行列式
 $$
 D=\left|\begin{array}{llll}
@@ -522,17 +538,21 @@ D=\left|\begin{array}{llll}
 4 & 0 & 0 & 0
 \end{array}\right|.
 $$
-\end{example}
-
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 根据定义,  $D$ 的展开式中应有 $4 !=24$ 项. 考虑其一般项 $a_{1 j_{1}} a_{2 j_{2}} a_{3 j_{3}} a_{4 j_{4}}$,  由于第一行中除 $a_{14}$ 外其余元素全为 $0$ ,  故只考虑 $j_{1}=4$; 同理,  其余行中只需考虑 $j_{2}=3,  j_{3}=2$,  $j_{4}=1$. 这就是说,  行列式中不为 $0$ 的项只有 $a_{14} a_{23} a_{32} a_{41}$,  而 $\tau(4321)=6$,  这一项前面的符号应该是正号. 因此有
 $$
 D=1 \times 2 \times 3 \times 4=24.
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
-\begin{example}%例 5 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 计算 $n$ 阶行列式
 $$
 D=\left|\begin{array}{ccccc}
@@ -544,9 +564,11 @@ a_{n 1} & a_{n 2} & a_{n 3} & \cdots & a_{n n}
 \end{array}\right| .
 $$
 上述行列式称为下三角形行列式,  它的特点是 $a_{11},  a_{22},  \cdots,  a_{n n}$ 所在的主对角线以上的元素全为 $0$ ,  即当 $i<j$ 时,  元素 $a_{i j}=0$.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $D$ 的展开式中的一般项为
 $$
 (-1)^{\tau\left(j_{1} j_{2} \cdots j_{n}\right)} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}.
@@ -561,7 +583,9 @@ a_{31} & a_{32} & a_{33} & \cdots & 0 \\
 a_{n 1} & a_{n 2} & a_{n 3} & \cdots & a_{n n}
 \end{array}\right|=a_{11} a_{22} \cdots a_{n n}.
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 在一个行列式中, 如果主对角线以下的元素全为 $0$ ,  即当 $i>j$ 时,  元素 $a_{i j}=0$, 则该行列式称为上三角形行列式. 同理可以证明,  $n$ 阶上三角形行列式
 $$
@@ -585,7 +609,8 @@ a_{11} & & & \\
 $$
 其中,  未写出的元素全为 $0$ .
 
-\begin{example}%例 6 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 证明
 $$
 \left|\begin{array}{cccc}
@@ -596,15 +621,19 @@ a_{n 1} & & &
 \end{array}\right|=(-1)^{\frac{n(n-1)}{2}} a_{1 n} a_{2, n-1} \cdots a_{n-1,2} a_{n 1} .
 $$
 其中 $a_{1 n},  a_{2,  n-1},  \cdots,  a_{n 1}$ 所在的副对角线以下的元素全为 $0$ .
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 由于行列式的值为 $\sum_{j_{1} j_{2} \cdots j_{n}}(-1)^{\tau} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}$,  因此只需对可能不为 $0$ 的乘积 $(-1)^{\tau} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}$ 求和. 考虑第 $n$ 行元素 $a_{n j_{n}}$,  知 $j_{n}=1$ 时 $a_{n j_{n}}$ 可能不为 $0$ ,  再考虑第 $n-1$ 行元素 $a_{n-1,  j_{n-1}}$,  知 $j_{n-1}=1$ 或 $j_{n-1}=2$ 时 $a_{n-1,  j_{n-1}}$ 可能不为 $0$ ,  由 $j_{n}=1$ 知,  $j_{n-1}=2$,  以此类推,  $j_{2}=n-1,  j_{1}=n$,  故排列 $j_{1} j_{2} \cdots j_{n}$ 只能是排列 $n(n-1) \cdots 21$,  它的逆序数为 $\tau=(n-1)+ (n-2)+\cdots+2+1=\frac{n(n-1)}{2}$. 所以行列式的值为
 $$
 (-1)^{\frac{n(n-1)}{2}} a_{1 n} a_{2,  n-1} \cdots a_{n-1, 2} a_{n 1}.
 $$
 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 特别地,  有
@@ -658,11 +687,14 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 \end{array}\right|=\sum_{i_{1} i_{2} \cdots i_{n}}(-1)^{\tau\left(i_{1} i_{2} \cdots i_{n}\right)} a_{i_{1} 1} a_{i_{2} 2} \cdots a_{i_{n} n}.
 \end{equation}
 
-\begin{example}%例 7 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 试判断 $a_{14} a_{23} a_{31} a_{42} a_{56} a_{65}$ 和 $-a_{32} a_{43} a_{14} a_{51} a_{25} a_{66}$ 是否都是六阶行列式中的项.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于
 $$
 \tau(431265) = 6, 
@@ -674,9 +706,12 @@ $$
 \tau(341526)+\tau(234156)=5+3=8, 
 $$
 所以 $-a_{32} a_{43} a_{14} a_{51} a_{25} a_{66}$ 不是六阶行列式中的项.
-\end{solution}
+</p>
+</div> 
+</p>
 
-\begin{example}%例 8 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
 设
 $$
 \begin{gathered}
@@ -700,9 +735,11 @@ b_{31} & b_{32} & b_{33}
 \end{gathered}
 $$
 证明 $D=D_{1} D_{2}$.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 记
 $$
 D=\left|\begin{array}{ccc}
@@ -733,7 +770,9 @@ D & =\sum_{p_{1} p_{2} p_{3}} \sum_{q_{1} q_{2} q_{3}}(-1)^{\tau\left(p_{1} p_{2
 \end{aligned}
 $$
 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 
@@ -920,7 +959,8 @@ $$
 
 利用行列式的性质计算行列式, 可以使计算简化. 下面举例说明.
 
-\begin{example}%例 9 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $9$：</b></font>
 计算行列式
 $$
 D=\left|\begin{array}{llll}
@@ -930,10 +970,11 @@ c & a & d & b \\
 a & c & d & b
 \end{array}\right|.
 $$
-\end{example}
-
-
-\begin{solution}%解
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 $$
 D \xlongequal[r_{4}+(-1) \times r_{1}]{r_{3}+(-1) \times r_{2}}\left|\begin{array}{cccc}
 a & c & b & d \\
@@ -942,9 +983,12 @@ c & a & b & d \\
 0 & 0 & d-b & b-d
 \end{array}\right| \xlongequal{\text { 推论 } 1} 0. 
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
-\begin{example}%例 10 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $10$：</b></font>
 计算行列式
 $$
 D=\left|\begin{array}{rrrr}
@@ -954,9 +998,11 @@ D=\left|\begin{array}{rrrr}
 1 & -5 & 3 & -3
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}%解
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample10").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample10").style.display="none"'> 
+<div id= "divIDexample10" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 \begin{align*}
 D & \xlongequal{c_{1} \leftrightarrow c_{2}}-\left|\begin{array}{rrrr}
 1 & 3 & -1 & 2 \\
@@ -988,14 +1034,17 @@ D & \xlongequal{c_{1} \leftrightarrow c_{2}}-\left|\begin{array}{rrrr}
 \end{array}\right|=1 \times 2 \times 8 \times \frac{5}{2}=40.
 \end{align*}
 
-\end{solution}
+</p>
+</div> 
+</p>
 
 例 $10$ 是通过行列式的性质将一个行列式的计算转化为一个上三角形 (或下三角形)行列式的计算. 这种计算行列式的方法称为化三角形法.
 
 一般来说, 将行列式化为上三角形行列式的步骤是: 如果行列式第一列的第一个元素为 $0$ , 则先将第一行与其他行交换, 使得第一列第一个元素不为 $0$ , 注意, 此时行列式的值改变符号; 然后把第一行分别乘以适当的数加到其他各行, 使得第一列除第一个元素外其余元素全为 $0$ ; 再用同样的方法处理除去第一行和第一列后余下的低一阶行列式, 如此继续下去, 直至使它化为上三角形行列式, 这时主对角线上所有元素的乘积就是所求行列式的值.
 
 
-\begin{example}%例 11 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $11$：</b></font> 
 计算 $n$ 阶行列式
 $$
 D=\left|\begin{array}{ccccc}
@@ -1006,9 +1055,11 @@ b & b & a & \cdots & b \\
 b & b & b & \cdots & a
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 解法 $1$ $\quad$ 行列式 $D$ 的主对角线上的元素全为 $a$, 而其余元素全为 $b$, 注意到行列式每行的元素之和是相等的, 因此, 将第 $2,3, \cdots, n$ 列都加到第 $1$ 列, 然后提出第 $1$ 列的公因子 $a+(n-1) b$, 得到
 \begin{align*}
 D & =[a+(n-1) b]\left|\begin{array}{ccccc}
@@ -1050,7 +1101,9 @@ a+(n-1) b & b & b & \cdots & b \\
 & =[a+(n-1) b](a-b)^{n-1} .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
@@ -1241,7 +1294,8 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 
 定理 $4$ 称为行列式的按行 (列) 展开定理, 也称为拉普拉斯 (Laplace) 展开定理.
 
-\begin{example}%例 12 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $12$：</b></font>
 计算行列式
 $$
 D=\left|\begin{array}{llll}
@@ -1251,9 +1305,11 @@ D=\left|\begin{array}{llll}
 0 & 2 & 3 & 2
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample12").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample12").style.display="none"'> 
+<div id= "divIDexample12" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 由定理 $4$ , 按第一行展开, 得
 $$
 \begin{aligned}
@@ -1270,7 +1326,9 @@ D & =2 \times(-1)^{1+1}\left|\begin{array}{lll}
 & =88.
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 利用定理 $4$ 虽然能将 $n$ 阶行列式化为 $n-1$ 阶行列式进行计算, 但当行列式的某一行 (列) 的元素有很多不为零时, 按这一行 (列) 展开并不能减少很多计算量. 因此, 我们总是选择行列式中有较多零元素的行 (列) 展开. 更常用的方法是: 先利用行列式的性质把行列式的某一行 (列) 化为只含有一个非零元素的行 (列), 然后再结合定理 $4$ , 将行列式按这一行 (列) 展开进行计算, 就能简化行列式的计算. 实际上这是一种将高阶行列式化为低阶行列式的计算方法. 这种计算行列式的方法称为降阶法. 降阶法在需要应用数学归纳法的行列式计算, 以及后面要介绍的应用递推法的行列式证明或计算中都起到了重要作用.
 
@@ -1279,7 +1337,8 @@ $$
 %降阶法的优势
 
 
-\begin{example}%例 13 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $13$：</b></font>
 计算行列式
 $$
 D=\left|\begin{array}{rrrr}
@@ -1289,10 +1348,11 @@ D=\left|\begin{array}{rrrr}
 4 & 3 & 1 & 2
 \end{array}\right|.
 $$
-\end{example}
-
-
-\begin{solution}%解
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample13").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample13").style.display="none"'> 
+<div id= "divIDexample13" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 $$
 \begin{aligned}
 D & \xlongequal[c_4+5 \times c_1]{c_2+(-2) \times c_1}\left|\begin{array}{rrrr}
@@ -1314,10 +1374,13 @@ D & \xlongequal[c_4+5 \times c_1]{c_2+(-2) \times c_1}\left|\begin{array}{rrrr}
 & = -48.
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
-\begin{example}%例 14 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $14$：</b></font> 
 证明范德蒙德 (Vandermonde) 行列式
 $$
 V_{n}=\left|\begin{array}{ccccc}
@@ -1336,9 +1399,11 @@ $$
 \end{aligned}
 $$
 是满足条件 $1 \leqslant j < i \leqslant n$ 的所有因子 $\left(x_{i}-x_{j}\right)$ 的乘积.
-\end{example}
-
-\begin{proof}  
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample14").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample14").style.display="none"'> 
+<div id= "divIDexample14" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font> 
 用数学归纳法证明. 当 $n=2$ 时, 有
 $$
 V_{2}=\left|\begin{array}{cc}
@@ -1377,12 +1442,15 @@ $$
 V_{n}=\prod_{1 \leqslant j < i \leqslant n}\left(x_{i}-x_{j}\right).
 $$
 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 请读者记住例 $14$ 中范德蒙德行列式的计算公式, 该公式非常重要, 在很多行列式的计算中都有应用.
 
 
-\begin{example}%例 15 . 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $15$：</b></font>
 计算行列式
 $$
 D=\left|\begin{array}{cccc}
@@ -1392,9 +1460,11 @@ D=\left|\begin{array}{cccc}
 1 & 1 & 1 & 1-y
 \end{array}\right|.
 $$
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample15").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample15").style.display="none"'> 
+<div id= "divIDexample15" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 当 $x=0$ 或 $y=0$ 时, 显然 $D=0$. 现假设 $x y \neq 0$, 将行列式 $D$ 分别添加上一行和一列, 并保持行列式的值不变, 由引理 $1$ 知,
 $$
 \begin{aligned}
@@ -1420,13 +1490,16 @@ D & =\left|\begin{array}{ccccc}
 \end{array}\right| = x^2y^2.
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 
 
 由例 $15$ 可知, 有时增加行列式的行数和列数反而容易求出行列式的值. 上述计算行列式的方法称为加边法.
 
-\begin{example}%例 16 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $16$：</b></font>
 设 $n$ 阶行列式
 $$
 D_{n}=\left|\begin{array}{ccccc}
@@ -1438,9 +1511,11 @@ D_{n}=\left|\begin{array}{ccccc}
 \end{array}\right|,
 $$
 求 $D_{n}$ 的第一行各元素的代数余子式之和 $A_{11}+A_{12}+\cdots+A_{1 n}$.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample16").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample16").style.display="none"'> 
+<div id= "divIDexample16" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 由于 $D_{n}$ 的第一行各元素的代数余子式 $A_{11}, A_{12}, \cdots, A_{1 n}$ 与第一行的元素无关,可以将 $A_{11}+A_{12}+\cdots+A_{1 n}$ 写成 $1 \cdot A_{11}+1 \cdot A_{12}+\cdots+1 \cdot A_{1 n}$, 于是将 $D_{n}$ 中第一行的元素全都换成 $1$ , 其余元素不变, 则由定理 $4$ ,有
 $$
 \begin{aligned}
@@ -1461,7 +1536,9 @@ A_{11}+A_{12}+\cdots+A_{1 n} & =\left|\begin{array}{ccccc}
 & =\left(1-\sum_{i=2}^{n} \frac{1}{i}\right) \cdot n ! .
 \end{aligned}
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 由定理 $4$ , 还可以得到下面的重要推论.
 
@@ -1706,7 +1783,8 @@ $$
 \end{proof}
 
 
-\begin{example}%例 19 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $19$：</b></font>
 解线性方程组
 $$
 \left\{\begin{array}{l}
@@ -1716,9 +1794,11 @@ $$
 \phantom{2}x_{1}+4 x_{2}-7 x_{3}+6 x_{4}  =  \phantom{-}0.
 \end{array}\right.
 $$
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample19").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample19").style.display="none"'> 
+<div id= "divIDexample19" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 $$
 D=\left|\begin{array}{rrrr}
 2 & 1 & -5 & 1 \\
@@ -1756,7 +1836,9 @@ $$
 $$
 x_{1}=3, \quad x_{2}=-4, \quad x_{3}=-1, \quad x_{4}=1. 
 $$
-\end{solution} 
+</p>
+</div> 
+</p>
 
 克拉默法则亦可叙述如下.
 
@@ -1802,7 +1884,8 @@ a_{n 1} x_{1}+a_{n 2} x_{2}+\cdots+a_{n n} x_{n}=0.
 必要性由定理 $6$ 可直接推出, 充分性将在第 $4$ 章中给出证明.
 
 
-\begin{example}%例 20 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $20$：</b></font>
 当 $\lambda$ 为何值时, 齐次线性方程组
 \begin{equation}\label{eq1-16}
 \left\{\begin{array}{c}
@@ -1812,9 +1895,11 @@ a_{n 1} x_{1}+a_{n 2} x_{2}+\cdots+a_{n n} x_{n}=0.
 \end{array}\right.
 \end{equation}
 有非零解?
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample20").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample20").style.display="none"'> 
+<div id= "divIDexample20" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>  
 方程组的系数行列式为
 $$
 D=\left|\begin{array}{ccc}
@@ -1825,13 +1910,18 @@ D=\left|\begin{array}{ccc}
 $$
 
 若方程组 $(\ref{eq1-16})$ 有非零解, 则它的系数行列式 $D=0$, 从而有 $\lambda=2, \lambda=5, \lambda=8$. 容易验证, 当 $\lambda=2, \lambda=5$ 或 $\lambda=8$ 时, 齐次线性方程组 $(\ref{eq1-16})$ 有非零解.
-\end{solution}
+</p>
+</div> 
+</p>
 
-\begin{example}%例 21 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $21$：</b></font>
 求四个平面 $a_{i} x+b_{i} y+c_{i} z+d_{i}=0(i=1,2,3,4)$ 相交于一点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的必要条件.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample21").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample21").style.display="none"'> 
+<div id= "divIDexample21" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 把平面方程写成
 $$
 a_{i} x+b_{i} y+c_{i} z+d_{i} t=0, 
@@ -1854,7 +1944,9 @@ a_{3} & b_{3} & c_{3} & d_{3} \\
 a_{4} & b_{4} & c_{4} & d_{4}
 \end{array}\right|=0.
 $$
-\end{solution}
+</p>
+</div> 
+</p>
 
 </ul>
 
