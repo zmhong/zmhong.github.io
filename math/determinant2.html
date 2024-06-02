@@ -843,7 +843,35 @@ D_{n} & =\left|\begin{array}{ccccc}
 $$
 </p>
 </div> 
+
+<input type=button value= "显示解答2" onclick='document.getElementById("divIDexample9_2").style.display="block"'> 
+<input type=button value= "收起解答2" onclick='document.getElementById("divIDexample9_2").style.display="none"'> 
+<div id= "divIDexample9_2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>  
+将第 $1$ 行的 $-1$ 倍分别加到第 $2$ 行, 第 $3$ 行, $\cdots$, 第 $n+1$ 行, 得
+$$
+D_{n}=\left|\begin{array}{cccc}
+x_{1}-m & x_{2} & \cdots & x_{n} \\
+m & -m & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+m & 0 & \cdots &-m
+\end{array}\right|.
+$$
+再分别将第 $2$ 列, 第 $2$ 列, $\cdots$, 第 $n$ 列行的 $1$ 倍分别加到第 $1$ 列, 得
+$$
+D_{n}=\left|\begin{array}{cccc}
+\sum_{i=1}^{n} x_{i}-m & x_{2} & \cdots & x_{n} \\
+0 & -m & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots &-m
+\end{array}\right| = (-1)^{n-1} m^{n-1}\left(\sum_{i=1}^{n} x_{i}-m\right) .
+$$
 </p>
+</div>   
+</p>
+
+  
 
 <li>利用SageMath在线代码模块求解例 $9$</li>
 <input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex9").style.display="block"'> 
