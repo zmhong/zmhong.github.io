@@ -435,7 +435,8 @@ $$
 0+1+0+2+4=7,
 $$
 故排列 $42531$ 的逆序数为 $7$ ,  即 $\tau(42531)=7$,  因而是奇排列.
-<br><br>
+
+<br> 
 $(2)$ 同理, 可得
 $$
 \tau[135 \cdots(2 n-1) 246 \cdots(2 n)]=0+(n-1)+(n-2)+\cdots+2+1+0=\frac{n(n-1)}{2}.
@@ -471,7 +472,7 @@ p_{1} \cdots p_{i-1} p_{i+1} p_{i} p_{i+2} \cdots p_{n}.
 $$
 显然,  $p_{1},  \cdots,  p_{i-1},  p_{i+2},  \cdots,  p_{n}$这些数的逆序数经过对换并不改变,  仅 $p_{i}$ 与 $p_{i+1}$ 两数的逆序数改变,  即当 $p_{i}<$ $p_{i+1}$ 时,  对换后,  $p_{i+1} p_{i}$ 是逆序,  新排列的逆序数增加 1 ; 当 $p_{i}>p_{i+1}$ 时,  $p_{i+1} p_{i}$ 不是逆序,  新排列的逆序数减少 1 . 所以排列 $p_{1} \cdots p_{i-1} p_{i} p_{i+1} p_{i+2} \cdots p_{n}$ 与排列 $p_{1} \cdots p_{i-1} p_{i+1} p_{i} p_{i+2} \cdots p_{n}$ 的逆序数相差 1 ,  奇偶性改变.
 
-<br><br>
+<br> 
 再证一般对换的情形. 设排列为 
 $$
 p_{1} \cdots p_{i-1} p_{i} p_{i+1} \cdots p_{i+m} p_{i+m+1} p_{i+m+2} \cdots p_{n},  
@@ -1841,7 +1842,7 @@ $$
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
 下面分两步证明.
-<br><br>
+<br> 
 $(1)$ 把方程组 $(\ref{eq1-13})$ 简写为
 $$
 \sum_{j=1}^{n} a_{i j} x_{j}=b_{i}, \quad i=1,2, \cdots, n.
@@ -1870,7 +1871,7 @@ $$
 \end{aligned}
 $$
 这相当于把式 $(\ref{eq1-14})$ 代入方程组 $(\ref{eq1-13})$ 的每个方程使它们同时变成了恒等式, 因而式 $(\ref{eq1-14})$ 确实为方程组 $(\ref{eq1-13})$ 的解.
-<br><br>
+<br> 
 $(2)$ 用 $D$ 中第 $j$ 列元素的代数余子式 $A_{1 j}, A_{2 j}, \cdots, A_{n j}$ 依次乘方程组 $(\ref{eq1-13})$的 $n$ 个方程, 再把所得的 $n$ 个方程相加, 得
 $$
 \left(\sum_{k=1}^{n} a_{k 1} A_{k j}\right) x_{1}+\cdots+\left(\sum_{k=1}^{n} a_{k j} A_{k j}\right) x_{j}+\cdots+\left(\sum_{k=1}^{n} a_{k n} A_{k j}\right) x_{n}=\sum_{k=1}^{n} b_{k} A_{k j}. 
