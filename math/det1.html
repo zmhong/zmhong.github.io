@@ -1018,8 +1018,18 @@ $$
 
 例如, 以数 $k$ 乘以第 $i$ 行 (列) 的元素加到第 $j$ 行 (列) 的对应元素上, 记作 $r_{j}+k \times r_{i}\left(c_{j}+k \times c_{i}\right)$, 其中 $(i \neq j)$, 有
 $$
-\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ a_{j 1} & a_{j 2} & \cdots & a_{j n} \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right| 
-\stackrel{r_{j}+k \times r_{i}}{=\!=\!=}\left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ \left(a_{j 1}+k a_{i 1}\right) & \left(a_{j 2}+k a_{i 2}\right) & \cdots & \left(a_{j n}+k a_{i n}\right) \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right|.
+\begin{aligned}
+& \left|\begin{array}{cccc}
+  a_{11} & a_{12} & \cdots & a_{1 n} \\ 
+  \vdots & \vdots & & \vdots \\ 
+  a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ 
+  \vdots & \vdots & & \vdots \\ 
+  a_{j 1} & a_{j 2} & \cdots & a_{j n} \\ 
+  \vdots & \vdots & & \vdots \\ 
+  a_{n 1} & a_{n 2} & \cdots & a_{n n}
+  \end{array}\right| \\
+\stackrel{r_{j}+k \times r_{i}}{=\!=\!=\!=} & \left|\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ \vdots & \vdots & & \vdots \\ a_{i 1} & a_{i 2} & \cdots & a_{i n} \\ \vdots & \vdots & & \vdots \\ \left(a_{j 1}+k a_{i 1}\right) & \left(a_{j 2}+k a_{i 2}\right) & \cdots & \left(a_{j n}+k a_{i n}\right) \\ \vdots & \vdots & & \vdots \\ a_{n 1} & a_{n 2} & \cdots & a_{n n}\end{array}\right|.
+\end{aligned}
 $$
 
 <b>注意:</b> $r_{j}+k \times r_{i}$ 不能写作 $k \times r_{i}+r_{j}$.
