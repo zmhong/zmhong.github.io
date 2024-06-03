@@ -63,6 +63,455 @@
 <ul>
 
 <p style="text-indent: 2em;">
+工程技术中的振动和稳定性问题, 往往归结为一个方阵的特征值和特征向量的问题, 特征值、特征向量的概念, 不仅在理论上很重要, 而且可以直接用来解决实际问题.
+
+\begin{definition}%定义 1 
+设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 若存在数 $\lambda$ 和 $n$ 维非零向量 $\boldsymbol{x}$, 使得
+\begin{equation*}
+\boldsymbol{A x}=\lambda \boldsymbol{x}, \tag{5-1}
+\end{equation*}
+则称 $\lambda$ 为矩阵 $\boldsymbol{A}$ 的特征值, 称非零向量 $\boldsymbol{x}$ 为矩阵 $\boldsymbol{A}$ 的对应于特征值 $\lambda$ 的特征向量.
+\end{definition}
+
+式(5-1)也可写成
+\begin{equation*}
+(\boldsymbol{A}-\lambda \boldsymbol{E}) \boldsymbol{x} =\boldsymbol{0}. \tag{5-2}
+\end{equation*}
+式 (5-2) 是一个含有 $n$ 个未知量、 $n$ 个方程的齐次线性方程组, 它有非零解的充分必要条件是系数行列式
+\begin{equation*}
+|\boldsymbol{A}-\lambda \boldsymbol{E}|=0. \tag{5-3}
+\end{equation*}
+式 (5-3) 的左端为 $\lambda$ 的 $n$ 次多项式, 记 $f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|$, 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 则矩阵 $\boldsymbol{A}$ 的特征值即为其特征多项式的根. 式 (5-3) 称为矩阵 $\boldsymbol{A}$ 的特征方程, 特征方程在复数范围内恒有解, 其解的个数为方程的次数 (重根按重数计算), 因此 $n$ 阶方阵 $\boldsymbol{A}$ 有 $n$ 个特征值.
+
+设 $\lambda=\lambda_{i}$ 为其中的一个特征值, 则由方程
+\begin{equation*}
+\left(\boldsymbol{A}-\lambda_{i} \boldsymbol{E}\right) \boldsymbol{x} =\boldsymbol{0}  \tag{5-4}
+\end{equation*}
+可求得非零解 $\boldsymbol{x}=\boldsymbol{p}_{i}$, 那么 $\boldsymbol{p}_{i}$ 便是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量, 且 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量的全体是齐次线性方程组 (5-4) 的全体非零解. 由齐次线性方程组解的结构定理, 设 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{r}$ 为方程组 (5-4) 的基础解系, 则 $\boldsymbol{A}$的对应于特征值 $\lambda_{i}$ 的特征向量的全体为 
+$k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}+\cdots+k_{r} \boldsymbol{p}_{r}$
+($k_{1}, k_{2}, \cdots, k_{r}$ 不同时为 $0$). 这说明对应于某个特征值的特征向量有无穷多个. 但不同的特征值所对应的特征向量是不同的, 也即一个特征向量只能属于一个特征值. 事实上, 如果设 $\boldsymbol{x}$ 同时是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{1}, \lambda_{2}$ 的特征向量, 即有
+$$
+\boldsymbol{A x}=\lambda_{1} \boldsymbol{x}, \quad \boldsymbol{A x}=\lambda_{2} \boldsymbol{x},
+$$
+从而
+$$
+\lambda_{1} \boldsymbol{x}=\lambda_{2} \boldsymbol{x},
+$$
+即
+$$
+\left(\lambda_{1}-\lambda_{2}\right) \boldsymbol{x}=\mathbf{0}.
+$$
+由于 $\boldsymbol{x} \neq \mathbf{0}$,所以
+$$
+\lambda_{1}=\lambda_{2}.
+$$
+
+\begin{example}%例 1 
+求 $\boldsymbol{A}=\left(\begin{array}{rr}3 & -1 \\ -1 & 3\end{array}\right)$ 的特征值和特征向量.
+\end{example}
+
+\begin{solution}%解 
+$\boldsymbol{A}$ 的特征方程为
+$$
+|\boldsymbol{A}-\lambda \boldsymbol{E}|=\left|\begin{array}{cc}
+3-\lambda & -1 \\
+-1 & 3-\lambda
+\end{array}\right|=(3-\lambda)^{2}-1=(4-\lambda)(2-\lambda)=0,
+$$
+所以 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2, \lambda_{2}=4$.
+
+当 $\lambda_{1}=2$ 时, 由
+$$
+\left(\begin{array}{cc}
+3-2 & -1 \\
+-1 & 3-2
+\end{array}\right)\left(\begin{array}{l}
+x_{1} \\
+x_{2}
+\end{array}\right)=\left(\begin{array}{l}
+0 \\
+0
+\end{array}\right),
+$$
+解得 $x_{1}=x_{2}$, 所以对应的特征向量可取为
+$$
+\boldsymbol{p}_{1}=\left(\begin{array}{l}
+1 \\
+1
+\end{array}\right).
+$$
+
+当 $\lambda_{2}=4$ 时, 由
+$$
+\left(\begin{array}{cc}
+3-4 & -1 \\
+-1 & 3-4
+\end{array}\right)\left(\begin{array}{l}
+x_{1} \\
+x_{2}
+\end{array}\right)=\left(\begin{array}{l}
+0 \\
+0
+\end{array}\right),
+$$
+解得 $x_{1}=-x_{2}$, 所以对应的特征向量可取为
+$$
+\boldsymbol{p}_{2}=\left(\begin{array}{r}
+1 \\
+-1
+\end{array}\right).
+$$
+\end{solution}
+
+\begin{example}%例 2 
+求矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+-1 & 1 & 0 \\
+-4 & 3 & 0 \\
+1 & 0 & 2
+\end{array}\right)
+$$
+的特征值和特征向量.
+\end{example}
+
+\begin{solution}%解 
+$\boldsymbol{A}$ 的特征方程为
+$$
+\begin{aligned}
+|\boldsymbol{A}-\lambda \boldsymbol{E}| & =\left|\begin{array}{ccc}
+-1-\lambda & 1 & 0 \\
+-4 & 3-\lambda & 0 \\
+1 & 0 & 2-\lambda
+\end{array}\right| \\
+& =(2-\lambda)(1-\lambda)^{2}=0,
+\end{aligned}
+$$
+所以 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2, \lambda_{2}=\lambda_{3}=1$.
+
+当 $\lambda_{1}=2$ 时, 解方程 $(\boldsymbol{A}-2 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
+$$
+\boldsymbol{A}-2 \boldsymbol{E}=\left(\begin{array}{rrr}
+-3 & 1 & 0 \\
+-4 & 1 & 0 \\
+1 & 0 & 0
+\end{array}\right) \rightarrow\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+得基础解系
+$$
+\boldsymbol{p}_{1}=\left(\begin{array}{l}
+0 \\
+0 \\
+1
+\end{array}\right).
+$$
+所以, $k \boldsymbol{p}_{1}(k \neq 0)$ 是对应于 $\lambda_{1}=2$ 的全部特征向量.
+
+当 $\lambda_{2}=\lambda_{3}=1$ 时, 解方程 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
+$$
+\boldsymbol{A}-\boldsymbol{E}=\left(\begin{array}{rrr}
+-2 & 1 & 0 \\
+-4 & 2 & 0 \\
+1 & 0 & 1
+\end{array}\right) \longrightarrow\left(\begin{array}{rrr}
+-2 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 0 & 0
+\end{array}\right) \longrightarrow\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+得基础解系
+$$
+\boldsymbol{p}_{2}=\left(\begin{array}{r}
+1 \\
+2 \\
+-1
+\end{array}\right).
+$$
+所以, $k \boldsymbol{p}_{2}(k \neq 0)$ 是对应于 $\lambda_{2}=\lambda_{3}=1$ 的全部特征向量.
+\end{solution}
+
+
+从例 $1$ 和例 $2$ 可以归纳出计算特征值、特征向量的\textbf{具体步骤}:
+
+第一步, 计算特征多项式 $|\boldsymbol{A}-\lambda \boldsymbol{E}|$;
+
+第二步, 求出 $|\boldsymbol{A}-\lambda \boldsymbol{E}|=0$ 的全部根, 它们就是 $\boldsymbol{A}$ 的全部特征值;
+
+第三步, 对于 $\boldsymbol{A}$ 的每一个特征值 $\lambda_{i}$, 求相应的齐次线性方程组 $\left(\boldsymbol{A}-\lambda_{i} \boldsymbol{E}\right) \boldsymbol{x}=\mathbf{0}$的一个基础解系
+$$
+\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{r},
+$$
+则对于不同时为零的任意常数 $k_{1}, k_{2}, \cdots, k_{r}$,
+$$
+k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}+\cdots+k_{r} \boldsymbol{p}_{r}
+$$
+即为对应于 $\lambda_{i}$ 的全部特征向量.
+
+\begin{example}%例 3 
+求矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+4 & 6 & 0 \\
+-3 & -5 & 0 \\
+-3 & -6 & 1
+\end{array}\right)
+$$
+的特征值和特征向量.
+\end{example}
+
+\begin{solution}%解 
+$\boldsymbol{A}$ 的特征多项式为
+$$
+\begin{aligned}
+|\boldsymbol{A}-\lambda \boldsymbol{E}| & =\left|\begin{array}{ccc}
+4-\lambda & 6 & 0 \\
+-3 & -5-\lambda & 0 \\
+-3 & -6 & 1-\lambda
+\end{array}\right| \\
+& =-(1-\lambda)^{2}(2+\lambda),
+\end{aligned}
+$$
+所以, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=\lambda_{2}=1, \lambda_{3}=-2$.
+
+当 $\lambda_{1}=\lambda_{2}=1$ 时, 解方程 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$,由
+$$
+\boldsymbol{A}-\boldsymbol{E}=\left(\begin{array}{ccc}
+4-1 & 6 & 0 \\
+-3 & -5-1 & 0 \\
+-3 & -6 & 1-1
+\end{array}\right) \longrightarrow\left(\begin{array}{lll}
+1 & 2 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+得基础解系
+$$
+\boldsymbol{p}_{1}=\left(\begin{array}{r}
+-2 \\
+1 \\
+0
+\end{array}\right), \quad \boldsymbol{p}_{2}=\left(\begin{array}{l}
+0 \\
+0 \\
+1
+\end{array}\right).
+$$
+于是, $k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}\left(k_{1}^{2}+k_{2}^{2} \neq 0\right)$ 为对应于 $\lambda_{1}=\lambda_{2}=1$ 的全部特征向量.
+
+当 $\lambda_{3}=-2$ 时, 解方程 $(\boldsymbol{A}+2 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$,由
+$$
+\boldsymbol{A}+2 \boldsymbol{E}=\left(\begin{array}{ccc}
+4+2 & 6 & 0 \\
+-3 & -5+2 & 0 \\
+-3 & -6 & 1+2
+\end{array}\right) \longrightarrow\left(\begin{array}{cccc}
+1 & 0 & 1 \\
+0 & 1 & -1 \\
+0 & 0 & 0
+\end{array}\right),
+$$
+得基础解系
+$$
+p_3=\left(\begin{array}{r}
+-1 \\
+1 \\
+1
+\end{array}\right) .
+$$
+所以, $k_{3} \boldsymbol{p}_{3}\left(k_{3} \neq 0\right)$ 为对应于 $\lambda_{3}=-2$ 的全部特征向量.
+\end{solution}
+
+
+\begin{example}%例 4 
+设 $\lambda$ 是方阵 $\boldsymbol{A}$ 的特征值, 证明: $\lambda^{2}$ 是 $\boldsymbol{A}^{2}$ 的特征值.
+\end{example}
+
+\begin{proof}%证 
+因 $\lambda$ 是 $\boldsymbol{A}$ 的特征值,故有 $\boldsymbol{p} \neq \mathbf{0}$, 使 $\boldsymbol{A p}=\lambda \boldsymbol{p}$,于是
+$$
+\boldsymbol{A}^{2} \boldsymbol{p}=\boldsymbol{A}(\boldsymbol{A} \boldsymbol{p})=\lambda \boldsymbol{A} \boldsymbol{p}=\lambda^{2} \boldsymbol{p}. 
+$$
+所以, $\lambda^{2}$ 是 $\boldsymbol{A}^{2}$ 的特征值.
+\end{proof}
+
+
+
+按例 $4$ 类推, 不难证明: 若 $\lambda$ 是 $\boldsymbol{A}$ 的特征值, 则 $\lambda^{k}$ 是 $\boldsymbol{A}^{k}$ 的特征值, $\varphi(\lambda)$ 是 $\varphi(\boldsymbol{A})$的特征值 [其中 $\varphi(\lambda)=a_{0}+a_{1} \lambda+\cdots+a_{m} \lambda^{m}, \varphi(\boldsymbol{A})=a_{0} \boldsymbol{E}+a_{1} \boldsymbol{A}+\cdots+a_{m} \boldsymbol{A}^{m}$ ].
+
+下面讨论特征值与特征向量的基本性质.
+
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 是 $n$ 阶方阵,则 $\boldsymbol{A}$ 的特征多项式为
+\[
+f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|=\left|\begin{array}{cccc}
+a_{11}-\lambda & a_{12} & \cdots & a_{1 n}  \tag{5-5}\\
+a_{21} & a_{22}-\lambda & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}-\lambda
+\end{array}\right|.
+\]
+将这个行列式展开, 得到一个关于 $\lambda$ 的 $n$ 次多项式, 它的最高次幕项出现在主对角线上元素的乘积
+\begin{equation*}
+\left(a_{11}-\lambda\right)\left(a_{22}-\lambda\right) \cdots\left(a_{n n}-\lambda\right) \tag{5-6}
+\end{equation*}
+里, 其余的项至多含有 $n-2$ 个主对角线上的元素. 因此, $f(\lambda)$ 是乘积 (5-6) 和一个至多是 $\lambda$ 的 $n-2$ 次多项式的和, 故有
+$$
+f(\lambda)=(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\cdots,
+$$
+这里没有写出的项的次数至多是 $n-2$.
+
+又在式(5-5) 中, 令 $\lambda=0$, 得
+$$
+f(0)=|\boldsymbol{A}|.
+$$
+从而有
+\begin{equation*}
+f(\lambda)=(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\boldsymbol{\cdots}+|\boldsymbol{A}|. \tag{5-7}
+\end{equation*}
+
+
+若 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的 $n$ 个特征值,则有
+\begin{align*}
+f(\lambda) & =\left(\lambda_{1}-\lambda\right)\left(\lambda_{2}-\lambda\right) \cdots\left(\lambda_{n}-\lambda\right) \\
+& =(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}\right) \lambda^{n-1}+\cdots+\lambda_{1} \lambda_{2} \cdots \lambda_{n}. \tag{5-8}
+\end{align*}
+
+
+比较式(5-7)与式 (5-8) 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
+
+\begin{property}%性质 1 
+$\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}=a_{11}+a_{22}+\cdots+a_{n n}$. 称矩阵 $\boldsymbol{A}$ 的主对角线上的元素之和 $a_{11}+a_{22}+\cdots+a_{n n}$ 为矩阵 $\boldsymbol{A}$ 的迹, 记为 $\operatorname{tr}(\boldsymbol{A})$.
+\end{property}
+
+\begin{property}%性质 2 
+$\lambda_{1} \lambda_{2} \cdots \lambda_{n}=|\boldsymbol{A}|$.
+\end{property}
+
+由性质 $2$ 可得到下面的推论.
+
+\begin{corollary}%推论 1  
+$n$ 阶方阵 $\boldsymbol{A}$ 可逆的充分必要条件是 $\boldsymbol{A}$ 的全部特征值都不为零.
+\end{corollary}
+
+
+\begin{theorem}%定理 1
+设 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{m}$ 都是方阵 $\boldsymbol{A}$ 的对应于特征值 $\lambda$ 的特征向量, 则它们的任何非零线性组合 $k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}+\cdots+k_{m} \boldsymbol{p}_{m}\left(k_{i}\right.$ 为不全为零的常数, $\left.i=1,2, \cdots, m\right)$ 也是 $\boldsymbol{A}$ 的对应于特征值 $\lambda$ 的特征向量.
+\end{theorem}
+
+\begin{proof}%证 
+因 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{m}$ 都是齐次线性方程组
+$$
+(\boldsymbol{A}-\lambda \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}
+$$
+的解, 则易验证 $k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}+\cdots+k_{m} \boldsymbol{p}_{m}$ 也是上述方程组的解, 故当 $k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}+\cdots+$ $k_{m} \boldsymbol{p}_{m} \neq \mathbf{0}$ 时, 其是矩阵 $\boldsymbol{A}$ 的对应于 $\lambda$ 的特征向量. 证毕.
+\end{proof}
+
+\begin{example}%例 5 
+设向量 $\boldsymbol{p}_{1}=(1,2,0)^{\mathrm{T}}, \boldsymbol{p}_{2}=(1,0,1)^{\mathrm{T}}$ 都是方阵 $\boldsymbol{A}$ 的对应于特征值 $\lambda=2$ 的特征向量, 又向量 $\boldsymbol{\beta}=(-1,2,-2)^{\mathrm{T}}$, 求 $\boldsymbol{A} \boldsymbol{\beta}$.
+\end{example}
+
+\begin{solution}
+由于 $\boldsymbol{\beta}=\boldsymbol{p}_{1}-2 \boldsymbol{p}_{2}$, 根据定理 $1$,  $\boldsymbol{\beta}$ 也是 $\boldsymbol{A}$ 的对应于特征值 $\lambda=2$ 的特征向量, 故有
+$$
+\boldsymbol{A} \boldsymbol{\beta}=2 \boldsymbol{\beta}=(-2,4,-4)^{\mathrm{T}}.
+$$
+\end{solution}
+
+\begin{theorem}%定理 2
+方阵 $\boldsymbol{A}$ 与它的转置矩阵 $\boldsymbol{A}^{\mathrm{T}}$ 有相同的特征多项式, 因而有相同的特征值.
+\end{theorem}
+
+\begin{proof}%证 
+由 $(\boldsymbol{A}-\lambda \boldsymbol{E})^{\mathrm{T}}=\boldsymbol{A}^{\mathrm{T}}-\lambda \boldsymbol{E}$, 有
+$$
+\left|\boldsymbol{A}^{\mathrm{T}}-\lambda \boldsymbol{E}\right|=\left|(\boldsymbol{A}-\lambda \boldsymbol{E})^{\mathrm{T}}\right|=|\boldsymbol{A}-\lambda \boldsymbol{E}|.
+$$
+因此, $\boldsymbol{A}$ 与 $\boldsymbol{A}^{\mathrm{T}}$ 有相同的特征多项式, 所以它们有相同的特征值. 证毕.
+\end{proof}
+
+\begin{theorem}%定理 3
+设 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}$ 是方阵 $\boldsymbol{A}$ 的 $m$ 个互不相同的特征值, $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{m}$ 依次是与之对应的特征向量, 则 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{m}$ 线性无关.
+\end{theorem}
+
+\begin{proof}%证 
+设有常数 $x_{1}, x_{2}, \cdots, x_{m}$, 使
+$$
+x_{1} \boldsymbol{p}_{1}+x_{2} \boldsymbol{p}_{2}+\cdots+x_{m} \boldsymbol{p}_{m}=\mathbf{0},
+$$
+则
+$$
+\boldsymbol{A}\left(x_{1} \boldsymbol{p}_{1}+x_{2} \boldsymbol{p}_{2}+\cdots+x_{m} \boldsymbol{p}_{m}\right)=\mathbf{0},
+$$
+即
+$$
+\lambda_{1} x_{1} \boldsymbol{p}_{1}+\lambda_{2} x_{2} \boldsymbol{p}_{2}+\cdots+\lambda_{m} x_{m} \boldsymbol{p}_{m}=\mathbf{0} .
+$$
+类推, 有
+$$
+\lambda_{1}^{k} x_{1} \boldsymbol{p}_{1}+\lambda_{2}^{k} x_{2} \boldsymbol{p}_{2}+\cdots+\lambda_{m}^{k} x_{m} \boldsymbol{p}_{m}=\mathbf{0} \quad(k=1,2, \cdots, m-1).
+$$
+把上列各式合写成矩阵形式, 得 
+$$
+\left(x_{1} \boldsymbol{p}_{1}, x_{2} \boldsymbol{p}_{2}, \cdots, x_{m} \boldsymbol{p}_{m}\right)\left(\begin{array}{cccc}
+1 & \lambda_{1} & \cdots & \lambda_{1}^{m-1} \\
+1 & \lambda_{2} & \cdots & \lambda_{2}^{m-1} \\
+\vdots & \vdots & & \vdots \\
+1 & \lambda_{m} & \cdots & \lambda_{m}^{m-1}
+\end{array}\right)=\mathbf{0}. 
+$$
+上式等号左端第二个矩阵的行列式为范德蒙德行列式. 当 $\lambda_{i}$ 各不相同时, 该矩阵可逆, 于是有
+$$
+\left(x_{1} \boldsymbol{p}_{1}, x_{2} \boldsymbol{p}_{2}, \cdots, x_{m} \boldsymbol{p}_{m}\right)=\mathbf{0}, 
+$$
+即 $x_{i} \boldsymbol{p}_{i}=\mathbf{0}$. 但 $\boldsymbol{p}_{i} \neq \boldsymbol{0}$, 故 $x_{i}=0$, $i=1,2, \cdots, m$. 所以, 向量组 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{m}$ 线性无关. 证毕.
+\end{proof}
+
+
+\begin{example}%例 6 
+设 $\lambda$ 是可逆矩阵 $\boldsymbol{A}$ 的特征值, 证明: 
+
+$(1)$ $\frac{1}{\lambda}$ 是 $\boldsymbol{A}^{-1}$ 的特征值;
+$\qquad $
+$(2)$ $\frac{1}{\lambda}|\boldsymbol{A}|$ 是 $\boldsymbol{A}^{*}$ 的特征值.
+\end{example}
+
+\begin{proof}%证 
+由 $\boldsymbol{A}$ 可逆知, $\lambda \neq 0$ . 
+
+$(1)$ 由 $\lambda$ 是 $\boldsymbol{A}$ 的特征值知, 存在 $\boldsymbol{p} \neq \boldsymbol{0}$, 使 $\boldsymbol{A} \boldsymbol{p}=\lambda \boldsymbol{p}$, 两端左乘 $\boldsymbol{A}^{-1}$, 得 $\boldsymbol{A}^{-1} \boldsymbol{A} \boldsymbol{p}=\lambda \boldsymbol{A}^{-1} \boldsymbol{p}$,即 $\boldsymbol{A}^{-1} \boldsymbol{p}=\frac{1}{\lambda} \boldsymbol{p}$. 故 $\frac{1}{\lambda}$ 是 $\boldsymbol{A}^{-1}$ 的特征值.
+
+$(2)$ 由 $\boldsymbol{A} \boldsymbol{p}=\lambda \boldsymbol{p}$ 两端左乘 $\boldsymbol{A}^{*}$, 得 $\boldsymbol{A}^{*} \boldsymbol{A} \boldsymbol{p}=\lambda \boldsymbol{A}^{*} \boldsymbol{p}$, 即 $|\boldsymbol{A}| \boldsymbol{p}=\lambda \boldsymbol{A}^{*} \boldsymbol{p}$. 从而 $\boldsymbol{A}^{*} \boldsymbol{p}=\frac{1}{\lambda}|\boldsymbol{A}| \boldsymbol{p}$. 故 $\frac{1}{\lambda}|\boldsymbol{A}|$ 是 $\boldsymbol{A}^{*}$ 的特征值.
+\end{proof}
+
+
+\begin{example}%例 7 
+设三阶方阵 $\boldsymbol{A}$ 的特征值为 $1,-1,2$, 试求 $\left|\boldsymbol{A}^{2}-2 \boldsymbol{E}\right|$ 与 $\left|\boldsymbol{A}^{-1}-2 \boldsymbol{A}^{*}\right|$.
+\end{example}
+
+\begin{solution}%解 
+根据特征值的特点, 令 $\varphi_{1}(\lambda)=\lambda^{2}-2$, 则 $\boldsymbol{A}^{2}-2 \boldsymbol{E}=\varphi_{1}(\boldsymbol{A})$. 从而 $\varphi_{1}(\boldsymbol{A})$ 的三个特征值分别为 $\varphi_{1}(1)=-1, \varphi_{1}(-1)=-1, \varphi_{1}(2)=2$. 于是有
+$$
+\left|\boldsymbol{A}^{2}-2 \boldsymbol{E}\right|=(-1) \times(-1) \times 2=2.
+$$
+
+由 $|\boldsymbol{A}|=1 \times(-1) \times 2=-2 \neq 0$ 知, $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{*}=|\boldsymbol{A}| \boldsymbol{A}^{-1}=-2 \boldsymbol{A}^{-1}$. $\boldsymbol{A}^{-1}$ 的三个特征值分别为 $1,-1, \frac{1}{2}$. 从而有
+$$
+\begin{aligned}
+\left|\boldsymbol{A}^{-1}-2 \boldsymbol{A}^{*}\right| & =\left|\boldsymbol{A}^{-1}+4 \boldsymbol{A}^{-1}\right|=\left|5 \boldsymbol{A}^{-1}\right| \\
+& =5^{3}\left|\boldsymbol{A}^{-1}\right|=5^{3} \times 1 \times(-1) \times \frac{1}{2}=-\frac{125}{2}.
+\end{aligned}
+$$
+\end{solution}
+
+
 
 
 
@@ -75,7 +524,349 @@
 
 <ul>
 
-  
+
+\begin{definition}%定义 2 
+设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 是 $n$ 阶方阵,如果存在一个可逆矩阵 $\boldsymbol{P}$, 使
+$$
+\boldsymbol{B}=\boldsymbol{P}^{-1} \boldsymbol{A P},
+$$
+则称 $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的相似矩阵 (或称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 是相似的), 记作 $\boldsymbol{A} \sim \boldsymbol{B}$.
+\end{definition}
+
+例如, 
+$$
+\boldsymbol{A}=\left(\begin{array}{rr}
+3 & 1 \\
+5 & -1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{rr}
+4 & 0 \\
+0 & -2
+\end{array}\right), 
+$$
+取 $\boldsymbol{P}=\left(\begin{array}{rr}1 & 1 \\ 1 & -5\end{array}\right)$, 则 $\boldsymbol{P}^{-1}=\left(\begin{array}{rr}
+\frac{5}{6} & \frac{1}{6} \\ [5pt]
+\frac{1}{6} & -\frac{1}{6}\end{array}\right)$, 有
+$$
+\boldsymbol{P}^{-1} \boldsymbol{A P}=\left(\begin{array}{rr}
+\frac{5}{6} & \frac{1}{6} \\[5pt]
+\frac{1}{6} & -\frac{1}{6}
+\end{array}\right)\left(\begin{array}{rr}
+3 & 1 \\
+5 & -1
+\end{array}\right)\left(\begin{array}{rr}
+1 & 1 \\
+1 & -5
+\end{array}\right)=\left(\begin{array}{rr}
+4 & 0 \\
+0 & -2
+\end{array}\right)=\boldsymbol{B}. 
+$$
+所以, $\boldsymbol{A} \sim \boldsymbol{B}$.
+
+矩阵的相似关系是一种等价关系, 满足下列性质:
+
+$(1)$ \textbf{反身性:} $\boldsymbol{A}$ 与其本身相似;
+
+$(2)$ \textbf{对称性:} 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 则 $\boldsymbol{B}$ 与 $\boldsymbol{A}$ 相似;
+
+$(3)$ \textbf{传递性:} 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, $\boldsymbol{B}$ 与 $\boldsymbol{C}$ 相似, 则 $\boldsymbol{A}$ 与 $\boldsymbol{C}$ 相似.
+
+以可逆矩阵 $\boldsymbol{P}$ 对方阵 $\boldsymbol{A}$ 进行运算 $\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P}$, 称为对 $\boldsymbol{A}$ 的相似变换. 
+
+相似矩阵具有如下性质. 
+
+\begin{property}%性质 3 
+相似矩阵有相同的秩.
+\end{property}
+
+\begin{proof}%证 
+由于可逆矩阵 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{-1}$ 可以看成若干个初等矩阵的乘积, 从而 $\boldsymbol{P}^{-1} \boldsymbol{A P}$相当于对 $\boldsymbol{A}$ 施行了有限次初等变换,而初等变换不改变矩阵的秩,所以
+$$
+r(\boldsymbol{A})=r\left(\boldsymbol{P}^{-1} \boldsymbol{A P}\right)=r(\boldsymbol{B}).
+$$
+证毕.
+\end{proof}
+
+\begin{property}%性质 4 
+相似矩阵的行列式相等.
+\end{property}
+
+\begin{proof}%证 
+设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则存在可逆矩阵 $\boldsymbol{P}$, 使
+$$
+\boldsymbol{B}=\boldsymbol{P}^{-1} \boldsymbol{A P},
+$$
+所以 $\left|\boldsymbol{P}^{-1} \boldsymbol{A P}\right|=|\boldsymbol{B}|$, 即
+$$
+\left|\boldsymbol{P}^{-1}\right||\boldsymbol{A}||\boldsymbol{P}|=|\boldsymbol{B}|,
+$$
+而 $\left|\boldsymbol{P}^{-1}\right|=|\boldsymbol{P}|^{-1}$, 所以 $|\boldsymbol{A}|=|\boldsymbol{B}|$. 证毕.
+\end{proof}
+
+\begin{property}%性质 5 
+相似矩阵同时可逆或同时不可逆. 当它们可逆时, 其逆矩阵也相似.
+\end{property}
+
+\begin{proof}%证 
+设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $|\boldsymbol{A}|=|\boldsymbol{B}|$, 所以 $|\boldsymbol{A}|$ 与 $|\boldsymbol{B}|$ 同时为 0 或不为 0 , 即 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 同时不可逆或同时可逆.
+
+如果 $\boldsymbol{A} \sim \boldsymbol{B}$, 且都可逆, 则存在可逆矩阵 $\boldsymbol{P}$, 使得
+$$
+\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{B}.
+$$
+于是
+$$
+\boldsymbol{B}^{-1}=\left(\boldsymbol{P}^{-1} \boldsymbol{A P}\right)^{-1}=\boldsymbol{P}^{-1} \boldsymbol{A}^{-1}\left(\boldsymbol{P}^{-1}\right)^{-1}=\boldsymbol{P}^{-1} \boldsymbol{A}^{-1} \boldsymbol{P}, 
+$$
+即
+$$
+\boldsymbol{A}^{-1} \sim \boldsymbol{B}^{-1}.
+$$
+证毕.
+\end{proof}
+
+\begin{property}%性质 6 
+相似矩阵有相同的特征多项式, 从而有相同的特征值.
+\end{property}
+
+\begin{proof}%证 
+设 $\boldsymbol{A} \sim \boldsymbol{B}$, 即有可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{B}$, 故
+$$
+\begin{aligned}
+|\boldsymbol{B}-\lambda \boldsymbol{E}| & =\left|\boldsymbol{P}^{-1} \boldsymbol{A} \boldsymbol{P}-\boldsymbol{P}^{-1}(\lambda \boldsymbol{E}) \boldsymbol{P}\right|=\left|\boldsymbol{P}^{-1}(\boldsymbol{A}-\lambda \boldsymbol{E}) \boldsymbol{P}\right| \\
+& =\left|\boldsymbol{P}^{-1}\right||\boldsymbol{A}-\lambda \boldsymbol{E}||\boldsymbol{P}|=|\boldsymbol{A}-\lambda \boldsymbol{E}|.
+\end{aligned}
+$$
+所以 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征多项式, 从而它们有相同的特征值. 证毕.
+\end{proof}
+
+\begin{corollary}%推论 2 
+若 $n$ 阶方阵 $\boldsymbol{A}$ 与对角矩阵 $\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)$ 相似, 则 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$是 $\boldsymbol{A}$ 的 $n$ 个特征值.
+\end{corollary}
+
+\begin{proof}%证 
+易知 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)$ 的 $n$ 个特征值. 由性质 $6$ 知, $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 也是 $\boldsymbol{A}$ 的特征值. 证毕.
+\end{proof}
+
+\begin{example}%例 8 
+确定 $x, y$ 的值, 使 $\boldsymbol{A}=\left(\begin{array}{rrr}-2 & 0 & 0 \\ 2 & x  & 2 \\ 3 & 1 & 1\end{array}\right)$ 与 $\boldsymbol{B}=\left(\begin{array}{rrr}-1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & y\end{array}\right)$ 相似.
+\end{example}
+
+\begin{solution}%
+\textbf{解法 $1$} $\quad$  因 $\boldsymbol{B}$ 是对角矩阵, 故 $\boldsymbol{A}$ 有特征值 $-1,2, y$. 而 $\boldsymbol{A}$ 的特征方程为
+$$
+|\boldsymbol{A}-\lambda \boldsymbol{E}|=-(\lambda+2)\left[\lambda^{2}-(x+1) \lambda+(x-2)\right]=0.
+$$
+以特征值 $\lambda=-1$ 代入上式, 得 $x=0$. 从而知 $\boldsymbol{A}$ 的特征方程为
+$$
+|\boldsymbol{A}-\lambda \boldsymbol{E}|=-(\lambda+2)(\lambda+1)(\lambda-2)=0.
+$$
+所以 $\boldsymbol{A}$ 的特征值为 $-1,2,-2$, 即 $y=-2$.
+
+\textbf{解法 $2$}$\quad$ 由于 $\boldsymbol{A} \sim \boldsymbol{B}$, 则由性质 $6$ , 有
+$$
+|\boldsymbol{A}-\lambda \boldsymbol{E}|=|\boldsymbol{B}-\lambda \boldsymbol{E}|,
+$$
+即
+$$
+-(\lambda+2)\left[\lambda^{2}-(x+1) \lambda+(x-2)\right]=(-1-\lambda)(2-\lambda)(y-\lambda).
+$$
+上面的等式对任意的实数 $\lambda$ 都成立.
+
+令 $\lambda=0$, 得 
+$$
+y=x-2;
+$$
+令 $\lambda=-1$, 得
+$$
+x=0,
+$$
+从而 $y=-2$.
+\end{solution}
+
+关于相似矩阵, 人们关心的一个问题是, 与 $\boldsymbol{A}$ 相似的矩阵中, 最简单的形式是什么? 由于对角矩阵最简单, 于是考虑是否任何一个方阵都相似于一个对角矩阵呢? 下面就来研究这个问题.
+
+如果 $n$ 阶矩阵 $\boldsymbol{A}$ 能相似于对角矩阵,则称 $\boldsymbol{A}$ 可对角化.
+
+
+现设已找到可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\Lambda}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)$. 把 $\boldsymbol{P}$ 用其列向量表示为 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right)$, 由 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\Lambda}$, 得 $\boldsymbol{A P}=\boldsymbol{P} \boldsymbol{\Lambda}$, 即
+$$
+\begin{aligned}
+\boldsymbol{A}\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right) & =\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right) \operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right) \\
+& =\left(\lambda_{1} \boldsymbol{p}_{1}, \lambda_{2} \boldsymbol{p}_{2}, \cdots, \lambda_{n} \boldsymbol{p}_{n}\right),
+\end{aligned}
+$$
+于是有
+$$
+\boldsymbol{Ap}_i =\lambda \boldsymbol{p}_i \quad (i=1,2,\cdots,n ).
+$$
+可见, $\boldsymbol{P}$ 的列向量 $\boldsymbol{p}_{i}$ 就是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量. 又因为 $\boldsymbol{P}$ 可逆,所以 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 线性无关. 由于上述推导过程可以反推回去, 因此关于矩阵 $\boldsymbol{A}$ 的对角化有如下结论.
+
+\begin{theorem}%定理 4
+$n$ 阶方阵 $\boldsymbol{A}$ 可对角化的充分必要条件是 $\boldsymbol{A}$ 有 $n$ 个线性无关的特征向量 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$, 并且以它们为列向量组成的矩阵 $\boldsymbol{P}$, 能使 $\boldsymbol{P}^{-1} \boldsymbol{AP}$ 为对角矩阵. 而且此对角矩阵的主对角线上的元素依次是与 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}$ 对应的 $\boldsymbol{A}$ 的特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$.
+\end{theorem}
+
+结合定理 $3$ , 可以得到下述推论.
+
+\begin{corollary}%推论 3 
+若 $n$ 阶方阵 $\boldsymbol{A}$ 有 $n$ 个互异的特征值,则 $\boldsymbol{A}$ 可对角化.
+\end{corollary}
+
+现在的问题是, 对于任意一个矩阵 $\boldsymbol{A}$, 是否一定存在 $n$ 个线性无关的特征向量, 答案是否定的. 在第 $1$ 节例 $3$ 中, 阶方阵 $\boldsymbol{A}$ 的特征方程有重根, 但仍能找到三个线性无关的特征向量; 而在例 $2$ 中, 三阶方阵 $\boldsymbol{A}$ 的特征方程亦有重根, 却找不到三个线性无关的特征向量. 从而例 $2$ 中的矩阵 $\boldsymbol{A}$ 不能与对角矩阵相似.
+
+下面的定理给出了矩阵 $\boldsymbol{A}$ 可对角化的又一充分必要条件.
+
+\begin{theorem}%定理 5
+$n$ 阶方阵 $\boldsymbol{A}$ 可对角化的充分必要条件是对应于 $\boldsymbol{A}$ 的每个特征值的线性无关的特征向量的个数恰好等于该特征值的重数, 即
+$$
+r\left(\boldsymbol{A}-\lambda_{i} \boldsymbol{E}\right)=n-k_{i},
+$$
+其中 $k_{i}$ 为特征值 $\lambda_{i}$ 的重数 $\left(i =1, 2, \cdots, r ; \, k_{1}+k_{2}+\cdots+k_{r}=n\right)$.
+\end{theorem}
+
+证明从略.
+
+\begin{example}%例 9 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+4 & 6 & 0 \\
+-3 & -5 & 0 \\
+-3 & -6 & 1
+\end{array}\right), 
+$$
+问: $\boldsymbol{A}$ 是否可以对角化? 如果可以, 试求出 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}$ 成为对角矩阵.
+\end{example}
+
+\begin{solution}%解 
+由第 $1$ 节例 $3$ 知, $\boldsymbol{A}$ 的对应于二重特征值 $\lambda_{1}=\lambda_{2}=1$ 的线性无关的特征向量恰有两个:
+$$
+\boldsymbol{p}_{1}=\left(\begin{array}{r}
+-2 \\
+1 \\
+0
+\end{array}\right), \quad \boldsymbol{p}_{2}=\left(\begin{array}{l}
+0 \\
+0 \\
+1
+\end{array}\right),
+$$
+$\boldsymbol{A}$ 的对应于特征值 $\lambda_{3}=-2$ 的特征向量为
+$$
+\boldsymbol{p}_{3}=\left(\begin{array}{r}
+-1 \\
+1 \\
+1
+\end{array}\right),
+$$
+由定理 $5$ 可知, $\boldsymbol{A}$ 可对角化.
+
+令
+$$
+\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \boldsymbol{p}_{3}\right)=\left(\begin{array}{rrr}
+-2 & 0 & -1 \\
+1 & 0 & 1 \\
+0 & 1 & 1
+\end{array}\right), 
+$$
+则
+$$
+\boldsymbol{P}^{-1} \boldsymbol{A} \boldsymbol{P}=\left(\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & -2
+\end{array}\right).
+$$
+\end{solution}
+
+\textbf{注意:} 对角矩阵中特征值的排列次序与矩阵 $\boldsymbol{P}$ 中相应的特征向量的排列次序是一致的.
+
+\begin{example}%例 10 
+设 $\boldsymbol{A}=\left(\begin{array}{rrr}2 & -1 & 2 \\ 5 & a & 3 \\ -1 & b & -2\end{array}\right)$ 的一个特征向量为 $\boldsymbol{p}=\left(\begin{array}{r}1 \\ 1 \\ -1\end{array}\right)$.
+
+$(1)$ 求参数 $a, b$ 的值及 $\boldsymbol{A}$ 的与特征向量 $\boldsymbol{p}$ 对应的特征值;
+
+$(2)$ $\boldsymbol{A}$ 与对角矩阵是否相似?
+\end{example}
+
+\begin{solution}%解 
+$(1)$ 设 $\boldsymbol{A}$ 的与特征向量 $\boldsymbol{p}$ 对应的特征值为 $\lambda$, 可得方程组 $(\boldsymbol{A}-\lambda \boldsymbol{E}) \boldsymbol{p}=\mathbf{0}$, 即
+$$
+\left(\begin{array}{ccc}
+2-\lambda & -1 & 2 \\
+5 & a-\lambda & 3 \\
+-1 & b & -2-\lambda
+\end{array}\right)\left(\begin{array}{l}
+1 \\
+k^{1} \\
+-1
+\end{array}\right)=\left(\begin{array}{l}
+0 \\
+0 \\
+0
+\end{array}\right),
+$$
+亦即
+$$
+\left\{\begin{array}{l}
+-\lambda-1=0, \\
+-\lambda+a+2=0, \\
+\lambda+b+1=0,
+\end{array}\right.
+$$
+解得
+$$
+\left\{\begin{array}{l}
+\lambda=-1, \\
+a=-3, \\
+b=0 .
+\end{array}\right. 
+$$
+
+$(2)$ 由 
+$$
+|\boldsymbol{A}-\lambda \boldsymbol{E}|=\left|\begin{array}{ccc}
+2-\lambda & -1 & 2 \\
+5 & -3-\lambda & 3 \\
+-1 & 0 & -2-\lambda
+\end{array}\right|=-(\lambda+1)^{3}=0
+$$
+知, $\boldsymbol{A}$ 有三重特征值
+$$
+\lambda_{1}=\lambda_{2}=\lambda_{3}=-1.
+$$
+
+由于
+\begin{align*}
+\boldsymbol{A}+\boldsymbol{E}
+&=\left(\begin{array}{rrr}
+3 & -1 & 2 \\
+5 & -2 & 3 \\
+-1 & 0 & -1
+\end{array}\right) \longrightarrow\left(\begin{array}{rrr}
+1 & 0 & 1 \\
+5 & -2 & 3 \\
+3 & -1 & 2
+\end{array}\right)\\
+& \longrightarrow\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 2 & 2 \\
+0 & 1 & 1
+\end{array}\right) \longrightarrow\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 0
+\end{array}\right)
+\end{align*}
+可知
+$$
+r(\boldsymbol{A}+\boldsymbol{E})=2, \quad n-r(\boldsymbol{A}+\boldsymbol{E})=3-2=1,
+$$
+即 $\boldsymbol{A}$ 的与三重特征值 $\lambda=-1$ 对应的线性无关的特征向量只有 $1$ 个. 所以, $\boldsymbol{A}$ 不与对角矩阵相似.
+\end{solution}
+
+
+
 
 </ul>
 
@@ -85,7 +876,384 @@
 <h2><a name="C3">$5.3$ 实对称矩阵的对角化</a></h2>
 
 <ul>
-  
+
+
+虽然并不是所有矩阵都相似于一个对角矩阵, 但是实对称矩阵是一定可以对角化的, 并且还能找到一个正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}$ 为对角矩阵.
+
+\begin{theorem}%定理 6
+实对称矩阵的特征值都是实数.
+\end{theorem}
+
+\begin{proof}%证 
+设复数 $\lambda$ 为实对称矩阵 $\boldsymbol{A}$ 的特征值, 复向量 $\boldsymbol{x}$ 为对应的特征向量, 即
+$$
+\boldsymbol{A x}=\lambda \boldsymbol{x}, \quad \boldsymbol{x} \neq \boldsymbol{0}. 
+$$
+
+用 $\overline{\lambda}$ 表示 $\lambda$ 的共轭复数, $\overline{\boldsymbol{x}}$ 表示 $\boldsymbol{x}$ 的共轭复向量, 则
+$$
+\boldsymbol{A} \overline{\boldsymbol{x}}=\overline{\boldsymbol{A}} \overline{\boldsymbol{x}}=\overline{\boldsymbol{A x}}=\overline{\lambda \boldsymbol{x}}=\overline{\lambda} \overline{\boldsymbol{x}}.
+$$
+对 $\boldsymbol{A x}=\lambda \boldsymbol{x}$ 两端左乘 $\overline{\boldsymbol{x}}^{\mathrm{T}}$, 得
+$$
+\overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}=\overline{\boldsymbol{x}}^{\mathrm{T}} \lambda \boldsymbol{x}=\lambda \overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{x}.
+$$
+又
+$$
+\overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}=\left(\overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}\right) \boldsymbol{x}=(\boldsymbol{A} \overline{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{x}=(\overline{\lambda} \overline{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{x}=\overline{\lambda} \overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{x}.
+$$
+两式相减, 得
+$$
+(\lambda-\overline{\lambda}) \overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{x}=0.
+$$
+但因 $\boldsymbol{x} \neq \mathbf{0}$, 所以
+$$
+\overline{\boldsymbol{x}}^{\mathrm{T}} \boldsymbol{x}=\sum_{i=1}^{n} \overline{x}_{i} x_{i}=\sum_{i=1}^{n}\left|x_{i}\right|^{2} \neq 0. 
+$$
+故 $\lambda-\overline{\lambda}=0$, 即 $\lambda=\overline{\lambda}$, 这表明 $\lambda$ 是实数. 证毕.
+\end{proof}
+
+显然, 当特征值 $\lambda_{i}$ 为实数时, 齐次线性方程组
+$$
+\left(\boldsymbol{A}-\lambda_{i} \boldsymbol{E}\right) \boldsymbol{x} =\boldsymbol{0}
+$$
+是实系数线性方程组, 从而必有实的基础解系, 即对应于 $\lambda_{i}$ 的特征向量必可取实向量.
+
+\begin{theorem}%定理 7
+设 $\lambda_{1}, \lambda_{2}$ 是实对称矩阵的两个特征值, $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}$ 是对应的特征向量, 若 $\lambda_{1} \neq \lambda_{2}$,则 $\boldsymbol{p}_{1}$ 与 $\boldsymbol{p}_{2}$ 正交.
+\end{theorem}
+
+
+\begin{proof}%证 
+由已知, $\lambda_{1} \boldsymbol{p}_{1}=\boldsymbol{A} \boldsymbol{p}_{1}, \lambda_{2} \boldsymbol{p}_{2}=\boldsymbol{A} \boldsymbol{p}_{2}, \lambda_{1} \neq \lambda_{2}$, 因 $\boldsymbol{A}$ 对称, 故 $\lambda_{1} \boldsymbol{p}_{1}^{\mathrm{T}}=\left(\lambda_{1} \boldsymbol{p}_{1}\right)^{\mathrm{T}}=$ $\left(\boldsymbol{A} \boldsymbol{p}_{1}\right)^{\mathrm{T}}=\boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{A}$, 两端右乘 $\boldsymbol{p}_{2}$, 得
+$$
+\lambda_{1} \boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{p}_{2}=\boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{p}_{2}=\boldsymbol{p}_{1}^{\mathrm{T}}\left(\lambda_{2} \boldsymbol{p}_{2}\right)=\lambda_{2} \boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{p}_{2},
+$$
+移项得
+$$
+\left(\lambda_{1}-\lambda_{2}\right) \boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{p}_{2}=0, 
+$$
+但 $\lambda_{1} \neq \lambda_{2}$, 故 $\boldsymbol{p}_{1}^{\mathrm{T}} \boldsymbol{p}_{2}=0$, 即 $\boldsymbol{p}_{1}$ 与 $\boldsymbol{p}_{2}$ 正交. 证毕.
+\end{proof}
+
+前面曾指出,对任意的 $n$ 阶矩阵,对应于不同特征值的特征向量是线性无关的, 定理 $7$ 表明,实对称矩阵的对应于不同特征值的特征向量不但线性无关,而且相互正交.
+
+下面的定理说明实对称矩阵是一定可以对角化的.
+
+\begin{theorem}%定理 8
+设 $\boldsymbol{A}$ 为 $n$ 阶实对称矩阵, $\lambda$ 是 $\boldsymbol{A}$ 的 $k$ 重特征值, 则 $r(\boldsymbol{A}-\lambda \boldsymbol{E})=n-k$, 即对应于 $k$ 重特征值 $\lambda$ 恰有 $k$ 个线性无关的特征向量.
+\end{theorem}
+
+证明略. 
+
+\begin{theorem}%定理 9
+设 $\boldsymbol{A}$ 为实对称矩阵,则必存在正交矩阵 $\boldsymbol{T}$, 使
+$$
+\boldsymbol{T}^{-1} \boldsymbol{AT}=\boldsymbol{\Lambda},
+$$
+其中 $\boldsymbol{\Lambda}$ 是以 $\boldsymbol{A}$ 的 $n$ 个特征值为对角元素的对角矩阵.
+\end{theorem}
+
+\begin{proof}
+设 $\boldsymbol{A}$ 的互不相同的特征值为 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{s}$, 它们的重数依次为 $k_{1}, k_{2}, \cdots$, $k_{s}$, 并且 $k_{1}+k_{2}+\cdots+k_{s}=n$.
+
+由定理 $8$ 知, 对应于特征值 $\lambda_{i} (i=1,2, \cdots, s)$ 恰有 $k_{i}$ 个线性无关的实特征向量, 利用格拉姆-施密特正交化方法把它们正交化并单位化, 即得到 $k_{i}$ 个正交的单位特征向量. 这样的特征向量共有 $n$ 个.
+
+由定理 $7$ 知, 对应于不同特征值的特征向量正交, 故这 $n$ 个单位特征向量两两正交. 于是以它们为列向量构成的矩阵 $\boldsymbol{T}$ 是正交矩阵, 且
+$$
+\boldsymbol{T}^{-1} \boldsymbol{AT}=\boldsymbol{\Lambda},
+$$
+其中对角矩阵 $\boldsymbol{\Lambda}$ 的对角元素含有 $k_{1}$ 个 $\lambda_{1}, \cdots, k_{s}$ 个 $\lambda_{s}$, 恰是 $\boldsymbol{A}$ 的 $n$ 个特征值. 证毕.
+\end{proof}
+
+
+根据定理 $9$ 的证明,可以按以下步骤求出正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}$ 成为对角矩阵:
+
+第一步, 求出 $\boldsymbol{A}$ 的所有不同的特征值 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{s}$;
+
+第二步, 求出 $\boldsymbol{A}$ 的对应于每个特征值 $\lambda_{i}$ 的一组线性无关的特征向量, 即求出齐次线性方程组 $$\left(\boldsymbol{A}-\lambda_{i} \boldsymbol{E}\right) \boldsymbol{x}=\boldsymbol{0}$$ 的一个基础解系; 然后, 利用格拉姆-施密特正交化方法, 把此组基础解系规范正交化; 再将对应于不同特征值的特征向量单位化, 由定理 $7$ 知, 对应于不同特征值的特征向量正交, 如此可得 $\boldsymbol{A}$ 的 $n$ 个两两正交的单位特征向量; 
+
+第三步, 以上面求出的 $n$ 个两两正交的单位特征向量为列向量所得的 $n$ 阶方阵, 即为所求的正交矩阵 $\boldsymbol{T}$; 以相应的特征值为主对角线元素的对角矩阵 $\boldsymbol{\Lambda}$,即为所求的 $\boldsymbol{T}^{-1} \boldsymbol{AT}$.
+
+\textbf{注意:} $\boldsymbol{T}$ 中列向量的次序与矩阵 $\boldsymbol{\Lambda}$ 主对角线上的特征值的次序相对应.
+
+
+\begin{example}%例 11 
+设 $\boldsymbol{A}=\left(\begin{array}{lll}1 & 2 & 2 \\ 2 & 1 & 2 \\ 2 & 2 & 1\end{array}\right)$, 求正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}$ 为对角矩阵.
+\end{example}
+
+\begin{solution}%解 
+显然 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 故一定存在正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}$ 为对角矩阵.
+
+第一步, 先求 $\boldsymbol{A}$ 的特征值. 由
+$$
+\begin{aligned}
+|\boldsymbol{A}-\lambda \boldsymbol{E}| & =\left|\begin{array}{ccc}
+1-\lambda & 2 & 2 \\
+2 & 1-\lambda & 2 \\
+2 & 2 & 1-\lambda
+\end{array}\right|=\left|\begin{array}{ccc}
+5-\lambda & 2 & 2 \\
+5-\lambda & 1-\lambda & 2 \\
+5-\lambda & 2 & 1-\lambda
+\end{array}\right| \\
+& =(5-\lambda)\left|\begin{array}{ccc}
+1 & 2 & 2 \\
+0 & -(\lambda+1) & 0 \\
+0 & 0 & -(\lambda+1)
+\end{array}\right| \\
+& =(5-\lambda)(\lambda+1)^{2}=0, 
+\end{aligned}
+$$
+求得 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=\lambda_{2}=-1, \lambda_{3}=5$.
+
+第二步, 对于 $\lambda_{1}=\lambda_{2}=-1$, 求解齐次线性方程组 $(\boldsymbol{A}+\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$$
+\boldsymbol{A}+ \boldsymbol{E}=\left(\begin{array}{rrr}
+2 & 2 & 2 \\
+2 & 2 & 2 \\
+2 & 2 & 2
+\end{array}\right) \rightarrow \left(\begin{array}{rrr}
+1 & 1 & 1 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{array}\right), 
+$$
+求得一组基础解系为
+$$
+\boldsymbol{\alpha}_{1}=\left(\begin{array}{r}
+-1 \\
+1 \\
+0
+\end{array}\right), \quad \boldsymbol{\alpha}_{2}=\left(\begin{array}{r}
+-1 \\
+0 \\
+1
+\end{array}\right). 
+$$
+
+正交化: 令
+$$
+\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=\left(\begin{array}{r}
+-1 \\
+1 \\
+0
+\end{array}\right),
+$$
+$$
+\boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-\frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{2}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}=\left(\begin{array}{r}
+-1 \\
+0 \\
+1
+\end{array}\right)-\frac{1}{2}\left(\begin{array}{r}
+-1 \\
+1 \\
+0
+\end{array}\right)=\left(\begin{array}{r}
+-\frac{1}{2} \\[5pt]
+-\frac{1}{2} \\
+1
+\end{array}\right). 
+$$
+
+再单位化: 令
+$$
+\boldsymbol{\gamma}_{1}=\frac{\boldsymbol{\beta}_{1}}{\left\|\boldsymbol{\beta}_{1}\right\|}=\left(\begin{array}{c}
+-\frac{\sqrt{2}}{2} \\[5pt]
+\frac{\sqrt{2}}{2} \\
+0
+\end{array}\right), \quad \boldsymbol{\gamma}_{2}=\frac{\boldsymbol{\beta}_{2}}{\left\|\boldsymbol{\beta}_{2}\right\|}=\left(\begin{array}{c}
+-\frac{\sqrt{6}}{6} \\[5pt]
+-\frac{\sqrt{6}}{6} \\[5pt]
+\frac{\sqrt{6}}{3}
+\end{array}\right).
+$$
+
+对于 $\lambda_{3}=5$, 求解齐次线性方程组 $(\boldsymbol{A}-5 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
+$$
+\begin{aligned}
+\boldsymbol{A}-5 \boldsymbol{E}
+& =\left(\begin{array}{rrr}
+-4 & 2 & 2 \\
+2 & -4 & 2 \\
+2 & 2 & -4
+\end{array}\right) \xrightarrow{r_{1}+r_{2}}\left(\begin{array}{rrr}
+-2 & -2 & 4 \\
+2 & -4 & 2 \\
+2 & 2 & -4
+\end{array}\right) \\
+& \xrightarrow[r_{3}+r_{1}]{r_{2}+r_{1}}\left(\begin{array}{rrr}
+-2 & -2 & 4 \\
+0 & -6 & 6 \\
+0 & 0 & 0
+\end{array}\right) \xrightarrow[r_{1}+(-1) \times r_{2}]{\substack{-\frac{1}{2} \times r_{1} \\
+-\frac{1}{6} \times r_{2}}}\left(\begin{array}{rrr}
+1 & 0 & -1 \\
+0 & 1 & -1 \\
+0 & 0 & 0
+\end{array}\right), 
+\end{aligned}
+$$
+求得一组基础解系为
+$$
+\boldsymbol{\alpha}_{3}=(1,1,1)^{\mathrm{T}},
+$$
+这里只有一个向量, 单位化, 得
+$$
+\boldsymbol{\gamma}_{3}=\frac{\boldsymbol{\alpha}_{3}}{\left\|\boldsymbol{\alpha}_{3}\right\|}=\left(\frac{\sqrt{3}}{3}, \frac{\sqrt{3}}{3}, \frac{\sqrt{3}}{3}\right)^{\mathrm{T}}.
+$$
+
+第三步, 以正交单位向量组 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}$ 为列向量的矩阵 $\boldsymbol{T}$ 就是所求的正交矩阵, 即令
+$$
+\boldsymbol{T}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}\right)=\left(\begin{array}{rrr}
+-\frac{\sqrt{2}}{2} & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{3} \\[5pt]
+\frac{\sqrt{2}}{2} & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{3} \\[5pt]
+0 & \frac{\sqrt{6}}{3} & \frac{\sqrt{3}}{3}
+\end{array}\right), 
+$$
+有
+$$
+\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}=\left(\begin{array}{rrr}
+-1 & 0 & 0 \\
+0 & -1 & 0 \\
+0 & 0 & 5
+\end{array}\right).
+$$
+\end{solution}
+
+
+\begin{example}%例 12 
+设 $\boldsymbol{A}=\left(\begin{array}{rrrr}7 & -3 & -1 & 1 \\ -3 & 7 & 1 & -1 \\ -1 & 1 & 7 & -3 \\ 1 & -1 & -3 & 7\end{array}\right)$, 求正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}$ 为对角矩阵.
+\end{example}
+
+\begin{solution}
+由
+\begin{align*}
+|\boldsymbol{A}-\lambda \boldsymbol{E}| & =\left|\begin{array}{cccc}
+7-\lambda & -3 & -1 & 1 \\
+-3 & 7-\lambda & 1 & -1 \\
+-1 & 1 & 7-\lambda & -3 \\
+1 & -1 & -3 & 7-\lambda
+\end{array}\right| \\
+& \xlongequal[\substack{c_{1}+c_{3} \\
+c_{1}+c_{4}}]{c_{1}+c_{2}}\left|\begin{array}{cccc}
+4-\lambda & -3 & -1 & 1 \\
+4-\lambda & 7-\lambda & 1 & -1 \\
+4-\lambda & 1 & 7-\lambda & -3 \\
+4-\lambda & -1 & -3 & 7-\lambda
+\end{array}\right| \\
+& =(4-\lambda)\left|\begin{array}{cccc}
+1 & -3 & -1 & 1 \\
+1 & 7-\lambda & 1 & -1 \\
+1 & 1 & 7-\lambda & -3 \\
+1 & -1 & -3 & 7-\lambda
+\end{array}\right| \\
+& \xlongequal[\substack{r_{3}+(-1) \times r_{1} \\
+r_{4}+(-1) \times r_{1}}]{r_{2}+(-1) \times r_{1}} (4-\lambda)\left|\begin{array}{cccc}
+1 & -3 & -1 & 1 \\
+0 & 10-\lambda & 2 & -2 \\
+0 & 4 & 8-\lambda & -4 \\
+0 & 2 & -2 & 6-\lambda
+\end{array}\right| \\
+& \xlongequal{\text { 按第一列展开 }}(4-\lambda)\left|\begin{array}{ccc}
+10-\lambda & 2 & -2 \\
+4 & 8-\lambda & -4 \\
+2 & -2 & 6-\lambda
+\end{array}\right| \\
+& \xlongequal{c_{1}+c_{2}}(4-\lambda)\left|\begin{array}{ccc}
+12-\lambda & 2 & -2 \\
+12-\lambda & 8-\lambda & -4 \\
+0 & -2 & 6-\lambda
+\end{array}\right| \\
+& =(4-\lambda)(12-\lambda)\left|\begin{array}{ccc}
+1 & 2 & -2 \\
+1 & 8-\lambda & -4 \\
+0 & -2 & 6-\lambda
+\end{array}\right| \\
+& \xlongequal{r_{2}+(-1) \times r_{1}}(4-\lambda)(12-\lambda)\left|\begin{array}{ccc}
+1 & 2 & -2 \\
+0 & 6-\lambda & -2 \\
+0 & -2 & 6-\lambda
+\end{array}\right| \\
+& =(4-\lambda)^{2}(8-\lambda)(12-\lambda)=0,
+\end{align*}
+求得 $\boldsymbol{A}$ 的不同的特征值为 $\lambda_{1}=4$ (二重), $\lambda_{2}=8, \lambda_{3}=12$.
+
+对于 $\lambda_{1}=4$, 求解齐次线性方程组 $(\boldsymbol{A}-4 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$$
+\begin{aligned}
+\boldsymbol{A}-4 \boldsymbol{E}
+&=\left(\begin{array}{rrrr}
+3 & -3 & -1 & 1 \\
+-3 & 3 & 1 & -1 \\
+-1 & 1 & 3 & -3 \\
+1 & -1 & -3 & 3
+\end{array}\right) \xrightarrow{r_{1}\leftrightarrow r_{4}}\left(\begin{array}{rrrr}
+1 & -1 & -3 & 3 \\
+-3 & 3 & 1 & -1 \\
+-1 & 1 & 3 & -3 \\
+3 & -3 & -1 & 1
+\end{array}\right)\\
+& \xrightarrow[\substack{r_3+r_1 \\
+r_4+(-3) \times r_1}]{r_2+3 \times r_1}\left(\begin{array}{rrrr}
+1 & -1 & -3 & 3 \\
+0 & 0 & -8 & 8 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 8 & -8
+\end{array}\right) \xrightarrow[r_2 \leftrightarrow r_3]{r_3 \leftrightarrow r_4}\left(\begin{array}{rrrr}
+1 & -1 & -3 & 3 \\
+0 & 0 & 8 & -8 \\
+0 & 0 & -8 & 8 \\
+0 & 0 & 0 & 0
+\end{array}\right)\\ 
+& \xrightarrow[\frac{1}{8} \times r_{2}]{r_{3}+r_{2}}\left(\begin{array}{rrrr}
+1 & -1 & -3 & 3 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right), 
+\end{aligned}
+$$
+求得一组基础解系为
+$$
+\boldsymbol{\alpha}_{1}=(1,1,0,0)^{\mathrm{T}}, \quad \boldsymbol{\alpha}_{2}=(0,0,1,1)^{\mathrm{T}}.
+$$
+显然, $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 正交, 只需将其单位化, 即令
+$$
+\boldsymbol{\gamma}_{1}=\frac{\boldsymbol{\alpha}_{1}}{\left\|\boldsymbol{\alpha}_{1}\right\|}=\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, 0,0\right)^{\mathrm{T}}, \quad \boldsymbol{\gamma}_{2}=\frac{\boldsymbol{\alpha}_{2}}{\left\|\boldsymbol{\alpha}_{2}\right\|}=\left(0,0, \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)^{\mathrm{T}}.
+$$
+
+对于 $\lambda_{2}=8$, 类似地可求得齐次线性方程组 $(\boldsymbol{A}-8 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$ 的一组单位化的基础解系为
+$$
+\boldsymbol{\gamma}_{3}=\left(-\frac{1}{2}, \frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)^{\mathrm{T}}.
+$$
+
+对于 $\lambda_{3}=12$, 类似地可求得对应的单位特征向量为
+$$
+\boldsymbol{\gamma}_{4}=\left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)^{\mathrm{T}}.
+$$
+
+于是
+$$
+\boldsymbol{T}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}, \boldsymbol{\gamma}_{4}\right)=\left(\begin{array}{rrrr}
+\frac{\sqrt{2}}{2} & 0 & -\frac{1}{2} & \frac{1}{2} \\[5pt]
+\frac{\sqrt{2}}{2} & 0 & \frac{1}{2} & -\frac{1}{2} \\[5pt]
+0 & \frac{\sqrt{2}}{2} & -\frac{1}{2} & -\frac{1}{2} \\[5pt]
+0 & \frac{\sqrt{2}}{2} & \frac{1}{2} & \frac{1}{2}
+\end{array}\right),  
+$$
+即为所求的正交矩阵, 且
+$$
+\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}=\left(\begin{array}{cccc}
+4 & 0 & 0 & 0 \\
+0 & 4 & 0 & 0 \\
+0 & 0 & 8 & 0 \\
+0 & 0 & 0 & 12
+\end{array}\right).
+$$
+\end{solution}
+
+
 </ul>
 
 <a href="#C0">返回顶部</a>
@@ -95,6 +1263,705 @@
 
 <ul>
 
+
+前面主要研究线性问题,但在实际问题中还存在大量非线性问题, 其中最简单的模型就是二次型. 本节利用矩阵工具研究二次型,介绍化二次型为标准形的几种方法.
+
+\begin{definition}%定义 3 
+$n$ 元变量 $x_{1}, x_{2}, \cdots, x_{n}$ 的二次齐次多项式
+\begin{align*}
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)= & a_{11} x_{1}^{2}+a_{22} x_{2}^{2}+\cdots+a_{n n} x_{n}^{2}+2 a_{12} x_{1} x_{2}+\cdots+2 a_{1 n} x_{1} x_{n} \\
+& +2 a_{23} x_{2} x_{3}+\cdots+2 a_{n-1, n} x_{n-1} x_{n} \tag{5-9}
+\end{align*}
+称为 $n$ 元二次型, 简称二次型. 当 $a_{i j}$ 为复数时, $f$ 称为复二次型; 当 $a_{i j}$ 为实数时, $f$ 称为实二次型.
+\end{definition}
+
+这里只讨论实二次型. 取 $a_{j i}=a_{i j} (i < j)$, 则 $2 a_{i j} x_{i} x_{j}=a_{i j} x_{i} x_{j}+a_{j i} x_{j} x_{i}$. 于是式(5-9)可写成对称形式:
+\begin{align*}
+f= & a_{11} x_{1}^{2}+a_{12} x_{1} x_{2}+\cdots+a_{1 n} x_{1} x_{n}+a_{21} x_{2} x_{1}+a_{22} x_{2}^{2} \\
+& +\cdots+a_{2 n} x_{2} x_{n}+\cdots+a_{n 1} x_{n} x_{1}+a_{n 2} x_{n} x_{2}+\cdots+a_{n n} x_{n}^{2} \\
+= & \sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}. \tag{5-10}
+\end{align*}
+记
+\[
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n}  \tag{5-11}\\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right), \quad \boldsymbol{x}=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right),
+\]
+则式 (5-10) 可以用矩阵形式简单表示为
+\begin{align*}
+f & =\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right)\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right) \\
+& =\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}, \tag{5-12}
+\end{align*}
+其中 $\boldsymbol{A}$ 为实对称矩阵.
+
+例如, 二次型 $f=x^{2}+2 x y+4 y^{2}-2 x z-6 y z+5 z^{2}$ 用矩阵表示即为
+$$
+f=(x, y, z)\left(\begin{array}{rrr}
+1 & 1 & -1 \\
+1 & 4 & -3 \\
+-1 & -3 & 5
+\end{array}\right)\left(\begin{array}{l}
+x \\
+y \\
+z
+\end{array}\right).
+$$
+
+显然, 这种矩阵表示是唯一的, 即任给一个二次型就唯一确定一个对称矩阵; 反之, 任给一个对称矩阵也可唯一确定一个二次型, 即两者之间存在一一对应关系. 对称矩阵 $\boldsymbol{A}$ 称为二次型 $f$ 的矩阵, $\boldsymbol{A}$ 的秩称为二次型 $f$ 的秩, $f$ 也称为对称矩阵 $\boldsymbol{A}$ 的二次型.
+
+在平面解析几何中讨论二次曲线时, 经常把二次曲线的一般方程
+$$
+a x^{2}+2 b x y+c y^{2}=1,
+$$
+通过坐标变换化成标准形
+$$
+m x^{\prime 2}+n y^{\prime 2}=1,
+$$
+再根据标准形判断曲线的形状.
+
+这里对二次型也进行类似的讨论.
+
+对于一般的二次型
+$$
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x},
+$$
+设 $\boldsymbol{C}$ 是一个 $n$ 阶可逆矩阵, 令
+$$
+\boldsymbol{x}=\boldsymbol{C} \boldsymbol{y} ,
+$$
+称该线性变换为非退化的线性变换或可逆线性变换. 将其代入二次型 $f=$ $\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$, 得
+$$
+f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}=(\boldsymbol{C} \boldsymbol{y})^{\mathrm{T}} \boldsymbol{A}(\boldsymbol{C} \boldsymbol{y})=\boldsymbol{y}^{\mathrm{T}}\left(\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}\right) \boldsymbol{y}.
+$$
+
+\begin{definition}%定义 4 
+对于 $n$ 阶矩阵 $\boldsymbol{A}$ 和 $\boldsymbol{B}$, 如果存在 $n$ 阶可逆矩阵 $\boldsymbol{C}$, 使得 $\boldsymbol{B}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 则称 $\boldsymbol{B}$ 合同于 $\boldsymbol{A}$, 记作 $\boldsymbol{A} \simeq \boldsymbol{B}$. 对 $\boldsymbol{A}$ 进行运算 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 称为对 $\boldsymbol{A}$ 进行合同变换.
+\end{definition}
+
+
+\begin{theorem}%定理 10
+任给可逆矩阵 $\boldsymbol{C}$, 令 $\boldsymbol{B}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$. 如果 $\boldsymbol{A}$ 为对称矩阵, 则 $\boldsymbol{B}$ 亦为对称矩阵, 且 $r(\boldsymbol{B})=r(\boldsymbol{A})$.
+\end{theorem}
+
+\begin{proof}%证 
+因 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 故 $\boldsymbol{B}^{\mathrm{T}}=\left(\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}\right)^{\mathrm{T}}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}} \boldsymbol{C}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}=\boldsymbol{B}$, 即 $\boldsymbol{B}$ 为对称矩阵.
+
+又因为 $\boldsymbol{B}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 而 $\boldsymbol{C}^{\mathrm{T}}$ 与 $\boldsymbol{C}$ 均为可逆矩阵, 故 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 于是 $r(\boldsymbol{B})=$ $r(\boldsymbol{A})$. 证毕.
+\end{proof}
+
+定理 $10$ 说明, 经可逆线性变换 $\boldsymbol{x}=\boldsymbol{C y}$ 后,二次型 $f$ 的矩阵 $\boldsymbol{A}$ 变为与 $\boldsymbol{A}$ 合同的对称矩阵 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 且二次型的秩不变. 矩阵的合同关系与相似关系一样, 都满足反身性、对称性、传递性.
+
+
+\begin{definition}%定义 5 
+只含平方项的二次型, 即
+$$
+f=k_{1} y_{1}^{2}+k_{2} y_{2}^{2}+\cdots+k_{n} y_{n}^{2},
+$$
+称为二次型的标准形 (或法式).
+\end{definition}
+
+要使二次型 $f$ 经可逆线性变换 $\boldsymbol{x}=\boldsymbol{C y}$ 变成标准形, 就是要使
+$$
+\begin{aligned}
+\boldsymbol{y}^{\mathrm{T}} \boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C} \boldsymbol{y} & =k_{1} y_{1}^{2}+k_{2} y_{2}^{2}+\cdots+k_{n} y_{n}^{2} \\
+& =\left(y_{1}, y_{2}, \cdots, y_{n}\right)\left(\begin{array}{cccc}
+k_{1} & & & \\
+& k_{2} & & \\
+& & \ddots & \\
+& & & k_{n}
+\end{array}\right)\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right),
+\end{aligned}
+$$
+也就是要使 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$ 成为对角矩阵. 因此, 化二次型为标准形就是对于对称矩阵 $\boldsymbol{A}$,寻求可逆矩阵 $\boldsymbol{C}$, 使 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A C}$ 为对角矩阵.
+
+由第 $3$ 节的定理 $9$ 知, 任给实对称矩阵 $\boldsymbol{A}$, 总有正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A} \boldsymbol{T}=\boldsymbol{\Lambda}$,即 $\boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}=\boldsymbol{\Lambda}$ 为对角矩阵. 把此结论应用于二次型, 即有如下定理.
+
+\begin{theorem}%定理 11
+任给实二次型 $f=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}$, 总有正交变换 $\boldsymbol{x}=\boldsymbol{T} \boldsymbol{y}$ ( $\boldsymbol{T}$ 是正交矩阵 $)$, 使 $f$ 化为标准形
+$$
+f=\lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\cdots+\lambda_{n} y_{n}^{2},
+$$
+其中 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $f$ 的矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 的特征值.
+\end{theorem}
+
+用正交变换把二次型化为标准形,这在理论上和实际应用中都是非常重要的, 而此方法的具体步骤就是第 3 节介绍的化实对称矩阵为对角矩阵的步骤.
+
+\begin{example}%例 13 
+求一个正交变换 $\boldsymbol{x}=\boldsymbol{T} \boldsymbol{y}$, 把二次型
+$$
+f=2 x_{1} x_{2}+2 x_{1} x_{3}-2 x_{2} x_{3}+2 x_{2} x_{4}-2 x_{1} x_{4}+2 x_{3} x_{4}
+$$
+化为标准形. 
+\end{example}
+
+\begin{solution}
+$f$ 的矩阵为
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+0 & 1 & 1 & -1 \\
+1 & 0 & -1 & 1 \\
+1 & -1 & 0 & 1 \\
+-1 & 1 & 1 & 0
+\end{array}\right), 
+$$
+$\boldsymbol{A}$ 的特征多项式为
+$$
+\begin{aligned}
+|\boldsymbol{A}-\lambda \boldsymbol{E}| & =\left|\begin{array}{rrrr}
+-\lambda & 1 & 1 & -1 \\
+1 & -\lambda & -1 & 1 \\
+1 & -1 & -\lambda & 1 \\
+-1 & 1 & 1 & -\lambda
+\end{array}\right| \\
+& =-(1-\lambda)^{3}(3+\lambda).
+\end{aligned}
+$$
+于是 $\boldsymbol{A}$ 的全部特征值为 $\lambda_{1}=1$ (三重), $\lambda_{2}=-3$.
+
+对于 $\lambda_{1}=1$, 解齐次线性方程组 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$$
+\boldsymbol{A}-\boldsymbol{E}=\left(\begin{array}{rrrr}
+-1 & 1 & 1 & -1 \\
+1 & -1 & -1 & 1 \\
+1 & -1 & -1 & 1 \\
+-1 & 1 & 1 & -1
+\end{array}\right) \longrightarrow\left(\begin{array}{rrrr}
+-1 & 1 & 1 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right), 
+$$
+求得一组基础解系
+$$
+\boldsymbol{\alpha}_{1}=\left(\begin{array}{l}
+1 \\
+1 \\
+0 \\
+0
+\end{array}\right), \quad \boldsymbol{\alpha}_{2}=\left(\begin{array}{l}
+1 \\
+0 \\
+1 \\
+0
+\end{array}\right), \quad \boldsymbol{\alpha}_{3}=\left(\begin{array}{r}
+-1 \\
+0 \\
+0 \\
+1
+\end{array}\right).
+$$
+
+令
+$$
+\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=\left(\begin{array}{l}
+1 \\
+1 \\
+0 \\
+0
+\end{array}\right), 
+$$
+$$
+\boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-\frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{2}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}=\left(\begin{array}{l}
+1 \\
+0 \\
+1 \\
+0
+\end{array}\right)-\frac{1}{2}\left(\begin{array}{l}
+1 \\
+1 \\
+0 \\
+0
+\end{array}\right)=\left(\begin{array}{r}
+\frac{1}{2} \\[5pt]
+\frac{1}{2} \\
+1 \\
+0
+\end{array}\right),
+$$
+$$
+\boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}-\frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{3}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}-\frac{\left[\boldsymbol{\beta}_{2}, \boldsymbol{\alpha}_{3}\right]}{\left[\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{2}\right]} \boldsymbol{\beta}_{2}=\left(\begin{array}{r}
+-1 \\
+0 \\
+0 \\
+1
+\end{array}\right)+\frac{1}{2}\left(\begin{array}{l}
+1 \\
+1 \\
+0 \\
+0
+\end{array}\right)+\frac{1}{3}\left(\begin{array}{r}
+\frac{1}{2} \\[5pt]
+-\frac{1}{2} \\
+1 \\
+0
+\end{array}\right)=\left(\begin{array}{r}
+-\frac{1}{3} \\[5pt]
+\frac{1}{3} \\[5pt]
+\frac{1}{3} \\[5pt]
+1
+\end{array}\right) .
+$$
+再令
+$$
+\boldsymbol{\gamma}_{1}=\frac{\boldsymbol{\beta}_{1}}{\left\|\boldsymbol{\beta}_{1}\right\|}=\left(\begin{array}{c}
+\frac{\sqrt{2}}{2} \\[5pt]
+\frac{\sqrt{2}}{2} \\[5pt]
+0 \\
+0
+\end{array}\right), \quad \boldsymbol{\gamma}_{2}=\frac{\boldsymbol{\beta}_{2}}{\left\|\boldsymbol{\beta}_{2}\right\|}=\left(\begin{array}{c}
+\frac{\sqrt{6}}{6} \\[5pt]
+-\frac{\sqrt{6}}{6} \\[5pt]
+\frac{\sqrt{6}}{3} \\[5pt]
+0
+\end{array}\right), \quad \boldsymbol{\gamma}_{3}=\frac{\boldsymbol{\beta}_{3}}{\left\|\boldsymbol{\beta}_{3}\right\|}=\left(\begin{array}{c}
+-\frac{\sqrt{3}}{6} \\[5pt]
+\frac{\sqrt{3}}{6} \\[5pt]
+\frac{\sqrt{3}}{6} \\[5pt]
+\frac{\sqrt{3}}{2}
+\end{array}\right). 
+$$
+
+对于 $\lambda_{2}=-3$, 解齐次线性方程组 $(\boldsymbol{A}+3 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$$
+\boldsymbol{A}+3 \boldsymbol{E}=\left(\begin{array}{rrrr}
+3 & 1 & 1 & -1 \\
+1 & 3 & -1 & 1 \\
+1 & -1 & 3 & 1 \\
+-1 & 1 & 1 & 3
+\end{array}\right) \longrightarrow\left(\begin{array}{rrrr}
+1 & -1 & -1 & -3 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right), 
+$$
+求得一组基础解系为
+$$
+\boldsymbol{\alpha}_{4}=(1,-1,-1,1)^{\mathrm{T}}.
+$$
+令
+$$
+\boldsymbol{\gamma}_{4}=\frac{\boldsymbol{\alpha}_{4}}{\left\|\boldsymbol{\alpha}_{4}\right\|}=\left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)^{\mathrm{T}}. 
+$$
+
+取正交矩阵
+$$
+\boldsymbol{T}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}, \boldsymbol{\gamma}_{4}\right)=\left(\begin{array}{rrrr}
+\frac{\sqrt{2}}{2} & \frac{\sqrt{6}}{6} & -\frac{\sqrt{3}}{6} & \frac{1}{2} \\[5pt]
+\frac{\sqrt{2}}{2} & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{6} & -\frac{1}{2} \\[5pt]
+0 & \frac{\sqrt{6}}{3} & \frac{\sqrt{3}}{6} & -\frac{1}{2} \\[5pt]
+0 & 0 & \frac{\sqrt{3}}{2} & \frac{1}{2}
+\end{array}\right).
+$$
+再令 $\boldsymbol{x}=\boldsymbol{T} \boldsymbol{y}$, 则可得
+$$
+f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}=\boldsymbol{y}^{\mathrm{T}}\left(\boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}\right) \boldsymbol{y}=y_{1}^{2}+y_{2}^{2}+y_{3}^{2}-3 y_{4}^{2}.
+$$
+\end{solution}
+
+
+\begin{example}%例 14 
+已知二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1}^{2}+3 x_{2}^{2}+3 x_{3}^{2}+2 a x_{2} x_{3}(a>0)$, 通过正交变换可化为标准形 $f=y_{1}^{2}+2 y_{2}^{2}+5 y_{3}^{2}$, 求参数 $a$ 及所用的正交变换.
+\end{example}
+
+\textbf{分析: } 由于二次型 $f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$ 通过正交变换 $\boldsymbol{x}=\boldsymbol{T} \boldsymbol{y}$ 化成的标准形 $f=\lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\boldsymbol{\cdots}+$ $\lambda_{n} y_{n}^{2}$ 的平方项的系数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的特征值, 而且变换前后两个二次型的矩阵有下面的关系:
+$$
+\boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}=\left(\begin{array}{llll}
+\lambda_{1} & & & \\
+& \lambda_{2} &   & \\
+& & \ddots & \\
+& & & \lambda_{n}
+\end{array}\right),
+$$
+所以上式两端取行列式, 即可求得参数 $a$.
+
+\begin{solution}
+变换前后二次型的矩阵分别为
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+2 & 0 & 0 \\
+0 & 3 & a \\
+0 & a & 3
+\end{array}\right), \quad \boldsymbol{\Lambda}=\left(\begin{array}{lll}
+1 & & \\
+& 2 & \\
+& & 5
+\end{array}\right).
+$$
+
+设所求正交矩阵为 $\boldsymbol{T}$, 则有 $\boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}=\boldsymbol{\Lambda}$. 此时两端取行列式, 并注意到 $|\boldsymbol{T}|= \pm 1$, 得
+$$
+\left|\boldsymbol{T}^{\mathrm{T}}\right||\boldsymbol{A}||\boldsymbol{T}|=|\boldsymbol{T}|^{2}|\boldsymbol{A}|=|\boldsymbol{A}|=|\boldsymbol{\Lambda}|,
+$$
+即
+$$
+2\left(9-a^{2}\right)=10.
+$$
+由 $a>0$, 得 $a=2$.
+
+根据分析可知, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=2, \lambda_{3}=5$.
+
+当 $\lambda_{1}=1$ 时, 解齐次线性方程组 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 得特征向量为
+$$
+\boldsymbol{\xi}_{1}=(0,1,-1)^{\mathrm{T}}.
+$$
+同理, 可求得与 $\lambda_{2}=2, \lambda_{3}=5$ 对应的特征向量分别为
+$$
+\boldsymbol{\xi}_{2}=(1,0,0)^{\mathrm{T}}, \quad \boldsymbol{\xi}_{3}=(0,1,1)^{\mathrm{T}}.
+$$
+
+又因为对应于不同特征值的特征向量是相互正交的, 所以 $\xi_{1}, \xi_{2}, \xi_{3}$ 是正交向量组, 将它们单位化, 得
+$$
+\boldsymbol{p}_1=\frac{1}{\left\|\boldsymbol{\xi}_1\right\|} \boldsymbol{\xi}_1=\left(\begin{array}{c}
+0 \\
+\frac{\sqrt{2}}{2} \\[5pt]
+-\frac{\sqrt{2}}{2}
+\end{array}\right), \, 
+\boldsymbol{p}_2=\frac{1}{\left\|\boldsymbol{\xi}_2\right\|} \boldsymbol{\xi}_2=\left(\begin{array}{c}
+1 \\
+0 \\
+0
+\end{array}\right), \,
+\boldsymbol{p}_3=\frac{1}{\left\|\boldsymbol{\xi}_3\right\|} \boldsymbol{\xi}_3=\left(\begin{array}{c}
+0 \\
+\frac{\sqrt{2}}{2} \\[5pt]
+\frac{\sqrt{2}}{2}
+\end{array}\right), 
+$$
+以 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \boldsymbol{p}_{3}$ 为列向量, 即得所求的正交矩阵
+$$
+\boldsymbol{T}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \boldsymbol{p}_{3}\right)=\left(\begin{array}{rrr}
+0 & 1 & 0 \\
+\frac{\sqrt{2}}{2} & 0 & \frac{\sqrt{2}}{2} \\[5pt]
+-\frac{\sqrt{2}}{2} & 0 & \frac{\sqrt{2}}{2}
+\end{array}\right).
+$$
+\end{solution}
+
+用正交变换化二次型为标准形, 具有保持儿何形状不变的优点. 如果不限于用正交变换, 那么还有多种方法可把一次型化为标准形, 如配方法、初等变换法等. 下面通过实例分别介绍配方法和初等变换法.
+
+
+
+\begin{example}%例 15 
+化二次型
+$$
+f=x_{1}^{2}+2 x_{2}^{2}+5 x_{3}^{2}+2 x_{1} x_{2}+2 x_{1} x_{3}+6 x_{2} x_{3}
+$$
+为标准形, 并求所用的变换矩阵.
+\end{example}
+
+\begin{solution}%解 
+由于 $f$ 中含变量 $x_{1}$ 的平方项, 故把含 $x_{1}$ 的项归并起来, 配方可得
+$$
+\begin{aligned}
+f & =\left(x_{1}^{2}+2 x_{1} x_{2}+2 x_{1} x_{3}\right)+2 x_{2}^{2}+5 x_{3}^{2}+6 x_{2} x_{3} \\
+& =\left(x_{1}+x_{2}+x_{3}\right)^{2}-x_{2}^{2}-x_{3}^{2}-2 x_{2} x_{3}+2 x_{2}^{2}+5 x_{3}^{2}+6 x_{2} x_{3} \\
+& =\left(x_{1}+x_{2}+x_{3}\right)^{2}+x_{2}^{2}+4 x_{2} x_{3}+4 x_{3}^{2}.
+\end{aligned}
+$$
+上式右端除第一项外已不再含 $x_{1}$, 继续配方, 得
+$$
+f=\left(x_{1}+x_{2}+x_{3}\right)^{2}+\left(x_{2}+2 x_{3}\right)^{2}.
+$$
+令
+$$
+\left\{\begin{array}{rr}
+y_1=&x_1+x_2+x_3, \\ 
+y_2=&x_2+2 x_3, \\ 
+y_3=&x_3,
+\end{array}\right.
+$$ 
+即
+$$
+\left\{\begin{array}{rr}
+x_1=&y_1-y_2+y_3, \\ 
+x_2 =& y_2-2 y_3, \\ 
+x_3= &y_3,
+\end{array}\right.
+$$
+就把 $f$ 化为标准形 $f=y_{1}^{2}+y_{2}^{2}$. 所用变换矩阵为
+$$
+\boldsymbol{C}=\left(\begin{array}{rrr}
+1 & -1 & 1 \\
+0 & 1 & -2 \\
+0 & 0 & 1
+\end{array}\right) \quad(|\boldsymbol{C}|=1 \neq 0).
+$$
+\end{solution}
+
+
+\begin{example}%例 16 
+化二次型
+$$
+f=2 x_{1} x_{2}+2 x_{1} x_{3}-6 x_{2} x_{3}
+$$
+为标准形, 并求所用的变换矩阵.
+\end{example}
+
+\begin{solution}%解 
+在 $f$ 中不含平方项, 由于含有 $x_{1} x_{2}$ 乘积项, 故令
+$$
+\left\{\begin{array}{l}
+x_{1}=y_{1}+y_{2}, \\
+x_{2}=y_{1}-y_{2}, \\
+x_{3}=y_{3},
+\end{array}\right.
+$$
+即
+$$
+\left(\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right)=\left(\begin{array}{rrr}
+1 & 1 & 0 \\
+1 & -1 & 0 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{l}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{array}\right),
+$$
+代入 $f$ 可得
+$$
+f=2 y_{1}^{2}-2 y_{2}^{2}-4 y_{1} y_{3}+8 y_{2} y_{3}.
+$$
+再配方, 得
+$$
+f=2\left(y_{1}-y_{3}\right)^{2}-2\left(y_{2}-2 y_{3}\right)^{2}+6 y_{3}^{2} .
+$$
+故令
+$$
+\left\{\begin{array} { l r } 
+{ z _ { 1 } = y _ { 1 } } & { - \phantom{2\,}y _ { 3 } , } \\
+{ z _ { 2 } = } & { y _ { 2 } - 2 y _ { 3 } , } \\
+{ z _ { 3 } = } & { y _ { 3 } , }
+\end{array} \text { 即 } \left\{\begin{array}{lr}
+y_{1}=z_{1} & +\phantom{2\,} z_{3}, \\
+y_{2}=&2  z_{2}+2 z_{3}, \\
+y_{3}=& z_3
+\end{array}\right.\right.
+$$
+亦即
+$$
+\left(\begin{array}{l}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{array}\right)=\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{l}
+z_{1} \\
+z_{2} \\
+z_{3}
+\end{array}\right)
+$$
+就有 $f=2 z_{1}^{2}-2 z_{2}^{2}+6 z_{3}^{2}$. 因为经过两次代换,所以所用变换矩阵为
+$$
+\boldsymbol{C}=\left(\begin{array}{rrr}
+1 & 1 & 0 \\
+1 & -1 & 0 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{lll}
+1 & 0 & 1 \\
+0 & 1 & 2 \\
+0 & 0 & 1
+\end{array}\right)=\left(\begin{array}{ccc}
+1 & 1 & 3 \\
+1 & -1 & -1 \\
+0 & 0 & 1
+\end{array}\right) \quad(|\boldsymbol{C}|=-2 \neq 0).
+$$
+\end{solution}
+
+一般地, 任何二次型都可用例 $15$ 和例 $16$ 的方法找到可逆线性变换化为标准形, 且由定理 $10$ 可知, 标准形中含有的项数就是二次型的秩.
+
+化二次型为标准形就是寻求可逆矩阵 $\boldsymbol{C}$, 使 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$ 成为对角矩阵. 这里 $\boldsymbol{A}$ 为二次型的矩阵, 而任意一个可逆矩阵又可分解为若干个初等矩阵之积, 从而有如下定理.
+
+\begin{theorem}%定理 12
+对实对称矩阵 $\boldsymbol{A}$, 一定存在一系列初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{s}$, 使得
+$$
+\boldsymbol{P}_{s}^{\mathrm{T}} \cdots \boldsymbol{P}_{2}^{\mathrm{T}} \boldsymbol{P}_{1}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}=\operatorname{diag}\left(d_{1}, d_{2}, \cdots, d_{n}\right).
+$$
+\end{theorem}
+
+关于初等矩阵, 易见
+$$
+\boldsymbol{E}^{\mathrm{T}}(i, j)=\boldsymbol{E}(i, j), \quad \boldsymbol{E}^{\mathrm{T}}[i(k)]=\boldsymbol{E}[i(k)], \quad \boldsymbol{E}^{\mathrm{T}}[i+j(k)]=\boldsymbol{E}[j+i(k)].
+$$
+
+记 $\boldsymbol{C}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}$, 则定理 $12$ 还表明, 对 $\boldsymbol{A}$ 同时施行一系列同类的初等行和列的变换得到对角矩阵, 而相应地, 将这一系列的初等列变换施加于单位矩阵, 就得到变换矩阵 $\boldsymbol{C}$. 类似于用初等变换求逆矩阵, 下面通过例子介绍用初等变换求变换矩阵 $\boldsymbol{C}$.
+
+
+
+\begin{example}%例 17 
+用初等变换法将例 $15$ 中的二次型化为标准形.
+\end{example}
+
+\begin{solution}%解 
+例 $15$ 中的二次型 $f$ 的矩阵为
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+1 & 1 & 1 \\
+1 & 2 & 3 \\
+1 & 3 & 5
+\end{array}\right). 
+$$
+$$
+\left(\begin{array}{l}
+\boldsymbol{A}\\
+\boldsymbol{E}
+\end{array}\right)
+=\left(\begin{array}{lll}
+1 & 1 & 1 \\
+1 & 2 & 3 \\
+1 & 3 & 5 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right) \xrightarrow[\substack{c_2+(-1) \times c_1 \\ c_3+(-1) \times c_1}]{\substack{r_2+(-1) \times r_1 \\ r_3+(-1) \times r_1}} 
+\left(\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 2 \\
+0 & 2 & 4 \\
+1 & -1 & -1 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right) \xrightarrow[c_3+(-2) \times c_2]{r_3+(-2) \times r_2}
+\left(\begin{array}{rrr}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+1 & -1 & 1 \\
+0 & 1 & -2 \\
+0 & 0 & 1
+\end{array}\right). 
+$$
+故令
+$$
+\left(\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right)=\left(\begin{array}{rrr}
+1 & -1 & 1 \\
+0 & 1 & -2 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{l}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{array}\right), 
+$$
+则
+$$
+f=y_{1}^{2}+y_{2}^{2}.
+$$
+\end{solution}
+
+
+\begin{example}%例 18 
+用初等变换法将例 $16$ 中的二次型化为标准形.
+\end{example}
+
+\begin{solution}%解 
+例 $16$ 中的二次型 $f$ 的矩阵为
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+0 & 1 & 1 \\
+1 & 0 & -3 \\
+1 & -3 & 0
+\end{array}\right).
+$$
+$$
+\begin{aligned}
+\left(\begin{array}{l}
+\boldsymbol{A} \\
+\boldsymbol{E}
+\end{array}\right)
+& =\left(\begin{array}{rrr}
+0 & 1 & 1 \\
+1 & 0 & -3 \\
+1 & -3 & 0 \\
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right) \xrightarrow[c_{1}+c_{2}]{r_{1}+r_{2}}\left(\begin{array}{rrr}
+2 & 1 & -2 \\
+1 & 0 & -3 \\
+-2 & -3 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right) \\
+& \xrightarrow[\substack{c_2+\left(-\frac{1}{2}\right) \times c_1 \\ c_3+c_1}]{\substack{r_2+\left(-\frac{1}{2}\right) \times r_1\\ r_3+r_1}} 
+\left(\begin{array}{rrr}
+2 & 0 & 0 \\
+0 & -\frac{1}{2} & -2 \\
+0 & -2 & -2 \\
+1 & -\frac{1}{2} & 1 \\[5pt]
+1 & \frac{1}{2} & 1 \\
+0 & 0 & 1
+\end{array}\right) \xrightarrow[c_3+(-4) \times c_2]{r_3+(-4) \times r_2}\left(\begin{array}{rrr}
+2 & 0 & 0 \\
+0 & -\frac{1}{2} & 0 \\
+0 & 0 & 6 \\
+1 & -\frac{1}{2} & 3 \\[5pt]
+1 & \frac{1}{2} & -1 \\
+0 & 0 & 1
+\end{array}\right).
+\end{aligned}
+$$
+故令
+$$
+\left(\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right)=\left(\begin{array}{rrr}
+1 & -\frac{1}{2} & 3 \\[5pt]
+1 & \frac{1}{2} & -1 \\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{l}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{array}\right), 
+$$
+则
+$$
+f=2 y_{1}^{2}-\frac{1}{2} y_{2}^{2}+6 y_{3}^{2}.
+$$
+\end{solution}
+
+
 </ul>
 
 <a href="#C0">返回顶部</a>
@@ -103,7 +1970,209 @@
 <h2><a name="C5">$5.5$ 正定二次型</a></h2>
 
 <ul>
-  
+
+第 $4$ 节用不同的方法, 把一个二次型化为标准形. 从例 $16$ 和例 $18$ 可知, 化二次型为标准形时, 可用不同的变换矩阵, 且所得标准形也不相同,即二次型的标准形不是唯一的. 但正如前面所说, 二次型的秩是唯一的, 在化标准形的过程中秩是不变的, 即一个二次型的两个不同的标准形中, 含有的非零平方项的项数是相同的, 都等于二次型的秩. 不仅如此, 在实可逆线性变换下, 标准形中正系数的个数是不变的 (从而负系数的个数不变, 正、负系数的个数之差——符号差也不变). 即有如下定理(证明略).
+
+\begin{theorem}[惯性定理]%定理 13
+设有二次型 $f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$, 它的秩为 $r$, 若有两个实的非退化 (可逆) 线性变换 $\boldsymbol{x}=\boldsymbol{C y}$ 及 $\boldsymbol{x}=\boldsymbol{P z}$, 使
+$$
+f=k_{1} y_{1}^{2}+k_{2} y_{2}^{2}+\cdots+k_{r} y_{r}^{2} \quad\left(k_{i} \neq 0, i=1,2, \cdots, r\right), 
+$$
+及
+$$
+f=\lambda_{1} z_{1}^{2}+\lambda_{2} z_{2}^{2}+\cdots+\lambda_{r} z_{r}^{2} \quad\left(\lambda_{i} \neq 0, i=1,2, \cdots, r\right),
+$$
+则 $k_{1}, k_{2}, \cdots, k_{r}$ 中正数的个数与 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 中正数的个数相同.
+\end{theorem}
+
+\begin{definition}%定义 6 
+二次型 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 的标准形中, 系数为正的平方项的个数 $p$称为此二次型的正惯性指数,系数为负的平方项的个数 $r-p$ 称为此二次型的负惯性指数, $s=2 p-r$ 称为符号差. 这里 $r$ 为二次型 $f$ 的秩.
+\end{definition}
+
+\begin{definition}%定义 7 
+设二次型 $f$ 的正惯性指数为 $p$, 秩为 $r$, 称
+$$
+f=z_{1}^{2}+\cdots+z_{p}^{2}-z_{p+1}^{2}-\cdots-z_{r}^{2}
+$$
+为二次型 $f$ 的规范形.
+\end{definition}
+
+由定理 $13$ 可知, 任何一个二次型都可以通过可逆线性变换化为规范形, 且二次型的规范形是唯一确定的. 
+
+
+\begin{example}%例 19 
+将例 $16$ 中的二次型化为规范形.
+\end{example}
+
+\begin{solution}%解 
+由例 $16$ 知, $f$ 经线性变换
+$$
+\left\{\begin{array}{l}
+x_{1}=z_{1}+z_{2}+3 z_{3}, \\
+x_{2}=z_{1}-z_{2}-z_{3}, \\
+x_{3}=z_{3},
+\end{array}\right.
+$$
+化为标准形 $f=2 z_{1}^{2}-2 z_{2}^{2}+6 z_{3}^{2}$. 令
+$$
+\left\{\begin{array}{l}
+w_1=\sqrt{2} z_1, \\
+w_2=\sqrt{6} z_3, \\
+w_3=\sqrt{2} z_2,
+\end{array}\right.
+$$
+即
+$$
+\left\{\begin{array}{l}
+z_1=\frac{1}{\sqrt{2}} w_1, \\
+z_2=\frac{1}{\sqrt{2}} w_3, \\
+z_3=\frac{1}{\sqrt{6}} w_2,
+\end{array}\right.
+$$
+则将 $f$ 化为规范形 $f=w_{1}^{2}+w_{2}^{2}-w_{3}^{2}$.
+\end{solution}
+
+
+\begin{definition}%定义 8 
+设有二次型 $f(\boldsymbol{x})=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$, 如果对任何 $\boldsymbol{x} \neq \mathbf{0}$, 都有 $f(\boldsymbol{x})>0$ [显然 $f(\boldsymbol{0})=0$ ], 则称 $f$ 为正定二次型, 并称对称矩阵 $\boldsymbol{A}$ 为正定矩阵; 如果对任何 $\boldsymbol{x} \neq \boldsymbol{0}$, 都有 $f(\boldsymbol{x})<0$, 则称 $f$ 为负定二次型, 称对称矩阵 $\boldsymbol{A}$ 为负定矩阵.
+\end{definition}
+
+\begin{theorem}%定理 14
+$n$ 元二次型 $f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A x}$ 为正定二次型的充分必要条件是它的正惯性指数等于 $n$.
+\end{theorem}
+
+
+\begin{proof}%证 
+充分性. 设可逆线性变换 $\boldsymbol{x}=\boldsymbol{C y}$, 使
+$$
+f(\boldsymbol{x})=f(\boldsymbol{C} \boldsymbol{y})=\sum_{i=1}^{n} k_{i} y_{i}^{2}.
+$$
+设 $k_{i} > 0(i=1,2, \cdots, n)$, 任给 $\boldsymbol{x} \neq \boldsymbol{0}$, 有 $\boldsymbol{y}=\boldsymbol{C}^{-1} \boldsymbol{x} \neq \boldsymbol{0}$, 从而
+$$
+f(\boldsymbol{x})=f(\boldsymbol{C} \boldsymbol{y})=\sum_{i=1}^{n} k_{i} y_{i}^{2}>0, 
+$$
+即 $f$ 是正定二次型.
+
+必要性. 假设有某个 $s(1 \leqslant s \leqslant n)$, 使 $k_{s} \leqslant 0$, 则当 $\boldsymbol{y}=\boldsymbol{e}_{s}$ (基本单位坐标向量) 时, 有
+$$
+f\left(\boldsymbol{C} \boldsymbol{e}_{s}\right)=k_{s} \leqslant 0, 
+$$
+这与 $f$ 为正定二次型矛盾, 故必有 $k_{i}>0 (i=1,2, \cdots, n)$. 证毕.
+\end{proof}
+
+\begin{corollary}%推论 4 
+对称矩阵 $\boldsymbol{A}$ 正定 (即 $\boldsymbol{A}$ 为正定矩阵), 当且仅当 $\boldsymbol{A}$ 的特征值全为正.
+\end{corollary}
+
+类似地, 有: 二次型 $f$ 为负定二次型, 当且仅当它的负惯性指数等于 $n$; 对称矩阵 $\boldsymbol{A}$ 为负定矩阵, 当且仅当它的所有特征值全为负.
+
+下面不加证明地介绍判定矩阵正 (负) 定的一个充分必要条件.
+
+\begin{definition}%定义 $9$
+$n$ 阶方阵 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 的 $r$ 阶子式
+$$
+\left|\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 r} \\
+a_{21} & a_{22} & \cdots & a_{2 r} \\
+\vdots & \vdots & & \vdots \\
+a_{r 1} & a_{r 2} & \cdots & a_{r r}
+\end{array}\right|
+$$
+称为 $\boldsymbol{A}$ 的 $r$ 阶顺序主子式.
+\end{definition}
+
+
+\begin{theorem}%定理 15
+对称矩阵 $\boldsymbol{A}$ 正定,当且仅当 $\boldsymbol{A}$ 的各阶顺序主子式全为正,即
+$$
+\left|\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 r} \\
+a_{21} & a_{22} & \cdots & a_{2 r} \\
+\vdots & \vdots & & \vdots \\
+a_{r 1} & a_{r 2} & \cdots & a_{r r}
+\end{array}\right|>0, \quad r=1,2, \cdots, n ;
+$$
+对称矩阵 $\boldsymbol{A}$ 负定, 当且仅当 $\boldsymbol{A}$ 的奇数阶顺序主子式为负, 偶数阶顺序主子式为正, 即
+$$
+(-1)^{r}\left|\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 r} \\
+a_{21} & a_{22} & \cdots & a_{2 r} \\
+\vdots & \vdots & & \vdots \\
+a_{r 1} & a_{r 2} & \cdots & a_{r r}
+\end{array}\right|>0, \quad r=1,2, \cdots, n.
+$$
+\end{theorem}
+
+这个定理称为赫尔维茨 (Hurwitz)定理(证明略).
+
+\begin{example}%例 20 
+判定 $f\left(x_{1}, x_{2}, x_{3}\right) = \left(x_{1}, x_{2}, x_{3}\right)\left(\begin{array}{lll}3 & 2 & 0 \\ 2 & 3 & 0 \\ 0 & 0 & 1\end{array}\right)\left(\begin{array}{l}x_{1} \\ x_{2} \\ x_{3}\end{array}\right)$ 的正定性.
+\end{example}
+
+\begin{solution}%解 
+由 $|\boldsymbol{A}-\lambda \boldsymbol{E}|=(1-\lambda)^{2}(5-\lambda)$, 得 $\boldsymbol{A}$ 的特征值为 $1,1,5$. 根据推论 $4$, $\boldsymbol{A}$ 为正定矩阵, 从而 $f$ 为正定次型.
+\end{solution}
+
+\begin{example}%例 21 
+判别二次型
+$$
+f(x, y, z)=-5 x^{2}-6 y^{2}-4 z^{2}+4 x y+4 x z
+$$
+的正定性.
+\end{example}
+
+
+\begin{solution}%解 
+$f$ 的矩阵为
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+-5 & 2 & 2 \\
+2 & -6 & 0 \\
+2 & 0 & -4
+\end{array}\right),
+$$
+因
+$$
+a_{11}=-5<0, \quad\left|\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|=\left|\begin{array}{rr}
+-5 & 2 \\
+2 & -6
+\end{array}\right|=26>0, \quad|\boldsymbol{A}|=-80<0.
+$$
+则根据定理 $15$, $f$ 为负定二次型.
+\end{solution}
+
+\begin{example}%例 22 
+设 $f=x_{1}^{2}+4 x_{2}^{2}+4 x_{3}^{2}+2 \lambda x_{1} x_{2}-2 x_{1} x_{3}+4 x_{2} x_{3}$, 问: $\lambda$ 取何值时, $f$ 为正定二次型?
+\end{example}
+
+\begin{solution}%解 
+$f$ 的矩阵为
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+1 & \lambda & -1 \\
+\lambda & 4 & 2 \\
+-1 & 2 & 4
+\end{array}\right),
+$$
+因
+$$
+a_{11}=1>0, \quad\left|\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right|=4-\lambda^{2}, \quad|\boldsymbol{A}|=-4(\lambda-1)(\lambda+2),
+$$
+则根据定理 $15$ , 当
+$$
+\left\{\begin{array}{l}
+4-\lambda^{2}>0, \\
+-4(\lambda-1)(\lambda+2)>0,
+\end{array}\right.
+$$
+即 $-2<\lambda < 1$ 时, 所给二次型 $f$ 正定.
+\end{solution}
   
 </ul>
 
@@ -114,6 +2183,123 @@
   
 <ol>
 
+\item 判断下列命题是否正确:
+
+
+$(1)$ 满足 $\boldsymbol{A} \boldsymbol{x}=\lambda \boldsymbol{x}$ 的 $\boldsymbol{x}$ 一定是 $\boldsymbol{A}$ 的特征向量;
+
+$(2)$ 如果 $\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \cdots, \boldsymbol{x}_{r}$ 是矩阵 $\boldsymbol{A}$ 的对应于特征值 $\lambda$ 的特征向量,则 $k_{1} \boldsymbol{x}_{1}+k_{2} \boldsymbol{x}_{2}+\cdots+k_{r} \boldsymbol{x}_{r}$ 也是 $\boldsymbol{A}$ 的对应于 $\lambda$ 的特征向量;
+
+$(3)$ 实矩阵的特征值一定是实数.
+
+\item 求下列矩阵的特征值和特征问量:
+
+$(1)$ $\left(\begin{array}{rr}2 & -3 \\ -3 & 1\end{array}\right)$;
+$\qquad\qquad\qquad$
+$(2)$ $\left(\begin{array}{lll}6 & 2 & 4 \\ 2 & 3 & 2 \\ 4 & 2 & 6\end{array}\right)$;
+
+$(3)$ $\left(\begin{array}{rrr}2 & -2 & 0 \\ -2 & 1 & -2 \\ 0 & -2 & 0\end{array}\right)$;
+$\qquad\quad\,\,\,$
+$(4)$ $\left(\begin{array}{rrrr}2 & 3 & -1 & -4 \\ 0 & -1 & -2 & 1 \\ 0 & 1 & 2 & -2 \\ 0 & 1 & 1 & 2\end{array}\right)$.
+
+\item 设三阶方阵 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=0, \lambda_{3}=-1$, 对应的特征向量依次为
+$$
+\boldsymbol{x}_{1}=\left(\begin{array}{l}
+1 \\
+2 \\
+2
+\end{array}\right), \quad \boldsymbol{x}_{2}=\left(\begin{array}{r}
+2 \\
+-2 \\
+1
+\end{array}\right), \quad \boldsymbol{x}_{3}=\left(\begin{array}{r}
+-2 \\
+-1 \\
+2
+\end{array}\right),
+$$
+求矩阵 $\boldsymbol{A}$.
+
+\item 设三阶实对称矩阵 $\boldsymbol{A}$ 的特征值为 $-1,1,1$, 与特征值 $-1$ 对应的特征向量 $\boldsymbol{x}=(-1,1,1)^{\mathrm{T}}$, 求 $\boldsymbol{A}$.
+
+\item 若 $n$ 阶方阵满足 $\boldsymbol{A}^{2}=\boldsymbol{A}$, 则称 $\boldsymbol{A}$ 为幂等矩阵. 试证: 幕等矩阵的特征值只可能是 $1$ , 或者是 $0$ .
+
+\item 试证: 若 $\boldsymbol{A}^{2}=\boldsymbol{E}$, 则 $\boldsymbol{A}$ 的特征值只可能是 $\pm 1$.
+
+\item 设 $\lambda_{1}, \lambda_{2}$ 是 $n$ 阶矩阵 $\boldsymbol{A}$ 的两个不同的特征值, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 分别是 $\boldsymbol{A}$ 的对应于 $\lambda_{1}, \lambda_{2}$ 的特征向量. 证明: $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}$ 不是 $\boldsymbol{A}$ 的特征向量.
+
+\item 设矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}-2 & 0 & 0 \\ 2 & x & 2 \\ 2 & 1 & 1\end{array}\right)$ 与 $\boldsymbol{B}=\left(\begin{array}{rrr}-1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & y\end{array}\right)$ 相似.
+
+$(1)$ 求 $x$ 与 $y$; $(2)$ 求可逆矩阵 $\boldsymbol{P}$,使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{B}$.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 1 & -1 \\ 0 & 0 & 1 \\ 0 & -2 & 3\end{array}\right)$, 求 $\boldsymbol{A}^{100}$.
+
+\item 求正交矩阵 $\boldsymbol{T}$, 使 $\boldsymbol{T}^{-1} \boldsymbol{A T}$ 为对角矩阵:
+  
+$(1)$ $\boldsymbol{A}=\left(\begin{array}{rrr}0 & -2 & 2 \\ -2 & -3 & 4 \\ 2 & 4 & -3\end{array}\right)$;
+$\qquad\qquad\qquad\,\,$
+$(2)$ $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 2 & 4 \\ 2 & -2 & 2 \\ 4 & 2 & 1\end{array}\right)$;
+
+$(3)$ $\boldsymbol{A}=\left(\begin{array}{rrrr}4 & 1 & 0 & -1 \\ 1 & 4 & -1 & 0 \\ 0 & -1 & 4 & 1 \\ -1 & 0 & 1 & 4\end{array}\right)$;
+$\qquad\qquad $
+$(4)$ $\boldsymbol{A}=\left(\begin{array}{rrr}3 & -2 & 0 \\ -2 & 2 & -2 \\ 0 & -2 & 1\end{array}\right)$.
+
+\item 将下列二次型用矩阵形式表示:
+
+$(1)$ $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}-2 x_{2}^{2}+5 x_{3}^{2}+2 x_{1} x_{2}+6 x_{2} x_{3}+2 x_{3} x_{1}$;
+
+$(2)$ $f\left(x_{1}, x_{2}, x_{3}, x_{4}\right)=x_{1} x_{2}+x_{2} x_{3}+x_{3} x_{4}+x_{4} x_{1}$;
+
+$(3)$ $f\left(x_{1}, x_{2}, x_{3}, x_{4}\right)=6 x_{1}^{2}+3 x_{1} x_{2}-2 x_{1} x_{3}+5 x_{1} x_{4}+2 x_{2}^{2}-x_{2} x_{4}$.
+
+\item 写出下列各二次型的矩阵:
+
+$(1)$ $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}+4 x_{2}^{2}+x_{3}^{2}+4 x_{1} x_{2}+2 x_{1} x_{3}+4 x_{2} x_{3}$;
+
+$(2)$ $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}+x_{2}^{2}-7 x_{3}^{2}-2 x_{1} x_{2}-4 x_{2} x_{3}$.
+
+\item 当 $t$ 为何值时,二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}+6 x_{1} x_{2}+4 x_{1} x_{3}+x_{2}^{2}+2 x_{2} x_{3}+t x_{3}^{2}$ 的秩为 $2$ ?
+
+\item 用正交变换把下列二次型化为标准形,并写出所作的变换:
+
+$(1)$ $f\left(x_{1}, x_{2}, x_{3}, x_{4}\right)=2 x_{1} x_{2}-2 x_{3} x_{4}$;
+
+$(2)$ $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}+2 x_{2}^{2}+3 x_{3}^{2}-4 x_{1} x_{2}-4 x_{2} x_{3}$.
+
+\item 用配方法把下列已次型化为标准形,并写出所作的变换:
+
+$(1)$ $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1} x_{2}+4 x_{1} x_{3}-x_{2}^{2}-8 x_{3}^{2}$;
+
+$(2)$ $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1} x_{2}+4 x_{1} x_{3}$.
+
+\item 用初等变换法化下列二次型为标准形,并写出所作的变换:
+
+$(1)$ $f\left(x_{1}, x_{2}, x_{3}, x_{4}\right)=x_{1} x_{2}+x_{1} x_{3}+x_{1} x_{4}+x_{2} x_{3}+x_{2} x_{4}-x_{3} x_{4}$;
+
+$(2)$ $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}+5 x_{1} x_{2}-4 x_{2} x_{3}$.
+
+\item 判断下列二次型的正定性:
+
+$(1)$ $f=-2 x_{1}^{2}-6 x_{2}^{2}-4 x_{3}^{2}+2 x_{1} x_{2}+2 x_{2} x_{3}$;
+
+$(2)$ $f=3 x_{1}^{2}+4 x_{2}^{2}+5 x_{3}^{2}+4 x_{1} x_{2}-4 x_{2} x_{3}$;
+
+$(3)$ $f=99 x_{1}^{2}-12 x_{1} x_{2}+48 x_{1} x_{3}+130 x_{2}^{2}-60 x_{2} x_{3}+71 x_{3}^{2}$.
+
+\item 当 $t$ 满足什么条件时,下列二次型是正定的?
+
+$(1)$ $f=x_{1}^{2}+4 x_{2}^{2}+2 x_{3}^{2}+2 t x_{1} x_{2}+2 x_{1} x_{3}$;
+
+$(2)$ $f=x^{2}+2 y^{2}+3 z^{2}+2 x y-2 x z+2 t y z$.
+
+\item 试证: 如果 $\boldsymbol{A}, \boldsymbol{B}$ 都是 $n$ 阶正定矩阵,则 $\boldsymbol{A}+\boldsymbol{B}$ 也是正定矩阵.
+
+\item 试证: 如果 $\boldsymbol{A}$ 是 $n$ 阶可逆矩阵,则 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}$ 是正定矩阵.
+
+\item 试证: 如果 $\boldsymbol{A}$ 是正定矩阵,则 $\boldsymbol{A}^{\mathrm{T}}, \boldsymbol{A}^{-1}, \boldsymbol{A}^{*}$ 都是正定矩阵.
+
+
+
 </ol>
 
 <a href="#C0">返回顶部</a>
@@ -123,7 +2309,105 @@
 
 <ol>
 
+\item 已知 $\lambda_{1}, \lambda_{2}$ 都是 $n$ 阶矩阵 $\boldsymbol{A}$ 的特征值, $\lambda_{1} \neq \lambda_{2}$, 且 $\boldsymbol{\xi}_{1}$ 与 $\boldsymbol{\xi}_{2}$ 分别是对应于 $\lambda_{1}$ 与 $\lambda_{2}$ 的特征向量, 当 $(\qquad)$ 时, $k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}$ 必是 $\boldsymbol{A}$ 的特征向量.
+
+A. $k_{1}=0$ 且 $k_{2}=0$
+$\qquad\qquad$
+B. $k_{1} \neq 0$ 且 $k_{2} \neq 0$
+
+C. $k_{1} k_{2}=0$
+$\qquad \qquad\qquad\quad\,\,$
+D. $k_{1} \neq 0$ 而 $k_{2}=0$
+
+\item 设 $\boldsymbol{A}$ 为 $n$ 阶可逆矩阵, $\lambda$ 是 $\boldsymbol{A}$ 的一个特征值, 则 $\boldsymbol{A}$ 的伴随矩阵 $\boldsymbol{A}^{*}$ 的特征值之一是 $(\qquad)$.
   
+A. $\lambda^{-1}|\boldsymbol{A}|^{n}$ $\qquad$
+B. $\lambda^{-1}|\boldsymbol{A}|$ $\qquad$
+C. $\lambda|\boldsymbol{A}|$ $\qquad$
+D. $\lambda|\boldsymbol{A}|^{n}$
+
+\item 设 $\lambda_{1}, \lambda_{2}$ 是矩阵 $\boldsymbol{A}$ 的两个不同的特征值, 对应的特征向量分别为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$, 则 $\boldsymbol{\alpha}_{1}, \boldsymbol{A}\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}\right)$ 线性无关的充分必要条件是 $(\qquad)$.
+
+A. $\lambda_{1} \neq 0$ $\qquad$
+B. $\lambda_{2} \neq 0$ $\qquad$
+C. $\lambda_{1}=0$ $\qquad$
+D. $\lambda_{2}=0$
+
+\item 下述四个条件中,三阶矩阵 $\boldsymbol{A}$ 可对角化的一个充分但非必要条件是 $(\qquad)$.
+
+A. $\boldsymbol{A}$ 有三个互不相等的特征值
+
+B. $\boldsymbol{A}$ 有三个线性无关的特征向量
+
+C. $\boldsymbol{A}$ 有三个两两线性无关的特征向量
+
+D. $\boldsymbol{A}$ 的对应于不同特征值的特征向量正交
+
+\item 设 $\boldsymbol{A}=\left(a_{i j}\right)$ 为三阶矩阵, $A_{i j}$ 为代数余子式, 若 $\boldsymbol{A}$ 的每行元素之和均为 $2$ , 且 $|\boldsymbol{A}|=3$, 则 $A_{11}+A_{21}+$ $A_{31}=\underline{\qquad\qquad}$.
+
+\item 二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=\left(x_{1}+x_{2}\right)^{2}+\left(x_{2}+x_{3}\right)^{2}-\left(x_{3}-x_{1}\right)^{2}$ 的正惯性指数与负惯性指数依次为 $(\qquad)$.
+  
+A. $2,0$ $\qquad$
+B. $1,1$ $\qquad$
+C. $2,1$ $\qquad$
+D. $1,2$
+
+\item 已知 $\boldsymbol{\alpha}_{1}=(1,0,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(1,2,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(3,1,2)^{\mathrm{T}}$, 记 $\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}, \boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-k \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}-l_{1} \boldsymbol{\beta}_{1}-l_{2} \boldsymbol{\beta}_{2}$, 若 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 两两正交, 则 $l_{1}, l_{2}$ 依次为 $(\qquad)$.
+
+\medskip
+A. $\frac{5}{2}, \frac{1}{2}$ 
+$\qquad$
+B. $-\frac{5}{2}, \frac{1}{2}$
+$\qquad$
+C. $\frac{5}{2}, -\frac{1}{2}$
+$\qquad$
+D. $-\frac{5}{2},-\frac{1}{2}$
+
+\medskip
+\item 已知矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}2 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & x\end{array}\right)$ 与 $\boldsymbol{B}=\left(\begin{array}{rrr}2 & 0 & 0 \\ 0 & y & 0 \\ 0 & 0 & -1\end{array}\right)$ 相似, 则 $x= \underline{\qquad\qquad} $, $y= \underline{\qquad\qquad} $.
+
+\item 二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=x_{1}^{2}-2 x_{1} x_{2}+x_{2}^{2}+x_{3}^{2}$ 的符号差为 $ \underline{\qquad\qquad} $ .
+
+\item 已知实二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=a\left(x_{1}^{2}+x_{2}^{2}+x_{3}^{2}\right)+4 x_{1} x_{2}+4 x_{1} x_{3}+4 x_{2} x_{3}$ 经正交变换 $\boldsymbol{x}=\boldsymbol{P} \boldsymbol{y}$ 可化为标准形 $f=6 y_{1}^{2}$, 则 $a= \underline{\qquad\qquad}$ .
+
+\item 设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶正交矩阵, 且 $|\boldsymbol{A}| \neq|\boldsymbol{B}|$, 证明: $\boldsymbol{A}+\boldsymbol{B}$ 为不可逆矩阵.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & -3 & 3 \\ 3 & a & 3 \\ 6 & -6 & b\end{array}\right)$ 有特征值 $\lambda_{1}=-2, \lambda_{2}=4$, 求 $a, b$ 的值.
+
+\item 设四阶方阵 $\boldsymbol{A}$ 满足条件 $|3 \boldsymbol{E}+\boldsymbol{A}|=0, \boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}=2 \boldsymbol{E},|\boldsymbol{A}|<0$, 求方阵 $\boldsymbol{A}$ 的伴随矩阵 $\boldsymbol{A}^{*}$ 的一个特征值.
+
+\item 已知三阶方阵 $\boldsymbol{A}$ 的特征值为 $1,-1,2$, 设 $\boldsymbol{B}=\boldsymbol{A}^{3}-5 \boldsymbol{A}^{2}$, 试求:
+  
+$(1)$ $\boldsymbol{B}$ 的特征值;
+$\qquad\qquad\,\,$
+$(2)$ 与 $\boldsymbol{B}$ 相似的对角矩阵;
+
+$(3)$ $|\boldsymbol{B}|$;
+$\qquad\qquad\qquad\qquad$
+$(4)$ $|\boldsymbol{A}-5 \boldsymbol{E}|$.
+
+\item 设 $\boldsymbol{A}$ 为三阶实对称矩阵, $\lambda_{1}=8, \lambda_{2}=\lambda_{3}=2$ 是其特征值, 已知对应于 $\lambda_{1}=8$ 的特征向量 $\boldsymbol{\alpha}_{1}=(1, k, 1)^{\mathrm{T}}$, 对应于 $\lambda_{2}=\lambda_{3}=2$ 的一个特征向量 $\boldsymbol{\alpha}_{2}=(-1,1,0)^{\mathrm{T}}$, 试求:
+
+$(1)$ 参数 $k$;
+\hspace{75pt}
+$(2)$ 对应于 $\lambda_{2}=\lambda_{3}=2$ 的另一个特征向量;
+$\qquad$
+$(3)$ 矩阵 $\boldsymbol{A}$.
+
+\item 已知二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=(1-a) x_{1}^{2}+(1-a) x_{2}^{2}+2 x_{3}^{2}+2(1+a) x_{1} x_{2}$ 的秩为 $2$ .
+
+
+$(1)$ 求 $a$ 的值;  \hspace{62pt} $(2)$ 求正交变换 $\boldsymbol{x}=\boldsymbol{P} \boldsymbol{y}$, 将 $f\left(x_{1}, x_{2}, x_{3}\right)$ 化为标准形;
+
+$(3)$ 求方程 $f\left(x_{1}, x_{2}, x_{3}\right)=0$ 的解.
+
+\item 设 $\boldsymbol{A}=\left(a_{i j}\right)$ 是 $n$ 阶正定矩阵, 证明: $a_{i i}>0(i=1,2, \cdots, n)$.
+
+\item 证明: 若 $\boldsymbol{A}$ 是 $n$ 阶正定矩阵,则存在 $n$ 阶正定矩阵 $\boldsymbol{B}$, 使 $\boldsymbol{A}=\boldsymbol{B}^{2}$.
+
+
+
+
 </ol>
 
 
