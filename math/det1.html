@@ -455,11 +455,14 @@ $$
 
 例如,  对排列 $23541$ 施以对换 $(2, 5)$ 后得到排列 $53241$ .
 
-\begin{theorem}%定理 1 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 任意一个排列经过一次对换后,  其奇偶性改变.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 先证相邻对换的情形. 设排列为 $p_{1} \cdots p_{i-1} p_{i} p_{i+1} p_{i+2} \cdots p_{n}$,  对换 $p_{i}$ 与 $p_{i+1}$ 两个数,  则排列变为 
 $$
 p_{1} \cdots p_{i-1} p_{i+1} p_{i} p_{i+2} \cdots p_{n}. 
@@ -479,15 +482,22 @@ $$
 p_{1} \cdots p_{i-1} p_{i+m+1} p_{i+1} \cdots p_{i+m} p_{i} p_{i+m+2} \cdots p_{n},  
 $$
 它是经 $2 m+1$ 次相邻对换而成的,  排列也就改变了 $2 m+1$ 次奇偶性,  所以两个排列的奇偶性相反.证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
-\begin{theorem}
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
 由 $n$ 个自然数 $(n>1)$ 组成的 $n$ 级排列总共有 $n !$ 个,  其中奇、偶排列各占一半.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
+<div id= "divIDthm2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由前面已知 $n$ 级排列的总数为 $n$ ! 个,  设其中奇排列为 $p$ 个,  偶排列为 $q$ 个. 若对每个奇排列都施以同一对换,  则由定理 $1$,  $p$ 个奇排列均变为偶排列,  故 $p \leqslant q$; 同理,  若对每个偶排列也施以同一对换,  则 $q$ 个偶排列均变为奇排列. 故 $q \leqslant p$. 所以 $p=q$,  从而 $p=q=\frac{n !}{2}$. 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 
