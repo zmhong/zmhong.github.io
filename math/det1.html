@@ -62,10 +62,19 @@
 <ul>
 
 <p style="text-indent: 2em;">行列式起源于求解线性方程组. 先看用消元法求解二元一次线性方程组的过程:   
+$$
+\begin{aligned}
 \begin{align}
-&a_{11} x_1+a_{12} x_2=b_1, \label{eq1-1}\\
-&a_{21} x_1+a_{22} x_2=b_2. \label{eq1-2}
-\end{align}
+ a_{11} x_1+a_{12} x_2=b_1, \label{eq1-1}\\
+ a_{21} x_1+a_{22} x_2=b_2. \label{eq1-2}
+\end{align} & 
+\left.\begin{array}{r}
+ & & \\
+ & &\\
+\end{array}
+\right\} 
+\end{aligned}
+$$
 式 $(\ref{eq1-1}) \times a_{22}+$ 式 $(\ref{eq1-2}) \times\left(-a_{12}\right)$,  得
 $$
 \left(a_{11} a_{22}-a_{12} a_{21}\right) x_1=a_{22} b_1-a_{12} b_2 .
@@ -191,18 +200,22 @@ $$
 </p>
 
 类似地,  对于三元一次线性方程组
-\begin{empheq}[left=\empheqlbrace]{align}
-& a_{11} x_{1}+a_{12} x_{2}+a_{13} x_{3}=b_{1},  \label{eq1-4}\\
-& a_{21} x_{1}+a_{22} x_{2}+a_{23} x_{3}=b_{2},  \label{eq1-5}\\
-& a_{31} x_{1}+a_{32} x_{2}+a_{33} x_{3}=b_{3},  \label{eq1-6}
-\end{empheq}
-% \[
-% \left\{\begin{array}{l}
-% a_{11} x_{1}+a_{12} x_{2}+a_{13} x_{3}=b_{1},  \tag{1-4}\\
-% a_{21} x_{1}+a_{22} x_{2}+a_{23} x_{3}=b_{2}, \\
-% a_{31} x_{1}+a_{32} x_{2}+a_{33} x_{3}=b_{3},
-% \end{array}\right.
-% \]
+$$
+\begin{aligned}
+\begin{align}
+ a_{11} x_{1}+a_{12} x_{2}+a_{13} x_{3}=b_{1},  \label{eq1-4}\\
+ a_{21} x_{1}+a_{22} x_{2}+a_{23} x_{3}=b_{2},  \label{eq1-5}\\
+ a_{31} x_{1}+a_{32} x_{2}+a_{33} x_{3}=b_{3},  \label{eq1-6}
+\end{align} & 
+\left.\begin{array}{r}
+ & &\\
+ & &\\
+ & &\\
+\end{array}
+\right\} 
+\end{aligned}
+$$
+
 用记号
 $$
 D=\left|\begin{array}{lll}
@@ -233,7 +246,7 @@ a_{31} & a_{32} & a_{33}
 
 
 
-
+<br>
 $(1)$ 对角线法则如图 \ref{fig:1.2} 所示.
 
 
@@ -402,9 +415,9 @@ $$
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $3$：</b></font>
 计算以下各排列的逆序数,  并指出它们的奇偶性:
-
+<br>
 $(1)$ $42531$ ;
-
+<br>
 $(2)$ $135 \cdots(2 n-1) 246 \cdots(2 n)$.
 <input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
 <input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
@@ -427,8 +440,8 @@ $$
 </p>
 
 
+<h3><a name="C2.1">$1.2.1$ 对换</a></h3>
 
-\subsection{对换}
 
 \begin{definition}
 在一个 $n$ 级排列 $i_1 \cdots i_s \cdots i_t \cdots i_n$ 中, 将某两个数 $i_s$ 与 $i_t$ 对调, 其余的数不动,  得到另一个排列 $i_{1} \cdots i_{t} \cdots i_{s} \cdots i_{n}$,  这种对排列的变换称为\textcolor{red}{对换},  记为 $\left(i_{s},  i_{t}\right)$. 将相邻两个数对换,  称为\textcolor{red}{相邻对换} (或邻换).
@@ -474,8 +487,8 @@ $$
 
 
 
+<h3><a name="C2.2">$1.2.2$ $n$ 阶行列式</a></h3>
 
-\subsection{$n$ 阶行列式}
 
 现在探讨式 $(\ref{eq1-3})$、式 $(\ref{eq1-7})$ 右端各项的规律.
 
