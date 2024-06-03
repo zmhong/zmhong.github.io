@@ -833,11 +833,14 @@ a_{1 n} & a_{2 n} & \cdots & a_{n n}
 $$
 行列式 $D^{\mathrm{T}}$ (也可记为 $D^{\prime}$ ) 称为行列式 $D$ 的转置行列式.
 
-\begin{property}%性质 1 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $1$：</b></font>
 行列式与它的转置行列式相等.
-\end{property}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty1").style.display="none"'> 
+<div id= "divIDproperty1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 记
 $$
 D^{\mathrm{T}}=\left|\begin{array}{cccc}
@@ -855,16 +858,21 @@ D^{\mathrm{T}} & =\sum_{j_{1} j_{2} \cdots j_{n}}(-1)^{\tau\left(j_{1} j_{2} \cd
 \end{aligned}
 $$
 证毕.
-\end{proof} 
+</p>
+</div> 
+</p>
 
 性质 $1$ 表明, 行列式中行与列的地位是对等的, 即行列式中行具有的性质, 其列也具有.
 
 
-\begin{property}%性质 2 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $2$：</b></font>
 互换行列式的两行 (列), 行列式反号.
-\end{property}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty1").style.display="none"'> 
+<div id= "divIDproperty1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 下面只证列的情形. 设
 $$
 D=\left|\begin{array}{ccccccc}
@@ -905,7 +913,9 @@ $$
  a_{i_{1} 1} a_{i_{2} 2} \cdots a_{i_{q} q} \cdots a_{i_{p} p} \cdots a_{i_{n} n},
 $$
 故对于 $D$ 中任意一项, $D_{1}$ 中必定有一项与它的符号相反而两者的绝对值相等, 又 $D$ 与 $D_{1}$ 的项数相同, 所以 $D=-D_{1}$. 证毕.
-\end{proof} 
+</p>
+</div> 
+</p>
 
 本书中, 交换行列式第 $i$ 行和第 $j$ 行, 记作 $r_{i} \leftrightarrow r_{j}$; 交换行列式第 $i$ 列和第 $j$列, 记作 $c_{i} \leftrightarrow c_{j}$.
 
@@ -917,9 +927,10 @@ $$
 互换元素相等的两行 (列), 有 $D=-D$, 故 $D=0$. 证毕.
 \end{proof}
 
-\begin{property}%性质 3 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $3$：</b></font>
 行列式的某一行 (列) 中所有元素都乘以同一个数 $k$, 等于用数 $k$ 乘以此行列式.
-\end{property}
+</p>
 
 第 $i$ 行 (列) 乘以数 $k$, 记作 $k \times r_{i}\left(k \times c_{i}\right)$.
 
@@ -931,13 +942,15 @@ $$
 若行列式中有一行 (列) 的元素全为零, 则此行列式为零.
 \end{corollary}
 
-\begin{property}%性质 4 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $4$：</b></font>
 若行列式中有两行 (列) 元素对应成比例, 则此行列式为零.
-\end{property}
+</p>
 
-\begin{property}%性质 5 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $5$：</b></font>
 若行列式的某行 (列) 的元素都是两个数之和, 则此行列式等于相应的两个行列式的和.
-\end{property}
+</p>
 
 例如:
 $$
@@ -970,9 +983,10 @@ $$
 
 性质 $5$ 显然可以推广到某一行 (列) 为多组数的和的情形.
 
-\begin{property}%性质 6 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $6$：</b></font>
 把行列式某一行(列)的元素乘以数 $k$, 加到另一行(列)的对应元素上, 行列式的值不变.
-\end{property}
+</p>
 
 例如, 以数 $k$ 乘以第 $i$ 行 (列) 的元素加到第 $j$ 行 (列) 的对应元素上, 记作 $r_{j}+k \times r_{i}\left(c_{j}+k \times c_{i}\right)$, 有
 $$
