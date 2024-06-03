@@ -363,7 +363,8 @@ x_{n}=&t_{n-r}.
 $$
 
 总之, 解线性方程组的步骤是用初等行变换化方程组 (4-1) 的增广矩阵为阶
-梯形矩阵, 根据 $d_{r+1}$ 是否等于 $0$ 判断原方程组是否有解. 如果 $d_{r+1} \neq 0$, 则有 $r(\boldsymbol{A})= r$, 而 $r(\overline{\boldsymbol{A}})=r+1$, 即 $r(\boldsymbol{A}) \neq r(\overline{\boldsymbol{A}})$, 此时方程组 (4-1) 无解; 如果 $d_{r+1}=0$, 则 $r(\boldsymbol{A})= r(\overline{\boldsymbol{A}})=r$, 此时方程组 (4-1) 有解. 而当 $r=n$ 时, 方程组 (4-1) 有唯一解; 当 $r<n$ 时, 方程组 (4-1) 有无穷多个解. 由此可以得到如下定理.
+梯形矩阵, 根据 $d_{r+1}$ 是否等于 $0$ 判断原方程组是否有解. 如果 $d_{r+1} \neq 0$, 则有 $r(\boldsymbol{A})= r$, 而 $r(\overline{\boldsymbol{A}})=r+1$, 即 $r(\boldsymbol{A}) \neq r(\overline{\boldsymbol{A}})$, 此时方程组 (4-1) 无解; 如果 $d_{r+1}=0$, 则 $r(\boldsymbol{A})= r(\overline{\boldsymbol{A}})=r$, 此时方程组 (4-1) 有解. 而当 $r=n$ 时, 方程组 (4-1) 有唯一解; 
+  当 $r < n$ 时, 方程组 (4-1) 有无穷多个解. 由此可以得到如下定理.
 
 \begin{theorem}[线性方程组有解的判定定理]%定理 2
 线性方程组 (4-1) 有解的充分必要条件是系数矩阵与增广矩阵有相同的秩 $r$.
@@ -536,7 +537,7 @@ r_{4}+(-1) \times r_{1}}]{r_{2}+(-2) \times r_{1}}\left(\begin{array}{rrrrr}
 \end{aligned}
 $$
 
-由上式可看出, $r(\boldsymbol{A})=r(\overline{\boldsymbol{A}})=3<n=4$, 所以方程组有无穷多个解. 与最后的矩阵对应的方程组为
+由上式可看出, $r(\boldsymbol{A})=r(\overline{\boldsymbol{A}})=3 < n=4$, 所以方程组有无穷多个解. 与最后的矩阵对应的方程组为
 $$
 \left\{\begin{aligned}
 x_{1}\phantom{+x_2+x_3}-\frac{3}{2} x_{4}&=-\frac{7}{6}, \\
@@ -754,13 +755,13 @@ $$
 \begin{corollary}%推论 4 
 $(1)$ $m$ 维向量 $\boldsymbol{b}$ 能由 $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 唯一线性表示的充分必要条件是非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 有唯一解, 即 $r(\boldsymbol{A})=r(\boldsymbol{A}, \boldsymbol{b})=n$.
 
-$(2)$ $m$ 维向量 $\boldsymbol{b}$ 能由 $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示, 且表示法不唯一的充分必要条件是非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 有无穷多个解, 即 $r(\boldsymbol{A})=r(\boldsymbol{A}, \boldsymbol{b})<n$.
+$(2)$ $m$ 维向量 $\boldsymbol{b}$ 能由 $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示, 且表示法不唯一的充分必要条件是非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 有无穷多个解, 即 $r(\boldsymbol{A})=r(\boldsymbol{A}, \boldsymbol{b}) < n$.
 
 $(3)$ $m$ 维向量 $\boldsymbol{b}$ 不能由 $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示的充分必要条件是非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 无解, 即 $r(\boldsymbol{A}) < r(\boldsymbol{A}, \boldsymbol{b})$.
 \end{corollary}
 
 \begin{corollary}%推论 5 
-$(1)$ $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性相关的充分必要条件是齐次线性方程组 $\boldsymbol{A x}=\mathbf{0}$ 有非零解, 即 $r(\boldsymbol{A})<n$.
+$(1)$ $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性相关的充分必要条件是齐次线性方程组 $\boldsymbol{A x}=\mathbf{0}$ 有非零解, 即 $r(\boldsymbol{A}) < n$.
 
 $(2)$ $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性无关的充分必要条件是齐次线性方程组 $\boldsymbol{A x}=\mathbf{0}$ 只有唯一的零解, 即 $r(\boldsymbol{A})=n$.
 \end{corollary}
@@ -1079,7 +1080,7 @@ $$
 
 定理 $4$ 实际上指出了求齐次线性方程组的基础解系的一种方法.
 
-此外, 由定理 $4$ 还可以知道, 若 $r(\boldsymbol{A})=r<n$, 则齐次线性方程组 $\boldsymbol{A x}=\mathbf{0}$ 的任何 $n-r$ 个线性无关的解向量都可以作为它的一个基础解系.
+此外, 由定理 $4$ 还可以知道, 若 $r(\boldsymbol{A})=r < n$, 则齐次线性方程组 $\boldsymbol{A x}=\mathbf{0}$ 的任何 $n-r$ 个线性无关的解向量都可以作为它的一个基础解系.
 
 \begin{corollary}[齐次线性方程组解的结构定理]%推论 8 () 
 若齐次线性方程组 (4-5) 有非零解, 则它的通解就是基础解系的线性组合.
@@ -1577,7 +1578,7 @@ $$
 x_{1}=\frac{2 t-1}{(p-1) t}, \quad x_{2}=\frac{1}{t}, \quad x_{3}=\frac{1-4 t+2 p t}{(p-1) t}.
 $$
 
-$(2)$ 当 $p=1$, 且 $1-4 t+2 p t=1-2 t=0$, 即 $t=\frac{1}{2}$ 时, $r(\boldsymbol{A})=r(\overline{\boldsymbol{A}})=2<3$, 方程组有无穷多个解, 此时
+$(2)$ 当 $p=1$, 且 $1-4 t+2 p t=1-2 t=0$, 即 $t=\frac{1}{2}$ 时, $r(\boldsymbol{A})=r(\overline{\boldsymbol{A}})=2 < 3$, 方程组有无穷多个解, 此时
 $$
 \overline{\boldsymbol{A}} \rightarrow\left(\begin{array}{cccc}
 1 & \frac{1}{2} & 1 & 3 \\
