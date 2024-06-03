@@ -57,12 +57,190 @@
 
 
 
-<h2><a name="C1">$3.1$ 矩阵的定义</a></h2>
+<h2><a name="C1">$3.1$ $n$ 维向量</a></h2>
 
 
 <ul>
 
 <p style="text-indent: 2em;">
+在平面几何中, 坐标平面上每个点的位置可以用它的坐标描述, 点的坐标是一个有序数对 $(x, y)$.  一个 $n$ 元方程
+$$
+a_{1} x_{1}+a_{2} x_{2}+\cdots+a_{n} x_{n}=b
+$$
+可以用一个 $n+1$ 元有序数组
+$$
+\left(a_{1}, a_{2}, \cdots, a_{n}, b\right)
+$$
+表示.  $1 \times n$ 矩阵和 $n \times 1$ 矩阵也可以看作有序数组.  一个企业一年中, 从 $1$ 月到 $12$ 月每月的产值, 也可以用一个有序数组 $\left(a_{1}, a_{2}, \cdots, a_{12}\right)$ 表示. 有序数组的应用非常广泛, 有必要对它们进行深入的讨论.
+
+\begin{definition}%定义 $1$
+$n$ 个数组成的有序数组
+\begin{equation*}
+\left(a_{1}, a_{2}, \cdots, a_{n}\right) \tag{3-1}
+\end{equation*}
+或
+\[
+\left(\begin{array}{c}
+a_{1}  \tag{3-2}\\
+a_{2} \\
+\vdots \\
+a_{n}
+\end{array}\right)
+\]
+称为一个 $n$ 维向量, 简称向量.
+\end{definition}
+
+
+一般用小写黑体字母, 如 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}, \cdots$ 表示向量. 式 (3-1) 称为一个行向量, 式 (3-2) 称为一个列向量, 数 $a_{1}, a_{2}, \cdots, a_{n}$ 称为这个向量的分量, $a_{i}$ 称为这个向量的第 $i$ 个分量或坐标. 分量都是实数的向量称为实向量, 分量是复数的向量称为复向量.
+
+实际上, $n$ 维行向量可以看成行矩阵, $n$ 维列向量也常看成列矩阵.
+
+下面只讨论实向量. 设 $k$ 和 $l$ 为两个任意的常数, $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 和 $\boldsymbol{\gamma}$ 为三个任意的 $n$维向量, 其中
+$$
+\boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right), \quad \boldsymbol{\beta}=\left(b_{1}, b_{2}, \cdots, b_{n}\right), \quad \boldsymbol{\gamma}=\left(c_{1}, c_{2}, \cdots, c_{n}\right).
+$$
+
+\begin{definition}%定义 2 
+如果 $\boldsymbol{\alpha}$ 和 $\boldsymbol{\beta}$ 对应的分量都相等, 即
+$$
+a_{i}=b_{i}, \quad i=1,2, \cdots, n,
+$$
+就称这两个向量相等, 记为 $\boldsymbol{\alpha}=\boldsymbol{\beta}$.
+\end{definition}
+
+\begin{definition}%定义 3 
+向量
+$$
+\left(a_{1}+b_{1}, a_{2}+b_{2}, \cdots, a_{n}+b_{n}\right)
+$$
+称为 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的和, 记为 $\boldsymbol{\alpha}+\boldsymbol{\beta}$.
+
+向量
+$$
+\left(k a_{1}, k a_{2}, \cdots, k a_{n}\right)
+$$
+称为向量 $\boldsymbol{\alpha}$ 与数 $k$ 的数量乘积, 简称数乘, 记为 $k \boldsymbol{\alpha}$.
+\end{definition}
+
+
+\begin{definition}%定义 4 
+分量全为零的向量
+$$
+(0,0, \cdots, 0)
+$$
+称为零向量, 记为 $\mathbf{0}$.
+
+$\boldsymbol{\alpha}$ 与 $-1$ 的数乘
+$$
+(-1) \boldsymbol{\alpha}=\left(-a_{1},-a_{2}, \cdots,-a_{n}\right)
+$$
+称为 $\boldsymbol{\alpha}$ 的负向量, 记为 $-\boldsymbol{\alpha}$.
+\end{definition}
+
+
+由向量的加法及负向量的定义可定义向量的减法, 即
+$$
+\boldsymbol{\alpha}-\boldsymbol{\beta}=\boldsymbol{\alpha}+(-\boldsymbol{\beta}).
+$$
+
+向量的加法与数乘具有下列性质:
+
+$(1)$ $\boldsymbol{\alpha}+\boldsymbol{\beta}=\boldsymbol{\beta}+\boldsymbol{\alpha}$; \qquad\qquad\qquad\quad (交换律)
+
+$(2)$ $(\boldsymbol{\alpha}+\boldsymbol{\beta})+\boldsymbol{\gamma}=\boldsymbol{\alpha}+(\boldsymbol{\beta}+\boldsymbol{\gamma})$ ; \quad （结合律）
+
+$(3)$ $\boldsymbol{\alpha}+\boldsymbol{0}=\boldsymbol{\alpha}$;
+
+$(4)$ $\boldsymbol{\alpha}+(-\boldsymbol{\alpha})=\mathbf{0}$;
+
+$(5)$ $k(\boldsymbol{\alpha}+\boldsymbol{\beta})=k \boldsymbol{\alpha}+k \boldsymbol{\beta} ;$
+
+$(6)$ $(k+l) \boldsymbol{\alpha}=k \boldsymbol{\alpha}+l \boldsymbol{\alpha}$;
+
+$(7)$ $k(l \boldsymbol{\alpha})=(k l) \boldsymbol{\alpha}$;
+
+$(8)$ $1 \boldsymbol{\alpha}=\boldsymbol{\alpha}$;
+
+$(9)$ $0 \boldsymbol{\alpha}=\mathbf{0}$;
+
+$(10)$ $k \mathbf{0}=\mathbf{0}$.
+
+在数学中, 满足 $(1) \sim (8)$ 的运算称为线性运算. 还可以证明:
+
+$(11)$ 如果 $k \neq 0$ 且 $\boldsymbol{\alpha} \neq \mathbf{0}$, 那么 $k \boldsymbol{\alpha} \neq \boldsymbol{0}$.
+
+显然, $n$ 维行向量的相等和加法、减法及数乘运算的定义, 与把它们看成行矩阵时的相等和加法, 减法及数乘运算的定义是一致的. 对应地, 也可以定义列向量的加法. 减法和数乘运算, 这些运算与把它们看成列矩阵时的加法、减法和数乘运算也是一致的, 并且同样具有性质$(1) \sim (11)$.
+
+\begin{example}%例 1 
+设 $\boldsymbol{\alpha}_{1}=(1,1,0), \boldsymbol{\alpha}_{2}=(0,1,1), \boldsymbol{\alpha}_{3}=(3,4,0)$, 求 $3 \boldsymbol{\alpha}_{1}+2 \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}$.
+\end{example}
+
+\begin{solution}%解 
+$$
+\begin{aligned}
+3 \boldsymbol{\alpha}_{1}+2 \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3} & =3(1,1,0)+2(0,1,1)-(3,4,0) \\
+& =(3,3,0)+(0,2,2)-(3,4,0)=(0,1,2).
+\end{aligned}
+$$
+\end{solution}
+
+
+
+\begin{example}%例 2
+设 $\boldsymbol{\alpha}_{1}=(1,1,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(1,1,-1,-1)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(1,-1,1,-1)^{\mathrm{T}}, \boldsymbol{\alpha}_{4}=(1,-1$, $-1,1)^{\mathrm{T}}$, 且 $2\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\beta}\right)-\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\beta}\right)=2\left(\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}+\boldsymbol{\beta}\right)$, 求 $\boldsymbol{\beta}$.
+\end{example}
+
+\begin{solution}%解 
+由 $2\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\beta}\right)-\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\beta}\right)=2\left(\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}+\boldsymbol{\beta}\right)$, 整理得
+$$
+\boldsymbol{\beta}=2 \boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}-2 \boldsymbol{\alpha}_{3}-2 \boldsymbol{\alpha}_{4}=(-3,5,3,3)^{\mathrm{T}}.
+$$
+\end{solution}
+
+由若干个同维数的列向量 (或同维数的行向量)组成的集合称为向量组.
+
+例如, 一个 $m \times n$ 矩阵 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}$ 有 $n$ 个 $m$ 维列向量
+$$
+\boldsymbol{\alpha}_{1}=\left(\begin{array}{c}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{m 1}
+\end{array}\right), \quad \boldsymbol{\alpha}_{2}=\left(\begin{array}{c}
+a_{12} \\
+a_{22} \\
+\vdots \\
+a_{m 2}
+\end{array}\right), \quad \cdots, \quad \boldsymbol{\alpha}_{n}=\left(\begin{array}{c}
+a_{1 n} \\
+a_{2 n} \\
+\vdots \\
+a_{m n}
+\end{array}\right),
+$$
+称向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 为矩阵 $\boldsymbol{A}$ 的列向量组.
+
+类似地, 矩阵 $\boldsymbol{A}$ 又有 $m$ 个 $n$ 维行向量
+$$
+\boldsymbol{\beta}_{1}=\left(a_{11}, a_{12}, \cdots, a_{1 n}\right), \quad \boldsymbol{\beta}_{2}=\left(a_{21}, a_{22}, \cdots, a_{2 n}\right), \quad \cdots, \quad \boldsymbol{\beta}_{m}=\left(a_{m 1}, a_{m 2}, \cdots, a_{m n}\right),
+$$
+称向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 为矩阵 $\boldsymbol{A}$ 的行向量组.
+
+反之, 由 $n$ 个 $m$ 维列向量组成的向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 或由 $m$ 个 $n$ 维行向量组成的向量组 $\boldsymbol{\beta}_{1}$, $\boldsymbol{\beta}_{2}$, $\cdots$, $\boldsymbol{\beta}_{m}$ 也可以构成一个 $m \times n$ 矩阵, 即
+$$
+\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)
+$$
+或
+$$
+\boldsymbol{A}=\left(\begin{array}{c}
+\boldsymbol{\beta}_{1} \\
+\boldsymbol{\beta}_{2} \\
+\vdots \\
+\boldsymbol{\beta}_{m}
+\end{array}\right).
+$$
+
+这样, 矩阵 $\boldsymbol{A}$ 就与其列向量组或行向量组之间建立了一一对应的关系. 向量组之间的关系可以用矩阵研究; 反过来, 矩阵的问题也可以用向量组研究.
 
 
 
@@ -74,6 +252,570 @@
 <h2><a name="C2">$3.2$ 向量组的线性相关性</a></h2>
 
 <ul>
+考察线性方程组
+\[
+\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1},  \tag{3-3}\\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
+\cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m},
+\end{array}\right.
+\]
+令
+$$
+\boldsymbol{\alpha}_{j}=\left(\begin{array}{c}
+a_{1 j} \\
+a_{2 j} \\
+\vdots \\
+a_{m j}
+\end{array}\right) \quad(j=1,2, \cdots, n), \quad \boldsymbol{\beta}=\left(\begin{array}{c}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{array}\right),
+$$
+则线性方程组 (3-3) 可表示为如下向量形式:
+\begin{equation*}
+x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}=\boldsymbol{\beta}. \tag{3-4}
+\end{equation*}
+这样, 线性方程组 (3-3) 是否有解的问题, 就转化为是否存在一组数 $k_{1}, k_{2}, \cdots$, $k_{n}$, 使得下列线性关系式成立:
+$$
+\boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n} \boldsymbol{\alpha}_{n}.
+$$
+
+为了解决这个问题, 先定义向量组的线性组合的概念.
+
+\begin{definition}%定义 5 
+给定向量 $\boldsymbol{\beta}$ 和向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$, 如果存在一组数 $k_{1}, k_{2}, \cdots, k_{n}$,使得
+$$
+\boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n} \boldsymbol{\alpha}_{n},
+$$
+则称向量 $\boldsymbol{\beta}$ 为向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 的一个线性组合, 或者说 $\boldsymbol{\beta}$ 可由向量组 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示, $k_{1}, k_{2}, \cdots, k_{n}$ 称为组合系数.
+\end{definition}
+
+\begin{example}%例 3 
+设 $\boldsymbol{\alpha}_{1}=(1,1,1,1), \boldsymbol{\alpha}_{2}=(1,1,-1,-1), \boldsymbol{\alpha}_{3}=(1,-1,1,-1), \boldsymbol{\alpha}_{4}=(1,-1,-1,1)$, $\boldsymbol{\beta}=(1,2,1,1)$,则 $\boldsymbol{\beta}$ 能否由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性表示? 若能,写出具体表达式.
+\end{example}
+
+\begin{solution}%解 
+令
+$$
+\boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}+k_{4} \boldsymbol{\alpha}_{4}.
+$$
+于是得线性方程组
+$$
+\left\{\begin{array}{l}
+k_{1}+k_{2}+k_{3}+k_{4}=1, \\
+k_{1}+k_{2}-k_{3}-k_{4}=2, \\
+k_{1}-k_{2}+k_{3}-k_{4}=1, \\
+k_{1}-k_{2}-k_{3}+k_{4}=1.
+\end{array}\right.
+$$
+因为
+$$
+D=\left|\begin{array}{rrrr}
+1 & 1 & 1 & 1 \\
+1 & 1 & -1 & -1 \\
+1 & -1 & 1 & -1 \\
+1 & -1 & -1 & 1
+\end{array}\right|=-16 \neq 0, 
+$$
+由克拉默法则求出
+$$
+k_{1}=\frac{5}{4}, \quad k_{2}=\frac{1}{4}, \quad k_{3}=k_{4}=-\frac{1}{4}, 
+$$
+所以
+$$
+\boldsymbol{\beta}=\frac{5}{4} \boldsymbol{\alpha}_{1}+\frac{1}{4} \boldsymbol{\alpha}_{2}-\frac{1}{4} \boldsymbol{\alpha}_{3}-\frac{1}{4}\boldsymbol{\alpha}_{4}.
+$$
+因此, $\boldsymbol{\beta}$ 能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性表示.
+\end{solution}
+
+
+\begin{example}%例 4 
+设 $\boldsymbol{\alpha}=(2,-3,0), \boldsymbol{\beta}=(0,-1,2), \boldsymbol{\gamma}=(0,-7,-4)$, 则 $\boldsymbol{\gamma}$ 能否由 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性表示?
+\end{example}
+
+\begin{solution}%解 
+设
+$$
+\boldsymbol{\gamma}=k_{1} \boldsymbol{\alpha}+k_{2} \boldsymbol{\beta}, 
+$$
+于是得线性方程组
+$$
+\left\{\begin{aligned}
+\phantom{-}2 k_{1}\phantom{-2k_2} & =0, \\
+-3 k_{1}-k_{2} & =-7, \\
+2 k_{2} & =-4.
+\end{aligned}\right.
+$$
+由第一个方程得 $k_{1}=0$, 代入第二个方程得 $k_{2}=7$, 但 $k_{2}$ 不满足第三个方程, 故方程组无解.
+
+所以, $\boldsymbol{\gamma}$ 不能由 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性表示.
+\end{solution}
+
+下面考察齐次线性方程组
+\[
+\left\{\begin{array}{l}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=0,  \tag{3-5}\\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=0, \\
+\quad \cdots \cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=0.
+\end{array}\right.
+\]
+令
+$$
+\boldsymbol{\alpha}_{j}=\left(\begin{array}{c}
+a_{1 j} \\
+a_{2 j} \\
+\vdots \\
+a_{m j}
+\end{array}\right) \quad(j=1,2, \cdots, n), \quad \mathbf{0}=\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+0
+\end{array}\right), 
+$$
+则齐次线性方程组 (3-5) 可表示为如下向量形式:
+\begin{equation*}
+x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}=\mathbf{0}. \tag{3-6}
+\end{equation*}
+
+这样, 齐次线性方程组 (3-5) 是否有非零解的问题, 就转化为是否存在一组不全为零的数 $k_{1}, k_{2}, \cdots$, $k_{n}$, 使得下列线性关系式成立:
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n} \boldsymbol{\alpha}_{n}=\mathbf{0}. 
+$$
+
+为了解决这一问题, 下面给出向量组的线性相关和线性无关的概念.
+
+\begin{definition}%定义 6 
+对于向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$, 如果存在不全为零的数 $k_{1}, k_{2}, \cdots, k_{s}$,使得
+\begin{equation*}
+\sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}, \tag{3-7}
+\end{equation*}
+则称向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关.
+
+反之, 如果只有在 $k_{1}=k_{2}=\cdots=k_{s}=0$ 时式 (3-7) 才成立, 就称向量组 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关.
+\end{definition}
+
+换言之, 当 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 是行向量组时, 它们线性相关就是指有非零的 $1 \times s$矩阵 $\left(k_{1}, k_{2}, \cdots, k_{s}\right)$, 使
+$$
+\left(k_{1}, k_{2}, \cdots, k_{s}\right)\left(\begin{array}{c}
+\boldsymbol{\alpha}_{1} \\
+\boldsymbol{\alpha}_{2} \\
+\vdots \\
+\boldsymbol{\alpha}_s
+\end{array}\right)=\mathbf{0};
+$$
+当 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 为列向量组时, 它们线性相关就是指有非零的 $s \times 1$ 矩阵 $\left(k_{1}, k_{2}, \cdots, k_{s}\right)^{\mathrm{T}}$,使
+$$
+\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)\left(\begin{array}{c}
+k_{1} \\
+k_{2} \\
+\vdots \\
+k_s
+\end{array}\right)=\mathbf{0}.
+$$
+
+显然, 单个零向量构成的向量组是线性相关的.
+
+\begin{example}%例 5 
+判断向量组
+$$
+\left\{\begin{aligned}
+\boldsymbol{e}_{1}= & (1,0, \cdots, 0), \\
+\boldsymbol{e}_{2}= & (0,1, \cdots, 0), \\
+& \cdots \cdots \cdots \\
+\boldsymbol{e}_{n}= & (0,0, \cdots, 1)
+\end{aligned}\right.
+$$
+的线性相关性.
+\end{example}
+
+\begin{solution}%解 
+对任意的常数 $k_{1}, k_{2}, \cdots, k_{n}$, 都有
+$$
+k_{1} \boldsymbol{e}_{1}+k_{2} \boldsymbol{e}_{2}+\cdots+k_{n} \boldsymbol{e}_{n}=\left(k_{1}, k_{2}, \cdots, k_{n}\right),
+$$
+所以,当且仅当
+$$
+k_{1}=k_{2}=\cdots=k_{n}=0 
+$$
+时, 才有
+$$
+k_{1} \boldsymbol{e}_{1}+k_{2} \boldsymbol{e}_{2}+\cdots+k_{n} \boldsymbol{e}_{n}=\mathbf{0}.
+$$
+因此, $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{n}$ 线性无关.
+\end{solution}
+
+$\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{n}$ 称为基本单位向量组.
+
+
+\begin{example}%例 6 
+判断向量组
+$$
+\boldsymbol{\alpha}_{1}=(1,1,1), \quad \boldsymbol{\alpha}_{2}=(0,2,5), \quad \boldsymbol{\alpha}_{3}=(1,3,6)
+$$
+的线性相关性.
+\end{example}
+
+\begin{solution}%解 
+对任意的常数 $k_{1}, k_{2}, k_{3}$, 都有
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}=\left(k_{1}+k_{3}, k_{1}+2 k_{2}+3 k_{3}, k_{1}+5 k_{2}+6 k_{3}\right), 
+$$
+所以, 当且仅当
+$$
+\left\{\begin{array}{l}
+k_{1}+\phantom{2k_2+3} k_{3}=0, \\
+k_{1}+2 k_{2}+3 k_{3}=0, \\
+k_{1}+5 k_{2}+6 k_{3}=0
+\end{array}\right.
+$$
+时, 才有
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}=\mathbf{0}.
+$$
+由于
+$$
+k_{1}=1, \quad k_{2}=1, \quad k_{3}=-1
+$$
+满足上述方程组, 因此
+$$
+1 \boldsymbol{\alpha}_{1}+1 \boldsymbol{\alpha}_{2}+(-1) \boldsymbol{\alpha}_{3}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}=\mathbf{0}. 
+$$
+所以, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
+\end{solution}
+
+\begin{example}%例 7 
+设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 且 $\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{1}$, 试证向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 也线性无关.
+\end{example}
+
+\begin{proof}
+对任意的常数 $k_{1}, k_{2}, k_{3}$, 都有
+$$
+k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}+k_{3} \boldsymbol{\beta}_{3}=\left(k_{1}+k_{3}\right) \boldsymbol{\alpha}_{1}+\left(k_{1}+k_{2}\right) \boldsymbol{\alpha}_{2}+\left(k_{2}+k_{3}\right) \boldsymbol{\alpha}_{3}.
+$$
+令
+$$
+k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}+k_{3} \boldsymbol{\beta}_{3}=\boldsymbol{0}.
+$$
+由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 故有
+$$
+\left\{\begin{array}{l}
+k_{1}+k_{3}=0, \\
+k_{1}+k_{2}=0, \\
+k_{2}+k_{3}=0.
+\end{array}\right.
+$$
+由于满足此方程组的 $k_{1}, k_{2}, k_{3}$ 的取值只有
+$$
+k_{1}=k_{2}=k_{3}=0,
+$$
+因此 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 线性无关.
+\end{proof}
+
+
+向量组的线性相关性与线性表示这一概念有着密切的联系.
+
+
+\begin{theorem}%定理 1 
+向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}(s \geqslant 2)$ 线性相关的充分必要条件是其中至少有一个向量能由其余向量线性表示.
+\end{theorem}
+
+\begin{proof} 
+设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中有一个向量能由其余向量线性表示, 不妨设
+$$
+\boldsymbol{\alpha}_{1}=k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}+\cdots+k_{s} \boldsymbol{\alpha}_{s},
+$$
+那么
+$$
+-\boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0},
+$$
+所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关.
+
+反过来, 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关, 就有不全为零的数 $k_{1}, k_{2}, \cdots, k_{s}$, 使
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}.
+$$
+不妨设 $k_{1} \neq 0$, 那么
+$$
+\boldsymbol{\alpha}_{1}=-\frac{k_{2}}{k_{1}} \boldsymbol{\alpha}_{2}-\frac{k_{3}}{k_{1}} \boldsymbol{\alpha}_{3}-\cdots-\frac{k_{s}}{k_{1}} \boldsymbol{\alpha}_{s},
+$$
+即 $\boldsymbol{\alpha}_{1}$ 能由 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \cdots, \boldsymbol{\alpha}_{s}$ 线性表示. 证毕.
+\end{proof}
+
+例如, 向量组
+$$
+\boldsymbol{\alpha}_{1}=(2,-1,3,1), \quad \boldsymbol{\alpha}_{2}=(4,-2,5,4), \quad \boldsymbol{\alpha}_{3}=(2,-1,4,-1)
+$$
+是线性相关的, 因为
+$$
+\boldsymbol{\alpha}_{3}=3 \boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}.
+$$
+
+显然, 只含有两个向量的向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性相关的充分必要条件是存在常数 $k$, 使得 $\boldsymbol{\alpha}_{1}=k \boldsymbol{\alpha}_{2}$, 此时, 两个向量的对应分量成比例. 在三维的情形中, 这就表示向量 $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 共线; 三个向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关的几何意义就是它们共面.
+
+\begin{theorem}%定理 2
+设向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性无关, 而向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}, \boldsymbol{\alpha}$ 线性相关, 则 $\boldsymbol{\alpha}$ 能由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示, 且表示式是唯一的.
+\end{theorem}
+
+\begin{proof} 
+由于 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}, \boldsymbol{\alpha}$ 线性相关, 就有不全为零的数 $k_{1}, k_{2}, \cdots, k_{t}, k$, 使
+$$
+k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}+\cdots+k_{t} \boldsymbol{\beta}_{t}+k \boldsymbol{\alpha}=\mathbf{0}.
+$$
+由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性无关, 可以知道 $k \neq 0$. 因此
+$$
+\boldsymbol{\alpha}=-\frac{k_{1}}{k} \boldsymbol{\beta}_{1}-\frac{k_{2}}{k} \boldsymbol{\beta}_{2}-\cdots-\frac{k_{t}}{k} \boldsymbol{\beta}_{t},
+$$
+即 $\boldsymbol{\alpha}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示.
+
+下面证明表示式是唯一的. 若有两个表示式, 即
+$$
+\boldsymbol{\alpha}=l_{1} \boldsymbol{\beta}_{1}+l_{2} \boldsymbol{\beta}_{2}+\cdots+l_{t} \boldsymbol{\beta}_{t}=h_{1} \boldsymbol{\beta}_{1}+h_{2} \boldsymbol{\beta}_{2}+\cdots+h_{t} \boldsymbol{\beta}_{t},
+$$
+则有
+$$
+\begin{aligned}
+& \left(l_{1} \boldsymbol{\beta}_{1}+l_{2} \boldsymbol{\beta}_{2}+\cdots+l_{t} \boldsymbol{\beta}_{t}\right)-\left(h_{1} \boldsymbol{\beta}_{1}+h_{2} \boldsymbol{\beta}_{2}+\cdots+h_{t} \boldsymbol{\beta}_{t}\right) \\
+& =\left(l_{1}-h_{1}\right) \boldsymbol{\beta}_{1}+\left(l_{2}-h_{2}\right) \boldsymbol{\beta}_{2}+\cdots+\left(l_{t}-h_{t}\right) \boldsymbol{\beta}_{t}=\mathbf{0}.
+\end{aligned}
+$$
+由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性无关, 可以得到
+$$
+l_{1}=h_{1}, \quad l_{2}=h_{2}, \quad \cdots, \quad l_{t}=h_{t}.
+$$
+因此, 表示式是唯一的. 证毕.
+\end{proof}
+
+将一个向量组中的某些向量组成的向量组称为原向量组的部分组.
+
+\begin{theorem}%定理 3 
+有一个部分组线性相关的向量组一定线性相关.
+\end{theorem}
+
+\begin{proof} 
+设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个部分组线性相关. 不妨设这个部分组为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}(r \leqslant s)$, 则有不全为零的数 $k_{1}, k_{2}, \cdots, k_{r}$, 使
+$$
+\sum_{i=1}^{r} k_{i} \boldsymbol{\alpha}_{i}=\mathbf{0}.
+$$
+从而存在不全为零的数 $k_{1}, k_{2}, \cdots, k_{r}, 0, \cdots, 0$, 使
+$$
+k_{1} \boldsymbol{\alpha}_{1}+\cdots+k_{r} \boldsymbol{\alpha}_{r}+0 \cdot \boldsymbol{\alpha}_{r+1}+\cdots+0 \cdot \boldsymbol{\alpha}_{s}=\sum_{i=1}^{r} k_{i} \boldsymbol{\alpha}_{i}+\sum_{j=r+1}^{s} 0 \cdot \boldsymbol{\alpha}_{j}=\mathbf{0}. 
+$$
+因此, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 也线性相关. 证毕.
+\end{proof}
+
+
+\begin{corollary}%推论 1
+含有零向量的向量组必线性相关.
+\end{corollary}
+
+\begin{theorem}%定理 4  
+设 $p_{1}, p_{2}, \cdots, p_{n}$ 为 $1,2, \cdots, n$ 的一个排列 $, \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 为两个向量组, 其中
+$$
+\boldsymbol{\alpha}_{i}=\left(\begin{array}{c}
+a_{i 1} \\
+a_{i 2} \\
+\vdots \\
+a_{i n}
+\end{array}\right), \quad \boldsymbol{\beta}_{i}=\left(\begin{array}{c}
+a_{i p_{1}} \\
+a_{i p_{2}} \\
+\vdots \\
+a_{i p_{n}}
+\end{array}\right)
+$$
+即 $\boldsymbol{\beta}_{i}$ 是对 $\boldsymbol{\alpha}_{i}$ 各分量的顺序进行重排后得到的向量 $(i=1,2, \cdots, s)$, 则这两个向量组有相同的线性相关性.
+\end{theorem}
+
+
+\begin{proof} 
+对任意的常数 $k_{1}, k_{2}, \cdots, k_{s}$, 注意到下面的两个列向量
+$$
+\sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i}=\left(\begin{array}{c}
+k_{1} a_{11}+k_{2} a_{21}+\cdots+k_{s} a_{s 1} \\
+k_{1} a_{12}+k_{2} a_{22}+\cdots+k_{s} a_{s 2} \\
+\vdots \\
+k_{1} a_{1 n}+k_{2} a_{2 n}+\cdots+k_{s} a_{s n}
+\end{array}\right)
+$$
+和
+$$
+\sum_{i=1}^{s} k_{i} \boldsymbol{\beta}_{i}=\left(\begin{array}{c}
+k_{1} a_{1 p_{1}}+k_{2} a_{2 p_{1}}+\cdots+k_{s} a_{s p_{1}} \\
+k_{1} a_{1 p_{2}}+k_{2} a_{2 p_{2}}+\cdots+k_{s} a_{s p_{2}} \\
+\vdots \\
+k_{1} a_{1 p_{n}}+k_{2} a_{2 p_{n}}+\cdots+k_{s} a_{s p_{n}}
+\end{array}\right)
+$$
+只是各分量的排列顺序不同, 因此
+$$
+k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}+\cdots+k_{s} \boldsymbol{\beta}_{s}=\mathbf{0}, 
+$$
+当且仅当
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}. 
+$$
+所以, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 有相同的线性相关性. 证毕.
+\end{proof}
+
+定理 $4$ 是对列向量的情形叙述的, 对行向量也有相同的结论. 类似这样的情形, 今后不再说明.
+
+\begin{theorem}%定理 5 
+在 $r$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的各向量中, 添上 $n-r$ 个分量使其变成 $n$ 维向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$.
+
+$(1)$ 如果 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性相关,那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 也线性相关;
+
+$(2)$ 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关,那么 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 也线性无关.
+\end{theorem}
+
+
+\begin{proof} 
+下面对列向量证明定理. 设
+$$
+\begin{aligned}
+& \left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)=\boldsymbol{A}_{1}, \\
+& \left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right)=\left(\begin{array}{l}
+\boldsymbol{A}_{1} \\
+\boldsymbol{A}_{2}
+\end{array}\right),
+\end{aligned}
+$$
+如果 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_s$ 线性相关, 就有一个非零的 $s \times 1$ 矩阵 $\boldsymbol{X}$, 使
+$$
+\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right) \boldsymbol{X}=\left(\begin{array}{l}
+\boldsymbol{A}_{1} \\
+\boldsymbol{A}_{2}
+\end{array}\right) \boldsymbol{X}=\left(\begin{array}{l}
+\boldsymbol{A}_{1} \boldsymbol{X} \\
+\boldsymbol{A}_{2} \boldsymbol{X}
+\end{array}\right)=\mathbf{0}.
+$$
+从而
+$$
+\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right) \boldsymbol{X}=\boldsymbol{A}_{1} \boldsymbol{X}=\mathbf{0}.
+$$
+因此 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 也线性相关, 即 $(1)$ 成立. 利用 $(1)$, 用反证法容易证明 $(2)$ 也成立 (请读者自己证明). 证毕.
+\end{proof}
+
+例如, $\boldsymbol{e}_{1}=(1,0,0), \boldsymbol{e}_{2}=(0,1,0), \boldsymbol{e}_{3}=(0,0,1)$ 是线性无关的, 因此, 由定理 $5$ 知, $\boldsymbol{\alpha}_{1}=(1,0,0,1), \boldsymbol{\alpha}_{2}=(0,1,0,2), \boldsymbol{\alpha}_{3}=(0,0,1,3)$ 也线性无关.
+
+\begin{theorem}%定理 6 
+设 $\boldsymbol{A}$ 是一个 $n$ 阶方阵, 则 $\boldsymbol{A}$ 的列 (行) 向量组线性相关的充分必要条件是 $|\boldsymbol{A}|=0$.
+\end{theorem}
+
+\begin{proof} 
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$,
+$$
+\boldsymbol{\alpha}_{1}=\left(\begin{array}{c}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{n 1}
+\end{array}\right), \quad \boldsymbol{\alpha}_{2}=\left(\begin{array}{c}
+a_{12} \\
+a_{22} \\
+\vdots \\
+a_{n 2}
+\end{array}\right), \quad \cdots, \quad \boldsymbol{\alpha}_{n}=\left(\begin{array}{c}
+a_{1 n} \\
+a_{2 n} \\
+\vdots \\
+a_{n n}
+\end{array}\right)
+$$
+是矩阵 $\boldsymbol{A}$ 的列向量组. 令
+\begin{equation*}
+x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}=\mathbf{0}, \tag{3-8}
+\end{equation*}
+即
+$$
+\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)=\mathbf{0},
+$$
+则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性相关的充分必要条件是, 存在一组不全为零的实数 $x_{1}, x_{2}, \cdots$, $x_{n}$, 使得式 (3-8) 成立, 即齐次线性方程组
+\begin{equation*}
+\boldsymbol{A}\left(\begin{array}{c}
+x_{1}  \tag{3-9}\\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right)=\mathbf{0}
+\end{equation*}
+有非零解. 由第 $1$ 章定理 $7$ 知, 式 (3-9) 存在非零解的充分必要条件是 $|\boldsymbol{A}|=0$. 证毕.
+\end{proof}
+
+\begin{corollary}%推论 2  
+$n$ 阶方阵 $\boldsymbol{A}$ 可逆的充分必要条件是 $\boldsymbol{A}$ 的行 (列) 向量组线性无关.
+\end{corollary}
+
+\begin{example}%例 8 
+讨论下列矩阵的行 (列) 向量组的线性相关性:
+$$
+\boldsymbol{B}=\left(\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 2 & 1 \\
+3 & 4 & 3
+\end{array}\right), \quad \boldsymbol{C}=\left(\begin{array}{rrr}
+1 & 3 & -2 \\
+0 & 2 & -1 \\
+-2 & 0 & 1
+\end{array}\right).
+$$
+\end{example}
+
+\begin{solution}%解 
+由于 $|\boldsymbol{B}|=2 \neq 0$, 因此 $\boldsymbol{B}$ 的行 (列) 向量组线性无关; 由于 $|\boldsymbol{C}|=0$, 所以 $\boldsymbol{C}$ 的行 (列) 向量组线性相关.
+\end{solution}
+
+
+\begin{example}%例 9 
+判断向量组 $\boldsymbol{\alpha}_{1}=(2,1,-1), \boldsymbol{\alpha}_{2}=(0,3,-2), \boldsymbol{\alpha}_{3}=(2,4,-3)$ 是否线性相关.
+\end{example}
+
+\begin{solution}% 
+以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为行向量组得到三阶方阵
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+2 & 1 & -1 \\
+0 & 3 & -2 \\
+2 & 4 & -3
+\end{array}\right).
+$$
+由于
+$$
+|\boldsymbol{A}|=\left|\begin{array}{lll}
+2 & 1 & -1 \\
+0 & 3 & -2 \\
+2 & 4 & -3
+\end{array}\right|=0,
+$$
+故由定理 $6$ 知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
+\end{solution}
+
+
+\begin{theorem}%定理 7 
+当 $m>n$ 时, $m$ 个 $n$ 维向量必线性相关.
+\end{theorem}
+
+\begin{proof}%
+设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 为 $n$ 维向量组. 对每个 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, m)$ 添加 $m-n$ 个零分量得到 $m$ 维向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$.
+
+易知, 由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 构成的 $m$ 阶方阵的行列式等于 $0$ . 由定理 $6$ 知, $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots$, $\boldsymbol{\beta}_{m}$ 线性相关. 从而由定理 $5$ 知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性相关. 证毕.
+\end{proof}
+
+
+\begin{corollary}%推论 3
+$n+1$ 个 $n$ 维向量必线性相关.
+\end{corollary}
 
   
 
@@ -85,7 +827,151 @@
 <h2><a name="C3">$3.3$ 向量组间的关系与极大线性无关组</a></h2>
 
 <ul>
-  
+
+\begin{definition}%定义 7 
+设有两个向量组
+$$
+\begin{gathered}
+A: \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}; \\
+B: \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}.
+\end{gathered}
+$$
+如果向量组 $A$ 中的每个向量都能由向量组 $B$ 线性表示, 则称向量组 $A$ 能由向量组 $B$ 线性表示. 如果向量组 $A$ 与向量组 $B$ 能相互线性表示, 则称这两个向量组等价.
+\end{definition}
+
+显然, 向量组之间的等价关系具有下述性质:
+
+$(1)$ 反身性: 向量组 $A$ 与自身等价;
+
+$(2)$ 对称性: 若向量组 $A$ 与向量组 $B$ 等价, 则向量组 $B$ 与向量组 $A$ 也等价;
+
+$(3)$ 传递性: 若向量组 $A$ 与向量组 $B$ 等价, 向量组 $B$ 与向量组 $C$ 等价, 则向量组 $A$ 与向量组 $C$ 等价.
+
+\begin{theorem}%定理 8 
+如果向量组 $A: \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $B: \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示, 且 $r>s$, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关.
+\end{theorem}
+
+\begin{proof}% 
+不妨假定讨论的是列向量. 因为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示,那么
+$$
+\boldsymbol{\alpha}_{i}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right)\left(\begin{array}{c}
+p_{i 1} \\
+p_{i 2} \\
+\vdots \\
+p_{i s}
+\end{array}\right)=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right) \cdot \gamma_{i},
+$$
+其中 $\boldsymbol{\gamma}_{i}=\left(\begin{array}{c}p_{i 1} \\ p_{i 2} \\ \vdots \\ p_{i s}\end{array}\right), i=1,2, \cdots, r$.
+
+令
+$$
+\boldsymbol{A}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{r}\right),
+$$
+则
+$$
+\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}\right)=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right) \boldsymbol{A}.
+$$
+由于 $\gamma_{1}, \gamma_{2}, \cdots, \gamma_{r}$ 为由 $r$ 个向量组成的 $s$ 维向量组, 且 $r>s$, 由定理 $7$ 知, 它们必线性相关. 因此有非零的 $r \times 1$ 矩阵
+$$
+\left(k_{1}, k_{2}, \cdots, k_{r}\right)^{\mathrm{T}},
+$$
+使
+$$
+\boldsymbol{A}\left(\begin{array}{c}
+k_{1} \\
+k_{2} \\
+\vdots \\
+k_{r}
+\end{array}\right)=\left(\gamma_{1}, \gamma_{2}, \cdots, \gamma_{r}\right)\left(\begin{array}{c}
+k_{1} \\
+k_{2} \\
+\vdots \\
+k_{r}
+\end{array}\right)=\mathbf{0}.
+$$
+从而
+$$
+\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}\right)\left(\begin{array}{c}
+k_{1} \\
+k_{2} \\
+\vdots \\
+k_{r}
+\end{array}\right)=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right) \boldsymbol{A}\left(\begin{array}{c}
+k_{1} \\
+k_{2} \\
+\vdots \\
+k_{r}
+\end{array}\right)=\mathbf{0},
+$$
+亦即存在 $r$ 个不全为零的常数 $k_{1}, k_{2}, \cdots, k_{r}$, 使
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}=\mathbf{0}.
+$$
+因此 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关. 证毕.
+\end{proof}
+
+
+\begin{corollary}%推论 4 
+如果向量组 $A: \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $B: \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示, 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关, 那么 $r \leqslant s$.
+\end{corollary}
+
+\begin{corollary}%推论 5 
+两个等价的线性无关的向量组必含有相同个数的向量.
+\end{corollary}
+
+设有向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$, 只要向量组中含有非零向量, 则只含有这一个非零向量的部分组是线性无关的; 在这个部分组中添加原向量组中的另一个非零向量, 如果这两个向量组成的部分组仍然是线性无关的, 则再从原向量组中取出一个不属于这个部分组的非零向量添加进来, 使这三个向量组成的部分组线性无关. 这样一直做下去, 最后总能得到向量组中由 $r$ 个向量组成的部分组是线性无关的, 再添加一个向量则部分组就线性相关了. 这样得到的由 $r$ 个向量组成的线性无关的部分组是极大的线性无关的部分组.
+
+\begin{definition}%定义 8 
+设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 满足:
+
+$(1)$ 部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性无关;
+
+$(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(1 \leqslant i \leqslant s)$, 都有 $\boldsymbol{\alpha}_{i}, \boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性相关,则称部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大线性无关组 (简称极大无关组).
+\end{definition}
+
+\begin{example}%例 10 
+在向量组 $\boldsymbol{\alpha}_{1}=(2,-1,3,1), \boldsymbol{\alpha}_{2}=(4,-2,5,4), \boldsymbol{\alpha}_{3}=(2,-1,4,-1)$ 中, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$为它的一个极大线性无关组. 首先, 由于 $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 的对应分量不成比例, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 再添入 $\boldsymbol{\alpha}_{3}$ 以后, 由
+$$
+\boldsymbol{\alpha}_{3}=3 \boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}
+$$
+可知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关. 故 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的一个极大线性无关组. 不难验证 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 和 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{3}$ 都是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的极大线性无关组.
+\end{example}
+
+容易证明, 定义 $8$ 与下面的定义 $8^{\prime}$ 等价.
+
+\begin{definition1}%定义 $8^{\prime}$
+若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 满足:
+
+$(1)$ $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性无关;
+
+$(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, s), \boldsymbol{\alpha}_{i}$ 可由 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性表示,则称部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大线性无关组.
+\end{definition1}
+
+ 
+
+从例 $10$ 发现: 向量组的极大线性无关组可能不是唯一的.
+
+因此存在下面的性质. 
+
+\begin{property}%性质 1 
+一向量组的极大线性无关组与向量组本身等价.
+\end{property}
+
+\begin{property}%性质 2
+一向量组的任意两个极大线性无关组等价.
+\end{property}
+
+\begin{property}%性质 3 
+一向量组的任意两个极大线性无关组含有相同个数的向量.
+\end{property}
+
+性质 $3$ 表明向量组的极大线性无关组所含向量的个数与极大线性无关组的
+选择无关, 它反映了向量组本身的特征.
+
+
+
+
+
 </ul>
 
 <a href="#C0">返回顶部</a>
@@ -95,6 +981,250 @@
 
 <ul>
 
+由第 $3$ 节知道, 一个向量组的极大线性无关组可能不是唯一的, 但任意两个极大线性无关组所含向量的个数是相同的.
+
+\begin{definition}%定义 9 
+向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的极大线性无关组所含向量的个数称为这个向量组的秩, 记为 $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)$. 规定只含零向量的向量组的秩为 $0$ .
+\end{definition}
+
+例如, 例 $10$ 中向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的秩为 $2$ .
+
+由于线性无关的向量组本身就是它的极大线性无关组, 所以有\textbf{一向量组线性无关的充分必要条件为它的秩与它所含向量的个数相同}.
+
+我们知道, 每个向量组都与它的极大线性无关组等价, 由等价的传递性可知, 任意两个等价的向量组的极大线性无关组也等价, 根据推论 $5$ 就有\textbf{等价的向量组必有相同的秩}.
+
+如果向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 能由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots$, $\boldsymbol{\alpha}_{s}$ 的极大线性无关组可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 的极大线性无关组线性表示. 因此, 由推论 $4$ 有, \textbf{若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示, 则 $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right) \leqslant r\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}\right)$.}
+
+\begin{theorem}%定理 9  
+向量组的任意线性无关的部分组都可扩充为一个极大线性无关组.
+\end{theorem}
+
+\begin{proof}%证 
+设 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{k}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中的一个线性无关的部分组, 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中每个向量都可由这个部分组线性表示, 那么这个部分组就是一个极大线性无关组. 如果还有某向量 $\boldsymbol{\alpha}_{i_{k+1}}$ 不能被这个部分组线性表示, 那么由
+$$
+l_{1} \boldsymbol{\alpha}_{i_{1}}+l_{2} \boldsymbol{\alpha}_{i_{2}}+\cdots+l_{k+1} \boldsymbol{\alpha}_{i_{k+1}}=\mathbf{0},
+$$
+就有 $l_{k+1}=0$. 再由向量组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{k}}$ 线性无关, 可得
+$$
+l_{1}=l_{2}=\cdots=l_{k}=0.
+$$
+这样, 就得到了一个含 $k+1$ 个向量的线性无关的部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{k+1}}$. 重复这个过程, 最后必可得到 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个线性无关的部分组, 使向量组中的每个向量都可由这个部分组线性表示, 这个部分组就是个极大线性无关组. 证毕.
+\end{proof}
+
+\begin{corollary}%推论 6 
+秩为 $r$ 的向量组中, 任意含 $r$ 个向量的线性无关的部分组都是向量组的极大线性无关组.
+\end{corollary}
+
+\begin{example}%例 11 
+求向量组 $\boldsymbol{\alpha}_{1}=(1,4,0,3), \boldsymbol{\alpha}_{2}=(0,1,-1,2), \boldsymbol{\alpha}_{3}=(1,0,-1,5), \boldsymbol{\alpha}_{4}= (0,0,0,2)$ 的一个极大线性无关组及秩.
+\end{example}
+
+\begin{solution}%解 
+$\boldsymbol{\alpha}_{1}$ 是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 的一个线性无关的部分组, 显然, $\boldsymbol{\alpha}_{2}$ 不能由 $\boldsymbol{\alpha}_{1}$ 线性表示, 所以 $\boldsymbol{\alpha}_{1}$ 可以扩充为一个线性无关的部分组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$. 容易证明 $\boldsymbol{\alpha}_{3}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}$, 但 $\boldsymbol{\alpha}_{4}$ 不能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性表示, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 又可扩充为一个线性无关的部分组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$. 从而 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 的秩为 $3$, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}$ 是它的一个极大线性无关组.
+\end{solution}
+
+
+第 $2$ 章中给出了矩阵的秩的定义和计算方法, 那么向量组的秩与矩阵的秩有什么关系呢?
+
+首先建立一个引理.
+
+\begin{lemma}%引理 1
+设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是 $r$ 个 $n$ 维列向量 $(r \leqslant n)$, 则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关的充分必要条件是矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}\right)$ 至少有一个 $r$ 阶子式不为零.
+\end{lemma}
+
+
+\begin{proof}%证 
+充分性由本章的定理 $5$ 与推论 $2$ 可明显得到.
+
+下面证明必要性. 对向量的个数 $r$, 用数学归纳法证明.
+
+当 $r=1$ 时, 由 $\boldsymbol{\alpha}_{1}$ 线性无关知, $\boldsymbol{\alpha}_{1} \neq \boldsymbol{0}$, 从而 $\boldsymbol{A}$ 至少有一个一阶子式不为零. 
+
+假设当 $r=k$ 时, 结论成立.
+
+当 $r=k+1 \leqslant n$ 时, 设
+$$
+\boldsymbol{\alpha}_{i}=\left(\begin{array}{c}
+a_{1 i} \\
+a_{2 i} \\
+\vdots \\
+a_{n i}
+\end{array}\right), \quad i=1,2, \cdots, k+1,
+$$
+且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k+1}$ 线性无关, 则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{k}$ 亦线性无关. 由数学归纳法知, 矩阵 $\boldsymbol{B}=( \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, $ $ \cdots, \boldsymbol{\alpha}_{k} )$ 至少存在一个 $k$ 阶子式不为零. 不妨设
+\begin{equation*}
+D_{k}=\left|\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 k}  \tag{3-10}\\
+a_{21} & a_{22} & \cdots & a_{2 k} \\
+\vdots & \vdots & & \vdots \\
+a_{k 1} & a_{k 2} & \cdots & a_{k k}
+\end{array}\right| \neq 0.
+\end{equation*}
+令
+$$
+\boldsymbol{\gamma}_{i}=\left(\begin{array}{c}
+a_{1 i} \\
+a_{2 i} \\
+\vdots \\
+a_{k i}
+\end{array}\right), \quad i=1,2, \cdots, k+1. 
+$$
+由式 (3-10) 知, $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{k}$ 线性无关. 而 $k+1$ 个 $k$ 维向量 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{k}, \boldsymbol{\gamma}_{k+1}$ 线性相关, 根据本章的定理 $2$, $\boldsymbol{\gamma}_{k+1}$ 可由 $\gamma_{1}, \gamma_{2}, \cdots, \gamma_{k}$ 线性表示, 即存在一组确定的数 $t_{1}, t_{2}, \cdots, t_{k}$, 使得
+$$
+\boldsymbol{\gamma}_{k+1}=t_{1} \boldsymbol{\gamma}_{1}+t_{2} \boldsymbol{\gamma}_{2}+\cdots+t_{k} \boldsymbol{\gamma}_{k},
+$$
+从而有
+\begin{equation*}
+a_{i, k+1}-\sum_{j=1}^{k} t_{j} a_{i j}=0, \quad i=1,2, \cdots, k. \tag{3-11}
+\end{equation*}
+
+
+令
+$$
+\boldsymbol{\beta}=\boldsymbol{\alpha}_{k+1}-\sum_{j=1}^{n} t_{j} \boldsymbol{\alpha}_{j}=\left(\begin{array}{c}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{n}
+\end{array}\right),
+$$
+这里,
+$$
+b_{i}=a_{i, k+1}-\sum_{j=1}^{k} t_{j} a_{i j}, \quad i=1,2, \cdots, n.
+$$
+则由式 (3-11) 知, $b_{1}=b_{2}=\cdots=b_{k}=0$.
+
+但因 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{k+1}$ 线性无关, 则 $\boldsymbol{\beta} \neq \boldsymbol{0}$. 因此必存在某个 $b_{s} \neq 0(k < s \leqslant n)$. 于是 $k+1$ 阶子式
+$$
+\left|\begin{array}{cccc}
+a_{11} & \cdots & a_{1 k} & a_{1, k+1} \\
+a_{21} & \cdots & a_{2 k} & a_{2, k+1} \\
+\vdots & & \vdots & \vdots \\
+a_{k 1} & \cdots & a_{k k} & a_{k, k+1} \\
+a_{s 1} & \cdots & a_{s k} & a_{s, k+1}
+\end{array}\right| \xlongequal[i=1,2, \cdots, k]{c_{k+1}+\left(-t_{i}\right) \times c_{i}}\left|\begin{array}{cccc}
+a_{11} & \cdots & a_{1 k} & 0 \\
+a_{21} & \cdots & a_{2 k} & 0 \\
+\vdots & & \vdots & \vdots \\
+a_{k 1} & \cdots & a_{k k} & 0 \\
+a_{s 1} & \cdots & a_{s k} & b_{s}
+\end{array}\right|=b_{s} D_{k} \neq 0. 
+$$
+证毕.
+\end{proof}
+
+
+下面建立向量组的秩与矩阵的秩的关系.
+
+
+\begin{theorem}%定理 10 
+设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则矩阵 $\boldsymbol{A}$ 的秩等于它的列向量组的秩, 也等于它的行向量组的秩.
+\end{theorem}
+
+\begin{proof}%证 
+下面只讨论列向量组的情况,类似可讨论行向量组的情况.
+
+设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\boldsymbol{A}$ 的列向量组, $r(\boldsymbol{A})=r$, $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)=s$. 首先, 由 $r(\boldsymbol{A})=r$, 则矩阵 $\boldsymbol{A}$ 中至少存在一个 $r$ 阶子式 $D_{r} \neq 0$, 由本章的定理 $5$ 和推论 $2$ 知, $D_{r}$ 所在的 $\boldsymbol{A}$ 中的 $r$ 个列向量一定线性无关, 从而 $s \geqslant r$; 另外, 由 $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)=s$,则必有 $s$ 个列向量构成 $\boldsymbol{A}$ 的列向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 的极大线性无关组, 由引理 $1$ 知, 这 $s$ 个列向量构成的矩阵中至少存在一个 $s$ 阶子式不为零, 从而 $r \geqslant s$. 于是有 $r=s$. 证毕.
+\end{proof}
+
+矩阵 $\boldsymbol{A}$ 的行向量组的秩称为矩阵 $\boldsymbol{A}$ 的行秩, 矩阵 $\boldsymbol{A}$ 的列向量组的秩称为矩阵 $\boldsymbol{A}$ 的列秩.
+
+\begin{corollary}%推论 7 
+矩阵 $\boldsymbol{A}$ 的行秩与列秩相等.
+\end{corollary}
+
+
+由定理 $10$ 的证明知, 若 $D_{r}$ 是矩阵 $\boldsymbol{A}$ 的一个最高阶非零子式, 则 $D_{r}$ 所在的 $r$ 个行和 $r$ 个列就分别是矩阵 $\boldsymbol{A}$ 的行向量组和列向量组的一个极大线性无关组.
+
+由此, 可以给出求向量组的秩和极大线性无关组的步骤:
+
+$(1)$ 以向量组中的各向量作为列向量组成矩阵 $\boldsymbol{A}$;
+
+$(2)$ 对矩阵 $\boldsymbol{A}$ 作初等行变换将该矩阵化为行阶梯形矩阵 $\boldsymbol{B}$;
+
+$(3)$ 行阶梯形矩阵 $\boldsymbol{B}$ 的非零行的个数即为矩阵 $\boldsymbol{B}$ (也是矩阵 $\boldsymbol{A}$ ) 的秩, 亦即向量组的秩;
+
+$(4)$ 由于矩阵 $\boldsymbol{A}$ 的列向量组与矩阵 $\boldsymbol{B}$ 的对应的列向量组有相同的线性组合关系, 则与矩阵 $\boldsymbol{B}$ 的首非零元所在的列对应的矩阵 $\boldsymbol{A}$ 的部分列向量组即为所求向量组的一个极大线性无关组.
+
+同理, 也可以将向量组中的各向量作为行向量组成矩阵,通过作初等列变换来求向量组的秋和极大线性无关组.
+
+\begin{example}%例 12 
+求向量组 $\boldsymbol{\alpha}_{1}=(1,4,1,0,2)$, $\boldsymbol{\alpha}_{2}=(2,5,-1,-3,2)$, $\boldsymbol{\alpha}_{3}=(0,2,2,-1,0)$, $\boldsymbol{\alpha}_{4}=(-1,2,5,6,2)$ 的秩和一个极大线性无关组,并把不属于极大线性无关组的其余向量用该极大线性无关组线性表示.
+\end{example}
+
+\begin{solution}% 解 
+把向量组作为列向量组成矩阵 $\boldsymbol{A}$, 利用初等行变换将 $\boldsymbol{A}$ 化为行最简形矩阵 $\boldsymbol{B}$:
+$$
+\begin{aligned}
+\boldsymbol{A}
+& =\left(\begin{array}{rrrr}
+1 & 2 & 0 & -1 \\
+4 & 5 & 2 & 2 \\
+1 & -1 & 2 & 5 \\
+0 & -3 & -1 & 6 \\
+2 & 2 & 0 & 2
+\end{array}\right) \rightarrow\left(\begin{array}{rrrr}
+1 & 2 & 0 & -1 \\
+0 & -3 & 2 & 6 \\
+0 & -3 & 2 & 6 \\
+0 & -3 & -1 & 6 \\
+0 & -2 & 0 & 4
+\end{array}\right)\\
+& \rightarrow\left(\begin{array}{rrrr}
+1 & 2 & 0 & -1 \\
+0 & -1 & 0 & 2 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \rightarrow\left(\begin{array}{rrrr}
+1 & 0 & 0 & 3 \\
+0 & 1 & 0 & -2 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right)=\boldsymbol{B}.
+\end{aligned}
+$$
+易见 $r(\boldsymbol{A})=r(\boldsymbol{B})=3, \boldsymbol{B}$ 的第 $1,2,3$ 列线性无关, 由于 $\boldsymbol{A}$ 的列向量组与 $\boldsymbol{B}$ 的对应的列向量组有相同的线性组合关系,故与 $\boldsymbol{B}$ 对应的 $\boldsymbol{A}$ 的第 $1,2,3$ 列线性无关,即 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是该向量组的一个极大线性无关组.
+
+又由 $\boldsymbol{B}$, 易得
+$$
+\boldsymbol{\alpha}_{4}=3 \boldsymbol{\alpha}_{1}-2 \boldsymbol{\alpha}_{2}.
+$$
+\end{solution}
+
+\begin{example}%例 13 
+已知向量组 $\boldsymbol{\alpha}_{1}=(1,2,-1,1), \boldsymbol{\alpha}_{2}=(2,0, t, 0), \boldsymbol{\alpha}_{3}=(0,-4,5,-2), \boldsymbol{\alpha}_{4}=$ $(3,-2, t+4,-1)$ 的秩为 $2$ , 试确定 $t$ 的值.
+\end{example}
+
+\begin{solution}% 解 
+考察矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+1 & 2 & 0 & 3 \\
+2 & 0 & -4 & -2 \\
+-1 & t & 5 & t+4 \\
+1 & 0 & -2 & -1
+\end{array}\right).
+$$
+由条件知 $r(\boldsymbol{A})=2$, 从而 $\boldsymbol{A}$ 的所有三阶子式均为 $0$ .
+
+故由
+$$
+\left|\begin{array}{rrr}
+1 & 2 & 0 \\
+2 & 0 & -4 \\
+-1 & t & 5
+\end{array} \right|=-12+4 t=0
+$$
+得 $t=3$.
+\end{solution}
+
+
+
+
+
+
 </ul>
 
 <a href="#C0">返回顶部</a>
@@ -103,7 +1233,331 @@
 <h2><a name="C5">$3.5$ 向量的内积与正交向量组</a></h2>
 
 <ul>
-  
+
+
+前面定义了 $n$ 维向量的线性运算, 为了描述向量的度量性质, 还需要引入向量内积的概念.
+
+\begin{definition}%定义 10 
+设有 $n$ 维向量
+$$
+\boldsymbol{x}=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right), \quad \boldsymbol{y}=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right),
+$$
+称 $[\boldsymbol{x}, \boldsymbol{y}]=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}$ 为向量 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 的内积.
+\end{definition}
+
+内积是向量的一种运算,用矩阵形式可表示为 $[\boldsymbol{x}, \boldsymbol{y}]=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{y}$.
+
+
+\begin{example}%例 14 
+计算下列向量的内积:
+
+$(1)$ $\boldsymbol{x}=(0,1,5,-2)^{\mathrm{T}}, \boldsymbol{y}=(-2,0,-1,3)^{\mathrm{T}}$;
+
+$(2)$ $\boldsymbol{x}=(-2,1,0,3)^{\mathrm{T}}, \boldsymbol{y}=(3,-6,8,4)^{\mathrm{T}}$.
+\end{example}
+
+\begin{solution}% 解 
+\,\,\, $(1)$ $[\boldsymbol{x}, \boldsymbol{y}]=0 \times(-2)+1 \times 0+5 \times(-1)+(-2) \times 3=-11$.
+
+$(2)$ $[\boldsymbol{x}, \boldsymbol{y}]=(-2) \times 3+1 \times(-6)+0 \times 8+3 \times 4=0$.
+\end{solution}
+
+若 $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{z}$ 为 $n$ 维实向量, $\lambda$ 为实数, 则从内积的定义可推得下列性质: 
+
+$(1)$ $[\boldsymbol{x}, \boldsymbol{y}]=[\boldsymbol{y}, \boldsymbol{x}]$;
+
+$(2)$ $[\lambda \boldsymbol{x}, \boldsymbol{y}]=\lambda[\boldsymbol{x}, \boldsymbol{y}]$;
+
+$(3)$ $[\boldsymbol{x}+\boldsymbol{y}, \boldsymbol{z}]=[\boldsymbol{x}, \boldsymbol{z}]+[\boldsymbol{y}, \boldsymbol{z}]$;
+
+$(4)$ $[\boldsymbol{x}, \boldsymbol{x}] \geqslant 0$, 当且仅当 $\boldsymbol{x}=\boldsymbol{0}$ 时等号成立.
+
+由于对任意一个向量 $\boldsymbol{x}$, $[\boldsymbol{x}, \boldsymbol{x}] \geqslant 0$, 因此可以引入向量长度的概念.
+
+\begin{definition}%定义 11 
+称 $\|\boldsymbol{x}\|=\sqrt{[\boldsymbol{x}, \boldsymbol{x}]}=\sqrt{x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}}$ 为向量 $\boldsymbol{x}$ 的长度 (或范数). 当 $\|\boldsymbol{x}\|=1$ 时,称 $\boldsymbol{x}$ 为单位向量.
+\end{definition}
+
+向量的长度具有下列基本性质:
+
+$(1)$ 非负性: 当 $\boldsymbol{x} \neq \mathbf{0}$ 时, $\|\boldsymbol{x}\|>0$; 当 $\boldsymbol{x}=\mathbf{0}$ 时, $\|\boldsymbol{x}\|=0$;
+
+$(2)$ 齐次性: $\|\lambda \boldsymbol{x}\|=|\lambda|\|\boldsymbol{x}\|$;
+
+$(3)$ 三角不等式: $\|\boldsymbol{x}+\boldsymbol{y}\| \leqslant\|\boldsymbol{x}\|\|\boldsymbol{y}\|$;
+
+$(4)$ 柯西-施瓦茨 (Cauchy-Schwarz) 不等式: $|[\boldsymbol{x}, \boldsymbol{y}]| \leqslant\|\boldsymbol{x}\|\|\boldsymbol{y}\|$.
+
+下面只证明性质 $(4)$, 性质 $(1)$ 、$(2)$、$(3)$ 的证明留给读者.
+
+\begin{proof}%证 
+当 $\boldsymbol{y}=\mathbf{0}$ 时, 结论显然成立. 设 $\boldsymbol{y} \neq \boldsymbol{0}$, 作向量 $\boldsymbol{x}+t \boldsymbol{y}(t \in \mathbf{R})$, 因为内积 $[\boldsymbol{x}+t \boldsymbol{y}, \boldsymbol{x}+t \boldsymbol{y}] \geqslant 0$, 由内积的运算规律得
+$$
+[\boldsymbol{y}, \boldsymbol{y}] t^{2}+2[\boldsymbol{x}, \boldsymbol{y}] t+[\boldsymbol{x}, \boldsymbol{x}] \geqslant 0, 
+$$
+上式左端是 $t$ 的二次多项式, 且 $t^{2}$ 的系数 $[\boldsymbol{y}, \boldsymbol{y}]>0$, 因此
+$$
+4[\boldsymbol{x}, \boldsymbol{y}]^{2}-4[\boldsymbol{x}, \boldsymbol{x}][\boldsymbol{y}, \boldsymbol{y}] \leqslant 0, 
+$$
+即
+$$
+[\boldsymbol{x}, \boldsymbol{y}]^{2} \leqslant[\boldsymbol{x}, \boldsymbol{x}][\boldsymbol{y}, \boldsymbol{y}]=\|\boldsymbol{x}\|^{2}\|\boldsymbol{y}\|^{2}.
+$$
+故
+$$
+|[\boldsymbol{x}, \boldsymbol{y}]| \leqslant\|\boldsymbol{x}\|\|\boldsymbol{y}\|.
+$$
+证毕.
+\end{proof}
+
+
+
+对任意一个非零向量 $\boldsymbol{x}$, 向量 $\frac{\boldsymbol{x}}{\| \boldsymbol{x}\|}$ 是一个单位向量, 因为由向量长度的非负性知, $\|\boldsymbol{x}\|>0$, 再根据向量长度的齐次性, 有
+$$
+\left\|\frac{\boldsymbol{x}}{\|\boldsymbol{x}\|}\right\|=\frac{1}{\|\boldsymbol{x}\|}\|\boldsymbol{x}\|=1.
+$$
+由此可知, 用非零向量 $\boldsymbol{x}$ 的长度去除向量 $\boldsymbol{x}$, 就可得到一个单位向量, 这一过程通常称为向量 $\boldsymbol{x}$ 的单位化.
+
+由柯西-施瓦茨不等式, 可得
+$$
+\left|\frac{[\boldsymbol{x}, \boldsymbol{y}]}{\|\boldsymbol{x}\| \cdot \|\boldsymbol{y}\|}\right| \leqslant 1 \quad(\|\boldsymbol{x}\| \cdot \|\boldsymbol{y}\| \neq 0).
+$$
+因此, 可利用内积定义 $n$ 维向量的夹角.
+
+\begin{definition}%定义 12 
+对于两个非零向量 $\boldsymbol{x}, \boldsymbol{y}$, 定义 $\theta=\arccos \frac{[\boldsymbol{x}, \boldsymbol{y}]}{\|\boldsymbol{x}\| \cdot \|\boldsymbol{y} \|}$ 为 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 的夹角.
+\end{definition}
+
+当 $[\boldsymbol{x}, \boldsymbol{y}]=0$ 时, 称 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 正交.
+
+显然, $n$ 维零向量与任意 $n$ 维向量都正交.
+
+称一组两两正交的非零向量组为正交向量组.
+
+\begin{theorem}%定理 11 
+若 $n$ 维非零向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 为正交向量组,则它们为线性无关向量组.
+\end{theorem}
+
+\begin{proof}%证 
+设有 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 使 $\sum_{i=1}^{r} \lambda_{i} \boldsymbol{\alpha}_{i}=\mathbf{0}$, 分别用 $\boldsymbol{\alpha}_{k}$ 与上式两端作内积 $(k=1$, $2, \cdots, r)$, 则有
+$$
+\left[\boldsymbol{\alpha}_{k}, \sum_{i=1}^{r} \lambda_{i} \boldsymbol{\alpha}_{i}\right]=\left[\boldsymbol{\alpha}_{k}, \mathbf{0}\right]=0.
+$$
+又由 $\boldsymbol{\alpha}_{k}$ 与 $\boldsymbol{\alpha}_{i}(i \neq k)$ 正交, 则有
+$$
+\left[\boldsymbol{\alpha}_{k}, \sum_{i=1}^{n} \lambda_{i} \boldsymbol{\alpha}_{i}\right]=\sum_{i=1}^{r} \lambda_{i}\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{i}\right]=\lambda_{k}\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k}\right].
+$$
+
+因此得到
+$$
+\lambda_{k}\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k}\right]=0.
+$$
+因 $\boldsymbol{\alpha}_{k} \neq \boldsymbol{0}$, 故 $\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k}\right]=\left\|\boldsymbol{\alpha}_{k}\right\|^{2} \neq 0$. 从而 $\lambda_{k}=0, k=1,2, \cdots, r$, 于是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$线性无关. 证毕.
+\end{proof}
+
+
+
+\begin{example}%例 15 
+已知 $\boldsymbol{\alpha}_{1}=(1,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(1,-2,1)^{\mathrm{T}}$ 正交, 试求一个非零向量 $\boldsymbol{\alpha}_{3}$, 使 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$, $\boldsymbol{\alpha}_{3}$ 两两正交.
+\end{example}
+
+\begin{solution}%解 
+设 $\boldsymbol{\alpha}_{3}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}} \neq 0$, 由 $\boldsymbol{\alpha}_{3}$ 分别与 $\boldsymbol{\alpha}_{1}$ 和 $\boldsymbol{\alpha}_{2}$ 正交, 有 $\left[\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{1}\right]=\left[\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{2}\right]=0$, 即
+$$
+\left\{\begin{array}{l}
+x_{1}+\phantom{2}x_{2}+x_{3}=0, \\
+x_{1}-2 x_{2}+x_{3}=0,
+\end{array}\right.
+$$
+解得 $x_{1}=-x_{3}$, $x_{2}=0$. 令 $x_{3}=1$, 有 $\boldsymbol{\alpha}_{3}=(-1,0,1)^{\mathrm{T}}$, 即为所求.
+\end{solution}
+
+\begin{definition}%定义 13 
+设 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 是一个线性无关向量组, 如果 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 两两正交, 且都是单位向量, 则称 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 是一个规范正交向量组 (或标准正交向量组).
+\end{definition}
+
+设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是一个线性无关向量组, 要求一个规范正交向量组 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots$, $\boldsymbol{e}_{r}$, 使 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 等价, 这样一个问题, 称为将 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 规范正交化 (或标准正交化). 这一过程可以通过格拉姆-施密特 (Gram-Schmidt) 正交化方法实现, 其具体步骤如下.
+
+取
+$$
+\begin{aligned}
+& \boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}, \quad \boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}-\frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{2}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}, \cdots, \\
+& \boldsymbol{\beta}_{r}=\boldsymbol{\alpha}_{r}-\frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{r}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}-\frac{\left[\boldsymbol{\beta}_{2}, \boldsymbol{\alpha}_{r}\right]}{\left[\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{2}\right]} \boldsymbol{\beta}_{2}-\cdots-\frac{\left[\boldsymbol{\beta}_{r-1}, \boldsymbol{\alpha}_{r}\right]}{\left[\boldsymbol{\beta}_{r-1}, \boldsymbol{\beta}_{r-1}\right]} \boldsymbol{\beta}_{r-1},
+\end{aligned}
+$$
+容易验证 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{r}$ 是正交向量组; 然后将它们单位化, 即令
+$$
+\boldsymbol{e}_{1}=\frac{\boldsymbol{\beta}_{1}}{\left\|\boldsymbol{\beta}_{1}\right\|}, \quad \boldsymbol{e}_{2}=\frac{\boldsymbol{\beta}_{2}}{\left\|\boldsymbol{\beta}_{2}\right\|}, \quad \cdots, \quad \boldsymbol{e}_{r}=\frac{\boldsymbol{\beta}_{r}}{\left\|\boldsymbol{\beta}_{r}\right\|},
+$$
+则 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 就是 $V$ 的一个规范正交向量组.
+
+\begin{example}%例 16 
+已知 $\boldsymbol{\alpha}_{1}=(1,-1,0)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}=(1,0,1)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{3}=(1,-1,1)^{\mathrm{T}}$ 是一个线性无关向量组, 试用格拉姆-施密特正交化方法, 构造一个规范正交向量组.
+\end{example}
+
+\begin{solution}%解 
+取
+$$
+\begin{aligned}
+\boldsymbol{\beta}_{1} & =\boldsymbol{\alpha}_{1}=\left(\begin{array}{r}
+1 \\
+-1 \\
+0
+\end{array}\right), \\
+\boldsymbol{\beta}_{2} & =\boldsymbol{\alpha}_{2} \frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{2}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}=\left(\begin{array}{l}
+1 \\
+0 \\
+1
+\end{array}\right)-\frac{1}{2}\left(\begin{array}{r}
+1 \\
+-1 \\
+0
+\end{array}\right)=\left(\begin{array}{c}
+\frac{1}{2} \\[5pt]
+\frac{1}{2} \\
+1
+\end{array}\right), \\
+\boldsymbol{\beta}_{3} & =\boldsymbol{\alpha}_{3}-\frac{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\alpha}_{3}\right]}{\left[\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{1}\right]} \boldsymbol{\beta}_{1}-\frac{\left[\boldsymbol{\beta}_{2}, \boldsymbol{\alpha}_{3}\right]}{\left[\boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{2}\right]} \boldsymbol{\beta}_{2} \\
+& =\left(\begin{array}{r}
+1 \\
+-1 \\
+1
+\end{array}\right)-\left(\begin{array}{r}
+1 \\
+-1 \\
+0
+\end{array}\right)-\frac{2}{3}\left(\begin{array}{c}
+\frac{1}{2} \\[5pt]
+\frac{1}{2} \\[5pt]
+1
+\end{array}\right)=\left(\begin{array}{r}
+-\frac{1}{3} \\[5pt]
+-\frac{1}{3} \\[5pt]
+\frac{1}{3}
+\end{array}\right).
+\end{aligned}
+$$
+再将 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 单位化, 即得一个规范正交向量组为
+$$
+\boldsymbol{e}_{1}=\frac{\boldsymbol{\beta}_{1}}{\left\|\boldsymbol{\beta}_{1}\right\|}=\left(\begin{array}{r}
+\frac{1}{\sqrt{2}} \\[10pt]
+-\frac{1}{\sqrt{2}} \\[10pt]
+0
+\end{array}\right), \quad \boldsymbol{e}_{2}=\frac{\boldsymbol{\beta}_{2}}{\left\|\boldsymbol{\beta}_{2}\right\|}=\left(\begin{array}{c}
+\frac{1}{\sqrt{6}} \\[10pt]
+\frac{1}{\sqrt{6}} \\[10pt]
+\frac{2}{\sqrt{6}}
+\end{array}\right), \quad \boldsymbol{e}_{3}=\frac{\boldsymbol{\beta}_{3}}{\left\|\boldsymbol{\beta}_{3}\right\|}=\left(\begin{array}{r}
+-\frac{1}{\sqrt{3}} \\[10pt]
+-\frac{1}{\sqrt{3}} \\[10pt]
+\frac{1}{\sqrt{3}}
+\end{array}\right).
+$$
+\end{solution}
+
+\begin{definition}%定义 14 
+如果 $n$ 阶方阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}$ (即 $\boldsymbol{A}^{-1}=\boldsymbol{A}^{\mathrm{T}}$ ), 则称 $\boldsymbol{A}$ 为正交矩阵.
+\end{definition}
+
+\begin{theorem}%定理 12 
+$n$ 阶方阵 $\boldsymbol{A}$ 为正交矩阵的充分必要条件是 $\boldsymbol{A}$ 的列 (行) 向量组是规范正交向量组.
+\end{theorem}
+
+\begin{proof}%证 
+设 $n$ 阶方阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)$, 若 $\boldsymbol{A}$ 为正交矩阵, 则 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}$ 等价于
+$$
+\left(\begin{array}{c}
+\boldsymbol{\alpha}_{1}^{\mathrm{T}} \\
+\boldsymbol{\alpha}_{2}^{\mathrm{T}} \\
+\vdots \\
+\boldsymbol{\alpha}_{n}^{\mathrm{T}}
+\end{array}\right)\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)=\boldsymbol{E},
+$$
+即
+$$
+\begin{aligned}
+& {\left[\boldsymbol{\alpha}_{i}, \boldsymbol{\alpha}_{i}\right]=1 \quad(i=1,2, \cdots, n),} \\
+& {\left[\boldsymbol{\alpha}_{i}, \boldsymbol{\alpha}_{j}\right]=0 \quad(i \neq j ; i, j=1,2, \cdots, n)}. 
+\end{aligned}
+$$
+这说明, 方阵 $\boldsymbol{A}$ 为正交矩阵的充分必要条件是 $\boldsymbol{A}$ 的列向量组是规范正交向量组. 注意到 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}=\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}$, 所以上述结论对 $\boldsymbol{A}$ 的行向量组也成立. 证毕.
+\end{proof}
+
+\begin{example}%例 17 
+验证矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+\frac{1}{2} & -\frac{1}{2} & \frac{1}{2} & -\frac{1}{2} \\[5pt]
+\frac{1}{2} & -\frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\[5pt]
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 & 0 \\[5pt]
+0 & 0 & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\end{array}\right)
+$$
+是正交矩阵.
+\end{example}
+
+\begin{solution}
+容易验证, $\boldsymbol{A}$ 的每个列向量都是单位向量, 且两两正交, 故 $\boldsymbol{A}$ 是正交矩阵.
+\end{solution}
+
+
+由正交矩阵的定义, 不难得到下列\textbf{性质}:
+
+$(1)$ 若 $\boldsymbol{A}$ 是正交矩阵, 则 $|\boldsymbol{A}|^{2}=1$;
+
+$(2)$ 若 $\boldsymbol{A}$ 是正交矩阵, 则 $\boldsymbol{A}^{\mathrm{T}}, \boldsymbol{A}^{-1}$ 也是正交矩阵;
+
+$(3)$ 若 $\boldsymbol{A}, \boldsymbol{B}$ 是 $n$ 阶正交矩阵, 则 $\boldsymbol{A B}$ 也是正交矩阵.
+
+
+\begin{example}%例 18 
+设 $\boldsymbol{A}$ 是 $n$ 阶对称矩阵, $\boldsymbol{E}$ 为 $n$ 阶单位矩阵, 且满足 $\boldsymbol{A}^{2}-4 \boldsymbol{A}+3 \boldsymbol{E}=\boldsymbol{O}$, 证明: $\boldsymbol{A}-$ $2 \boldsymbol{E}$ 为正交矩阵.
+\end{example}
+
+\begin{proof}%证 
+因为 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 所以
+$$
+\begin{aligned}
+(\boldsymbol{A}-2 \boldsymbol{E})^{\mathrm{T}}(\boldsymbol{A}-2 \boldsymbol{E}) & =\left(\boldsymbol{A}^{\mathrm{T}}-2 \boldsymbol{E}\right)(\boldsymbol{A}-2 \boldsymbol{E})=(\boldsymbol{A}-2 \boldsymbol{E})(\boldsymbol{A}-2 \boldsymbol{E}) \\
+& =\boldsymbol{A}^{2}-4 \boldsymbol{A}+3 \boldsymbol{E}+\boldsymbol{E}=\boldsymbol{O}+\boldsymbol{E}=\boldsymbol{E},
+\end{aligned}
+$$
+即 $\boldsymbol{A}-2 \boldsymbol{E}$ 为正交矩阵.
+\end{proof}
+
+\begin{definition}%定义 15 
+若 $\boldsymbol{T}$ 是正交矩阵, 则线性变换 $\boldsymbol{y}=\boldsymbol{T} \boldsymbol{x}$ 称为正交变换.
+\end{definition}
+
+设 $\boldsymbol{y}=\boldsymbol{T} \boldsymbol{x}$ 是正交变换, 则有
+$$
+\|\boldsymbol{y}\|=\sqrt{\boldsymbol{y}^{\mathrm{T}} \boldsymbol{y}}=\sqrt{\boldsymbol{x}^{\mathrm{T}} \boldsymbol{T}^{\mathrm{T}} \boldsymbol{T} \boldsymbol{x}}=\sqrt{\boldsymbol{x}^{\mathrm{T}} \boldsymbol{x}}=\|\boldsymbol{x}\|.
+$$
+
+
+这表明, 经正交变换后, 向量的长度保持不变, 这是正交变换的优良特性之一. 其实,正交变换相当于反射和旋转的叠合. 例如
+$$
+\boldsymbol{T}=\left(\begin{array}{rr}
+-\cos \theta & \sin \theta \\
+\sin \theta & \cos \theta
+\end{array}\right)
+$$
+为正交矩阵, 正交变换 $\boldsymbol{y}=\boldsymbol{T} \boldsymbol{x}$ 相当于把 $\boldsymbol{x}$ 旋转 $\theta$ 角, 再关于纵轴对称反射.
+
+
+
+
+
   
 </ul>
 
@@ -114,6 +1568,124 @@
   
 <ol>
 
+\item 设 $\boldsymbol{\alpha}_{1}=(1,1,0), \boldsymbol{\alpha}_{2}=(0,1,1), \boldsymbol{\alpha}_{3}=(3,4,0)$. 求 $\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}$ 及 $3 \boldsymbol{\alpha}_{1}+2 \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}$.
+
+\item 设 $3\left(\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}\right)+2\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}\right)=5\left(\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}\right)$, 其中 $\boldsymbol{\alpha}_{1}=(2,5,1,3), \boldsymbol{\alpha}_{2}=(10,1,5,10), \boldsymbol{\alpha}_{3}=(4,1,-1,1)$.求 $\alpha$.
+
+\item 判断下列命题是否正确:
+
+$(1)$ 如果向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性相关,那么其中每个向量都可由其他向量线性表示;
+
+$(2)$ 如果向量 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表示, 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性相关,那么 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots， \boldsymbol{\beta}_{s}$ 也线性相关;
+
+$(3)$ 如果向量 $\boldsymbol{\beta}$ 可由向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性表示, 且表示式是唯一的, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关;
+
+$(4)$ 如果当且仅当 $\lambda_{1}=\lambda_{2}=\cdots=\lambda_{m}=0$ 时才有 $\lambda_{1} \boldsymbol{\alpha}_{1}+\lambda_{2} \boldsymbol{\alpha}_{2}+\cdots+\lambda_{m} \boldsymbol{\alpha}_{m}+\lambda_{1} \boldsymbol{\beta}_{1}+\lambda_{2} \boldsymbol{\beta}_{2}+\cdots+\lambda_{m} \boldsymbol{\beta}_{m}=\mathbf{0}$, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关, 且 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 也线性无关;
+
+$(5)$ 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性相关, $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 也线性相关, 则有不全为 0 的数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}$, 使
+$$
+\lambda_{1} \boldsymbol{\alpha}_{1}+\lambda_{2} \boldsymbol{\alpha}_{2}+\cdots+\lambda_{m} \boldsymbol{\alpha}_{m}=\lambda_{1} \boldsymbol{\beta}_{1}+\lambda_{2} \boldsymbol{\beta}_{2}+\cdots+\lambda_{m} \boldsymbol{\beta}_{m}.
+$$
+
+\item 判别下列向量组的线性相关性:
+
+$(1)$ $\boldsymbol{\alpha}_{1}=(2,5), \boldsymbol{\alpha}_{2}=(-1,3)$;
+
+$(2)$ $\boldsymbol{\alpha}_{1}=(1,2), \boldsymbol{\alpha}_{2}=(2,3), \boldsymbol{\alpha}_{3}=(4,3)$;
+
+$(3)$ $\boldsymbol{\alpha}_{1}=(1,1,3,1), \boldsymbol{\alpha}_{2}=(4,1,-3,2), \boldsymbol{\alpha}_{3}=(1,0,-1,2)$;
+
+$(4)$ $\boldsymbol{\alpha}_{1}=(1,1,2,2,1), \boldsymbol{\alpha}_{2}=(0,2,1,5,-1), \boldsymbol{\alpha}_{3}=(2,0,3,-1,3), \boldsymbol{\alpha}_{4}=(1,1,0,4,-1)$.
+
+\item 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关,证明: $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}$ 也线性无关.
+
+\item 问: $a$ 为何值时, 向量组
+$$
+\boldsymbol{\alpha}_{1}=(1,2,3)^{\mathrm{T}}, \quad \boldsymbol{\alpha}_{2}=(3,-1,2)^{\mathrm{T}}, \quad \boldsymbol{\alpha}_{3}=(2,3, a)^{\mathrm{T}}
+$$
+线性相关? 并将 $\boldsymbol{\alpha}_{3}$ 用 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性表示.
+
+\item 作一个以 $(1,0,1,0)$ 和 $(1,-1,0,0)$ 为行向量的秩为 $4$ 的方阵.
+
+\item 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的秩为 $r$ $(r \leqslant s)$, 且其中每个向量都可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性表示. 证明: $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大线性无关组.
+
+\item 求向量组 $\boldsymbol{\alpha}_{1}=(1,1,1, k), \boldsymbol{\alpha}_{2}=(1,1, k, 1), \boldsymbol{\alpha}_{3}=(1,2,1,1)$ 的秩和一个极大线性无关组.
+
+\item 确定向量 $\boldsymbol{\beta}_{3}=(2, a, b)$, 使向量组 $\boldsymbol{\beta}_{1}=(1,1,0), \boldsymbol{\beta}_{2}=(1,1,1), \boldsymbol{\beta}_{3}$ 与向量组 $\boldsymbol{\alpha}_{1}=(0,1,1), \boldsymbol{\alpha}_{2}=(1,2,1)$, $\boldsymbol{\alpha}_{3}=(1,0,-1)$ 的秩相同, 且 $\boldsymbol{\beta}_{3}$ 可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性表示.
+
+\item 求下列向量组的秩与一个极大线性无关组:
+
+$(1)$ $\boldsymbol{\alpha}_{1}=(1,2,1,3), \boldsymbol{\alpha}_{2}=(4,-1,-5,-6), \boldsymbol{\alpha}_{3}=(1,-3,-4,-7)$;
+
+$(2)$ $\boldsymbol{\alpha}_{1}=(6,4,1,-1,2), \boldsymbol{\alpha}_{2}=(1,0,2,3,-4), \boldsymbol{\alpha}_{3}=(1,4,-9,-6,22), \boldsymbol{\alpha}_{4}=(7,1,0,-1,3)$;
+
+$(3)$ $\boldsymbol{\alpha}_{1}=(1,-1,2,4), \boldsymbol{\alpha}_{2}=(0,3,1,2), \boldsymbol{\alpha}_{3}=(3,0,7,14), \boldsymbol{\alpha}_{4}=(1,-1,2,0), \boldsymbol{\alpha}_{5}=(2,1,5,6)$.
+
+\item 求下列向量组的一个极大线性无关组,并将其余向量用此极大线性无关组线性表示:
+
+
+$(1)$ $\boldsymbol{\alpha}_{1}=(1,1,3,1), \boldsymbol{\alpha}_{2}=(-1,1,-1,3), \boldsymbol{\alpha}_{3}=(5,-2,8,-9), \boldsymbol{\alpha}_{4}=(-1,3,1,7)$;
+
+$(2)$ $\boldsymbol{\alpha}_{1}=(1,1,2,3), \boldsymbol{\alpha}_{2}=(1,-1,1,1), \boldsymbol{\alpha}_{3}=(1,3,3,5), \boldsymbol{\alpha}_{4}=(4,-2,5,6), \boldsymbol{\alpha}_{5}=(-3,-1,-5,-7)$.
+
+\item 设两个向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_s$ 的秩相同, 且 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示. 证明: $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 与 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_s$  等价.
+
+\item 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的秩为 $r_{1}$, 向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 的秩为 $r_{2}$, 向量组 
+$$
+\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}, \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}
+$$
+的秩为 $r_{3}$, 试证:
+$$
+\max \left\{r_{1}, r_{2}\right\} \leqslant r_{3} \leqslant r_{1}+r_{2}.
+$$
+
+\item 已知向量组 $\boldsymbol{\alpha}_{1}=(1, a, a, a)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(a, 1, a, a)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(a, a, 1, a)^{\mathrm{T}}, \boldsymbol{\alpha}_{4}=(a, a, a, 1)^{\mathrm{T}}$ 的秩为 $3$ , 试确定 $a$ 的值.
+
+\item 求下列矩阵的行向量组的一个极大线性无关组:
+
+$(1)$ $\left(\begin{array}{rrrr}25 & 31 & 17 & 43 \\ 75 & 94 & 53 & 132 \\ 75 & 94 & 54 & 134 \\ 25 & 32 & 20 & 48\end{array}\right)$;
+$\qquad \qquad$
+$(2)$ $\left(\begin{array}{rrrrr}1 & 1 & 2 & 2 & 1 \\ 0 & 2 & 1 & 5 & -1 \\ 2 & 0 & 3 & -1 & 2 \\ 1 & 1 & 0 & 4 & -1\end{array}\right) \cdot$
+
+\item 计算向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的内积 $[\boldsymbol{\alpha}, \boldsymbol{\beta}]$ :
+
+
+
+$(1)$ $\boldsymbol{\alpha}=(-1,0,3,-5), \boldsymbol{\beta}=(4,-2,0,1)$;
+
+$(2)$ $\boldsymbol{\alpha}=\left(\frac{\sqrt{3}}{2},-\frac{1}{3}, \frac{\sqrt{3}}{4},-1\right), \boldsymbol{\beta}=\left(-\frac{\sqrt{3}}{2},-2, \sqrt{3}, \frac{2}{3}\right)$.
+
+\item 把下列向量单位化:
+  
+$(1)$ $\boldsymbol{\alpha}=(3,0,-1,4)$;
+$\qquad\qquad$$\qquad\qquad$
+$(2)$ $\boldsymbol{\alpha}=(5,1,-2,0)$.
+
+\item 求一个四维单位向量, 使它与以下三个向量都正交: $\boldsymbol{\alpha}_{1}=(1,1,-1,1), \boldsymbol{\alpha}_{2}=(1,-1,-1,1), \boldsymbol{\alpha}_{3}=$ $(2,1,1,3)$.
+
+\item 利用格拉姆-施密特正交化方法把下列向量组正交化:
+
+$(1)$ $\boldsymbol{\alpha}_{1}=(0,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(1,1,0)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(1,0,1)^{\mathrm{T}}$;
+
+$(2)$ $\boldsymbol{\alpha}_{1}=(1,0,-1,1), \boldsymbol{\alpha}_{2}=(1,-1,0,1), \boldsymbol{\alpha}_{3}=(-1,1,1,0)$.
+
+\item 试证: 若 $n$ 维向量 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 正交, 则对于任意实数 $k, l$, 有 $k \boldsymbol{\alpha}$ 与 $l \boldsymbol{\beta}$ 正交.
+
+\item 判断下列矩阵是否为正交矩阵:
+
+
+$(1)$ $\left(\begin{array}{rrr}
+1 & -\frac{1}{2} & \frac{1}{3} \\ [5pt]
+-\frac{1}{2} & 1 & \frac{1}{2} \\ [5pt]
+\frac{1}{3} & \frac{1}{2} & -1 
+\end{array}\right)$;  
+$\qquad\qquad \qquad$
+$(2)$ $\frac{\sqrt{2}}{2}\left(\begin{array}{rrrr}1 & 0 & 1 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & 1 \\ 0 & -1 & 0 & 1\end{array}\right)$.
+
+\item 设 $\boldsymbol{x}$ 为 $n$ 维列向量, $\boldsymbol{x}^{\mathrm{T}} \boldsymbol{x}=1$, 令 $\boldsymbol{H}=\boldsymbol{E}-2 \boldsymbol{x} \boldsymbol{x}^{\mathrm{T}}$. 证明: $\boldsymbol{H}$ 是对称的正交矩阵.
+
+\item 设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 都是 $n$ 阶正交矩阵, 证明: $\boldsymbol{A B}$ 也是正交矩阵.
+
 </ol>
 
 <a href="#C0">返回顶部</a>
@@ -122,6 +1694,85 @@
 <h2><a name="C7">习题 $3$ $(\rm{B})$ 类</a></h2>
 
 <ol>
+
+\item 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 则下列向量组中线性相关的是 $(\qquad)$.
+  
+A. $\boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-\boldsymbol{\alpha}_{1}$
+
+B. $\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{1}$
+
+C. $\boldsymbol{\alpha}_{1}-2 \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}-2 \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}-2 \boldsymbol{\alpha}_{1}$
+
+D. $\boldsymbol{\alpha}_{1}+2 \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{2}+2 \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{3}+2 \boldsymbol{\alpha}_{1}$
+
+\item 下列命题中正确的是$(\qquad)$.
+
+A. 若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是一组线性相关的 $n$ 维向量, 则对于任意不全为零的数 $k_{1}, k_{2}, \cdots, k_{r}$, 均有 $k_{1} \boldsymbol{\alpha}_{1}+$ $k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}=\mathbf{0}$
+
+B. 若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是一组线性无关的 $n$ 维向量, 则对于任意不全为零的数 $k_{1}, k_{2}, \cdots, k_{r}$, 均有 $k_{1} \boldsymbol{\alpha}_{1}+$ $k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r} \neq \mathbf{0}$
+
+C. 若在向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}(r \geqslant 2)$ 中任取 $m(m < r)$ 个向量组成的部分向量组都线性无关,则这个向量组本身也线性无关
+
+D. 若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}(r \geqslant 2)$ 是线性相关的, 则其中任何一个向量均可由其余向量线性表示
+
+\item 设方阵 $\boldsymbol{A}$ 的行列式 $|\boldsymbol{A}|=0$, 则 $\boldsymbol{A}$ 中$(\qquad)$.
+
+A. 必有一列元素为 $0$
+
+B. 必有两列元素对应成比例
+
+C. 必有一个列向量是其余列向量的线性组合
+
+D. 任意一个列向量都是其余列向量的线性组合
+
+\item 设向量组 $A: \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $B: \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示, 则 $(\qquad)$.
+  
+A. 当 $r < s$ 时, 向量组 $B$ 必线性相关
+
+B. 当 $r > s$ 时, 向量组 $B$ 必线性相关
+
+C. 当 $r < s$ 时, 向量组 $A$ 必线性相关
+
+D. 当 $r > s$ 时, 向量组 $A$ 必线性相关
+
+\item 设向量组 $(2,1,1,1),(2,1, a, a),(3,2,1, a),(4,3,2,1)$ 线性相关, 且 $a \neq 0$, 则 $a= \underline{\qquad\qquad}$. 
+
+\item 设向量组 $\boldsymbol{\alpha}_{1}=(1+a, 1,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(2,2+a, 2,2)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(3,3,3+a, 3)^{\mathrm{T}}, \boldsymbol{\alpha}_{4}=(4,4,4,4+a)^{\mathrm{T}}$, 问: $a$为何值时, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性相关? 当 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性相关时, 求其一个极大线性无关组, 并将其余向量用该极大线性无关组线性表示.
+
+\item 设向量组 $\boldsymbol{\alpha}_{1}=(1,0,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(0,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(1,3,5)^{\mathrm{T}}$ 不能由向量组 $\boldsymbol{\beta}_{1}=(1, a, 1)^{\mathrm{T}}, \boldsymbol{\beta}_{2}=(1,2,3)^{\mathrm{T}}$, $\boldsymbol{\beta}_{3}=(1,3,5)^{\mathrm{T}}$ 线性表示.
+
+$(1)$ 求 $a$ 的值; 
+
+$(2)$ 将 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 用 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性表示.
+
+\item 已知直线 $L_{1}: \frac{x-a_{2}}{a_{1}}=\frac{y-b_{2}}{b_{1}}=\frac{z-c_{2}}{c_{1}}$ 与直线 $L_{2}: \frac{x-a_{3}}{a_{2}}=\frac{y-b_{3}}{b_{2}}=\frac{z-c_{3}}{c_{2}}$ 相交于一点, 法向量 $\boldsymbol{\alpha}_{i}=\left(a_{i}, b_{i}, c_{i}\right)^{\mathrm{T}}, i=1,2,3$, 则 $(\qquad)$.
+
+A. $\boldsymbol{\alpha}_{1}$ 可由 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性表示
+
+B. $\boldsymbol{\alpha}_{2}$ 可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{3}$ 线性表示
+
+C. $\boldsymbol{\alpha}_{3}$ 可由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性表示
+
+D. $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关
+
+\item 设向量 $\boldsymbol{\alpha}_{1}=(1, a, 2)$ 与 $\boldsymbol{\alpha}_{2}=(2,4, b)$ 线性相关, 则 $a=\underline{\qquad\qquad}$ ,$b=\underline{\qquad\qquad}$.
+
+\item 设向量组 $\boldsymbol{\alpha}_{1}=(a, 0, c), \boldsymbol{\alpha}_{2}=(b, c, 0), \boldsymbol{\alpha}_{3}=(0, a, b)$ 线性无关, 则 $a, b, c$ 必满足关系式$\underline{\qquad\qquad}$.
+
+\item 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关, 向量组 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性无关, 则:
+
+
+$(1)$ $\boldsymbol{\alpha}_{1}$ 能否由 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性表示? 证明你的结论.
+
+$(2)$ $\boldsymbol{\alpha}_{4}$ 能否由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性表示? 证明你的结论.
+
+\item 若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}, \boldsymbol{\alpha}_{n+1}$ 线性相关, 但其中任意 $n$ 个向量都线性无关,证明: 必存在 $n+1$ 个全不为零的数 $k_{1}, k_{2}, \cdots, k_{n+1}$, 使
+$$
+k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n+1} \boldsymbol{\alpha}_{n+1}=\mathbf{0}.
+$$
+
+
+\item 设 $\boldsymbol{A}$ 是 $n \times m$ 矩阵, $\boldsymbol{B}$ 是 $m \times n$ 矩阵, 其中 $n<m, \boldsymbol{E}$ 为 $n$ 阶单位矩阵. 若 $\boldsymbol{A B}=\boldsymbol{E}$, 证明: $\boldsymbol{B}$ 的列向量组线性无关.
 
   
 </ol>
