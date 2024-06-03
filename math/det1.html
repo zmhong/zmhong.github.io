@@ -379,19 +379,22 @@ $$
 
 观察式 $(\ref{eq1-7})$,  可以发现其右端是一些项的代数和,  其中,  每项是位于不同行、不同列的三个数相乘,  这三个数的第一个下标是按自然顺序排列的,  第二个下标则不全按自然顺序排列. 我们不禁要问: 这个代数和的项数、每项前的符号与第二个下标的排列顺序有无关系? 为此下面给出全排列、逆序数等概念.
 
-\subsection{全排列与逆序数}
+<h3><a name="C2.1">$1.2.1$ 全排列与逆序数</a></h3>
 
-\begin{definition}%定义1
+
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 由 $1, 2,  \cdots,  n$ 组成的一个有序数组称为一个 \textcolor{red}{$n$ 级全排列} (简称\textcolor{red}{排列}).
-\end{definition}
+</p>
 
 例如,  $213$ 是一个 $3$ 级排列; $4321$ 及 $2341$ 都是 $4$ 级排列. 一般来说,  $n$ 级排列总共有 $n \cdot(n-1) \cdot \cdots \cdot 2 \cdot 1=n$ ! 个 ( $n$ ! 读作 “$n$ 的阶乘” ). 例如,  $3$ 级排列的总数是 $3 !=6$,  它们分别是 $123, 132, 213, 231, 312, 321$.
 
 在 $n$ 级排列中, 排列 $123 \cdots n$ 是按从小到大的自然顺序排列的, 称为\textcolor{red}{自然排列}. 除此以外, 其余的排列中,  都有较大的数排在较小的数前面的情况.
 
-\begin{definition}%定义 2 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $2$：</b></font>
 在一个排列中,  如果某个较大的数排在一个较小的数的前面,  则称这两个数 (或这个数对) 构成一个\textcolor{red}{逆序}. 一个排列中,  逆序的总数称为这个排列的\textcolor{red}{逆序数}.
-\end{definition}
+</p>
 
 
 一个排列 $j_{1} j_{2} \cdots j_{n}$ 的逆序数,  一般记为 $\tau\left(j_{1} j_{2} \cdots j_{n}\right)$.
@@ -400,9 +403,10 @@ $$
 
 
 
-\begin{definition}%定义 3 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $3$：</b></font>
 逆序数为偶数的排列称为\textcolor{red}{偶排列}, 逆序数为奇数的排列称为\textcolor{red}{奇排列}.
-\end{definition}
+</p>
 
 例如,  $2$ 级排列 $12$ 为偶排列,  $21$ 为奇排列 $3$ 级排列 $231$ 为偶排列,  $213$ 为奇排列.
 
@@ -440,12 +444,13 @@ $$
 </p>
 
 
-<h3><a name="C2.1">$1.2.1$ 对换</a></h3>
+<h3><a name="C2.2">$1.2.2$ 对换</a></h3>
 
 
-\begin{definition}
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $4$：</b></font>
 在一个 $n$ 级排列 $i_1 \cdots i_s \cdots i_t \cdots i_n$ 中, 将某两个数 $i_s$ 与 $i_t$ 对调, 其余的数不动,  得到另一个排列 $i_{1} \cdots i_{t} \cdots i_{s} \cdots i_{n}$,  这种对排列的变换称为\textcolor{red}{对换},  记为 $\left(i_{s},  i_{t}\right)$. 将相邻两个数对换,  称为\textcolor{red}{相邻对换} (或邻换).
-\end{definition}
+</p>
 
 
 例如,  对排列 $23541$ 施以对换 $(2, 5)$ 后得到排列 $53241$ .
@@ -487,7 +492,7 @@ $$
 
 
 
-<h3><a name="C2.2">$1.2.2$ $n$ 阶行列式</a></h3>
+<h3><a name="C2.3">$1.2.3$ $n$ 阶行列式</a></h3>
 
 
 现在探讨式 $(\ref{eq1-3})$、式 $(\ref{eq1-7})$ 右端各项的规律.
@@ -508,7 +513,8 @@ a_{31} & a_{32} & a_{33}
 
 可以仿照三阶行列式的定义式 $(\ref{eq1-8})$ 给出 $n$ 阶行列式的定义.
 
-\begin{definition}%定义 5  
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $5$：</b></font>  
 由 $n^{2}$ 个数组成的 $n$ 阶行列式
 $$
 \left|\begin{array}{cccc}
@@ -532,7 +538,7 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 \end{array}\right|=\sum_{j_{1} j_{2} \cdots j_{n}}(-1)^{\tau\left(j_{1} j_{2} \cdots j_{n}\right)} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}},
 \end{equation}
 这里 $\sum_{j_{1} j_{2} \cdots j_{n}}$ 表示对所有 $n$ 级排列求和.
-\end{definition}
+</p>
 
 式 $(\ref{eq1-10})$ 称为 $n$ 阶行列式的展开式,  它是前面所说的二阶行列式和三阶行
 列式的推广. 特别地,  当 $n=1$ 时, 一阶行列式 $|a|$ 就是数 $a$. 注意,  这里的 “$|\,\, |$” 不要与绝对值记号相混淆.
@@ -1151,7 +1157,8 @@ $$
  
 一般而言, 低阶行列式的计算比高阶行列式的计算要简便, 如果能将高阶行列式用低阶行列式表示, 就能简化其运算. 为此, 首先引入余子式与代数余子式的概念.
 
-\begin{definition}%定义 6 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $6$：</b></font>
 在行列式
 $$
 \left|\begin{array}{ccccc}
@@ -1178,7 +1185,7 @@ $$
 A_{i j}=(-1)^{i+j} M_{i j}, 
 $$
 $A_{i j}$ 称为元素 $a_{i j}$ 的代数余子式.
-\end{definition}
+</p>
 
 由定义 $6$ 可知, $A_{i j}$ 与行列式中第 $i$ 行、第 $j$ 列的元素无关.
 
