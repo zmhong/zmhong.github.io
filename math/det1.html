@@ -686,21 +686,27 @@ $$
 由于数的乘法是可交换的,  所以行列式的展开式的各项中的元素的顺序也可任意交换. 例如,  四阶行列式中,  乘积 $a_{11} a_{22} a_{33} a_{14}$ 可以写成 $a_{22} a_{11} a_{44} a_{33}$; 一般 $n$ 阶行列式中,  乘积 $a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}$ 可以写成 $a_{p_{1} q_{1}} a_{p_{2} q_{2}} \cdots a_{p_{n} q_{n}}$,  其中 $p_{1} p_{2} \cdots p_{n}$ 与 $q_{1} q_{2} \cdots q_{n}$ 都是 $n$ 级排列.
 
 
-\begin{theorem}%定理 3  
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font> 
 $n$ 阶行列式的一般项可以写成
 $$
 (-1)^{\tau\left(p_{1} p_{2} \cdots p_{n}\right)+\tau\left(q_{1} q_{2} \cdots q_{n}\right)} a_{p_{1} q_{1}} a_{p_{2} q_{2}} \cdots a_{p_{n} q_{n}},
 $$
 其中 $p_{1} p_{2} \cdots p_{n}$ 与 $q_{1} q_{2} \cdots q_{n}$ 均为 $n$ 级排列.
-\end{theorem}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm3").style.display="none"'> 
+<div id= "divIDthm3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 该项中任意两元素互换,  行下标与列下标同时对换,  由定理 $1$ 知,  $n$ 级排列 $p_{1} p_{2} \cdots p_{n}$ 与 $q_{1} q_{2} \cdots q_{n}$ 同时改变奇偶性,  于是 $\tau\left(p_{1} p_{2} \cdots p_{n}\right)+\tau\left(q_{1} q_{2} \cdots q_{n}\right)$ 的奇偶性不变. 如果将排列 $p_{1} p_{2} \cdots p_{n}$ 对换为自然排列 $12 \cdots n$ (逆序数为 $0$ ),  排列 $q_{1} q_{2} \cdots q_{n}$ 也相应对换为 $j_{1} j_{2} \cdots j_{n}$,  则有
 $$
 (-1)^{\tau\left(p_{1} p_{2} \cdots p_{n}\right)+\mathrm{r}\left(q_{1} q_{2} \cdots q_{n}\right)} a_{p_{1} q_{1}} a_{p_{2} q_{2}} \cdots a_{p_{n} q_{n}}=(-1)^{\tau\left(j_{1} j_{2} \cdots j_{n}\right)} a_{1 j_{1}} a_{2 j_{2}} \cdots a_{n j_{n}}.
 $$
 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
+
 
 
 由定理 $3$ 可知,  行列式也可定义为
@@ -929,13 +935,18 @@ $$
 
 本书中, 交换行列式第 $i$ 行和第 $j$ 行, 记作 $r_{i} \leftrightarrow r_{j}$; 交换行列式第 $i$ 列和第 $j$列, 记作 $c_{i} \leftrightarrow c_{j}$.
 
-\begin{corollary}%推论 1 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $1$：</b></font>
 若行列式有两行 (列) 元素对应相等, 则行列式为零.
-\end{corollary}
-
-\begin{proof}  
+<input type=button value= "显示证明" onclick='document.getElementById("divIDcorollary1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDcorollary1").style.display="none"'> 
+<div id= "divIDcorollary1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 互换元素相等的两行 (列), 有 $D=-D$, 故 $D=0$. 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $3$：</b></font>
@@ -944,13 +955,15 @@ $$
 
 第 $i$ 行 (列) 乘以数 $k$, 记作 $k \times r_{i}\left(k \times c_{i}\right)$.
 
-\begin{corollary}%推论 2 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $2$：</b></font> 
 行列式中某一行 (列)的所有元素的公因子, 可以提到行列式符号的外面. 
-\end{corollary}
+</p>
 
-\begin{corollary}%推论 3 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $3$：</b></font> 
 若行列式中有一行 (列) 的元素全为零, 则此行列式为零.
-\end{corollary}
+</p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $4$：</b></font>
@@ -1231,14 +1244,17 @@ a_{41} & a_{42} & a_{44}
 \end{array}\right|, \quad A_{23}=(-1)^{2+3} M_{23}=-M_{23}.
 $$
 
-\begin{lemma}% 引理 1
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>引理 $1$：</b></font>
 在 $n$ 阶行列式 $D$ 中, 如果第 $i$ 行元素除 $a_{i j}$ 外全部为零, 那么这个行列式等于 $a_{i j}$ 与它的代数余子式的乘积, 即
 $$
 D=a_{i j} A_{i j}.
 $$
-\end{lemma}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDlem1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDlem1").style.display="none"'> 
+<div id= "divIDlem1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 先证 $i=1, j=1$ 的情形, 此时有
 $$
 D=\left|\begin{array}{ccccc}
@@ -1296,7 +1312,9 @@ $$
 D=(-1)^{i+j} a_{i j} M_{i j}=a_{i j} A_{i j}.
 $$
 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $4$：</b></font>
@@ -1602,7 +1620,8 @@ $$
 
 由定理 $4$ , 还可以得到下面的重要推论.
 
-\begin{corollary}%推论 4 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>推论 $4$：</b></font>
 行列式 $D$ 中任意一行 (列)的元素与另一行 (列) 的对应元素的代数余子式的乘积之和等于零, 即
 $$
 a_{i 1} A_{j 1}+a_{i 2} A_{j 2}+\cdots+a_{i n} A_{j n}=0 \quad(i \neq j),
@@ -1611,9 +1630,11 @@ $$
 $$
 a_{1 i} A_{1 j}+a_{2 i} A_{2 j}+\cdots+a_{n i} A_{n j}=0 \quad(i \neq j).
 $$
-\end{corollary}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDcorollary4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDcorollary4").style.display="none"'> 
+<div id= "divIDcorollary4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 将行列式 $D$ 按第 $j$ 行展开,有
 $$
 a_{j 1} A_{j 1}+a_{j 2} A_{j 2}+\cdots+a_{j n} A_{j n}=\left|\begin{array}{ccc}
@@ -1643,7 +1664,9 @@ $$
 a_{1 i} A_{1 j}+a_{2 i} A_{2 j}+\cdots+a_{n i} A_{n j}=0 \quad(i \neq j). 
 $$
 证毕.
-\end{proof}
+</p>
+</div> 
+</p>
 
 
 综上所述, 即得代数余子式的重要性质 [行列式按行(列)展开公式]:
