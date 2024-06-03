@@ -1,0 +1,2925 @@
+<html>
+<head>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML,https://vincenttam.github.io/javascripts/MathJaxLocal.js">
+</script>
+<title>第2章  矩阵</title>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+    <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+                           evalButtonText: '运行'});
+    </script>
+
+</head>
+<body>
+
+<div style="margin:20px 50px 20px 50px;" > 
+
+<br>
+<h1 align=center>
+<font color=#FF5809; size=6; face=Verdana>
+第 $2$ 章 矩阵
+</font>
+</h1> 
+
+
+
+<font size=5; face=楷体>
+<h2><a name="C0"><strong>目录:</strong></a><br></h2>
+
+<ul>
+<li><a href="https://zmhong.github.io/math/linearalgebra.html" style="text-decoration:none">返回主页</a></li>
+<li><a href="#C1" style="text-decoration:none">2.1 矩阵的定义</a></li>
+<li><a href="#C2" style="text-decoration:none">2.2 矩阵的运算</a></li>
+<li><a href="#C3" style="text-decoration:none">2.3 矩阵的逆</a></li>
+<li><a href="#C4" style="text-decoration:none">2.4 矩阵的分块</a></li>
+<li><a href="#C5" style="text-decoration:none">2.5 矩阵的初等变换与初等矩阵</a></li>
+<li><a href="#C6" style="text-decoration:none">2.6 用初等变换求逆矩阵</a></li>
+<li><a href="#C7" style="text-decoration:none">2.7 矩阵的秩</a></li>
+<li><a href="#C8" style="text-decoration:none">习题 2 (A) 类</a></li>
+<li><a href="#C9" style="text-decoration:none">习题 2 (B) 类</a></li>
+</ul>
+
+
+
+<h2><a name="C1">$2.1$ 矩阵的定义</a></h2>
+
+
+<ul>
+
+<p style="text-indent: 2em;">
+生产实践和经济活动中,经常要利用矩阵这一有力工具. 下面看几个例子.
+
+\begin{example}%例 1 
+某航空公司在 A, B, C, D 四个城市之间开辟了若干条航线, 用图 \ref{fig:2.1} 表示四个城市间的航班图, 若从 A 到 B 有航班, 则用从 A 指向 B 的带箭头的线连接 A 与 B.
+
+用表格表示如下:
+\begin{center}
+\begin{tabular}{cccccc}
+\multicolumn{1}{l}{}                                               & \multicolumn{1}{l}{}   & \multicolumn{4}{c}{出发地}                                                                                                           \\
+\multicolumn{1}{l}{}                                               & \multicolumn{1}{l}{}   & A                              & B                              & C                              & D                              \\ \cline{3-6} 
+\multirow{4}{*}{\begin{tabular}[c]{@{}c@{}}出\\ 发\\ 地\end{tabular}} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          \\ \cline{3-6} 
+                                                                   & \multicolumn{1}{c|}{B} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{$\sqrt{}$} \\ \cline{3-6} 
+                                                                   & \multicolumn{1}{c|}{C} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} \\ \cline{3-6} 
+                                                                   & \multicolumn{1}{c|}{D} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          \\ \cline{3-6} 
+\end{tabular}
+\end{center}
+
+其中 $\sqrt{ }$ 表示有航班. 为了便于研究, 记上述表格中的 $\sqrt{ }$ 为 $1$ , 空白处为 $0$ , 则得到一个数表:
+
+该数表反映了四个城市间的交通连接情况.
+\end{example}
+
+\begin{figure}[ht]
+\centering
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da3073386813436296] 
+\draw    (244,120) -- (215.16,147.91) ;
+\draw [shift={(213,150)}, rotate = 315.94] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+%Straight Lines [id:da7660616722047875] 
+\draw    (216.12,78.12) -- (244.88,106.88) ;
+\draw [shift={(247,109)}, rotate = 225] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+\draw [shift={(214,76)}, rotate = 45] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+%Straight Lines [id:da8800646430386088] 
+\draw    (169.15,106.91) -- (196.85,80.09) ;
+\draw [shift={(199,78)}, rotate = 135.91] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+\draw [shift={(167,109)}, rotate = 315.91] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+%Straight Lines [id:da24225821252129087] 
+\draw    (173,114.96) -- (239,114.04) ;
+\draw [shift={(242,114)}, rotate = 179.2] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+\draw [shift={(170,115)}, rotate = 359.2] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+%Straight Lines [id:da9537384400509235] 
+\draw    (206,87) -- (206,143) ;
+\draw [shift={(206,146)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+\draw [shift={(206,84)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
+
+% Text Node
+\draw (156,106) node [anchor=north west][inner sep=0.75pt]   [align=left] {A};
+% Text Node
+\draw (202,65) node [anchor=north west][inner sep=0.75pt]   [align=left] {B};
+% Text Node
+\draw (244,106) node [anchor=north west][inner sep=0.75pt]   [align=left] {C};
+% Text Node
+\draw (201,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {D};
+
+
+\end{tikzpicture}
+
+    \caption{}
+    \label{fig:2.1}
+\end{figure}
+%图 2-1
+
+\begin{example}%例 2 
+假设一个经济系统由煤炭、电力和钢铁三个部门组成, 各部门之间的分配如表 2-1所示, 其中每栏中的数表示该部门总产出的比例. 如表 2-1 中的第三栏所示, 电力部门分配总产出的 $40 \%$ 给煤炭部门, $50 \%$ 给钢铁部门, 剩下的 $10 \%$ 给电力部门作为运转费用.
+
+\begin{center}
+表 2-1 煤炭、电力、钢铁三部门之间的分配
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\hline
+\multirow{2}{*}{采购部门} & \multicolumn{3}{c}{部门的产出分配} \\
+\cline { 2 - 4 }
+ & 煤炭 & 电力 & 钢铁 \\
+\hline
+煤炭 & 0.0 & 0.4 & 0.6 \\
+\hline
+电力 & 0.6 & 0.1 & 0.2 \\
+\hline
+钢铁 & 0.4 & 0.5 & 0.2 \\
+\hline
+\end{tabular}
+\end{center}
+
+将上述表格简单地用数表
+
+$$
+\left(\begin{array}{lll}
+0.0 & 0.4 & 0.6 \\
+0.6 & 0.1 & 0.2 \\
+0.4 & 0.5 & 0.2
+\end{array}\right)
+$$
+
+表示, 它具体描述了经济系统各部门产出的分配情况.
+\end{example}
+
+\begin{example}%例 3 
+含有 $n$ 个未知量、 $m$ 个方程的齐次线性方程组
+$$
+\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=0, \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=0, \\
+\cdots \cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=0
+\end{array}\right.
+$$
+的未知量的系数可排列成一个 $m$ 行、 $n$ 列的数表
+$$
+\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n},
+\end{array}\right)
+$$
+这样的表称为 $m \times n$ 矩阵, 可用黑体大写字母 $\boldsymbol{A}$ 表示. $a_{i j}$ 称为矩阵 $\boldsymbol{A}$ 的元素, 它位于矩阵 $\boldsymbol{A}$ 的第 $i$ 行、第 $j$ 列的交叉处.
+\end{example}
+
+一般情况下, 有如下定义.
+
+\begin{definition}%定义 1 
+$m \times n$ 个数按一定顺序排成一个 $m$ 行、 $n$ 列的矩形数表
+$$
+\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right)
+$$
+此数表称为 $m$ 行 $n$ 列矩阵, 简称 $m \times n$ 矩阵. 矩阵一般用黑体大写字母 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}, \cdots$表示, 有时亦记为 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times n}, \boldsymbol{A}=\left(a_{i j}\right)$ 或 $\boldsymbol{A}_{m \times n}$.
+\end{definition}
+
+在 $m \times n$ 矩阵 $\boldsymbol{A}$ 中, 如果 $m=n$, 就称 $\boldsymbol{A}$ 为 $n$ 阶方阵. 如果矩阵 $\boldsymbol{A}$ 的元素 $a_{i j}$ 全为实 (复)数, 就称 $\boldsymbol{A}$ 为实 (复) 矩阵.
+
+只有一行的矩阵
+$$
+\boldsymbol{A}=\left(a_{1}, a_{2}, \cdots, a_{n}\right)
+$$
+称为行矩阵; 只有一列的矩阵
+$$
+\boldsymbol{B}=\left(\begin{array}{c}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{array}\right)
+$$
+称为列矩阵. 一般也可以将列矩阵用黑体小写字母表示.
+
+当两个矩阵的行数相等、列数也相等时,就称它们是同型矩阵.
+
+元素都是零的矩阵称为零矩阵,记作 $\boldsymbol{O}$.
+
+注意 不同型的零矩阵是不同的.
+
+在 $n$ 阶方阵 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 中, 位于第 $i$ 行与第 $i$ 列交叉位置的元素 $a_{i i}(i=1$, $2, \cdots, n)$ 称为方阵 $\boldsymbol{A}$ 的主对角线元素, 其所在的对角线称为方阵的主对角线. 下面介绍几种常见的特殊方阵.
+
+$(1)$ 三角形矩阵.
+
+如果 $n$ 阶方阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 中的元素满足条件 $a_{i j}=0 (i>j ; i, j=1,2, \cdots, n)$, 即 $\boldsymbol{A}$ 的主对角线以下的元素全为零, 则称 $\boldsymbol{A}$ 为 $n$ 阶上三角形矩阵,即
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+0 & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & a_{n n}
+\end{array}\right).
+$$
+
+如果 $n$ 阶方阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 中的元素满足条件 $a_{i j}=0(i < j ; i, j=1,2, \cdots, n)$, 即 $\boldsymbol{A}$ 的主对角线以上的元素全为零, 则称 $\boldsymbol{A}$ 为 $n$ 阶下三角形矩阵, 即
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & 0 & \cdots & 0 \\
+a_{21} & a_{22} & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+a_{n 1} & a_{n 2} & \cdots & a_{n n}
+\end{array}\right).
+$$
+
+上三角形矩阵与下三角形矩阵统称为三角形矩阵.
+
+$(2)$ 对角矩阵.
+
+如果 $n$ 阶方阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 中的元素满足 $a_{i j}=0(i \neq j)$, 即 $\boldsymbol{A}$ 的主对角线以外的元素全为零, 则称 $\boldsymbol{A}$ 为 $n$ 阶对角矩阵, 即
+
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & 0 & \cdots & 0 \\
+0 & a_{22} & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & a_{n n}
+\end{array}\right).
+$$
+
+也记作 $\boldsymbol{\Lambda}=\operatorname{diag}\left(a_{11}, a_{22}, \cdots, a_{n n}\right)$. 显然, 对角矩阵既是上三角形矩阵, 也是下三角形矩阵.
+
+$(3)$ 数量矩阵.
+
+如果 $n$ 阶对角矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 中的元素满足 $a_{i i}=a(i=1,2, \cdots, n)$, 则称 $\boldsymbol{A}$ 为数量矩阵, 即
+
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a & 0 & \cdots & 0 \\
+0 & a & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & a
+\end{array}\right).
+$$
+
+$(4)$ 单位矩阵.
+
+如果 $n$ 阶对角矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$ 中的元素满足 $a_{i i}=1(i=1,2, \cdots, n)$, 则称 $\boldsymbol{A}$ 为 $n$ 阶单位矩阵, 记为 $\boldsymbol{E}_{n}$, 简记为 $\boldsymbol{E}$, 即
+
+$$
+\boldsymbol{E}=\left(\begin{array}{cccc}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & & \vdots \\
+0 & 0 & \cdots & 1
+\end{array}\right).
+$$
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C2">$2.2$ 矩阵的运算</a></h2>
+
+
+
+<ul>
+
+矩阵的运算可以认为是矩阵之间一些基本的关系, 具体内容包括矩阵的加法、矩阵与数的乘法、矩阵的乘法以及矩阵的转置等.
+
+
+<h3><a name="C2.1">$2.2.1$ 矩阵的加法</a></h3>
+
+
+首先给出两个矩阵相等的概念.
+
+如果两个同型矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的对应元素都相等, 则称这两个矩阵相等, 记为 $\boldsymbol{A}=\boldsymbol{B}$.
+
+\begin{definition}%定义 2 
+设有两个 $m \times n$ 矩阵 $\boldsymbol{A}=\left(a_{i j}\right), \boldsymbol{B}=\left(b_{i j}\right)$, 那么 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的和记为 $\boldsymbol{A}+\boldsymbol{B}$, 规定为
+$$
+\boldsymbol{A}+\boldsymbol{B}=\left(\begin{array}{cccc}
+a_{11}+b_{11} & a_{12}+b_{12} & \cdots & a_{1 n}+b_{1 n} \\
+a_{21}+b_{21} & a_{22}+b_{22} & \cdots & a_{2 n}+b_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1}+b_{m 1} & a_{m 2}+b_{m 2} & \cdots & a_{m n}+b_{m n}
+\end{array}\right).
+$$
+\end{definition}
+
+注意 两个矩阵只有同型时, 才能进行加法运算.
+
+由于矩阵的加法归结为它们的元素的加法, 也就是数的加法, 所以不难验证矩阵的加法满足下列运算规律:
+
+$(1)$ $\boldsymbol{A}+\boldsymbol{B}=\boldsymbol{B}+\boldsymbol{A}$; $\qquad \qquad \qquad \qquad $(交换律)
+
+$(2)$ $(\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C}=\boldsymbol{A}+(\boldsymbol{B}+\boldsymbol{C})$. $\qquad  $ (结合律)
+
+
+
+
+\begin{example}%例 4 
+有某种物资 (单位: t )需从两个产地运往三个销地, 调运了两次, 两次调运方案用矩阵分别表示为
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 5 & 3
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{lll}
+0 & 1 & 3 \\
+2 & 1 & 2
+\end{array}\right),
+$$
+则从各产地运往各销地的两次调运物资的总量为
+$$
+\begin{aligned}
+\boldsymbol{A}+\boldsymbol{B} & =\left(\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 5 & 3
+\end{array}\right)+\left(\begin{array}{lll}
+0 & 1 & 3 \\
+2 & 1 & 2
+\end{array}\right) \\
+& =\left(\begin{array}{lll}
+1+0 & 2+1 & 3+3 \\
+2+2 & 5+1 & 3+2
+\end{array}\right)=\left(\begin{array}{lll}
+1 & 3 & 6 \\
+4 & 6 & 5
+\end{array}\right).
+\end{aligned}
+$$
+\end{example}
+
+
+  
+<h3><a name="C2.2">$2.2.2$ 数与矩阵相乘</a></h3>
+
+
+\begin{definition}%定义 3  
+数 $\lambda$ 与矩阵 $\boldsymbol{A}$ 的乘积记作 $\lambda \boldsymbol{A}$, 规定为
+$$
+\lambda \boldsymbol{A}=\left(\begin{array}{cccc}
+\lambda a_{11} & \lambda a_{12} & \cdots & \lambda a_{1 n} \\
+\lambda a_{21} & \lambda a_{22} & \cdots & \lambda a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+\lambda a_{m 1} & \lambda a_{m 2} & \cdots & \lambda a_{m n}
+\end{array}\right).
+$$
+\end{definition}
+
+数乘矩阵满足下列运算规律 (设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $m \times n$ 矩阵, $\lambda, \mu$ 均为数):
+
+$(1)$ $(\lambda \mu) \boldsymbol{A}=\lambda(\mu \boldsymbol{A})$;
+
+$(2)$ $(\lambda+\mu) \boldsymbol{A}=\lambda \boldsymbol{A}+\mu \boldsymbol{A}$;
+
+$(3)$ $\lambda(\boldsymbol{A}+\boldsymbol{B})=\lambda \boldsymbol{A}+\lambda \boldsymbol{B}$.
+
+设矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$, 记 $-\boldsymbol{A}=(-1) \cdot \boldsymbol{A}=\left(-a_{i j}\right),-\boldsymbol{A}$ 称为 $\boldsymbol{A}$ 的负矩阵. 显然,有
+$$
+\boldsymbol{A}+(-\boldsymbol{A})=\boldsymbol{O},
+$$
+其中 $\boldsymbol{O}$ 为各元素均为 $0$ 的同型矩阵. 于是, 矩阵的减法定义为
+$$
+\boldsymbol{A}-\boldsymbol{B}=\boldsymbol{A}+(-\boldsymbol{B}).
+$$
+
+
+\begin{example}%例 5 
+已知
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+1 & 1 & 2 & -1 \\
+0 & 3 & 1 & 2 \\
+2 & 1 & 0 & -1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{rrrr}
+-2 & 1 & 1 & 1 \\
+1 & 2 & 2 & 1 \\
+0 & 2 & 1 & 3
+\end{array}\right),
+$$
+求 $4 \boldsymbol{A}+2 \boldsymbol{B}$.
+\end{example}
+
+\begin{solution} 
+由于
+$$
+4 \boldsymbol{A}=\left(\begin{array}{rrrr}
+4 & 4 & 8 & -4 \\
+0 & 12 & 4 & 8 \\
+8 & 4 & 0 & -4
+\end{array}\right), \quad 2 \boldsymbol{B}=\left(\begin{array}{rrrr}
+-4 & 2 & 2 & 2 \\
+2 & 4 & 4 & 2 \\
+0 & 4 & 2 & 6
+\end{array}\right), 
+$$
+所以
+$$
+4 \boldsymbol{A}+2 \boldsymbol{B}=\left(\begin{array}{rrrr}
+0 & 6 & 10 & -2 \\
+2 & 16 & 8 & 10 \\
+8 & 8 & 2 & 2
+\end{array}\right).
+$$
+\end{solution}
+
+\begin{example}%例 6 
+设矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rr}
+3 & 2 \\
+0 & 8 \\
+-1 & 3 \\
+2 & 1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ll}
+3 & 1 \\
+1 & 3 \\
+4 & 6 \\
+6 & 2
+\end{array}\right),
+$$
+且有 $\boldsymbol{A}+2 \boldsymbol{X}=\boldsymbol{B}$, 求矩阵 $\boldsymbol{X}$.
+\end{example}
+
+\begin{solution} 
+由 $\boldsymbol{A}+2 \boldsymbol{X}=\boldsymbol{B}$ 知,
+$$
+\boldsymbol{X}=\frac{1}{2}(\boldsymbol{B}-\boldsymbol{A})=\frac{1}{2}\left(\begin{array}{rr}
+0 & -1 \\
+1 & -5 \\
+5 & 3 \\
+4 & 1
+\end{array}\right)=\left(\begin{array}{rr}
+0 & -\frac{1}{2} \\[5pt]
+\frac{1}{2} & -\frac{5}{2} \\[5pt]
+\frac{5}{2} & \frac{3}{2} \\[5pt]
+2 & \frac{1}{2}
+\end{array}\right).
+$$
+\end{solution}
+
+
+<h3><a name="C2.3">$2.2.3$ 矩阵与矩阵相乘</a></h3>
+
+
+先来看一个例子.
+
+
+\begin{example}%例 7 
+某地有四个工厂, 生产三种产品. 矩阵 $\boldsymbol{A}$ 表示一年中各工厂生产各种产品的数量,矩阵 $\boldsymbol{B}$ 表示各种产品的单位价格 (单位: 元) 和单位利润(单位: 元), 矩阵 $\boldsymbol{C}$ 表示各工厂的总收入和总利润.
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+a_{41} & a_{42} & a_{43}
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ll}
+b_{11} & b_{12} \\
+b_{21} & b_{22} \\
+b_{31} & b_{32}
+\end{array}\right), \quad \boldsymbol{C}=\left(\begin{array}{ll}
+c_{11} & c_{12} \\
+c_{21} & c_{22} \\
+c_{31} & c_{32} \\
+c_{41} & c_{42}
+\end{array}\right),
+$$
+其中, $a_{i k}(i=1,2,3,4, k=1,2,3)$ 是第 $i$ 个工厂生产第 $k$ 种产品的数量, $b_{k 1}$ 及 $b_{k 2}(k=1,2, 3$ ) 分别是第 $k$ 种产品的单位价格和单位利润, $c_{i 1}$ 及 $c_{i 2} (i=1,2,3,4)$ 分别是第 $i$ 个工厂生产三种产品的总收入和总利润. 则:
+
+$\qquad$ 第一个工厂的总收入为 $c_{11}=a_{11} b_{11}+a_{12} b_{21}+a_{13} b_{31}$,
+
+$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{12}=a_{11} b_{12}+a_{12} b_{22}+a_{13} b_{32}$;
+
+$\qquad$第二个工厂的总收入为 $c_{21}=a_{21} b_{11}+a_{22} b_{21}+a_{23} b_{31}$,
+
+$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{22}=a_{21} b_{12}+a_{22} b_{22}+a_{23} b_{32}$;
+
+$\qquad$第三个工厂的总收入为 $c_{31}=a_{31} b_{11}+a_{32} b_{21}+a_{33} b_{31}$,
+
+$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{32}=a_{31} b_{12}+a_{32} b_{22}+a_{33} b_{32}$;
+
+$\qquad$第四个工厂的总收入为 $c_{41}=a_{41} b_{11}+a_{42} b_{21}+a_{43} b_{31}$,
+
+$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{42}=a_{41} b_{12}+a_{42} b_{22}+a_{43} b_{32}$.
+
+因此, 矩阵 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 的元素之间有下列关系:
+$$
+c_{i j}=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+a_{i 3} b_{3 j} \quad(i=1,2,3,4 ; j=1,2),
+$$
+即矩阵 $\boldsymbol{C}$ 的元素 $c_{i j}$ 是矩阵 $\boldsymbol{A}$ 的第 $i$ 行元素与矩阵 $\boldsymbol{B}$ 的第 $j$ 列对应元素的乘积之和. 称矩阵 $\boldsymbol{C}$ 是矩阵 $\boldsymbol{A}$ 与矩阵 $\boldsymbol{B}$ 的乘积.
+\end{example}
+
+
+\begin{definition}%定义4 
+设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times s}, \boldsymbol{B}=\left(b_{i j}\right)_{s \times n}$, 那么规定矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的乘积是
+$$
+\boldsymbol{C}=\left(c_{i j}\right)_{m \times n}，
+$$
+其中
+$$
+%\begin{aligned}
+c_{i j}=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+\cdots+a_{i s} b_{s j}  =\sum_{k=1}^{s} a_{i k} b_{k j} \quad  (i=1,2, \cdots, m ; j=1,2, \cdots, n),
+%\end{aligned}
+$$
+并把此乘积记作 $\boldsymbol{C}=\boldsymbol{A B}$. 记号 $\boldsymbol{A B}$ 常读作 $\boldsymbol{A}$ 左乘 $\boldsymbol{B}$ 或 $\boldsymbol{B}$ 右乘 $\boldsymbol{A}$.
+\end{definition}
+
+特别地, 行矩阵 $\left(a_{i 1}, a_{i 2}, \cdots, a_{i s}\right)$ 与列矩阵 $\left(\begin{array}{c}b_{1 j} \\ b_{2 j} \\ \vdots \\ b_{s j}\end{array}\right)$ 相乘, 即
+$$
+\left(a_{i 1}, a_{i 2}, \cdots, a_{i s}\right)\left(\begin{array}{c}
+b_{1 j} \\
+b_{2 j} \\
+\vdots \\
+b_{s j}
+\end{array}\right)=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+\cdots+a_{i s} b_{s j}
+$$
+是一个数 $c_{i j}$, 这表明若 $\boldsymbol{C}=\boldsymbol{A B}$, 则矩阵 $\boldsymbol{C}$ 的元素 $c_{i j}$ 就是 $\boldsymbol{A}$ 的第 $i$ 行与 $\boldsymbol{B}$ 的第 $j$ 列对应元素的乘积之和. 
+
+
+\textbf{注意:} 只有当第一个矩阵 (左矩阵) 的列数与第二个矩阵 (右矩阵) 的行数相等时, 两个矩阵才能相乘. 两个矩阵相乘所得矩阵的行数同第一个矩阵 (左矩阵)的行数, 列数同第二个矩阵 (右矩阵) 的列数.
+
+\begin{example}%例 8 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+0 & 0 & 0 \\
+a & b & c
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{cc}
+a_{1} & 0 \\
+b_{1} & 0 \\
+c_{1} & 0
+\end{array}\right),
+$$
+求 $\boldsymbol{A B}$ 和 $\boldsymbol{B A}$.
+\end{example}
+
+\begin{solution} 
+$\boldsymbol{A B}=\left(\begin{array}{cc}0 & 0 \\ a a_{1}+b b_{1}+c c_{1} & 0\end{array}\right), \quad \boldsymbol{B} \boldsymbol{A}=\left(\begin{array}{lll}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)$.
+\end{solution}
+
+\begin{example}%例 9 
+设 $\boldsymbol{A}, \boldsymbol{B}$ 分别是 $n \times 1$ 矩阵和 $1 \times n$ 矩阵,且
+$$
+\boldsymbol{A}=\left(\begin{array}{c}
+a_{1} \\
+a_{2} \\
+\vdots \\
+a_{n}
+\end{array}\right), \quad \boldsymbol{B}=\left(b_{1}, b_{2}, \cdots, b_{n}\right),
+$$
+计算 $\boldsymbol{A B}$ 和 $\boldsymbol{B A}$.
+\end{example}
+
+\begin{solution} 
+\begin{align*}
+& \boldsymbol{A B}=\left(\begin{array}{c}
+a_{1} \\
+a_{2} \\
+\vdots \\
+a_{n}
+\end{array}\right)\left(b_{1}, b_{2}, \cdots, b_{n}\right)=\left(\begin{array}{cccc}
+a_{1} b_{1} & a_{1} b_{2} & \cdots & a_{1} b_{n} \\
+a_{2} b_{1} & a_{2} b_{2} & \cdots & a_{2} b_{n} \\
+\vdots & \vdots & & \vdots \\
+a_{n} b_{1} & a_{n} b_{2} & \cdots & a_{n} b_{n}
+\end{array}\right). \\
+& \boldsymbol{B A}=\left(b_{1}, b_{2}, \cdots, b_{n}\right)\left(\begin{array}{c}
+a_{1} \\
+a_{2} \\
+\vdots \\
+a_{n}
+\end{array}\right)=b_{1} a_{1}+b_{2} a_{2}+\cdots+b_{n} a_{n}.
+\end{align*}
+
+$\boldsymbol{A B}$ 是 $n$ 阶矩阵, $\boldsymbol{B A}$ 是一阶矩阵 (运算的最后结果为一阶矩阵时, 可以把它与数等同看待, 不必加矩阵符号, 但是在运算过程中, 一般不能把一阶矩阵看成数).
+\end{solution}
+
+\begin{example}%例 10 
+对于一个含有 $n$ 个未知量、 $m$ 个方程的线性方程组
+$$
+\left\{\begin{array}{c}
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1}, \\
+a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
+\cdots \cdots \cdots \cdots \\
+a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m m} x_{n}=b_{m},
+\end{array}\right.
+$$
+令
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right), \quad \boldsymbol{x}=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right), \quad \boldsymbol{b}=\left(\begin{array}{c}
+b_{1} \\
+b_{2} \\
+\vdots \\
+b_{m}
+\end{array}\right),
+$$
+分别为 $m \times n$ 矩阵、 $n \times 1$ 矩阵和 $m \times 1$ 矩阵, 则该线性方程组可以写成如下矩阵形式:
+$$
+\boldsymbol{Ax}=\boldsymbol{b}.
+$$
+\end{example}
+
+在许多实际问题中,会遇到一组变量由另一组变量线性表示的问题, 如变量 $y_{1}$, $y_{2}, \cdots, y_{m}$ 可由变量 $x_{1}, x_{2}, \cdots, x_{n}$ 线性表示, 即
+$$
+\left\{\begin{array}{c}
+y_{1}=a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}, \\
+y_{2}=a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}, \\
+\quad \cdots \cdots \cdots \cdots \\
+y_{m}=a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n},
+\end{array}\right.
+$$
+这种由变量 $x_{1}, x_{2}, \cdots, x_{n}$ 到变量 $y_{1}, y_{2}, \cdots, y_{m}$ 的变换称为线性变换.
+
+令
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1 n} \\
+a_{21} & a_{22} & \cdots & a_{2 n} \\
+\vdots & \vdots & & \vdots \\
+a_{m 1} & a_{m 2} & \cdots & a_{m n}
+\end{array}\right) \quad (\text { 称 } \boldsymbol{A} \text { 为线性变换的系数矩阵 } ), 
+$$
+$$
+\boldsymbol{x}=\left(\begin{array}{c}
+x_{1} \\
+x_{2} \\
+\vdots \\
+x_{n}
+\end{array}\right), \quad \boldsymbol{y}=\left(\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{m}
+\end{array}\right),
+$$
+则上述线性变换可以写成矩阵的形式, 即
+$$
+\boldsymbol{y}=\boldsymbol{A x}.
+$$
+
+\textbf{注意:} $(1)$ 一般情况下, 矩阵的乘法不满足交换律, 即 $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$, 这从例 $8$ 和例 $9$ 中就可以看出. 若 $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$, 则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 可交换.
+
+$(2)$ 当 $\boldsymbol{A B}=\boldsymbol{O}$ 时, 不一定有 $\boldsymbol{A}=\boldsymbol{O}$ 或 $\boldsymbol{B}=\boldsymbol{O}$. 如例 $8$ 所示.
+
+$(3)$ 矩阵的乘法不满足消去律,即当 $\boldsymbol{A C}=\boldsymbol{B C}$, 且 $\boldsymbol{C} \neq \boldsymbol{O}$ 时, 不一定有 $\boldsymbol{A}=\boldsymbol{B}$.
+
+例如, $\boldsymbol{A}=\left(\begin{array}{ll}1 & 2 \\ 0 & 3\end{array}\right), \boldsymbol{B}=\left(\begin{array}{ll}1 & 0 \\ 0 & 4\end{array}\right), \boldsymbol{C}=\left(\begin{array}{ll}1 & 1 \\ 0 & 0\end{array}\right)$, 则
+$$
+\boldsymbol{A C}=\left(\begin{array}{ll}
+1 & 2 \\
+0 & 3
+\end{array}\right)\left(\begin{array}{ll}
+1 & 1 \\
+0 & 0
+\end{array}\right)=\left(\begin{array}{ll}
+1 & 1 \\
+0 & 0
+\end{array}\right), \quad \boldsymbol{B} \boldsymbol{C}=\left(\begin{array}{ll}
+1 & 0 \\
+0 & 4
+\end{array}\right)\left(\begin{array}{ll}
+1 & 1 \\
+0 & 0
+\end{array}\right)=\left(\begin{array}{ll}
+1 & 1 \\
+0 & 0
+\end{array}\right).
+$$
+显然, $\boldsymbol{A C}=\boldsymbol{B C}$, 且 $\boldsymbol{C} \neq \boldsymbol{O}$, 但 $\boldsymbol{A} \neq \boldsymbol{B}$.
+
+但在运算都可行的情况下, 矩阵的乘法仍满足下列运算规律:
+
+$(1)$ $(\boldsymbol{A B}) \boldsymbol{C}=\boldsymbol{A}(\boldsymbol{B C})$; $\qquad\qquad\qquad\,\,\,\,$ (结合律)
+
+$(2)$ $\boldsymbol{A}(\boldsymbol{B}+\boldsymbol{C})=\boldsymbol{A B}+\boldsymbol{A C}$; $\qquad \qquad$ (左分配律)
+
+\quad \,\,
+$(\boldsymbol{B}+\boldsymbol{C}) \boldsymbol{A}=\boldsymbol{B A}+\boldsymbol{C A} $; $\qquad\qquad$ (右分配律)
+
+$(3)$ $\lambda(\boldsymbol{A B})=(\lambda \boldsymbol{A}) \boldsymbol{B}$ （其中 $\lambda$ 为数).
+
+对于单位矩阵 $\boldsymbol{E}$, 容易验证
+$$
+\boldsymbol{E}_{m} \boldsymbol{A}_{m \times n}=\boldsymbol{A}_{m \times n}, \quad \boldsymbol{A}_{m \times n} \boldsymbol{E}_{n}=\boldsymbol{A}_{m \times n},
+$$
+其中 $\boldsymbol{E}_{m}$ 与 $\boldsymbol{E}_{n}$ 分别表示 $m$ 阶单位矩阵与 $n$ 阶单位矩阵. 可见, 在矩阵乘积中, 单位矩阵类似于数 $1$ 的作用.
+
+有了矩阵的乘法, 就可以定义 $n$ 阶方阵的幂. 设 $\boldsymbol{A}$ 是 $n$ 阶方阵, $k$ 是正整数, 称
+$$
+\boldsymbol{A}^{k}=\underbrace{\boldsymbol{A} \cdot \boldsymbol{A} \cdot \cdots \cdot \boldsymbol{A}}_{k \text{个}}
+$$
+为方阵 $\boldsymbol{A}$ 的 $k$ 次幂. 规定
+$$
+\boldsymbol{A}^{0}=\boldsymbol{E}.
+$$
+
+显然, 只有方阵的幂才有意义.
+
+由于矩阵的乘法满足结合律, 所以方阵的幂满足下列运算规律:
+$$
+\boldsymbol{A}^{k} \boldsymbol{A}^{\tau}=\boldsymbol{A}^{k+\tau}, \quad\left(\boldsymbol{A}^{k}\right)^{\tau}=\boldsymbol{A}^{k \tau}
+$$
+其中 $k, \tau$ 为正整数.
+
+
+但因为矩阵的乘法一般不满足交换律, 所以对于两个 $n$ 阶方阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$, 一般来说, $(\boldsymbol{A B})^{k} \neq \boldsymbol{A}^{k} \boldsymbol{B}^{k}$.
+
+\begin{example}%例 11 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+\lambda & 1 & 0 \\
+0 & \lambda & 1 \\
+0 & 0 & \lambda
+\end{array}\right). 
+$$
+证明: 
+$$
+\boldsymbol{A}^{n}=\left(\begin{array}{ccc}
+\lambda^{n} & n \lambda^{n-1} & \frac{n(n-1)}{2} \lambda^{n-2} \\
+0 & \lambda^{n} & n \lambda^{n-1} \\
+0 & 0 & \lambda^{n}
+\end{array}\right)(n \geqslant 2 \text { 为正整数). }
+$$
+\end{example}
+
+
+\begin{proof}  
+用数学归纳法证明.
+
+当 $n=2$ 时,
+$$
+\boldsymbol{A}^{2}=\left(\begin{array}{lll}
+\lambda & 1 & 0 \\
+0 & \lambda & 1 \\
+0 & 0 & \lambda
+\end{array}\right)\left(\begin{array}{lll}
+\lambda & 1 & 0 \\
+0 & \lambda & 1 \\
+0 & 0 & \lambda
+\end{array}\right)=\left(\begin{array}{ccc}
+\lambda^{2} & 2 \lambda & 1 \\
+0 & \lambda^{2} & 2 \lambda \\
+0 & 0 & \lambda^{2}
+\end{array}\right),
+$$
+结论成立.
+
+假设 $n=k$ 时, 结论成立, 即
+$$
+\boldsymbol{A}^{k}=\left(\begin{array}{ccc}
+\lambda^{k} & k \lambda^{k-1} & \frac{k(k-1)}{2} \lambda^{k-2} \\
+0 & \lambda^{k} & k \lambda^{k-1} \\
+0 & 0 & \lambda^{k}
+\end{array}\right). 
+$$
+则当 $n=k+1$ 时, 有
+$$
+\begin{aligned}
+\boldsymbol{A}^{k+1} & =\boldsymbol{A}^{k} \cdot \boldsymbol{A}=\left(\begin{array}{ccc}
+\lambda^{k} & k \lambda^{k-1} & \frac{k(k-1)}{2} \lambda^{k-2} \\
+0 & \lambda^{k} & k \lambda^{k-1} \\
+0 & 0 & \lambda^{k}
+\end{array}\right)\left(\begin{array}{ccc}
+\lambda & 1 & 0 \\
+0 & \lambda & 1 \\
+0 & 0 & \lambda
+\end{array}\right) \\
+& =\left(\begin{array}{ccc}
+\lambda^{k+1} & (k+1) \lambda^{k} & \frac{(k+1) k}{2} \lambda^{k-1} \\
+0 & \lambda^{k+1} & (k+1) \lambda^{k} \\
+0 & 0 & \lambda^{k+1}
+\end{array}\right)=\left(\begin{array}{ccc}
+\lambda^{n} & n \lambda^{n-1} & \frac{n(n-1)}{2} \lambda^{n-2} \\
+0 & \lambda^{n} & n \lambda^{n-1} \\
+0 & 0 & \lambda^{n}
+\end{array}\right).
+\end{aligned}
+$$
+于是等式得证.
+\end{proof}
+
+
+  
+<h3><a name="C2.4">$2.2.4$ 矩阵的转置</a></h3>
+
+
+\begin{definition}%定义 5 
+把 $m \times n$ 矩阵 $\boldsymbol{A}$ 的行换成相应的列, 得到的 $n \times m$ 矩阵称为 $\boldsymbol{A}$ 的转
+置矩阵, 记作 $\boldsymbol{A}^{\mathrm{T}}$ (或 $\left.\boldsymbol{A}^{\prime}\right)$.
+\end{definition}
+
+例如, 矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+0 & 0 & 0 \\
+a & b & c
+\end{array}\right)
+$$
+的转置矩阵为
+$$
+\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{ll}
+0 & a \\
+0 & b \\
+0 & c
+\end{array}\right).
+$$
+
+由矩阵的定义, 易得下列运算规律:
+
+$(1)$ $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{\mathrm{T}}=\boldsymbol{A}$;
+
+$(2)$ $(\boldsymbol{A}+\boldsymbol{B})^{\mathrm{T}}=\boldsymbol{A}^{\mathrm{T}}+\boldsymbol{B}^{\mathrm{T}}$;
+
+$(3)$ $(\lambda \boldsymbol{A})^{\mathrm{T}}=\lambda \boldsymbol{A}^{\mathrm{T}}$.
+
+同时,可以证明: 
+
+$(4)$ $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}},\left(\boldsymbol{A}^{n}\right)^{\mathrm{T}}=\left(\boldsymbol{A}^{\mathrm{T}}\right)^{n}$.
+
+事实上, 设 $\boldsymbol{A}=\left(a_{i j}\right)_{m \times s}, \boldsymbol{B}=\left(b_{i j}\right)_{s \times n}$, 记 $\boldsymbol{A} \boldsymbol{B}=\boldsymbol{C}=\left(c_{i j}\right)_{m \times n}, \boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{D}=$ $\left(d_{i j}\right)_{n \times m}$, 于是有
+$$
+c_{j i}=\sum_{k=1}^{s} a_{j k} b_{k i},
+$$
+而 $\boldsymbol{B}^{\mathrm{T}}$ 的第 $i$ 行为 $\left(b_{1 i}, b_{2 i}, \cdots, b_{s i}\right), \boldsymbol{A}^{\mathrm{T}}$ 的第 $j$ 列为 $\left(a_{j 1}, a_{j 2}, \cdots, a_{j s}\right)^{\mathrm{T}}$, 因此
+$$
+d_{i j}=\left(b_{1 i}, b_{2 i}, \ldots, b_{s i}\right)\left(\begin{array}{c}
+a_{j 1} \\
+a_{j 2} \\
+\vdots \\
+a_{j s}
+\end{array}\right)=\sum_{k=1}^{s} b_{k i} a_{j k}=\sum_{k=1}^{s} a_{j k} b_{k i},
+$$
+所以
+$$
+d_{ij} = c_{ji} \quad (i=1,2, \cdots, n; j=1,2, \cdots, m), 
+$$
+即 $\boldsymbol{C}^{\mathrm{T}}=\boldsymbol{D}$, 也就是 $(\boldsymbol{A B})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}$. 类推可证 $\left(\boldsymbol{A}^{n}\right)^{\mathrm{T}}=\left(\boldsymbol{A}^{\mathrm{T}}\right)^{n}$.
+
+设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 若 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 即
+$$
+a_{i j}=a_{j i} \quad(i, j=1,2, \cdots, n),
+$$
+那么, $\boldsymbol{A}$ 称为对称矩阵; 若 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, 即
+$$
+a_{i j}=-a_{j i} \quad(i, j=1,2, \cdots, n),
+$$
+那么, $\boldsymbol{A}$ 称为反对称矩阵.
+
+例如,
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+12 & 6 & 1 \\
+6 & 8 & 0 \\
+1 & 0 & 6
+\end{array}\right)
+$$
+是三阶对称矩阵, 而
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+0 & -1 & 2 \\
+1 & 0 & 3 \\
+-2 & -3 & 0
+\end{array}\right)
+$$
+是三阶反对称矩阵.
+
+易知, 对称矩阵的特点: 它的元素以主对角线为对称轴对应相等; 而反对称矩阵的特点: 以主对角线为对称轴的对应元素的绝对值相等, 符号相反, 且主对角线上各元素均为 $0$ .
+
+
+\begin{example}%例 12 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+1 & -1 & 2 \\
+1 & 0 & 3 \\
+-1 & 2 & -1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{rr}
+1 & 1 \\
+2 & -1 \\
+3 & 2
+\end{array}\right), 
+$$
+那么
+$$
+\boldsymbol{A B}=\left(\begin{array}{rr}
+5 & 6 \\
+10 & 7 \\
+0 & -5
+\end{array}\right),
+$$
+$$
+\begin{gathered}
+\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{rrr}
+1 & 1 & -1 \\
+-1 & 0 & 2 \\
+2 & 3 & -1
+\end{array}\right), \quad \boldsymbol{B}^{\mathrm{T}}=\left(\begin{array}{rrr}
+1 & 2 & 3 \\
+1 & -1 & 2
+\end{array}\right), \\
+\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{rrr}
+5 & 10 & 0 \\
+6 & 7 & -5
+\end{array}\right)=(\boldsymbol{A B})^{\mathrm{T}}.
+\end{gathered}
+$$
+\end{example}
+
+\begin{example}%例 13 
+设 $\boldsymbol{A}$ 是 $n$ 阶反对称矩阵, $\boldsymbol{B}$ 是 $n$ 阶对称矩阵, 证明: $\boldsymbol{A} \boldsymbol{B}+\boldsymbol{B} \boldsymbol{A}$ 是 $n$ 阶反对称矩阵.
+\end{example}
+
+\begin{proof} 
+因为 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, $\boldsymbol{B}^{\mathrm{T}}=\boldsymbol{B}$, 而
+$$
+\begin{aligned}
+(\boldsymbol{A B}+\boldsymbol{B A})^{\mathrm{T}} & =(\boldsymbol{A B})^{\mathrm{T}}+(\boldsymbol{B} \boldsymbol{A})^{\mathrm{T}}=\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}}+\boldsymbol{A}^{\mathrm{T}} \boldsymbol{B}^{\mathrm{T}} \\
+& =\boldsymbol{B}(-\boldsymbol{A})+(-\boldsymbol{A}) \boldsymbol{B}=-(\boldsymbol{A} \boldsymbol{B}+\boldsymbol{B} \boldsymbol{A}). 
+\end{aligned}
+$$
+所以结论成立.
+\end{proof}
+
+
+  
+<h3><a name="C2.5">$2.2.5$ 方阵的行列式</a></h3>
+
+
+\begin{definition}%定义 6 
+由 $n$ 阶方阵 $\boldsymbol{A}$ 的元素构成的行列式 (各元素的位置不变), 称为方阵 $\boldsymbol{A}$ 的行列式, 记作 $|\boldsymbol{A}|$ 或 $\operatorname{det} \boldsymbol{A}$.
+\end{definition}
+
+应该注意, 方阵与行列式是两个不同的概念, $n$ 阶方阵是 $n^{2}$ 个数按一定方式排成的数表, 而 $n$ 阶行列式则是这些数 (也就是数表 $\boldsymbol{A}$ ) 按一定的运算法则所确定的一个数.
+
+设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, $\lambda$ 为数,则有下列等式成立 (请读者自己证明):
+
+$(1)$ $\left|\boldsymbol{A}^{\mathrm{T}}\right|=|\boldsymbol{A}|$;
+
+$(2)$ $|\lambda \boldsymbol{A}|=\lambda^{n}|\boldsymbol{A}|$;
+
+$(3)$ $|\boldsymbol{A B}|=|\boldsymbol{A}| \cdot|\boldsymbol{B}|$.
+
+\begin{example}%例 14 
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 满足 $\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{E}$, 且 $|\boldsymbol{A}|=-1$, 求 $|\boldsymbol{A}+\boldsymbol{E}|$.
+\end{example}
+
+\begin{solution} 
+由于
+$$
+\begin{aligned}
+|\boldsymbol{A}+\boldsymbol{E}| & =\left|\boldsymbol{A}+\boldsymbol{A A}^{\mathrm{T}}\right|=\left|\boldsymbol{A}\left(\boldsymbol{E}+\boldsymbol{A}^{\mathrm{T}}\right)\right| \\
+& =|\boldsymbol{A}|\left|\boldsymbol{E}+\boldsymbol{A}^{\mathrm{T}}\right|=-\left|(\boldsymbol{E}+\boldsymbol{A})^{\mathrm{T}}\right| \\
+& =-|\boldsymbol{A}+\boldsymbol{E}|,
+\end{aligned}
+$$
+所以
+$$
+2|\boldsymbol{A}+\boldsymbol{E}|=0.
+$$
+即
+$$
+|\boldsymbol{A}+\boldsymbol{E}|=0. 
+$$
+\end{solution}
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C3">$2.3$ 矩阵的逆</a></h2>
+
+
+<ul>
+
+解一元一次方程 $a x=b$, 当 $a \neq 0$ 时,存在一个数 $a^{-1}$,使 $x=a^{-1} b$ 为该方程的解; 而求解多元一次方程, 等价于求解该多元一次方程对应的矩阵形式 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$, 那么是否存在一个矩阵, 使这个矩阵乘以 $\boldsymbol{b}$ 等于 $\boldsymbol{x}$ 呢? 这就是下面要讨论的逆矩阵问题.
+
+\begin{definition}%定义 7 
+对于 $n$ 阶方阵 $\boldsymbol{A}$, 如果有一个 $n$ 阶方阵 $\boldsymbol{B}$, 满足
+$$
+\boldsymbol{AB}=\boldsymbol{BA}=\boldsymbol{E}, 
+$$
+则称方阵 $\boldsymbol{A}$ 可逆, 且把方阵 $\boldsymbol{B}$ 称为 $\boldsymbol{A}$ 的逆矩阵.
+\end{definition}
+
+显然, 若 $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的逆矩阵,则 $\boldsymbol{A}$ 也是 $\boldsymbol{B}$ 的逆矩阵.
+
+例如, 设
+$$
+\boldsymbol{A}=\left(\begin{array}{rr}
+1 & -1 \\
+1 & 1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{rr}
+\frac{1}{2} & \frac{1}{2} \\[5pt]
+-\frac{1}{2} & \frac{1}{2}
+\end{array}\right), 
+$$
+有
+$$
+\boldsymbol{A B}=\boldsymbol{B A}=\boldsymbol{E}.
+$$
+因此, $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的一个逆矩阵.
+
+\textbf{注意:} 如果 $\boldsymbol{A}$ 是可逆的, 则 $\boldsymbol{A}$ 的逆矩阵唯一.
+
+事实上, 设 $\boldsymbol{B}, \boldsymbol{C}$ 都是 $\boldsymbol{A}$ 的逆矩阵, 则一定有
+$$
+\boldsymbol{B}=\boldsymbol{B E}=\boldsymbol{B}(\boldsymbol{A C})=(\boldsymbol{B A}) \boldsymbol{C}=\boldsymbol{E C}=\boldsymbol{C},
+$$
+由逆矩阵的唯一性, 通常将 $\boldsymbol{A}$ 的逆矩阵记作 $\boldsymbol{A}^{-1}$.
+
+\begin{definition}%定义 8 
+设 $\boldsymbol{A}=\left(a_{i j}\right)$ 为 $n$ 阶方阵, $A_{i j}$ 为行列式 $|\boldsymbol{A}|$ 的元素 $a_{i j}$ $(i, j=1,2, \cdots$, $n$ )的代数余子式, 记
+$$
+\boldsymbol{A}^{*}=\left(\begin{array}{cccc}
+A_{11} & A_{21} & \cdots & A_{n 1} \\
+A_{12} & A_{22} & \cdots & A_{n 2} \\
+\vdots & \vdots & & \vdots \\
+A_{1 n} & A_{2 n} & \cdots & A_{n n},
+\end{array}\right)
+$$
+称 $\boldsymbol{A}^{*}$ 为 $\boldsymbol{A}$ 的伴随矩阵.
+\end{definition}
+
+利用行列式的按行 (列) 展开定理, 可以证明
+$$
+\boldsymbol{A}^{*} \boldsymbol{A}=\boldsymbol{A} \boldsymbol{A}^{*}=|\boldsymbol{A}| \boldsymbol{E}.
+$$
+
+下面给出一个方阵可逆的充分必要条件. 
+
+\begin{theorem}%定理 1
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 则 $\boldsymbol{A}$ 可逆的充分必要条件是 $|\boldsymbol{A}| \neq 0$, 且 $\boldsymbol{A}^{-1}=\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}$, 其中 $\boldsymbol{A}^{*}$为 $\boldsymbol{A}$ 的伴随矩阵.
+\end{theorem}
+
+\begin{proof} 
+先证必要性. 由于 $\boldsymbol{A}$ 是可逆的, 则有 $\boldsymbol{A}^{-1}$, 使 $\boldsymbol{A}^{-1} \boldsymbol{A}=\boldsymbol{E}$, 故 $\left|\boldsymbol{A}^{-1} \boldsymbol{A}\right|=|\boldsymbol{E}|=1$,即 $\left|\boldsymbol{A}^{-1}\right| \cdot|\boldsymbol{A}|=1$. 所以 $|\boldsymbol{A}| \neq 0$.
+
+再证充分性. 设 $|\boldsymbol{A}| \neq 0$. 由伴随矩阵 $\boldsymbol{A}^{*}$ 的性质, 有
+$$
+\boldsymbol{A} \boldsymbol{A}^{*}=\boldsymbol{A}^{*} \boldsymbol{A}=|\boldsymbol{A}| \boldsymbol{E}.
+$$
+因 $|\boldsymbol{A}| \neq 0$, 则
+$$
+\boldsymbol{A}\left(\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}\right)=\left(\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}\right) \boldsymbol{A}=\boldsymbol{E}. 
+$$
+这说明 $\boldsymbol{A}$ 是可逆的, 且 $\boldsymbol{A}^{-1}=\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}$. 证毕.
+\end{proof}
+
+\begin{definition}%定义 9 
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 若 $|\boldsymbol{A}|=0$, 则称 $\boldsymbol{A}$ 为奇异矩阵;否则,称 $\boldsymbol{A}$ 为非奇异矩阵.
+\end{definition}
+
+由定理 $1$ 可知, $n$ 阶方阵 $\boldsymbol{A}$ 可逆的充分必要条件是 $\boldsymbol{A}$ 为非奇异矩阵.
+
+\begin{corollary}%推论 1 
+对于 $n$ 阶方阵 $\boldsymbol{A}$, 若存在 $n$ 阶方阵 $\boldsymbol{B}$, 使 $\boldsymbol{A B}=\boldsymbol{E}$ (或 $\boldsymbol{B A}=\boldsymbol{E}$ ), 则 $\boldsymbol{A}$一定可逆, 且 $\boldsymbol{B}=\boldsymbol{A}^{-1}$.
+\end{corollary}
+
+\begin{proof} 
+由 $\boldsymbol{A B}=\boldsymbol{E}$, 有 $|\boldsymbol{A}||\boldsymbol{B}|=1 \neq 0$, 得 $|\boldsymbol{A}| \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 且 $\boldsymbol{B}=\boldsymbol{E B}=$ $\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right) \boldsymbol{B}=\boldsymbol{A}^{-1} \boldsymbol{E}=\boldsymbol{A}^{-1}$. 证毕.
+\end{proof}
+
+方阵的逆矩阵满足下列性质:
+
+$(1)$ 若 $\boldsymbol{A}$ 可逆,则 $\boldsymbol{A}^{-1}$ 亦可逆, 且 $\left(\boldsymbol{A}^{-1}\right)^{-1}=\boldsymbol{A}$;
+
+$(2)$ 若 $\boldsymbol{A}$ 可逆,数 $\lambda \neq 0$, 则 $\lambda \boldsymbol{A}$ 亦可逆, 且 $(\lambda \boldsymbol{A})^{-1}=\frac{1}{\lambda} \boldsymbol{A}^{-1}$;
+
+$(3)$ 若 $\boldsymbol{A}, \boldsymbol{B}$ 为同阶方阵且均可逆,则 $\boldsymbol{A B}$ 亦可逆, 且 $(\boldsymbol{A B})^{-1}=\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}$;
+
+$(4)$ 若 $\boldsymbol{A}$ 可逆,则 $\boldsymbol{A}^{\mathrm{T}}$ 亦可逆, 且 $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$;
+
+$(5)$ 若 $\boldsymbol{A}$ 可逆,则有 $\left|\boldsymbol{A}^{-1}\right|=|\boldsymbol{A}|^{-1}$;
+
+$(6)$ 设 $\boldsymbol{A}=\operatorname{diag}\left(a_{1}, a_{2}, \cdots, a_{n}\right)$, 则 $\boldsymbol{A}$ 可逆的充分必要条件是 $a_{i} \neq 0(i=1$, $2, \cdots, n)$, 且 $\boldsymbol{A}^{-1}=\operatorname{diag}\left(a_{1}^{-1}, a_{2}^{-1}, \cdots, a_{n}^{-1}\right)$.
+
+这里只证明 $(3)$ 和 $(4)$, 其余的留给读者自己证明.
+
+\begin{proof} 
+$(3)$ 由于
+$$
+\begin{aligned}
+(\boldsymbol{A B})\left(\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}\right) & =\boldsymbol{A}\left(\boldsymbol{B} \boldsymbol{B}^{-1}\right) \boldsymbol{A}^{-1} \\
+& =\boldsymbol{A} \boldsymbol{E} \boldsymbol{A}^{-1}=\boldsymbol{A A}^{-1}=\boldsymbol{E}.
+\end{aligned}
+$$
+根据推论 $1$, 即有 $(\boldsymbol{A B})^{-1}=\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}$.
+
+$(4)$
+$$
+\boldsymbol{A}^{\mathrm{T}}\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}=\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right)^{\mathrm{T}}=\boldsymbol{E}^{\mathrm{T}}=\boldsymbol{E}, 
+$$
+所以 $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$. 证毕.
+\end{proof}
+
+\begin{example}%例 15 
+求方阵
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+2 & 2 & 2 \\
+1 & 2 & 3 \\
+1 & 3 & 6
+\end{array}\right)
+$$
+的逆矩阵 $\boldsymbol{A}^{-1}$.
+\end{example}
+
+\begin{solution} 
+因为 $|\boldsymbol{A}|=2 \neq 0$, 所以 $\boldsymbol{A}^{-1}$ 存在. 先求 $\boldsymbol{A}$ 的伴随矩阵 $\boldsymbol{A}^{*}$.
+$$
+\begin{array}{lll}
+A_{11}=3, & A_{12}=-3, & A_{13}=1, \\
+A_{21}=-6, & A_{22}=10, & A_{23}=-4, \\
+A_{31}=2, & A_{32}=-4, & A_{33}=2.
+\end{array}
+$$
+所以
+$$
+\boldsymbol{A}^{*}=\left(\begin{array}{rrr}
+3 & -6 & 2 \\
+-3 & 10 & -4 \\
+1 & -4 & 2
+\end{array}\right). 
+$$
+故
+$$
+\boldsymbol{A}^{-1}=\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}=\frac{1}{2}\left(\begin{array}{rrr}
+3 & -6 & 2 \\
+-3 & 10 & -4 \\
+1 & -4 & 2
+\end{array}\right).
+$$
+\end{solution}
+
+\begin{example}%例 16 
+在第 $1$ 章例 $2$ 中, 令
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+2 & -1 & -1 \\
+3 & 4 & -2 \\
+3 & -2 & 4
+\end{array}\right), \quad \boldsymbol{x}=\left(\begin{array}{l}
+x_{1} \\
+x_{2} \\
+x_{3}
+\end{array}\right), \quad \boldsymbol{b}=\left(\begin{array}{c}
+4 \\
+11 \\
+11
+\end{array}\right),
+$$
+则线性方程组
+$$
+\left\{\begin{array}{l}
+2 x_{1}-\phantom{2}x_{2}-\phantom{2}x_{3}=4, \\
+3 x_{1}+4 x_{2}-2 x_{3}=11, \\
+3 x_{1}-2 x_{2}+4 x_{3}=11
+\end{array}\right.
+$$
+可以写成矩阵形式:
+$$
+\boldsymbol{A x}=\boldsymbol{b}.
+$$
+
+由于 $|\boldsymbol{A}|=60 \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 且
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{rrr}
+\frac{1}{5} & \frac{1}{10} & \frac{1}{10} \\[10pt]
+-\frac{3}{10} & \frac{11}{60} & \frac{1}{60} \\[10pt]
+-\frac{3}{10} & \frac{1}{60} & \frac{11}{60}
+\end{array}\right).
+$$
+于是, 方程组的解为
+$$
+\boldsymbol{x}=\boldsymbol{A}^{-1} \boldsymbol{b}=\left(\begin{array}{rcc}
+\frac{1}{5} & \frac{1}{10} & \frac{1}{10} \\[10pt]
+-\frac{3}{10} & \frac{11}{60} & \frac{1}{60} \\[10pt]
+-\frac{3}{10} & \frac{1}{60} & \frac{11}{60}
+\end{array}\right)\left(\begin{array}{c}
+4 \\
+11 \\
+11
+\end{array}\right)=\left(\begin{array}{l}
+3 \\
+1 \\
+1
+\end{array}\right).
+$$
+\end{example}
+
+\begin{example}%例 17 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 2 & 1 \\
+3 & 4 & 3
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ll}
+2 & 1 \\
+5 & 3
+\end{array}\right), \quad \boldsymbol{C}=\left(\begin{array}{ll}
+1 & 3 \\
+2 & 0 \\
+3 & 1
+\end{array}\right), 
+$$
+求矩阵 $\boldsymbol{X}$, 并满足
+$$
+\boldsymbol{A X B}=\boldsymbol{C}.
+$$
+\end{example}
+
+\begin{solution} 
+若 $\boldsymbol{A}^{-1}, \boldsymbol{B}^{-1}$ 均存在,则用 $\boldsymbol{A}^{-1}$ 左乘上式, 用 $\boldsymbol{B}^{-1}$ 右乘上式, 有
+$$
+\boldsymbol{A}^{-1} \boldsymbol{AXB} \boldsymbol{B}^{-1}=\boldsymbol{A}^{-1} \boldsymbol{CB}^{-1}, 
+$$
+即
+$$
+\boldsymbol{X}=\boldsymbol{A}^{-1} \boldsymbol{C} \boldsymbol{B}^{-1}.
+$$
+由于 $|\boldsymbol{A}|=2,|\boldsymbol{B}|=1$, 故 $\boldsymbol{A}^{-1}, \boldsymbol{B}^{-1}$ 均存在, 且
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{rrr}
+1 & 3 & -2 \\
+-\frac{3}{2} & -3 & \frac{5}{2} \\
+1 & 1 & -1
+\end{array}\right), \quad \boldsymbol{B}^{-1}=\left(\begin{array}{rr}
+3 & -1 \\
+-5 & 2
+\end{array}\right),
+$$
+于是
+$$
+\begin{aligned}
+\boldsymbol{X} & =\boldsymbol{A}^{-1} \boldsymbol{C B}^{-1}=\left(\begin{array}{rrr}
+1 & 3 & -2 \\
+-\frac{3}{2} & -3 & \frac{5}{2} \\
+1 & 1 & -1
+\end{array}\right)\left(\begin{array}{ll}
+1 & 3 \\
+2 & 0 \\
+3 & 1
+\end{array}\right)\left(\begin{array}{rr}
+-3 & -1 \\
+-5 & 2
+\end{array}\right) \\
+& =\left(\begin{array}{rr}
+1 & 1 \\
+0 & -2 \\
+0 & 2
+\end{array}\right)\left(\begin{array}{rr}
+3 & -1 \\
+-5 & 2
+\end{array}\right)=\left(\begin{array}{rr}
+-2 & 1 \\
+10 & -4 \\
+-10 & 4
+\end{array}\right).
+\end{aligned}
+$$
+\end{solution}
+
+\textbf{注意:} 解矩阵方程时, 要区分矩阵的左乘与右乘. 因为矩阵的乘法不满足交换律,所以不能混淆左乘与右乘.
+
+\begin{example}%例 18 
+设三阶方阵 $\boldsymbol{A}, \boldsymbol{B}$ 满足 $\boldsymbol{A}^{-1} \boldsymbol{B A}=6 \boldsymbol{A}+\boldsymbol{B} \boldsymbol{A}$, 且 $\boldsymbol{A}=\operatorname{diag}\left(\frac{1}{2}, \frac{1}{4}, \frac{1}{7}\right)$, 求 $\boldsymbol{B}$.
+\end{example}
+
+\begin{solution}  
+由 $\boldsymbol{A}^{-1}\boldsymbol{B A}-\boldsymbol{B A}=6 \boldsymbol{A}$, 得
+$$
+\left(\boldsymbol{A}^{-1}-\boldsymbol{E}\right) \boldsymbol{B A}=6 \boldsymbol{A}.
+$$
+上式两端右乘 $\boldsymbol{A}^{-1}$, 得
+$$
+\left(\boldsymbol{A}^{-1}-\boldsymbol{E}\right) \boldsymbol{B}=6 \boldsymbol{E}.
+$$
+由于 $\left|\left(\boldsymbol{A}^{-1}-\boldsymbol{E}\right) \boldsymbol{B}\right|=|6 \boldsymbol{E}| \neq 0$, 则 $\left|\boldsymbol{A}^{-1}-\boldsymbol{E}\right| \neq 0$, 即 $\boldsymbol{A}^{-1}-\boldsymbol{E}$ 可逆, 所以
+$$
+\begin{aligned}
+\boldsymbol{B} & =6\left(\boldsymbol{A}^{-1}-\boldsymbol{E}\right)^{-1}=6\left(\left(\begin{array}{lll}
+2 & 0 & 0 \\
+0 & 4 & 0 \\
+0 & 0 & 7
+\end{array}\right)-\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)\right)^{-1}=6\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 6
+\end{array}\right)^{-1} \\
+& =6\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & \frac{1}{3} & 0 \\
+0 & 0 & \frac{1}{6}
+\end{array}\right)=\left(\begin{array}{lll}
+6 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 1
+\end{array}\right).
+\end{aligned}
+$$
+\end{solution}
+
+\begin{example}%例 19 
+设 $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{*} \boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{B}$, 证明 $\boldsymbol{B}$ 可逆. 又当 $\boldsymbol{A}=\left(\begin{array}{lll}2 & 6 & 0 \\ 0 & 2 & 6 \\ 0 & 0 & 2\end{array}\right)$ 时, 求 $\boldsymbol{B}$.
+\end{example}
+
+\begin{proof} 
+由 $\boldsymbol{A}^{*} \boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{E B}$, 得
+\begin{equation}\label{eq2-1}
+\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right) \boldsymbol{B}=\boldsymbol{A}^{-1}. %\tag{2-1}
+\end{equation}
+于是 $\left|\boldsymbol{A}^{*}-\boldsymbol{E}\right||\boldsymbol{B}|=\left|\boldsymbol{A}^{-1}\right| \neq 0$, 所以 $|\boldsymbol{B}| \neq 0$, 即 $\boldsymbol{B}$ 可逆. 再由式 $(\ref{eq2-1})$, 得
+$$
+\boldsymbol{B}=\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right)^{-1} \boldsymbol{A}^{-1}=\left[\boldsymbol{A}\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right)\right]^{-1}=(|\boldsymbol{A}| \boldsymbol{E}-\boldsymbol{A})^{-1}, 
+$$
+其中
+$$
+|\boldsymbol{A}| \boldsymbol{E}-\boldsymbol{A}=\left(\begin{array}{lll}
+8 & 0 & 0 \\
+0 & 8 & 0 \\
+0 & 0 & 8
+\end{array}\right)-\left(\begin{array}{lll}
+2 & 6 & 0 \\
+0 & 2 & 6 \\
+0 & 0 & 2
+\end{array}\right)=6\left(\begin{array}{rrr}
+1 & -1 & 0 \\
+0 & 1 & -1 \\
+0 & 0 & 1
+\end{array}\right).
+$$
+按逆矩阵的性质 $(2)$ 和求逆公式, 易得
+$$
+\boldsymbol{B}=\frac{1}{6}\left(\begin{array}{lll}
+1 & 1 & 1 \\
+0 & 1 & 1 \\
+0 & 0 & 1
+\end{array}\right).
+$$
+\end{proof}
+
+定理 $1$ 不仅给出了一个方阵可逆的判定准则, 同时也给出了求逆矩阵的一种方法, 这种方法称为伴随矩阵法. 当方阵的阶数比较小时, 这种方法是可行的,但当方阵的阶数较高时, 这种方法就不太适用了. 在本章的第 $6$ 节中我们将要介绍一种简便、实用的求逆矩阵的方法.
+
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+<h2><a name="C4">$2.4$ 矩阵的分块</a></h2>
+
+
+<ul>
+
+对于行数和列数比较多的矩阵 $\boldsymbol{A}$, 在其计算过程中经常采用矩阵分块法, 使大矩阵的运算化为小矩阵的运算 将矩阵 $\boldsymbol{A}$ 用若干条纵线和横线分成许多个小矩阵, 每个小矩阵称为 $\boldsymbol{A}$ 的子块, 以子块为元素的矩阵称为分块矩阵.
+
+例如
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & a_{24} \\
+a_{31} & a_{32} & a_{33} & a_{34}
+\end{array}\right),
+$$
+将 $\boldsymbol{A}$ 分成子块的分法很多, 下面列举三种分块形式:
+
+$(1)$ $\left(\begin{array}{ll:ll}a_{11} & a_{12} & a_{13} & a_{14} \\ a_{21} & a_{22} & a_{23} & a_{24} \\ \hdashline a_{31} & a_{32} & a_{33} & a_{34}\end{array}\right)$;
+
+$(2)$ $\left(\begin{array}{c:cc:c}a_{11} & a_{12} & a_{13} & a_{14} \\ \hdashline a_{21} & a_{22} & a_{23} & a_{24} \\ a_{31} & a_{32} & a_{33} & a_{34}\end{array}\right)$;
+
+$(3)$ $\left(\begin{array}{l:l:ll}a_{11} & a_{12} & a_{13} & a_{14} \\ a_{21} & a_{22} & a_{23} & a_{24} \\ a_{31} & a_{32} & a_{33} & a_{34}\end{array}\right)$.
+
+在分法 $(1)$ 中, 记
+$$
+\boldsymbol{A}=\left(\begin{array}{ll}
+\boldsymbol{A}_{11} & \boldsymbol{A}_{12} \\
+\boldsymbol{A}_{21} & \boldsymbol{A}_{22}
+\end{array}\right), 
+$$
+其中
+$$
+\begin{aligned}
+& \boldsymbol{A}_{11}=\left(\begin{array}{ll}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{array}\right), \quad \boldsymbol{A}_{12}=\left(\begin{array}{ll}
+a_{13} & a_{14} \\
+a_{23} & a_{24}
+\end{array}\right), \\
+& \boldsymbol{A}_{21}=\left(a_{31}, a_{32}\right), \quad \boldsymbol{A}_{22}=\left(a_{33}, a_{34}\right),
+\end{aligned}
+$$
+即 $\boldsymbol{A}_{11}, \boldsymbol{A}_{12}, \boldsymbol{A}_{21}, \boldsymbol{A}_{22}$ 为 $\boldsymbol{A}$ 的子块, 而 $\boldsymbol{A}$ 成为以 $\boldsymbol{A}_{11}, \boldsymbol{A}_{12}, \boldsymbol{A}_{21}, \boldsymbol{A}_{22}$ 为元素的分块矩阵. 分法 $(2)$、$(3)$的分块矩阵, 请读者自己写出来.
+
+分块矩阵的运算与普通矩阵的运算类似,具体讨论如下.
+
+$(1)$ 设矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 为同型矩阵,采用同样的分块法, 有
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+\boldsymbol{A}_{11} & \boldsymbol{A}_{12} & \cdots & \boldsymbol{A}_{1 r} \\
+\boldsymbol{A}_{21} & \boldsymbol{A}_{22} & \cdots & \boldsymbol{A}_{2 r} \\
+\vdots & \vdots & & \vdots \\
+\boldsymbol{A}_{s 1} & \boldsymbol{A}_{s 2} & \cdots & \boldsymbol{A}_{s r}
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{cccc}
+\boldsymbol{B}_{11} & \boldsymbol{B}_{12} & \cdots & \boldsymbol{B}_{1 r} \\
+\boldsymbol{B}_{21} & \boldsymbol{B}_{22} & \cdots & \boldsymbol{B}_{2 r} \\
+\vdots & \vdots & & \vdots \\
+\boldsymbol{B}_{s 1} & \boldsymbol{B}_{s 2} & \cdots & \boldsymbol{B}_{s r}
+\end{array}\right),
+$$
+其中 $\boldsymbol{A}_{i j}$ 与 $\boldsymbol{B}_{i j}$ 亦为同型矩阵, 则
+$$
+\boldsymbol{A}+\boldsymbol{B}=\left(\begin{array}{cccc}
+\boldsymbol{A}_{11}+\boldsymbol{B}_{11} & \boldsymbol{A}_{12}+\boldsymbol{B}_{12} & \cdots & \boldsymbol{A}_{1 r}+\boldsymbol{B}_{1 r} \\
+\boldsymbol{A}_{21}+\boldsymbol{B}_{21} & \boldsymbol{A}_{22}+\boldsymbol{B}_{22} & \cdots & \boldsymbol{A}_{2 r}+\boldsymbol{B}_{2 r} \\
+\vdots & \vdots & & \vdots \\
+\boldsymbol{A}_{s 1}+\boldsymbol{B}_{s 1} & \boldsymbol{A}_{s 2}+\boldsymbol{B}_{s 2} & \cdots & \boldsymbol{A}_{s r}+\boldsymbol{B}_{s r}
+\end{array}\right).
+$$
+
+设 $k$ 为数, 则
+$$
+k \boldsymbol{A}=\boldsymbol{A} k=\left(\begin{array}{cccc}
+k \boldsymbol{A}_{11} & k \boldsymbol{A}_{12} & \cdots & k \boldsymbol{A}_{1 r} \\
+k \boldsymbol{A}_{21} & k \boldsymbol{A}_{22} & \cdots & k \boldsymbol{A}_{2 r} \\
+\vdots & \vdots & & \vdots \\
+k \boldsymbol{A}_{s 1} & k \boldsymbol{A}_{s 2} & \cdots & k \boldsymbol{A}_{s r}
+\end{array}\right).
+$$
+
+$(2)$ 设 $\boldsymbol{A}$ 为 $m \times l$ 矩阵, $\boldsymbol{B}$ 为 $l \times n$ 矩阵, 将 $\boldsymbol{A}, \boldsymbol{B}$ 分别分成
+
+$$
+\boldsymbol{A}=\left(\begin{array}{ccc}
+\boldsymbol{A}_{11} & \cdots & \boldsymbol{A}_{1 t} \\
+\vdots & & \vdots \\
+\boldsymbol{A}_{s 1} & \cdots & \boldsymbol{A}_{s t}
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{ccc}
+\boldsymbol{B}_{11} & \cdots & \boldsymbol{B}_{1 r} \\
+\vdots & & \vdots \\
+\boldsymbol{B}_{t 1} & \cdots & \boldsymbol{B}_{t r}
+\end{array}\right),
+$$
+其中 $\boldsymbol{A}_{i 1}, \boldsymbol{A}_{i 2}, \cdots, \boldsymbol{A}_{i t}$ 的列数分别等于 $\boldsymbol{B}_{1 j}, \boldsymbol{B}_{2 j}, \cdots, \boldsymbol{B}_{t j}$ 的行数, 则有
+$$
+\boldsymbol{A B}=\left(\begin{array}{ccc}
+\boldsymbol{C}_{11} & \cdots & \boldsymbol{C}_{1 r} \\
+\vdots & & \vdots \\
+\boldsymbol{C}_{s 1} & \cdots & \boldsymbol{C}_{s r}
+\end{array}\right)
+$$
+其中 $\boldsymbol{C}_{i j}=\sum_{k=1}^{t} \boldsymbol{A}_{i k} \boldsymbol{B}_{k j}(i=1,2, \cdots, s ; j=1,2, \cdots, r)$.
+
+\textbf{注意:} 在分块矩阵的乘法中, 要求左矩阵的列的分法与右矩阵的行的分法是一致的.
+
+
+\begin{example}%例 20 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+-1 & 2 & 1 & 0 \\
+1 & 1 & 0 & 1
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{rrrr}
+1 & 0 & 1 & 0 \\
+-1 & 2 & 0 & 1 \\
+1 & 0 & 4 & 1 \\
+-1 & -1 & 2 & 0
+\end{array}\right),
+$$
+求 $\boldsymbol{A B}$.
+\end{example}
+
+
+\begin{solution} 
+将 $\boldsymbol{A}, \boldsymbol{B}$ 分别分块成
+$$
+\begin{gathered}
+\boldsymbol{A}=\left(\begin{array}{rr:rr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+\hdashline-1 & 2 & 1 & 0 \\
+1 & 1 & 0 & 1
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{E} & \boldsymbol{O} \\
+\boldsymbol{A}_{1} & \boldsymbol{E}
+\end{array}\right), \\
+\boldsymbol{B}=\left(\begin{array}{rr:rr}
+1 & 0 & 1 & 0 \\
+-1 & 2 & 0 & 1 \\
+\hdashline 1 & 0 & 4 & 1 \\
+-1 & -1 & 2 & 0
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{B}_{11} & \boldsymbol{E} \\
+\boldsymbol{B}_{21} & \boldsymbol{B}_{22}
+\end{array}\right), 
+\end{gathered}
+$$
+则
+$$
+\boldsymbol{A} \boldsymbol{B}=\left(\begin{array}{cc}
+\boldsymbol{E} & \boldsymbol{O} \\
+\boldsymbol{A}_{1} & \boldsymbol{E}
+\end{array}\right)\left(\begin{array}{cc}
+\boldsymbol{B}_{11} & \boldsymbol{E} \\
+\boldsymbol{B}_{21} & \boldsymbol{B}_{22}
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{B}_{11} & \boldsymbol{E} \\
+\boldsymbol{A}_{1} \boldsymbol{B}_{11}+\boldsymbol{B}_{21} & \boldsymbol{A}_{1}+\boldsymbol{B}_{22}
+\end{array}\right).
+$$
+而
+$$
+\begin{aligned}
+\boldsymbol{A}_{1} \boldsymbol{B}_{11}+\boldsymbol{B}_{21} & =\left(\begin{array}{rr}
+-1 & 2 \\
+1 & 1
+\end{array}\right)\left(\begin{array}{rr}
+1 & 0 \\
+-1 & 2
+\end{array}\right)+\left(\begin{array}{rr}
+1 & 0 \\
+-1 & -1
+\end{array}\right) \\
+& =\left(\begin{array}{rr}
+-3 & 4 \\
+0 & 2
+\end{array}\right)+\left(\begin{array}{rr}
+1 & 0 \\
+-1 & -1
+\end{array}\right)=\left(\begin{array}{ll}
+-2 & 4 \\
+-1 & 1
+\end{array}\right), \\
+\boldsymbol{A}_{1}+\boldsymbol{B}_{22} & =\left(\begin{array}{rr}
+-1 & 2 \\
+1 & 1
+\end{array}\right)+\left(\begin{array}{ll}
+4 & 1 \\
+2 & 0
+\end{array}\right)=\left(\begin{array}{ll}
+3 & 3 \\
+3 & 1
+\end{array}\right), 
+\end{aligned}
+$$
+所以
+$$
+\boldsymbol{A} \boldsymbol{B}=\left(\begin{array}{rr:rr}
+1 & 0 & 1 & 0 \\
+-1 & 2 & 0 & 1 \\
+\hdashline-2 & 4 & 3 & 3 \\
+-1 & 1 & 3 & 1
+\end{array}\right).
+$$
+\end{solution}
+
+$(3)$ 设
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc}
+\boldsymbol{A}_{11} & \boldsymbol{A}_{12} & \cdots & \boldsymbol{A}_{1 r} \\
+\boldsymbol{A}_{21} & \boldsymbol{A}_{22} & \cdots & \boldsymbol{A}_{2 r} \\
+\vdots & \vdots & & \vdots \\
+\boldsymbol{A}_{s 1} & \boldsymbol{A}_{s 2} & \cdots & \boldsymbol{A}_{s r}
+\end{array}\right),
+$$
+则
+$$
+\boldsymbol{A}^{\mathrm{T}}=\left(\begin{array}{cccc}
+\boldsymbol{A}_{11}^{\mathrm{T}} & \boldsymbol{A}_{21}^{\mathrm{T}} & \cdots & \boldsymbol{A}_{s 1}^{\mathrm{T}} \\
+\boldsymbol{A}_{12}^{\mathrm{T}} & \boldsymbol{A}_{22}^{\mathrm{T}} & \cdots & \boldsymbol{A}_{s 2}^{\mathrm{T}} \\
+\vdots & \vdots & & \vdots \\
+\boldsymbol{A}_{1r}^{\mathrm{T}} & \boldsymbol{A}_{2 r}^{\mathrm{T}} & \cdots & \boldsymbol{A}_{s r}^{\mathrm{T}}
+\end{array}\right).
+$$
+
+
+$(4)$ 设方阵 $\boldsymbol{A}$ 的分块矩阵为
+$$
+\boldsymbol{A}=\left(\begin{array}{llll}
+\boldsymbol{A}_{1} & & \boldsymbol{O} & \\
+& \boldsymbol{A}_{2} & & \\
+& & \ddots & \\
+& \boldsymbol{O} & & \boldsymbol{A}_{m}
+\end{array}\right), 
+$$
+除主对角线上的子块外, 其余子块都为零矩阵, 且 $\boldsymbol{A}_{i}(i=1,2, \cdots, m)$ 为方阵, 则 $\boldsymbol{A}$称为分块对角矩阵 (或准对角矩阵), 简记为 $\operatorname{diag}\left(\boldsymbol{A}_{1}, \boldsymbol{A}_{2}, \cdots, \boldsymbol{A}_{m}\right)$.
+
+准对角矩阵 $\boldsymbol{A}$ 的行列式具有下述性质: 
+$$
+\operatorname{det} \boldsymbol{A}=\left|\boldsymbol{A}_{1}\right|\left|\boldsymbol{A}_{2}\right| \cdots\left|\boldsymbol{A}_{m}\right|.
+$$
+
+若有与 $\boldsymbol{A}$ 同阶的准对角矩阵
+$$
+\boldsymbol{B}=\left(\begin{array}{llll}
+\boldsymbol{B}_{1} & & \boldsymbol{O} & \\
+& \boldsymbol{B}_{2} & & \\
+& & \ddots & \\
+& \boldsymbol{O} & & \boldsymbol{B}_{m}
+\end{array}\right), 
+$$
+其中 $\boldsymbol{A}_{i}$ 与 $\boldsymbol{B}_{i}(i=1,2, \cdots, m)$ 亦为同阶方阵, 则有
+$$
+\boldsymbol{AB}=\left(\begin{array}{cccc}
+\boldsymbol{A}_{1}\boldsymbol{B}_{1} & &  \boldsymbol{O}& \\
+& \boldsymbol{A}_{2}\boldsymbol{B}_{2} & & \\
+& & \ddots & \\
+& \boldsymbol{O}  & & \boldsymbol{A}_{m}\boldsymbol{B}_{m}
+\end{array}\right);
+$$
+
+
+若 $\left|\boldsymbol{A}_{i}\right| \neq 0(i=1,2, \cdots, m)$, 则 $|\boldsymbol{A}| \neq 0$, 并有
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{llll}
+\boldsymbol{A}_{1}^{-1} & &  \boldsymbol{O} &\\
+& \boldsymbol{A}_{2}^{-1} & & \\
+& & \ddots & \\
+&  \boldsymbol{O} & & \boldsymbol{A}_{m}^{-1}
+\end{array}\right).
+$$
+
+\begin{example}%例 21 
+设 $\boldsymbol{A}=\left(\begin{array}{lll}5 & 0 & 0 \\ 0 & 3 & 1 \\ 0 & 2 & 1\end{array}\right)$, 求 $\boldsymbol{A}^{-1}$.
+\end{example}
+
+\begin{solution} 
+把矩阵 $\boldsymbol{A}$ 分块为 $\boldsymbol{A}=\left(\begin{array}{c:cc}5 & 0 & 0 \\ \hdashline 0 & 3 & 1 \\ 0 & 2 & 1\end{array}\right)=\left(\begin{array}{cc}\boldsymbol{A}_{1} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{A}_{2}\end{array}\right)$,
+且
+$$
+\boldsymbol{A}_{1}=(5), \quad \boldsymbol{A}_{1}^{-1}=\left(\frac{1}{5}\right), \quad \boldsymbol{A}_{2}=\left(\begin{array}{ll}
+3 & 1 \\
+2 & 1
+\end{array}\right), \quad \boldsymbol{A}_{2}^{-1}=\left(\begin{array}{rr}
+1 & -1 \\
+-2 & 3
+\end{array}\right).
+$$
+于是, 有
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{r:rr}
+\frac{1}{5} & 0 & 0 \\
+\hdashline 0 & 1 & -1 \\
+0 & -2 & 3
+\end{array}\right).
+$$
+\end{solution}
+
+\begin{example}%例 22 
+设 $\boldsymbol{A}, \boldsymbol{C}$ 分别为 $r$ 阶可逆矩阵、 $s$ 阶可逆矩阵, 求分块矩阵
+$$
+\boldsymbol{X}=\left(\begin{array}{ll}
+\boldsymbol{O} & \boldsymbol{A} \\
+\boldsymbol{C} & \boldsymbol{B}
+\end{array}\right)
+$$
+的逆矩阵.
+\end{example}
+
+\begin{solution}  
+设分块矩阵 (各子块符合分块矩阵乘法的要求)
+$$
+\boldsymbol{X}^{-1}=\left(\begin{array}{ll}
+\boldsymbol{X}_{11} & \boldsymbol{X}_{12} \\
+\boldsymbol{X}_{21} & \boldsymbol{X}_{22}
+\end{array}\right),
+$$
+由
+$$
+\boldsymbol{X X}^{-1}=\left(\begin{array}{ll}
+\boldsymbol{O} & \boldsymbol{A} \\
+\boldsymbol{C} & \boldsymbol{B}
+\end{array}\right)\left(\begin{array}{ll}
+\boldsymbol{X}_{11} & \boldsymbol{X}_{12} \\
+\boldsymbol{X}_{21} & \boldsymbol{X}_{22}
+\end{array}\right)=\boldsymbol{E},
+$$
+得
+$$
+\left(\begin{array}{cc}
+\boldsymbol{A} \boldsymbol{X}_{21} & \boldsymbol{A} \boldsymbol{X}_{22} \\
+\boldsymbol{C} \boldsymbol{X}_{11}+\boldsymbol{B} \boldsymbol{X}_{21} & \boldsymbol{C} \boldsymbol{X}_{12}+\boldsymbol{B} \boldsymbol{X}_{22}
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{E}_{r} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{E}_{s}
+\end{array}\right).
+$$
+比较等式两端对应的子块, 可得矩阵方程组
+$$
+\left\{\begin{array}{l}
+\boldsymbol{A} \boldsymbol{X}_{21}=\boldsymbol{E}_{r}, \\
+\boldsymbol{A} \boldsymbol{X}_{22}=\boldsymbol{O}, \\
+\boldsymbol{C} \boldsymbol{X}_{11}+\boldsymbol{B} \boldsymbol{X}_{21}=\boldsymbol{O}, \\
+\boldsymbol{C} \boldsymbol{X}_{12}+\boldsymbol{B} \boldsymbol{X}_{22}=\boldsymbol{E}_{s}.
+\end{array}\right.
+$$
+注意到 $\boldsymbol{A}, \boldsymbol{C}$ 可逆, 可解得
+$$
+\begin{array}{ll}
+\boldsymbol{X}_{21}=\boldsymbol{A}^{-1}, & \boldsymbol{X}_{22}=\boldsymbol{O}, \\
+\boldsymbol{X}_{11}=-\boldsymbol{C}^{-1} \boldsymbol{B} \boldsymbol{A}^{-1}, & \boldsymbol{X}_{12}=\boldsymbol{C}^{-1}.
+\end{array}
+$$
+所以
+$$
+\boldsymbol{X}^{-1}=\left(\begin{array}{cc}
+-\boldsymbol{C}^{-1} \boldsymbol{B} \boldsymbol{A}^{-1} & \boldsymbol{C}^{-1} \\
+\boldsymbol{A}^{-1} & \boldsymbol{O}
+\end{array}\right).
+$$
+
+特别地, 当 $\boldsymbol{B}=\boldsymbol{O}$ 时,
+$$
+\left(\begin{array}{ll}
+\boldsymbol{O} & \boldsymbol{A} \\
+\boldsymbol{C} & \boldsymbol{O}
+\end{array}\right)^{-1}=\left(\begin{array}{cc}
+\boldsymbol{O} & \boldsymbol{C}^{-1} \\
+\boldsymbol{A}^{-1} & \boldsymbol{O}
+\end{array}\right).
+$$
+这一结论还可推广到一般情形, 即分块矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{cccc} 
+& & & \boldsymbol{A}_{1} \\
+& & \boldsymbol{A}_{2} & \\
+& \begin{sideways}$\ddots$\end{sideways} & & \\
+\boldsymbol{A}_{s} & & &
+\end{array}\right), 
+$$
+若子块 $\boldsymbol{A}_{i}(i=1,2, \cdots, s)$ 都可逆,则
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{cccc} 
+& & & \boldsymbol{A}_{s}^{-1} \\
+& & \boldsymbol{A}_{s-1}^{-1} & \\
+& \begin{sideways}$\ddots$\end{sideways} & & \\
+\boldsymbol{A}_{1}^{-1} & & &
+\end{array}\right).
+$$
+\end{solution}
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C5">$2.5$ 矩阵的初等变换与初等矩阵</a></h2>
+
+<ul>
+
+本节将引入矩阵的初等变换的概念, 并建立矩阵的初等变换与矩阵乘法的联系. 
+
+\begin{definition}%定义 10 
+对矩阵施行的以下三种变换称为矩阵的初等行 (列) 变换:
+
+$(1)$ 交换矩阵的第 $i$ 行 (列) 和第 $j$ 行 (列), 记为 $r_{i} \leftrightarrow r_{j}\left(c_{i} \leftrightarrow c_{j}\right)$;
+
+$(2)$ 以一个非零常数 $k$ 乘以矩阵的第 $i$ 行 (列), 记为 $k \times r_{i}\left(k \times c_{i}\right)$;
+
+$(3)$ 把矩阵的第 $i$ 行 (列) 所有元素的 $k$ 倍加到第 $j$ 行 (列) 对应的元素上, 记为 $r_{j}+k \times r_{i}\left(c_{j}+k \times c_{i}\right)$.
+\end{definition}
+
+初等行变换与初等列变换统称为矩阵的初等变换.
+
+显然, 初等变换都是可逆的, 且逆变换也是同类的初等变换. 例如, $r_{i} \leftrightarrow r_{j}$ 的逆变换仍为 $r_{i} \leftrightarrow r_{j}, k \times r_{i}$ 的逆变换为 $\frac{1}{k} \times r_{i}$, $r_{j} + k \times r_{i}$ 的逆变换为 $r_{j}+(-k) \times r_{i}$.
+
+\begin{definition}%定义 11 
+如果矩阵 $\boldsymbol{A}$ 经有限次初等变换化为矩阵 $\boldsymbol{B}$, 则称矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 记为 $\boldsymbol{A} \cong \boldsymbol{B}$.
+\end{definition}
+
+容易验证, 矩阵的等价关系具有下列性质:
+
+$(1)$ 反身性: $\boldsymbol{A} \cong \boldsymbol{A}$;
+
+$(2)$ 对称性 : 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $\boldsymbol{B} \cong \boldsymbol{A}$;
+
+$(3)$ 传递性: 若 $\boldsymbol{A} \cong \boldsymbol{B}, \boldsymbol{B} \cong \boldsymbol{C}$, 则 $\boldsymbol{A} \cong \boldsymbol{C}$.
+
+\begin{example}%例 23 
+已知
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+3 & 2 & 9 & 6 \\
+-1 & -3 & 4 & -17 \\
+1 & 4 & -7 & 3 \\
+-1 & -4 & 7 & -3
+\end{array}\right),
+$$
+对其作如下初等行变换: 
+$$
+\begin{aligned}
+\boldsymbol{A}& \xrightarrow{r_{1} \leftrightarrow r_{3}}\left(\begin{array}{rrrr}
+1 & 4 & -7 & 3 \\
+-1 & -3 & 4 & -17 \\
+3 & 2 & 9 & 6 \\
+-1 & -4 & 7 & -3
+\end{array}\right) \xrightarrow[\substack{r_{3}+(-3) \times r_{1} \\
+r_{4}+r_{1}}]{r_{2}+r_{1}}\left(\begin{array}{rrrr}
+1 & 4 & -7 & 3 \\
+0 & 1 & -3 & -14 \\
+0 & -10 & 30 & -3 \\
+0 & 0 & 0 & 0
+\end{array}\right)\\
+&\xrightarrow{r_{3}+10 \times r_{2}}\left(\begin{array}{rrrr}
+1 & 4 & -7 & 3 \\
+0 & 1 & -3 & -14 \\
+0 & 0 & 0 & -143 \\
+0 & 0 & 0 & 0
+\end{array}\right)=\boldsymbol{B},
+\end{aligned}
+$$
+则 $\boldsymbol{A} \cong \boldsymbol{B}$.
+\end{example}
+
+矩阵 $\boldsymbol{B}$ 称为行阶梯形矩阵, 它具有下列特征:
+
+$(1)$ 元素全为零的行 (简称零行) 位于非零行的下方;
+
+$(2)$ 各非零行的首非零元 (即该行从左至右的第一个不为零的元素) 的列标随着行标的增大而严格增大 (即首非零元的列标一定不小于行标).
+
+对矩阵 $\boldsymbol{B}$ 再作初等行变换: 
+$$
+\begin{aligned}
+\boldsymbol{B} &\xrightarrow{-\frac{1}{143} \times r_{3}}\left(\begin{array}{rrrr}1 & 4 & -7 & 3 \\ 0 & 1 & -3 & -14 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{array}\right) \xrightarrow{r_{1}+(-4) \times r_{2}}\left(\begin{array}{rrrr}1 & 0 & 5 & 59 \\ 0 & 1 & -3 & -14 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{array}\right)\\
+&\xrightarrow[r_{2}+14 \times r_{3}]{r_{1}+(-59) \times r_{3}}\left(\begin{array}{rrrr}1 & 0 & 5 & 0 \\  0 & 1 & -3 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0\end{array}\right)=\boldsymbol{C},
+\end{aligned}
+$$
+则有 $\boldsymbol{B} \cong \boldsymbol{C}$, 从而 $\boldsymbol{A} \cong \boldsymbol{C}$.
+
+矩阵 $\boldsymbol{C}$ 称为行最简形矩阵, 它具有下列特征:
+
+$(1)$ 它是行阶梯形矩阵;
+
+$(2)$ 各非零行的首非零元都是 $1$ ;
+
+$(3)$ 每个首非零元所在列的其余元素都是 $0$ .
+
+如果对矩阵 $\boldsymbol{C}$ 再作初等列变换:
+$$
+\begin{aligned}
+& \boldsymbol{C} \xrightarrow[c_{3}+3 \times c_{2}]{c_{3}+(-5) \times c_{1}}\left(\begin{array}{llll}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right) \xrightarrow{c_{3} \leftrightarrow c_{4}}\left(\begin{array}{llll}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \\
+& =\left(\begin{array}{cc}
+\boldsymbol{E}_{3} & \boldsymbol{O} \\
+\boldsymbol{O} & \boldsymbol{O}
+\end{array}\right)=\boldsymbol{D}.
+\end{aligned}
+$$
+矩阵 $\boldsymbol{D}$ 的左上角为一个单位矩阵 $\boldsymbol{E}_{3}$, 其他各子块都是零矩阵. 称矩阵 $\boldsymbol{D}$ 为矩阵 $\boldsymbol{A}$ 的等价标准形.
+
+事实上,有下面的结论.
+
+\begin{theorem}%定理 2
+任何一个矩阵 $\boldsymbol{A}$ 总可以经过有限次初等行变换化为行阶梯形矩阵, 并进一步化为行最简形矩阵.
+\end{theorem}
+
+
+\begin{theorem}%定理 3
+任何一个矩阵都有等价标准形, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 当且仅当它们有相同的等价标准形. 
+\end{theorem}
+
+\textbf{注意:} 与矩阵 $\boldsymbol{A}$ 等价的行阶梯形矩阵和行最简形矩阵不是唯一的, 但矩阵
+$\boldsymbol{A}$ 的等价标准形是唯一的.
+
+两个等价的矩阵不一定是相等的, 那么它们之间有什么关系呢? 为此, 我们引入初等矩阵的概念.
+
+\begin{definition}%定义 12 
+由单位矩阵 $\boldsymbol{E}$ 经过一次初等变换得到的矩阵称为初等矩阵.
+\end{definition}
+
+显然, 初等矩阵都是方阵, 三种初等变换对应着三种初等矩阵.
+
+交换 $\boldsymbol{E}$ 的第 $i$ 行和第 $j$ 行 (或交换 $\boldsymbol{E}$ 的第 $i$ 列和第 $j$ 列), 得
+
+% $$
+% \boldsymbol{E}(i, j)=\left(\begin{array}{cccccc}
+% 1 & & & & & \\
+% \ddots & & & & \\
+% & & 0 & \cdots & 1 & \\
+% & & 1 & & & \\
+% & \vdots & \ddots & \vdots & \\
+% & & & 1 & \\
+% & 1 & \cdots & 0 & \\
+% & & & & & \ddots
+% \end{array}\right) \text { 第 } i \text { 行 }
+% $$
+$$
+\boldsymbol{E}(i, j)=\left(\begin{array}{ccccccccc}
+1 & & & & & & & & \\
+& \ddots & & & & & & & \\
+& & 0 & & \cdots & & 1 & & \\
+& &  & 1 &  & &  & & \\
+& &  \vdots & & \ddots & &\vdots &  &\\
+& &  &  &  & 1 & & & \\
+& & 1 & & \cdots & & 0 & & \\
+&  & & & & & & \ddots & \\
+& & & & & & & & 1
+\end{array}\right)
+\begin{array}{c}
+ \\
+ \\
+\leftarrow \text { 第 }\, i \text { 行 }  \\
+ \\
+ \\
+ \\
+\leftarrow \text { 第 }\,  j \text { 行 } \\
+ \\
+ \\
+\end{array};
+$$
+
+用常数 $k$ 乘 $\boldsymbol{E}$ 的第 $i$ 行(或第 $i$ 列), 得
+$$
+\boldsymbol{E}[i(k)]= \left(\begin{array}{ccccccc}
+1 & & & & & & \\
+& \ddots & & & & & \\
+& & 1 &   &   & & \\
+& & & k &   & & \\
+& & & & 1 & & \\
+& & & & & \ddots & \\
+& & & & & & 1
+\end{array}\right)
+\begin{array}{c}
+ \\
+ \\
+ \\
+\leftarrow \text { 第 }\,  i \text { 行 } \\
+ \\
+ \\
+ \\
+\end{array};
+$$
+
+将 $\boldsymbol{E}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行 (或将第 $i$ 列的 $k$ 倍加到第 $j$ 列), 得
+$$
+\boldsymbol{E}[i+j(k)] = \left(\begin{array}{ccccccc}
+1 & & & & & & \\
+& \ddots & & & & & \\
+& & 1 & \cdots & k  & & \\
+& &  & \ddots & \vdots & & \\
+& &  &  & 1 & & \\
+& & & & & \ddots & \\
+& & & & & & 1
+\end{array}\right) 
+\begin{array}{c}
+ \\
+ \\
+\leftarrow \text { 第 }\,  i \text { 行 }  \\
+ \\
+\leftarrow \text { 第 }\,  j \text { 行 } \\
+ \\
+ \\
+\end{array}.
+$$
+这三类矩阵就是全部的初等矩阵. 容易证明, 初等矩阵都是可逆的, 它们的逆矩阵还是初等矩阵. 事实上,
+$$
+\begin{gathered}
+\boldsymbol{E}(i, j)^{-1}=\boldsymbol{E}(i, j), \quad \boldsymbol{E}[i(k)]^{-1}=\boldsymbol{E}\left[i\left(\frac{1}{k}\right)\right], \\
+\boldsymbol{E}[i+j(k)]^{-1}=\boldsymbol{E}[i+j(-k)].
+\end{gathered}
+$$
+
+
+
+\begin{theorem}%定理 4
+对一个 $m \times n$ 矩阵 $\boldsymbol{A}$ 施行一次初等行变换, 相当于用相应的 $m$ 阶初等矩阵左乘 $\boldsymbol{A}$; 对 $\boldsymbol{A}$ 施行一次初等列变换, 相当于用相应的 $n$ 阶初等矩阵右乘 $\boldsymbol{A}$.
+\end{theorem}
+
+\begin{proof} 
+这里只证初等行变换的情形, 初等列变换的情形可同样证明. 将矩阵 $\boldsymbol{A}$分块, 即
+$$
+\boldsymbol{A}=\left(\boldsymbol{A}_{1}, \cdots, \boldsymbol{A}_{i}, \cdots, \boldsymbol{A}_{j}, \cdots, \boldsymbol{A}_{m}\right)^{\mathrm{T}},
+$$
+其中 $\boldsymbol{A}_{k}=\left(a_{k 1}, a_{k 2}, \cdots, a_{k n}\right)$. 由分块矩阵的乘法, 得
+$$
+\boldsymbol{E}(i, j) \boldsymbol{A}=\left(\begin{array}{c}
+\boldsymbol{A}_{1} \\
+\vdots \\
+\boldsymbol{A}_{j} \\
+\vdots \\
+\boldsymbol{A}_{i} \\
+\vdots \\
+\boldsymbol{A}_{m}
+\end{array}\right),
+$$
+这相当于把 $\boldsymbol{A}$ 的第 $i$ 行与第 $j$ 行交换;
+$$
+\boldsymbol{E}[i(k)] \boldsymbol{A}=\left(\begin{array}{c}
+\boldsymbol{A}_{1} \\
+\vdots \\
+k \boldsymbol{A}_{i} \\
+\vdots \\
+\boldsymbol{A}_{m}
+\end{array}\right), 
+$$
+这相当于用数 $k$ 乘 $\boldsymbol{A}$ 的第 $i$ 行;
+$$
+\boldsymbol{E}[i+j(k)] \boldsymbol{A}=\left(\begin{array}{c}
+\boldsymbol{A}_{1} \\
+\vdots \\
+\boldsymbol{A}_{i}+k \boldsymbol{A}_{j} \\
+\vdots \\
+\boldsymbol{A}_{j} \\
+\vdots \\
+\boldsymbol{A}_{m}
+\end{array}\right),
+$$
+这相当于把 $\boldsymbol{A}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行. 证毕.
+\end{proof}
+
+例如, 对矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{lll}
+2 & 1 & 3 \\
+0 & 1 & 2
+\end{array}\right), 
+$$
+有
+$$
+\boldsymbol{E}[1+2(2)] \boldsymbol{A}=\left(\begin{array}{ll}
+1 & 2 \\
+0 & 1
+\end{array}\right)\left(\begin{array}{lll}
+2 & 1 & 3 \\
+0 & 1 & 2
+\end{array}\right)=\left(\begin{array}{lll}
+2 & 3 & 7 \\
+0 & 1 & 2
+\end{array}\right), 
+$$
+而
+$$
+\boldsymbol{A} \xrightarrow{r_{1}+2 \times r_{2}}\left(\begin{array}{lll}
+2 & 3 & 7 \\
+0 & 1 & 2
+\end{array}\right)=\boldsymbol{E}[1+2(2)] \boldsymbol{A}.
+$$
+这说明对 $\boldsymbol{A}$ 施行的将第二行的元素乘以 $2$ 加到第一行的对应元素上的初等行变换所得到的矩阵等于用初等矩阵 $\boldsymbol{E}[1+2(2)]$ 左乘 $\boldsymbol{A}$.
+
+
+\begin{corollary}%推论 2 
+矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价的充分必要条件是存在初等矩阵 $\boldsymbol{P}_{1}, \cdots, \boldsymbol{P}_{s}, \boldsymbol{Q}_{1}, \cdots, \boldsymbol{Q}_{t}$,使
+$$
+\boldsymbol{A}=\boldsymbol{P}_{1} \cdots \boldsymbol{P}_{s} \boldsymbol{B} \boldsymbol{Q}_{1} \cdots \boldsymbol{Q}_{t}. 
+$$
+\end{corollary}
+
+由于初等矩阵都是可逆矩阵, 因此还可以得到下面的推论.
+
+\begin{corollary}%推论 3 
+$m \times n$ 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价的充分必要条件是存在 $m$ 阶可逆矩阵 $\boldsymbol{P}$ 和 $n$ 阶可逆矩阵 $Q$, 使
+$$
+\boldsymbol{A}=\boldsymbol{P B Q}.
+$$
+\end{corollary}
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+<h2><a name="C6">$2.6$ 用初等变换求逆矩阵</a></h2>
+
+<ul>
+
+本章第 $3$ 节中给出了求逆矩阵的公式法——伴随矩阵法. 但对于较高阶的
+矩阵, 用伴随矩阵法求逆矩阵的计算量太大. 下面给出另一种简便、可行的求逆矩阵的方法———初等变换法.
+
+\begin{theorem}%定理 5 
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵,则下面的命题是等价的:
+
+$(1)$ $\boldsymbol{A}$ 是可逆的;
+
+$(2)$ $\boldsymbol{A} \cong \boldsymbol{E}, \boldsymbol{E}$ 是 $n$ 阶单位矩阵;
+
+$(3)$ 存在 $n$ 阶初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{s}$,使
+$$
+\boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s};
+$$
+
+$(4)$ $\boldsymbol{A}$ 可经过一系列初等行 (列)变换化为 $\boldsymbol{E}$.
+\end{theorem}
+
+
+\begin{proof} 
+$(1)$ $\Rightarrow$ $(2)$. $\quad$ 由定理 $2$ 和定理 $3$ , 对 $\boldsymbol{A}$ 施行若干次初等变换可将其化为等价标准形 $\boldsymbol{D}$. 而由定理 $4$, 对 $\boldsymbol{A}$ 施行初等变换相当于用相应的初等矩阵乘 $\boldsymbol{A}$, 因为 $\boldsymbol{A}$ 可逆, 且初等矩阵可逆, 则其乘积亦可逆, 所以 $\boldsymbol{D}$ 可逆, 即 $|\boldsymbol{D}| \neq 0$. 于是 $\boldsymbol{D}$ 不能有任一行 (列) 的元素全为 0 , 因此 $\boldsymbol{D}=\boldsymbol{E}$, 即 $\boldsymbol{A} \cong \boldsymbol{E}$.
+
+$(2)$ $\Rightarrow$ $(3)$. $\quad$ 由 $\boldsymbol{A} \cong \boldsymbol{E}$, 根据等价的对称性知 $\boldsymbol{E} \cong \boldsymbol{A}$, 即 $\boldsymbol{E}$ 可经若干次初等变换化为 $\boldsymbol{A}$, 从而存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{r}, \cdots, \boldsymbol{P}_{s}$, 使
+$$
+\boldsymbol{P}_{1} \cdots \boldsymbol{P}_{r} \boldsymbol{E} \boldsymbol{P}_{r+1} \cdots \boldsymbol{P}_{s}=\boldsymbol{A}, 
+$$
+即
+$$
+\boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}.
+$$
+
+$(3)$ $\Rightarrow$ $(4)$.$\quad$  由
+$$
+\boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}, 
+$$
+有
+$$
+\boldsymbol{P}_{s}^{-1} \cdots \boldsymbol{P}_{2}^{-1} \boldsymbol{P}_{1}^{-1} \boldsymbol{A}=\boldsymbol{E},
+$$
+由于 $\boldsymbol{P}_{1}^{-1}, \boldsymbol{P}_{2}^{-1}, \cdots, \boldsymbol{P}_{s}^{-1}$ 仍是初等矩阵, 由定理 $4$, 上式说明对 $\boldsymbol{A}$ 施行若干次初等行变换可将其化为 $\boldsymbol{E}$. 列的情形类似可证得.
+
+$(4)$ $\Rightarrow$ $(1)$. $\quad$ 设 $\boldsymbol{A}$ 可经过一系列初等行变换化为 $\boldsymbol{E}$, 则存在初等矩阵 $\boldsymbol{Q}_{1}$, $\boldsymbol{Q}_{2}, \cdots, \boldsymbol{Q}_{s}$, 使
+$$
+\boldsymbol{Q}_{1} \boldsymbol{Q}_{2} \cdots \boldsymbol{Q}_{s} \boldsymbol{A}=\boldsymbol{E}.
+$$
+由于初等矩阵都是可逆的, 从而 $\boldsymbol{A}$ 可逆. 证毕.
+\end{proof}
+
+下面介绍用初等变换求逆矩阵的方法.
+
+若 $\boldsymbol{A}$ 可逆, 由定理 $5$ 的命题 $(4)$ 和定理 $4$ 知, 存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{m}$, 使
+\begin{equation}\label{eq2-2}
+\boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{E}. %\tag{2-2}
+\end{equation}
+上式两端右乘 $\boldsymbol{A}^{-1}$, 则有
+\begin{equation}\label{eq2-3}
+\boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{E}=\boldsymbol{A}^{-1}. %\tag{2-3}
+\end{equation}
+式 $(\ref{eq2-2})$ 和式 $(\ref{eq2-3})$ 表明, 对 $\boldsymbol{A}$ 施行一系列初等行变换可将其化为 $\boldsymbol{E}$, 则对 $\boldsymbol{E}$ 施行相同的一系列初等行变换可将其化为 $\boldsymbol{A}^{-1}$. 于是得到用初等变换求逆矩阵的方法: 构造一个 $n \times 2 n$ 矩阵 $(\boldsymbol{A} \, \vdots\,  \boldsymbol{E})$, 用初等行变换将左边的 $\boldsymbol{A}$ 化为 $\boldsymbol{E}$ 时, 右边的 $\boldsymbol{E}$便化为了 $\boldsymbol{A}^{-1}$, 即
+$$
+(\boldsymbol{A}\, \vdots\, \boldsymbol{E}) \xrightarrow{\text { 初等行变换 }}\left(\boldsymbol{E} \, \vdots\, \boldsymbol{A}^{-1}\right).
+$$
+
+
+\begin{example}%例 24 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+0 & 1 & 2 \\
+1 & 1 & 4 \\
+2 & -1 & 0
+\end{array}\right),
+$$
+求 $\boldsymbol{A}^{-1}$.
+\end{example}
+
+\begin{solution}  
+对 $(\boldsymbol{A} \, \vdots\,  \boldsymbol{E})$ 作初等行变换:
+$$
+\begin{aligned}
+ (\boldsymbol{A} \, \vdots\,  \boldsymbol{E}) 
+&=\left(\begin{array}{rrr:lll}
+0 & 1 & 2 & 1 & 0 & 0 \\
+1 & 1 & 4 & 0 & 1 & 0 \\
+2 & -1 & 0 & 0 & 0 & 1
+\end{array}\right) \xrightarrow{r_{1} \leftrightarrow r_{2}}\left(\begin{array}{rrr:rrr}
+1 & 1 & 4 & 0 & 1 & 0 \\
+0 & 1 & 2 & 1 & 0 & 0 \\
+2 & -1 & 0 & 0 & 0 & 1
+\end{array}\right) \\
+& \xrightarrow{r_{3}+(-2) \times r_{1}}\left(\begin{array}{rrr:rrr}
+1 & 1 & 4 & 0 & 1 & 0 \\
+0 & 1 & 2 & 1 & 0 & 0 \\
+0 & -3 & -8 & 0 & -2 & 1
+\end{array}\right) \\
+& \xrightarrow{r_{3}+3 \times r_{2}}\left(\begin{array}{rrr:rrr}
+1 & 1 & 4 & 0 & 1 & 0 \\
+0 & 1 & 2 & 1 & 0 & 0 \\
+0 & 0 & -2 & 3 & -2 & 1
+\end{array}\right)\\
+& \xrightarrow[r_1+(-1) \times r_2]{\substack{r_2+r_3 \\
+r_1+2 \times r_3}}\left(\begin{array}{rrr:rrr}
+1 & 0 & 0 & 2 & -1 & 1 \\
+0 & 1 & 0 & 4 & -2 & 1 \\
+0 & 0 & -2 & 3 & -2 & 1
+\end{array}\right)\\
+& \xrightarrow{-\frac{1}{2} \times r_{3}} \left(\begin{array}{rrr:rrr}
+1 & 0 & 0 & 2 & -1 & 1 \\
+0 & 1 & 0 & 4 & -2 & 1 \\
+0 & 0 & 1 & -\frac{3}{2} & 1 & -\frac{1}{2}
+\end{array}\right).
+\end{aligned}
+$$
+
+于是
+$$
+\boldsymbol{A}^{-1}=\left(\begin{array}{rrr}
+2 & -1 & 1 \\
+4 & -2 & 1 \\
+-\frac{3}{2} & 1 & -\frac{1}{2}
+\end{array}\right).
+$$
+\end{solution}
+
+\textbf{注意:} 也可以利用初等列变换求逆矩阵,即
+$$
+\left(\begin{array}{c}
+\boldsymbol{A} \\ \hdashline
+\boldsymbol{E}
+\end{array}\right) \xrightarrow{\text { 初等列变换 }}\left(\begin{array}{c}
+\boldsymbol{E} \\ \hdashline
+\boldsymbol{A}^{-1}
+\end{array}\right) .
+$$
+
+
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+
+
+<h2><a name="C7">$2.7$ 矩阵的秩</a></h2>
+
+<ul>
+本节将通过矩阵的子式来判断矩阵的一个内在特性, 即所谓矩阵的秩. 秩对于矩阵理论的研究和应用十分重要.
+
+\begin{definition}%定义 13 
+在一个 $s \times n$ 矩阵 $\boldsymbol{A}$ 中任意选定 $k$ 行和 $k$ 列, 位于这些选定的行和列的交叉位置的 $k^{2}$ 个元素按原来的次序所组成的 $k$ 阶行列式, 称为 $\boldsymbol{A}$ 的一个 $k$ 阶子式.
+\end{definition}
+
+显然, $k \leqslant \min \{s, n\}$ ( $s, n$ 中较小的一个).
+
+\begin{example}%例 25 
+在矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrrr}
+1 & 1 & 3 & 6 & 1 \\
+0 & 1 & -2 & 4 & 0 \\
+0 & 0 & 0 & 5 & 3 \\
+0 & 1 & 1 & 0 & 2
+\end{array}\right)
+$$
+中, 选定第 $1,3$ 行和第 $3,4$ 列, 则位于其交叉位置的元素所组成的二阶行列式
+$$
+\left|\begin{array}{ll}
+3 & 6 \\
+0 & 5
+\end{array}\right|
+$$
+就是 $\boldsymbol{A}$ 的一个二阶子式. 易见, $\boldsymbol{A}$ 的二阶子式共有 $\mathrm{C}_{4}^{2} \cdot \mathrm{C}_{5}^{2}=60$ 个.
+\end{example}
+
+一般地, $s \times n$ 矩阵 $\boldsymbol{A}$ 的 $k$ 阶子式共有 $\mathrm{C}_{s}^{k} \cdot \mathrm{C}_{n}^{k}$ 个.
+
+\begin{definition}%定义 14 
+设 $\boldsymbol{A}$ 为 $s \times n$ 矩阵, 如果至少存在 $\boldsymbol{A}$ 的一个 $r$ 阶子式不为 $0$ , 而 $\boldsymbol{A}$的所有 $r+1$ 阶子式 (如果存在的话) 都为 $0$ , 则称数 $r$ 为矩阵 $\boldsymbol{A}$ 的秩, 记为 $r(\boldsymbol{A})$.并规定零矩阵的秩等于 $0$ .
+\end{definition}
+
+由行列式的性质可知, 在 $\boldsymbol{A}$ 中, 当所有 $r+1$ 阶子式都为 $0$ 时, 所有高于 $r+1$阶的子式也全为 $0$ , 因此, 矩阵 $\boldsymbol{A}$ 的秩 $r(\boldsymbol{A})$ 就是 $\boldsymbol{A}$ 的非零子式的最高阶数. 若 $r(\boldsymbol{A})=r$, 则 $\boldsymbol{A}$ 一定存在一个 $r$ 阶非零子式, 称为 $\boldsymbol{A}$ 的最高阶非零子式. 一般来说, $\boldsymbol{A}$ 的最高阶非零子式可能不止一个.
+
+\begin{example}%例26 
+求矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrr}
+1 & 2 & 3 \\
+2 & 3 & -5 \\
+4 & 7 & 1
+\end{array}\right)
+$$
+的秩.
+\end{example}
+
+\begin{solution}  
+在 $\boldsymbol{A}$ 中, 存在一个二阶子式
+$$
+\left|\begin{array}{rr}
+1 & 3 \\
+2 & -5
+\end{array}\right| \neq 0,
+$$
+又 $\boldsymbol{A}$ 的三阶子式只有一个 $|\boldsymbol{A}|$, 且
+$$
+|\boldsymbol{A}|=\left|\begin{array}{rrr}
+1 & 2 & 3 \\
+2 & 3 & -5 \\
+4 & 7 & 1
+\end{array}\right|=0. 
+$$
+故 $r(\boldsymbol{A})=2$.
+\end{solution}
+
+
+\begin{example}%例 27 
+已知矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{llll}
+a & 1 & 1 & 1 \\
+1 & a & 1 & 1 \\
+1 & 1 & a & 1 \\
+1 & 1 & 1 & a
+\end{array}\right)
+$$
+的秩为 $3$ , 求 $a$ 的值.
+\end{example}
+
+\begin{solution}  
+由于 $r(\boldsymbol{A})=3$, 则 $|\boldsymbol{A}|=0$, 即
+$$
+\begin{aligned}
+\left|\begin{array}{llll}
+a & 1 & 1 & 1 \\
+1 & a & 1 & 1 \\
+1 & 1 & a & 1 \\
+1 & 1 & 1 & a
+\end{array}\right| & =(a+3)\left|\begin{array}{llll}
+1 & 1 & 1 & 1 \\
+1 & a & 1 & 1 \\
+1 & 1 & a & 1 \\
+1 & 1 & 1 & a
+\end{array}\right| \\
+& =(a+3)\left|\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & a-1 & 0 & 0 \\
+0 & 0 & a-1 & 0 \\
+0 & 0 & 0 & a-1
+\end{array}\right| \\
+& =(a+3)(a-1)^{3}=0 .
+\end{aligned}
+$$
+由此得 $a=-3$ 或 $a=1$.
+
+当 $a=1$ 时, 显然, 有 $r(\boldsymbol{A})=1$, 不符合题意;
+
+当 $a=-3$ 时, $\boldsymbol{A}$ 的左上角的三阶子式
+$$
+\left|\begin{array}{rrr}
+-3 & 1 & 1 \\
+1 & -3 & 1 \\
+1 & 1 & -3
+\end{array}\right|=-16 \neq 0. 
+$$
+故当且仅当 $a=-3$ 时, $r(\boldsymbol{A})=3$.
+\end{solution}
+
+
+\begin{example}%例 28 
+求矩阵
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrrr}
+2 & -1 & 0 & 3 & -2 \\
+0 & 3 & 1 & -2 & 5 \\
+0 & 0 & 0 & 4 & -3 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right)
+$$
+的秩.
+\end{example}
+
+\begin{solution} 
+$\boldsymbol{A}$ 是一个行阶梯形矩阵, 其非零行只有三行, 故 $\boldsymbol{A}$ 的所有四阶子式全为零. 此外, $\boldsymbol{A}$ 的一个三阶子式
+$$
+\left|\begin{array}{rrr}
+2 & -1 & 3 \\
+0 & 3 & -2 \\
+0 & 0 & 4
+\end{array}\right|=24 \neq 0 .
+$$
+所以 $r(\boldsymbol{A})=3$.
+\end{solution}
+
+从例 $28$ 可以看出,一个行阶梯形矩阵的秩等于它的非零行的个数.
+
+设矩阵 $\boldsymbol{A}$ 是一个 $s \times n$ 矩阵, 显然, 有 $r(\boldsymbol{A}) \leqslant \min \{s, n\}$. 当 $r(\boldsymbol{A})=\min \{s, n\}$时, 称 $\boldsymbol{A}$ 为满秩矩阵;否则称 $\boldsymbol{A}$ 为降秩矩阵.
+
+
+利用定义计算矩阵的秩, 需要由高阶到低阶考虑矩阵的子式, 当矩阵的行数与列数较多时, 是非常麻烦的. 由于行阶梯形矩阵的秩实际上就是其非零行的个数, 故行阶梯形矩阵的秩很容易判断. 而矩阵都可以经过初等行变换化为行阶梯形矩阵,因而可考虑借助初等变换求矩阵的秩.
+
+
+\begin{theorem}%定理 6 
+两个同型矩阵等价的充分必要条件是它们的秩相等.
+\end{theorem}
+
+\begin{proof} 
+设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 是两个同型矩阵, 首先证明: 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $r(\boldsymbol{A})=r(\boldsymbol{B})$. 这只需证明每类初等行 (列) 变换不改变矩阵的秩即可. 显然, 第一类初等变换和第二类初等变换不改变矩阵的秩, 因此只就第三类初等变换证明即可.
+
+设 $\boldsymbol{A} \xrightarrow{r_{j}+k \times r_{i}} \boldsymbol{B}$, 考察 $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式 $\left|\boldsymbol{B}_{1}\right|$ :
+
+若 $\boldsymbol{B}_{1}$ 不包含 $\boldsymbol{B}$ 的第 $j$ 行, 则 $\left|\boldsymbol{B}_{1}\right|$ 也是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
+
+若 $\boldsymbol{B}_{1}$ 既包含 $\boldsymbol{B}$ 的第 $j$ 行也包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|$ 与 $\boldsymbol{A}$ 的一个 $r(\boldsymbol{A})+1$ 阶子式相等, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
+
+若 $\boldsymbol{B}_{1}$ 包含 $\boldsymbol{B}$ 的第 $j$ 行但不包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|=$ $\left|\boldsymbol{A}_{1}\right|+k\left|\boldsymbol{A}_{2}\right|$, 这里 $\left|\boldsymbol{A}_{1}\right|$ 与 $\left|\boldsymbol{A}_{2}\right|$ 都是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而也有 $\left|\boldsymbol{B}_{1}\right|=0$.
+
+综上所述, $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式都为零, 于是 $r(\boldsymbol{B}) \leqslant r(\boldsymbol{A})$.
+
+注意到 $\boldsymbol{B} \xrightarrow{r_{j}+(-k) \times r_{i}} \boldsymbol{A}$, 由上面的讨论知, $r(\boldsymbol{A}) \leqslant r(\boldsymbol{B})$. 因此有 $r(\boldsymbol{A})=r(\boldsymbol{B})$.
+
+反过来, 设 $r(\boldsymbol{A})=r(\boldsymbol{B})=r$, 则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 具有相同的等价标准形 $\left(\begin{array}{ll}\boldsymbol{E}_{r} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{O}\end{array}\right)$, 故由本章的定理 $3$ 知, $\boldsymbol{A} \cong \boldsymbol{B}$. 证毕.
+\end{proof}
+
+定理 $6$ 表明, 初等变换不改变矩阵的秩. 因此利用定理 $6$ 求一个矩阵的秩,相关问题只需用初等行变换将矩阵化为行阶梯形矩阵, 则其非零行的个数便是矩阵的秩.
+
+
+
+\begin{example}%例 29
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrrr}
+3 & 2 & 0 & 5 & 0 \\
+3 & -2 & 3 & 6 & -1 \\
+2 & 0 & 1 & 5 & -3 \\
+1 & 6 & -4 & -1 & 4
+\end{array}\right),   
+$$
+求 $r(\boldsymbol{A})$, 并求 $\boldsymbol{A}$ 的一个最高阶非零子式.
+\end{example}
+
+
+\begin{solution}  
+对 $\boldsymbol{A}$ 作初等行变换将其化为行阶梯形矩阵:
+$$
+\begin{aligned}
+\boldsymbol{A} 
+& =\left(\begin{array}{rrrrr}
+3 & 2 & 0 & 5 & 0 \\
+3 & -2 & 3 & 6 & -1 \\
+2 & 0 & 1 & 5 & -3 \\
+1 & 6 & -4 & -1 & 4
+\end{array}\right) \xrightarrow[\substack{r_{3}+(-2) \times r_{1} \\
+r_{4}+(-3) \times r_{1}}]{\substack{r_{1} \leftrightarrow r_{4} \\
+r_{2}(-1) \times r_{4}}}\left(\begin{array}{rrrrr}
+1 & 6 & -4 & -1 & 4 \\
+0 & -4 & 3 & 1 & -1 \\
+0 & -12 & 9 & 7 & -11 \\
+0 & -16 & 12 & 8 & -12
+\end{array}\right) \\
+& \xrightarrow[r_{4}+(-4) \times r_{2}]{r_{3}+(-3) \times r_{2}}\left(\begin{array}{rrrrr}
+1 & 6 & -4 & -1 & 4 \\
+0 & -4 & 3 & 1 & -1 \\
+0 & 0 & 0 & 4 & -8 \\
+0 & 0 & 0 & 4 & -8
+\end{array}\right)\\
+& \xrightarrow{r_{4}+(-1) \times r_{3}}\left(\begin{array}{rrrrr}
+1 & 6 & -4 & -1 & 4 \\
+0 & -4 & 3 & 1 & -1 \\
+0 & 0 & 0 & 4 & -8 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right).
+\end{aligned}
+$$
+因为行阶梯形矩阵的非零行的个数为 $3$ , 故 $r(\boldsymbol{A})=3$.
+
+再求 $\boldsymbol{A}$ 的一个最高阶非零子式. 由 $r(\boldsymbol{A})=3$ 知, $\boldsymbol{A}$ 的最高阶非零子式为三阶子式, $\boldsymbol{A}$的三阶子式共有 $\mathrm{C}_{4}^{3} \cdot \mathrm{C}_{5}^{3}=40$ 个, 要从 $40$ 个子式中找出一个非零子式是相当麻烦的. 现在选取 $\boldsymbol{A}$ 的第一列、第二列和第四列组成新矩阵, 记为
+$$
+\boldsymbol{B}=\left(\begin{array}{rrr}
+3 & 2 & 5 \\
+3 & -2 & 6 \\
+2 & 0 & 5 \\
+1 & 6 & -1
+\end{array}\right),
+$$
+其对应的行阶梯形矩阵是
+$$
+\left(\begin{array}{rrr}
+1 & 6 & -1 \\
+0 & -4 & 1 \\
+0 & 0 & \frac{4}{3} \\
+0 & 0 & 0
+\end{array}\right), 
+$$
+因此 $r(\boldsymbol{B})=3$. 故 $\boldsymbol{B}$ 中必有三阶非零子式. $\boldsymbol{B}$ 的三阶子式共有 $\mathrm{C}_{4}^{3}=4$ 个, 在这 $4$ 个三阶子式中选取一个非零子式显然要方便些. 事实上, $\boldsymbol{B}$ 的前 $3$ 行元素构成的子式
+$$
+\left|\begin{array}{rrr}
+3 & 2 & 5 \\
+3 & -2 & 6 \\
+2 & 0 & 5
+\end{array}\right|=-16 \neq 0. 
+$$
+因此这个子式便是 $\boldsymbol{A}$ 的一个最高阶非零子式.
+\end{solution}
+
+\begin{example}%例 30 
+设
+$$
+\boldsymbol{A}=\left(\begin{array}{rrrr}
+1 & -1 & 1 & 2 \\
+3 & \lambda & -1 & 2 \\
+5 & 3 & \mu & 6
+\end{array}\right)
+$$
+且 $r(\boldsymbol{A})=2$, 求 $\lambda$ 与 $\mu$ 的值.
+\end{example}
+
+\begin{solution}%解
+$$
+\begin{aligned}
+\boldsymbol{A} & =\left(\begin{array}{rrrr}
+1 & -1 & 1 & 2 \\
+3 & \lambda & -1 & 2 \\
+5 & 3 & \mu & 6
+\end{array}\right) \xrightarrow[r_{3}+(-5) \times r_{1}]{r_{2}+(-3) \times r_{1}}\left(\begin{array}{cccc}
+1 & -1 & 1 & 2 \\
+0 & \lambda+3 & -4 & -4 \\
+0 & 8 & \mu-5 & -4
+\end{array}\right) \\
+& \xrightarrow{r_{3}+(-1) \times r_{2}}\left(\begin{array}{cccc}
+1 & -1 & 1 & 2 \\
+0 & \lambda+3 & -4 & -4 \\
+0 & 5-\lambda & \mu-1 & 0
+\end{array}\right) .
+\end{aligned}
+$$
+由于 $r(\boldsymbol{A})=2$, 则 $5-\lambda=0$, $\mu-1=0$, 即 $\lambda=5, \mu=1$.
+\end{solution}
+
+\begin{example}%例 31 
+设 $\boldsymbol{A}$ 为 $n$ 阶可逆方阵, $\boldsymbol{B}$ 为 $n \times m$ 矩阵. 证明: $r(\boldsymbol{A B})=r(\boldsymbol{B})$.
+\end{example}
+
+\begin{proof}% 证 
+因为 $\boldsymbol{A}$ 可逆,故 $\boldsymbol{A}$ 可表示成若干个初等矩阵的乘积, 即存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots$, $\boldsymbol{P}_{s}$,使
+$$
+\boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}. 
+$$
+于是
+$$
+\boldsymbol{AB}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s} \boldsymbol{B}.
+$$
+这表明 $\boldsymbol{A} \boldsymbol{B}$ 是 $\boldsymbol{B}$ 经过 $s$ 次初等行变换而得到的. 由定理 $6$ 可知 $r(\boldsymbol{A B})=r(\boldsymbol{B})$.
+\end{proof}
+
+
+
+
+ 
+
+</ul>
+
+<a href="#C0">返回顶部</a>
+ 
+<h2><a name="C8">习题 $2$ $(\rm{A})$ 类</a></h2>
+
+
+<ol>
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{llll}1 & 2 & 1 & 2 \\ 2 & 1 & 2 & 1 \\ 1 & 2 & 3 & 4\end{array}\right), \boldsymbol{B}=\left(\begin{array}{rrrr}4 & 3 & 2 & 1 \\ -2 & 1 & -2 & 1 \\ 0 & -1 & 0 & -1\end{array}\right)$.
+
+
+$(1)$ 计算 $3 \boldsymbol{A}-\boldsymbol{B}, 2 \boldsymbol{A}+3 \boldsymbol{B}$;
+
+$(2)$ 若 $\boldsymbol{X}$ 满足 $\boldsymbol{A}+\boldsymbol{X}=\boldsymbol{B}$, 求 $\boldsymbol{X}$;
+
+$(3)$ 若 $\boldsymbol{Y}$ 满足 $(2 \boldsymbol{A}-\boldsymbol{Y})+2(\boldsymbol{B}-\boldsymbol{Y})=\boldsymbol{O}$, 求 $\boldsymbol{Y}$.
+
+\item 计算下列矩阵的乘积:
+  
+$(1)$ $\left(\begin{array}{r}1 \\ -1 \\ 2 \\ 3\end{array}\right)(3,2,-1,0)$; $\quad$
+$(2)$ $\left(\begin{array}{lll}5 & 0 & 0 \\ 0 & 3 & 1 \\ 0 & 2 & 1\end{array}\right)\left(\begin{array}{r}1 \\ -2 \\ 3\end{array}\right)$;
+
+$(3)$ $(1,2,3,4)\left(\begin{array}{l}3 \\ 2 \\ 1\end{array}\right)$; \,\, $\quad$$\quad$
+$(4)$ $\left(x_{1}, x_{2}, x_{3}\right)\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)\left(\begin{array}{l}x_{1} \\ x_{2} \\ x_{3}\end{array}\right)$;
+
+$(5)$ $\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}\end{array}\right)\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1\end{array}\right)$;
+
+$(6)$ $\left(\begin{array}{llll}1 & 2 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 0 & 3\end{array}\right)\left(\begin{array}{rrrr}1 & 0 & 3 & 1 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & -2 & 3 \\ 0 & 0 & 0 & -3\end{array}\right)$.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 1 & 1 \\ -1 & 1 & 1 \\ 1 & -1 & 1\end{array}\right), \boldsymbol{B}=\left(\begin{array}{rrr}1 & 2 & 1 \\ 1 & 3 & -1 \\ 2 & 1 & 4\end{array}\right)$.
+
+$(1)$ 计算 $\boldsymbol{A B}-2 \boldsymbol{A}, \boldsymbol{A B}-\boldsymbol{B A}$;
+
+$(2)$ 问: $(\boldsymbol{A}+\boldsymbol{B})(\boldsymbol{A}-\boldsymbol{B})$ 是否等于 $\boldsymbol{A}^{2}-\boldsymbol{B}^{2}$ ?
+
+\item 举例说明下列命题是错误的:
+  
+$(1)$ 若 $\boldsymbol{A}^{2}=\boldsymbol{O}$, 则 $\boldsymbol{A}=\boldsymbol{O}$;
+
+$(2)$ 若 $\boldsymbol{A}^{2}=\boldsymbol{A}$, 则 $\boldsymbol{A}=\boldsymbol{O}$ 或 $\boldsymbol{A}=\boldsymbol{E}$;
+
+$(3)$ 若 $\boldsymbol{A X}=\boldsymbol{A} \boldsymbol{Y}, \boldsymbol{A} \neq \boldsymbol{O}$, 则 $\boldsymbol{X}=\boldsymbol{Y}$.
+
+\item 计算:
+
+$(1)$ $\left(\begin{array}{lll}0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0\end{array}\right)^{3}$; $(2)$ $\left(\begin{array}{rr}\cos \theta & \sin \theta \\ -\sin \theta & \cos \theta\end{array}\right)^{k}\left(k\right.$ 为正整数); $(3)$ $\left(\begin{array}{ll}1 & 0 \\ \lambda & 1\end{array}\right)^{k}$ ( $k$ 为正整数).
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rrrr}a & b & c & d \\ b & -a & d & -c \\ -c & d & a & -b \\ -d & -c & b & a\end{array}\right)$, 求 $|\boldsymbol{A}|$.
+
+\item 已知线性变换
+$$
+\left\{\begin{array}{l}
+x_{1}=\phantom{-}2 y_{1}+\phantom{2}y_{2}, \\
+x_{2}=-2 y_{1}+3 y_{2}+2 y_{3}, \\
+x_{3}=\phantom{-}4 y_{1}+\phantom{2}y_{2}+5 y_{3};
+\end{array}\right. \quad \left\{\begin{array}{l}
+y_{1}=-3 z_{1}+z_{2}, \\
+y_{2}=\phantom{-}2 z_{1} \phantom{+2z_2} +\phantom{2}z_{3}, \\
+y_{3}=\phantom{-2z_1}-z_{2}+3 z_{3}.
+\end{array}\right.
+$$
+利用矩阵乘法,求从 $z_{1}, z_{2}, z_{3}$ 到 $x_{1}, x_{2}, x_{3}$ 的线性变换.
+
+\item 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵,且 $\boldsymbol{A}$ 为对称矩阵,证明: $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{B}$ 也是对称矩阵.
+
+\item 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶对称方阵, 证明: $\boldsymbol{A B}$ 为对称矩阵的充分必要条件是 $\boldsymbol{A B}=\boldsymbol{B A}$.
+
+\item 设 $\boldsymbol{A}$ 为 $n$ 阶对称矩阵, $\boldsymbol{B}$ 为 $n$ 阶反对称矩阵, 证明:
+
+$(1)$ $\boldsymbol{B}^{2}$ 是对称矩阵;
+
+$(2)$ $\boldsymbol{A B}-\boldsymbol{B A}$ 是对称矩阵, $\boldsymbol{A B}+\boldsymbol{B A}$ 是反对称矩阵.
+
+\item 求与 $\boldsymbol{A}=\left(\begin{array}{ll}1 & 1 \\ 0 & 1\end{array}\right)$ 可交换的全体二阶矩阵.
+
+\item 求与 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 0 & 0 \\ 0 & 1 & 2 \\ 0 & 1 & -2\end{array}\right)$ 可交换的全体三阶矩阵.
+
+\item 求下列矩阵的逆矩阵:
+
+$(1)$ $\left(\begin{array}{cc}1 & 2 \\ 2 & 5\end{array}\right)$; $\quad$
+$(2)$ $\left(\begin{array}{lll}1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 1\end{array}\right)$;
+$\quad$
+$(3)$ $\left(\begin{array}{ccc}1 & 2 & -1 \\ 3 & 4 & -2 \\ 5 & -4 & -1\end{array}\right)$; $\quad$
+$(4)$ $\left(\begin{array}{llll}1 & 0 & 0 & 0 \\ 1 & 2 & 0 & 0 \\ 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 4\end{array}\right)$.
+
+\item 利用逆矩阵, 解线性方程组
+$$
+\left\{\begin{aligned}
+x_{1}+\phantom{2}x_{2}+\phantom{2}x_{3} & =1, \\
+\phantom{x_1+}2 x_{2}+2 x_{3} & =1, \\
+x_{1}-\phantom{2}x_{2} \phantom{+21x_3} & =2.
+\end{aligned}\right.
+$$
+
+
+\item 证明下列命题:
+
+$(1)$ 若 $\boldsymbol{A}, \boldsymbol{B}$ 是同阶可逆矩阵,则 $(\boldsymbol{A B})^{*}=\boldsymbol{B}^{*} \boldsymbol{A}^{*}$;
+
+$(2)$ 若 $\boldsymbol{A}$ 可逆,则 $\boldsymbol{A}^{*}$ 可逆且 $\left(\boldsymbol{A}^{*}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{*}$;
+
+$(3)$ 若 $\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{E}$, 则 $\left(\boldsymbol{A}^{*}\right)^{\mathrm{T}}=\left(\boldsymbol{A}^{*}\right)^{-1}$.
+
+\item 已知线性变换
+$$
+\left\{\begin{array}{l}
+x_{1}=2 y_{1}+2 y_{2}+\phantom{2}y_{3}, \\
+x_{2}=3 y_{1}+\phantom{2}y_{2}+5 y_{3}, \\
+x_{3}=3 y_{1}+2 y_{2}+3 y_{3}.
+\end{array}\right.
+$$
+求从变量 $x_{1}, x_{2}, x_{3}$ 到变量 $y_{1}, y_{2}, y_{3}$ 的线性变换.
+
+\item 解下列矩阵方程:
+
+$(1)$ $\left(\begin{array}{ll}1 & 2 \\ 1 & 3\end{array}\right) \boldsymbol{X}=\left(\begin{array}{rr}4 & -6 \\ 2 & 1\end{array}\right)$;
+
+$(2)$ $\boldsymbol{X}\left(\begin{array}{rrr}2 & 1 & -1 \\ 2 & 1 & 0 \\ 1 & -1 & 1\end{array}\right)=\left(\begin{array}{rrr}2 & 1 & -1 \\ 2 & 1 & 0 \\ 1 & -1 & 1\end{array}\right)$;
+
+$(3)$ $\left(\begin{array}{rr}1 & 4 \\ -1 & 2\end{array}\right) \boldsymbol{X}\left(\begin{array}{rr}2 & 0 \\ -1 & 1\end{array}\right)=\left(\begin{array}{rr}3 & 1 \\ 0 & -1\end{array}\right)$;
+
+$(4)$ $\left(\begin{array}{lll}0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1\end{array}\right) \boldsymbol{X}\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0\end{array}\right)=\left(\begin{array}{rrr}0 & -4 & 3 \\ 2 & 0 & -1 \\ 1 & -2 & 0\end{array}\right)$.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rrr}4 & 2 & 3 \\ 1 & 1 & 0 \\ -1 & 2 & 3\end{array}\right), \boldsymbol{A B}=\boldsymbol{A}+2 \boldsymbol{B}$, 求 $\boldsymbol{B}$.
+
+\item 设 $m$ 次多项式 $f(x)=a_{0}+a_{1} x+\cdots+a_{m} x^{m}$, 记 $f(\boldsymbol{A})=a_{0} \boldsymbol{E}+a_{1} \boldsymbol{A}+\cdots+a_{m} \boldsymbol{A}^{m}$, 则 $f(\boldsymbol{A})$ 称为方阵 $\boldsymbol{A}$的 $m$ 次多项式.
+
+$(1)$ 设 $\boldsymbol{A}=\left(\begin{array}{ll}\lambda_{1} & \\ & \lambda_{2}\end{array}\right)$, 证明:
+$$
+\boldsymbol{A}^{k}=\left(\begin{array}{cc}
+\lambda_{1}^{k} & \\
+& \lambda_{2}^{k}
+\end{array}\right) (k \text { 为正整数 } ), \quad f(\boldsymbol{A})=\left(\begin{array}{ll}
+f\left(\lambda_{1}\right) & \\
+& f\left(\lambda_{2}\right)
+\end{array}\right) ;
+$$
+
+$(2)$ 设 $\boldsymbol{A}=\boldsymbol{P}^{-1} \boldsymbol{B P}$, 证明: $\boldsymbol{B}^{k}=\boldsymbol{P} \boldsymbol{A}^{-1}, f(\boldsymbol{B})=\boldsymbol{P} f(\boldsymbol{A}) \boldsymbol{P}^{-1}$.
+
+\item 设 $\boldsymbol{P}^{-1} \boldsymbol{A} \boldsymbol{P}=\boldsymbol{\Lambda}$, 其中 $\boldsymbol{P}=\left(\begin{array}{rr}-1 & -4 \\ 1 & 1\end{array}\right), \boldsymbol{\Lambda}=\left(\begin{array}{rr}-1 & 0 \\ 0 & 2\end{array}\right)$, 求 $\boldsymbol{A}^{10}$.
+
+\item 设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 证明:
+
+$(1)$ 若 $|\boldsymbol{A}|=0$, 则 $\left|\boldsymbol{A}^{*}\right|=0$;
+
+$(2)$ $|\boldsymbol{A}|=|\boldsymbol{A}|^{n-1}$.
+
+
+\item 设
+$$
+\boldsymbol{A}=\left(\begin{array}{llll}
+5 & 2 & 0 & 0 \\
+2 & 1 & 0 & 0 \\
+0 & 0 & 7 & 3 \\
+0 & 0 & 5 & 2
+\end{array}\right), \quad \boldsymbol{B}=\left(\begin{array}{llll}
+3 & 2 & 0 & 0 \\
+4 & 5 & 0 & 0 \\
+0 & 0 & 4 & 1 \\
+0 & 0 & 6 & 2
+\end{array}\right).
+$$
+
+求: $(1)$ $\boldsymbol{A} \boldsymbol{B}$; $(2)$ $\boldsymbol{B} \boldsymbol{A}$; $(3)$ $\boldsymbol{A}^{-1}$; $(4)$ $|\boldsymbol{A}|^{k}$ ( $k$ 为正整数).
+
+
+\item 利用矩阵分块的方法,证明下列矩阵可逆,并求其逆矩阵:
+
+$(1)$ $\left(\begin{array}{lllll}1 & 2 & 0 & 0 & 0 \\ 2 & 5 & 0 & 0 & 0 \\ 0 & 0 & 3 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1\end{array}\right)$;
+$\quad$
+$(2)$ $\left(\begin{array}{rrrr}0 & 0 & 3 & -1 \\ 0 & 0 & 2 & 1 \\ 2 & 1 & 0 & 0 \\ -2 & 3 & 0 & 0\end{array}\right)$;
+$\quad$
+$(3)$ $\left(\begin{array}{lllll}2 & 0 & 1 & 0 & 2 \\ 0 & 2 & 0 & 1 & 3 \\ 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1\end{array}\right)$.
+
+\item 利用初等变换将下列矩阵化为等价标准形:
+
+$(1)$ $\left(\begin{array}{ccc}3 & 2 & -4 \\ 3 & 2 & -4 \\ 1 & 2 & -1\end{array}\right)$;
+$\qquad\qquad$
+$(2)$ $\left(\begin{array}{rrrrr}1 & -1 & 2 & 1 & 0 \\ 2 & -2 & 4 & 2 & 0 \\ 3 & 0 & 6 & -1 & 1 \\ 3 & 0 & 6 & 3 & 1\end{array}\right)$.
+
+\item 利用初等变换求下列矩阵的逆矩阵:
+
+$(1)$ $\left(\begin{array}{lll}3 & 2 & 1 \\ 3 & 1 & 5 \\ 3 & 2 & 3\end{array}\right)$;$\quad\qquad\qquad$
+$(2)$ $\left(\begin{array}{rrrr}3 & -2 & 0 & -1 \\ 0 & 2 & 2 & 1 \\ 1 & -2 & -3 & -2 \\ 3 & 1 & 2 & 1\end{array}\right)$;
+
+$(3)$ $\left(\begin{array}{rrr}-11 & 2 & 2 \\ -4 & 0 & 1 \\ 6 & -1 & -1\end{array}\right)$;$\qquad$
+$(4)$ $\left(\begin{array}{llll}1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 0 \\ 1 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0\end{array}\right)$.
+
+\item 求下列矩阵的秩:
+
+$(1)$ $\left(\begin{array}{rrrrr}0 & 1 & 1 & -1 & 2 \\ 0 & 2 & -2 & -2 & 0 \\ 0 & -1 & -1 & 1 & 1 \\ 1 & 1 & 0 & 1 & -1\end{array}\right)$; $\qquad$
+$(2)$ $\left(\begin{array}{rrrrr}1 & -1 & 2 & 1 & 0 \\ 2 & -2 & 4 & -2 & 0 \\ 3 & 0 & 6 & -1 & 1 \\ 0 & 3 & 0 & 0 & 1\end{array}\right)$;
+
+$(3)$ $\left(\begin{array}{rrrrr}14 & 12 & 6 & 8 & 2 \\ 6 & 104 & 21 & 9 & 17 \\ 7 & 6 & 3 & 4 & 1 \\ 35 & 30 & 15 & 20 & 5\end{array}\right)$; $\qquad$
+$(4)$ $\left(\begin{array}{rrrrr}1 & 0 & 0 & 1 & 4 \\ 0 & 1 & 0 & 2 & 5 \\ 0 & 0 & 1 & 3 & 6 \\ 1 & 2 & 3 & 14 & 32 \\ 4 & 5 & 6 & 32 & 77\end{array}\right)$;
+
+$(5)$ $\left(\begin{array}{lllll}1 & 0 & 1 & 0 & 0 \\ 1 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 & 0 \\ 0 & 1 & 0 & 1 & 1\end{array}\right)$; $\qquad\qquad\quad$
+$(6)$ $\left(\begin{array}{cccc}1 & a & a & a \\ a & 1 & a & a \\ a & a & 1 & a \\ a & a & a & 1\end{array}\right)$.
+
+\item 已知
+$$
+\boldsymbol{A}=\left(\begin{array}{l}
+1 \\
+2 \\
+3
+\end{array}\right)(1,-1,0), \quad \boldsymbol{B}=\left(\begin{array}{rrr}
+1 & 2 & -1 \\
+2 & a & 2 \\
+-1 & 2 & 3
+\end{array}\right).
+$$
+若 $r(\boldsymbol{A B}+\boldsymbol{B})=2$, 求 $a$.
+
+</ol>
+
+<a href="#C0">返回顶部</a>
+
+
+<h2><a name="C9">习题 $2$ $(\rm{B})$ 类</a></h2>
+
+\item 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵, 则下列选项中不成立的是 $(\qquad )$.
+  
+A. $r\left(\begin{array}{cc}\boldsymbol{A} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\end{array}\right)=2 r(\boldsymbol{A})$
+$\qquad$
+B. $r\left(\begin{array}{ll}\boldsymbol{A} & \boldsymbol{A} \boldsymbol{B} \\ \boldsymbol{O} & \boldsymbol{A}^{\mathrm{T}}\end{array}\right)=2 r(\boldsymbol{A})$
+
+C. $r\left(\begin{array}{cc}\boldsymbol{A} & \boldsymbol{B} \boldsymbol{A} \\ \boldsymbol{O} & \boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}\end{array}\right)=2 r(\boldsymbol{A})$
+$\qquad$
+D. $r\left(\begin{array}{cc}\boldsymbol{A} & \boldsymbol{O} \\ \boldsymbol{B A} & \boldsymbol{A}^{\mathrm{T}}\end{array}\right)=2 r(\boldsymbol{A})$
+
+\item 已知矩阵 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 0 & -1 \\ 2 & -1 & 1 \\ -1 & 2 & -5\end{array}\right)$, 若存在下三角形可逆矩阵 $\boldsymbol{P}$ 和上三角形可逆矩阵 $\boldsymbol{Q}$, 使 $\boldsymbol{P} \boldsymbol{A} \boldsymbol{Q}$ 为对角矩阵, 则 $\boldsymbol{P}, \boldsymbol{Q}$ 分别为 $(\qquad)$.
+  
+A. $\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right),\left(\begin{array}{lll}1 & 0 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 1\end{array}\right)$
+$\qquad\qquad$
+B. $\left(\begin{array}{rrr}1 & 0 & 0 \\ 2 & -1 & 0 \\ -3 & 2 & 1\end{array}\right),\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)$
+
+C. $\left(\begin{array}{rrr}1 & 0 & 0 \\ 2 & -1 & 0 \\ -3 & 2 & 1\end{array}\right),\left(\begin{array}{lll}1 & 0 & 1 \\ 0 & 1 & 3 \\ 0 & 0 & 1\end{array}\right)$
+$\qquad\,\,$
+D. $\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 3 & 1\end{array}\right),\left(\begin{array}{rrr}1 & 2 & -3 \\ 0 & -1 & 2 \\ 0 & 0 & 1\end{array}\right)$
+
+\item 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵, 则必有 $(\qquad)$.
+
+A. $|\boldsymbol{A}+\boldsymbol{B}|=|\boldsymbol{A}|+|\boldsymbol{B}|$
+$\qquad$
+B. $\boldsymbol{A B}=\boldsymbol{B A}$
+
+C. $|\boldsymbol{A B}|=|\boldsymbol{B A}|$
+$\qquad\qquad\quad$
+D. $(\boldsymbol{A}+\boldsymbol{B})^{-1}=\boldsymbol{A}^{-1}+\boldsymbol{B}^{-1}$
+
+\item 设 $\boldsymbol{A}$ 为 $n(n \geqslant 2)$ 阶可逆矩阵, 交换 $\boldsymbol{A}$ 的第一行和第二行得矩阵 $\boldsymbol{B}$, $\boldsymbol{A}^*, \boldsymbol{B}^*$ 分别为 $\boldsymbol{A}, \boldsymbol{B}$ 的伴随矩阵, 则$(\qquad)$.
+
+A. 交换 $\boldsymbol{A}^{*}$ 的第一列和第二列得 $\boldsymbol{B}$
+$\qquad$
+B. 交换 $\boldsymbol{A}^{*}$ 的第一行和第二行得 $\boldsymbol{B}^{*}$
+
+C. 交换 $\boldsymbol{A}^{*}$ 的第一列和第二列得 $-\boldsymbol{B}$
+$\quad\,\,$
+D. 交换 $\boldsymbol{A}^{*}$ 的第一行和第二行得 $-\boldsymbol{B}^{*}$
+
+\item 设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 且 $|\boldsymbol{A}|=a \neq 0$, 则 $|\boldsymbol{A}|=(\qquad)$.
+  
+A. $a$
+$\qquad\qquad$
+B. $\frac{1}{a}$
+$\qquad\qquad$
+C. $a^{n-1}$
+$\qquad\qquad$
+D. $a^{n}$
+
+\item 已知 $\boldsymbol{Q}=\left(\begin{array}{lll}1 & 2 & 3 \\ 2 & 4 & 1 \\ 3 & 6 & 9\end{array}\right), \boldsymbol{P}$ 为三阶非零矩阵, 且满足 $\boldsymbol{P} \boldsymbol{Q}=\boldsymbol{O}$, 则 $(\qquad)$.
+  
+A. $t=6$ 时, $\boldsymbol{P}$ 的秩为 $1$
+$\qquad$
+B. $t=6$ 时, $\boldsymbol{P}$ 的秩为 $2$
+
+C. $t \neq 6$ 时, $\boldsymbol{P}$ 的秩为 $1$
+$\qquad$
+D. $t \neq 6$ 时, $\boldsymbol{P}$ 的秩为 $2$
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rr}2 & 1 \\ -1 & 2\end{array}\right), \boldsymbol{E}$ 为二阶单位矩阵, 矩阵 $\boldsymbol{B}$ 满足 $\boldsymbol{B} \boldsymbol{A}=\boldsymbol{B}+2 \boldsymbol{E}$, 则 $|\boldsymbol{B}|= \underline{\qquad\qquad}$.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 2 & -2 \\ 4 & t & 3 \\ 3 & -1 & 1\end{array}\right), \boldsymbol{B}$ 为三阶非零矩阵, 且 $\boldsymbol{A} \boldsymbol{B}=\boldsymbol{O}$, 则 $t= \underline{\qquad\qquad}$.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{llll}k & 1 & 1 & 1 \\ 1 & k & 1 & 1 \\ 1 & 1 & k & 1 \\ 1 & 1 & 1 & k\end{array}\right)$, 且 $r(\boldsymbol{A})=3$, 则 $k= \underline{\qquad\qquad}$.
+
+\item 设 $\boldsymbol{A}$ 为 $4 \times 3$ 矩阵, 且 $r(\boldsymbol{A})=2, \boldsymbol{B}=\left(\begin{array}{rrr}1 & 0 & 2 \\ 0 & 2 & 0 \\ -1 & 0 & 3\end{array}\right)$, 则 $r(\boldsymbol{A} \boldsymbol{B})= \underline{\qquad\qquad}$.
+
+\item 设方阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{2}-\boldsymbol{A}-2 \boldsymbol{E}=\boldsymbol{O}$, 证明: $\boldsymbol{A}$ 及 $\boldsymbol{A}+2 \boldsymbol{E}$ 都可逆, 并求 $\boldsymbol{A}^{-1}$ 及 $(\boldsymbol{A}+2 \boldsymbol{E})^{-1}$.
+
+\item 设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 满足 $\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{E}$, 且 $|\boldsymbol{A}|<0$, 求 $|\boldsymbol{A}+\boldsymbol{E}|$.
+
+\item 若 $\boldsymbol{A}$ 为三阶方阵, 且 $|\boldsymbol{A}|=\frac{1}{2}$, 求 $\left|(3 \boldsymbol{A})^{-1}-2 \boldsymbol{A}^{*}\right|$ 的值.
+
+\item 设 $\boldsymbol{A}=\left(\begin{array}{cccc}a_{1} & & & \\ & a_{2} & & \\ & & \ddots & \\ & & & a_{n}\end{array}\right)$, 其中 $a_{i} \neq a_{j}(i \neq j ; i, j=1,2, \cdots, n)$. 证明 : 与 $\boldsymbol{A}$ 可交换的只能是对角矩阵.
+
+\item 设 $\boldsymbol{A}$ 为 $n$ 阶方阵 $(n \geqslant 2)$, 试证:
+
+
+$(1)$ 当 $r(\boldsymbol{A})=n$ 时, $r\left(\boldsymbol{A}^{*}\right)=n$;
+
+$(2)$ 当 $r(\boldsymbol{A})=n-1$ 时, $r\left(\boldsymbol{A}^{*}\right)=1$;
+
+$(3)$ 当 $r(\boldsymbol{A}) < n-1$ 时, $r\left(\boldsymbol{A}^{*}\right)=0$.
+
+\item 设 $\boldsymbol{A}, \boldsymbol{B}$ 为 $n$ 阶方阵, $\lambda$ 为数, 证明矩阵的秩有下列性质:
+
+
+$(1)$ $r(\boldsymbol{A})=r\left(\boldsymbol{A}^{\mathrm{T}}\right)$;
+
+$(2)$ 当 $\lambda \neq 0$ 时, $r(\lambda \boldsymbol{A})=r(\boldsymbol{A})$;
+
+$(3)$ $r(\boldsymbol{A}+\boldsymbol{B}) \leqslant r(\boldsymbol{A})+r(\boldsymbol{B})$;
+
+$(4)$ $r(\boldsymbol{A B}) \leqslant \min \{r(\boldsymbol{A}), r(\boldsymbol{B})\}$;
+
+$(5)$ 如果 $\boldsymbol{A}$ 可逆,则 $r(\boldsymbol{B A})=r(\boldsymbol{A B})=r(\boldsymbol{B})$.
+
+
+</ol>
+
+
+<a href="#C0">返回顶部</a>
+
+<br>
+<center>
+Copyright &copy; 2024 Hong  All Rights Reserved
+</center>
+
+</font>
+
+</div>
+
+</body>
+
+</html>
