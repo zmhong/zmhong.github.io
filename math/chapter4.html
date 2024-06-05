@@ -890,11 +890,14 @@ $$
 
 齐次线性方程组的解具有下面的性质.
 
-\begin{property}%性质 1 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $1$：</b></font>
 若 $\boldsymbol{\xi}_{1}$, $\boldsymbol{\xi}_{2}$ 是齐次线性方程组 (4-6) 的解, 则 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是齐次线性方程组 (4-6) 的解.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty1").style.display="none"'> 
+<div id= "divIDproperty1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 因为 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}$ 都是齐次线性方程组 (4-6) 的解, 则有
 $$
 \boldsymbol{A} \boldsymbol{\xi}_{1}=\mathbf{0}, \quad \boldsymbol{A} \boldsymbol{\xi}_{2}=\mathbf{0},
@@ -904,19 +907,22 @@ $$
 \boldsymbol{A}\left(\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}\right)=\boldsymbol{A} \boldsymbol{\xi}_{1}+\boldsymbol{A} \boldsymbol{\xi}_{2}=\mathbf{0}+\mathbf{0}=\mathbf{0}, 
 $$
 即 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是齐次线性方程组 (4-6) 的解. 证毕.
-\end{proof}
+</p></div></p>
 
-\begin{property}%性质 2 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $2$：</b></font>
 若 $\boldsymbol{\xi}$ 是齐次线性方程组 (4-6) 的解, $k$ 为任意实数, 则 $k \boldsymbol{\xi}$ 也是齐次线性方程组 (4-6) 的解.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty2").style.display="none"'> 
+<div id= "divIDproperty2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由 $\boldsymbol{A} \boldsymbol{\xi}=\mathbf{0}$, 得
 $$
 \boldsymbol{A}(k \boldsymbol{\xi})=k \boldsymbol{A} \boldsymbol{\xi}=k \mathbf{0}=\mathbf{0},
 $$
 故 $k \boldsymbol{\xi}$ 也是齐次线性方程组 (4-6) 的解. 证毕.
-\end{proof}
+</p></div></p>
 
 
 
@@ -1388,11 +1394,14 @@ $$
 
 非齐次线性方程组 (4-10) 的解与它的导出组 (4-11) 的解之间有下列性质.
 
-\begin{property}%性质 3 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $3$：</b></font>
 如果 $\boldsymbol{\eta}$ 是非齐次线性方程组 (4-10) 的一个解, $\boldsymbol{\xi}$ 是其导出组的一个解, 则 $\boldsymbol{\xi}+\boldsymbol{\eta}$ 是非齐次线性方程组 (4-10) 的一个解.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty3").style.display="none"'> 
+<div id= "divIDproperty3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由于
 $$
 \boldsymbol{A\eta}=\boldsymbol{b}, \quad \boldsymbol{A\xi} = \boldsymbol{0},
@@ -1402,13 +1411,16 @@ $$
 \boldsymbol{A}(\boldsymbol{\xi}+\boldsymbol{\eta})=\boldsymbol{A} \boldsymbol{\xi}+\boldsymbol{A} \boldsymbol{\eta}=\mathbf{0}+\boldsymbol{b}=\boldsymbol{b}
 $$
 知, $\boldsymbol{\xi}+\boldsymbol{\eta}$ 是非齐次线性方程组 (4-10) 的解. 证毕.
-\end{proof}
+</p></div></p>
 
-\begin{property}%性质 4 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $4$：</b></font>
 如果 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}$ 是非齐次线性方程组 (4-10) 的任意两个解, 则 $\boldsymbol{\eta}_{1}-\boldsymbol{\eta}_{2}$是其导出组的解.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty4").style.display="none"'> 
+<div id= "divIDproperty4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由
 $$
 \boldsymbol{A} \boldsymbol{\eta}_{1}=\boldsymbol{b}, \quad \boldsymbol{A} \boldsymbol{\eta}_{2}=\boldsymbol{b},
@@ -1418,8 +1430,7 @@ $$
 \boldsymbol{A}\left(\boldsymbol{\eta}_{1}-\boldsymbol{\eta}_{2}\right)=\boldsymbol{A} \boldsymbol{\eta}_{1}-\boldsymbol{A} \boldsymbol{\eta}_{2}=\boldsymbol{b}-\boldsymbol{b}=\mathbf{0},
 $$
 故 $\boldsymbol{\eta}_{1}-\boldsymbol{\eta}_{2}$ 为导出组的解. 证毕.
-\end{proof}
-
+</p></div></p>
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $5$：[非齐次线性方程组解的结构定理] </b></font>
