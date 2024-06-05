@@ -246,7 +246,7 @@ $$
 </p></div></p>
 
 
-从例 $1$ 和例 $2$ 可以归纳出计算特征值、特征向量的\textbf{具体步骤}:
+从例 $1$ 和例 $2$ 可以归纳出计算特征值、特征向量的<b>具体步骤</b>:
 
 第一步, 计算特征多项式 $|\boldsymbol{A}-\lambda \boldsymbol{E}|$;
 
@@ -598,11 +598,11 @@ $$
 
 矩阵的相似关系是一种等价关系, 满足下列性质:
 
-$(1)$ \textbf{反身性:} $\boldsymbol{A}$ 与其本身相似;
+$(1)$ <b>反身性:</b> $\boldsymbol{A}$ 与其本身相似;
 
-$(2)$ \textbf{对称性:} 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 则 $\boldsymbol{B}$ 与 $\boldsymbol{A}$ 相似;
+$(2)$ <b>对称性:</b> 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, 则 $\boldsymbol{B}$ 与 $\boldsymbol{A}$ 相似;
 
-$(3)$ \textbf{传递性:} 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, $\boldsymbol{B}$ 与 $\boldsymbol{C}$ 相似, 则 $\boldsymbol{A}$ 与 $\boldsymbol{C}$ 相似.
+$(3)$ <b>传递性:</b> 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, $\boldsymbol{B}$ 与 $\boldsymbol{C}$ 相似, 则 $\boldsymbol{A}$ 与 $\boldsymbol{C}$ 相似.
 
 以可逆矩阵 $\boldsymbol{P}$ 对方阵 $\boldsymbol{A}$ 进行运算 $\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P}$, 称为对 $\boldsymbol{A}$ 的相似变换. 
 
@@ -805,7 +805,7 @@ $$
 \end{array}\right),
 $$
 由定理 $5$ 可知, $\boldsymbol{A}$ 可对角化.
-
+<br>
 令
 $$
 \boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \boldsymbol{p}_{3}\right)=\left(\begin{array}{rrr}
@@ -822,7 +822,7 @@ $$
 0 & 0 & -2
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
 <b>注意:</b> 对角矩阵中特征值的排列次序与矩阵 $\boldsymbol{P}$ 中相应的特征向量的排列次序是一致的.
 
@@ -1032,7 +1032,7 @@ $$
 
 第三步, 以上面求出的 $n$ 个两两正交的单位特征向量为列向量所得的 $n$ 阶方阵, 即为所求的正交矩阵 $\boldsymbol{T}$; 以相应的特征值为主对角线元素的对角矩阵 $\boldsymbol{\Lambda}$,即为所求的 $\boldsymbol{T}^{-1} \boldsymbol{AT}$.
 
-\textbf{注意:} $\boldsymbol{T}$ 中列向量的次序与矩阵 $\boldsymbol{\Lambda}$ 主对角线上的特征值的次序相对应.
+<b>注意:</b> $\boldsymbol{T}$ 中列向量的次序与矩阵 $\boldsymbol{\Lambda}$ 主对角线上的特征值的次序相对应.
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -1198,8 +1198,8 @@ $$
 -1 & 1 & 7-\lambda & -3 \\
 1 & -1 & -3 & 7-\lambda
 \end{array}\right| \\
-& \xlongequal[\substack{c_{1}+c_{3} \\
-c_{1}+c_{4}}]{c_{1}+c_{2}}\left|\begin{array}{cccc}
+& \stackrel{\substack{c_{1}+c_{2} \\ c_{1}+c_{3} \\
+c_{1}+c_{4}}}\left|\begin{array}{cccc}
 4-\lambda & -3 & -1 & 1 \\
 4-\lambda & 7-\lambda & 1 & -1 \\
 4-\lambda & 1 & 7-\lambda & -3 \\
@@ -1211,19 +1211,19 @@ c_{1}+c_{4}}]{c_{1}+c_{2}}\left|\begin{array}{cccc}
 1 & 1 & 7-\lambda & -3 \\
 1 & -1 & -3 & 7-\lambda
 \end{array}\right| \\
-& \xlongequal[\substack{r_{3}+(-1) \times r_{1} \\
-r_{4}+(-1) \times r_{1}}]{r_{2}+(-1) \times r_{1}} (4-\lambda)\left|\begin{array}{cccc}
+& \stackrel{\substack{r_{2}+(-1) \times r_{1} \\ r_{3}+(-1) \times r_{1} \\
+r_{4}+(-1) \times r_{1}}}{=\!=\!=\!=\!=} (4-\lambda)\left|\begin{array}{cccc}
 1 & -3 & -1 & 1 \\
 0 & 10-\lambda & 2 & -2 \\
 0 & 4 & 8-\lambda & -4 \\
 0 & 2 & -2 & 6-\lambda
 \end{array}\right| \\
-& \xlongequal{\text { 按第一列展开 }}(4-\lambda)\left|\begin{array}{ccc}
+& \stackrel{\text { 按第一列展开 }}{=\!=\!=\!=}(4-\lambda)\left|\begin{array}{ccc}
 10-\lambda & 2 & -2 \\
 4 & 8-\lambda & -4 \\
 2 & -2 & 6-\lambda
 \end{array}\right| \\
-& \xlongequal{c_{1}+c_{2}}(4-\lambda)\left|\begin{array}{ccc}
+& \stackrel{c_{1}+c_{2}}{=\!=\!=\!=}(4-\lambda)\left|\begin{array}{ccc}
 12-\lambda & 2 & -2 \\
 12-\lambda & 8-\lambda & -4 \\
 0 & -2 & 6-\lambda
@@ -1233,7 +1233,7 @@ r_{4}+(-1) \times r_{1}}]{r_{2}+(-1) \times r_{1}} (4-\lambda)\left|\begin{array
 1 & 8-\lambda & -4 \\
 0 & -2 & 6-\lambda
 \end{array}\right| \\
-& \xlongequal{r_{2}+(-1) \times r_{1}}(4-\lambda)(12-\lambda)\left|\begin{array}{ccc}
+& \stackrel{r_{2}+(-1) \times r_{1}}{=\!=\!=\!=\!=\!=} (4-\lambda)(12-\lambda)\left|\begin{array}{ccc}
 1 & 2 & -2 \\
 0 & 6-\lambda & -2 \\
 0 & -2 & 6-\lambda
@@ -1662,7 +1662,7 @@ $$
 已知二次型 $f\left(x_{1}, x_{2}, x_{3}\right)=2 x_{1}^{2}+3 x_{2}^{2}+3 x_{3}^{2}+2 a x_{2} x_{3}(a>0)$, 通过正交变换可化为标准形 $f=y_{1}^{2}+2 y_{2}^{2}+5 y_{3}^{2}$, 求参数 $a$ 及所用的正交变换.
 </p>
 
-\textbf{分析: } 由于二次型 $f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$ 通过正交变换 $\boldsymbol{x}=\boldsymbol{T} \boldsymbol{y}$ 化成的标准形 $f=\lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\boldsymbol{\cdots}+$ $\lambda_{n} y_{n}^{2}$ 的平方项的系数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的特征值, 而且变换前后两个二次型的矩阵有下面的关系:
+<b>分析:</b> 由于二次型 $f=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}$ 通过正交变换 $\boldsymbol{x}=\boldsymbol{T} \boldsymbol{y}$ 化成的标准形 $f=\lambda_{1} y_{1}^{2}+\lambda_{2} y_{2}^{2}+\boldsymbol{\cdots}+$ $\lambda_{n} y_{n}^{2}$ 的平方项的系数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的特征值, 而且变换前后两个二次型的矩阵有下面的关系:
 $$
 \boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}=\left(\begin{array}{llll}
 \lambda_{1} & & & \\
@@ -1739,7 +1739,7 @@ $$
 -\frac{\sqrt{2}}{2} & 0 & \frac{\sqrt{2}}{2}
 \end{array}\right).
 $$
-</p></div></j>
+</p></div></p>
 
 用正交变换化二次型为标准形, 具有保持儿何形状不变的优点. 如果不限于用正交变换, 那么还有多种方法可把一次型化为标准形, 如配方法、初等变换法等. 下面通过实例分别介绍配方法和初等变换法.
 
