@@ -1110,13 +1110,16 @@ $$
 
 下面给出一个方阵可逆的充分必要条件. 
 
-\begin{theorem}%定理 1
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font> 
 设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 则 $\boldsymbol{A}$ 可逆的充分必要条件是 $|\boldsymbol{A}| \neq 0$, 且 $\boldsymbol{A}^{-1}=\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}$, 其中 $\boldsymbol{A}^{*}$为 $\boldsymbol{A}$ 的伴随矩阵.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font> 
 先证必要性. 由于 $\boldsymbol{A}$ 是可逆的, 则有 $\boldsymbol{A}^{-1}$, 使 $\boldsymbol{A}^{-1} \boldsymbol{A}=\boldsymbol{E}$, 故 $\left|\boldsymbol{A}^{-1} \boldsymbol{A}\right|=|\boldsymbol{E}|=1$,即 $\left|\boldsymbol{A}^{-1}\right| \cdot|\boldsymbol{A}|=1$. 所以 $|\boldsymbol{A}| \neq 0$.
-
+<br>
 再证充分性. 设 $|\boldsymbol{A}| \neq 0$. 由伴随矩阵 $\boldsymbol{A}^{*}$ 的性质, 有
 $$
 \boldsymbol{A} \boldsymbol{A}^{*}=\boldsymbol{A}^{*} \boldsymbol{A}=|\boldsymbol{A}| \boldsymbol{E}.
@@ -1126,7 +1129,7 @@ $$
 \boldsymbol{A}\left(\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}\right)=\left(\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}\right) \boldsymbol{A}=\boldsymbol{E}. 
 $$
 这说明 $\boldsymbol{A}$ 是可逆的, 且 $\boldsymbol{A}^{-1}=\frac{1}{|\boldsymbol{A}|} \boldsymbol{A}^{*}$. 证毕.
-\end{proof}
+</p></div></p>
 
 \begin{definition}%定义 9 
 设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 若 $|\boldsymbol{A}|=0$, 则称 $\boldsymbol{A}$ 为奇异矩阵;否则,称 $\boldsymbol{A}$ 为非奇异矩阵.
@@ -1969,14 +1972,16 @@ $$
 
 事实上,有下面的结论.
 
-\begin{theorem}%定理 2
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
 任何一个矩阵 $\boldsymbol{A}$ 总可以经过有限次初等行变换化为行阶梯形矩阵, 并进一步化为行最简形矩阵.
-\end{theorem}
+</p>
 
 
-\begin{theorem}%定理 3
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>
 任何一个矩阵都有等价标准形, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 当且仅当它们有相同的等价标准形. 
-\end{theorem}
+</p>
 
 <b>注意:</b> 与矩阵 $\boldsymbol{A}$ 等价的行阶梯形矩阵和行最简形矩阵不是唯一的, 但矩阵
 $\boldsymbol{A}$ 的等价标准形是唯一的.
@@ -2081,11 +2086,14 @@ $$
 
 
 
-\begin{theorem}%定理 4
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $4$：</b></font>
 对一个 $m \times n$ 矩阵 $\boldsymbol{A}$ 施行一次初等行变换, 相当于用相应的 $m$ 阶初等矩阵左乘 $\boldsymbol{A}$; 对 $\boldsymbol{A}$ 施行一次初等列变换, 相当于用相应的 $n$ 阶初等矩阵右乘 $\boldsymbol{A}$.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm4").style.display="none"'> 
+<div id= "divIDthm4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 这里只证初等行变换的情形, 初等列变换的情形可同样证明. 将矩阵 $\boldsymbol{A}$分块, 即
 $$
 \boldsymbol{A}=\left(\boldsymbol{A}_{1}, \cdots, \boldsymbol{A}_{i}, \cdots, \boldsymbol{A}_{j}, \cdots, \boldsymbol{A}_{m}\right)^{\mathrm{T}},
@@ -2125,7 +2133,7 @@ $$
 \end{array}\right),
 $$
 这相当于把 $\boldsymbol{A}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行. 证毕.
-\end{proof}
+</p></div></p>
 
 例如, 对矩阵
 $$
@@ -2184,25 +2192,27 @@ $$
 本章第 $3$ 节中给出了求逆矩阵的公式法——伴随矩阵法. 但对于较高阶的
 矩阵, 用伴随矩阵法求逆矩阵的计算量太大. 下面给出另一种简便、可行的求逆矩阵的方法———初等变换法.
 
-\begin{theorem}%定理 5 
-设 $\boldsymbol{A}$ 是 $n$ 阶方阵,则下面的命题是等价的:
-
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $5$：</b></font>
+设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 则下面的命题是等价的:
+<br>
 $(1)$ $\boldsymbol{A}$ 是可逆的;
-
+<br>
 $(2)$ $\boldsymbol{A} \cong \boldsymbol{E}, \boldsymbol{E}$ 是 $n$ 阶单位矩阵;
-
+<br>
 $(3)$ 存在 $n$ 阶初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{s}$,使
 $$
 \boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s};
 $$
 
 $(4)$ $\boldsymbol{A}$ 可经过一系列初等行 (列)变换化为 $\boldsymbol{E}$.
-\end{theorem}
-
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm5").style.display="none"'> 
+<div id= "divIDthm5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 $(1)$ $\Rightarrow$ $(2)$. $\quad$ 由定理 $2$ 和定理 $3$ , 对 $\boldsymbol{A}$ 施行若干次初等变换可将其化为等价标准形 $\boldsymbol{D}$. 而由定理 $4$, 对 $\boldsymbol{A}$ 施行初等变换相当于用相应的初等矩阵乘 $\boldsymbol{A}$, 因为 $\boldsymbol{A}$ 可逆, 且初等矩阵可逆, 则其乘积亦可逆, 所以 $\boldsymbol{D}$ 可逆, 即 $|\boldsymbol{D}| \neq 0$. 于是 $\boldsymbol{D}$ 不能有任一行 (列) 的元素全为 0 , 因此 $\boldsymbol{D}=\boldsymbol{E}$, 即 $\boldsymbol{A} \cong \boldsymbol{E}$.
-
+<br>
 $(2)$ $\Rightarrow$ $(3)$. $\quad$ 由 $\boldsymbol{A} \cong \boldsymbol{E}$, 根据等价的对称性知 $\boldsymbol{E} \cong \boldsymbol{A}$, 即 $\boldsymbol{E}$ 可经若干次初等变换化为 $\boldsymbol{A}$, 从而存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{r}, \cdots, \boldsymbol{P}_{s}$, 使
 $$
 \boldsymbol{P}_{1} \cdots \boldsymbol{P}_{r} \boldsymbol{E} \boldsymbol{P}_{r+1} \cdots \boldsymbol{P}_{s}=\boldsymbol{A}, 
@@ -2211,7 +2221,7 @@ $$
 $$
 \boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}.
 $$
-
+<br>
 $(3)$ $\Rightarrow$ $(4)$.$\quad$  由
 $$
 \boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}, 
@@ -2221,13 +2231,13 @@ $$
 \boldsymbol{P}_{s}^{-1} \cdots \boldsymbol{P}_{2}^{-1} \boldsymbol{P}_{1}^{-1} \boldsymbol{A}=\boldsymbol{E},
 $$
 由于 $\boldsymbol{P}_{1}^{-1}, \boldsymbol{P}_{2}^{-1}, \cdots, \boldsymbol{P}_{s}^{-1}$ 仍是初等矩阵, 由定理 $4$, 上式说明对 $\boldsymbol{A}$ 施行若干次初等行变换可将其化为 $\boldsymbol{E}$. 列的情形类似可证得.
-
+<br>
 $(4)$ $\Rightarrow$ $(1)$. $\quad$ 设 $\boldsymbol{A}$ 可经过一系列初等行变换化为 $\boldsymbol{E}$, 则存在初等矩阵 $\boldsymbol{Q}_{1}$, $\boldsymbol{Q}_{2}, \cdots, \boldsymbol{Q}_{s}$, 使
 $$
 \boldsymbol{Q}_{1} \boldsymbol{Q}_{2} \cdots \boldsymbol{Q}_{s} \boldsymbol{A}=\boldsymbol{E}.
 $$
 由于初等矩阵都是可逆的, 从而 $\boldsymbol{A}$ 可逆. 证毕.
-\end{proof}
+</p></div></p>
 
 下面介绍用初等变换求逆矩阵的方法.
 
@@ -2493,27 +2503,30 @@ $$
 利用定义计算矩阵的秩, 需要由高阶到低阶考虑矩阵的子式, 当矩阵的行数与列数较多时, 是非常麻烦的. 由于行阶梯形矩阵的秩实际上就是其非零行的个数, 故行阶梯形矩阵的秩很容易判断. 而矩阵都可以经过初等行变换化为行阶梯形矩阵,因而可考虑借助初等变换求矩阵的秩.
 
 
-\begin{theorem}%定理 6 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $6$：</b></font>
 两个同型矩阵等价的充分必要条件是它们的秩相等.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm6").style.display="none"'> 
+<div id= "divIDthm6" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 是两个同型矩阵, 首先证明: 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $r(\boldsymbol{A})=r(\boldsymbol{B})$. 这只需证明每类初等行 (列) 变换不改变矩阵的秩即可. 显然, 第一类初等变换和第二类初等变换不改变矩阵的秩, 因此只就第三类初等变换证明即可.
-
+<br>
 设 $\boldsymbol{A} \xrightarrow{r_{j}+k \times r_{i}} \boldsymbol{B}$, 考察 $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式 $\left|\boldsymbol{B}_{1}\right|$ :
-
+<br>
 若 $\boldsymbol{B}_{1}$ 不包含 $\boldsymbol{B}$ 的第 $j$ 行, 则 $\left|\boldsymbol{B}_{1}\right|$ 也是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
-
+<br>
 若 $\boldsymbol{B}_{1}$ 既包含 $\boldsymbol{B}$ 的第 $j$ 行也包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|$ 与 $\boldsymbol{A}$ 的一个 $r(\boldsymbol{A})+1$ 阶子式相等, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
-
+<br>
 若 $\boldsymbol{B}_{1}$ 包含 $\boldsymbol{B}$ 的第 $j$ 行但不包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|=$ $\left|\boldsymbol{A}_{1}\right|+k\left|\boldsymbol{A}_{2}\right|$, 这里 $\left|\boldsymbol{A}_{1}\right|$ 与 $\left|\boldsymbol{A}_{2}\right|$ 都是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而也有 $\left|\boldsymbol{B}_{1}\right|=0$.
-
+<br>
 综上所述, $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式都为零, 于是 $r(\boldsymbol{B}) \leqslant r(\boldsymbol{A})$.
-
+<br>
 注意到 $\boldsymbol{B} \xrightarrow{r_{j}+(-k) \times r_{i}} \boldsymbol{A}$, 由上面的讨论知, $r(\boldsymbol{A}) \leqslant r(\boldsymbol{B})$. 因此有 $r(\boldsymbol{A})=r(\boldsymbol{B})$.
-
+<br>
 反过来, 设 $r(\boldsymbol{A})=r(\boldsymbol{B})=r$, 则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 具有相同的等价标准形 $\left(\begin{array}{ll}\boldsymbol{E}_{r} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{O}\end{array}\right)$, 故由本章的定理 $3$ 知, $\boldsymbol{A} \cong \boldsymbol{B}$. 证毕.
-\end{proof}
+</p></div></p>
 
 定理 $6$ 表明, 初等变换不改变矩阵的秩. 因此利用定理 $6$ 求一个矩阵的秩,相关问题只需用初等行变换将矩阵化为行阶梯形矩阵, 则其非零行的个数便是矩阵的秩.
 
