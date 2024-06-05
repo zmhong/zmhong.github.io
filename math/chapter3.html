@@ -73,7 +73,8 @@ $$
 $$
 表示.  $1 \times n$ 矩阵和 $n \times 1$ 矩阵也可以看作有序数组.  一个企业一年中, 从 $1$ 月到 $12$ 月每月的产值, 也可以用一个有序数组 $\left(a_{1}, a_{2}, \cdots, a_{12}\right)$ 表示. 有序数组的应用非常广泛, 有必要对它们进行深入的讨论.
 
-\begin{definition}%定义 $1$
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 $n$ 个数组成的有序数组
 \begin{equation*}
 \left(a_{1}, a_{2}, \cdots, a_{n}\right) \tag{3-1}
@@ -88,7 +89,7 @@ a_{n}
 \end{array}\right)
 \]
 称为一个 $n$ 维向量, 简称向量.
-\end{definition}
+</p>
 
 
 一般用小写黑体字母, 如 $\boldsymbol{\alpha}, \boldsymbol{\beta}, \boldsymbol{\gamma}, \cdots$ 表示向量. 式 (3-1) 称为一个行向量, 式 (3-2) 称为一个列向量, 数 $a_{1}, a_{2}, \cdots, a_{n}$ 称为这个向量的分量, $a_{i}$ 称为这个向量的第 $i$ 个分量或坐标. 分量都是实数的向量称为实向量, 分量是复数的向量称为复向量.
@@ -100,42 +101,45 @@ $$
 \boldsymbol{\alpha}=\left(a_{1}, a_{2}, \cdots, a_{n}\right), \quad \boldsymbol{\beta}=\left(b_{1}, b_{2}, \cdots, b_{n}\right), \quad \boldsymbol{\gamma}=\left(c_{1}, c_{2}, \cdots, c_{n}\right).
 $$
 
-\begin{definition}%定义 2 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $2$：</b></font>
 如果 $\boldsymbol{\alpha}$ 和 $\boldsymbol{\beta}$ 对应的分量都相等, 即
 $$
 a_{i}=b_{i}, \quad i=1,2, \cdots, n,
 $$
 就称这两个向量相等, 记为 $\boldsymbol{\alpha}=\boldsymbol{\beta}$.
-\end{definition}
+</p>
 
-\begin{definition}%定义 3 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $3$：</b></font>
 向量
 $$
 \left(a_{1}+b_{1}, a_{2}+b_{2}, \cdots, a_{n}+b_{n}\right)
 $$
 称为 $\boldsymbol{\alpha}$ 与 $\boldsymbol{\beta}$ 的和, 记为 $\boldsymbol{\alpha}+\boldsymbol{\beta}$.
-
+<br>
 向量
 $$
 \left(k a_{1}, k a_{2}, \cdots, k a_{n}\right)
 $$
 称为向量 $\boldsymbol{\alpha}$ 与数 $k$ 的数量乘积, 简称数乘, 记为 $k \boldsymbol{\alpha}$.
-\end{definition}
+</p>
 
 
-\begin{definition}%定义 4 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $4$：</b></font>
 分量全为零的向量
 $$
 (0,0, \cdots, 0)
 $$
 称为零向量, 记为 $\mathbf{0}$.
-
+<br>
 $\boldsymbol{\alpha}$ 与 $-1$ 的数乘
 $$
 (-1) \boldsymbol{\alpha}=\left(-a_{1},-a_{2}, \cdots,-a_{n}\right)
 $$
 称为 $\boldsymbol{\alpha}$ 的负向量, 记为 $-\boldsymbol{\alpha}$.
-\end{definition}
+</p>
 
 
 由向量的加法及负向量的定义可定义向量的减法, 即
@@ -286,13 +290,14 @@ $$
 
 为了解决这个问题, 先定义向量组的线性组合的概念.
 
-\begin{definition}%定义 5 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $5$：</b></font> 
 给定向量 $\boldsymbol{\beta}$ 和向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$, 如果存在一组数 $k_{1}, k_{2}, \cdots, k_{n}$,使得
 $$
 \boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{n} \boldsymbol{\alpha}_{n},
 $$
 则称向量 $\boldsymbol{\beta}$ 为向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 的一个线性组合, 或者说 $\boldsymbol{\beta}$ 可由向量组 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示, $k_{1}, k_{2}, \cdots, k_{n}$ 称为组合系数.
-\end{definition}
+</p>
 
 \begin{example}%例 3 
 设 $\boldsymbol{\alpha}_{1}=(1,1,1,1), \boldsymbol{\alpha}_{2}=(1,1,-1,-1), \boldsymbol{\alpha}_{3}=(1,-1,1,-1), \boldsymbol{\alpha}_{4}=(1,-1,-1,1)$, $\boldsymbol{\beta}=(1,2,1,1)$,则 $\boldsymbol{\beta}$ 能否由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性表示? 若能,写出具体表达式.
@@ -390,15 +395,16 @@ $$
 
 为了解决这一问题, 下面给出向量组的线性相关和线性无关的概念.
 
-\begin{definition}%定义 6 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $6$：</b></font>
 对于向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$, 如果存在不全为零的数 $k_{1}, k_{2}, \cdots, k_{s}$,使得
 \begin{equation*}
 \sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}, \tag{3-7}
 \end{equation*}
 则称向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关.
-
+<br>
 反之, 如果只有在 $k_{1}=k_{2}=\cdots=k_{s}=0$ 时式 (3-7) 才成立, 就称向量组 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关.
-\end{definition}
+</p>
 
 换言之, 当 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 是行向量组时, 它们线性相关就是指有非零的 $1 \times s$矩阵 $\left(k_{1}, k_{2}, \cdots, k_{s}\right)$, 使
 $$
@@ -828,7 +834,8 @@ $n+1$ 个 $n$ 维向量必线性相关.
 
 <ul>
 
-\begin{definition}%定义 7 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $7$：</b></font> 
 设有两个向量组
 $$
 \begin{gathered}
@@ -837,7 +844,7 @@ B: \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s
 \end{gathered}
 $$
 如果向量组 $A$ 中的每个向量都能由向量组 $B$ 线性表示, 则称向量组 $A$ 能由向量组 $B$ 线性表示. 如果向量组 $A$ 与向量组 $B$ 能相互线性表示, 则称这两个向量组等价.
-\end{definition}
+</p>
 
 显然, 向量组之间的等价关系具有下述性质:
 
@@ -921,13 +928,14 @@ $$
 
 设有向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$, 只要向量组中含有非零向量, 则只含有这一个非零向量的部分组是线性无关的; 在这个部分组中添加原向量组中的另一个非零向量, 如果这两个向量组成的部分组仍然是线性无关的, 则再从原向量组中取出一个不属于这个部分组的非零向量添加进来, 使这三个向量组成的部分组线性无关. 这样一直做下去, 最后总能得到向量组中由 $r$ 个向量组成的部分组是线性无关的, 再添加一个向量则部分组就线性相关了. 这样得到的由 $r$ 个向量组成的线性无关的部分组是极大的线性无关的部分组.
 
-\begin{definition}%定义 8 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $8$：</b></font>
 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 满足:
-
+<br>
 $(1)$ 部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性无关;
-
+<br>
 $(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(1 \leqslant i \leqslant s)$, 都有 $\boldsymbol{\alpha}_{i}, \boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性相关,则称部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大线性无关组 (简称极大无关组).
-\end{definition}
+</p>
 
 \begin{example}%例 10 
 在向量组 $\boldsymbol{\alpha}_{1}=(2,-1,3,1), \boldsymbol{\alpha}_{2}=(4,-2,5,4), \boldsymbol{\alpha}_{3}=(2,-1,4,-1)$ 中, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$为它的一个极大线性无关组. 首先, 由于 $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 的对应分量不成比例, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 再添入 $\boldsymbol{\alpha}_{3}$ 以后, 由
@@ -939,13 +947,14 @@ $$
 
 容易证明, 定义 $8$ 与下面的定义 $8^{\prime}$ 等价.
 
-\begin{definition1}%定义 $8^{\prime}$
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $8^\prime$：</b></font>
 若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 满足:
-
+<br>
 $(1)$ $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性无关;
-
+<br>
 $(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, s), \boldsymbol{\alpha}_{i}$ 可由 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性表示,则称部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大线性无关组.
-\end{definition1}
+</p>
 
  
 
@@ -983,9 +992,10 @@ $(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, s), \boldsymbol{\alph
 
 由第 $3$ 节知道, 一个向量组的极大线性无关组可能不是唯一的, 但任意两个极大线性无关组所含向量的个数是相同的.
 
-\begin{definition}%定义 9 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $9$：</b></font>
 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的极大线性无关组所含向量的个数称为这个向量组的秩, 记为 $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right)$. 规定只含零向量的向量组的秩为 $0$ .
-\end{definition}
+</p>
 
 例如, 例 $10$ 中向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的秩为 $2$ .
 
@@ -1237,7 +1247,8 @@ $$
 
 前面定义了 $n$ 维向量的线性运算, 为了描述向量的度量性质, 还需要引入向量内积的概念.
 
-\begin{definition}%定义 10 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $10$：</b></font>
 设有 $n$ 维向量
 $$
 \boldsymbol{x}=\left(\begin{array}{c}
@@ -1253,7 +1264,7 @@ y_{n}
 \end{array}\right),
 $$
 称 $[\boldsymbol{x}, \boldsymbol{y}]=x_{1} y_{1}+x_{2} y_{2}+\cdots+x_{n} y_{n}$ 为向量 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 的内积.
-\end{definition}
+</p>
 
 内积是向量的一种运算,用矩阵形式可表示为 $[\boldsymbol{x}, \boldsymbol{y}]=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{y}$.
 
@@ -1284,9 +1295,10 @@ $(4)$ $[\boldsymbol{x}, \boldsymbol{x}] \geqslant 0$, 当且仅当 $\boldsymbol{
 
 由于对任意一个向量 $\boldsymbol{x}$, $[\boldsymbol{x}, \boldsymbol{x}] \geqslant 0$, 因此可以引入向量长度的概念.
 
-\begin{definition}%定义 11 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $11$：</b></font>
 称 $\|\boldsymbol{x}\|=\sqrt{[\boldsymbol{x}, \boldsymbol{x}]}=\sqrt{x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}}$ 为向量 $\boldsymbol{x}$ 的长度 (或范数). 当 $\|\boldsymbol{x}\|=1$ 时,称 $\boldsymbol{x}$ 为单位向量.
-\end{definition}
+</p>
 
 向量的长度具有下列基本性质:
 
@@ -1334,9 +1346,10 @@ $$
 $$
 因此, 可利用内积定义 $n$ 维向量的夹角.
 
-\begin{definition}%定义 12 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $12$：</b></font>
 对于两个非零向量 $\boldsymbol{x}, \boldsymbol{y}$, 定义 $\theta=\arccos \frac{[\boldsymbol{x}, \boldsymbol{y}]}{\|\boldsymbol{x}\| \cdot \|\boldsymbol{y} \|}$ 为 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 的夹角.
-\end{definition}
+</p>
 
 当 $[\boldsymbol{x}, \boldsymbol{y}]=0$ 时, 称 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 正交.
 
@@ -1382,9 +1395,10 @@ $$
 解得 $x_{1}=-x_{3}$, $x_{2}=0$. 令 $x_{3}=1$, 有 $\boldsymbol{\alpha}_{3}=(-1,0,1)^{\mathrm{T}}$, 即为所求.
 \end{solution}
 
-\begin{definition}%定义 13 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $13$：</b></font>
 设 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 是一个线性无关向量组, 如果 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 两两正交, 且都是单位向量, 则称 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 是一个规范正交向量组 (或标准正交向量组).
-\end{definition}
+</p>
 
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是一个线性无关向量组, 要求一个规范正交向量组 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots$, $\boldsymbol{e}_{r}$, 使 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 与 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 等价, 这样一个问题, 称为将 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 规范正交化 (或标准正交化). 这一过程可以通过格拉姆-施密特 (Gram-Schmidt) 正交化方法实现, 其具体步骤如下.
 
@@ -1465,9 +1479,10 @@ $$
 $$
 \end{solution}
 
-\begin{definition}%定义 14 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $14$：</b></font>
 如果 $n$ 阶方阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}$ (即 $\boldsymbol{A}^{-1}=\boldsymbol{A}^{\mathrm{T}}$ ), 则称 $\boldsymbol{A}$ 为正交矩阵.
-\end{definition}
+</p>
 
 \begin{theorem}%定理 12 
 $n$ 阶方阵 $\boldsymbol{A}$ 为正交矩阵的充分必要条件是 $\boldsymbol{A}$ 的列 (行) 向量组是规范正交向量组.
@@ -1535,9 +1550,10 @@ $$
 即 $\boldsymbol{A}-2 \boldsymbol{E}$ 为正交矩阵.
 \end{proof}
 
-\begin{definition}%定义 15 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $15$：</b></font>
 若 $\boldsymbol{T}$ 是正交矩阵, 则线性变换 $\boldsymbol{y}=\boldsymbol{T} \boldsymbol{x}$ 称为正交变换.
-\end{definition}
+</p>
 
 设 $\boldsymbol{y}=\boldsymbol{T} \boldsymbol{x}$ 是正交变换, 则有
 $$
