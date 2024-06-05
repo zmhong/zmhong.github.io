@@ -175,31 +175,37 @@ $(11)$ 如果 $k \neq 0$ 且 $\boldsymbol{\alpha} \neq \mathbf{0}$, 那么 $k \b
 
 显然, $n$ 维行向量的相等和加法、减法及数乘运算的定义, 与把它们看成行矩阵时的相等和加法, 减法及数乘运算的定义是一致的. 对应地, 也可以定义列向量的加法. 减法和数乘运算, 这些运算与把它们看成列矩阵时的加法、减法和数乘运算也是一致的, 并且同样具有性质$(1) \sim (11)$.
 
-\begin{example}%例 1 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 设 $\boldsymbol{\alpha}_{1}=(1,1,0), \boldsymbol{\alpha}_{2}=(0,1,1), \boldsymbol{\alpha}_{3}=(3,4,0)$, 求 $3 \boldsymbol{\alpha}_{1}+2 \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}$.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \begin{aligned}
 3 \boldsymbol{\alpha}_{1}+2 \boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3} & =3(1,1,0)+2(0,1,1)-(3,4,0) \\
 & =(3,3,0)+(0,2,2)-(3,4,0)=(0,1,2).
 \end{aligned}
 $$
-\end{solution}
+</p></div></p>
 
 
 
-\begin{example}%例 2
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 设 $\boldsymbol{\alpha}_{1}=(1,1,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(1,1,-1,-1)^{\mathrm{T}}, \boldsymbol{\alpha}_{3}=(1,-1,1,-1)^{\mathrm{T}}, \boldsymbol{\alpha}_{4}=(1,-1$, $-1,1)^{\mathrm{T}}$, 且 $2\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\beta}\right)-\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\beta}\right)=2\left(\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}+\boldsymbol{\beta}\right)$, 求 $\boldsymbol{\beta}$.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由 $2\left(\boldsymbol{\alpha}_{1}+\boldsymbol{\beta}\right)-\left(\boldsymbol{\alpha}_{2}+\boldsymbol{\beta}\right)=2\left(\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{4}+\boldsymbol{\beta}\right)$, 整理得
 $$
 \boldsymbol{\beta}=2 \boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}-2 \boldsymbol{\alpha}_{3}-2 \boldsymbol{\alpha}_{4}=(-3,5,3,3)^{\mathrm{T}}.
 $$
-\end{solution}
+</p></div></p>
 
 由若干个同维数的列向量 (或同维数的行向量)组成的集合称为向量组.
 
@@ -299,11 +305,14 @@ $$
 则称向量 $\boldsymbol{\beta}$ 为向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 的一个线性组合, 或者说 $\boldsymbol{\beta}$ 可由向量组 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示, $k_{1}, k_{2}, \cdots, k_{n}$ 称为组合系数.
 </p>
 
-\begin{example}%例 3 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 设 $\boldsymbol{\alpha}_{1}=(1,1,1,1), \boldsymbol{\alpha}_{2}=(1,1,-1,-1), \boldsymbol{\alpha}_{3}=(1,-1,1,-1), \boldsymbol{\alpha}_{4}=(1,-1,-1,1)$, $\boldsymbol{\beta}=(1,2,1,1)$,则 $\boldsymbol{\beta}$ 能否由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性表示? 若能,写出具体表达式.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 令
 $$
 \boldsymbol{\beta}=k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}+k_{4} \boldsymbol{\alpha}_{4}.
@@ -335,14 +344,17 @@ $$
 \boldsymbol{\beta}=\frac{5}{4} \boldsymbol{\alpha}_{1}+\frac{1}{4} \boldsymbol{\alpha}_{2}-\frac{1}{4} \boldsymbol{\alpha}_{3}-\frac{1}{4}\boldsymbol{\alpha}_{4}.
 $$
 因此, $\boldsymbol{\beta}$ 能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 线性表示.
-\end{solution}
+</p></div></p>
 
 
-\begin{example}%例 4 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 设 $\boldsymbol{\alpha}=(2,-3,0), \boldsymbol{\beta}=(0,-1,2), \boldsymbol{\gamma}=(0,-7,-4)$, 则 $\boldsymbol{\gamma}$ 能否由 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性表示?
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 设
 $$
 \boldsymbol{\gamma}=k_{1} \boldsymbol{\alpha}+k_{2} \boldsymbol{\beta}, 
@@ -356,9 +368,9 @@ $$
 \end{aligned}\right.
 $$
 由第一个方程得 $k_{1}=0$, 代入第二个方程得 $k_{2}=7$, 但 $k_{2}$ 不满足第三个方程, 故方程组无解.
-
+<br>
 所以, $\boldsymbol{\gamma}$ 不能由 $\boldsymbol{\alpha}, \boldsymbol{\beta}$ 线性表示.
-\end{solution}
+</p></div></p>
 
 下面考察齐次线性方程组
 \[
@@ -427,7 +439,8 @@ $$
 
 显然, 单个零向量构成的向量组是线性相关的.
 
-\begin{example}%例 5 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 判断向量组
 $$
 \left\{\begin{aligned}
@@ -438,9 +451,11 @@ $$
 \end{aligned}\right.
 $$
 的线性相关性.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对任意的常数 $k_{1}, k_{2}, \cdots, k_{n}$, 都有
 $$
 k_{1} \boldsymbol{e}_{1}+k_{2} \boldsymbol{e}_{2}+\cdots+k_{n} \boldsymbol{e}_{n}=\left(k_{1}, k_{2}, \cdots, k_{n}\right),
@@ -454,20 +469,23 @@ $$
 k_{1} \boldsymbol{e}_{1}+k_{2} \boldsymbol{e}_{2}+\cdots+k_{n} \boldsymbol{e}_{n}=\mathbf{0}.
 $$
 因此, $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{n}$ 线性无关.
-\end{solution}
+</p></div></p>
 
 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{n}$ 称为基本单位向量组.
 
 
-\begin{example}%例 6 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font> 
 判断向量组
 $$
 \boldsymbol{\alpha}_{1}=(1,1,1), \quad \boldsymbol{\alpha}_{2}=(0,2,5), \quad \boldsymbol{\alpha}_{3}=(1,3,6)
 $$
 的线性相关性.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对任意的常数 $k_{1}, k_{2}, k_{3}$, 都有
 $$
 k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}=\left(k_{1}+k_{3}, k_{1}+2 k_{2}+3 k_{3}, k_{1}+5 k_{2}+6 k_{3}\right), 
@@ -493,13 +511,16 @@ $$
 1 \boldsymbol{\alpha}_{1}+1 \boldsymbol{\alpha}_{2}+(-1) \boldsymbol{\alpha}_{3}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}-\boldsymbol{\alpha}_{3}=\mathbf{0}. 
 $$
 所以, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 7 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性无关, 且 $\boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}, \boldsymbol{\beta}_{2}=\boldsymbol{\alpha}_{2}+\boldsymbol{\alpha}_{3}, \boldsymbol{\beta}_{3}=\boldsymbol{\alpha}_{3}+\boldsymbol{\alpha}_{1}$, 试证向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 也线性无关.
-\end{example}
-
-\begin{proof}
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 对任意的常数 $k_{1}, k_{2}, k_{3}$, 都有
 $$
 k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}+k_{3} \boldsymbol{\beta}_{3}=\left(k_{1}+k_{3}\right) \boldsymbol{\alpha}_{1}+\left(k_{1}+k_{2}\right) \boldsymbol{\alpha}_{2}+\left(k_{2}+k_{3}\right) \boldsymbol{\alpha}_{3}.
@@ -521,7 +542,7 @@ $$
 k_{1}=k_{2}=k_{3}=0,
 $$
 因此 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \boldsymbol{\beta}_{3}$ 线性无关.
-\end{proof}
+</p></div></p>
 
 
 向量组的线性相关性与线性表示这一概念有着密切的联系.
@@ -782,7 +803,8 @@ x_{n}
 $n$ 阶方阵 $\boldsymbol{A}$ 可逆的充分必要条件是 $\boldsymbol{A}$ 的行 (列) 向量组线性无关.
 </p>
 
-\begin{example}%例 8 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
 讨论下列矩阵的行 (列) 向量组的线性相关性:
 $$
 \boldsymbol{B}=\left(\begin{array}{lll}
@@ -795,18 +817,23 @@ $$
 -2 & 0 & 1
 \end{array}\right).
 $$
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于 $|\boldsymbol{B}|=2 \neq 0$, 因此 $\boldsymbol{B}$ 的行 (列) 向量组线性无关; 由于 $|\boldsymbol{C}|=0$, 所以 $\boldsymbol{C}$ 的行 (列) 向量组线性相关.
-\end{solution}
+</p></div></p>
 
 
-\begin{example}%例 9 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $9$：</b></font>
 判断向量组 $\boldsymbol{\alpha}_{1}=(2,1,-1), \boldsymbol{\alpha}_{2}=(0,3,-2), \boldsymbol{\alpha}_{3}=(2,4,-3)$ 是否线性相关.
-\end{example}
-
-\begin{solution}% 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 为行向量组得到三阶方阵
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -824,7 +851,7 @@ $$
 \end{array}\right|=0,
 $$
 故由定理 $6$ 知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关.
-\end{solution}
+</p></div></p>
 
 
 <p style="border: 2px solid red; border-radius: 5px">
@@ -966,13 +993,14 @@ $(1)$ 部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdot
 $(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(1 \leqslant i \leqslant s)$, 都有 $\boldsymbol{\alpha}_{i}, \boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 线性相关,则称部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{r}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个极大线性无关组 (简称极大无关组).
 </p>
 
-\begin{example}%例 10 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $10$：</b></font>
 在向量组 $\boldsymbol{\alpha}_{1}=(2,-1,3,1), \boldsymbol{\alpha}_{2}=(4,-2,5,4), \boldsymbol{\alpha}_{3}=(2,-1,4,-1)$ 中, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$为它的一个极大线性无关组. 首先, 由于 $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 的对应分量不成比例, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性无关, 再添入 $\boldsymbol{\alpha}_{3}$ 以后, 由
 $$
 \boldsymbol{\alpha}_{3}=3 \boldsymbol{\alpha}_{1}-\boldsymbol{\alpha}_{2}
 $$
 可知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关. 故 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的一个极大线性无关组. 不难验证 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 和 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{3}$ 都是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 的极大线性无关组.
-\end{example}
+</p>
 
 容易证明, 定义 $8$ 与下面的定义 $8^{\prime}$ 等价.
 
@@ -1058,33 +1086,38 @@ $$
 秩为 $r$ 的向量组中, 任意含 $r$ 个向量的线性无关的部分组都是向量组的极大线性无关组.
 </p>
 
-\begin{example}%例 11 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $11$：</b></font>
 求向量组 $\boldsymbol{\alpha}_{1}=(1,4,0,3), \boldsymbol{\alpha}_{2}=(0,1,-1,2), \boldsymbol{\alpha}_{3}=(1,0,-1,5), \boldsymbol{\alpha}_{4}= (0,0,0,2)$ 的一个极大线性无关组及秩.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $\boldsymbol{\alpha}_{1}$ 是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 的一个线性无关的部分组, 显然, $\boldsymbol{\alpha}_{2}$ 不能由 $\boldsymbol{\alpha}_{1}$ 线性表示, 所以 $\boldsymbol{\alpha}_{1}$ 可以扩充为一个线性无关的部分组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$. 容易证明 $\boldsymbol{\alpha}_{3}=\boldsymbol{\alpha}_{1}+\boldsymbol{\alpha}_{2}$, 但 $\boldsymbol{\alpha}_{4}$ 不能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性表示, 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 又可扩充为一个线性无关的部分组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{4}$. 从而 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{4}$ 的秩为 $3$, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}$ 是它的一个极大线性无关组.
-\end{solution}
+</p></div></p>
 
 
 第 $2$ 章中给出了矩阵的秩的定义和计算方法, 那么向量组的秩与矩阵的秩有什么关系呢?
 
 首先建立一个引理.
 
-\begin{lemma}%引理 1
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>引理 $1$：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是 $r$ 个 $n$ 维列向量 $(r \leqslant n)$, 则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关的充分必要条件是矩阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}\right)$ 至少有一个 $r$ 阶子式不为零.
-\end{lemma}
-
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDlem1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDlem1").style.display="none"'> 
+<div id= "divIDlem1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font> 
 充分性由本章的定理 $5$ 与推论 $2$ 可明显得到.
-
+<br>
 下面证明必要性. 对向量的个数 $r$, 用数学归纳法证明.
-
+<br>
 当 $r=1$ 时, 由 $\boldsymbol{\alpha}_{1}$ 线性无关知, $\boldsymbol{\alpha}_{1} \neq \boldsymbol{0}$, 从而 $\boldsymbol{A}$ 至少有一个一阶子式不为零. 
-
+<br>
 假设当 $r=k$ 时, 结论成立.
-
+<br>
 当 $r=k+1 \leqslant n$ 时, 设
 $$
 \boldsymbol{\alpha}_{i}=\left(\begin{array}{c}
@@ -1136,7 +1169,7 @@ $$
 b_{i}=a_{i, k+1}-\sum_{j=1}^{k} t_{j} a_{i j}, \quad i=1,2, \cdots, n.
 $$
 则由式 (3-11) 知, $b_{1}=b_{2}=\cdots=b_{k}=0$.
-
+<br>
 但因 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{k+1}$ 线性无关, 则 $\boldsymbol{\beta} \neq \boldsymbol{0}$. 因此必存在某个 $b_{s} \neq 0(k < s \leqslant n)$. 于是 $k+1$ 阶子式
 $$
 \left|\begin{array}{cccc}
@@ -1154,7 +1187,7 @@ a_{s 1} & \cdots & a_{s k} & b_{s}
 \end{array}\right|=b_{s} D_{k} \neq 0. 
 $$
 证毕.
-\end{proof}
+</p></div></p>
 
 
 下面建立向量组的秩与矩阵的秩的关系.
@@ -1195,11 +1228,14 @@ $(4)$ 由于矩阵 $\boldsymbol{A}$ 的列向量组与矩阵 $\boldsymbol{B}$ �
 
 同理, 也可以将向量组中的各向量作为行向量组成矩阵,通过作初等列变换来求向量组的秋和极大线性无关组.
 
-\begin{example}%例 12 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $12$：</b></font>
 求向量组 $\boldsymbol{\alpha}_{1}=(1,4,1,0,2)$, $\boldsymbol{\alpha}_{2}=(2,5,-1,-3,2)$, $\boldsymbol{\alpha}_{3}=(0,2,2,-1,0)$, $\boldsymbol{\alpha}_{4}=(-1,2,5,6,2)$ 的秩和一个极大线性无关组,并把不属于极大线性无关组的其余向量用该极大线性无关组线性表示.
-\end{example}
-
-\begin{solution}% 解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample12").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample12").style.display="none"'> 
+<div id= "divIDexample12" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 把向量组作为列向量组成矩阵 $\boldsymbol{A}$, 利用初等行变换将 $\boldsymbol{A}$ 化为行最简形矩阵 $\boldsymbol{B}$:
 $$
 \begin{aligned}
@@ -1233,18 +1269,21 @@ $$
 \end{aligned}
 $$
 易见 $r(\boldsymbol{A})=r(\boldsymbol{B})=3, \boldsymbol{B}$ 的第 $1,2,3$ 列线性无关, 由于 $\boldsymbol{A}$ 的列向量组与 $\boldsymbol{B}$ 的对应的列向量组有相同的线性组合关系,故与 $\boldsymbol{B}$ 对应的 $\boldsymbol{A}$ 的第 $1,2,3$ 列线性无关,即 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 是该向量组的一个极大线性无关组.
-
+<br>
 又由 $\boldsymbol{B}$, 易得
 $$
 \boldsymbol{\alpha}_{4}=3 \boldsymbol{\alpha}_{1}-2 \boldsymbol{\alpha}_{2}.
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 13 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $13$：</b></font>
 已知向量组 $\boldsymbol{\alpha}_{1}=(1,2,-1,1), \boldsymbol{\alpha}_{2}=(2,0, t, 0), \boldsymbol{\alpha}_{3}=(0,-4,5,-2), \boldsymbol{\alpha}_{4}=$ $(3,-2, t+4,-1)$ 的秩为 $2$ , 试确定 $t$ 的值.
-\end{example}
-
-\begin{solution}% 解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample13").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample13").style.display="none"'> 
+<div id= "divIDexample13" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 考察矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -1255,7 +1294,7 @@ $$
 \end{array}\right).
 $$
 由条件知 $r(\boldsymbol{A})=2$, 从而 $\boldsymbol{A}$ 的所有三阶子式均为 $0$ .
-
+<br>
 故由
 $$
 \left|\begin{array}{rrr}
@@ -1265,7 +1304,7 @@ $$
 \end{array} \right|=-12+4 t=0
 $$
 得 $t=3$.
-\end{solution}
+</p></div></p>
 
 
 
@@ -1306,19 +1345,22 @@ $$
 内积是向量的一种运算,用矩阵形式可表示为 $[\boldsymbol{x}, \boldsymbol{y}]=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{y}$.
 
 
-\begin{example}%例 14 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $14$：</b></font>
 计算下列向量的内积:
-
+<br>
 $(1)$ $\boldsymbol{x}=(0,1,5,-2)^{\mathrm{T}}, \boldsymbol{y}=(-2,0,-1,3)^{\mathrm{T}}$;
-
+<br>
 $(2)$ $\boldsymbol{x}=(-2,1,0,3)^{\mathrm{T}}, \boldsymbol{y}=(3,-6,8,4)^{\mathrm{T}}$.
-\end{example}
-
-\begin{solution}% 解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample14").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample14").style.display="none"'> 
+<div id= "divIDexample14" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 \,\,\, $(1)$ $[\boldsymbol{x}, \boldsymbol{y}]=0 \times(-2)+1 \times 0+5 \times(-1)+(-2) \times 3=-11$.
-
+<br>
 $(2)$ $[\boldsymbol{x}, \boldsymbol{y}]=(-2) \times 3+1 \times(-6)+0 \times 8+3 \times 4=0$.
-\end{solution}
+</p></div></p>
 
 若 $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{z}$ 为 $n$ 维实向量, $\lambda$ 为实数, 则从内积的定义可推得下列性质: 
 
@@ -1420,11 +1462,14 @@ $$
 
 
 
-\begin{example}%例 15 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $15$：</b></font>
 已知 $\boldsymbol{\alpha}_{1}=(1,1,1)^{\mathrm{T}}, \boldsymbol{\alpha}_{2}=(1,-2,1)^{\mathrm{T}}$ 正交, 试求一个非零向量 $\boldsymbol{\alpha}_{3}$, 使 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$, $\boldsymbol{\alpha}_{3}$ 两两正交.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample15").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample15").style.display="none"'> 
+<div id= "divIDexample15" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 设 $\boldsymbol{\alpha}_{3}=\left(x_{1}, x_{2}, x_{3}\right)^{\mathrm{T}} \neq 0$, 由 $\boldsymbol{\alpha}_{3}$ 分别与 $\boldsymbol{\alpha}_{1}$ 和 $\boldsymbol{\alpha}_{2}$ 正交, 有 $\left[\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{1}\right]=\left[\boldsymbol{\alpha}_{3}, \boldsymbol{\alpha}_{2}\right]=0$, 即
 $$
 \left\{\begin{array}{l}
@@ -1433,7 +1478,7 @@ x_{1}-2 x_{2}+x_{3}=0,
 \end{array}\right.
 $$
 解得 $x_{1}=-x_{3}$, $x_{2}=0$. 令 $x_{3}=1$, 有 $\boldsymbol{\alpha}_{3}=(-1,0,1)^{\mathrm{T}}$, 即为所求.
-\end{solution}
+</p></div></p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $13$：</b></font>
@@ -1455,11 +1500,14 @@ $$
 $$
 则 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{r}$ 就是 $V$ 的一个规范正交向量组.
 
-\begin{example}%例 16 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $16$：</b></font>
 已知 $\boldsymbol{\alpha}_{1}=(1,-1,0)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{2}=(1,0,1)^{\mathrm{T}}$, $\boldsymbol{\alpha}_{3}=(1,-1,1)^{\mathrm{T}}$ 是一个线性无关向量组, 试用格拉姆-施密特正交化方法, 构造一个规范正交向量组.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample16").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample16").style.display="none"'> 
+<div id= "divIDexample16" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 取
 $$
 \begin{aligned}
@@ -1517,7 +1565,7 @@ $$
 \frac{1}{\sqrt{3}}
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $14$：</b></font>
@@ -1551,7 +1599,8 @@ $$
 这说明, 方阵 $\boldsymbol{A}$ 为正交矩阵的充分必要条件是 $\boldsymbol{A}$ 的列向量组是规范正交向量组. 注意到 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}=\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}$, 所以上述结论对 $\boldsymbol{A}$ 的行向量组也成立. 证毕.
 </p></div></p>
 
-\begin{example}%例 17 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $17$：</b></font>
 验证矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -1562,11 +1611,13 @@ $$
 \end{array}\right)
 $$
 是正交矩阵.
-\end{example}
-
-\begin{solution}
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample17").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample17").style.display="none"'> 
+<div id= "divIDexample17" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 容易验证, $\boldsymbol{A}$ 的每个列向量都是单位向量, 且两两正交, 故 $\boldsymbol{A}$ 是正交矩阵.
-\end{solution}
+</p></div></p>
 
 
 由正交矩阵的定义, 不难得到下列\textbf{性质}:
@@ -1578,11 +1629,14 @@ $(2)$ 若 $\boldsymbol{A}$ 是正交矩阵, 则 $\boldsymbol{A}^{\mathrm{T}}, \b
 $(3)$ 若 $\boldsymbol{A}, \boldsymbol{B}$ 是 $n$ 阶正交矩阵, 则 $\boldsymbol{A B}$ 也是正交矩阵.
 
 
-\begin{example}%例 18 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $18$：</b></font>
 设 $\boldsymbol{A}$ 是 $n$ 阶对称矩阵, $\boldsymbol{E}$ 为 $n$ 阶单位矩阵, 且满足 $\boldsymbol{A}^{2}-4 \boldsymbol{A}+3 \boldsymbol{E}=\boldsymbol{O}$, 证明: $\boldsymbol{A}-$ $2 \boldsymbol{E}$ 为正交矩阵.
-\end{example}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample18").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample18").style.display="none"'> 
+<div id= "divIDexample18" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 因为 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 所以
 $$
 \begin{aligned}
@@ -1591,7 +1645,7 @@ $$
 \end{aligned}
 $$
 即 $\boldsymbol{A}-2 \boldsymbol{E}$ 为正交矩阵.
-\end{proof}
+</p></div></p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $15$：</b></font>
