@@ -527,11 +527,14 @@ $$
 向量组的线性相关性与线性表示这一概念有着密切的联系.
 
 
-\begin{theorem}%定理 1 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}(s \geqslant 2)$ 线性相关的充分必要条件是其中至少有一个向量能由其余向量线性表示.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm1").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm1").style.display="none"'> 
+<div id= "divIDthm1" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中有一个向量能由其余向量线性表示, 不妨设
 $$
 \boldsymbol{\alpha}_{1}=k_{2} \boldsymbol{\alpha}_{2}+k_{3} \boldsymbol{\alpha}_{3}+\cdots+k_{s} \boldsymbol{\alpha}_{s},
@@ -541,7 +544,7 @@ $$
 -\boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0},
 $$
 所以 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关.
-
+<br>
 反过来, 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性相关, 就有不全为零的数 $k_{1}, k_{2}, \cdots, k_{s}$, 使
 $$
 k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}.
@@ -551,7 +554,7 @@ $$
 \boldsymbol{\alpha}_{1}=-\frac{k_{2}}{k_{1}} \boldsymbol{\alpha}_{2}-\frac{k_{3}}{k_{1}} \boldsymbol{\alpha}_{3}-\cdots-\frac{k_{s}}{k_{1}} \boldsymbol{\alpha}_{s},
 $$
 即 $\boldsymbol{\alpha}_{1}$ 能由 $\boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}, \cdots, \boldsymbol{\alpha}_{s}$ 线性表示. 证毕.
-\end{proof}
+</p></div></p>
 
 例如, 向量组
 $$
@@ -564,11 +567,14 @@ $$
 
 显然, 只含有两个向量的向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}$ 线性相关的充分必要条件是存在常数 $k$, 使得 $\boldsymbol{\alpha}_{1}=k \boldsymbol{\alpha}_{2}$, 此时, 两个向量的对应分量成比例. 在三维的情形中, 这就表示向量 $\boldsymbol{\alpha}_{1}$ 与 $\boldsymbol{\alpha}_{2}$ 共线; 三个向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \boldsymbol{\alpha}_{3}$ 线性相关的几何意义就是它们共面.
 
-\begin{theorem}%定理 2
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：</b></font>
 设向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性无关, 而向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}, \boldsymbol{\alpha}$ 线性相关, 则 $\boldsymbol{\alpha}$ 能由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示, 且表示式是唯一的.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm2").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm2").style.display="none"'> 
+<div id= "divIDthm2" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 由于 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}, \boldsymbol{\alpha}$ 线性相关, 就有不全为零的数 $k_{1}, k_{2}, \cdots, k_{t}, k$, 使
 $$
 k_{1} \boldsymbol{\beta}_{1}+k_{2} \boldsymbol{\beta}_{2}+\cdots+k_{t} \boldsymbol{\beta}_{t}+k \boldsymbol{\alpha}=\mathbf{0}.
@@ -579,6 +585,7 @@ $$
 $$
 即 $\boldsymbol{\alpha}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示.
 
+<br>
 下面证明表示式是唯一的. 若有两个表示式, 即
 $$
 \boldsymbol{\alpha}=l_{1} \boldsymbol{\beta}_{1}+l_{2} \boldsymbol{\beta}_{2}+\cdots+l_{t} \boldsymbol{\beta}_{t}=h_{1} \boldsymbol{\beta}_{1}+h_{2} \boldsymbol{\beta}_{2}+\cdots+h_{t} \boldsymbol{\beta}_{t},
@@ -595,15 +602,18 @@ $$
 l_{1}=h_{1}, \quad l_{2}=h_{2}, \quad \cdots, \quad l_{t}=h_{t}.
 $$
 因此, 表示式是唯一的. 证毕.
-\end{proof}
+</p></div></p>
 
 将一个向量组中的某些向量组成的向量组称为原向量组的部分组.
 
-\begin{theorem}%定理 3 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>
 有一个部分组线性相关的向量组一定线性相关.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm3").style.display="none"'> 
+<div id= "divIDthm3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个部分组线性相关. 不妨设这个部分组为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}(r \leqslant s)$, 则有不全为零的数 $k_{1}, k_{2}, \cdots, k_{r}$, 使
 $$
 \sum_{i=1}^{r} k_{i} \boldsymbol{\alpha}_{i}=\mathbf{0}.
@@ -613,14 +623,15 @@ $$
 k_{1} \boldsymbol{\alpha}_{1}+\cdots+k_{r} \boldsymbol{\alpha}_{r}+0 \cdot \boldsymbol{\alpha}_{r+1}+\cdots+0 \cdot \boldsymbol{\alpha}_{s}=\sum_{i=1}^{r} k_{i} \boldsymbol{\alpha}_{i}+\sum_{j=r+1}^{s} 0 \cdot \boldsymbol{\alpha}_{j}=\mathbf{0}. 
 $$
 因此, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 也线性相关. 证毕.
-\end{proof}
+</p></div></p>
 
 
 \begin{corollary}%推论 1
 含有零向量的向量组必线性相关.
 \end{corollary}
 
-\begin{theorem}%定理 4  
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $4$：</b></font> 
 设 $p_{1}, p_{2}, \cdots, p_{n}$ 为 $1,2, \cdots, n$ 的一个排列 $, \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 为两个向量组, 其中
 $$
 \boldsymbol{\alpha}_{i}=\left(\begin{array}{c}
@@ -636,10 +647,11 @@ a_{i p_{n}}
 \end{array}\right)
 $$
 即 $\boldsymbol{\beta}_{i}$ 是对 $\boldsymbol{\alpha}_{i}$ 各分量的顺序进行重排后得到的向量 $(i=1,2, \cdots, s)$, 则这两个向量组有相同的线性相关性.
-\end{theorem}
-
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm4").style.display="none"'> 
+<div id= "divIDthm4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 对任意的常数 $k_{1}, k_{2}, \cdots, k_{s}$, 注意到下面的两个列向量
 $$
 \sum_{i=1}^{s} k_{i} \boldsymbol{\alpha}_{i}=\left(\begin{array}{c}
@@ -667,20 +679,22 @@ $$
 k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{s} \boldsymbol{\alpha}_{s}=\mathbf{0}. 
 $$
 所以, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 和 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 有相同的线性相关性. 证毕.
-\end{proof}
+</p></div></p>
 
 定理 $4$ 是对列向量的情形叙述的, 对行向量也有相同的结论. 类似这样的情形, 今后不再说明.
 
-\begin{theorem}%定理 5 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $5$：</b></font>
 在 $r$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的各向量中, 添上 $n-r$ 个分量使其变成 $n$ 维向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$.
-
+<br>
 $(1)$ 如果 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性相关,那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 也线性相关;
-
+<br>
 $(2)$ 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 线性无关,那么 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 也线性无关.
-\end{theorem}
-
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm5").style.display="none"'> 
+<div id= "divIDthm5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 下面对列向量证明定理. 设
 $$
 \begin{aligned}
@@ -706,15 +720,18 @@ $$
 \left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right) \boldsymbol{X}=\boldsymbol{A}_{1} \boldsymbol{X}=\mathbf{0}.
 $$
 因此 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 也线性相关, 即 $(1)$ 成立. 利用 $(1)$, 用反证法容易证明 $(2)$ 也成立 (请读者自己证明). 证毕.
-\end{proof}
+</p></div></p>
 
 例如, $\boldsymbol{e}_{1}=(1,0,0), \boldsymbol{e}_{2}=(0,1,0), \boldsymbol{e}_{3}=(0,0,1)$ 是线性无关的, 因此, 由定理 $5$ 知, $\boldsymbol{\alpha}_{1}=(1,0,0,1), \boldsymbol{\alpha}_{2}=(0,1,0,2), \boldsymbol{\alpha}_{3}=(0,0,1,3)$ 也线性无关.
 
-\begin{theorem}%定理 6 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $6$：</b></font>
 设 $\boldsymbol{A}$ 是一个 $n$ 阶方阵, 则 $\boldsymbol{A}$ 的列 (行) 向量组线性相关的充分必要条件是 $|\boldsymbol{A}|=0$.
-\end{theorem}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm6").style.display="none"'> 
+<div id= "divIDthm6" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$,
 $$
 \boldsymbol{\alpha}_{1}=\left(\begin{array}{c}
@@ -757,7 +774,7 @@ x_{n}
 \end{array}\right)=\mathbf{0}
 \end{equation*}
 有非零解. 由第 $1$ 章定理 $7$ 知, 式 (3-9) 存在非零解的充分必要条件是 $|\boldsymbol{A}|=0$. 证毕.
-\end{proof}
+</p></div></p>
 
 \begin{corollary}%推论 2  
 $n$ 阶方阵 $\boldsymbol{A}$ 可逆的充分必要条件是 $\boldsymbol{A}$ 的行 (列) 向量组线性无关.
@@ -808,15 +825,18 @@ $$
 \end{solution}
 
 
-\begin{theorem}%定理 7 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $7$：</b></font>
 当 $m>n$ 时, $m$ 个 $n$ 维向量必线性相关.
-\end{theorem}
-
-\begin{proof}%
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm7").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm7").style.display="none"'> 
+<div id= "divIDthm7" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 为 $n$ 维向量组. 对每个 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, m)$ 添加 $m-n$ 个零分量得到 $m$ 维向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$.
-
+<br>
 易知, 由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{m}$ 构成的 $m$ 阶方阵的行列式等于 $0$ . 由定理 $6$ 知, $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots$, $\boldsymbol{\beta}_{m}$ 线性相关. 从而由定理 $5$ 知, $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性相关. 证毕.
-\end{proof}
+</p></div></p>
 
 
 \begin{corollary}%推论 3
@@ -854,11 +874,14 @@ $(2)$ 对称性: 若向量组 $A$ 与向量组 $B$ 等价, 则向量组 $B$ 与�
 
 $(3)$ 传递性: 若向量组 $A$ 与向量组 $B$ 等价, 向量组 $B$ 与向量组 $C$ 等价, 则向量组 $A$ 与向量组 $C$ 等价.
 
-\begin{theorem}%定理 8 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $8$：</b></font>
 如果向量组 $A: \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由向量组 $B: \boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示, 且 $r>s$, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关.
-\end{theorem}
-
-\begin{proof}% 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm8").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm8").style.display="none"'> 
+<div id= "divIDthm8" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 不妨假定讨论的是列向量. 因为 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}$ 线性表示,那么
 $$
 \boldsymbol{\alpha}_{i}=\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{s}\right)\left(\begin{array}{c}
@@ -870,6 +893,7 @@ p_{i s}
 $$
 其中 $\boldsymbol{\gamma}_{i}=\left(\begin{array}{c}p_{i 1} \\ p_{i 2} \\ \vdots \\ p_{i s}\end{array}\right), i=1,2, \cdots, r$.
 
+<br>
 令
 $$
 \boldsymbol{A}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \cdots, \boldsymbol{\gamma}_{r}\right),
@@ -915,7 +939,7 @@ $$
 k_{1} \boldsymbol{\alpha}_{1}+k_{2} \boldsymbol{\alpha}_{2}+\cdots+k_{r} \boldsymbol{\alpha}_{r}=\mathbf{0}.
 $$
 因此 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性相关. 证毕.
-\end{proof}
+</p></div></p>
 
 
 \begin{corollary}%推论 4 
@@ -1005,11 +1029,14 @@ $(2)$ 对任意的 $\boldsymbol{\alpha}_{i}(i=1,2, \cdots, s), \boldsymbol{\alph
 
 如果向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 能由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示, 那么 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots$, $\boldsymbol{\alpha}_{s}$ 的极大线性无关组可由 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 的极大线性无关组线性表示. 因此, 由推论 $4$ 有, \textbf{若向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 可由向量组 $\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}$ 线性表示, 则 $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}\right) \leqslant r\left(\boldsymbol{\beta}_{1}, \boldsymbol{\beta}_{2}, \cdots, \boldsymbol{\beta}_{t}\right)$.}
 
-\begin{theorem}%定理 9  
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $9$：</b></font> 
 向量组的任意线性无关的部分组都可扩充为一个极大线性无关组.
-\end{theorem}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm9").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm9").style.display="none"'> 
+<div id= "divIDthm9" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{k}}$ 是向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中的一个线性无关的部分组, 如果 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 中每个向量都可由这个部分组线性表示, 那么这个部分组就是一个极大线性无关组. 如果还有某向量 $\boldsymbol{\alpha}_{i_{k+1}}$ 不能被这个部分组线性表示, 那么由
 $$
 l_{1} \boldsymbol{\alpha}_{i_{1}}+l_{2} \boldsymbol{\alpha}_{i_{2}}+\cdots+l_{k+1} \boldsymbol{\alpha}_{i_{k+1}}=\mathbf{0},
@@ -1019,7 +1046,7 @@ $$
 l_{1}=l_{2}=\cdots=l_{k}=0.
 $$
 这样, 就得到了一个含 $k+1$ 个向量的线性无关的部分组 $\boldsymbol{\alpha}_{i_{1}}, \boldsymbol{\alpha}_{i_{2}}, \cdots, \boldsymbol{\alpha}_{i_{k+1}}$. 重复这个过程, 最后必可得到 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{s}$ 的一个线性无关的部分组, 使向量组中的每个向量都可由这个部分组线性表示, 这个部分组就是个极大线性无关组. 证毕.
-\end{proof}
+</p></div></p>
 
 \begin{corollary}%推论 6 
 秩为 $r$ 的向量组中, 任意含 $r$ 个向量的线性无关的部分组都是向量组的极大线性无关组.
@@ -1127,15 +1154,18 @@ $$
 下面建立向量组的秩与矩阵的秩的关系.
 
 
-\begin{theorem}%定理 10 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $10$：</b></font>
 设 $\boldsymbol{A}$ 为 $m \times n$ 矩阵, 则矩阵 $\boldsymbol{A}$ 的秩等于它的列向量组的秩, 也等于它的行向量组的秩.
-\end{theorem}
-
-\begin{proof}%证 
-下面只讨论列向量组的情况,类似可讨论行向量组的情况.
-
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm10").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm10").style.display="none"'> 
+<div id= "divIDthm10" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font> 
+下面只讨论列向量组的情况, 类似可讨论行向量组的情况.
+<br>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是 $\boldsymbol{A}$ 的列向量组, $r(\boldsymbol{A})=r$, $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)=s$. 首先, 由 $r(\boldsymbol{A})=r$, 则矩阵 $\boldsymbol{A}$ 中至少存在一个 $r$ 阶子式 $D_{r} \neq 0$, 由本章的定理 $5$ 和推论 $2$ 知, $D_{r}$ 所在的 $\boldsymbol{A}$ 中的 $r$ 个列向量一定线性无关, 从而 $s \geqslant r$; 另外, 由 $r\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)=s$,则必有 $s$ 个列向量构成 $\boldsymbol{A}$ 的列向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 的极大线性无关组, 由引理 $1$ 知, 这 $s$ 个列向量构成的矩阵中至少存在一个 $s$ 阶子式不为零, 从而 $r \geqslant s$. 于是有 $r=s$. 证毕.
-\end{proof}
+</p></div></s>
 
 矩阵 $\boldsymbol{A}$ 的行向量组的秩称为矩阵 $\boldsymbol{A}$ 的行秩, 矩阵 $\boldsymbol{A}$ 的列向量组的秩称为矩阵 $\boldsymbol{A}$ 的列秩.
 
@@ -1357,11 +1387,14 @@ $$
 
 称一组两两正交的非零向量组为正交向量组.
 
-\begin{theorem}%定理 11 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $11$：</b></font>
 若 $n$ 维非零向量 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 为正交向量组,则它们为线性无关向量组.
-\end{theorem}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm11").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm11").style.display="none"'> 
+<div id= "divIDthm11" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设有 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{r}$ 使 $\sum_{i=1}^{r} \lambda_{i} \boldsymbol{\alpha}_{i}=\mathbf{0}$, 分别用 $\boldsymbol{\alpha}_{k}$ 与上式两端作内积 $(k=1$, $2, \cdots, r)$, 则有
 $$
 \left[\boldsymbol{\alpha}_{k}, \sum_{i=1}^{r} \lambda_{i} \boldsymbol{\alpha}_{i}\right]=\left[\boldsymbol{\alpha}_{k}, \mathbf{0}\right]=0.
@@ -1370,13 +1403,13 @@ $$
 $$
 \left[\boldsymbol{\alpha}_{k}, \sum_{i=1}^{n} \lambda_{i} \boldsymbol{\alpha}_{i}\right]=\sum_{i=1}^{r} \lambda_{i}\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{i}\right]=\lambda_{k}\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k}\right].
 $$
-
+<br>
 因此得到
 $$
 \lambda_{k}\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k}\right]=0.
 $$
 因 $\boldsymbol{\alpha}_{k} \neq \boldsymbol{0}$, 故 $\left[\boldsymbol{\alpha}_{k}, \boldsymbol{\alpha}_{k}\right]=\left\|\boldsymbol{\alpha}_{k}\right\|^{2} \neq 0$. 从而 $\lambda_{k}=0, k=1,2, \cdots, r$, 于是 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$线性无关. 证毕.
-\end{proof}
+</p></div></p>
 
 
 
@@ -1484,11 +1517,14 @@ $$
 如果 $n$ 阶方阵 $\boldsymbol{A}$ 满足 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}$ (即 $\boldsymbol{A}^{-1}=\boldsymbol{A}^{\mathrm{T}}$ ), 则称 $\boldsymbol{A}$ 为正交矩阵.
 </p>
 
-\begin{theorem}%定理 12 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $12$：</b></font>
 $n$ 阶方阵 $\boldsymbol{A}$ 为正交矩阵的充分必要条件是 $\boldsymbol{A}$ 的列 (行) 向量组是规范正交向量组.
-\end{theorem}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm12").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm12").style.display="none"'> 
+<div id= "divIDthm12" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $n$ 阶方阵 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)$, 若 $\boldsymbol{A}$ 为正交矩阵, 则 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}$ 等价于
 $$
 \left(\begin{array}{c}
@@ -1506,7 +1542,7 @@ $$
 \end{aligned}
 $$
 这说明, 方阵 $\boldsymbol{A}$ 为正交矩阵的充分必要条件是 $\boldsymbol{A}$ 的列向量组是规范正交向量组. 注意到 $\boldsymbol{A}^{\mathrm{T}} \boldsymbol{A}=\boldsymbol{E}=\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}$, 所以上述结论对 $\boldsymbol{A}$ 的行向量组也成立. 证毕.
-\end{proof}
+</p></div></p>
 
 \begin{example}%例 17 
 验证矩阵
