@@ -34,24 +34,24 @@
 
 
 
-<h1><strong><font face=楷体><a href="chapter1.html" target="_blank" style="text-decoration:none">第 $2$ 章 矩阵</a></font></strong><br></h1>
+<h1><strong><font face=楷体><a href="chapter2.html" target="_blank" style="text-decoration:none">第 $2$ 章 矩阵</a></font></strong><br></h1>
 
 
 
 
 
-<h1><strong><font face=楷体><a href="chapter1.html" target="_blank" style="text-decoration:none">第 $3$ 章 向量与向量组</a></font></strong><br></h1>
+<h1><strong><font face=楷体><a href="chapter3.html" target="_blank" style="text-decoration:none">第 $3$ 章 向量与向量组</a></font></strong><br></h1>
 
 
 
 
-<h1><strong><font face=楷体><a href="chapter1.html" target="_blank" style="text-decoration:none">第 $4$ 章 线性方程组</a></font></strong><br></h1>
+<h1><strong><font face=楷体><a href="chapter4.html" target="_blank" style="text-decoration:none">第 $4$ 章 线性方程组</a></font></strong><br></h1>
 
 
 
 
 
-<h1><strong><font face=楷体><a href="chapter1.html" target="_blank" style="text-decoration:none">第 $5$ 章 矩阵的对角化与二次型</a></font></strong><br></h1>
+<h1><strong><font face=楷体><a href="chapter5.html" target="_blank" style="text-decoration:none">第 $5$ 章 矩阵的对角化与二次型</a></font></strong><br></h1>
 
 
 <h1><strong><font face=楷体>第 $6$ 章 使用SageMath在线代码和交互式界面</font></strong><br></h1>
@@ -84,7 +84,111 @@
 
 
 
+<div id="main3" style="height:800px;width:800px;float:left;">
+</div>
+<script>
+var chartDom = document.getElementById('main3');
+var myChart = echarts.init(chartDom);
+var option;
 
+option = {
+  tooltip: {},
+  backgroundColor: '#fff',
+  visualMap: {
+    show: false,
+    dimension: 2,
+    min: -1,
+    max: 1,
+    inRange: {
+      color: [
+        '#313695',
+        '#4575b4',
+        '#74add1',
+        '#abd9e9',
+        '#e0f3f8',
+        '#ffffbf',
+        '#fee090',
+        '#fdae61',
+        '#f46d43',
+        '#d73027',
+        '#a50026'
+      ]
+    }
+  },
+  title: {
+  text: '三平面的交'
+  },
+  xAxis3D: {
+    type: 'value'
+  },
+  yAxis3D: {
+    type: 'value'
+  },
+  zAxis3D: {
+    type: 'value'
+  },
+  grid3D: {
+    viewControl: {
+      // projection: 'orthographic'
+    }
+  },
+  series: [
+    {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x+y;
+        }
+      }
+    },
+     {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x-y;
+        }
+      }
+    },    
+    {
+      type: 'surface',
+      wireframe: {
+        // show: false
+      },
+      equation: {
+        x: {
+          step: 0.05
+        },
+        y: {
+          step: 0.05
+        },
+        z: function (x, y) {
+          return x+0.5;
+        }
+      }
+    }
+  ]
+};  
+  
+option && myChart.setOption(option);
+</script>
 
 
 
