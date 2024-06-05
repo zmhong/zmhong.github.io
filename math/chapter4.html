@@ -64,7 +64,8 @@
 <p style="text-indent: 2em;">
 解线性方程组最常用的方法就是消元法. 其步骤是逐步消除变元的系数,把原方程组化为等价的三角形方程组,再用回代过程解此等价的方程组, 从而得出原方程组的解.
 
-\begin{example}%例 1 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 解线性方程组
 $$
 \left\{\begin{aligned}
@@ -73,9 +74,11 @@ $$
 4 x_{1}+7 x_{2}+7 x_{3} & =\phantom{-}1.
 \end{aligned}\right.
 $$
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample1").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample1").style.display="none"'> 
+<div id= "divIDexample1" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 将第一个方程加到第二个方程上, 再将第一个方程乘以 $(-2)$ 加到第三个方程上, 得到与原方程组同解的线性方程组
 $$
 \left\{\begin{aligned}
@@ -93,7 +96,7 @@ $$
 \end{aligned}\right.
 $$
 再回代, 得 $x_{1}=2, x_{2}=-2, x_{3}=1$.
-\end{solution}
+</p></div></p>
 
 
 分析上述例子, 可以得出以下两个结论.
@@ -110,9 +113,10 @@ $3^\circ$ 将某个方程乘一个数加到另一个方程上.
 
 由初等代数知识可知, 以下定理成立.
 
-\begin{theorem}%定理 1
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $1$：</b></font>
 初等变换把一个线性方程组变为一个与它同解的线性方程组.
-\end{theorem}
+</p>
 
 $(2)$ 线性方程组有没有解以及有什么样的解, 完全取决于它的系数和常数项.
 
@@ -195,7 +199,8 @@ $$
 显然, 对方程组施行初等变换, 相当于对它的增广矩阵施行一个相应的初等
 变换. 而化简线性方程组相当于用初等行变换化简它的增广矩阵. 这样, 不但讨论起来比较方便, 而且能够提供一种方法, 即利用一个线性方程组的增广矩阵求解这个线性方程组,而不必每次都把未知量写出.
 
-\begin{example}%例 2 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font>
 解线性方程组
 $$
 \left\{\begin{aligned}
@@ -204,9 +209,11 @@ $$
 2 x_{1}+\frac{4}{3} x_{2}+5 x_{3} & =2 .
 \end{aligned}\right.
 $$
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample2").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample2").style.display="none"'> 
+<div id= "divIDexample2" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 其增广矩阵是
 $$
 \overline{\boldsymbol{A}}=\left(\begin{array}{llll}
@@ -240,7 +247,7 @@ x_{2}+\phantom{3}x_{3} & =\phantom{-}1, \\
 \end{aligned}\right.
 $$
 回代, 得 $x_{1}=4, x_{2}=3, x_{3}=-2$.
-\end{solution}
+</p></div></p>
 
 
 从例 $2$ 可知, 用消元法解线性方程组的过程, 实质上就是对该方程组的增广矩阵作初等行变换将其化为行阶梯形矩阵的过程. 在解线性方程组时, 只写出方程组的增广矩阵的变换过程即可.
@@ -366,15 +373,18 @@ $$
 梯形矩阵, 根据 $d_{r+1}$ 是否等于 $0$ 判断原方程组是否有解. 如果 $d_{r+1} \neq 0$, 则有 $r(\boldsymbol{A})= r$, 而 $r(\overline{\boldsymbol{A}})=r+1$, 即 $r(\boldsymbol{A}) \neq r(\overline{\boldsymbol{A}})$, 此时方程组 (4-1) 无解; 如果 $d_{r+1}=0$, 则 $r(\boldsymbol{A})= r(\overline{\boldsymbol{A}})=r$, 此时方程组 (4-1) 有解. 而当 $r=n$ 时, 方程组 (4-1) 有唯一解; 
   当 $r < n$ 时, 方程组 (4-1) 有无穷多个解. 由此可以得到如下定理.
 
-\begin{theorem}[线性方程组有解的判定定理]%定理 2
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $2$：[线性方程组有解的判定定理] </b></font>
 线性方程组 (4-1) 有解的充分必要条件是系数矩阵与增广矩阵有相同的秩 $r$.
-
+<br>
 $(1)$ 当 $r$ 等于方程组所含未知量的个数 $n$ 时, 方程组有唯一解;
-
+<br>
 $(2)$ 当 $r < n$ 时,方程组有无穷多个解.
-\end{theorem}
+</p>
 
-\begin{example}%例 3 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 研究线性方程组
 $$
 \left\{\begin{aligned}
@@ -385,10 +395,11 @@ $$
 \end{aligned}\right.
 $$
 的解的存在情况.
-\end{example}
-
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample3").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample3").style.display="none"'> 
+<div id= "divIDexample3" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对增广矩阵进行初等行变换将其化为行阶梯形矩阵:
 $$
 \begin{aligned}
@@ -418,9 +429,10 @@ r_{4}+(-1) \times r_{1}}]{r_{2}+(-2) \times r_{1}}\left(\begin{array}{rrrrr}
 \end{aligned}
 $$
 由此可见 $r(\boldsymbol{A}) \neq r(\overline{\boldsymbol{A}})$, 所以方程组无解.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 4 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 某厂在每批次投料生产中, 获得四种不同产量的产品, 同时测算出各批次的生产总成本, 把它们列表如表 4-1 所示.
 \begin{center}
 表 4-1 各批次的生产总成本
@@ -443,9 +455,11 @@ $$
 \end{tabular}
 \end{center}
 试求每种产品的单位成本.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample4").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample4").style.display="none"'> 
+<div id= "divIDexample4" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 设 I、II、III、IV 四种产品的单位成本分别为 $x_{1}, x_{2}, x_{3}, x_{4}$, 由题意得方程组
 $$
 \left\{\begin{array}{l}
@@ -487,9 +501,10 @@ $$
 $$
 x_{1}=10, \quad x_{2}=5, \quad x_{3}=3, \quad x_{4}=2.
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 5 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 解线性方程组
 $$
 \left\{\begin{aligned}
@@ -499,9 +514,11 @@ $$
 \phantom{0}x_{1}+2 x_{2}-9 x_{3}-5 x_{4} & =-21 .
 \end{aligned}\right.
 $$
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 对该方程组的增广矩阵进行初等行变换将其化为行阶梯形矩阵: 
 $$
 \begin{aligned}
@@ -555,9 +572,10 @@ x_{4}=c,
 \end{array}\right.
 $$
 其中 $c$ 为任意常数.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 6 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 问: $a$ 取何值时, 线性方程组
 $$
 \left\{\begin{aligned}
@@ -567,9 +585,11 @@ a x_{1}+x_{2}+\phantom{a}x_{3} & =1, \\
 \end{aligned}\right.
 $$
 有解? 并求其解.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对增广矩阵进行初等行变换:
 $$
 \overline{\boldsymbol{A}}=(\boldsymbol{A}, \boldsymbol{b})=\left(\begin{array}{llll}
@@ -601,7 +621,7 @@ x_{3}=c_{2},
 \end{array}\right.
 $$
 其中 $c_{1}, c_{2}$ 为任意常数.
-\end{solution}
+</p></div></p>
 
 下面考虑齐次线性方程组
 \[
@@ -631,13 +651,14 @@ x_{n}
 \end{array}\right).
 $$
 
-我们常常希望知道,一个齐次线性方程组有没有非零解. 由定理 $2$ 可得到下面的定理.
+我们常常希望知道, 一个齐次线性方程组有没有非零解. 由定理 $2$ 可得到下面的定理.
 
-\begin{theorem}%定理 3
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $3$：</b></font>
 齐次线性方程组 (4-5) 有非零解的充分必要条件是系数矩阵的秩 $r(\boldsymbol{A}) <  n$.
-\end{theorem}
+</p>
 
-显然,若齐次线性方程组 (4-5) 有非零解, 则它一定有无穷多个解.
+显然, 若齐次线性方程组 (4-5) 有非零解, 则它一定有无穷多个解.
 
 由定理 $3$ 很容易得到下面的几个推论.
 
@@ -653,7 +674,8 @@ $$
 当 $m=n$ 时, 齐次线性方程组 (4-5) 只有零解 (有非零解) 的充分必要条件是系数行列式 $|\boldsymbol{A}| \neq 0\, (|\boldsymbol{A}|=0)$.
 \end{corollary}
 
-\begin{example}%例 7 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 求解齐次线性方程组
 $$
 \left\{\begin{array}{l}
@@ -662,9 +684,11 @@ x_{1}-3 x_{2}+\phantom{3}x_{3}-x_{4}=0,\\
 x_{1}+3 x_{2}-2 x_{3}-x_{4}=0.
 \end{array}\right.
 $$
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample7").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample7").style.display="none"'> 
+<div id= "divIDexample7" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对系数矩阵作初等行变换:
 $$
 \begin{aligned}
@@ -717,7 +741,7 @@ x_{4}=c_{2},
 \end{array}\right.
 $$
 其中 $c_{1}, c_{2}$ 为任意常数.
-\end{solution}
+</p></div></p>
 
 
 
@@ -787,15 +811,19 @@ $(2)$ 向量组 $A: \boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \b
 
 
 
-\begin{example}%例 8 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font>
 设 $\boldsymbol{A}=\left(\begin{array}{ccc}1 & 2 & -2 \\ 4 & t & 3 \\ 3 & -1 & 1\end{array}\right), \boldsymbol{B}_{3 \times 3} \neq \boldsymbol{O}$ 且 $\boldsymbol{A B}=\boldsymbol{O}$, 求 $t$.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 因为 $\boldsymbol{B}_{3 \times 3} \neq \boldsymbol{O}$ 且 $\boldsymbol{A B}=\boldsymbol{O}$, 所以 $\boldsymbol{A} \boldsymbol{x}=\mathbf{0}$ 有非零解, 由克拉默法则知, $|\boldsymbol{A}|=0$, 所以 $t=-3$.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 9 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $9$：</b></font>
 设 $\boldsymbol{\beta}=\left(b_{1}, b_{2}, \cdots, b_{n}\right)^{\mathrm{T}}$ 是齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\mathbf{0}$ 的一个非零解, 其中
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
@@ -807,9 +835,9 @@ a_{m 1} & a_{m 2} & \cdots & a_{m n}
 $$
 
 令 $\boldsymbol{\alpha}_{i}=\left(a_{i 1}, a_{i 2}, \cdots, a_{i n}\right)^{\mathrm{T}}(i=1,2, \cdots, m)$. 若 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}$ 线性无关, 试判断 $\boldsymbol{\alpha}_{1}$, $\boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{m}, \boldsymbol{\beta}$ 的线性相关性.
-
+<br>
 对该问题, 读者既可以把它作为练习题来尝试解答, 也可以把它作为例子来学习 (扫描二维码见详细解答过程).
-\end{example}
+</p>
 
 
 
@@ -893,22 +921,25 @@ $k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+\cdots+k_{r} \boldsymbol{
 
 这说明, 齐次线性方程组的解的线性组合仍是该方程组的解.
 
-\begin{definition}%定义 1 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>定义 $1$：</b></font>
 设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是齐次线性方程组 (4-5) 的 $r$ 个解向量, 如果满足条件:
-
+<br>
 $(1)$ $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关;
-
+<br>
 $(2)$ 齐次线性方程组 (4-5) 的任意一个解向量 $\boldsymbol{\alpha}$ 都能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性表示,则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 称为齐次线性方程组 (4-5)的基础解系.
-\end{definition}
+</p>
 
 易见, 基础解系可看成解向量组的一个极大线性无关组. 显然, 齐次线性方程组的基础解系不是唯一的.
 
-\begin{theorem}%定理 4
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $4$：</b></font>
 齐次线性方程组 (4-5) 若有非零解, 则它一定有基础解系, 且基础解系所含解向量的个数等于 $n-r$, 其中 $r$ 是系数矩阵的秩.
-\end{theorem}
-
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm4").style.display="none"'> 
+<div id= "divIDthm4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设齐次线性方程组 (4-5) 的系数矩阵为
 
 $$
@@ -920,7 +951,7 @@ a_{m 1} & a_{m 2} & \cdots & a_{m n}
 \end{array}\right),
 $$
 由定理 $3$ 知, 秩 $r(\boldsymbol{A})=r < n$.
-
+<br> 
 对 $\boldsymbol{A}$ 进行初等行变换, 不妨设 $\boldsymbol{A}$ 的前 $r$ 个列向量线性无关, 则 $\boldsymbol{A}$ 可化为
 $$
 \left(\begin{array}{cccccccc}
@@ -1030,9 +1061,9 @@ $$
 1
 \end{array}\right).
 $$
-
+<br>
 下面证明 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 就是方程组 (4-5) 的一个基础解系.
-
+<br>
 首先, 由于 $n-r$ 个 $n-r$ 维向量
 $$
 \left(\begin{array}{c}
@@ -1053,7 +1084,7 @@ $$
 \end{array}\right)
 $$
 线性无关, 由第 $3$ 章的定理 $5$ 知, $n-r$ 个 $n$ 维向量 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 亦线性无关.
-
+<br>
 其次, 证明方程组 (4-5) 的任意一个解 $\boldsymbol{\xi}=\left(k_{1}, k_{2}, \cdots, k_{n}\right)^{\mathrm{T}}$ 都可由 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots$, $\boldsymbol{\xi}_{n-r}$ 线性表示. 因为方程组 (4-8) 是方程组 (4-5) 的同解方程组, 于是
 $$
 \left\{\begin{array}{l}
@@ -1076,7 +1107,7 @@ k_{n}
 \end{array}\right)=k_{r+1} \boldsymbol{\xi}_{1}+k_{r+2} \boldsymbol{\xi}_{2}+\cdots+k_{n} \boldsymbol{\xi}_{n-r},
 $$
 即 $\boldsymbol{\xi}$ 是 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 的线性组合. 所以 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是方程组 (4-5) 的一个基础解系. 证毕.
-\end{proof}
+</p></div></p>
 
 定理 $4$ 实际上指出了求齐次线性方程组的基础解系的一种方法.
 
@@ -1086,7 +1117,8 @@ $$
 若齐次线性方程组 (4-5) 有非零解, 则它的通解就是基础解系的线性组合.
 \end{corollary}
 
-\begin{example}%例 10 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $10$：</b></font>
 求齐次线性方程组
 $$
 \left\{\begin{array}{l}
@@ -1096,9 +1128,11 @@ x_{1}-x_{2}-2 x_{3}+2 x_{4}=0
 \end{array}\right.
 $$
 的基础解系与通解.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample10").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample10").style.display="none"'> 
+<div id= "divIDexample10" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 齐次线性方程组的系数矩阵为
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -1183,10 +1217,11 @@ $$
 \end{array}\right).
 $$
 由此, 得方程组的通解为 $\boldsymbol{x}=k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}$ (其中 $k_{1}, k_{2}$ 为任意常数).
-\end{solution}
+</p></div></p>
 
 
-\begin{example}%例 11 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $11$：</b></font>
 $\lambda$ 取何值时,齐次线性方程组
 $$
 \left\{\begin{aligned}
@@ -1196,9 +1231,11 @@ $$
 \end{aligned}\right.
 $$
 有非零解? 并求其通解.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于所给方程组属于方程的个数与未知量的个数相等的特殊情形, 可以通过判断其系数行列式是否为零来确定方程组是否有非零解. 其系数行列式为
 $$
 |\boldsymbol{A}|=\left|\begin{array}{rrr}
@@ -1208,7 +1245,7 @@ $$
 \end{array}\right|=(\lambda+1)(4-\lambda),
 $$
 当 $|\boldsymbol{A}|=0$, 即 $\lambda=-1,4$ 时, 原方程组有非零解.
-
+<br>
 将 $\lambda=-1$ 代入原方程组, 得
 $$
 \left\{\begin{array}{r}
@@ -1254,7 +1291,7 @@ $$
 \end{array}\right).
 $$
 所以, 方程组的通解为 $x=k \boldsymbol{\xi}$ ( $k$ 为任意常数).
-
+<br>
 同理, 当 $\lambda=4$ 时,可求得方程组的通解为
 $$
 \boldsymbol{x}=k\left(\begin{array}{r}
@@ -1263,9 +1300,10 @@ $$
 1
 \end{array}\right) \text { ( } k \text { 为任意常数). }
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 12 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $12$：</b></font>
 设 $\boldsymbol{B}$ 是一个三阶非零矩阵, 它的每一列都是齐次线性方程组
 $$
 \left\{\begin{array}{l}
@@ -1275,9 +1313,11 @@ $$
 \end{array}\right.
 $$
 的解, 求 $\lambda$ 的值和 $|\boldsymbol{B}|$.
-\end{example}
-
-\begin{solution}%解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample12").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample12").style.display="none"'> 
+<div id= "divIDexample12" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于 $\boldsymbol{B}$ 是一个三阶非零矩阵, 所以 $\boldsymbol{B}$ 中至少有一列向量不是零向量; 又由于 $\boldsymbol{B}$的每一列都是齐次线性方程组的解, 故该齐次线性方程组有非零解, 从而系数行列式
 $$
 |\boldsymbol{A}|=\left|\begin{array}{rrr}
@@ -1287,9 +1327,9 @@ $$
 \end{array}\right|=5 \lambda-5=0,
 $$
 所以 $\lambda=1$.
-
+<br>
 当 $\lambda=1$ 时, $r(\boldsymbol{A})=2$, 从而基础解系中只含有一个解向量, 因而 $\boldsymbol{B}$ 的三个列向量必线性相关, 得 $|\boldsymbol{B}|=0$.
-\end{solution}
+</p></div></p>
 
 </ul>
 
@@ -1371,15 +1411,19 @@ $$
 故 $\boldsymbol{\eta}_{1}-\boldsymbol{\eta}_{2}$ 为导出组的解. 证毕.
 \end{proof}
 
-\begin{theorem}[非齐次线性方程组解的结构定理]%定理 5
+
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>定理 $5$：[非齐次线性方程组解的结构定理] </b></font>
 如果非齐次线性方程组 (4-9) 有解, 则其通解为
 $$
 \boldsymbol{x}=\boldsymbol{\eta}^{*}+\boldsymbol{\xi},
 $$
 其中 $\boldsymbol{\eta}^{*}$ 是非齐次线性方程组 (4-9) 的一个特解, 而 $\boldsymbol{\xi}$ 是其导出组的通解.
-\end{theorem}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDthm5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDthm5").style.display="none"'> 
+<div id= "divIDthm5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 首先由性质 $3$ 知, $\boldsymbol{\eta}^{*}+\boldsymbol{\xi}$ 是非齐次线性方程组 (4-9) 的解. 其次设 $\boldsymbol{\eta}$ 是非齐次线性方程组解 (4-9) 的任意一个解, 则由性质 $4$ 知,
 $$
 \boldsymbol{\xi}=\boldsymbol{\eta}-\boldsymbol{\eta}^{*}
@@ -1393,7 +1437,7 @@ $$
 \boldsymbol{x}=\boldsymbol{\eta}^{*}+\boldsymbol{\xi}.
 $$
 证毕.
-\end{proof}
+</p></div></p>
 
 由定理 $5$ 可知, 如果非齐次线性方程组有解, 则只需求出它的一个特解 $\boldsymbol{\eta}^{*}$,并求出其导出组的一个基础解系 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$, 则其全部解可以表示为
 $$
@@ -1403,7 +1447,8 @@ $$
 
 一般地, 求非齐次线性方程组 (4-9) 的一个特解与求它的导出组的通解可同时进行.
 
-\begin{example}%例 13 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $13$：</b></font>
 试求
 $$
 \left\{\begin{aligned}
@@ -1413,9 +1458,11 @@ $$
 \end{aligned}\right.
 $$
 的全部解. 
-\end{example}
-
-\begin{solution}% 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample13").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample13").style.display="none"'> 
+<div id= "divIDexample13" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 对增广矩阵进行初等行变换:
 $$
 \begin{aligned}
@@ -1445,7 +1492,7 @@ $$
 \end{aligned}
 $$
 由此可知, 系数矩阵与增广矩阵的秩都是 $2$ , 故方程组有解.
-
+<br>
 其同解方程组为
 $$
 \left\{\begin{array}{l}
@@ -1524,13 +1571,14 @@ $$
 \boldsymbol{x}=\boldsymbol{\eta}^{*}+k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+k_{3} \boldsymbol{\xi}_{3},
 $$
 其中 $k_{1}, k_{2}, k_{3}$ 为任意常数.
-\end{solution}
+</p></div></p>
 
 
-注意 在求方程组的特解与它的导出组的基础解系时, 一定要小心常数列 (项) 的处理, 最好把特解与基础解系中的解分别代入两个方程组进行验证.
+<b>注意:</b> 在求方程组的特解与它的导出组的基础解系时, 一定要小心常数列 (项) 的处理, 最好把特解与基础解系中的解分别代入两个方程组进行验证.
 
 
-\begin{example}%例 14 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $14$：</b></font>
 设线性方程组
 $$
 \left\{\begin{aligned}
@@ -1540,9 +1588,11 @@ p x_{1}+\phantom{2t}x_{2}+x_{3} & =4, \\
 \end{aligned}\right.
 $$
 试就 $p, t$ 讨论方程组的解的情况, 若有解, 则求出其解.
-\end{example}
-
-\begin{solution}% 解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample14").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample14").style.display="none"'> 
+<div id= "divIDexample14" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 对增广矩阵进行初等行变换, 得
 $$
 \begin{aligned}
@@ -1572,12 +1622,12 @@ p & 1 & 1 & 4
 \end{array}\right) .
 \end{aligned}
 $$
-
+<br>
 $(1)$ 当 $(p-1) t \neq 0$, 即 $p \neq 1, t \neq 0$ 时, $r(\boldsymbol{A})=r(\overline{\boldsymbol{A}})=3$, 方程组有唯一解
 $$
 x_{1}=\frac{2 t-1}{(p-1) t}, \quad x_{2}=\frac{1}{t}, \quad x_{3}=\frac{1-4 t+2 p t}{(p-1) t}.
 $$
-
+<br>
 $(2)$ 当 $p=1$, 且 $1-4 t+2 p t=1-2 t=0$, 即 $t=\frac{1}{2}$ 时, $r(\boldsymbol{A})=r(\overline{\boldsymbol{A}})=2 < 3$, 方程组有无穷多个解, 此时
 $$
 \overline{\boldsymbol{A}} \rightarrow\left(\begin{array}{cccc}
@@ -1602,13 +1652,14 @@ $$
 1
 \end{array}\right) \quad \text { ( } k \text { 为任意常数). }
 $$
-
+<br>
 $(3)$ 当 $p=1$, 但 $1-4 t+2 p t=1-2 t \neq 0$, 即 $t \neq \frac{1}{2}$ 时, $r(\boldsymbol{A})=2 \neq r(\overline{\boldsymbol{A}})=3$, 方程组无解.
-
+<br>
 $(4)$ 当 $t=0$ 时, $1-4 t+2 p t=1 \neq 0$, 此时, $r(\boldsymbol{A})=2 \neq r(\overline{\boldsymbol{A}})=3$, 故方程组也无解.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 15 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $15$：</b></font>
 设四元非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 的系数矩阵 $\boldsymbol{A}$ 的秩为 $3$ , 已知它的三个解向量分别为 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \boldsymbol{\xi}_{3}$, 其中
 $$
 \boldsymbol{\xi}_{1}=\left(\begin{array}{r}
@@ -1624,9 +1675,11 @@ $$
 \end{array}\right),
 $$
 求该方程组的通解.
-\end{example}
-
-\begin{solution}% 解 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample15").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample15").style.display="none"'> 
+<div id= "divIDexample15" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 因四元非齐次线性方程组 $\boldsymbol{A} \boldsymbol{x}=\boldsymbol{b}$ 的系数矩阵 $\boldsymbol{A}$ 的秩为 $3$, 则其导出组 $\boldsymbol{A x}=\mathbf{0}$ 的基础解系含有 $4-3=1$ 个解向量, 故导出组 $\boldsymbol{A x}=\mathbf{0}$ 的任何一个非零解都可作为其方程组的基础解系. 由解的性质, 易知
 
 $$
@@ -1664,7 +1717,7 @@ $$
 \end{array}\right) \quad  (  k \text { 为任意常数 }) .
 \end{aligned}
 $$
-\end{solution}
+</p></div></p>
   
 </ul>
 
