@@ -400,13 +400,15 @@ f(\lambda) & =\left(\lambda_{1}-\lambda\right)\left(\lambda_{2}-\lambda\right) \
 
 比较式(5-7)与式 (5-8) 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
 
-\begin{property}%性质 1 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $1$：</b></font>
 $\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}=a_{11}+a_{22}+\cdots+a_{n n}$. 称矩阵 $\boldsymbol{A}$ 的主对角线上的元素之和 $a_{11}+a_{22}+\cdots+a_{n n}$ 为矩阵 $\boldsymbol{A}$ 的迹, 记为 $\operatorname{tr}(\boldsymbol{A})$.
-\end{property}
+</p>
 
-\begin{property}%性质 2 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $2$：</b></font>
 $\lambda_{1} \lambda_{2} \cdots \lambda_{n}=|\boldsymbol{A}|$.
-\end{property}
+</p>
 
 由性质 $2$ 可得到下面的推论.
 
@@ -608,23 +610,29 @@ $(3)$ <b>传递性:</b> 若 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 相似, $\bold
 
 相似矩阵具有如下性质. 
 
-\begin{property}%性质 3 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $3$：</b></font> 
 相似矩阵有相同的秩.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty3").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty3").style.display="none"'> 
+<div id= "divIDproperty3" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font> 
 由于可逆矩阵 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{-1}$ 可以看成若干个初等矩阵的乘积, 从而 $\boldsymbol{P}^{-1} \boldsymbol{A P}$相当于对 $\boldsymbol{A}$ 施行了有限次初等变换,而初等变换不改变矩阵的秩,所以
 $$
 r(\boldsymbol{A})=r\left(\boldsymbol{P}^{-1} \boldsymbol{A P}\right)=r(\boldsymbol{B}).
 $$
 证毕.
-\end{proof}
+</p></div></p>
 
-\begin{property}%性质 4 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $4$：</b></font>
 相似矩阵的行列式相等.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty4").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty4").style.display="none"'> 
+<div id= "divIDproperty4" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则存在可逆矩阵 $\boldsymbol{P}$, 使
 $$
 \boldsymbol{B}=\boldsymbol{P}^{-1} \boldsymbol{A P},
@@ -634,15 +642,18 @@ $$
 \left|\boldsymbol{P}^{-1}\right||\boldsymbol{A}||\boldsymbol{P}|=|\boldsymbol{B}|,
 $$
 而 $\left|\boldsymbol{P}^{-1}\right|=|\boldsymbol{P}|^{-1}$, 所以 $|\boldsymbol{A}|=|\boldsymbol{B}|$. 证毕.
-\end{proof}
+</p></div></p>
 
-\begin{property}%性质 5 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $5$：</b></font>
 相似矩阵同时可逆或同时不可逆. 当它们可逆时, 其逆矩阵也相似.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty5").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty5").style.display="none"'> 
+<div id= "divIDproperty5" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $|\boldsymbol{A}|=|\boldsymbol{B}|$, 所以 $|\boldsymbol{A}|$ 与 $|\boldsymbol{B}|$ 同时为 0 或不为 0 , 即 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 同时不可逆或同时可逆.
-
+<br>
 如果 $\boldsymbol{A} \sim \boldsymbol{B}$, 且都可逆, 则存在可逆矩阵 $\boldsymbol{P}$, 使得
 $$
 \boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{B}.
@@ -656,13 +667,16 @@ $$
 \boldsymbol{A}^{-1} \sim \boldsymbol{B}^{-1}.
 $$
 证毕.
-\end{proof}
+</p></div></p>
 
-\begin{property}%性质 6 
+<p style="border: 2px solid blue; border-radius: 5px">
+<font color=blue><b>性质 $6$：</b></font>
 相似矩阵有相同的特征多项式, 从而有相同的特征值.
-\end{property}
-
-\begin{proof}%证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDproperty6").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDproperty6").style.display="none"'> 
+<div id= "divIDproperty6" style= "display:none"> 
+<p style="border: 2px solid red; border-radius: 5px">
+<font color=red><b>证明：</b></font>
 设 $\boldsymbol{A} \sim \boldsymbol{B}$, 即有可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{B}$, 故
 $$
 \begin{aligned}
@@ -671,7 +685,7 @@ $$
 \end{aligned}
 $$
 所以 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 有相同的特征多项式, 从而它们有相同的特征值. 证毕.
-\end{proof}
+</p></div></p>
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $2$：</b></font>
