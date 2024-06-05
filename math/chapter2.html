@@ -67,7 +67,8 @@
 <p style="text-indent: 2em;">
 生产实践和经济活动中, 经常要利用矩阵这一有力工具. 下面看几个例子.
 
-\begin{example}%例 1 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $1$：</b></font>
 某航空公司在 A, B, C, D 四个城市之间开辟了若干条航线, 用图 \ref{fig:2.1} 表示四个城市间的航班图, 若从 A 到 B 有航班, 则用从 A 指向 B 的带箭头的线连接 A 与 B.
 
 用表格表示如下:
@@ -85,7 +86,7 @@
 其中 $\sqrt{ }$ 表示有航班. 为了便于研究, 记上述表格中的 $\sqrt{ }$ 为 $1$ , 空白处为 $0$ , 则得到一个数表:
 
 该数表反映了四个城市间的交通连接情况.
-\end{example}
+</p>
 
 \begin{figure}[ht]
 \centering
@@ -132,7 +133,8 @@
 \end{figure}
 %图 2-1
 
-\begin{example}%例 2 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $2$：</b></font> 
 假设一个经济系统由煤炭、电力和钢铁三个部门组成, 各部门之间的分配如表 2-1所示, 其中每栏中的数表示该部门总产出的比例. 如表 2-1 中的第三栏所示, 电力部门分配总产出的 $40 \%$ 给煤炭部门, $50 \%$ 给钢铁部门, 剩下的 $10 \%$ 给电力部门作为运转费用.
 
 \begin{center}
@@ -166,9 +168,10 @@ $$
 $$
 
 表示, 它具体描述了经济系统各部门产出的分配情况.
-\end{example}
+</p>
 
-\begin{example}%例 3 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $3$：</b></font>
 含有 $n$ 个未知量、 $m$ 个方程的齐次线性方程组
 $$
 \left\{\begin{array}{c}
@@ -188,7 +191,7 @@ a_{m 1} & a_{m 2} & \cdots & a_{m n},
 \end{array}\right)
 $$
 这样的表称为 $m \times n$ 矩阵, 可用黑体大写字母 $\boldsymbol{A}$ 表示. $a_{i j}$ 称为矩阵 $\boldsymbol{A}$ 的元素, 它位于矩阵 $\boldsymbol{A}$ 的第 $i$ 行、第 $j$ 列的交叉处.
-\end{example}
+</p>
 
 一般情况下, 有如下定义.
 
@@ -338,7 +341,8 @@ $(2)$ $(\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C}=\boldsymbol{A}+(\boldsymbo
 
 
 
-\begin{example}%例 4 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $4$：</b></font>
 有某种物资 (单位: t )需从两个产地运往三个销地, 调运了两次, 两次调运方案用矩阵分别表示为
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -368,7 +372,7 @@ $$
 \end{array}\right).
 \end{aligned}
 $$
-\end{example}
+</p>
 
 
   
@@ -405,7 +409,8 @@ $$
 $$
 
 
-\begin{example}%例 5 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $5$：</b></font>
 已知
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -419,9 +424,11 @@ $$
 \end{array}\right),
 $$
 求 $4 \boldsymbol{A}+2 \boldsymbol{B}$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample5").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample5").style.display="none"'> 
+<div id= "divIDexample5" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于
 $$
 4 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -442,9 +449,10 @@ $$
 8 & 8 & 2 & 2
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 6 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $6$：</b></font>
 设矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{rr}
@@ -460,9 +468,11 @@ $$
 \end{array}\right),
 $$
 且有 $\boldsymbol{A}+2 \boldsymbol{X}=\boldsymbol{B}$, 求矩阵 $\boldsymbol{X}$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample6").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample6").style.display="none"'> 
+<div id= "divIDexample6" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由 $\boldsymbol{A}+2 \boldsymbol{X}=\boldsymbol{B}$ 知,
 $$
 \boldsymbol{X}=\frac{1}{2}(\boldsymbol{B}-\boldsymbol{A})=\frac{1}{2}\left(\begin{array}{rr}
@@ -477,7 +487,7 @@ $$
 2 & \frac{1}{2}
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
 
 <h3><a name="C2.3">$2.2.3$ 矩阵与矩阵相乘</a></h3>
@@ -486,7 +496,8 @@ $$
 先来看一个例子.
 
 
-\begin{example}%例 7 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $7$：</b></font>
 某地有四个工厂, 生产三种产品. 矩阵 $\boldsymbol{A}$ 表示一年中各工厂生产各种产品的数量,矩阵 $\boldsymbol{B}$ 表示各种产品的单位价格 (单位: 元) 和单位利润(单位: 元), 矩阵 $\boldsymbol{C}$ 表示各工厂的总收入和总利润.
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -506,29 +517,29 @@ c_{41} & c_{42}
 \end{array}\right),
 $$
 其中, $a_{i k}(i=1,2,3,4, k=1,2,3)$ 是第 $i$ 个工厂生产第 $k$ 种产品的数量, $b_{k 1}$ 及 $b_{k 2}(k=1,2, 3$ ) 分别是第 $k$ 种产品的单位价格和单位利润, $c_{i 1}$ 及 $c_{i 2} (i=1,2,3,4)$ 分别是第 $i$ 个工厂生产三种产品的总收入和总利润. 则:
-
+<br>
 $\qquad$ 第一个工厂的总收入为 $c_{11}=a_{11} b_{11}+a_{12} b_{21}+a_{13} b_{31}$,
-
+<br>
 $\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{12}=a_{11} b_{12}+a_{12} b_{22}+a_{13} b_{32}$;
-
+<br>
 $\qquad$第二个工厂的总收入为 $c_{21}=a_{21} b_{11}+a_{22} b_{21}+a_{23} b_{31}$,
-
+<br>
 $\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{22}=a_{21} b_{12}+a_{22} b_{22}+a_{23} b_{32}$;
-
+<br>
 $\qquad$第三个工厂的总收入为 $c_{31}=a_{31} b_{11}+a_{32} b_{21}+a_{33} b_{31}$,
-
+<br>
 $\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{32}=a_{31} b_{12}+a_{32} b_{22}+a_{33} b_{32}$;
-
+<br>
 $\qquad$第四个工厂的总收入为 $c_{41}=a_{41} b_{11}+a_{42} b_{21}+a_{43} b_{31}$,
-
+<br>
 $\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{42}=a_{41} b_{12}+a_{42} b_{22}+a_{43} b_{32}$.
-
+<br>
 因此, 矩阵 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 的元素之间有下列关系:
 $$
 c_{i j}=a_{i 1} b_{1 j}+a_{i 2} b_{2 j}+a_{i 3} b_{3 j} \quad(i=1,2,3,4 ; j=1,2),
 $$
 即矩阵 $\boldsymbol{C}$ 的元素 $c_{i j}$ 是矩阵 $\boldsymbol{A}$ 的第 $i$ 行元素与矩阵 $\boldsymbol{B}$ 的第 $j$ 列对应元素的乘积之和. 称矩阵 $\boldsymbol{C}$ 是矩阵 $\boldsymbol{A}$ 与矩阵 $\boldsymbol{B}$ 的乘积.
-\end{example}
+</p>
 
 
 \begin{definition}%定义4 
@@ -557,9 +568,10 @@ $$
 是一个数 $c_{i j}$, 这表明若 $\boldsymbol{C}=\boldsymbol{A B}$, 则矩阵 $\boldsymbol{C}$ 的元素 $c_{i j}$ 就是 $\boldsymbol{A}$ 的第 $i$ 行与 $\boldsymbol{B}$ 的第 $j$ 列对应元素的乘积之和. 
 
 
-\textbf{注意:} 只有当第一个矩阵 (左矩阵) 的列数与第二个矩阵 (右矩阵) 的行数相等时, 两个矩阵才能相乘. 两个矩阵相乘所得矩阵的行数同第一个矩阵 (左矩阵)的行数, 列数同第二个矩阵 (右矩阵) 的列数.
+<b>注意:</b> 只有当第一个矩阵 (左矩阵) 的列数与第二个矩阵 (右矩阵) 的行数相等时, 两个矩阵才能相乘. 两个矩阵相乘所得矩阵的行数同第一个矩阵 (左矩阵)的行数, 列数同第二个矩阵 (右矩阵) 的列数.
 
-\begin{example}%例 8 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $8$：</b></font> 
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{ccc}
@@ -572,13 +584,18 @@ c_{1} & 0
 \end{array}\right),
 $$
 求 $\boldsymbol{A B}$ 和 $\boldsymbol{B A}$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample8").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample8").style.display="none"'> 
+<div id= "divIDexample8" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $\boldsymbol{A B}=\left(\begin{array}{cc}0 & 0 \\ a a_{1}+b b_{1}+c c_{1} & 0\end{array}\right), \quad \boldsymbol{B} \boldsymbol{A}=\left(\begin{array}{lll}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)$.
-\end{solution}
+</p>
+</div>
+</p>
 
-\begin{example}%例 9 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $9$：</b></font> 
 设 $\boldsymbol{A}, \boldsymbol{B}$ 分别是 $n \times 1$ 矩阵和 $1 \times n$ 矩阵,且
 $$
 \boldsymbol{A}=\left(\begin{array}{c}
@@ -589,9 +606,11 @@ a_{n}
 \end{array}\right), \quad \boldsymbol{B}=\left(b_{1}, b_{2}, \cdots, b_{n}\right),
 $$
 计算 $\boldsymbol{A B}$ 和 $\boldsymbol{B A}$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample9").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample9").style.display="none"'> 
+<div id= "divIDexample9" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 \begin{align*}
 & \boldsymbol{A B}=\left(\begin{array}{c}
 a_{1} \\
@@ -613,9 +632,12 @@ a_{n}
 \end{align*}
 
 $\boldsymbol{A B}$ 是 $n$ 阶矩阵, $\boldsymbol{B A}$ 是一阶矩阵 (运算的最后结果为一阶矩阵时, 可以把它与数等同看待, 不必加矩阵符号, 但是在运算过程中, 一般不能把一阶矩阵看成数).
-\end{solution}
+</p>
+</div>
+</p>
 
-\begin{example}%例 10 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $10$：</b></font>
 对于一个含有 $n$ 个未知量、 $m$ 个方程的线性方程组
 $$
 \left\{\begin{array}{c}
@@ -648,7 +670,7 @@ $$
 $$
 \boldsymbol{Ax}=\boldsymbol{b}.
 $$
-\end{example}
+</p>
 
 在许多实际问题中,会遇到一组变量由另一组变量线性表示的问题, 如变量 $y_{1}$, $y_{2}, \cdots, y_{m}$ 可由变量 $x_{1}, x_{2}, \cdots, x_{n}$ 线性表示, 即
 $$
