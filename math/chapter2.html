@@ -518,7 +518,7 @@ c_{41} & c_{42}
 $$
 其中, $a_{i k}(i=1,2,3,4, k=1,2,3)$ 是第 $i$ 个工厂生产第 $k$ 种产品的数量, $b_{k 1}$ 及 $b_{k 2}(k=1,2, 3$ ) 分别是第 $k$ 种产品的单位价格和单位利润, $c_{i 1}$ 及 $c_{i 2} (i=1,2,3,4)$ 分别是第 $i$ 个工厂生产三种产品的总收入和总利润. 则:
 <br>
-$\qquad$ 第一个工厂的总收入为 $c_{11}=a_{11} b_{11}+a_{12} b_{21}+a_{13} b_{31}$,
+$\qquad$第一个工厂的总收入为 $c_{11}=a_{11} b_{11}+a_{12} b_{21}+a_{13} b_{31}$,
 <br>
 $\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{12}=a_{11} b_{12}+a_{12} b_{22}+a_{13} b_{32}$;
 <br>
@@ -710,7 +710,7 @@ $$
 \boldsymbol{y}=\boldsymbol{A x}.
 $$
 
-\textbf{注意:} $(1)$ 一般情况下, 矩阵的乘法不满足交换律, 即 $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$, 这从例 $8$ 和例 $9$ 中就可以看出. 若 $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$, 则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 可交换.
+<b>注意:</b> $(1)$ 一般情况下, 矩阵的乘法不满足交换律, 即 $\boldsymbol{A B} \neq \boldsymbol{B} \boldsymbol{A}$, 这从例 $8$ 和例 $9$ 中就可以看出. 若 $\boldsymbol{A B}=\boldsymbol{B} \boldsymbol{A}$, 则称 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 可交换.
 
 $(2)$ 当 $\boldsymbol{A B}=\boldsymbol{O}$ 时, 不一定有 $\boldsymbol{A}=\boldsymbol{O}$ 或 $\boldsymbol{B}=\boldsymbol{O}$. 如例 $8$ 所示.
 
@@ -777,7 +777,8 @@ $$
 
 但因为矩阵的乘法一般不满足交换律, 所以对于两个 $n$ 阶方阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$, 一般来说, $(\boldsymbol{A B})^{k} \neq \boldsymbol{A}^{k} \boldsymbol{B}^{k}$.
 
-\begin{example}%例 11 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $11$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -794,12 +795,13 @@ $$
 0 & 0 & \lambda^{n}
 \end{array}\right)(n \geqslant 2 \text { 为正整数). }
 $$
-\end{example}
-
-
-\begin{proof}  
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample11").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample11").style.display="none"'> 
+<div id= "divIDexample11" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font> 
 用数学归纳法证明.
-
+<br>
 当 $n=2$ 时,
 $$
 \boldsymbol{A}^{2}=\left(\begin{array}{lll}
@@ -817,7 +819,7 @@ $$
 \end{array}\right),
 $$
 结论成立.
-
+<br>
 假设 $n=k$ 时, 结论成立, 即
 $$
 \boldsymbol{A}^{k}=\left(\begin{array}{ccc}
@@ -850,7 +852,7 @@ $$
 \end{aligned}
 $$
 于是等式得证.
-\end{proof}
+</p></div></p>
 
 
   
@@ -940,7 +942,8 @@ $$
 易知, 对称矩阵的特点: 它的元素以主对角线为对称轴对应相等; 而反对称矩阵的特点: 以主对角线为对称轴的对应元素的绝对值相等, 符号相反, 且主对角线上各元素均为 $0$ .
 
 
-\begin{example}%例 12 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $12$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{rrr}
@@ -977,13 +980,16 @@ $$
 \end{array}\right)=(\boldsymbol{A B})^{\mathrm{T}}.
 \end{gathered}
 $$
-\end{example}
+</p>
 
-\begin{example}%例 13 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $13$：</b></font>
 设 $\boldsymbol{A}$ 是 $n$ 阶反对称矩阵, $\boldsymbol{B}$ 是 $n$ 阶对称矩阵, 证明: $\boldsymbol{A} \boldsymbol{B}+\boldsymbol{B} \boldsymbol{A}$ 是 $n$ 阶反对称矩阵.
-\end{example}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample13").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample13").style.display="none"'> 
+<div id= "divIDexample13" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 因为 $\boldsymbol{A}^{\mathrm{T}}=-\boldsymbol{A}$, $\boldsymbol{B}^{\mathrm{T}}=\boldsymbol{B}$, 而
 $$
 \begin{aligned}
@@ -992,7 +998,7 @@ $$
 \end{aligned}
 $$
 所以结论成立.
-\end{proof}
+</p></div></p>
 
 
   
@@ -1013,11 +1019,14 @@ $(2)$ $|\lambda \boldsymbol{A}|=\lambda^{n}|\boldsymbol{A}|$;
 
 $(3)$ $|\boldsymbol{A B}|=|\boldsymbol{A}| \cdot|\boldsymbol{B}|$.
 
-\begin{example}%例 14 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $14$：</b></font>
 设 $\boldsymbol{A}$ 是 $n$ 阶方阵, 满足 $\boldsymbol{A} \boldsymbol{A}^{\mathrm{T}}=\boldsymbol{E}$, 且 $|\boldsymbol{A}|=-1$, 求 $|\boldsymbol{A}+\boldsymbol{E}|$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample14").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample14").style.display="none"'> 
+<div id= "divIDexample14" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由于
 $$
 \begin{aligned}
@@ -1034,7 +1043,7 @@ $$
 $$
 |\boldsymbol{A}+\boldsymbol{E}|=0. 
 $$
-\end{solution}
+</p></div></p>
 
 </ul>
 
@@ -1073,7 +1082,7 @@ $$
 $$
 因此, $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的一个逆矩阵.
 
-\textbf{注意:} 如果 $\boldsymbol{A}$ 是可逆的, 则 $\boldsymbol{A}$ 的逆矩阵唯一.
+<b>注意:</b> 如果 $\boldsymbol{A}$ 是可逆的, 则 $\boldsymbol{A}$ 的逆矩阵唯一.
 
 事实上, 设 $\boldsymbol{B}, \boldsymbol{C}$ 都是 $\boldsymbol{A}$ 的逆矩阵, 则一定有
 $$
@@ -1166,7 +1175,8 @@ $$
 所以 $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$. 证毕.
 \end{proof}
 
-\begin{example}%例 15 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $15$：</b></font>
 求方阵
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -1176,9 +1186,11 @@ $$
 \end{array}\right)
 $$
 的逆矩阵 $\boldsymbol{A}^{-1}$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample15").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample15").style.display="none"'> 
+<div id= "divIDexample15" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 因为 $|\boldsymbol{A}|=2 \neq 0$, 所以 $\boldsymbol{A}^{-1}$ 存在. 先求 $\boldsymbol{A}$ 的伴随矩阵 $\boldsymbol{A}^{*}$.
 $$
 \begin{array}{lll}
@@ -1203,9 +1215,10 @@ $$
 1 & -4 & 2
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 16 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $16$：</b></font>
 在第 $1$ 章例 $2$ 中, 令
 $$
 \boldsymbol{A}=\left(\begin{array}{rrr}
@@ -1234,7 +1247,7 @@ $$
 $$
 \boldsymbol{A x}=\boldsymbol{b}.
 $$
-
+<br>
 由于 $|\boldsymbol{A}|=60 \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 且
 $$
 \boldsymbol{A}^{-1}=\left(\begin{array}{rrr}
@@ -1259,9 +1272,10 @@ $$
 1
 \end{array}\right).
 $$
-\end{example}
+</p>
 
-\begin{example}%例 17 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $17$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
@@ -1281,9 +1295,11 @@ $$
 $$
 \boldsymbol{A X B}=\boldsymbol{C}.
 $$
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample17").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample17").style.display="none"'> 
+<div id= "divIDexample17" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 若 $\boldsymbol{A}^{-1}, \boldsymbol{B}^{-1}$ 均存在,则用 $\boldsymbol{A}^{-1}$ 左乘上式, 用 $\boldsymbol{B}^{-1}$ 右乘上式, 有
 $$
 \boldsymbol{A}^{-1} \boldsymbol{AXB} \boldsymbol{B}^{-1}=\boldsymbol{A}^{-1} \boldsymbol{CB}^{-1}, 
@@ -1332,15 +1348,18 @@ $$
 \end{array}\right).
 \end{aligned}
 $$
-\end{solution}
+</p></div></p>
 
-\textbf{注意:} 解矩阵方程时, 要区分矩阵的左乘与右乘. 因为矩阵的乘法不满足交换律,所以不能混淆左乘与右乘.
+<b>注意:</b> 解矩阵方程时, 要区分矩阵的左乘与右乘. 因为矩阵的乘法不满足交换律,所以不能混淆左乘与右乘.
 
-\begin{example}%例 18 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $18$：</b></font> 
 设三阶方阵 $\boldsymbol{A}, \boldsymbol{B}$ 满足 $\boldsymbol{A}^{-1} \boldsymbol{B A}=6 \boldsymbol{A}+\boldsymbol{B} \boldsymbol{A}$, 且 $\boldsymbol{A}=\operatorname{diag}\left(\frac{1}{2}, \frac{1}{4}, \frac{1}{7}\right)$, 求 $\boldsymbol{B}$.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample18").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample18").style.display="none"'> 
+<div id= "divIDexample18" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 由 $\boldsymbol{A}^{-1}\boldsymbol{B A}-\boldsymbol{B A}=6 \boldsymbol{A}$, 得
 $$
 \left(\boldsymbol{A}^{-1}-\boldsymbol{E}\right) \boldsymbol{B A}=6 \boldsymbol{A}.
@@ -1376,13 +1395,16 @@ $$
 \end{array}\right).
 \end{aligned}
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 19 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $19$：</b></font>
 设 $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{*} \boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{B}$, 证明 $\boldsymbol{B}$ 可逆. 又当 $\boldsymbol{A}=\left(\begin{array}{lll}2 & 6 & 0 \\ 0 & 2 & 6 \\ 0 & 0 & 2\end{array}\right)$ 时, 求 $\boldsymbol{B}$.
-\end{example}
-
-\begin{proof} 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample19").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample19").style.display="none"'> 
+<div id= "divIDexample19" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font>
 由 $\boldsymbol{A}^{*} \boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{E B}$, 得
 \begin{equation}\label{eq2-1}
 \left(\boldsymbol{A}^{*}-\boldsymbol{E}\right) \boldsymbol{B}=\boldsymbol{A}^{-1}. %\tag{2-1}
@@ -1415,7 +1437,7 @@ $$
 0 & 0 & 1
 \end{array}\right).
 $$
-\end{proof}
+</p></div></p>
 
 定理 $1$ 不仅给出了一个方阵可逆的判定准则, 同时也给出了求逆矩阵的一种方法, 这种方法称为伴随矩阵法. 当方阵的阶数比较小时, 这种方法是可行的,但当方阵的阶数较高时, 这种方法就不太适用了. 在本章的第 $6$ 节中我们将要介绍一种简便、实用的求逆矩阵的方法.
 
@@ -1529,10 +1551,11 @@ $$
 $$
 其中 $\boldsymbol{C}_{i j}=\sum_{k=1}^{t} \boldsymbol{A}_{i k} \boldsymbol{B}_{k j}(i=1,2, \cdots, s ; j=1,2, \cdots, r)$.
 
-\textbf{注意:} 在分块矩阵的乘法中, 要求左矩阵的列的分法与右矩阵的行的分法是一致的.
+<b>注意:</b> 在分块矩阵的乘法中, 要求左矩阵的列的分法与右矩阵的行的分法是一致的.
 
 
-\begin{example}%例 20 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $20$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -1548,10 +1571,11 @@ $$
 \end{array}\right),
 $$
 求 $\boldsymbol{A B}$.
-\end{example}
-
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample20").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample20").style.display="none"'> 
+<div id= "divIDexample20" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 将 $\boldsymbol{A}, \boldsymbol{B}$ 分别分块成
 $$
 \begin{gathered}
@@ -1632,7 +1656,7 @@ $$
 -1 & 1 & 3 & 1
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
 $(3)$ 设
 $$
@@ -1700,11 +1724,14 @@ $$
 \end{array}\right).
 $$
 
-\begin{example}%例 21 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $21$：</b></font>
 设 $\boldsymbol{A}=\left(\begin{array}{lll}5 & 0 & 0 \\ 0 & 3 & 1 \\ 0 & 2 & 1\end{array}\right)$, 求 $\boldsymbol{A}^{-1}$.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample21").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample21").style.display="none"'> 
+<div id= "divIDexample21" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 把矩阵 $\boldsymbol{A}$ 分块为 $\boldsymbol{A}=\left(\begin{array}{c:cc}5 & 0 & 0 \\ \hdashline 0 & 3 & 1 \\ 0 & 2 & 1\end{array}\right)=\left(\begin{array}{cc}\boldsymbol{A}_{1} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{A}_{2}\end{array}\right)$,
 且
 $$
@@ -1724,9 +1751,10 @@ $$
 0 & -2 & 3
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 22 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $22$：</b></font>
 设 $\boldsymbol{A}, \boldsymbol{C}$ 分别为 $r$ 阶可逆矩阵、 $s$ 阶可逆矩阵, 求分块矩阵
 $$
 \boldsymbol{X}=\left(\begin{array}{ll}
@@ -1735,9 +1763,11 @@ $$
 \end{array}\right)
 $$
 的逆矩阵.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample22").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample22").style.display="none"'> 
+<div id= "divIDexample22" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 设分块矩阵 (各子块符合分块矩阵乘法的要求)
 $$
 \boldsymbol{X}^{-1}=\left(\begin{array}{ll}
@@ -1788,7 +1818,7 @@ $$
 \boldsymbol{A}^{-1} & \boldsymbol{O}
 \end{array}\right).
 $$
-
+<br>
 特别地, 当 $\boldsymbol{B}=\boldsymbol{O}$ 时,
 $$
 \left(\begin{array}{ll}
@@ -1817,7 +1847,7 @@ $$
 \boldsymbol{A}_{1}^{-1} & & &
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
 </ul>
 
@@ -1855,7 +1885,8 @@ $(2)$ 对称性 : 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $\boldsymbol{B}
 
 $(3)$ 传递性: 若 $\boldsymbol{A} \cong \boldsymbol{B}, \boldsymbol{B} \cong \boldsymbol{C}$, 则 $\boldsymbol{A} \cong \boldsymbol{C}$.
 
-\begin{example}%例 23 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $23$：</b></font>
 已知
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -1889,7 +1920,7 @@ r_{4}+r_{1}}]{r_{2}+r_{1}}\left(\begin{array}{rrrr}
 \end{aligned}
 $$
 则 $\boldsymbol{A} \cong \boldsymbol{B}$.
-\end{example}
+</p>
 
 矩阵 $\boldsymbol{B}$ 称为行阶梯形矩阵, 它具有下列特征:
 
@@ -1947,7 +1978,7 @@ $$
 任何一个矩阵都有等价标准形, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 当且仅当它们有相同的等价标准形. 
 \end{theorem}
 
-\textbf{注意:} 与矩阵 $\boldsymbol{A}$ 等价的行阶梯形矩阵和行最简形矩阵不是唯一的, 但矩阵
+<b>注意:</b> 与矩阵 $\boldsymbol{A}$ 等价的行阶梯形矩阵和行最简形矩阵不是唯一的, 但矩阵
 $\boldsymbol{A}$ 的等价标准形是唯一的.
 
 两个等价的矩阵不一定是相等的, 那么它们之间有什么关系呢? 为此, 我们引入初等矩阵的概念.
@@ -2214,7 +2245,8 @@ $$
 $$
 
 
-\begin{example}%例 24 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $24$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{rrr}
@@ -2224,9 +2256,11 @@ $$
 \end{array}\right),
 $$
 求 $\boldsymbol{A}^{-1}$.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample24").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample24").style.display="none"'> 
+<div id= "divIDexample24" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>  
 对 $(\boldsymbol{A} \, \vdots\,  \boldsymbol{E})$ 作初等行变换:
 $$
 \begin{aligned}
@@ -2263,7 +2297,7 @@ r_1+2 \times r_3}}\left(\begin{array}{rrr:rrr}
 \end{array}\right).
 \end{aligned}
 $$
-
+<br>
 于是
 $$
 \boldsymbol{A}^{-1}=\left(\begin{array}{rrr}
@@ -2272,9 +2306,9 @@ $$
 -\frac{3}{2} & 1 & -\frac{1}{2}
 \end{array}\right).
 $$
-\end{solution}
+</p></div></p>
 
-\textbf{注意:} 也可以利用初等列变换求逆矩阵,即
+<b>注意:</b> 也可以利用初等列变换求逆矩阵,即
 $$
 \left(\begin{array}{c}
 \boldsymbol{A} \\ \hdashline
@@ -2303,7 +2337,8 @@ $$
 
 显然, $k \leqslant \min \{s, n\}$ ( $s, n$ 中较小的一个).
 
-\begin{example}%例 25 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $25$：</b></font>
 在矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrrr}
@@ -2321,7 +2356,7 @@ $$
 \end{array}\right|
 $$
 就是 $\boldsymbol{A}$ 的一个二阶子式. 易见, $\boldsymbol{A}$ 的二阶子式共有 $\mathrm{C}_{4}^{2} \cdot \mathrm{C}_{5}^{2}=60$ 个.
-\end{example}
+</p>
 
 一般地, $s \times n$ 矩阵 $\boldsymbol{A}$ 的 $k$ 阶子式共有 $\mathrm{C}_{s}^{k} \cdot \mathrm{C}_{n}^{k}$ 个.
 
@@ -2331,7 +2366,8 @@ $$
 
 由行列式的性质可知, 在 $\boldsymbol{A}$ 中, 当所有 $r+1$ 阶子式都为 $0$ 时, 所有高于 $r+1$阶的子式也全为 $0$ , 因此, 矩阵 $\boldsymbol{A}$ 的秩 $r(\boldsymbol{A})$ 就是 $\boldsymbol{A}$ 的非零子式的最高阶数. 若 $r(\boldsymbol{A})=r$, 则 $\boldsymbol{A}$ 一定存在一个 $r$ 阶非零子式, 称为 $\boldsymbol{A}$ 的最高阶非零子式. 一般来说, $\boldsymbol{A}$ 的最高阶非零子式可能不止一个.
 
-\begin{example}%例26 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $26$：</b></font>
 求矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{rrr}
@@ -2341,9 +2377,11 @@ $$
 \end{array}\right)
 $$
 的秩.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample26").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample26").style.display="none"'> 
+<div id= "divIDexample26" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 在 $\boldsymbol{A}$ 中, 存在一个二阶子式
 $$
 \left|\begin{array}{rr}
@@ -2360,10 +2398,11 @@ $$
 \end{array}\right|=0. 
 $$
 故 $r(\boldsymbol{A})=2$.
-\end{solution}
+</p></div></p>
 
 
-\begin{example}%例 27 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $27$：</b></font>
 已知矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{llll}
@@ -2374,9 +2413,11 @@ a & 1 & 1 & 1 \\
 \end{array}\right)
 $$
 的秩为 $3$ , 求 $a$ 的值.
-\end{example}
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample27").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample27").style.display="none"'> 
+<div id= "divIDexample27" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 由于 $r(\boldsymbol{A})=3$, 则 $|\boldsymbol{A}|=0$, 即
 $$
 \begin{aligned}
@@ -2401,9 +2442,9 @@ a & 1 & 1 & 1 \\
 \end{aligned}
 $$
 由此得 $a=-3$ 或 $a=1$.
-
+<br>
 当 $a=1$ 时, 显然, 有 $r(\boldsymbol{A})=1$, 不符合题意;
-
+<br>
 当 $a=-3$ 时, $\boldsymbol{A}$ 的左上角的三阶子式
 $$
 \left|\begin{array}{rrr}
@@ -2413,10 +2454,11 @@ $$
 \end{array}\right|=-16 \neq 0. 
 $$
 故当且仅当 $a=-3$ 时, $r(\boldsymbol{A})=3$.
-\end{solution}
+</p></div></p>
 
 
-\begin{example}%例 28 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $28$：</b></font>
 求矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrrr}
@@ -2427,9 +2469,11 @@ $$
 \end{array}\right)
 $$
 的秩.
-\end{example}
-
-\begin{solution} 
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample28").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample28").style.display="none"'> 
+<div id= "divIDexample28" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $\boldsymbol{A}$ 是一个行阶梯形矩阵, 其非零行只有三行, 故 $\boldsymbol{A}$ 的所有四阶子式全为零. 此外, $\boldsymbol{A}$ 的一个三阶子式
 $$
 \left|\begin{array}{rrr}
@@ -2439,7 +2483,7 @@ $$
 \end{array}\right|=24 \neq 0 .
 $$
 所以 $r(\boldsymbol{A})=3$.
-\end{solution}
+</p></div></p>
 
 从例 $28$ 可以看出,一个行阶梯形矩阵的秩等于它的非零行的个数.
 
@@ -2475,7 +2519,8 @@ $$
 
 
 
-\begin{example}%例 29
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $29$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrrr}
@@ -2486,10 +2531,11 @@ $$
 \end{array}\right),   
 $$
 求 $r(\boldsymbol{A})$, 并求 $\boldsymbol{A}$ 的一个最高阶非零子式.
-\end{example}
-
-
-\begin{solution}  
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample29").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample29").style.display="none"'> 
+<div id= "divIDexample29" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font> 
 对 $\boldsymbol{A}$ 作初等行变换将其化为行阶梯形矩阵:
 $$
 \begin{aligned}
@@ -2522,7 +2568,7 @@ r_{2}(-1) \times r_{4}}}\left(\begin{array}{rrrrr}
 \end{aligned}
 $$
 因为行阶梯形矩阵的非零行的个数为 $3$ , 故 $r(\boldsymbol{A})=3$.
-
+<br>
 再求 $\boldsymbol{A}$ 的一个最高阶非零子式. 由 $r(\boldsymbol{A})=3$ 知, $\boldsymbol{A}$ 的最高阶非零子式为三阶子式, $\boldsymbol{A}$的三阶子式共有 $\mathrm{C}_{4}^{3} \cdot \mathrm{C}_{5}^{3}=40$ 个, 要从 $40$ 个子式中找出一个非零子式是相当麻烦的. 现在选取 $\boldsymbol{A}$ 的第一列、第二列和第四列组成新矩阵, 记为
 $$
 \boldsymbol{B}=\left(\begin{array}{rrr}
@@ -2550,9 +2596,10 @@ $$
 \end{array}\right|=-16 \neq 0. 
 $$
 因此这个子式便是 $\boldsymbol{A}$ 的一个最高阶非零子式.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 30 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $30$：</b></font>
 设
 $$
 \boldsymbol{A}=\left(\begin{array}{rrrr}
@@ -2562,9 +2609,11 @@ $$
 \end{array}\right)
 $$
 且 $r(\boldsymbol{A})=2$, 求 $\lambda$ 与 $\mu$ 的值.
-\end{example}
-
-\begin{solution}%解
+<input type=button value= "显示解答" onclick='document.getElementById("divIDexample30").style.display="block"'> 
+<input type=button value= "收起解答" onclick='document.getElementById("divIDexample30").style.display="none"'> 
+<div id= "divIDexample30" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>解：</b></font>
 $$
 \begin{aligned}
 \boldsymbol{A} & =\left(\begin{array}{rrrr}
@@ -2584,13 +2633,16 @@ $$
 \end{aligned}
 $$
 由于 $r(\boldsymbol{A})=2$, 则 $5-\lambda=0$, $\mu-1=0$, 即 $\lambda=5, \mu=1$.
-\end{solution}
+</p></div></p>
 
-\begin{example}%例 31 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>例 $31$：</b></font>
 设 $\boldsymbol{A}$ 为 $n$ 阶可逆方阵, $\boldsymbol{B}$ 为 $n \times m$ 矩阵. 证明: $r(\boldsymbol{A B})=r(\boldsymbol{B})$.
-\end{example}
-
-\begin{proof}% 证 
+<input type=button value= "显示证明" onclick='document.getElementById("divIDexample31").style.display="block"'> 
+<input type=button value= "收起证明" onclick='document.getElementById("divIDexample31").style.display="none"'> 
+<div id= "divIDexample31" style= "display:none"> 
+<p style="border: 2px solid green; border-radius: 5px">
+<font color=green><b>证明：</b></font> 
 因为 $\boldsymbol{A}$ 可逆,故 $\boldsymbol{A}$ 可表示成若干个初等矩阵的乘积, 即存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots$, $\boldsymbol{P}_{s}$,使
 $$
 \boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}. 
@@ -2600,7 +2652,7 @@ $$
 \boldsymbol{AB}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s} \boldsymbol{B}.
 $$
 这表明 $\boldsymbol{A} \boldsymbol{B}$ 是 $\boldsymbol{B}$ 经过 $s$ 次初等行变换而得到的. 由定理 $6$ 可知 $r(\boldsymbol{A B})=r(\boldsymbol{B})$.
-\end{proof}
+</p></div></p>
 
 
 
