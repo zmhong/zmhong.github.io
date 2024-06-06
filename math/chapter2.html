@@ -69,69 +69,39 @@
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $1$：</b></font>
-某航空公司在 A, B, C, D 四个城市之间开辟了若干条航线, 用图 \ref{fig:2.1} 表示四个城市间的航班图, 若从 A 到 B 有航班, 则用从 A 指向 B 的带箭头的线连接 A 与 B.
-
+某航空公司在 A, B, C, D 四个城市之间开辟了若干条航线, 用图 <a href="#fig2.1">2.1</a> 表示四个城市间的航班图, 若从 A 到 B 有航班, 则用从 A 指向 B 的带箭头的线连接 A 与 B.
+<br>
 用表格表示如下:
-\begin{center}
-\begin{tabular}{cccccc}
-\multicolumn{1}{l}{}                                               & \multicolumn{1}{l}{}   & \multicolumn{4}{c}{出发地}                                                                                                           \\
-\multicolumn{1}{l}{}                                               & \multicolumn{1}{l}{}   & A                              & B                              & C                              & D                              \\ \cline{3-6} 
-\multirow{4}{*}{\begin{tabular}[c]{@{}c@{}}出\\ 发\\ 地\end{tabular}} & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          \\ \cline{3-6} 
-                                                                   & \multicolumn{1}{c|}{B} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{$\sqrt{}$} \\ \cline{3-6} 
-                                                                   & \multicolumn{1}{c|}{C} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} \\ \cline{3-6} 
-                                                                   & \multicolumn{1}{c|}{D} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{$\sqrt{}$} & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          \\ \cline{3-6} 
-\end{tabular}
-\end{center}
+<br>
+  
+<center>
+<figure>
+  <img src="table2-0.png" width="50%">
+</figure>
+</center>
 
+<center>
+<figure>
+  <img src="fig2.1.png" width="40%">
+ <figcaption><a name="fig2.1">图2.1</a> </figcaption>
+</figure>
+</center>
+
+<br>
 其中 $\sqrt{ }$ 表示有航班. 为了便于研究, 记上述表格中的 $\sqrt{ }$ 为 $1$ , 空白处为 $0$ , 则得到一个数表:
-
+$$
+\left(\begin{array}{llll}
+0 & 1 & 1 & 0 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 0
+\end{array}\right).
+$$
 该数表反映了四个城市间的交通连接情况.
 </p>
 
-\begin{figure}[ht]
-\centering
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-
-%Straight Lines [id:da3073386813436296] 
-\draw    (244,120) -- (215.16,147.91) ;
-\draw [shift={(213,150)}, rotate = 315.94] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-%Straight Lines [id:da7660616722047875] 
-\draw    (216.12,78.12) -- (244.88,106.88) ;
-\draw [shift={(247,109)}, rotate = 225] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-\draw [shift={(214,76)}, rotate = 45] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-%Straight Lines [id:da8800646430386088] 
-\draw    (169.15,106.91) -- (196.85,80.09) ;
-\draw [shift={(199,78)}, rotate = 135.91] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-\draw [shift={(167,109)}, rotate = 315.91] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-%Straight Lines [id:da24225821252129087] 
-\draw    (173,114.96) -- (239,114.04) ;
-\draw [shift={(242,114)}, rotate = 179.2] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-\draw [shift={(170,115)}, rotate = 359.2] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-%Straight Lines [id:da9537384400509235] 
-\draw    (206,87) -- (206,143) ;
-\draw [shift={(206,146)}, rotate = 270] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-\draw [shift={(206,84)}, rotate = 90] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (7.14,-3.43) -- (0,0) -- (7.14,3.43) -- (4.74,0) -- cycle    ;
-
-% Text Node
-\draw (156,106) node [anchor=north west][inner sep=0.75pt]   [align=left] {A};
-% Text Node
-\draw (202,65) node [anchor=north west][inner sep=0.75pt]   [align=left] {B};
-% Text Node
-\draw (244,106) node [anchor=north west][inner sep=0.75pt]   [align=left] {C};
-% Text Node
-\draw (201,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {D};
 
 
-\end{tikzpicture}
-
-    \caption{}
-    \label{fig:2.1}
-\end{figure}
-%图 2-1
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $2$：</b></font> 
@@ -141,24 +111,14 @@
 表 2-1 煤炭、电力、钢铁三部门之间的分配
 \end{center}
 
-\begin{center}
-\begin{tabular}{c|c|c|c}
-\hline
-\multirow{2}{*}{采购部门} & \multicolumn{3}{c}{部门的产出分配} \\
-\cline { 2 - 4 }
- & 煤炭 & 电力 & 钢铁 \\
-\hline
-煤炭 & 0.0 & 0.4 & 0.6 \\
-\hline
-电力 & 0.6 & 0.1 & 0.2 \\
-\hline
-钢铁 & 0.4 & 0.5 & 0.2 \\
-\hline
-\end{tabular}
-\end{center}
+<center>
+<figure>
+   <figcaption><a name="table2-1">表 2-1 煤炭、电力、钢铁三部门之间的分配</a> </figcaption>
+  <img src="table2-1.png" width="50%">
+</figure>
+</center>
 
 将上述表格简单地用数表
-
 $$
 \left(\begin{array}{lll}
 0.0 & 0.4 & 0.6 \\
@@ -166,7 +126,6 @@ $$
 0.4 & 0.5 & 0.2
 \end{array}\right)
 $$
-
 表示, 它具体描述了经济系统各部门产出的分配情况.
 </p>
 
