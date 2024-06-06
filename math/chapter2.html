@@ -142,7 +142,7 @@ $$
 这样的表称为 $m \times n$ 矩阵, 可用黑体大写字母 $\boldsymbol{A}$ 表示. $a_{i j}$ 称为矩阵 $\boldsymbol{A}$ 的元素, 它位于矩阵 $\boldsymbol{A}$ 的第 $i$ 行、第 $j$ 列的交叉处.
 </p>
 
-一般情况下, 有如下定义.
+<p style="text-indent: 2em;">一般情况下, 有如下定义.
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $1$：</b></font> 
@@ -284,10 +284,10 @@ $$
 <p style="text-indent: 2em;"><b>注意:</b> 两个矩阵只有同型时, 才能进行加法运算.
 
 <p style="text-indent: 2em;">由于矩阵的加法归结为它们的元素的加法, 也就是数的加法, 所以不难验证矩阵的加法满足下列运算规律:
-<br>
-$(1)$ $\boldsymbol{A}+\boldsymbol{B}=\boldsymbol{B}+\boldsymbol{A}$; $\qquad \qquad \qquad \qquad $(交换律)
-<br>
-$(2)$ $(\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C}=\boldsymbol{A}+(\boldsymbol{B}+\boldsymbol{C})$. $\qquad  $ (结合律)
+
+<p style="text-indent: 2em;">$(1)$ $\boldsymbol{A}+\boldsymbol{B}=\boldsymbol{B}+\boldsymbol{A}$; $\qquad \qquad \qquad \qquad $(交换律)
+
+<p style="text-indent: 2em;">$(2)$ $(\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C}=\boldsymbol{A}+(\boldsymbol{B}+\boldsymbol{C})$. $\qquad  $ (结合律)
 
 
 
@@ -351,7 +351,7 @@ $$
 
 <p style="text-indent: 2em;">$(3)$ $\lambda(\boldsymbol{A}+\boldsymbol{B})=\lambda \boldsymbol{A}+\lambda \boldsymbol{B}$.
 
-<p style="text-indent: 2em;">设矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$, 记 $-\boldsymbol{A}=(-1) \cdot \boldsymbol{A}=\left(-a_{i j}\right),-\boldsymbol{A}$ 称为 $\boldsymbol{A}$ 的负矩阵. 显然,有
+<p style="text-indent: 2em;">设矩阵 $\boldsymbol{A}=\left(a_{i j}\right)$, 记 $-\boldsymbol{A}=(-1) \cdot \boldsymbol{A}=\left(-a_{i j}\right),-\boldsymbol{A}$ 称为 $\boldsymbol{A}$ 的负矩阵. 显然, 有
 $$
 \boldsymbol{A}+(-\boldsymbol{A})=\boldsymbol{O},
 $$
@@ -445,12 +445,12 @@ $$
 <h3><a name="C2.3">$2.2.3$ 矩阵与矩阵相乘</a></h3>
 
 
-先来看一个例子.
+<p style="text-indent: 2em;">先来看一个例子.
 
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $7$：</b></font>
-某地有四个工厂, 生产三种产品. 矩阵 $\boldsymbol{A}$ 表示一年中各工厂生产各种产品的数量,矩阵 $\boldsymbol{B}$ 表示各种产品的单位价格 (单位: 元) 和单位利润(单位: 元), 矩阵 $\boldsymbol{C}$ 表示各工厂的总收入和总利润.
+某地有四个工厂, 生产三种产品. 矩阵 $\boldsymbol{A}$ 表示一年中各工厂生产各种产品的数量, 矩阵 $\boldsymbol{B}$ 表示各种产品的单位价格 (单位: 元) 和单位利润(单位: 元), 矩阵 $\boldsymbol{C}$ 表示各工厂的总收入和总利润.
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
 a_{11} & a_{12} & a_{13} \\
@@ -472,19 +472,19 @@ $$
 <br>
 $\qquad$第一个工厂的总收入为 $c_{11}=a_{11} b_{11}+a_{12} b_{21}+a_{13} b_{31}$,
 <br>
-$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{12}=a_{11} b_{12}+a_{12} b_{22}+a_{13} b_{32}$;
+$\qquad$$\qquad$$\qquad$$\quad$总利润为 $c_{12}=a_{11} b_{12}+a_{12} b_{22}+a_{13} b_{32}$;
 <br>
 $\qquad$第二个工厂的总收入为 $c_{21}=a_{21} b_{11}+a_{22} b_{21}+a_{23} b_{31}$,
 <br>
-$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{22}=a_{21} b_{12}+a_{22} b_{22}+a_{23} b_{32}$;
+$\qquad$$\qquad$$\qquad$$\quad$总利润为 $c_{22}=a_{21} b_{12}+a_{22} b_{22}+a_{23} b_{32}$;
 <br>
 $\qquad$第三个工厂的总收入为 $c_{31}=a_{31} b_{11}+a_{32} b_{21}+a_{33} b_{31}$,
 <br>
-$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{32}=a_{31} b_{12}+a_{32} b_{22}+a_{33} b_{32}$;
+$\qquad$$\qquad$$\qquad$$\quad$总利润为 $c_{32}=a_{31} b_{12}+a_{32} b_{22}+a_{33} b_{32}$;
 <br>
 $\qquad$第四个工厂的总收入为 $c_{41}=a_{41} b_{11}+a_{42} b_{21}+a_{43} b_{31}$,
 <br>
-$\qquad$$\qquad$$\qquad$$\qquad$总利润为 $c_{42}=a_{41} b_{12}+a_{42} b_{22}+a_{43} b_{32}$.
+$\qquad$$\qquad$$\qquad$$\quad$总利润为 $c_{42}=a_{41} b_{12}+a_{42} b_{22}+a_{43} b_{32}$.
 <br>
 因此, 矩阵 $\boldsymbol{A}, \boldsymbol{B}, \boldsymbol{C}$ 的元素之间有下列关系:
 $$
@@ -522,7 +522,7 @@ $$
 是一个数 $c_{i j}$, 这表明若 $\boldsymbol{C}=\boldsymbol{A B}$, 则矩阵 $\boldsymbol{C}$ 的元素 $c_{i j}$ 就是 $\boldsymbol{A}$ 的第 $i$ 行与 $\boldsymbol{B}$ 的第 $j$ 列对应元素的乘积之和. 
 
 
-<b>注意:</b> 只有当第一个矩阵 (左矩阵) 的列数与第二个矩阵 (右矩阵) 的行数相等时, 两个矩阵才能相乘. 两个矩阵相乘所得矩阵的行数同第一个矩阵 (左矩阵)的行数, 列数同第二个矩阵 (右矩阵) 的列数.
+<p style="text-indent: 2em;"><b>注意:</b> 只有当第一个矩阵 (左矩阵) 的列数与第二个矩阵 (右矩阵) 的行数相等时, 两个矩阵才能相乘. 两个矩阵相乘所得矩阵的行数同第一个矩阵 (左矩阵)的行数, 列数同第二个矩阵 (右矩阵) 的列数.
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $8$：</b></font> 
@@ -703,7 +703,7 @@ $$
 
 <p style="text-indent: 2em;">$(2)$ $\boldsymbol{A}(\boldsymbol{B}+\boldsymbol{C})=\boldsymbol{A B}+\boldsymbol{A C}$; $\qquad \qquad$ (左分配律)
 
-<br>$\quad \,\,$$(\boldsymbol{B}+\boldsymbol{C}) \boldsymbol{A}=\boldsymbol{B A}+\boldsymbol{C A} $; $\qquad\qquad$ (右分配律)
+<br>$\qquad \,\,$$(\boldsymbol{B}+\boldsymbol{C}) \boldsymbol{A}=\boldsymbol{B A}+\boldsymbol{C A} $; $\qquad\qquad$ (右分配律)
 
 <p style="text-indent: 2em;">$(3)$ $\lambda(\boldsymbol{A B})=(\lambda \boldsymbol{A}) \boldsymbol{B}$ （其中 $\lambda$ 为数).
 
