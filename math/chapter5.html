@@ -380,24 +380,26 @@ $$
 f(\lambda)=(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\cdots,
 $$
 这里没有写出的项的次数至多是 $n-2$.
-
+<p style="text-indent: 2em;">
 又在式(5-5) 中, 令 $\lambda=0$, 得
 $$
 f(0)=|\boldsymbol{A}|.
 $$
 从而有
-\begin{equation*}
-f(\lambda)=(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\boldsymbol{\cdots}+|\boldsymbol{A}|. \tag{5-7}
-\end{equation*}
+\begin{align*}
+f(\lambda)= & (-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}\\
+  & +\boldsymbol{\cdots}+|\boldsymbol{A}|. \tag{5-7}
+\end{align*}
 
 
 若 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的 $n$ 个特征值,则有
 \begin{align*}
-f(\lambda) & =\left(\lambda_{1}-\lambda\right)\left(\lambda_{2}-\lambda\right) \cdots\left(\lambda_{n}-\lambda\right) \\
-& =(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}\right) \lambda^{n-1}+\cdots+\lambda_{1} \lambda_{2} \cdots \lambda_{n}. \tag{5-8}
+f(\lambda)  = &\left(\lambda_{1}-\lambda\right)\left(\lambda_{2}-\lambda\right) \cdots\left(\lambda_{n}-\lambda\right) \\
+ = &(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}\right) \lambda^{n-1} \\
+  &+\cdots+\lambda_{1} \lambda_{2} \cdots \lambda_{n}. \tag{5-8}
 \end{align*}
 
-
+<p style="text-indent: 2em;">
 比较式(5-7)与式 (5-8) 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
 
 <p style="border: 2px solid blue; border-radius: 5px">
@@ -409,7 +411,7 @@ $\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}=a_{11}+a_{22}+\cdots+a_{n n}$. 称�
 <font color=blue><b>性质 $2$：</b></font>
 $\lambda_{1} \lambda_{2} \cdots \lambda_{n}=|\boldsymbol{A}|$.
 </p>
-
+<p style="text-indent: 2em;">
 由性质 $2$ 可得到下面的推论.
 
 <p style="border: 2px solid red; border-radius: 5px">
@@ -1347,16 +1349,18 @@ $$
 <font color=blue><b>定义 $3$：</b></font> 
 $n$ 元变量 $x_{1}, x_{2}, \cdots, x_{n}$ 的二次齐次多项式
 \begin{align*}
-f\left(x_{1}, x_{2}, \cdots, x_{n}\right)= & a_{11} x_{1}^{2}+a_{22} x_{2}^{2}+\cdots+a_{n n} x_{n}^{2}+2 a_{12} x_{1} x_{2}+\cdots+2 a_{1 n} x_{1} x_{n} \\
+f\left(x_{1}, x_{2}, \cdots, x_{n}\right)= & a_{11} x_{1}^{2}+a_{22} x_{2}^{2}+\cdots+a_{n n} x_{n}^{2}\\
+ & +2 a_{12} x_{1} x_{2}+\cdots+2 a_{1 n} x_{1} x_{n} \\
 & +2 a_{23} x_{2} x_{3}+\cdots+2 a_{n-1, n} x_{n-1} x_{n} \tag{5-9}
 \end{align*}
 称为 $n$ 元二次型, 简称二次型. 当 $a_{i j}$ 为复数时, $f$ 称为复二次型; 当 $a_{i j}$ 为实数时, $f$ 称为实二次型.
 </p>
-
+<p style="text-indent: 2em;">
 这里只讨论实二次型. 取 $a_{j i}=a_{i j} (i < j)$, 则 $2 a_{i j} x_{i} x_{j}=a_{i j} x_{i} x_{j}+a_{j i} x_{j} x_{i}$. 于是式(5-9)可写成对称形式:
 \begin{align*}
-f= & a_{11} x_{1}^{2}+a_{12} x_{1} x_{2}+\cdots+a_{1 n} x_{1} x_{n}+a_{21} x_{2} x_{1}+a_{22} x_{2}^{2} \\
-& +\cdots+a_{2 n} x_{2} x_{n}+\cdots+a_{n 1} x_{n} x_{1}+a_{n 2} x_{n} x_{2}+\cdots+a_{n n} x_{n}^{2} \\
+f= & a_{11} x_{1}^{2}+a_{12} x_{1} x_{2}+\cdots+a_{1 n} x_{1} x_{n}\\
+   & +a_{21} x_{2} x_{1}+a_{22} x_{2}^{2} +\cdots+a_{2 n} x_{2} x_{n}+\cdots \\
+   & +a_{n 1} x_{n} x_{1}+a_{n 2} x_{n} x_{2}+\cdots+a_{n n} x_{n}^{2} \\
 = & \sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}. \tag{5-10}
 \end{align*}
 记
@@ -1375,7 +1379,8 @@ x_{n}
 \]
 则式 (5-10) 可以用矩阵形式简单表示为
 \begin{align*}
-f & =\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)\left(\begin{array}{cccc}
+f  = &\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j} \\
+  = &\left(x_{1}, x_{2}, \cdots, x_{n}\right)\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
 a_{21} & a_{22} & \cdots & a_{2 n} \\
 \vdots & \vdots & & \vdots \\
@@ -1386,10 +1391,10 @@ x_{2} \\
 \vdots \\
 x_{n}
 \end{array}\right) \\
-& =\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}, \tag{5-12}
+ = & \boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x}, \tag{5-12}
 \end{align*}
 其中 $\boldsymbol{A}$ 为实对称矩阵.
-
+<p style="text-indent: 2em;">
 例如, 二次型 $f=x^{2}+2 x y+4 y^{2}-2 x z-6 y z+5 z^{2}$ 用矩阵表示即为
 $$
 f=(x, y, z)\left(\begin{array}{rrr}
@@ -1402,9 +1407,9 @@ y \\
 z
 \end{array}\right).
 $$
-
+<p style="text-indent: 2em;">
 显然, 这种矩阵表示是唯一的, 即任给一个二次型就唯一确定一个对称矩阵; 反之, 任给一个对称矩阵也可唯一确定一个二次型, 即两者之间存在一一对应关系. 对称矩阵 $\boldsymbol{A}$ 称为二次型 $f$ 的矩阵, $\boldsymbol{A}$ 的秩称为二次型 $f$ 的秩, $f$ 也称为对称矩阵 $\boldsymbol{A}$ 的二次型.
-
+<p style="text-indent: 2em;">
 在平面解析几何中讨论二次曲线时, 经常把二次曲线的一般方程
 $$
 a x^{2}+2 b x y+c y^{2}=1,
@@ -1414,9 +1419,9 @@ $$
 m x^{\prime 2}+n y^{\prime 2}=1,
 $$
 再根据标准形判断曲线的形状.
-
+<p style="text-indent: 2em;">
 这里对二次型也进行类似的讨论.
-
+<p style="text-indent: 2em;">
 对于一般的二次型
 $$
 f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}=\boldsymbol{x}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{x},
