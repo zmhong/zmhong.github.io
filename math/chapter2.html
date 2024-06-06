@@ -2279,7 +2279,7 @@ $$
 $$
 </p></div></p>
 
-<b>注意:</b> 也可以利用初等列变换求逆矩阵,即
+<p style="text-indent: 2em;"><b>注意:</b> 也可以利用初等列变换求逆矩阵, 即
 $$
 \left(\begin{array}{c}
 \boldsymbol{A} \\ \hdashline
@@ -2416,9 +2416,9 @@ a & 1 & 1 & 1 \\
 $$
 由此得 $a=-3$ 或 $a=1$.
 <br>
-当 $a=1$ 时, 显然, 有 $r(\boldsymbol{A})=1$, 不符合题意;
+$\quad$ 当 $a=1$ 时, 显然, 有 $r(\boldsymbol{A})=1$, 不符合题意;
 <br>
-当 $a=-3$ 时, $\boldsymbol{A}$ 的左上角的三阶子式
+$\quad$ 当 $a=-3$ 时, $\boldsymbol{A}$ 的左上角的三阶子式
 $$
 \left|\begin{array}{rrr}
 -3 & 1 & 1 \\
@@ -2458,12 +2458,12 @@ $$
 所以 $r(\boldsymbol{A})=3$.
 </p></div></p>
 
-从例 $28$ 可以看出,一个行阶梯形矩阵的秩等于它的非零行的个数.
+<p style="text-indent: 2em;">从例 $28$ 可以看出, 一个行阶梯形矩阵的秩等于它的非零行的个数.
 
-设矩阵 $\boldsymbol{A}$ 是一个 $s \times n$ 矩阵, 显然, 有 $r(\boldsymbol{A}) \leqslant \min \{s, n\}$. 当 $r(\boldsymbol{A})=\min \{s, n\}$时, 称 $\boldsymbol{A}$ 为满秩矩阵;否则称 $\boldsymbol{A}$ 为降秩矩阵.
+<p style="text-indent: 2em;">设矩阵 $\boldsymbol{A}$ 是一个 $s \times n$ 矩阵, 显然, 有 $r(\boldsymbol{A}) \leqslant \min \{s, n\}$. 当 $r(\boldsymbol{A})=\min \{s, n\}$时, 称 $\boldsymbol{A}$ 为满秩矩阵;否则称 $\boldsymbol{A}$ 为降秩矩阵.
 
 
-利用定义计算矩阵的秩, 需要由高阶到低阶考虑矩阵的子式, 当矩阵的行数与列数较多时, 是非常麻烦的. 由于行阶梯形矩阵的秩实际上就是其非零行的个数, 故行阶梯形矩阵的秩很容易判断. 而矩阵都可以经过初等行变换化为行阶梯形矩阵,因而可考虑借助初等变换求矩阵的秩.
+<p style="text-indent: 2em;">利用定义计算矩阵的秩, 需要由高阶到低阶考虑矩阵的子式, 当矩阵的行数与列数较多时, 是非常麻烦的. 由于行阶梯形矩阵的秩实际上就是其非零行的个数, 故行阶梯形矩阵的秩很容易判断. 而矩阵都可以经过初等行变换化为行阶梯形矩阵,因而可考虑借助初等变换求矩阵的秩.
 
 
 <p style="border: 2px solid red; border-radius: 5px">
@@ -2476,22 +2476,22 @@ $$
 <font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 是两个同型矩阵, 首先证明: 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $r(\boldsymbol{A})=r(\boldsymbol{B})$. 这只需证明每类初等行 (列) 变换不改变矩阵的秩即可. 显然, 第一类初等变换和第二类初等变换不改变矩阵的秩, 因此只就第三类初等变换证明即可.
 <br>
-设 $\boldsymbol{A} \xrightarrow{r_{j}+k \times r_{i}} \boldsymbol{B}$, 考察 $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式 $\left|\boldsymbol{B}_{1}\right|$ :
+$\quad$ 设 $\boldsymbol{A} \xrightarrow{r_{j}+k \times r_{i}} \boldsymbol{B}$, 考察 $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式 $\left|\boldsymbol{B}_{1}\right|$ :
 <br>
-若 $\boldsymbol{B}_{1}$ 不包含 $\boldsymbol{B}$ 的第 $j$ 行, 则 $\left|\boldsymbol{B}_{1}\right|$ 也是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
+$\quad$ 若 $\boldsymbol{B}_{1}$ 不包含 $\boldsymbol{B}$ 的第 $j$ 行, 则 $\left|\boldsymbol{B}_{1}\right|$ 也是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
 <br>
-若 $\boldsymbol{B}_{1}$ 既包含 $\boldsymbol{B}$ 的第 $j$ 行也包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|$ 与 $\boldsymbol{A}$ 的一个 $r(\boldsymbol{A})+1$ 阶子式相等, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
+$\quad$ 若 $\boldsymbol{B}_{1}$ 既包含 $\boldsymbol{B}$ 的第 $j$ 行也包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|$ 与 $\boldsymbol{A}$ 的一个 $r(\boldsymbol{A})+1$ 阶子式相等, 从而 $\left|\boldsymbol{B}_{1}\right|=0$;
 <br>
-若 $\boldsymbol{B}_{1}$ 包含 $\boldsymbol{B}$ 的第 $j$ 行但不包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|=$ $\left|\boldsymbol{A}_{1}\right|+k\left|\boldsymbol{A}_{2}\right|$, 这里 $\left|\boldsymbol{A}_{1}\right|$ 与 $\left|\boldsymbol{A}_{2}\right|$ 都是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而也有 $\left|\boldsymbol{B}_{1}\right|=0$.
+$\quad$ 若 $\boldsymbol{B}_{1}$ 包含 $\boldsymbol{B}$ 的第 $j$ 行但不包含 $\boldsymbol{B}$ 的第 $i$ 行, 则由行列式的性质知, $\left|\boldsymbol{B}_{1}\right|=$ $\left|\boldsymbol{A}_{1}\right|+k\left|\boldsymbol{A}_{2}\right|$, 这里 $\left|\boldsymbol{A}_{1}\right|$ 与 $\left|\boldsymbol{A}_{2}\right|$ 都是 $\boldsymbol{A}$ 的 $r(\boldsymbol{A})+1$ 阶子式, 从而也有 $\left|\boldsymbol{B}_{1}\right|=0$.
 <br>
-综上所述, $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式都为零, 于是 $r(\boldsymbol{B}) \leqslant r(\boldsymbol{A})$.
+$\quad$ 综上所述, $\boldsymbol{B}$ 的任意 $r(\boldsymbol{A})+1$ 阶子式都为零, 于是 $r(\boldsymbol{B}) \leqslant r(\boldsymbol{A})$.
 <br>
-注意到 $\boldsymbol{B} \xrightarrow{r_{j}+(-k) \times r_{i}} \boldsymbol{A}$, 由上面的讨论知, $r(\boldsymbol{A}) \leqslant r(\boldsymbol{B})$. 因此有 $r(\boldsymbol{A})=r(\boldsymbol{B})$.
+$\quad$ 注意到 $\boldsymbol{B} \xrightarrow{r_{j}+(-k) \times r_{i}} \boldsymbol{A}$, 由上面的讨论知, $r(\boldsymbol{A}) \leqslant r(\boldsymbol{B})$. 因此有 $r(\boldsymbol{A})=r(\boldsymbol{B})$.
 <br>
-反过来, 设 $r(\boldsymbol{A})=r(\boldsymbol{B})=r$, 则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 具有相同的等价标准形 $\left(\begin{array}{ll}\boldsymbol{E}_{r} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{O}\end{array}\right)$, 故由本章的定理 $3$ 知, $\boldsymbol{A} \cong \boldsymbol{B}$. 证毕.
+$\quad$ 反过来, 设 $r(\boldsymbol{A})=r(\boldsymbol{B})=r$, 则 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 具有相同的等价标准形 $\left(\begin{array}{ll}\boldsymbol{E}_{r} & \boldsymbol{O} \\ \boldsymbol{O} & \boldsymbol{O}\end{array}\right)$, 故由本章的定理 $3$ 知, $\boldsymbol{A} \cong \boldsymbol{B}$. 证毕.
 </p></div></p>
 
-定理 $6$ 表明, 初等变换不改变矩阵的秩. 因此利用定理 $6$ 求一个矩阵的秩,相关问题只需用初等行变换将矩阵化为行阶梯形矩阵, 则其非零行的个数便是矩阵的秩.
+<p style="text-indent: 2em;">定理 $6$ 表明, 初等变换不改变矩阵的秩. 因此利用定理 $6$ 求一个矩阵的秩, 相关问题只需用初等行变换将矩阵化为行阶梯形矩阵, 则其非零行的个数便是矩阵的秩.
 
 
 
@@ -2545,7 +2545,7 @@ r_{2}(-1) \times r_{4}}}\left(\begin{array}{rrrrr}
 $$
 因为行阶梯形矩阵的非零行的个数为 $3$ , 故 $r(\boldsymbol{A})=3$.
 <br>
-再求 $\boldsymbol{A}$ 的一个最高阶非零子式. 由 $r(\boldsymbol{A})=3$ 知, $\boldsymbol{A}$ 的最高阶非零子式为三阶子式, $\boldsymbol{A}$的三阶子式共有 $\mathrm{C}_{4}^{3} \cdot \mathrm{C}_{5}^{3}=40$ 个, 要从 $40$ 个子式中找出一个非零子式是相当麻烦的. 现在选取 $\boldsymbol{A}$ 的第一列、第二列和第四列组成新矩阵, 记为
+$\quad$ 再求 $\boldsymbol{A}$ 的一个最高阶非零子式. 由 $r(\boldsymbol{A})=3$ 知, $\boldsymbol{A}$ 的最高阶非零子式为三阶子式, $\boldsymbol{A}$的三阶子式共有 $\mathrm{C}_{4}^{3} \cdot \mathrm{C}_{5}^{3}=40$ 个, 要从 $40$ 个子式中找出一个非零子式是相当麻烦的. 现在选取 $\boldsymbol{A}$ 的第一列、第二列和第四列组成新矩阵, 记为
 $$
 \boldsymbol{B}=\left(\begin{array}{rrr}
 3 & 2 & 5 \\
