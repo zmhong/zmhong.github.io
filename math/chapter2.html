@@ -1080,7 +1080,7 @@ $$
 <font color=red><b>证明：</b></font> 
 先证必要性. 由于 $\boldsymbol{A}$ 是可逆的, 则有 $\boldsymbol{A}^{-1}$, 使 $\boldsymbol{A}^{-1} \boldsymbol{A}=\boldsymbol{E}$, 故 $\left|\boldsymbol{A}^{-1} \boldsymbol{A}\right|=|\boldsymbol{E}|=1$,即 $\left|\boldsymbol{A}^{-1}\right| \cdot|\boldsymbol{A}|=1$. 所以 $|\boldsymbol{A}| \neq 0$.
 <br>
-再证充分性. 设 $|\boldsymbol{A}| \neq 0$. 由伴随矩阵 $\boldsymbol{A}^{*}$ 的性质, 有
+$\quad$ 再证充分性. 设 $|\boldsymbol{A}| \neq 0$. 由伴随矩阵 $\boldsymbol{A}^{*}$ 的性质, 有
 $$
 \boldsymbol{A} \boldsymbol{A}^{*}=\boldsymbol{A}^{*} \boldsymbol{A}=|\boldsymbol{A}| \boldsymbol{E}.
 $$
@@ -1106,23 +1106,24 @@ $$
 <div id= "divIDcorollary1" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
-由 $\boldsymbol{A B}=\boldsymbol{E}$, 有 $|\boldsymbol{A}||\boldsymbol{B}|=1 \neq 0$, 得 $|\boldsymbol{A}| \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 且 $\boldsymbol{B}=\boldsymbol{E B}=$ $\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right) \boldsymbol{B}=\boldsymbol{A}^{-1} \boldsymbol{E}=\boldsymbol{A}^{-1}$. 证毕.
+由 $\boldsymbol{A B}=\boldsymbol{E}$, 有 $|\boldsymbol{A}||\boldsymbol{B}|=1 \neq 0$, 得 $|\boldsymbol{A}| \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 
+且 $$\boldsymbol{B}=\boldsymbol{E B}=$ $\left(\boldsymbol{A}^{-1} \boldsymbol{A}\right) \boldsymbol{B}=\boldsymbol{A}^{-1} \boldsymbol{E}=\boldsymbol{A}^{-1}.$$ 证毕.
 </p></div></p>
 
 <p style="text-indent: 2em;">方阵的逆矩阵满足下列性质:
-<br>
+<p style="text-indent: 2em;">
 $(1)$ 若 $\boldsymbol{A}$ 可逆,则 $\boldsymbol{A}^{-1}$ 亦可逆, 且 $\left(\boldsymbol{A}^{-1}\right)^{-1}=\boldsymbol{A}$;
-<br>
+<p style="text-indent: 2em;">
 $(2)$ 若 $\boldsymbol{A}$ 可逆,数 $\lambda \neq 0$, 则 $\lambda \boldsymbol{A}$ 亦可逆, 且 $(\lambda \boldsymbol{A})^{-1}=\frac{1}{\lambda} \boldsymbol{A}^{-1}$;
-<br>
+<p style="text-indent: 2em;">
 $(3)$ 若 $\boldsymbol{A}, \boldsymbol{B}$ 为同阶方阵且均可逆,则 $\boldsymbol{A B}$ 亦可逆, 且 $(\boldsymbol{A B})^{-1}=\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}$;
-<br>
+<p style="text-indent: 2em;">
 $(4)$ 若 $\boldsymbol{A}$ 可逆,则 $\boldsymbol{A}^{\mathrm{T}}$ 亦可逆, 且 $\left(\boldsymbol{A}^{\mathrm{T}}\right)^{-1}=\left(\boldsymbol{A}^{-1}\right)^{\mathrm{T}}$;
-<br>
+<p style="text-indent: 2em;">
 $(5)$ 若 $\boldsymbol{A}$ 可逆,则有 $\left|\boldsymbol{A}^{-1}\right|=|\boldsymbol{A}|^{-1}$;
-<br>
+<p style="text-indent: 2em;">
 $(6)$ 设 $\boldsymbol{A}=\operatorname{diag}\left(a_{1}, a_{2}, \cdots, a_{n}\right)$, 则 $\boldsymbol{A}$ 可逆的充分必要条件是 $a_{i} \neq 0(i=1$, $2, \cdots, n)$, 且 $\boldsymbol{A}^{-1}=\operatorname{diag}\left(a_{1}^{-1}, a_{2}^{-1}, \cdots, a_{n}^{-1}\right)$.
-<p></p>
+<p style="text-indent: 2em;">
 这里只证明 $(3)$ 和 $(4)$, 其余的留给读者自己证明.
 
 <input type=button value= "显示证明" onclick='document.getElementById("divIDxingzhi1").style.display="block"'> 
@@ -1219,7 +1220,7 @@ $$
 \boldsymbol{A x}=\boldsymbol{b}.
 $$
 <br>
-由于 $|\boldsymbol{A}|=60 \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 且
+$\quad$ 由于 $|\boldsymbol{A}|=60 \neq 0$, 故 $\boldsymbol{A}^{-1}$ 存在, 且
 $$
 \boldsymbol{A}^{-1}=\left(\begin{array}{rrr}
 \frac{1}{5} & \frac{1}{10} & \frac{1}{10} \\[10pt]
@@ -1321,7 +1322,7 @@ $$
 $$
 </p></div></p>
 
-<b>注意:</b> 解矩阵方程时, 要区分矩阵的左乘与右乘. 因为矩阵的乘法不满足交换律,所以不能混淆左乘与右乘.
+<p style="text-indent: 2em;"><b>注意:</b> 解矩阵方程时, 要区分矩阵的左乘与右乘. 因为矩阵的乘法不满足交换律, 所以不能混淆左乘与右乘.
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $18$：</b></font> 
@@ -1410,7 +1411,8 @@ $$
 $$
 </p></div></p>
 
-定理 $1$ 不仅给出了一个方阵可逆的判定准则, 同时也给出了求逆矩阵的一种方法, 这种方法称为伴随矩阵法. 当方阵的阶数比较小时, 这种方法是可行的,但当方阵的阶数较高时, 这种方法就不太适用了. 在本章的第 $6$ 节中我们将要介绍一种简便、实用的求逆矩阵的方法.
+<p style="text-indent: 2em;">定理 $1$ 不仅给出了一个方阵可逆的判定准则, 同时也给出了求逆矩阵的一种方法, 这种方法称为伴随矩阵法. 
+  当方阵的阶数比较小时, 这种方法是可行的,但当方阵的阶数较高时, 这种方法就不太适用了. 在本章的第 $6$ 节中我们将要介绍一种简便、实用的求逆矩阵的方法.
 
 
 </ul>
@@ -1423,9 +1425,10 @@ $$
 
 <ul>
 
-对于行数和列数比较多的矩阵 $\boldsymbol{A}$, 在其计算过程中经常采用矩阵分块法, 使大矩阵的运算化为小矩阵的运算 将矩阵 $\boldsymbol{A}$ 用若干条纵线和横线分成许多个小矩阵, 每个小矩阵称为 $\boldsymbol{A}$ 的子块, 以子块为元素的矩阵称为分块矩阵.
+<p style="text-indent: 2em;">对于行数和列数比较多的矩阵 $\boldsymbol{A}$, 在其计算过程中经常采用矩阵分块法, 
+  使大矩阵的运算化为小矩阵的运算将矩阵 $\boldsymbol{A}$ 用若干条纵线和横线分成许多个小矩阵, 每个小矩阵称为 $\boldsymbol{A}$ 的子块, 以子块为元素的矩阵称为分块矩阵.
 
-例如
+<p style="text-indent: 2em;">例如
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
 a_{11} & a_{12} & a_{13} & a_{14} \\
@@ -1434,14 +1437,14 @@ a_{31} & a_{32} & a_{33} & a_{34}
 \end{array}\right),
 $$
 将 $\boldsymbol{A}$ 分成子块的分法很多, 下面列举三种分块形式:
-
+<p style="text-indent: 2em;">
 $(1)$ $\left(\begin{array}{ll:ll}a_{11} & a_{12} & a_{13} & a_{14} \\ a_{21} & a_{22} & a_{23} & a_{24} \\ \hdashline a_{31} & a_{32} & a_{33} & a_{34}\end{array}\right)$;
-
+<p style="text-indent: 2em;">
 $(2)$ $\left(\begin{array}{c:cc:c}a_{11} & a_{12} & a_{13} & a_{14} \\ \hdashline a_{21} & a_{22} & a_{23} & a_{24} \\ a_{31} & a_{32} & a_{33} & a_{34}\end{array}\right)$;
-
+<p style="text-indent: 2em;">
 $(3)$ $\left(\begin{array}{l:l:ll}a_{11} & a_{12} & a_{13} & a_{14} \\ a_{21} & a_{22} & a_{23} & a_{24} \\ a_{31} & a_{32} & a_{33} & a_{34}\end{array}\right)$.
 
-在分法 $(1)$ 中, 记
+<p style="text-indent: 2em;">在分法 $(1)$ 中, 记
 $$
 \boldsymbol{A}=\left(\begin{array}{ll}
 \boldsymbol{A}_{11} & \boldsymbol{A}_{12} \\
@@ -1463,9 +1466,9 @@ a_{23} & a_{24}
 $$
 即 $\boldsymbol{A}_{11}, \boldsymbol{A}_{12}, \boldsymbol{A}_{21}, \boldsymbol{A}_{22}$ 为 $\boldsymbol{A}$ 的子块, 而 $\boldsymbol{A}$ 成为以 $\boldsymbol{A}_{11}, \boldsymbol{A}_{12}, \boldsymbol{A}_{21}, \boldsymbol{A}_{22}$ 为元素的分块矩阵. 分法 $(2)$、$(3)$的分块矩阵, 请读者自己写出来.
 
-分块矩阵的运算与普通矩阵的运算类似,具体讨论如下.
+<p style="text-indent: 2em;">分块矩阵的运算与普通矩阵的运算类似, 具体讨论如下.
 
-$(1)$ 设矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 为同型矩阵,采用同样的分块法, 有
+<p style="text-indent: 2em;">$(1)$ 设矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 为同型矩阵, 采用同样的分块法, 有
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
 \boldsymbol{A}_{11} & \boldsymbol{A}_{12} & \cdots & \boldsymbol{A}_{1 r} \\
@@ -1488,8 +1491,7 @@ $$
 \boldsymbol{A}_{s 1}+\boldsymbol{B}_{s 1} & \boldsymbol{A}_{s 2}+\boldsymbol{B}_{s 2} & \cdots & \boldsymbol{A}_{s r}+\boldsymbol{B}_{s r}
 \end{array}\right).
 $$
-
-设 $k$ 为数, 则
+<p style="text-indent: 2em;">设 $k$ 为数, 则
 $$
 k \boldsymbol{A}=\boldsymbol{A} k=\left(\begin{array}{cccc}
 k \boldsymbol{A}_{11} & k \boldsymbol{A}_{12} & \cdots & k \boldsymbol{A}_{1 r} \\
@@ -1498,9 +1500,7 @@ k \boldsymbol{A}_{21} & k \boldsymbol{A}_{22} & \cdots & k \boldsymbol{A}_{2 r} 
 k \boldsymbol{A}_{s 1} & k \boldsymbol{A}_{s 2} & \cdots & k \boldsymbol{A}_{s r}
 \end{array}\right).
 $$
-
-$(2)$ 设 $\boldsymbol{A}$ 为 $m \times l$ 矩阵, $\boldsymbol{B}$ 为 $l \times n$ 矩阵, 将 $\boldsymbol{A}, \boldsymbol{B}$ 分别分成
-
+<p style="text-indent: 2em;">$(2)$ 设 $\boldsymbol{A}$ 为 $m \times l$ 矩阵, $\boldsymbol{B}$ 为 $l \times n$ 矩阵, 将 $\boldsymbol{A}, \boldsymbol{B}$ 分别分成
 $$
 \boldsymbol{A}=\left(\begin{array}{ccc}
 \boldsymbol{A}_{11} & \cdots & \boldsymbol{A}_{1 t} \\
@@ -1522,7 +1522,7 @@ $$
 $$
 其中 $\boldsymbol{C}_{i j}=\sum_{k=1}^{t} \boldsymbol{A}_{i k} \boldsymbol{B}_{k j}(i=1,2, \cdots, s ; j=1,2, \cdots, r)$.
 
-<b>注意:</b> 在分块矩阵的乘法中, 要求左矩阵的列的分法与右矩阵的行的分法是一致的.
+<p style="text-indent: 2em;"><b>注意:</b> 在分块矩阵的乘法中, 要求左矩阵的列的分法与右矩阵的行的分法是一致的.
 
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -1629,7 +1629,7 @@ $$
 $$
 </p></div></p>
 
-$(3)$ 设
+<p style="text-indent: 2em;">$(3)$ 设
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
 \boldsymbol{A}_{11} & \boldsymbol{A}_{12} & \cdots & \boldsymbol{A}_{1 r} \\
@@ -1649,7 +1649,7 @@ $$
 $$
 
 
-$(4)$ 设方阵 $\boldsymbol{A}$ 的分块矩阵为
+<p style="text-indent: 2em;">$(4)$ 设方阵 $\boldsymbol{A}$ 的分块矩阵为
 $$
 \boldsymbol{A}=\left(\begin{array}{llll}
 \boldsymbol{A}_{1} & & \boldsymbol{O} & \\
@@ -1660,12 +1660,12 @@ $$
 $$
 除主对角线上的子块外, 其余子块都为零矩阵, 且 $\boldsymbol{A}_{i}(i=1,2, \cdots, m)$ 为方阵, 则 $\boldsymbol{A}$称为分块对角矩阵 (或准对角矩阵), 简记为 $\operatorname{diag}\left(\boldsymbol{A}_{1}, \boldsymbol{A}_{2}, \cdots, \boldsymbol{A}_{m}\right)$.
 
-准对角矩阵 $\boldsymbol{A}$ 的行列式具有下述性质: 
+<p style="text-indent: 2em;">准对角矩阵 $\boldsymbol{A}$ 的行列式具有下述性质: 
 $$
 \operatorname{det} \boldsymbol{A}=\left|\boldsymbol{A}_{1}\right|\left|\boldsymbol{A}_{2}\right| \cdots\left|\boldsymbol{A}_{m}\right|.
 $$
 
-若有与 $\boldsymbol{A}$ 同阶的准对角矩阵
+<p style="text-indent: 2em;">若有与 $\boldsymbol{A}$ 同阶的准对角矩阵
 $$
 \boldsymbol{B}=\left(\begin{array}{llll}
 \boldsymbol{B}_{1} & & \boldsymbol{O} & \\
@@ -1684,7 +1684,7 @@ $$
 \end{array}\right);
 $$
 
-
+<p style="text-indent: 2em;">
 若 $\left|\boldsymbol{A}_{i}\right| \neq 0(i=1,2, \cdots, m)$, 则 $|\boldsymbol{A}| \neq 0$, 并有
 $$
 \boldsymbol{A}^{-1}=\left(\begin{array}{llll}
@@ -1726,7 +1726,7 @@ $$
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $22$：</b></font>
-设 $\boldsymbol{A}, \boldsymbol{C}$ 分别为 $r$ 阶可逆矩阵、 $s$ 阶可逆矩阵, 求分块矩阵
+设 $\boldsymbol{A}, \boldsymbol{C}$ 分别为 $r$ 阶可逆矩阵、$s$ 阶可逆矩阵, 求分块矩阵
 $$
 \boldsymbol{X}=\left(\begin{array}{ll}
 \boldsymbol{O} & \boldsymbol{A} \\
@@ -1790,7 +1790,7 @@ $$
 \end{array}\right).
 $$
 <br>
-特别地, 当 $\boldsymbol{B}=\boldsymbol{O}$ 时,
+$\quad$ 特别地, 当 $\boldsymbol{B}=\boldsymbol{O}$ 时,
 $$
 \left(\begin{array}{ll}
 \boldsymbol{O} & \boldsymbol{A} \\
@@ -1851,11 +1851,11 @@ $(3)$ 把矩阵的第 $i$ 行 (列) 所有元素的 $k$ 倍加到第 $j$ 行 (�
 </p>
 
 <p style="text-indent: 2em;">容易验证, 矩阵的等价关系具有下列性质:
-<br>
+<p style="text-indent: 2em;">
 $(1)$ 反身性: $\boldsymbol{A} \cong \boldsymbol{A}$;
-<br>
+<p style="text-indent: 2em;">
 $(2)$ 对称性 : 若 $\boldsymbol{A} \cong \boldsymbol{B}$, 则 $\boldsymbol{B} \cong \boldsymbol{A}$;
-<br>
+<p style="text-indent: 2em;">
 $(3)$ 传递性: 若 $\boldsymbol{A} \cong \boldsymbol{B}, \boldsymbol{B} \cong \boldsymbol{C}$, 则 $\boldsymbol{A} \cong \boldsymbol{C}$.
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -1896,12 +1896,12 @@ $$
 则 $\boldsymbol{A} \cong \boldsymbol{B}$.
 </p>
 
-矩阵 $\boldsymbol{B}$ 称为行阶梯形矩阵, 它具有下列特征:
-
+<p style="text-indent: 2em;">矩阵 $\boldsymbol{B}$ 称为行阶梯形矩阵, 它具有下列特征:
+<p style="text-indent: 2em;">
 $(1)$ 元素全为零的行 (简称零行) 位于非零行的下方;
-
+<p style="text-indent: 2em;">
 $(2)$ 各非零行的首非零元 (即该行从左至右的第一个不为零的元素) 的列标随着行标的增大而严格增大 (即首非零元的列标一定不小于行标).
-
+<p style="text-indent: 2em;">
 对矩阵 $\boldsymbol{B}$ 再作初等行变换: 
 $$
 \begin{aligned}
@@ -1910,15 +1910,15 @@ $$
 \end{aligned}
 $$
 则有 $\boldsymbol{B} \cong \boldsymbol{C}$, 从而 $\boldsymbol{A} \cong \boldsymbol{C}$.
-
+<p style="text-indent: 2em;">
 矩阵 $\boldsymbol{C}$ 称为行最简形矩阵, 它具有下列特征:
-
+<p style="text-indent: 2em;">
 $(1)$ 它是行阶梯形矩阵;
-
-$(2)$ 各非零行的首非零元都是 $1$ ;
-
+<p style="text-indent: 2em;">
+$(2)$ 各非零行的首非零元都是 $1$;
+<p style="text-indent: 2em;">
 $(3)$ 每个首非零元所在列的其余元素都是 $0$ .
-
+<p style="text-indent: 2em;">
 如果对矩阵 $\boldsymbol{C}$ 再作初等列变换:
 $$
 \begin{aligned}
@@ -1940,8 +1940,8 @@ $$
 \end{aligned}
 $$
 矩阵 $\boldsymbol{D}$ 的左上角为一个单位矩阵 $\boldsymbol{E}_{3}$, 其他各子块都是零矩阵. 称矩阵 $\boldsymbol{D}$ 为矩阵 $\boldsymbol{A}$ 的等价标准形.
-
-事实上,有下面的结论.
+<p style="text-indent: 2em;">
+事实上, 有下面的结论.
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $2$：</b></font>
@@ -1954,32 +1954,19 @@ $$
 任何一个矩阵都有等价标准形, 矩阵 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 当且仅当它们有相同的等价标准形. 
 </p>
 
-<b>注意:</b> 与矩阵 $\boldsymbol{A}$ 等价的行阶梯形矩阵和行最简形矩阵不是唯一的, 但矩阵
+<p style="text-indent: 2em;"><b>注意:</b> 与矩阵 $\boldsymbol{A}$ 等价的行阶梯形矩阵和行最简形矩阵不是唯一的, 但矩阵
 $\boldsymbol{A}$ 的等价标准形是唯一的.
 
-两个等价的矩阵不一定是相等的, 那么它们之间有什么关系呢? 为此, 我们引入初等矩阵的概念.
+<p style="text-indent: 2em;">两个等价的矩阵不一定是相等的, 那么它们之间有什么关系呢? 为此, 我们引入初等矩阵的概念.
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $12$：</b></font>
 由单位矩阵 $\boldsymbol{E}$ 经过一次初等变换得到的矩阵称为初等矩阵.
 </p>
 
-显然, 初等矩阵都是方阵, 三种初等变换对应着三种初等矩阵.
+<p style="text-indent: 2em;">显然, 初等矩阵都是方阵, 三种初等变换对应着三种初等矩阵.
 
-交换 $\boldsymbol{E}$ 的第 $i$ 行和第 $j$ 行 (或交换 $\boldsymbol{E}$ 的第 $i$ 列和第 $j$ 列), 得
-
-% $$
-% \boldsymbol{E}(i, j)=\left(\begin{array}{cccccc}
-% 1 & & & & & \\
-% \ddots & & & & \\
-% & & 0 & \cdots & 1 & \\
-% & & 1 & & & \\
-% & \vdots & \ddots & \vdots & \\
-% & & & 1 & \\
-% & 1 & \cdots & 0 & \\
-% & & & & & \ddots
-% \end{array}\right) \text { 第 } i \text { 行 }
-% $$
+<p style="text-indent: 2em;">交换 $\boldsymbol{E}$ 的第 $i$ 行和第 $j$ 行 (或交换 $\boldsymbol{E}$ 的第 $i$ 列和第 $j$ 列), 得
 $$
 \boldsymbol{E}(i, j)=\left(\begin{array}{ccccccccc}
 1 & & & & & & & & \\
@@ -2005,7 +1992,7 @@ $$
 \end{array};
 $$
 
-用常数 $k$ 乘 $\boldsymbol{E}$ 的第 $i$ 行(或第 $i$ 列), 得
+<p style="text-indent: 2em;">用常数 $k$ 乘 $\boldsymbol{E}$ 的第 $i$ 行(或第 $i$ 列), 得
 $$
 \boldsymbol{E}[i(k)]= \left(\begin{array}{ccccccc}
 1 & & & & & & \\
@@ -2027,7 +2014,7 @@ $$
 \end{array};
 $$
 
-将 $\boldsymbol{E}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行 (或将第 $i$ 列的 $k$ 倍加到第 $j$ 列), 得
+<p style="text-indent: 2em;">将 $\boldsymbol{E}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行 (或将第 $i$ 列的 $k$ 倍加到第 $j$ 列), 得
 $$
 \boldsymbol{E}[i+j(k)] = \left(\begin{array}{ccccccc}
 1 & & & & & & \\
@@ -2107,7 +2094,7 @@ $$
 这相当于把 $\boldsymbol{A}$ 的第 $j$ 行的 $k$ 倍加到第 $i$ 行. 证毕.
 </p></div></p>
 
-例如, 对矩阵
+<p style="text-indent: 2em;">例如, 对矩阵
 $$
 \boldsymbol{A}=\left(\begin{array}{lll}
 2 & 1 & 3 \\
@@ -2145,7 +2132,7 @@ $$
 $$
 </p>
 
-由于初等矩阵都是可逆矩阵, 因此还可以得到下面的推论.
+<p style="text-indent: 2em;">由于初等矩阵都是可逆矩阵, 因此还可以得到下面的推论.
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $3$：</b></font> 
@@ -2163,7 +2150,7 @@ $$
 
 <ul>
 
-本章第 $3$ 节中给出了求逆矩阵的公式法——伴随矩阵法. 但对于较高阶的
+<p style="text-indent: 2em;">本章第 $3$ 节中给出了求逆矩阵的公式法——伴随矩阵法. 但对于较高阶的
 矩阵, 用伴随矩阵法求逆矩阵的计算量太大. 下面给出另一种简便、可行的求逆矩阵的方法———初等变换法.
 
 <p style="border: 2px solid red; border-radius: 5px">
@@ -2187,7 +2174,7 @@ $(4)$ $\boldsymbol{A}$ 可经过一系列初等行 (列)变换化为 $\boldsymbo
 <font color=red><b>证明：</b></font>
 $(1)$ $\Rightarrow$ $(2)$. $\quad$ 由定理 $2$ 和定理 $3$ , 对 $\boldsymbol{A}$ 施行若干次初等变换可将其化为等价标准形 $\boldsymbol{D}$. 而由定理 $4$, 对 $\boldsymbol{A}$ 施行初等变换相当于用相应的初等矩阵乘 $\boldsymbol{A}$, 因为 $\boldsymbol{A}$ 可逆, 且初等矩阵可逆, 则其乘积亦可逆, 所以 $\boldsymbol{D}$ 可逆, 即 $|\boldsymbol{D}| \neq 0$. 于是 $\boldsymbol{D}$ 不能有任一行 (列) 的元素全为 0 , 因此 $\boldsymbol{D}=\boldsymbol{E}$, 即 $\boldsymbol{A} \cong \boldsymbol{E}$.
 <br>
-$(2)$ $\Rightarrow$ $(3)$. $\quad$ 由 $\boldsymbol{A} \cong \boldsymbol{E}$, 根据等价的对称性知 $\boldsymbol{E} \cong \boldsymbol{A}$, 即 $\boldsymbol{E}$ 可经若干次初等变换化为 $\boldsymbol{A}$, 从而存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{r}, \cdots, \boldsymbol{P}_{s}$, 使
+$\quad$ $(2)$ $\Rightarrow$ $(3)$. $\quad$ 由 $\boldsymbol{A} \cong \boldsymbol{E}$, 根据等价的对称性知 $\boldsymbol{E} \cong \boldsymbol{A}$, 即 $\boldsymbol{E}$ 可经若干次初等变换化为 $\boldsymbol{A}$, 从而存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{r}, \cdots, \boldsymbol{P}_{s}$, 使
 $$
 \boldsymbol{P}_{1} \cdots \boldsymbol{P}_{r} \boldsymbol{E} \boldsymbol{P}_{r+1} \cdots \boldsymbol{P}_{s}=\boldsymbol{A}, 
 $$
@@ -2196,7 +2183,7 @@ $$
 \boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}.
 $$
 
-$(3)$ $\Rightarrow$ $(4)$.$\quad$  由
+$\quad$ $(3)$ $\Rightarrow$ $(4)$.$\quad$  由
 $$
 \boldsymbol{A}=\boldsymbol{P}_{1} \boldsymbol{P}_{2} \cdots \boldsymbol{P}_{s}, 
 $$
@@ -2206,15 +2193,15 @@ $$
 $$
 由于 $\boldsymbol{P}_{1}^{-1}, \boldsymbol{P}_{2}^{-1}, \cdots, \boldsymbol{P}_{s}^{-1}$ 仍是初等矩阵, 由定理 $4$, 上式说明对 $\boldsymbol{A}$ 施行若干次初等行变换可将其化为 $\boldsymbol{E}$. 列的情形类似可证得.
 <br>
-$(4)$ $\Rightarrow$ $(1)$. $\quad$ 设 $\boldsymbol{A}$ 可经过一系列初等行变换化为 $\boldsymbol{E}$, 则存在初等矩阵 $\boldsymbol{Q}_{1}$, $\boldsymbol{Q}_{2}, \cdots, \boldsymbol{Q}_{s}$, 使
+$\quad$ $(4)$ $\Rightarrow$ $(1)$. $\quad$ 设 $\boldsymbol{A}$ 可经过一系列初等行变换化为 $\boldsymbol{E}$, 则存在初等矩阵 $\boldsymbol{Q}_{1}$, $\boldsymbol{Q}_{2}, \cdots, \boldsymbol{Q}_{s}$, 使
 $$
 \boldsymbol{Q}_{1} \boldsymbol{Q}_{2} \cdots \boldsymbol{Q}_{s} \boldsymbol{A}=\boldsymbol{E}.
 $$
 由于初等矩阵都是可逆的, 从而 $\boldsymbol{A}$ 可逆. 证毕.
 </p></div></p>
 
-下面介绍用初等变换求逆矩阵的方法.
-
+<p style="text-indent: 2em;">下面介绍用初等变换求逆矩阵的方法.
+<p style="text-indent: 2em;">
 若 $\boldsymbol{A}$ 可逆, 由定理 $5$ 的命题 $(4)$ 和定理 $4$ 知, 存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{m}$, 使
 \begin{equation}\label{eq2-2}
 \boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{E}. %\tag{2-2}
@@ -2225,7 +2212,7 @@ $$
 \end{equation}
 式 $(\ref{eq2-2})$ 和式 $(\ref{eq2-3})$ 表明, 对 $\boldsymbol{A}$ 施行一系列初等行变换可将其化为 $\boldsymbol{E}$, 则对 $\boldsymbol{E}$ 施行相同的一系列初等行变换可将其化为 $\boldsymbol{A}^{-1}$. 于是得到用初等变换求逆矩阵的方法: 构造一个 $n \times 2 n$ 矩阵 $(\boldsymbol{A} \, \vdots\,  \boldsymbol{E})$, 用初等行变换将左边的 $\boldsymbol{A}$ 化为 $\boldsymbol{E}$ 时, 右边的 $\boldsymbol{E}$便化为了 $\boldsymbol{A}^{-1}$, 即
 $$
-(\boldsymbol{A}\, \vdots\, \boldsymbol{E}) \xrightarrow{\text { 初等行变换 }}\left(\boldsymbol{E} \, \vdots\, \boldsymbol{A}^{-1}\right).
+(\boldsymbol{A}\, \vdots\, \boldsymbol{E}) \xrightarrow{\text { 初等行变换 }} (\boldsymbol{E} \, \vdots\, \boldsymbol{A}^{-1}).
 $$
 
 
