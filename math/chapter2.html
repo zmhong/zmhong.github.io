@@ -1378,9 +1378,9 @@ $$
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>证明：</b></font>
 由 $\boldsymbol{A}^{*} \boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{E B}$, 得
-\begin{equation}\label{eq2-1}
-\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right) \boldsymbol{B}=\boldsymbol{A}^{-1}. %\tag{2-1}
-\end{equation}
+\begin{equation*}
+\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right) \boldsymbol{B}=\boldsymbol{A}^{-1}. \tag{2-1}\label{eq2-1}
+\end{equation*}
 于是 $\left|\boldsymbol{A}^{*}-\boldsymbol{E}\right||\boldsymbol{B}|=\left|\boldsymbol{A}^{-1}\right| \neq 0$, 所以 $|\boldsymbol{B}| \neq 0$, 即 $\boldsymbol{B}$ 可逆. 再由式 $(\ref{eq2-1})$, 得
 $$
 \boldsymbol{B}=\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right)^{-1} \boldsymbol{A}^{-1}=\left[\boldsymbol{A}\left(\boldsymbol{A}^{*}-\boldsymbol{E}\right)\right]^{-1}=(|\boldsymbol{A}| \boldsymbol{E}-\boldsymbol{A})^{-1}, 
@@ -2203,13 +2203,13 @@ $$
 <p style="text-indent: 2em;">下面介绍用初等变换求逆矩阵的方法.
 <p style="text-indent: 2em;">
 若 $\boldsymbol{A}$ 可逆, 由定理 $5$ 的命题 $(4)$ 和定理 $4$ 知, 存在初等矩阵 $\boldsymbol{P}_{1}, \boldsymbol{P}_{2}, \cdots, \boldsymbol{P}_{m}$, 使
-\begin{equation}\label{eq2-2}
-\boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{E}. %\tag{2-2}
-\end{equation}
+\begin{equation*}
+\boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{A}=\boldsymbol{E}. \tag{2-2}\label{eq2-2}
+\end{equation*}
 上式两端右乘 $\boldsymbol{A}^{-1}$, 则有
-\begin{equation}\label{eq2-3}
-\boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{E}=\boldsymbol{A}^{-1}. %\tag{2-3}
-\end{equation}
+\begin{equation*}
+\boldsymbol{P}_{m} \cdots \boldsymbol{P}_{2} \boldsymbol{P}_{1} \boldsymbol{E}=\boldsymbol{A}^{-1}. \tag{2-3}\label{eq2-3}
+\end{equation*}
 式 $(\ref{eq2-2})$ 和式 $(\ref{eq2-3})$ 表明, 对 $\boldsymbol{A}$ 施行一系列初等行变换可将其化为 $\boldsymbol{E}$, 则对 $\boldsymbol{E}$ 施行相同的一系列初等行变换可将其化为 $\boldsymbol{A}^{-1}$. 于是得到用初等变换求逆矩阵的方法: 构造一个 $n \times 2 n$ 矩阵 $(\boldsymbol{A} \, \vdots\,  \boldsymbol{E})$, 用初等行变换将左边的 $\boldsymbol{A}$ 化为 $\boldsymbol{E}$ 时, 右边的 $\boldsymbol{E}$便化为了 $\boldsymbol{A}^{-1}$, 即
 $$
 (\boldsymbol{A}\, \vdots\, \boldsymbol{E}) \xrightarrow{\text { 初等行变换 }} (\boldsymbol{E} \, \vdots\, \boldsymbol{A}^{-1}).
