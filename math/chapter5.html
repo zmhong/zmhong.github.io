@@ -68,29 +68,33 @@
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $1$：</b></font> 
 设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 若存在数 $\lambda$ 和 $n$ 维非零向量 $\boldsymbol{x}$, 使得
-\begin{equation*}
+\begin{equation*}label{eq5-1}
 \boldsymbol{A x}=\lambda \boldsymbol{x}, \tag{5-1}
 \end{equation*}
 则称 $\lambda$ 为矩阵 $\boldsymbol{A}$ 的特征值, 称非零向量 $\boldsymbol{x}$ 为矩阵 $\boldsymbol{A}$ 的对应于特征值 $\lambda$ 的特征向量.
 </p>
 
-式 (5-1) 也可写成
-\begin{equation*}
+<p style="text-indent: 2em;"> 式 $(\ref{eq5-1})$ 也可写成
+\begin{equation*}\label{eq5-2}
 (\boldsymbol{A}-\lambda \boldsymbol{E}) \boldsymbol{x} =\boldsymbol{0}. \tag{5-2}
 \end{equation*}
-式 (5-2) 是一个含有 $n$ 个未知量、 $n$ 个方程的齐次线性方程组, 它有非零解的充分必要条件是系数行列式
-\begin{equation*}
+式 $(\ref{eq5-2})$ 是一个含有 $n$ 个未知量、 $n$ 个方程的齐次线性方程组, 它有非零解的充分必要条件是系数行列式
+\begin{equation*}\label{eq5-3}
 |\boldsymbol{A}-\lambda \boldsymbol{E}|=0. \tag{5-3}
 \end{equation*}
-式 (5-3) 的左端为 $\lambda$ 的 $n$ 次多项式, 记 $f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|$, 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 则矩阵 $\boldsymbol{A}$ 的特征值即为其特征多项式的根. 式 (5-3) 称为矩阵 $\boldsymbol{A}$ 的特征方程, 特征方程在复数范围内恒有解, 其解的个数为方程的次数 (重根按重数计算), 因此 $n$ 阶方阵 $\boldsymbol{A}$ 有 $n$ 个特征值.
+式 $(\ref{eq5-3})$ 的左端为 $\lambda$ 的 $n$ 次多项式, 记 $f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|$, 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 则矩阵 $\boldsymbol{A}$ 的特征值即为其特征多项式的根. 式 (5-3) 称为矩阵 $\boldsymbol{A}$ 的特征方程, 特征方程在复数范围内恒有解, 其解的个数为方程的次数 (重根按重数计算), 因此 $n$ 阶方阵 $\boldsymbol{A}$ 有 $n$ 个特征值.
 
-设 $\lambda=\lambda_{i}$ 为其中的一个特征值, 则由方程
-\begin{equation*}
+<p style="text-indent: 2em;">设 $\lambda=\lambda_{i}$ 为其中的一个特征值, 则由方程
+\begin{equation*}\label{eq5-4}
 \left(\boldsymbol{A}-\lambda_{i} \boldsymbol{E}\right) \boldsymbol{x} =\boldsymbol{0}  \tag{5-4}
 \end{equation*}
-可求得非零解 $\boldsymbol{x}=\boldsymbol{p}_{i}$, 那么 $\boldsymbol{p}_{i}$ 便是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量, 且 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量的全体是齐次线性方程组 (5-4) 的全体非零解. 由齐次线性方程组解的结构定理, 设 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{r}$ 为方程组 (5-4) 的基础解系, 则 $\boldsymbol{A}$的对应于特征值 $\lambda_{i}$ 的特征向量的全体为 
+可求得非零解 $\boldsymbol{x}=\boldsymbol{p}_{i}$, 那么 $\boldsymbol{p}_{i}$ 便是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量, 
+且 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{i}$ 的特征向量的全体是齐次线性方程组 $(\ref{eq5-4})$ 的全体非零解. 
+由齐次线性方程组解的结构定理, 设 $\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{r}$ 为方程组 $(\ref{eq5-4})$ 的基础解系, 
+则 $\boldsymbol{A}$的对应于特征值 $\lambda_{i}$ 的特征向量的全体为 
 $k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}+\cdots+k_{r} \boldsymbol{p}_{r}$
-($k_{1}, k_{2}, \cdots, k_{r}$ 不同时为 $0$). 这说明对应于某个特征值的特征向量有无穷多个. 但不同的特征值所对应的特征向量是不同的, 也即一个特征向量只能属于一个特征值. 事实上, 如果设 $\boldsymbol{x}$ 同时是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{1}, \lambda_{2}$ 的特征向量, 即有
+($k_{1}, k_{2}, \cdots, k_{r}$ 不同时为 $0$). 这说明对应于某个特征值的特征向量有无穷多个. 但不同的特征值所对应的特征向量是不同的, 也即一个特征向量只能属于一个特征值. 
+事实上, 如果设 $\boldsymbol{x}$ 同时是 $\boldsymbol{A}$ 的对应于特征值 $\lambda_{1}, \lambda_{2}$ 的特征向量, 即有
 $$
 \boldsymbol{A x}=\lambda_{1} \boldsymbol{x}, \quad \boldsymbol{A x}=\lambda_{2} \boldsymbol{x},
 $$
@@ -124,7 +128,7 @@ $$
 $$
 所以 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2, \lambda_{2}=4$.
 <br>
-当 $\lambda_{1}=2$ 时, 由
+$\qquad$当 $\lambda_{1}=2$ 时, 由
 $$
 \left(\begin{array}{cc}
 3-2 & -1 \\
@@ -145,7 +149,7 @@ $$
 \end{array}\right).
 $$
 <br>
-当 $\lambda_{2}=4$ 时, 由
+$\qquad$当 $\lambda_{2}=4$ 时, 由
 $$
 \left(\begin{array}{cc}
 3-4 & -1 \\
@@ -196,7 +200,7 @@ $$
 $$
 所以 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=2, \lambda_{2}=\lambda_{3}=1$.
 <br>
-当 $\lambda_{1}=2$ 时, 解方程 $(\boldsymbol{A}-2 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
+$\qquad$当 $\lambda_{1}=2$ 时, 解方程 $(\boldsymbol{A}-2 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
 $$
 \boldsymbol{A}-2 \boldsymbol{E}=\left(\begin{array}{rrr}
 -3 & 1 & 0 \\
@@ -218,7 +222,7 @@ $$
 $$
 所以, $k \boldsymbol{p}_{1}(k \neq 0)$ 是对应于 $\lambda_{1}=2$ 的全部特征向量.
 <br>
-当 $\lambda_{2}=\lambda_{3}=1$ 时, 解方程 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
+$\qquad$当 $\lambda_{2}=\lambda_{3}=1$ 时, 解方程 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
 $$
 \boldsymbol{A}-\boldsymbol{E}=\left(\begin{array}{rrr}
 -2 & 1 & 0 \\
@@ -291,7 +295,7 @@ $$
 $$
 所以, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=\lambda_{2}=1, \lambda_{3}=-2$.
 <br>
-当 $\lambda_{1}=\lambda_{2}=1$ 时, 解方程 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$,由
+$\qquad$当 $\lambda_{1}=\lambda_{2}=1$ 时, 解方程 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$,由
 $$
 \boldsymbol{A}-\boldsymbol{E}=\left(\begin{array}{ccc}
 4-1 & 6 & 0 \\
@@ -317,7 +321,7 @@ $$
 $$
 于是, $k_{1} \boldsymbol{p}_{1}+k_{2} \boldsymbol{p}_{2}\left(k_{1}^{2}+k_{2}^{2} \neq 0\right)$ 为对应于 $\lambda_{1}=\lambda_{2}=1$ 的全部特征向量.
 <br>
-当 $\lambda_{3}=-2$ 时, 解方程 $(\boldsymbol{A}+2 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$,由
+$\qquad$当 $\lambda_{3}=-2$ 时, 解方程 $(\boldsymbol{A}+2 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$,由
 $$
 \boldsymbol{A}+2 \boldsymbol{E}=\left(\begin{array}{ccc}
 4+2 & 6 & 0 \\
@@ -349,7 +353,7 @@ $$
 <div id= "divIDexample4" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=green><b>证明：</b></font> 
-因 $\lambda$ 是 $\boldsymbol{A}$ 的特征值,故有 $\boldsymbol{p} \neq \mathbf{0}$, 使 $\boldsymbol{A p}=\lambda \boldsymbol{p}$,于是
+因 $\lambda$ 是 $\boldsymbol{A}$ 的特征值,故有 $\boldsymbol{p} \neq \mathbf{0}$, 使 $\boldsymbol{A p}=\lambda \boldsymbol{p}$, 于是
 $$
 \boldsymbol{A}^{2} \boldsymbol{p}=\boldsymbol{A}(\boldsymbol{A} \boldsymbol{p})=\lambda \boldsymbol{A} \boldsymbol{p}=\lambda^{2} \boldsymbol{p}. 
 $$
@@ -358,7 +362,8 @@ $$
 
 
 <p style="text-indent: 2em;">
-按例 $4$ 类推, 不难证明: 若 $\lambda$ 是 $\boldsymbol{A}$ 的特征值, 则 $\lambda^{k}$ 是 $\boldsymbol{A}^{k}$ 的特征值, $\varphi(\lambda)$ 是 $\varphi(\boldsymbol{A})$的特征值 [其中 $\varphi(\lambda)=a_{0}+a_{1} \lambda+\cdots+a_{m} \lambda^{m}, \varphi(\boldsymbol{A})=a_{0} \boldsymbol{E}+a_{1} \boldsymbol{A}+\cdots+a_{m} \boldsymbol{A}^{m}$ ].
+按例 $4$ 类推, 不难证明: 若 $\lambda$ 是 $\boldsymbol{A}$ 的特征值, 则 $\lambda^{k}$ 是 $\boldsymbol{A}^{k}$ 的特征值, $\varphi(\lambda)$ 是 $\varphi(\boldsymbol{A})$的特征值, 其中 
+  $$\varphi(\lambda)=a_{0}+a_{1} \lambda+\cdots+a_{m} \lambda^{m}, \varphi(\boldsymbol{A})=a_{0} \boldsymbol{E}+a_{1} \boldsymbol{A}+\cdots+a_{m} \boldsymbol{A}^{m}.$$
 <p style="text-indent: 2em;">
 下面讨论特征值与特征向量的基本性质.
 <p style="text-indent: 2em;">
@@ -400,7 +405,7 @@ f(\lambda)  = &\left(\lambda_{1}-\lambda\right)\left(\lambda_{2}-\lambda\right) 
 \end{align*}
 
 <p style="text-indent: 2em;">
-比较式(5-7)与式 (5-8) 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
+比较式 (5-7) 与式 (5-8) 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $1$：</b></font>
@@ -509,9 +514,9 @@ $$
 <font color=green><b>例 $6$：</b></font>
 设 $\lambda$ 是可逆矩阵 $\boldsymbol{A}$ 的特征值, 证明: 
 <br>
-$(1)$ $\frac{1}{\lambda}$ 是 $\boldsymbol{A}^{-1}$ 的特征值;
+$\qquad$$(1)$ $\frac{1}{\lambda}$ 是 $\boldsymbol{A}^{-1}$ 的特征值;
 <br>
-$(2)$ $\frac{1}{\lambda}|\boldsymbol{A}|$ 是 $\boldsymbol{A}^{*}$ 的特征值.
+$\qquad$$(2)$ $\frac{1}{\lambda}|\boldsymbol{A}|$ 是 $\boldsymbol{A}^{*}$ 的特征值.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDexample6").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDexample6").style.display="none"'> 
 <div id= "divIDexample6" style= "display:none"> 
@@ -538,7 +543,7 @@ $$
 \left|\boldsymbol{A}^{2}-2 \boldsymbol{E}\right|=(-1) \times(-1) \times 2=2.
 $$
 
-由 $|\boldsymbol{A}|=1 \times(-1) \times 2=-2 \neq 0$ 知, $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{*}=|\boldsymbol{A}| \boldsymbol{A}^{-1}=-2 \boldsymbol{A}^{-1}$. $\boldsymbol{A}^{-1}$ 的三个特征值分别为 $1,-1, \frac{1}{2}$. 从而有
+$\qquad$由 $|\boldsymbol{A}|=1 \times(-1) \times 2=-2 \neq 0$ 知, $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{*}=|\boldsymbol{A}| \boldsymbol{A}^{-1}=-2 \boldsymbol{A}^{-1}$. $\boldsymbol{A}^{-1}$ 的三个特征值分别为 $1,-1, \frac{1}{2}$. 从而有
 $$
 \begin{aligned}
 \left|\boldsymbol{A}^{-1}-2 \boldsymbol{A}^{*}\right| & =\left|\boldsymbol{A}^{-1}+4 \boldsymbol{A}^{-1}\right|=\left|5 \boldsymbol{A}^{-1}\right| \\
