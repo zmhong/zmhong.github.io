@@ -82,7 +82,8 @@
 \begin{equation*}\label{eq5-3}
 |\boldsymbol{A}-\lambda \boldsymbol{E}|=0. \tag{5-3}
 \end{equation*}
-式 $(\ref{eq5-3})$ 的左端为 $\lambda$ 的 $n$ 次多项式, 记 $f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|$, 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 则矩阵 $\boldsymbol{A}$ 的特征值即为其特征多项式的根. 式 (5-3) 称为矩阵 $\boldsymbol{A}$ 的特征方程, 特征方程在复数范围内恒有解, 其解的个数为方程的次数 (重根按重数计算), 因此 $n$ 阶方阵 $\boldsymbol{A}$ 有 $n$ 个特征值.
+式 $(\ref{eq5-3})$ 的左端为 $\lambda$ 的 $n$ 次多项式, 记 $f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|$, 称为矩阵 $\boldsymbol{A}$ 的特征多项式, 
+则矩阵 $\boldsymbol{A}$ 的特征值即为其特征多项式的根. 式 (\ref{eq5-3})$ 称为矩阵 $\boldsymbol{A}$ 的特征方程, 特征方程在复数范围内恒有解, 其解的个数为方程的次数 (重根按重数计算), 因此 $n$ 阶方阵 $\boldsymbol{A}$ 有 $n$ 个特征值.
 
 <p style="text-indent: 2em;">设 $\lambda=\lambda_{i}$ 为其中的一个特征值, 则由方程
 \begin{equation*}\label{eq5-4}
@@ -368,25 +369,25 @@ $$
 下面讨论特征值与特征向量的基本性质.
 <p style="text-indent: 2em;">
 设 $\boldsymbol{A}=\left(a_{i j}\right)_{n \times n}$ 是 $n$ 阶方阵,则 $\boldsymbol{A}$ 的特征多项式为
-\[
+\begin{equation*}\label{eq5-5}
 f(\lambda)=|\boldsymbol{A}-\lambda \boldsymbol{E}|=\left|\begin{array}{cccc}
 a_{11}-\lambda & a_{12} & \cdots & a_{1 n}  \tag{5-5}\\
 a_{21} & a_{22}-\lambda & \cdots & a_{2 n} \\
 \vdots & \vdots & & \vdots \\
 a_{n 1} & a_{n 2} & \cdots & a_{n n}-\lambda
 \end{array}\right|.
-\]
+\end{equation*}
 将这个行列式展开, 得到一个关于 $\lambda$ 的 $n$ 次多项式, 它的最高次幕项出现在主对角线上元素的乘积
-\begin{equation*}
+\begin{equation*}\label{eq5-6}
 \left(a_{11}-\lambda\right)\left(a_{22}-\lambda\right) \cdots\left(a_{n n}-\lambda\right) \tag{5-6}
 \end{equation*}
-里, 其余的项至多含有 $n-2$ 个主对角线上的元素. 因此, $f(\lambda)$ 是乘积 (5-6) 和一个至多是 $\lambda$ 的 $n-2$ 次多项式的和, 故有
+里, 其余的项至多含有 $n-2$ 个主对角线上的元素. 因此, $f(\lambda)$ 是乘积 $(\ref{eq5-6})$ 和一个至多是 $\lambda$ 的 $n-2$ 次多项式的和, 故有
 $$
 f(\lambda)=(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\right) \lambda^{n-1}+\cdots,
 $$
 这里没有写出的项的次数至多是 $n-2$.
 <p style="text-indent: 2em;">
-又在式(5-5) 中, 令 $\lambda=0$, 得
+又在式 $(\ref{eq5-5})$ 中, 令 $\lambda=0$, 得
 $$
 f(0)=|\boldsymbol{A}|.
 $$
@@ -398,14 +399,14 @@ f(\lambda)= & (-1)^{n} \lambda^{n}+(-1)^{n-1}\left(a_{11}+a_{22}+\cdots+a_{n n}\
 
 <p style="text-indent: 2em;">
 若 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}$ 是 $\boldsymbol{A}$ 的 $n$ 个特征值,则有
-\begin{align*}
+\begin{align*}\label{eq5-8}
 f(\lambda)  = &\left(\lambda_{1}-\lambda\right)\left(\lambda_{2}-\lambda\right) \cdots\left(\lambda_{n}-\lambda\right) \\
  = &(-1)^{n} \lambda^{n}+(-1)^{n-1}\left(\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}\right) \lambda^{n-1} \\
   &+\cdots+\lambda_{1} \lambda_{2} \cdots \lambda_{n}. \tag{5-8}
 \end{align*}
 
 <p style="text-indent: 2em;">
-比较式 (5-7) 与式 (5-8) 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
+比较式 $(\ref{eq5-7})$ 与式 $(\ref{eq5-8})$ 中 $\lambda$ 的同次幂的系数, 可以得到下面的性质.
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $1$：</b></font>
@@ -1353,7 +1354,7 @@ $$
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $3$：</b></font> 
 $n$ 元变量 $x_{1}, x_{2}, \cdots, x_{n}$ 的二次齐次多项式
-\begin{align*}
+\begin{align*}\label{eq5-9}
 f\left(x_{1}, x_{2}, \cdots, x_{n}\right)= & a_{11} x_{1}^{2}+a_{22} x_{2}^{2}+\cdots+a_{n n} x_{n}^{2}\\
  & +2 a_{12} x_{1} x_{2}+\cdots+2 a_{1 n} x_{1} x_{n} \\
 & +2 a_{23} x_{2} x_{3}+\cdots+2 a_{n-1, n} x_{n-1} x_{n} \tag{5-9}
@@ -1361,15 +1362,15 @@ f\left(x_{1}, x_{2}, \cdots, x_{n}\right)= & a_{11} x_{1}^{2}+a_{22} x_{2}^{2}+\
 称为 $n$ 元二次型, 简称二次型. 当 $a_{i j}$ 为复数时, $f$ 称为复二次型; 当 $a_{i j}$ 为实数时, $f$ 称为实二次型.
 </p>
 <p style="text-indent: 2em;">
-这里只讨论实二次型. 取 $a_{j i}=a_{i j} (i < j)$, 则 $2 a_{i j} x_{i} x_{j}=a_{i j} x_{i} x_{j}+a_{j i} x_{j} x_{i}$. 于是式(5-9)可写成对称形式:
-\begin{align*}
+这里只讨论实二次型. 取 $a_{j i}=a_{i j} (i < j)$, 则 $2 a_{i j} x_{i} x_{j}=a_{i j} x_{i} x_{j}+a_{j i} x_{j} x_{i}$. 于是式 $(\ref{eq5-9})$ 可写成对称形式:
+\begin{align*}\label{eq5-10}
 f= & a_{11} x_{1}^{2}+a_{12} x_{1} x_{2}+\cdots+a_{1 n} x_{1} x_{n}\\
    & +a_{21} x_{2} x_{1}+a_{22} x_{2}^{2} +\cdots+a_{2 n} x_{2} x_{n}+\cdots \\
    & +a_{n 1} x_{n} x_{1}+a_{n 2} x_{n} x_{2}+\cdots+a_{n n} x_{n}^{2} \\
 = & \sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j}. \tag{5-10}
 \end{align*}
 记
-\[
+\begin{equation*}\label{eq5-11}
 \boldsymbol{A}=\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n}  \tag{5-11}\\
 a_{21} & a_{22} & \cdots & a_{2 n} \\
@@ -1381,9 +1382,9 @@ x_{2} \\
 \vdots \\
 x_{n}
 \end{array}\right),
-\]
-则式 (5-10) 可以用矩阵形式简单表示为
-\begin{align*}
+\end{equation*}
+则式 $(\ref{eq5-10})$ 可以用矩阵形式简单表示为
+\begin{align*}\label{eq5-12}
 f  = &\sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j} x_{i} x_{j} \\
   = &\left(x_{1}, x_{2}, \cdots, x_{n}\right)\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n} \\
