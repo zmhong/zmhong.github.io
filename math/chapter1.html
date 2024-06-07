@@ -219,9 +219,10 @@ a_{31} & a_{32} & a_{33}
 \end{array}\right|
 $$
 表示代数和:   
-$$
-a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}-a_{11} a_{23} a_{32}-a_{12} a_{21} a_{33}-a_{13} a_{22} a_{31},
-$$
+\begin{align*}
+& a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}\\
+-& a_{11} a_{23} a_{32}-a_{12} a_{21} a_{33}-a_{13} a_{22} a_{31},
+\end{align*}
 称为三阶行列式,   即
 \begin{align*}
 \left|\begin{array}{lll}
@@ -713,14 +714,15 @@ a_{n 1} & a_{n 2} & \cdots & a_{n n}
 \end{align*}
 
 <p style="text-indent: 2em;">若将行列式中各项的列下标按自然顺序排列,  而将相应行下标的排列设为 $i_{1} i_{2} \cdots i_{n}$,  于是行列式又可定义为
-\begin{equation*} 
-D=\left|\begin{array}{cccc}
+\begin{align*}
+D= & \left|\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1 n}  \\ 
 a_{21} & a_{22} & \cdots & a_{2 n} \\
 \vdots & \vdots & & \vdots \\
 a_{n 1} & a_{n 2} & \cdots & a_{n n}
-\end{array}\right|=\sum_{i_{1} i_{2} \cdots i_{n}}(-1)^{\tau\left(i_{1} i_{2} \cdots i_{n}\right)} a_{i_{1} 1} a_{i_{2} 2} \cdots a_{i_{n} n}. \tag{1-12}\label{eq1-12}
-\end{equation*}
+\end{array}\right| \\
+  = & \sum_{i_{1} i_{2} \cdots i_{n}}(-1)^{\tau\left(i_{1} i_{2} \cdots i_{n}\right)} a_{i_{1} 1} a_{i_{2} 2} \cdots a_{i_{n} n}. \tag{1-12}\label{eq1-12}
+\end{align*}
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $7$：</b></font>
