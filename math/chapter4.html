@@ -125,7 +125,7 @@ $(2)$ 线性方程组有没有解以及有什么样的解, 完全取决于它的
 设有线性方程组
 \[
 \left\{\begin{array}{c}
-a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1},  \tag{4-1}\\
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1},  \tag{4-1}\label{eq4-1}\\
 a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
 \cdots \cdots \cdots \cdots \\
 a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m},
@@ -152,11 +152,11 @@ b_{2} \\
 b_{m}
 \end{array}\right)
 $$
-则式(4-1)可以写成矩阵形式:
+则式 $(\ref{eq4-1})$ 可以写成矩阵形式:
 \begin{equation*}
-\boldsymbol{Ax} = \boldsymbol{b}, \tag{4-2}
+\boldsymbol{Ax} = \boldsymbol{b}, \tag{4-2}\label{eq4-2}
 \end{equation*}
-分别称 $\boldsymbol{A}, \boldsymbol{x}$ 和 $\boldsymbol{b}$ 为线性方程组 (4-1) 的系数矩阵、未知量矩阵和常数项矩阵. 同时称
+分别称 $\boldsymbol{A}, \boldsymbol{x}$ 和 $\boldsymbol{b}$ 为线性方程组 $(\ref{eq4-1})$ 的系数矩阵、未知量矩阵和常数项矩阵. 同时称
 $$
 \overline{\boldsymbol{A}}=(\boldsymbol{A}, \boldsymbol{b})=\left(\begin{array}{ccccc}
 a_{11} & a_{12} & \cdots & a_{1 n} & b_{1} \\
@@ -165,9 +165,9 @@ a_{21} & a_{22} & \cdots & a_{2 n} & b_{2} \\
 a_{m 1} & a_{m 2} & \cdots & a_{m n} & b_{m}
 \end{array}\right)
 $$
-为线性方程组 (4-1) 的增广矩阵.
+为线性方程组 $(\ref{eq4-1})$ 的增广矩阵.
 
-线性方程组还可以表示成向量形式. 对式 (4-2) 中的矩阵 $\boldsymbol{A}$ 按列分块, 有
+线性方程组还可以表示成向量形式. 对式 $(\ref{eq4-2})$ 中的矩阵 $\boldsymbol{A}$ 按列分块, 有
 $$
 \boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right), \quad \boldsymbol{\alpha}_{j}=\left(\begin{array}{c}
 a_{1 j} \\
@@ -176,7 +176,7 @@ a_{2 j} \\
 a_{m j}
 \end{array}\right), \quad j=1,2, \cdots, n,
 $$
-由分块矩阵的乘法, 线性方程组 (4-1) 可写成如卡向量形式:
+由分块矩阵的乘法, 线性方程组 $(\ref{eq4-1})$ 可写成如卡向量形式:
 $$
 \left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)\left(\begin{array}{c}
 x_{1} \\
@@ -190,9 +190,9 @@ $$
 x_{1} \boldsymbol{\alpha}_{1}+x_{2} \boldsymbol{\alpha}_{2}+\cdots+x_{n} \boldsymbol{\alpha}_{n}=\boldsymbol{b} .
 $$
 
-若常数项 $b_{1}, b_{2}, \cdots, b_{m}$ 不全为零, 则称式 (4-1) 为非齐次线性方程组; 若常数项 $b_{1}, b_{2}, \cdots, b_{m}$ 全为零, 则称式 (4-1) 为齐次线性方程组.
+若常数项 $b_{1}, b_{2}, \cdots, b_{m}$ 不全为零, 则称式 $(\ref{eq4-1})$ 为非齐次线性方程组; 若常数项 $b_{1}, b_{2}, \cdots, b_{m}$ 全为零, 则称式 $(\ref{eq4-1})$ 为齐次线性方程组.
 
-满足式 (4-1) 的一个 $n$ 元有序数组称为 $n$ 元线性方程组 (4-1) 的一个解, 一般用列向量形式 $\boldsymbol{\xi}=\left(k_{1}, k_{2}, \cdots, k_{n}\right)^{\mathrm{T}}$ 表示, 因此也称 $\boldsymbol{\xi}$ 为方程组 (4-1) 的一个解向量.
+满足式 $(\ref{eq4-1})$ 的一个 $n$ 元有序数组称为 $n$ 元线性方程组 $(\ref{eq4-1})$ 的一个解, 一般用列向量形式 $\boldsymbol{\xi}=\left(k_{1}, k_{2}, \cdots, k_{n}\right)^{\mathrm{T}}$ 表示, 因此也称 $\boldsymbol{\xi}$ 为方程组 $(\ref{eq4-1})$ 的一个解向量.
 
 当线性方程组有无穷多个解时, 其所有解的集合称为方程组的通解或一般解.
 
@@ -271,9 +271,9 @@ a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
 a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}.
 \end{array}\right.
 $$
-这个方法实际应用时比较方便, 但是还有几个问题没有解决, 就是线性方程组 (4-1) 在什么时候无解? 在什么时候有解? 有解时, 又有多少个解? 本节将对这些问题予以解答.
+这个方法实际应用时比较方便, 但是还有几个问题没有解决, 就是线性方程组 $(\ref{eq4-1})$ 在什么时候无解? 在什么时候有解? 有解时, 又有多少个解? 本节将对这些问题予以解答.
 
-首先, 设线性方程组 (4-1) 的增广矩阵为
+首先, 设线性方程组 $(\ref{eq4-1})$ 的增广矩阵为
 
 $$
 \overline{\boldsymbol{A}}=(\boldsymbol{A}, \boldsymbol{b})=\left(\begin{array}{ccccc}
@@ -309,7 +309,7 @@ $$
 行最简形矩阵:
 \[
 \left(\begin{array}{cccccccc}
-1 & 0 & \cdots & 0 & c_{1, r+1} & \cdots & c_{1 n} & d_{1}  \tag{4-3}\\
+1 & 0 & \cdots & 0 & c_{1, r+1} & \cdots & c_{1 n} & d_{1}  \tag{4-3}\label{eq4-3}\\
 0 & 1 & \cdots & 0 & c_{2, r+1} & \cdots & c_{2 n} & d_{2} \\
 \vdots & \vdots & & \vdots & \vdots & & \vdots & \vdots \\
 0 & 0 & \cdots & 1 & c_{r, r+1} & \cdots & c_{r n} & d_{r} \\
@@ -319,7 +319,7 @@ $$
 0 & 0 & \cdots & 0 & 0 & \cdots & 0 & 0
 \end{array}\right).
 \]
-与矩阵 (4-3) 对应的线性方程组为
+与矩阵 $(\ref{eq4-3})$ 对应的线性方程组为
 \[
 \left\{\begin{aligned}
 x_1+c_{1, r+1} x_{r+1}+\cdots+c_{1 n} x_n & =d_1, \\
@@ -330,13 +330,13 @@ x_r+c_{r, r+1} x_{r+1}+\cdots+c_{r n} x_n & =d_r, \\
 0 & =0, \\
 \cdots \cdots \cdots \cdots &  \\
 0 & =0 .
-\end{aligned}\right.
+\end{aligned}\right. \tag{4-4}\label{eq4-4}
 \]
-由定理 $1$ 知, 方程组 (4-1) 与方程组 (4-4) 是同解方程组. 在方程组 (4-4) 中去掉 “ $0=0$ ” 形式的方程并不影响方程组的解, 因此, 可以看到, 方程组 (4-4) 是否有解就取决于 $d_{r+1}=0$ 是否成立. 这就给出了判别方程组 (4-1) 是否有解的一个方法: 用初等变换将方程组 (4-1) 变为方程组 (4-4), 则方程组 (4-1) 有解的充分必要条件为 $d_{r+1}=0$.
+由定理 $1$ 知, 方程组 $(\ref{eq4-1})$ 与方程组 $(\ref{eq4-4})$ 是同解方程组. 在方程组 $(\ref{eq4-4})$ 中去掉 “ $0=0$ ” 形式的方程并不影响方程组的解, 因此, 可以看到, 方程组 $(\ref{eq4-4})$ 是否有解就取决于 $d_{r+1}=0$ 是否成立. 这就给出了判别方程组 $(\ref{eq4-1})$ 是否有解的一个方法: 用初等变换将方程组 $(\ref{eq4-1})$ 变为方程组 $(\ref{eq4-4})$, 则方程组 $(\ref{eq4-1})$ 有解的充分必要条件为 $d_{r+1}=0$.
 
 方程组有解可分两种情形加以考虑.
 
-$(1)$ 当 $r=n$ 时,方程组 (4-4) 可写成
+$(1)$ 当 $r=n$ 时,方程组 $(\ref{eq4-4})$ 可写成
 $$
 \left\{\begin{array}{c}
 x_{1}=d_{1}, \\
@@ -345,9 +345,9 @@ x_{2}=d_{2}, \\
 x_{n}=d_{n},
 \end{array}\right.
 $$
-此即方程组 (4-1) 的唯一解.
+此即方程组 $(\ref{eq4-1})$ 的唯一解.
 
-$(2)$ 当 $r < n$ 时,方程组 (4-4) 可写成
+$(2)$ 当 $r < n$ 时,方程组 $(\ref{eq4-4})$ 可写成
 $$
 \left\{\begin{array}{c}
 x_{1}=d_{1}-c_{1, r+1} x_{r+1}-\cdots-c_{1 n} x_{n}, \\
@@ -356,7 +356,7 @@ x_{2}=d_{2}-c_{2, r+1} x_{r+1}-\cdots-c_{2 n} x_{n}, \\
 x_{r}=d_{r}-c_{r, r+1} x_{r+1}-\cdots-c_{r n} x_{n}. \\
 \end{array}\right.
 $$
-视 $x_{r+1}, x_{r+2}, \cdots, x_{n}$ 为 $n-r$ 个自由未知量, 若任给 $x_{r+1}, x_{r+2}, \cdots, x_{n}$ 一组值 $t_{1}, t_{2}, \cdots, t_{n-r}$, 就唯一地确定出 $x_{1}, x_{2}, \cdots, x_{r}$ 的值, 从而给出方程组 (4-1) 的一个解. 这表明方程组 (4-1) 有无穷多个解, 其通解的形式为
+视 $x_{r+1}, x_{r+2}, \cdots, x_{n}$ 为 $n-r$ 个自由未知量, 若任给 $x_{r+1}, x_{r+2}, \cdots, x_{n}$ 一组值 $t_{1}, t_{2}, \cdots, t_{n-r}$, 就唯一地确定出 $x_{1}, x_{2}, \cdots, x_{r}$ 的值, 从而给出方程组 $(\ref{eq4-1})$ 的一个解. 这表明方程组 $(\ref{eq4-1})$ 有无穷多个解, 其通解的形式为
 $$
 \left\{\begin{aligned}
 x_{1} =& d_{1}-c_{1, r+1} t_{1}-\cdots-c_{1 n} t_{n-r}, \\
@@ -369,14 +369,14 @@ x_{n}=&t_{n-r}.
 \end{aligned}\right.
 $$
 
-总之, 解线性方程组的步骤是用初等行变换化方程组 (4-1) 的增广矩阵为阶
-梯形矩阵, 根据 $d_{r+1}$ 是否等于 $0$ 判断原方程组是否有解. 如果 $d_{r+1} \neq 0$, 则有 $r(\boldsymbol{A})= r$, 而 $r(\overline{\boldsymbol{A}})=r+1$, 即 $r(\boldsymbol{A}) \neq r(\overline{\boldsymbol{A}})$, 此时方程组 (4-1) 无解; 如果 $d_{r+1}=0$, 则 $r(\boldsymbol{A})= r(\overline{\boldsymbol{A}})=r$, 此时方程组 (4-1) 有解. 而当 $r=n$ 时, 方程组 (4-1) 有唯一解; 
-  当 $r < n$ 时, 方程组 (4-1) 有无穷多个解. 由此可以得到如下定理.
+总之, 解线性方程组的步骤是用初等行变换化方程组 $(\ref{eq4-1})$ 的增广矩阵为阶
+梯形矩阵, 根据 $d_{r+1}$ 是否等于 $0$ 判断原方程组是否有解. 如果 $d_{r+1} \neq 0$, 则有 $r(\boldsymbol{A})= r$, 而 $r(\overline{\boldsymbol{A}})=r+1$, 即 $r(\boldsymbol{A}) \neq r(\overline{\boldsymbol{A}})$, 此时方程组 $(\ref{eq4-1})$ 无解; 如果 $d_{r+1}=0$, 则 $r(\boldsymbol{A})= r(\overline{\boldsymbol{A}})=r$, 此时方程组 $(\ref{eq4-1})$ 有解. 而当 $r=n$ 时, 方程组 $(\ref{eq4-1})$ 有唯一解; 
+  当 $r < n$ 时, 方程组 $(\ref{eq4-1})$ 有无穷多个解. 由此可以得到如下定理.
 
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $2$：[线性方程组有解的判定定理] </b></font>
-线性方程组 (4-1) 有解的充分必要条件是系数矩阵与增广矩阵有相同的秩 $r$.
+线性方程组 $(\ref{eq4-1})$ 有解的充分必要条件是系数矩阵与增广矩阵有相同的秩 $r$.
 <br>
 $(1)$ 当 $r$ 等于方程组所含未知量的个数 $n$ 时, 方程组有唯一解;
 <br>
@@ -614,15 +614,15 @@ $$
 下面考虑齐次线性方程组
 \[
 \left\{\begin{array}{c}
-a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=0,  \tag{4-5}\\
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=0,  \tag{4-5}\label{eq4-5}\\
 a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=0, \\
 \cdots \cdots \cdots \cdots \\
 a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=0.
 \end{array}\right.
 \]
-齐次线性方程组 (4-5) 的矩阵形式可以写成
+齐次线性方程组 $(\ref{eq4-5})$ 的矩阵形式可以写成
 \begin{equation*}
-\boldsymbol{A x}=\mathbf{0}, \tag{4-6}
+\boldsymbol{A x}=\mathbf{0}, \tag{4-6}\label{eq4-6}
 \end{equation*}
 其中
 $$
@@ -643,26 +643,26 @@ $$
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $3$：</b></font>
-齐次线性方程组 (4-5) 有非零解的充分必要条件是系数矩阵的秩 $r(\boldsymbol{A}) <  n$.
+齐次线性方程组 $(\ref{eq4-5})$ 有非零解的充分必要条件是系数矩阵的秩 $r(\boldsymbol{A}) <  n$.
 </p>
 
-显然, 若齐次线性方程组 (4-5) 有非零解, 则它一定有无穷多个解.
+显然, 若齐次线性方程组 $(\ref{eq4-5})$ 有非零解, 则它一定有无穷多个解.
 
 由定理 $3$ 很容易得到下面的几个推论.
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $1$：</b></font>
-当方程的个数 $m$ 小于未知量的个数 $n$ 时, 齐次线性方程组 (4-5) 有非零解.
+当方程的个数 $m$ 小于未知量的个数 $n$ 时, 齐次线性方程组 $(\ref{eq4-5})$ 有非零解.
 </p>
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $2$：</b></font>
-齐次线性方程组 (4-5) 只有零解的充分必要条件是系数矩阵的秩 $r(\boldsymbol{A})=n$.
+齐次线性方程组 $(\ref{eq4-5})$ 只有零解的充分必要条件是系数矩阵的秩 $r(\boldsymbol{A})=n$.
 </p>
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $3$：</b></font>
-当 $m=n$ 时, 齐次线性方程组 (4-5) 只有零解 (有非零解) 的充分必要条件是系数行列式 $|\boldsymbol{A}| \neq 0\, (|\boldsymbol{A}|=0)$.
+当 $m=n$ 时, 齐次线性方程组 $(\ref{eq4-5})$ 只有零解 (有非零解) 的充分必要条件是系数行列式 $|\boldsymbol{A}| \neq 0\, (|\boldsymbol{A}|=0)$.
 </p>
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -763,7 +763,7 @@ a_{2 j} \\
 a_{m j}
 \end{array}\right), \quad j=1,2, \cdots, n.
 $$
-可知, $m$ 维向量 $\boldsymbol{b}$ 是否可由 $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示与非齐次线性方程组 (4-1) 是否有解等价; 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是否线性相关与齐次线性方程组 (4-1) 是否有非零解等价.
+可知, $m$ 维向量 $\boldsymbol{b}$ 是否可由 $m$ 维向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 线性表示与非齐次线性方程组 $(\ref{eq4-1})$ 是否有解等价; 向量组 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}$ 是否线性相关与齐次线性方程组 $(\ref{eq4-1})$ 是否有非零解等价.
 
 记 $\boldsymbol{A}=\left(\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{n}\right)$.
 
@@ -880,13 +880,13 @@ $$
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $1$：</b></font>
-若 $\boldsymbol{\xi}_{1}$, $\boldsymbol{\xi}_{2}$ 是齐次线性方程组 (4-6) 的解, 则 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是齐次线性方程组 (4-6) 的解.
+若 $\boldsymbol{\xi}_{1}$, $\boldsymbol{\xi}_{2}$ 是齐次线性方程组 $(\ref{eq4-6})$ 的解, 则 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是齐次线性方程组 $(\ref{eq4-6})$ 的解.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDproperty1").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDproperty1").style.display="none"'> 
 <div id= "divIDproperty1" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
-因为 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}$ 都是齐次线性方程组 (4-6) 的解, 则有
+因为 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}$ 都是齐次线性方程组 $(\ref{eq4-6})$ 的解, 则有
 $$
 \boldsymbol{A} \boldsymbol{\xi}_{1}=\mathbf{0}, \quad \boldsymbol{A} \boldsymbol{\xi}_{2}=\mathbf{0},
 $$
@@ -894,12 +894,12 @@ $$
 $$
 \boldsymbol{A}\left(\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}\right)=\boldsymbol{A} \boldsymbol{\xi}_{1}+\boldsymbol{A} \boldsymbol{\xi}_{2}=\mathbf{0}+\mathbf{0}=\mathbf{0}, 
 $$
-即 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是齐次线性方程组 (4-6) 的解. 证毕.
+即 $\boldsymbol{\xi}_{1}+\boldsymbol{\xi}_{2}$ 也是齐次线性方程组 $(\ref{eq4-6})$ 的解. 证毕.
 </p></div></p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $2$：</b></font>
-若 $\boldsymbol{\xi}$ 是齐次线性方程组 (4-6) 的解, $k$ 为任意实数, 则 $k \boldsymbol{\xi}$ 也是齐次线性方程组 (4-6) 的解.
+若 $\boldsymbol{\xi}$ 是齐次线性方程组 $(\ref{eq4-6})$ 的解, $k$ 为任意实数, 则 $k \boldsymbol{\xi}$ 也是齐次线性方程组 $(\ref{eq4-6})$ 的解.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDproperty2").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDproperty2").style.display="none"'> 
 <div id= "divIDproperty2" style= "display:none"> 
@@ -909,39 +909,39 @@ $$
 $$
 \boldsymbol{A}(k \boldsymbol{\xi})=k \boldsymbol{A} \boldsymbol{\xi}=k \mathbf{0}=\mathbf{0},
 $$
-故 $k \boldsymbol{\xi}$ 也是齐次线性方程组 (4-6) 的解. 证毕.
+故 $k \boldsymbol{\xi}$ 也是齐次线性方程组 $(\ref{eq4-6})$ 的解. 证毕.
 </p></div></p>
 
 
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $7$：</b></font>
-若 $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \cdots, \boldsymbol{\xi}_{r}$ 是齐次线性方程组 (4-6) 的 $r$ 个解, $k_1, k_2, \cdots, k_r$ 为任意实数, 则 
-$k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+\cdots+k_{r} \boldsymbol{\xi}_{r}$ 也是齐次线性方程组 (4-6) 的解.
+若 $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \cdots, \boldsymbol{\xi}_{r}$ 是齐次线性方程组 $(\ref{eq4-6})$ 的 $r$ 个解, $k_1, k_2, \cdots, k_r$ 为任意实数, 则 
+$k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}+\cdots+k_{r} \boldsymbol{\xi}_{r}$ 也是齐次线性方程组 $(\ref{eq4-6})$ 的解.
 </p>
 
 这说明, 齐次线性方程组的解的线性组合仍是该方程组的解.
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>定义 $1$：</b></font>
-设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是齐次线性方程组 (4-5) 的 $r$ 个解向量, 如果满足条件:
+设 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 是齐次线性方程组 $(\ref{eq4-5})$ 的 $r$ 个解向量, 如果满足条件:
 <br>
 $(1)$ $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性无关;
 <br>
-$(2)$ 齐次线性方程组 (4-5) 的任意一个解向量 $\boldsymbol{\alpha}$ 都能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性表示,则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 称为齐次线性方程组 (4-5)的基础解系.
+$(2)$ 齐次线性方程组 $(\ref{eq4-5})$ 的任意一个解向量 $\boldsymbol{\alpha}$ 都能由 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 线性表示,则 $\boldsymbol{\alpha}_{1}, \boldsymbol{\alpha}_{2}, \cdots, \boldsymbol{\alpha}_{r}$ 称为齐次线性方程组 $(\ref{eq4-5})$ 的基础解系.
 </p>
 
 易见, 基础解系可看成解向量组的一个极大线性无关组. 显然, 齐次线性方程组的基础解系不是唯一的.
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $4$：</b></font>
-齐次线性方程组 (4-5) 若有非零解, 则它一定有基础解系, 且基础解系所含解向量的个数等于 $n-r$, 其中 $r$ 是系数矩阵的秩.
+齐次线性方程组 $(\ref{eq4-5})$ 若有非零解, 则它一定有基础解系, 且基础解系所含解向量的个数等于 $n-r$, 其中 $r$ 是系数矩阵的秩.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm4").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDthm4").style.display="none"'> 
 <div id= "divIDthm4" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
-设齐次线性方程组 (4-5) 的系数矩阵为
+设齐次线性方程组 $(\ref{eq4-5})$ 的系数矩阵为
 
 $$
 \boldsymbol{A}=\left(\begin{array}{cccc}
@@ -972,7 +972,7 @@ x_{1}+c_{1, r+1} x_{r+1}+\cdots+c_{1 n} x_{n}=0, \\
 x_{2}+c_{2, r+1} x_{r+1}+\cdots+c_{2 n} x_{n}=0, \\
 \cdots \cdots \cdots \cdots \\
 x_{r}+c_{r, r+1} x_{r+1}+\cdots+c_{r n} x_{n}=0.
-\end{array}\right.
+\end{array}\right. \tag{4-7}\label{eq4-7}
 $$
 令 $x_{r+1}, x_{r+2}, \cdots, x_{n}$ 为自由未知量, 得
 $$
@@ -981,7 +981,7 @@ x_{1}=-c_{1, r+1} x_{r+1}-\cdots-c_{1 n} x_{n}, \\
 x_{2}=-c_{2, r+1} x_{r+1}-\cdots-c_{2 n} x_{n}, \\
 \cdots \cdots \cdots \cdots \\
 x_{r}=-c_{r, r+1} x_{r+1}-\cdots-c_{r n} x_{n}.
-\end{array}\right.
+\end{array}\right. \tag{4-8}\label{eq4-8}
 $$
 分别取
 $$
@@ -1007,7 +1007,7 @@ x_{n}
 1
 \end{array}\right).
 $$
-由方程组 (4-8), 依次可得
+由方程组 $(\ref{eq4-8})$, 依次可得
 $$
 \left(\begin{array}{c}
 x_{1} \\
@@ -1031,7 +1031,7 @@ x_{r}
 -c_{r n}
 \end{array}\right).
 $$
-从而得到方程组 (4-5) 的 $n-r$ 个解为
+从而得到方程组 $(\ref{eq4-5})$ 的 $n-r$ 个解为
 $$
 \boldsymbol{\xi}_{1}=\left(\begin{array}{c}
 -c_{1, r+1} \\
@@ -1063,7 +1063,7 @@ $$
 \end{array}\right).
 $$
 <br>
-下面证明 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 就是方程组 (4-5) 的一个基础解系.
+下面证明 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 就是方程组 $(\ref{eq4-5})$ 的一个基础解系.
 <br>
 首先, 由于 $n-r$ 个 $n-r$ 维向量
 $$
@@ -1086,7 +1086,7 @@ $$
 $$
 线性无关, 由第 $3$ 章的定理 $5$ 知, $n-r$ 个 $n$ 维向量 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 亦线性无关.
 <br>
-其次, 证明方程组 (4-5) 的任意一个解 $\boldsymbol{\xi}=\left(k_{1}, k_{2}, \cdots, k_{n}\right)^{\mathrm{T}}$ 都可由 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots$, $\boldsymbol{\xi}_{n-r}$ 线性表示. 因为方程组 (4-8) 是方程组 (4-5) 的同解方程组, 于是
+其次, 证明方程组 $(\ref{eq4-5})$ 的任意一个解 $\boldsymbol{\xi}=\left(k_{1}, k_{2}, \cdots, k_{n}\right)^{\mathrm{T}}$ 都可由 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots$, $\boldsymbol{\xi}_{n-r}$ 线性表示. 因为方程组 $(\ref{eq4-8})$ 是方程组 $(\ref{eq4-5})$ 的同解方程组, 于是
 $$
 \left\{\begin{array}{l}
 k_{1}=-c_{1, r+1} k_{r+1}-\cdots-c_{1 n} k_{n}, \\
@@ -1107,7 +1107,7 @@ k_{2} \\
 k_{n}
 \end{array}\right)=k_{r+1} \boldsymbol{\xi}_{1}+k_{r+2} \boldsymbol{\xi}_{2}+\cdots+k_{n} \boldsymbol{\xi}_{n-r},
 $$
-即 $\boldsymbol{\xi}$ 是 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 的线性组合. 所以 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是方程组 (4-5) 的一个基础解系. 证毕.
+即 $\boldsymbol{\xi}$ 是 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 的线性组合. 所以 $\boldsymbol{\xi}_{1}, \boldsymbol{\xi}_{2}, \cdots, \boldsymbol{\xi}_{n-r}$ 是方程组 $(\ref{eq4-5})$ 的一个基础解系. 证毕.
 </p></div></p>
 
 定理 $4$ 实际上指出了求齐次线性方程组的基础解系的一种方法.
@@ -1117,7 +1117,7 @@ $$
  
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>推论 $8$：[齐次线性方程组解的结构定理] </b></font>
-若齐次线性方程组 (4-5) 有非零解, 则它的通解就是基础解系的线性组合.
+若齐次线性方程组 $(\ref{eq4-5})$ 有非零解, 则它的通解就是基础解系的线性组合.
 </p>
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -1345,7 +1345,7 @@ $$
 非齐次线性方程组
 \[
 \left\{\begin{array}{c}
-a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1},  \tag{4-9}\\
+a_{11} x_{1}+a_{12} x_{2}+\cdots+a_{1 n} x_{n}=b_{1}, \tag{4-9}\label{eq4-9}\\
 a_{21} x_{1}+a_{22} x_{2}+\cdots+a_{2 n} x_{n}=b_{2}, \\
 \cdots \cdots \cdots \cdots \\
 a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}
@@ -1353,7 +1353,7 @@ a_{m 1} x_{1}+a_{m 2} x_{2}+\cdots+a_{m n} x_{n}=b_{m}
 \]
 的矩阵形式可以表示为
 \begin{equation*}
-\boldsymbol{A x}=\boldsymbol{b}, \tag{4-10}
+\boldsymbol{A x}=\boldsymbol{b}, \tag{4-10}\label{eq4-10}
 \end{equation*}
 其中
 $$
@@ -1376,15 +1376,15 @@ b_{m}
 $$
 取 $\boldsymbol{b}=\mathbf{0}$, 得到齐次线性方程组
 \begin{equation*}
-\boldsymbol{A x}=\boldsymbol{0}, \tag{4-11}
+\boldsymbol{A x}=\boldsymbol{0}, \tag{4-11}\label{eq4-11}
 \end{equation*}
-称式 (4-11) 为非齐次线性方程组 (4-10) 的导出方程组, 简称导出组.
+称式 $(\ref{eq4-11})$ 为非齐次线性方程组 $(\ref{eq4-10})$ 的导出方程组, 简称导出组.
 
-非齐次线性方程组 (4-10) 的解与它的导出组 (4-11) 的解之间有下列性质.
+非齐次线性方程组 $(\ref{eq4-10})$ 的解与它的导出组 $(\ref{eq4-11})$ 的解之间有下列性质.
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $3$：</b></font>
-如果 $\boldsymbol{\eta}$ 是非齐次线性方程组 (4-10) 的一个解, $\boldsymbol{\xi}$ 是其导出组的一个解, 则 $\boldsymbol{\xi}+\boldsymbol{\eta}$ 是非齐次线性方程组 (4-10) 的一个解.
+如果 $\boldsymbol{\eta}$ 是非齐次线性方程组 $(\ref{eq4-10})$ 的一个解, $\boldsymbol{\xi}$ 是其导出组的一个解, 则 $\boldsymbol{\xi}+\boldsymbol{\eta}$ 是非齐次线性方程组 $(\ref{eq4-10})$ 的一个解.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDproperty3").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDproperty3").style.display="none"'> 
 <div id= "divIDproperty3" style= "display:none"> 
@@ -1398,12 +1398,12 @@ $$
 $$
 \boldsymbol{A}(\boldsymbol{\xi}+\boldsymbol{\eta})=\boldsymbol{A} \boldsymbol{\xi}+\boldsymbol{A} \boldsymbol{\eta}=\mathbf{0}+\boldsymbol{b}=\boldsymbol{b}
 $$
-知, $\boldsymbol{\xi}+\boldsymbol{\eta}$ 是非齐次线性方程组 (4-10) 的解. 证毕.
+知, $\boldsymbol{\xi}+\boldsymbol{\eta}$ 是非齐次线性方程组 $(\ref{eq4-10})$ 的解. 证毕.
 </p></div></p>
 
 <p style="border: 2px solid blue; border-radius: 5px">
 <font color=blue><b>性质 $4$：</b></font>
-如果 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}$ 是非齐次线性方程组 (4-10) 的任意两个解, 则 $\boldsymbol{\eta}_{1}-\boldsymbol{\eta}_{2}$是其导出组的解.
+如果 $\boldsymbol{\eta}_{1}, \boldsymbol{\eta}_{2}$ 是非齐次线性方程组 $(\ref{eq4-10})$ 的任意两个解, 则 $\boldsymbol{\eta}_{1}-\boldsymbol{\eta}_{2}$是其导出组的解.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDproperty4").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDproperty4").style.display="none"'> 
 <div id= "divIDproperty4" style= "display:none"> 
@@ -1422,17 +1422,17 @@ $$
 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>定理 $5$：[非齐次线性方程组解的结构定理] </b></font>
-如果非齐次线性方程组 (4-9) 有解, 则其通解为
+如果非齐次线性方程组 $(\ref{eq4-9})$ 有解, 则其通解为
 $$
 \boldsymbol{x}=\boldsymbol{\eta}^{*}+\boldsymbol{\xi},
 $$
-其中 $\boldsymbol{\eta}^{*}$ 是非齐次线性方程组 (4-9) 的一个特解, 而 $\boldsymbol{\xi}$ 是其导出组的通解.
+其中 $\boldsymbol{\eta}^{*}$ 是非齐次线性方程组 $(\ref{eq4-9})$ 的一个特解, 而 $\boldsymbol{\xi}$ 是其导出组的通解.
 <input type=button value= "显示证明" onclick='document.getElementById("divIDthm5").style.display="block"'> 
 <input type=button value= "收起证明" onclick='document.getElementById("divIDthm5").style.display="none"'> 
 <div id= "divIDthm5" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
-首先由性质 $3$ 知, $\boldsymbol{\eta}^{*}+\boldsymbol{\xi}$ 是非齐次线性方程组 (4-9) 的解. 其次设 $\boldsymbol{\eta}$ 是非齐次线性方程组解 (4-9) 的任意一个解, 则由性质 $4$ 知,
+首先由性质 $3$ 知, $\boldsymbol{\eta}^{*}+\boldsymbol{\xi}$ 是非齐次线性方程组 $(\ref{eq4-9})$ 的解. 其次设 $\boldsymbol{\eta}$ 是非齐次线性方程组解 $(\ref{eq4-9})$ 的任意一个解, 则由性质 $4$ 知,
 $$
 \boldsymbol{\xi}=\boldsymbol{\eta}-\boldsymbol{\eta}^{*}
 $$
@@ -1440,7 +1440,7 @@ $$
 $$
 \boldsymbol{\eta}=\boldsymbol{\eta}^{*}+\boldsymbol{\xi},
 $$
-即非齐次线性方程组 (4-9) 的任意一个解都是非齐次线性方程组 (4-9) 的一个解 $\boldsymbol{\eta}^{*}$ 与其导出组某个解的和. 由此得到非齐次线性方程组 (4-9)的通解可以写为
+即非齐次线性方程组 $(\ref{eq4-9})$ 的任意一个解都是非齐次线性方程组 $(\ref{eq4-9})$ 的一个解 $\boldsymbol{\eta}^{*}$ 与其导出组某个解的和. 由此得到非齐次线性方程组 $(\ref{eq4-9})$ 的通解可以写为
 $$
 \boldsymbol{x}=\boldsymbol{\eta}^{*}+\boldsymbol{\xi}.
 $$
@@ -1453,7 +1453,7 @@ $$
 $$
 其中 $k_{1}, k_{2}, \cdots, k_{n-r}$ 为任意常数.
 
-一般地, 求非齐次线性方程组 (4-9) 的一个特解与求它的导出组的通解可同时进行.
+一般地, 求非齐次线性方程组 $(\ref{eq4-9})$ 的一个特解与求它的导出组的通解可同时进行.
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $13$：</b></font>
