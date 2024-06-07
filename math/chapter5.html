@@ -581,7 +581,7 @@ $$
 \end{array}\right), 
 $$
 取 $\boldsymbol{P}=\left(\begin{array}{rr}1 & 1 \\ 1 & -5\end{array}\right)$, 则 $\boldsymbol{P}^{-1}=\left(\begin{array}{rr}
-\frac{5}{6} & \frac{1}{6} \\ [5pt]
+\frac{5}{6} & \frac{1}{6} \\[5pt]
 \frac{1}{6} & -\frac{1}{6}\end{array}\right)$, 有
 $$
 \boldsymbol{P}^{-1} \boldsymbol{A P}=\left(\begin{array}{rr}
@@ -656,7 +656,7 @@ $$
 <font color=blue><b>证明：</b></font>
 设 $\boldsymbol{A} \sim \boldsymbol{B}$, 则 $|\boldsymbol{A}|=|\boldsymbol{B}|$, 所以 $|\boldsymbol{A}|$ 与 $|\boldsymbol{B}|$ 同时为 0 或不为 0 , 即 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 同时不可逆或同时可逆.
 <br>
-如果 $\boldsymbol{A} \sim \boldsymbol{B}$, 且都可逆, 则存在可逆矩阵 $\boldsymbol{P}$, 使得
+$\qquad$如果 $\boldsymbol{A} \sim \boldsymbol{B}$, 且都可逆, 则存在可逆矩阵 $\boldsymbol{P}$, 使得
 $$
 \boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{B}.
 $$
@@ -708,7 +708,7 @@ $$
 <div id= "divIDexample8" style= "display:none"> 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>解：</b></font>
-<b>解法 $1$</b> $\quad$  因 $\boldsymbol{B}$ 是对角矩阵, 故 $\boldsymbol{A}$ 有特征值 $-1,2, y$. 而 $\boldsymbol{A}$ 的特征方程为
+<font color=green><b>解法 $1$</b></font> $\quad$因 $\boldsymbol{B}$ 是对角矩阵, 故 $\boldsymbol{A}$ 有特征值 $-1,2, y$. 而 $\boldsymbol{A}$ 的特征方程为
 $$
 |\boldsymbol{A}-\lambda \boldsymbol{E}|=-(\lambda+2)\left[\lambda^{2}-(x+1) \lambda+(x-2)\right]=0.
 $$
@@ -718,7 +718,7 @@ $$
 $$
 所以 $\boldsymbol{A}$ 的特征值为 $-1,2,-2$, 即 $y=-2$.
 <br>
-<b>解法 $2$</b>$\quad$ 由于 $\boldsymbol{A} \sim \boldsymbol{B}$, 则由性质 $6$ , 有
+<font color=green><b>解法 $2$</b></font>$\quad$ 由于 $\boldsymbol{A} \sim \boldsymbol{B}$, 则由性质 $6$ , 有
 $$
 |\boldsymbol{A}-\lambda \boldsymbol{E}|=|\boldsymbol{B}-\lambda \boldsymbol{E}|,
 $$
@@ -728,7 +728,7 @@ $$
 $$
 上面的等式对任意的实数 $\lambda$ 都成立.
 <br>
-令 $\lambda=0$, 得 
+$\qquad$令 $\lambda=0$, 得 
 $$
 y=x-2;
 $$
@@ -741,7 +741,7 @@ $$
 <p style="text-indent: 2em;">
 关于相似矩阵, 人们关心的一个问题是, 与 $\boldsymbol{A}$ 相似的矩阵中, 最简单的形式是什么? 由于对角矩阵最简单, 于是考虑是否任何一个方阵都相似于一个对角矩阵呢? 下面就来研究这个问题.
 <p style="text-indent: 2em;">
-如果 $n$ 阶矩阵 $\boldsymbol{A}$ 能相似于对角矩阵,则称 $\boldsymbol{A}$ 可对角化.
+如果 $n$ 阶矩阵 $\boldsymbol{A}$ 能相似于对角矩阵, 则称 $\boldsymbol{A}$ 可对角化.
 
 <p style="text-indent: 2em;">
 现设已找到可逆矩阵 $\boldsymbol{P}$, 使 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\Lambda}=\operatorname{diag}\left(\lambda_{1}, \lambda_{2}, \cdots, \lambda_{n}\right)$. 把 $\boldsymbol{P}$ 用其列向量表示为 $\boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \cdots, \boldsymbol{p}_{n}\right)$, 由 $\boldsymbol{P}^{-1} \boldsymbol{A P}=\boldsymbol{\Lambda}$, 得 $\boldsymbol{A P}=\boldsymbol{P} \boldsymbol{\Lambda}$, 即
@@ -822,7 +822,7 @@ $$
 $$
 由定理 $5$ 可知, $\boldsymbol{A}$ 可对角化.
 <br>
-令
+$\qquad$令
 $$
 \boldsymbol{P}=\left(\boldsymbol{p}_{1}, \boldsymbol{p}_{2}, \boldsymbol{p}_{3}\right)=\left(\begin{array}{rrr}
 -2 & 0 & -1 \\
@@ -887,7 +887,7 @@ b=0 .
 \end{array}\right. 
 $$
 <br>
-$(2)$ 由 
+$\qquad$$(2)$ 由 
 $$
 |\boldsymbol{A}-\lambda \boldsymbol{E}|=\left|\begin{array}{ccc}
 2-\lambda & -1 & 2 \\
@@ -957,7 +957,7 @@ $$
 \boldsymbol{A x}=\lambda \boldsymbol{x}, \quad \boldsymbol{x} \neq \boldsymbol{0}. 
 $$
 <br>
-用 $\overline{\lambda}$ 表示 $\lambda$ 的共轭复数, $\overline{\boldsymbol{x}}$ 表示 $\boldsymbol{x}$ 的共轭复向量, 则
+$\qquad$用 $\overline{\lambda}$ 表示 $\lambda$ 的共轭复数, $\overline{\boldsymbol{x}}$ 表示 $\boldsymbol{x}$ 的共轭复向量, 则
 $$
 \boldsymbol{A} \overline{\boldsymbol{x}}=\overline{\boldsymbol{A}} \overline{\boldsymbol{x}}=\overline{\boldsymbol{A x}}=\overline{\lambda \boldsymbol{x}}=\overline{\lambda} \overline{\boldsymbol{x}}.
 $$
@@ -1030,9 +1030,9 @@ $$
 <font color=red><b>证明：</b></font>
 设 $\boldsymbol{A}$ 的互不相同的特征值为 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{s}$, 它们的重数依次为 $k_{1}, k_{2}, \cdots$, $k_{s}$, 并且 $k_{1}+k_{2}+\cdots+k_{s}=n$.
 <br>
-由定理 $8$ 知, 对应于特征值 $\lambda_{i} (i=1,2, \cdots, s)$ 恰有 $k_{i}$ 个线性无关的实特征向量, 利用格拉姆-施密特正交化方法把它们正交化并单位化, 即得到 $k_{i}$ 个正交的单位特征向量. 这样的特征向量共有 $n$ 个.
+$\qquad$由定理 $8$ 知, 对应于特征值 $\lambda_{i} (i=1,2, \cdots, s)$ 恰有 $k_{i}$ 个线性无关的实特征向量, 利用格拉姆-施密特正交化方法把它们正交化并单位化, 即得到 $k_{i}$ 个正交的单位特征向量. 这样的特征向量共有 $n$ 个.
 <br>
-由定理 $7$ 知, 对应于不同特征值的特征向量正交, 故这 $n$ 个单位特征向量两两正交. 于是以它们为列向量构成的矩阵 $\boldsymbol{T}$ 是正交矩阵, 且
+$\qquad$由定理 $7$ 知, 对应于不同特征值的特征向量正交, 故这 $n$ 个单位特征向量两两正交. 于是以它们为列向量构成的矩阵 $\boldsymbol{T}$ 是正交矩阵, 且
 $$
 \boldsymbol{T}^{-1} \boldsymbol{AT}=\boldsymbol{\Lambda},
 $$
@@ -1083,7 +1083,7 @@ $$
 $$
 求得 $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=\lambda_{2}=-1, \lambda_{3}=5$.
 <br>
-第二步, 对于 $\lambda_{1}=\lambda_{2}=-1$, 求解齐次线性方程组 $(\boldsymbol{A}+\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$\qquad$第二步, 对于 $\lambda_{1}=\lambda_{2}=-1$, 求解齐次线性方程组 $(\boldsymbol{A}+\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
 $$
 \boldsymbol{A}+ \boldsymbol{E}=\left(\begin{array}{rrr}
 2 & 2 & 2 \\
@@ -1108,7 +1108,7 @@ $$
 \end{array}\right). 
 $$
 <br>
-正交化: 令
+$\qquad$正交化: 令
 $$
 \boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=\left(\begin{array}{r}
 -1 \\
@@ -1145,7 +1145,7 @@ $$
 \end{array}\right).
 $$
 <br>
-对于 $\lambda_{3}=5$, 求解齐次线性方程组 $(\boldsymbol{A}-5 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
+$\qquad$对于 $\lambda_{3}=5$, 求解齐次线性方程组 $(\boldsymbol{A}-5 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 由
 $$
 \begin{aligned}
 \boldsymbol{A}-5 \boldsymbol{E}
@@ -1179,7 +1179,7 @@ $$
 \boldsymbol{\gamma}_{3}=\frac{\boldsymbol{\alpha}_{3}}{\left\|\boldsymbol{\alpha}_{3}\right\|}=\left(\frac{\sqrt{3}}{3}, \frac{\sqrt{3}}{3}, \frac{\sqrt{3}}{3}\right)^{\mathrm{T}}.
 $$
 <br>
-第三步, 以正交单位向量组 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}$ 为列向量的矩阵 $\boldsymbol{T}$ 就是所求的正交矩阵, 即令
+$\qquad$第三步, 以正交单位向量组 $\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}$ 为列向量的矩阵 $\boldsymbol{T}$ 就是所求的正交矩阵, 即令
 $$
 \boldsymbol{T}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}\right)=\left(\begin{array}{rrr}
 -\frac{\sqrt{2}}{2} & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{3} \\[5pt]
@@ -1258,7 +1258,7 @@ r_{4}+(-1) \times r_{1}}}{=\!=\!=\!=\!=\!=} (4-\lambda)\left|\begin{array}{cccc}
 \end{align*}
 求得 $\boldsymbol{A}$ 的不同的特征值为 $\lambda_{1}=4$ (二重), $\lambda_{2}=8, \lambda_{3}=12$.
 <br>
-对于 $\lambda_{1}=4$, 求解齐次线性方程组 $(\boldsymbol{A}-4 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$\qquad$对于 $\lambda_{1}=4$, 求解齐次线性方程组 $(\boldsymbol{A}-4 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
 $$
 \begin{aligned}
 \boldsymbol{A}-4 \boldsymbol{E}
@@ -1302,17 +1302,17 @@ $$
 \boldsymbol{\gamma}_{1}=\frac{\boldsymbol{\alpha}_{1}}{\left\|\boldsymbol{\alpha}_{1}\right\|}=\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, 0,0\right)^{\mathrm{T}}, \quad \boldsymbol{\gamma}_{2}=\frac{\boldsymbol{\alpha}_{2}}{\left\|\boldsymbol{\alpha}_{2}\right\|}=\left(0,0, \frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)^{\mathrm{T}}.
 $$
 <br>
-对于 $\lambda_{2}=8$, 类似地可求得齐次线性方程组 $(\boldsymbol{A}-8 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$ 的一组单位化的基础解系为
+$\qquad$对于 $\lambda_{2}=8$, 类似地可求得齐次线性方程组 $(\boldsymbol{A}-8 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$ 的一组单位化的基础解系为
 $$
 \boldsymbol{\gamma}_{3}=\left(-\frac{1}{2}, \frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)^{\mathrm{T}}.
 $$
 <br>
-对于 $\lambda_{3}=12$, 类似地可求得对应的单位特征向量为
+$\qquad$对于 $\lambda_{3}=12$, 类似地可求得对应的单位特征向量为
 $$
 \boldsymbol{\gamma}_{4}=\left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)^{\mathrm{T}}.
 $$
 <br>
-于是
+$\qquad$于是
 $$
 \boldsymbol{T}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}, \boldsymbol{\gamma}_{4}\right)=\left(\begin{array}{rrrr}
 \frac{\sqrt{2}}{2} & 0 & -\frac{1}{2} & \frac{1}{2} \\[5pt]
@@ -1449,9 +1449,12 @@ $$
 <div id= "divIDthm10" style= "display:none"> 
 <p style="border: 2px solid red; border-radius: 5px">
 <font color=red><b>证明：</b></font>
-因 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 故 $\boldsymbol{B}^{\mathrm{T}}=\left(\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}\right)^{\mathrm{T}}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}} \boldsymbol{C}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}=\boldsymbol{B}$, 即 $\boldsymbol{B}$ 为对称矩阵.
+因 $\boldsymbol{A}^{\mathrm{T}}=\boldsymbol{A}$, 故 
+$\boldsymbol{B}^{\mathrm{T}}=\left(\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}\right)^{\mathrm{T}}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A}^{\mathrm{T}} \boldsymbol{C}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}=\boldsymbol{B}
+, $$
+即 $\boldsymbol{B}$ 为对称矩阵.
 <br>
-又因为 $\boldsymbol{B}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 而 $\boldsymbol{C}^{\mathrm{T}}$ 与 $\boldsymbol{C}$ 均为可逆矩阵, 故 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 于是 $r(\boldsymbol{B})=$ $r(\boldsymbol{A})$. 证毕.
+$\qquad$又因为 $\boldsymbol{B}=\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 而 $\boldsymbol{C}^{\mathrm{T}}$ 与 $\boldsymbol{C}$ 均为可逆矩阵, 故 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 等价, 于是 $r(\boldsymbol{B})=$ $r(\boldsymbol{A})$. 证毕.
 </p></div></p>
 
 <p style="text-indent: 2em;">定理 $10$ 说明, 经可逆线性变换 $\boldsymbol{x}=\boldsymbol{C y}$ 后,二次型 $f$ 的矩阵 $\boldsymbol{A}$ 变为与 $\boldsymbol{A}$ 合同的对称矩阵 $\boldsymbol{C}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{C}$, 且二次型的秩不变. 矩阵的合同关系与相似关系一样, 都满足反身性、对称性、传递性.
@@ -1533,7 +1536,7 @@ $$
 $$
 于是 $\boldsymbol{A}$ 的全部特征值为 $\lambda_{1}=1$ (三重), $\lambda_{2}=-3$.
 <br>
-对于 $\lambda_{1}=1$, 解齐次线性方程组 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$\qquad$对于 $\lambda_{1}=1$, 解齐次线性方程组 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
 $$
 \boldsymbol{A}-\boldsymbol{E}=\left(\begin{array}{rrrr}
 -1 & 1 & 1 & -1 \\
@@ -1567,7 +1570,7 @@ $$
 \end{array}\right).
 $$
 <br>
-令
+$\qquad$令
 $$
 \boldsymbol{\beta}_{1}=\boldsymbol{\alpha}_{1}=\left(\begin{array}{l}
 1 \\
@@ -1637,7 +1640,7 @@ $$
 \end{array}\right). 
 $$
 <br>
-对于 $\lambda_{2}=-3$, 解齐次线性方程组 $(\boldsymbol{A}+3 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
+$\qquad$对于 $\lambda_{2}=-3$, 解齐次线性方程组 $(\boldsymbol{A}+3 \boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$. 由
 $$
 \boldsymbol{A}+3 \boldsymbol{E}=\left(\begin{array}{rrrr}
 3 & 1 & 1 & -1 \\
@@ -1660,7 +1663,7 @@ $$
 \boldsymbol{\gamma}_{4}=\frac{\boldsymbol{\alpha}_{4}}{\left\|\boldsymbol{\alpha}_{4}\right\|}=\left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2}, \frac{1}{2}\right)^{\mathrm{T}}. 
 $$
 <br>
-取正交矩阵
+$\qquad$取正交矩阵
 $$
 \boldsymbol{T}=\left(\boldsymbol{\gamma}_{1}, \boldsymbol{\gamma}_{2}, \boldsymbol{\gamma}_{3}, \boldsymbol{\gamma}_{4}\right)=\left(\begin{array}{rrrr}
 \frac{\sqrt{2}}{2} & \frac{\sqrt{6}}{6} & -\frac{\sqrt{3}}{6} & \frac{1}{2} \\[5pt]
@@ -1711,7 +1714,7 @@ $$
 \end{array}\right).
 $$
 
-设所求正交矩阵为 $\boldsymbol{T}$, 则有 $\boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}=\boldsymbol{\Lambda}$. 此时两端取行列式, 并注意到 $|\boldsymbol{T}|= \pm 1$, 得
+$\qquad$设所求正交矩阵为 $\boldsymbol{T}$, 则有 $\boldsymbol{T}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{T}=\boldsymbol{\Lambda}$. 此时两端取行列式, 并注意到 $|\boldsymbol{T}|= \pm 1$, 得
 $$
 \left|\boldsymbol{T}^{\mathrm{T}}\right||\boldsymbol{A}||\boldsymbol{T}|=|\boldsymbol{T}|^{2}|\boldsymbol{A}|=|\boldsymbol{A}|=|\boldsymbol{\Lambda}|,
 $$
@@ -1721,9 +1724,9 @@ $$
 $$
 由 $a>0$, 得 $a=2$.
 <br>
-根据分析可知, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=2, \lambda_{3}=5$.
+$\qquad$根据分析可知, $\boldsymbol{A}$ 的特征值为 $\lambda_{1}=1, \lambda_{2}=2, \lambda_{3}=5$.
 <br>
-当 $\lambda_{1}=1$ 时, 解齐次线性方程组 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 得特征向量为
+$\qquad$当 $\lambda_{1}=1$ 时, 解齐次线性方程组 $(\boldsymbol{A}-\boldsymbol{E}) \boldsymbol{x}=\mathbf{0}$, 得特征向量为
 $$
 \boldsymbol{\xi}_{1}=(0,1,-1)^{\mathrm{T}}.
 $$
@@ -1732,7 +1735,7 @@ $$
 \boldsymbol{\xi}_{2}=(1,0,0)^{\mathrm{T}}, \quad \boldsymbol{\xi}_{3}=(0,1,1)^{\mathrm{T}}.
 $$
 <br>
-又因为对应于不同特征值的特征向量是相互正交的, 所以 $\xi_{1}, \xi_{2}, \xi_{3}$ 是正交向量组, 将它们单位化, 得
+$\qquad$又因为对应于不同特征值的特征向量是相互正交的, 所以 $\xi_{1}, \xi_{2}, \xi_{3}$ 是正交向量组, 将它们单位化, 得
 $$
 \boldsymbol{p}_1=\frac{1}{\left\|\boldsymbol{\xi}_1\right\|} \boldsymbol{\xi}_1=\left(\begin{array}{c}
 0 \\
@@ -2083,7 +2086,9 @@ $$
 
 <ul>
 <p style="text-indent: 2em;">
-第 $4$ 节用不同的方法, 把一个二次型化为标准形. 从例 $16$ 和例 $18$ 可知, 化二次型为标准形时, 可用不同的变换矩阵, 且所得标准形也不相同,即二次型的标准形不是唯一的. 但正如前面所说, 二次型的秩是唯一的, 在化标准形的过程中秩是不变的, 即一个二次型的两个不同的标准形中, 含有的非零平方项的项数是相同的, 都等于二次型的秩. 不仅如此, 在实可逆线性变换下, 标准形中正系数的个数是不变的 (从而负系数的个数不变, 正、负系数的个数之差——符号差也不变). 即有如下定理(证明略).
+第 $4$ 节用不同的方法, 把一个二次型化为标准形. 从例 $16$ 和例 $18$ 可知, 化二次型为标准形时, 可用不同的变换矩阵, 且所得标准形也不相同, 即二次型的标准形不是唯一的. 
+但正如前面所说, 二次型的秩是唯一的, 在化标准形的过程中秩是不变的, 即一个二次型的两个不同的标准形中, 含有的非零平方项的项数是相同的, 都等于二次型的秩. 
+不仅如此, 在实可逆线性变换下, 标准形中正系数的个数是不变的 (从而负系数的个数不变, 正、负系数的个数之差——符号差也不变). 即有如下定理 (证明略).
 
  
 <p style="border: 2px solid red; border-radius: 5px">
