@@ -2407,6 +2407,19 @@ $$
 $$
 </p></div></p>
 
+<li>利用SageMath在线代码模块求例 $24$ 中的逆矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex24").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex24").style.display="none"'> 
+<div id= "divIDdaimaex24" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[0,1,2],[1,1,4],[2,-1,0]])    #输入矩阵A
+B = matrix([[0,1,2,1,0,0],[1,1,4,0,1,0],[2,-1,0,0,0,1]])  #输入矩阵(A, I)
+show(A^-1)                                #直接求矩阵A的逆矩阵
+show(B.echelon_form()) #求矩阵(A, I)的行阶梯形矩阵
+show(B.rref())         #求矩阵(A, I)的简化行阶梯形矩阵
+ </script></div>
+</div>
+
 <p style="text-indent: 2em;"><b>注意:</b> 也可以利用初等列变换求逆矩阵, 即
 $$
 \left(\begin{array}{c}
