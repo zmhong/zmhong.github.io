@@ -2077,12 +2077,54 @@ $(2)$ $987654321$;
 $(3)$ $n(n-1) \cdots 321$;
 <br>
 $(4)$ $13 \cdots(2 n-1)(2 n)(2 n-2) \cdots 2$.
+<br>
+<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA1").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA1").style.display="none"'> 
+<div id= "divIDxitiA1" style= "display:none"> 
+<font color=green> 解： $(1)$ $\tau(341782659)=11$.
+<br>
+$(2)$ $\tau(987654321)=36$.
+<br>
+$(3)$ $\tau[n(n-1) \cdots 321]=0+1+2+\cdots+(n-1)=\frac{n(n-1)}{2}$.
+<br>
+$(4)$ $\tau[13 \cdots(2 n-1)(2 n)(2 n-2) \cdots 2]=0+1+\cdots+(n-1)+(n-1)+(n-2)+\cdots+1+0=n(n-1)$.
+</font>
+</div>
+</li>
+
+  
+<li> 求出 $j, k$, 使 $9$ 级排列 $24 j 157 k 98$ 为偶排列. 
+<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA2").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA2").style.display="none"'> 
+<div id= "divIDxitiA2" style= "display:none"> 
+<font color=green> 解：因为排列为 $9$ 级排列, 所以 $j, k$ 只能为 $3,6$. 
+在已知的排列中, 可以确定 $2$ 的逆序数为 $0$, $4$ 的逆序数为 $0$, $1$ 的逆序数为 $3$, $7$ 的逆序数为 $0$, $9$ 逆序数的为 $0$, $8$ 的逆序数为 $1$, 得 $0+0+3+0+1=4$ 为偶数. 
+若 $j=3, k=6$, 则 $j$ 的逆序数为 $1$, $5$ 的逆序数为 $0$, $k$ 的逆序数为 $1$, 符合题意; 
+若 $j=6, k=3$, 则 $j$ 的逆序数为 $0$, $5$ 的逆序数为 $1$, $k$ 的为 $4$, 不符合题意. 所以 $j=3, k=6$.
+ </font>
+</div>
 </li>
   
-<li> 求出 $j, k$, 使 $9$ 级排列 $24 j 157 k 98$ 为偶排列.
-</li>
-  
-<li> 写出四阶行列式中含有因子 $a_{22} a_{34}$ 的项.
+<li> 写出四阶行列式中含有因子 $a_{22} a_{34}$ 的项. 
+<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA3").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA3").style.display="none"'> 
+<div id= "divIDxitiA3" style= "display:none"> 
+<font color=green> 解：$D_{4}=(-1)^{\left(T j i j_{2} j_{4} j_{4}\right)} a_{1 / 1} a_{2 j_{2}} a_{3 / 3} a_{4 j_{4}}$, 由题意有 $j_{2}=2, j_{3}=4$. 故
+$$
+j_{1} j_{2} j_{3} j_{4}=j_{1} 24 j_{4}=\left\{\begin{array}{l}
+1243 \\
+3241
+\end{array},\right.
+$$
+则 $D_{4}$ 中含有因子 $a_{22} a_{34}$ 的项为
+$$
+(-1)^{7^{(1243)}} a_{11} a_{22} a_{34} a_{43}+(-1)^{7(3241)} a_{13} a_{22} a_{34} a_{41},
+$$
+即
+$$
+-a_{11} a_{22} a_{34} a_{43}+a_{13} a_{22} a_{34} a_{41}.
+$$ </font>
+</div>
 </li>
   
 <li> 在六阶行列式中, 下列各项前应带什么符号?
@@ -2218,6 +2260,8 @@ $$
 </ol>
 
 <a href="#C0">返回顶部</a>
+
+
 
 
 <h2><a name="C7">习题 $1$ $(\rm{B})$ 类</a></h2>
