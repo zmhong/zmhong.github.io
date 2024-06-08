@@ -810,6 +810,18 @@ $$
 于是等式得证.
 </p></div></p>
 
+<li>利用SageMath在线代码模块求例 $11$ 中的矩阵 $\boldsymbol{A}^n$.</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex11").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex11").style.display="none"'> 
+<div id= "divIDdaimaex11" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("a n")           #定义符号变量
+A = matrix([[a,1,0],[0,a,1],[0,0,a]])  #输入矩阵A
+show(A)                #显示矩阵A
+show(A^n)              #显示矩阵A^n
+show(factor(A^n))      #显示化简后的矩阵A^n
+ </script></div>
+</div>
 
   
 <h3><a name="C2.4">$2.2.4$ 矩阵的转置</a></h3>
