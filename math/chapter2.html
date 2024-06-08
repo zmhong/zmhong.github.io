@@ -590,6 +590,19 @@ $\boldsymbol{A B}$ 是 $n$ 阶矩阵, $\boldsymbol{B A}$ 是一阶矩阵 (运算
 </div>
 </p>
 
+<li>利用SageMath在线代码模块求例 $9$ 中的矩阵.</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex9").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex9").style.display="none"'> 
+<div id= "divIDdaimaex9" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("a1 a2 a3 a4 b1 b2 b3 b4")     #定义符号变量
+A = matrix([[a1],[a2],[a3],[a4]])  #输入矩阵A
+B = matrix([[b1,b2,b3,b4]])        #输入矩阵B
+show(A*B)              #显示矩阵AB
+show(B*A)              #显示矩阵BA
+</script></div>
+</div>
+
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $10$：</b></font>
 对于一个含有 $n$ 个未知量、 $m$ 个方程的线性方程组
