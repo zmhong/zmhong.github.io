@@ -1096,7 +1096,7 @@ $$
 则称方阵 $\boldsymbol{A}$ 可逆, 且把方阵 $\boldsymbol{B}$ 称为 $\boldsymbol{A}$ 的逆矩阵.
 </p>
 
-<p style="text-indent: 2em;">显然, 若 $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的逆矩阵,则 $\boldsymbol{A}$ 也是 $\boldsymbol{B}$ 的逆矩阵.
+<p style="text-indent: 2em;">显然, 若 $\boldsymbol{B}$ 是 $\boldsymbol{A}$ 的逆矩阵, 则 $\boldsymbol{A}$ 也是 $\boldsymbol{B}$ 的逆矩阵.
 
 <p style="text-indent: 2em;">例如, 设
 $$
@@ -1329,7 +1329,7 @@ $$
 $$
 </p>
 
-<li>利用SageMath在线代码模块求例 $16$ 中的逆矩阵. </li>
+<li>利用SageMath在线代码模块求例 $16$ 中方程组的解. </li>
 <input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex16").style.display="block"'> 
 <input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex16").style.display="none"'> 
 <div id= "divIDdaimaex16" style= "display:none"> 
@@ -1416,7 +1416,7 @@ $$
 $$
 </p></div></p>
 
-<li>利用SageMath在线代码模块求例 $17$ 中的逆矩阵. </li>
+<li>利用SageMath在线代码模块求例 $17$ 中的矩阵 $X$. </li>
 <input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex17").style.display="block"'> 
 <input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex17").style.display="none"'> 
 <div id= "divIDdaimaex17" style= "display:none"> 
@@ -1475,7 +1475,7 @@ $$
 $$
 </p></div></p>
 
-<li>利用SageMath在线代码模块求例 $18$ 中的逆矩阵. </li>
+<li>利用SageMath在线代码模块求例 $18$ 中的矩阵 $B$. </li>
 <input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex18").style.display="block"'> 
 <input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex18").style.display="none"'> 
 <div id= "divIDdaimaex18" style= "display:none"> 
@@ -1528,7 +1528,7 @@ $$
 $$
 </p></div></p>
 
-<li>利用SageMath在线代码模块求例 $19$ 中的逆矩阵. </li>
+<li>利用SageMath在线代码模块求例 $19$ 中的矩阵 $B$. </li>
 <input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex19").style.display="block"'> 
 <input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex19").style.display="none"'> 
 <div id= "divIDdaimaex19" style= "display:none"> 
@@ -2519,6 +2519,16 @@ $$
 $$
 故 $r(\boldsymbol{A})=2$.
 </p></div></p>
+
+<li>利用SageMath在线代码模块求例 $26$ 中矩阵的秩. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex26").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex26").style.display="none"'> 
+<div id= "divIDdaimaex26" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,2,3],[2,3,-5],[4,7,1]])    #输入矩阵A
+show(A.rank())                             #求矩阵A的秩
+ </script></div>
+</div>
 
 
 <p style="border: 2px solid green; border-radius: 5px">
