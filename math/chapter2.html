@@ -1262,6 +1262,16 @@ $$
 $$
 </p></div></p>
 
+<li>利用SageMath在线代码模块求例 $15$ 中的逆矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex15").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex15").style.display="none"'> 
+<div id= "divIDdaimaex15" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[2,2,2],[1,2,3],[1,3,6]])   #输入矩阵A
+show(A^-1)               #求A的逆矩阵 
+ </script></div>
+</div>
+
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $16$：</b></font>
 在第 $1$ 章例 $2$ 中, 令
@@ -1318,6 +1328,17 @@ $$
 \end{array}\right).
 $$
 </p>
+
+<li>利用SageMath在线代码模块求例 $16$ 中的逆矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex16").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex16").style.display="none"'> 
+<div id= "divIDdaimaex16" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[2,-1,-1],[3,4,-2],[3,-2,4]])   #输入矩阵A
+b = matrix([[4],[11],[11]])                 #输入矩阵b
+show(A^-1*b)                                #求方程组的解X
+ </script></div>
+</div>
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $17$：</b></font>
@@ -1395,6 +1416,18 @@ $$
 $$
 </p></div></p>
 
+<li>利用SageMath在线代码模块求例 $17$ 中的逆矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex17").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex17").style.display="none"'> 
+<div id= "divIDdaimaex17" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,2,3],[2,2,1],[3,4,3]])   #输入矩阵A
+B = matrix([[2,1],[5,3]])               #输入矩阵B
+C = matrix([[1,3],[2,0],[3,1]])         #输入矩阵C
+show(A^-1*C*B^-1)                       #求方程组的解X
+ </script></div>
+</div>
+
 <p style="text-indent: 2em;"><b>注意:</b> 解矩阵方程时, 要区分矩阵的左乘与右乘. 因为矩阵的乘法不满足交换律, 所以不能混淆左乘与右乘.
 
 <p style="border: 2px solid green; border-radius: 5px">
@@ -1442,6 +1475,17 @@ $$
 $$
 </p></div></p>
 
+<li>利用SageMath在线代码模块求例 $18$ 中的逆矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex18").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex18").style.display="none"'> 
+<div id= "divIDdaimaex18" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1/2,0,0],[0,1/4,0],[0,0,1/7]])   #输入矩阵A
+E = matrix([[1,0,0],[0,1,0],[0,0,1]])         #输入单位矩阵E
+show(6*(A^-1-E)^-1)                           #求矩阵B
+ </script></div>
+</div>
+
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $19$：</b></font>
 设 $\boldsymbol{A}$ 可逆, 且 $\boldsymbol{A}^{*} \boldsymbol{B}=\boldsymbol{A}^{-1}+\boldsymbol{B}$, 证明 $\boldsymbol{B}$ 可逆. 又当 $\boldsymbol{A}=\left(\begin{array}{lll}2 & 6 & 0 \\ 0 & 2 & 6 \\ 0 & 0 & 2\end{array}\right)$ 时, 求 $\boldsymbol{B}$.
@@ -1483,6 +1527,17 @@ $$
 \end{array}\right).
 $$
 </p></div></p>
+
+<li>利用SageMath在线代码模块求例 $19$ 中的逆矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex19").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex19").style.display="none"'> 
+<div id= "divIDdaimaex19" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[2,6,0],[0,2,6],[0,0,2]])     #输入矩阵A
+E = matrix([[1,0,0],[0,1,0],[0,0,1]])     #输入单位矩阵E
+show((A.determinant()*E-A)^-1)            #求矩阵B
+ </script></div>
+</div>
 
 <p style="text-indent: 2em;">定理 $1$ 不仅给出了一个方阵可逆的判定准则, 同时也给出了求逆矩阵的一种方法, 这种方法称为伴随矩阵法. 
   当方阵的阶数比较小时, 这种方法是可行的,但当方阵的阶数较高时, 这种方法就不太适用了. 在本章的第 $6$ 节中我们将要介绍一种简便、实用的求逆矩阵的方法.
