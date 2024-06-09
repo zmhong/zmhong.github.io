@@ -2207,19 +2207,24 @@ $(3)$ $\left|\begin{array}{rrrr}a & -1 & 0 & 0 \\ 1 & b & -1 & 0 \\ 0 & 1 & c & 
 <br>
 $(4)$ $\left|\begin{array}{llll}1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 1 \\ 3 & 4 & 1 & 2 \\ 4 & 1 & 2 & 3\end{array}\right|$.
 <br>
-<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA6").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA6").style.display="none"'> 
-<div id= "divIDxitiA6" style= "display:none"> 
-<font color=green> 解：$(1)$ $0$. 
-  <br>
-  $(2)$ $-4abcdef$.
-  <br>
-  $(3)$ $abcd+ab+ad+cd+1$.
-  <br>
-  $(4)$ $160$.  
- </font>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDxitidaimaA6").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDxitidaimaA6").style.display="none"'> 
+<div id= "divIDxitidaimaA6" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("a b c d e f")
+A1 = matrix([[2,1,4,-1],[3,-1,2,-1],[1,2,3,-2],[5,0,6,-2]])       #(1)按行输入
+A2 = matrix([[a*b,-a*c,-a*e],[-b*d,c*d,-d*e],[-b*f,-c*f,-e*f]])   #(2)按行输入
+A3 = matrix([[a,-1,0,0],[1,b,-1,0],[0,1,c,-1],[0,0,1,d]])         #(3)按行输入
+A4 = matrix([[1,2,3,4],[2,3,4,1],[3,4,1,2],[4,1,2,3]])            #(4)按行输入
+show(det(A1))    #(1)显示行列式的值
+show(det(A2))    #(2)显示行列式的值
+show(det(A3))    #(3)显示行列式的值
+show(det(A4))    #(4)显示行列式的值
+ </script></div>
 </div>
 </li>
+
+
   
 <li> 证明下列等式:
 <br>
@@ -2325,19 +2330,29 @@ x_{1}+5 x_{2}+6 x_{3} \phantom{+6x_4+5x_51}  =0, \\
 \phantom{x_1+2x_2+5x_3+5} x_{4}+5 x_{5}  =1 .
 \end{array}\right.$
 <br>
-<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA12").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA12").style.display="none"'> 
-<div id= "divIDxitiA12" style= "display:none"> 
-<font color=green> 解：$(1)$ $x_1=\frac{10}{43}, x_2=-\frac{8}{43}$.  
-<br>
-$(2)$ $x_1=\frac{13}{5}, x_2=-\frac{4}{5}, x_3=-\frac{7}{5}$.
-<br>
-$(3)$ $x_1=1, x_2=2, x_3=2, x_4=-1$.
-<br>
-$(4)$ $x_1=\frac{1507}{655}, x_2=-\frac{229}{133}, x_3=\frac{37}{35}, x_4=-\frac{79}{133}, x_5=\frac{212}{655}$.
- </font>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDxitidaimaA12").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDxitidaimaA12").style.display="none"'> 
+<div id= "divIDxitidaimaA12" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+# 这里展示习题12(4)的SageMath代码, 其他习题可以类似操作
+D = matrix([[5,6,0,0,0],[1,5,6,0,0],[0,1,5,6,0],[0,0,1,5,6],[0,0,0,1,5]])        #按行输入系数矩阵D
+D1 = matrix([[1,6,0,0,0],[0,5,6,0,0],[0,1,5,6,0],[0,0,1,5,6],[1,0,0,1,5]])       #按行输入矩阵D1
+D2 = matrix([[5,1,0,0,0],[1,0,6,0,0],[0,0,5,6,0],[0,0,1,5,6],[0,1,0,1,5]])       #按行输入矩阵D2
+D3 = matrix([[5,6,1,0,0],[1,5,0,0,0],[0,1,0,6,0],[0,0,0,5,6],[0,0,1,1,5]])       #按行输入矩阵D3
+D4 = matrix([[5,6,0,1,0],[1,5,6,0,0],[0,1,5,0,0],[0,0,1,0,6],[0,0,0,1,5]])       #按行输入矩阵D4
+D5 = matrix([[5,6,0,0,1],[1,5,6,0,0],[0,1,5,6,0],[0,0,1,5,0],[0,0,0,1,1]])       #按行输入矩阵D5
+show(det(D))            #显示系数行列式D的值
+show(det(D1)/det(D))    #显示x1的值
+show(det(D2)/det(D))    #显示x2的值
+show(det(D3)/det(D))    #显示x3的值
+show(det(D4)/det(D))    #显示x4的值
+show(det(D5)/det(D))    #显示x5的值
+ </script></div>
 </div>
 </li>
+
+
+
   
 <li> $\lambda$ 满足什么条件时,线性方程组
 $$
