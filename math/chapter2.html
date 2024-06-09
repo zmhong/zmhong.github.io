@@ -3068,9 +3068,40 @@ $(2)$ $\boldsymbol{X}\left(\begin{array}{rrr}2 & 1 & -1 \\ 2 & 1 & 0 \\ 1 & -1 &
 $(3)$ $\left(\begin{array}{rr}1 & 4 \\ -1 & 2\end{array}\right) \boldsymbol{X}\left(\begin{array}{rr}2 & 0 \\ -1 & 1\end{array}\right)=\left(\begin{array}{rr}3 & 1 \\ 0 & -1\end{array}\right)$;
 <br>
 $(4)$ $\left(\begin{array}{lll}0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1\end{array}\right) \boldsymbol{X}\left(\begin{array}{lll}1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0\end{array}\right)=\left(\begin{array}{rrr}0 & -4 & 3 \\ 2 & 0 & -1 \\ 1 & -2 & 0\end{array}\right)$.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA17").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA17").style.display="none"'> 
+<div id= "divIDdaimaxitiA17" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A1 = matrix([[1,2],[1,3]])     #按行输入矩阵A1
+B1 = matrix([[4,-6],[2,1]])    #按行输入矩阵B1, A1X1 = B1 
+A2 = matrix([[2,1,-1],[2,1,0],[1,-1,1]])     #按行输入矩阵A2
+B2 = matrix([[2,1,-1],[2,1,0],[1,-1,1]])     #按行输入矩阵B2, X2A2=B2  
+A3 = matrix([[1,4],[-1,2]])     #按行输入矩阵A3 
+B3 = matrix([[2,0],[-1,1]])     #按行输入矩阵B3
+C3 = matrix([[3,1],[0,-1]])     #按行输入矩阵C3, A3X3B3 = C3
+A4 = matrix([[0,1,0],[1,0,0],[0,0,1]])        #按行输入矩阵A4 
+B4 = matrix([[1,0,0],[0,0,1],[0,1,0]])        #按行输入矩阵B4
+C4 = matrix([[0,-4,3],[2,0,-1],[1,-2,0]])     #按行输入矩阵C4, A4X4B4 = C4
+show(A1^-1*B1)                                #显示方程组的解X1 
+show(B2*A2^-1)                                #显示方程组的解X2 
+show(A3^-1*C3*B3^-1)                          #显示方程组的解X3 
+show(A4^-1*C4*B4^-1)                          #显示方程组的解X4 
+ </script></div>
+</div>
 </li>
   
 <li> 设 $\boldsymbol{A}=\left(\begin{array}{rrr}4 & 2 & 3 \\ 1 & 1 & 0 \\ -1 & 2 & 3\end{array}\right), \boldsymbol{A B}=\boldsymbol{A}+2 \boldsymbol{B}$, 求 $\boldsymbol{B}$.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA17").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA17").style.display="none"'> 
+<div id= "divIDdaimaxitiA17" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[4,2,3],[1,1,0],[-1,2,3]])   #按行输入矩阵A 
+E = matrix([[1,0,0],[0,1,0],[0,0,1]])    #按行输入单位矩阵E
+show((A-2*E)^-1*A)                       #显示矩阵B = (A-2E)^-1A
+ </script></div>
+</div>
 </li>
   
 <li> 设 $m$ 次多项式 $f(x)=a_{0}+a_{1} x+\cdots+a_{m} x^{m}$, 记 $f(\boldsymbol{A})=a_{0} \boldsymbol{E}+a_{1} \boldsymbol{A}+\cdots+a_{m} \boldsymbol{A}^{m}$, 则 $f(\boldsymbol{A})$ 称为方阵 $\boldsymbol{A}$的 $m$ 次多项式.
@@ -3090,6 +3121,18 @@ $(2)$ 设 $\boldsymbol{A}=\boldsymbol{P}^{-1} \boldsymbol{B P}$, 证明: $\bolds
 </li>
   
 <li> 设 $\boldsymbol{P}^{-1} \boldsymbol{A} \boldsymbol{P}=\boldsymbol{\Lambda}$, 其中 $\boldsymbol{P}=\left(\begin{array}{rr}-1 & -4 \\ 1 & 1\end{array}\right), \boldsymbol{\Lambda}=\left(\begin{array}{rr}-1 & 0 \\ 0 & 2\end{array}\right)$, 求 $\boldsymbol{A}^{10}$.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA20").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA20").style.display="none"'> 
+<div id= "divIDdaimaxitiA20" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+P = matrix([[-1,-4],[1,1]])        #按行输入矩阵P 
+Lambda = matrix([[-1,0],[0,2]])    #按行输入矩阵Lambda
+show(P^-1)                         #显示矩阵P^-1
+show(Lambda^(10))                  #显示矩阵Lambda^(10)
+show(P*Lambda^(10)*P^-1)           #显示矩阵A^10 = P*Lambda^(10)*P^-1
+ </script></div>
+</div>
 </li>
   
 <li> 设 $\boldsymbol{A}$ 为 $n$ 阶方阵, 证明:
@@ -3114,9 +3157,22 @@ $$
 0 & 0 & 6 & 2
 \end{array}\right).
 $$
-
 求: $(1)$ $\boldsymbol{A} \boldsymbol{B}$; $(2)$ $\boldsymbol{B} \boldsymbol{A}$; $(3)$ $\boldsymbol{A}^{-1}$; $(4)$ $|\boldsymbol{A}|^{k}$ ( $k$ 为正整数).
-
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA22").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA22").style.display="none"'> 
+<div id= "divIDdaimaxitiA22" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+#请用分块矩阵的思想进行计算，以下只进行计算结果的验证
+var("k")    #定义符号变量
+A = matrix([[5,2,0,0],[2,1,0,0],[0,0,7,3],[0,0,5,2]])        #按行输入矩阵A
+B = matrix([[3,2,0,0],[4,5,0,0],[0,0,4,1],[0,0,6,2]])        #按行输入矩阵B
+show(A*B)                  #显示矩阵AB
+show(B*A)                  #显示矩阵BA
+show(A^-1)                 #显示矩阵A^-1
+show(det(A)^k)             #显示|A|^k
+ </script></div>
+</div>
 </li>
   
 <li> 利用矩阵分块的方法, 证明下列矩阵可逆, 并求其逆矩阵:
