@@ -1219,6 +1219,108 @@ $$
 由此, 得方程组的通解为 $\boldsymbol{x}=k_{1} \boldsymbol{\xi}_{1}+k_{2} \boldsymbol{\xi}_{2}$ (其中 $k_{1}, k_{2}$ 为任意常数).
 </p></div></p>
 
+<li>利用SageMath在线代码模块求解例 $10$</li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex10").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex10").style.display="none"'> 
+<div id= "divIDdaimaex10" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,-1,1,-1],[1,-1,-1,1],[1,-1,-2,2]])  #按行输入矩阵A
+show(A)                                            #显示矩阵A
+show(A.rref())                                     #显示矩阵A的简化行阶梯形矩阵
+</script></div>
+</div>
+
+<li>利用SageMath在线代码模块求例 $10$ 中齐次线性方程组的通解</li>
+<div class="compute"><script type="text/x-sage">
+#教材108页例10
+from sage.misc.html import HtmlFragment
+
+def HSLE_as_latex(A, variables):
+    nvars = A.ncols()
+    pretty_print(HtmlFragment( 
+    r'$$\left\{\begin{array}{%s}'%('r'*(nvars+1))+
+    r'\\'.join('%s=&0'%( 
+        ' & '.join((r'%s%s\cdot %s'%('+' if c>0 else '',c,v) if c else '') for c,v in zip(row, variables))
+        if not row.is_zero() else '&'*(nvars-1)+'0' 
+               ) for row in A)+
+    r'\end{array}\right.$$'))
+
+@interact
+def SEL(A='[(1,-1,1,-1),(1,-1,-1,1),(1,-1,-2,2)]',
+        auto_update=False
+    ):
+    M = A = matrix(eval(A))
+    neqs = M.nrows()
+    nvars = M.ncols()
+    var_names = ','.join('x%d'%j for j in [1..nvars])
+    variables = var(var_names)
+
+    HSLE_as_latex(M, variables)
+    pretty_print(HtmlFragment( '系数矩阵'))
+    show(M)
+
+    pivot = {}
+    ibound_variables = []
+    for m,row in enumerate(M):
+        for k in range(m,nvars):
+            lista = [(abs(M[j,k]),j) for j in range(m,neqs)]
+            maxi, c = max(lista)
+            if maxi > 0:
+                ibound_variables.append(k)
+                if M[m,k]==0:
+                    M[c,:],M[m,:]=M[m,:],M[c,:]
+                    pretty_print( HtmlFragment('交换第%d行和第%d行'%(m+1,c+1)))
+                    show(M)
+                pivot[m] = k
+                break
+
+        a=M[m,k]
+        for n in range(m+1,neqs):
+            if M[n,k]!=0:
+                pretty_print( HtmlFragment("将%s倍的第%d行加到第%d行"%(-M[n,k]/a, m+1, n+1)))
+                M=M.with_added_multiple_of_row(n,m,-M[n,k]/a)
+                show(M)
+
+    pretty_print( HtmlFragment('原方程组同解的方程组'))
+    HSLE_as_latex(M, variables)
+    SEL_type = 'compatible'
+    null_rows = None
+    for k,row in enumerate(M):
+        if row.is_zero():
+            pretty_print( HtmlFragment('移去0=0型恒等式'))
+            M = M[:k,:]
+            HSLE_as_latex(M, variables)
+                
+    ifree_variables = [k for k in range(nvars) if k not in ibound_variables]
+    bound_variables = [variables[k] for k in ibound_variables]
+    free_variables = [variables[k] for k in ifree_variables]
+    pretty_print( HtmlFragment('自由未知量: %s'% free_variables))
+    pretty_print( HtmlFragment('约束未知量: %s'% bound_variables))
+    reduced_eqs = [
+        sum(c*v for c,v in zip(row, variables))==0
+        for row in M
+    ]
+    xvector = vector(variables)
+    if len(bound_variables)==1:
+        soldict = solve(reduced_eqs, bound_variables[0], solution_dict=True)[0]
+    else:
+        soldict = solve(reduced_eqs, bound_variables, solution_dict=True)[0]
+
+    pretty_print( HtmlFragment('方程组参数形式的解'))
+    parametric_sol = matrix(
+        xvector.apply_map(lambda s:s.subs(soldict))
+    ).transpose()
+    show(parametric_sol)
+    pretty_print( HtmlFragment('基础解系'))
+    pretty_print( HtmlFragment(
+        r'$$\left\langle %s\right\rangle$$'%','.join(latex(
+            parametric_sol.subs(dict((variables[k],1 if j==k else 0) for k in ifree_variables))
+        ) for j in ifree_variables)
+    ))
+    pretty_print( HtmlFragment('解空间的维数为%d'%len(free_variables)))
+ </script></div>
+
+
 
 <p style="border: 2px solid green; border-radius: 5px">
 <font color=green><b>例 $11$：</b></font>
