@@ -2899,13 +2899,24 @@ A = matrix([[0,1,0],[0,0,1],[0,0,0]])            #按行输入矩阵A
 B = matrix([[cos(a),sin(a)],[-sin(a),cos(a)]])   #按行输入矩阵B
 C = matrix([[1,0],[b,1]])                        #按行输入矩阵C
 show(A^3)                #显示矩阵A^3
-show(B^2)                #显示矩阵B^k
+show(B^2)                #显示矩阵B^2
+show(B^3)                #显示矩阵B^3
 show(C^k)                #显示矩阵C^k
  </script></div>
 </div>
 </li>
   
 <li> 设 $\boldsymbol{A}=\left(\begin{array}{rrrr}a & b & c & d \\ b & -a & d & -c \\ -c & d & a & -b \\ -d & -c & b & a\end{array}\right)$, 求 $|\boldsymbol{A}|$.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA6").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA6").style.display="none"'> 
+<div id= "divIDdaimaxitiA6" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("a b c d")  #定义符号变量
+A = matrix([[a,b,c,d],[b,-a,d,-c],[-c,d,a,-b],[-d,-c,b,a]])   #按行输入矩阵A
+show(det(A))                #因式分解并显示|A|
+ </script></div>
+</div>
 </li>
   
 <li> 已知线性变换
@@ -2921,6 +2932,16 @@ y_{3}=\phantom{-2z_1}-z_{2}+3 z_{3}.
 \end{array}\right.
 $$
 利用矩阵乘法,求从 $z_{1}, z_{2}, z_{3}$ 到 $x_{1}, x_{2}, x_{3}$ 的线性变换.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA7").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA7").style.display="none"'> 
+<div id= "divIDdaimaxitiA7" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[2,1,0],[-2,3,2],[4,1,5]])    #按行输入矩阵A, X=AY
+B = matrix([[-3,1,0],[2,0,1],[0,-1,3]])   #按行输入矩阵B, Y=BZ
+show(A*B)                                 #显示矩阵AB, X=ABZ
+ </script></div>
+</div>
 </li>
   
 <li> 设 $\boldsymbol{A}, \boldsymbol{B}$ 均为 $n$ 阶方阵,且 $\boldsymbol{A}$ 为对称矩阵,证明: $\boldsymbol{B}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{B}$ 也是对称矩阵.
@@ -2937,9 +2958,30 @@ $(2)$ $\boldsymbol{A B}-\boldsymbol{B A}$ 是对称矩阵, $\boldsymbol{A B}+\bo
 </li>
   
 <li> 求与 $\boldsymbol{A}=\left(\begin{array}{ll}1 & 1 \\ 0 & 1\end{array}\right)$ 可交换的全体二阶矩阵.
+<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiB11").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiB11").style.display="none"'> 
+<div id= "divIDxitiB11" style= "display:none"> 
+<font color=green> $
+\left(\begin{array}{ll}
+a & b  \\
+0 & a  
+\end{array}\right)
+$, 其中 $a, b$ 为任意常数. </font>
+</div>
 </li>
   
 <li> 求与 $\boldsymbol{A}=\left(\begin{array}{rrr}1 & 0 & 0 \\ 0 & 1 & 2 \\ 0 & 1 & -2\end{array}\right)$ 可交换的全体三阶矩阵.
+<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiB12").style.display="block"'> 
+<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiB12").style.display="none"'> 
+<div id= "divIDxitiB12" style= "display:none"> 
+<font color=green> $
+\left(\begin{array}{ll}
+a_1 & 0 & 0  \\
+0 & b_2 & 2b_3 \\
+0 & b_2 & b_2-3b_3
+\end{array}\right)
+$, 其中 $a_1, b_2, b_3$ 为任意常数. </font>
+</div>
 </li>
   
 <li> 求下列矩阵的逆矩阵:
@@ -2951,6 +2993,21 @@ $(2)$ $\left(\begin{array}{lll}1 & 2 & 3 \\ 0 & 1 & 2 \\ 0 & 0 & 1\end{array}\ri
 $(3)$ $\left(\begin{array}{ccc}1 & 2 & -1 \\ 3 & 4 & -2 \\ 5 & -4 & -1\end{array}\right)$;  
 <br>
 $(4)$ $\left(\begin{array}{llll}1 & 0 & 0 & 0 \\ 1 & 2 & 0 & 0 \\ 2 & 1 & 3 & 0 \\ 1 & 2 & 1 & 4\end{array}\right)$.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA13").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA13").style.display="none"'> 
+<div id= "divIDdaimaxitiA13" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,2],[2,5]])                    #(1)按行输入矩阵
+B = matrix([[1,2,3],[0,1,2],[0,0,1]])            #(2)按行输入矩阵 
+C = matrix([[1,2,-1],[3,4,-2],[5,-4,-1]])           #(3)按行输入矩阵
+D = matrix([[1,0,0,0],[1,2,0,0],[2,1,3,0],[1,2,1,4]])   #(4)按行输入矩阵
+show(A^-1)                                 #矩阵A的逆矩阵
+show(B^-1)                                 #矩阵B的逆矩阵
+show(C^-1)                                 #矩阵C的逆矩阵
+show(D^-1)                                 #矩阵D的逆矩阵
+ </script></div>
+</div>
 </li>
   
 <li> 利用逆矩阵, 解线性方程组
@@ -2961,6 +3018,16 @@ x_{1}+\phantom{2}x_{2}+\phantom{2}x_{3} & =1, \\
 x_{1}-\phantom{2}x_{2} \phantom{+21x_3} & =2.
 \end{aligned}\right.
 $$
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA14").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA14").style.display="none"'> 
+<div id= "divIDdaimaxitiA14" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,1,1],[0,2,2],[1,-1,0]])     #按行输入系数矩阵 
+B = matrix([[1],[1],[2]])                  #按行输入常数项矩阵 
+show(A^-1)                                 #矩阵A的逆矩阵
+show(A^-1*B)                               #X=A^-1B
+ </script></div>
+</div>
 </li>
   
 <li> 证明下列命题:
@@ -2981,6 +3048,15 @@ x_{3}=3 y_{1}+2 y_{2}+3 y_{3}.
 \end{array}\right.
 $$
 求从变量 $x_{1}, x_{2}, x_{3}$ 到变量 $y_{1}, y_{2}, y_{3}$ 的线性变换.
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA16").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA16").style.display="none"'> 
+<div id= "divIDdaimaxitiA16" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[2,2,1],[3,1,5],[3,2,3]])     #按行输入系数矩阵A, X=AY 
+show(A^-1)                                #矩阵A的逆矩阵, Y=A^-1X
+ </script></div>
+</div>
 </li>
   
 <li> 解下列矩阵方程:
