@@ -2822,6 +2822,20 @@ $(3)$ 若 $\boldsymbol{Y}$ 满足 $(2 \boldsymbol{A}-\boldsymbol{Y})+2(\boldsymb
  </font>
 </div>
 </li>
+
+<li>利用SageMath在线代码模块求习题 $1$ 中的矩阵. </li>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex1-1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex1-1").style.display="none"'> 
+<div id= "divIDdaimaex1-1" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,2,1,2],[2,1,2,1],[1,2,3,4]])        #输入矩阵A
+B = matrix([[4,3,2,1],[-2,1,-2,1],[0,-1,0,-1]])    #输入矩阵B
+show(3*A-B)                                #求矩阵3A-B
+show(2*A+3*B)                              #求矩阵2A+3B
+show(B-A)                                  #求矩阵X
+show(2/3*(A+B))                            #求矩阵Y
+ </script></div>
+</div>
   
 <li> 计算下列矩阵的乘积:
 <br>
