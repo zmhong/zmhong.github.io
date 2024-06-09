@@ -2809,9 +2809,9 @@ $(2)$ 若 $\boldsymbol{X}$ 满足 $\boldsymbol{A}+\boldsymbol{X}=\boldsymbol{B}$
 <br>
 $(3)$ 若 $\boldsymbol{Y}$ 满足 $(2 \boldsymbol{A}-\boldsymbol{Y})+2(\boldsymbol{B}-\boldsymbol{Y})=\boldsymbol{O}$, 求 $\boldsymbol{Y}$.
 <br>
-<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex1").style.display="block"'> 
-<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex1").style.display="none"'> 
-<div id= "divIDdaimaex1" style= "display:none"> 
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA1").style.display="none"'> 
+<div id= "divIDdaimaxitiA1" style= "display:none"> 
 <div class="compute"><script type="text/x-sage">
 A = matrix([[1,2,1,2],[2,1,2,1],[1,2,3,4]])        #输入矩阵A
 B = matrix([[4,3,2,1],[-2,1,-2,1],[0,-1,0,-1]])    #输入矩阵B
@@ -2838,9 +2838,9 @@ $(5)$ $\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{
 <br>
 $(6)$ $\left(\begin{array}{llll}1 & 2 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 0 & 3\end{array}\right)\left(\begin{array}{rrrr}1 & 0 & 3 & 1 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & -2 & 3 \\ 0 & 0 & 0 & -3\end{array}\right)$.
 <br>
-<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex2").style.display="block"'> 
-<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex2").style.display="none"'> 
-<div id= "divIDdaimaex2" style= "display:none"> 
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA2").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA2").style.display="none"'> 
+<div id= "divIDdaimaxitiA2" style= "display:none"> 
 <div class="compute"><script type="text/x-sage">
 var("x1 x2 x3 a11 a12 a13 a21 a22 a23 a31 a32 a33")
 show(matrix([[1],[-1],[2],[3]])*matrix([[3,2,-1,0]]))             #(1)
@@ -2858,6 +2858,19 @@ show(matrix([[1,2,1,0],[0,1,0,1],[0,0,2,1],[0,0,0,3]])*matrix([[1,0,3,1],[0,1,2,
 $(1)$ 计算 $\boldsymbol{A B}-2 \boldsymbol{A}, \boldsymbol{A B}-\boldsymbol{B A}$;
 <br>
 $(2)$ 问: $(\boldsymbol{A}+\boldsymbol{B})(\boldsymbol{A}-\boldsymbol{B})$ 是否等于 $\boldsymbol{A}^{2}-\boldsymbol{B}^{2}$ ?
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA3").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA3").style.display="none"'> 
+<div id= "divIDdaimaxitiA3" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+A = matrix([[1,1,1],[-1,1,1],[1,-1,1]])  #按行输入矩阵A
+B = matrix([[1,2,1],[1,3,-1],[2,1,4]])   #按行输入矩阵B
+show(A*B-2*A)             #显示矩阵AB-2A
+show(A*B-B*A)             #显示矩阵AB-BA
+show((A+B)*(A-B))         #显示矩阵(A+B)(A-B)
+show(A*A-B*B)             #显示矩阵AA-BB
+ </script></div>
+</div>
 </li>
   
 <li> 举例说明下列命题是错误的:
@@ -2876,6 +2889,20 @@ $(1)$ $\left(\begin{array}{lll}0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0\end{array}\ri
 $(2)$ $\left(\begin{array}{rr}\cos \theta & \sin \theta \\ -\sin \theta & \cos \theta\end{array}\right)^{k}\left(k\right.$ 为正整数); 
 <br>
 $(3)$ $\left(\begin{array}{ll}1 & 0 \\ \lambda & 1\end{array}\right)^{k}$ ( $k$ 为正整数).
+<br>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaxitiA5").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaxitiA5").style.display="none"'> 
+<div id= "divIDdaimaxitiA5" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("a b k")  #定义符号变量a b k
+A = matrix([[0,1,0],[0,0,1],[0,0,0]])            #按行输入矩阵A
+B = matrix([[cos(a),sin(a)],[-sin(a),cos(a)]])   #按行输入矩阵B
+C = matrix([[1,0],[b,1]])                        #按行输入矩阵C
+show(A^3)                #显示矩阵A^3
+show(B^2)                #显示矩阵B^k
+show(C^k)                #显示矩阵C^k
+ </script></div>
+</div>
 </li>
   
 <li> 设 $\boldsymbol{A}=\left(\begin{array}{rrrr}a & b & c & d \\ b & -a & d & -c \\ -c & d & a & -b \\ -d & -c & b & a\end{array}\right)$, 求 $|\boldsymbol{A}|$.
@@ -3016,7 +3043,7 @@ $$
 
 </li>
   
-<li> 利用矩阵分块的方法,证明下列矩阵可逆,并求其逆矩阵:
+<li> 利用矩阵分块的方法, 证明下列矩阵可逆, 并求其逆矩阵:
 <br>
 $(1)$ $\left(\begin{array}{lllll}1 & 2 & 0 & 0 & 0 \\ 2 & 5 & 0 & 0 & 0 \\ 0 & 0 & 3 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1\end{array}\right)$;
 <br>
@@ -3282,7 +3309,7 @@ $(3)$ $r(\boldsymbol{A}+\boldsymbol{B}) \leqslant r(\boldsymbol{A})+r(\boldsymbo
 <br>
 $(4)$ $r(\boldsymbol{A B}) \leqslant \min \{r(\boldsymbol{A}), r(\boldsymbol{B})\}$;
 <br>
-$(5)$ 如果 $\boldsymbol{A}$ 可逆,则 $r(\boldsymbol{B A})=r(\boldsymbol{A B})=r(\boldsymbol{B})$.
+$(5)$ 如果 $\boldsymbol{A}$ 可逆, 则 $r(\boldsymbol{B A})=r(\boldsymbol{A B})=r(\boldsymbol{B})$.
 </li>
 
 </ol>
