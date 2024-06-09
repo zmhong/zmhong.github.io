@@ -2809,24 +2809,9 @@ $(2)$ 若 $\boldsymbol{X}$ 满足 $\boldsymbol{A}+\boldsymbol{X}=\boldsymbol{B}$
 <br>
 $(3)$ 若 $\boldsymbol{Y}$ 满足 $(2 \boldsymbol{A}-\boldsymbol{Y})+2(\boldsymbol{B}-\boldsymbol{Y})=\boldsymbol{O}$, 求 $\boldsymbol{Y}$.
 <br>
-<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA1").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA1").style.display="none"'> 
-<div id= "divIDxitiA1" style= "display:none"> 
-<font color=green> 解：(1) $3 \boldsymbol{A}-\boldsymbol{B}=\left[\begin{array}{rrrr}-1 & 3 & 1 & 5 \\ 8 & 2 & 8 & 2 \\ 3 & 7 & 9 & 13\end{array}\right]$; 
-<br>
-  $2 \boldsymbol{A}+3 \boldsymbol{B}=\left[\begin{array}{rrrr}14 & 13 & 8 & 7 \\ -2 & 5 & -2 & 5 \\ 2 & 1 & 6 & 5\end{array}\right]$; 
-<br>
-(2) $\boldsymbol{X}=\left[\begin{array}{rrrr}3 & 1 & 1 & -1 \\ -4 & 0 & -4 & 0 \\ -1 & -3 & -3 & -5\end{array}\right]$; 
-<br>
-(3) $\boldsymbol{Y}=\left[\begin{array}{cccc}\frac{10}{3} & \frac{10}{3} & 2 & 2 \\ 0 & \frac{4}{3} & 0 & \frac{4}{3} \\ \frac{2}{3} & \frac{2}{3} & 2 & 2\end{array}\right]$.
- </font>
-</div>
-</li>
-
-<li>利用SageMath在线代码模块求习题 $1$ 中的矩阵. </li>
-<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex1-1").style.display="block"'> 
-<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex1-1").style.display="none"'> 
-<div id= "divIDdaimaex1-1" style= "display:none"> 
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex1").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex1").style.display="none"'> 
+<div id= "divIDdaimaex1" style= "display:none"> 
 <div class="compute"><script type="text/x-sage">
 A = matrix([[1,2,1,2],[2,1,2,1],[1,2,3,4]])        #输入矩阵A
 B = matrix([[4,3,2,1],[-2,1,-2,1],[0,-1,0,-1]])    #输入矩阵B
@@ -2836,6 +2821,8 @@ show(B-A)                                  #求矩阵X
 show(2/3*(A+B))                            #求矩阵Y
  </script></div>
 </div>
+</li>
+
   
 <li> 计算下列矩阵的乘积:
 <br>
@@ -2851,21 +2838,18 @@ $(5)$ $\left(\begin{array}{lll}a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{
 <br>
 $(6)$ $\left(\begin{array}{llll}1 & 2 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 0 & 3\end{array}\right)\left(\begin{array}{rrrr}1 & 0 & 3 & 1 \\ 0 & 1 & 2 & -1 \\ 0 & 0 & -2 & 3 \\ 0 & 0 & 0 & -3\end{array}\right)$.
 <br>
-<input type=button value= "显示答案" onclick='document.getElementById("divIDxitiA2").style.display="block"'> 
-<input type=button value= "收起答案" onclick='document.getElementById("divIDxitiA2").style.display="none"'> 
-<div id= "divIDxitiA2" style= "display:none"> 
-<font color=green> 解：(1) $\left[\begin{array}{rrrr}3 & 2 & -1 & 0 \\ -3 & -2 & 1 & 0 \\ 6 & 4 & -2 & 0 \\ 9 & 6 & -3 & 0\end{array}\right]$; 
-<br>
-  (2) $\left[\begin{array}{r}5 \\ -3 \\ -1\end{array}\right]$; 
-<br>
-  (3) $10$; 
-<br>
-  (4) $\left[\sum_{i=1}^3 \sum_{j=1}^3 a_{i j} x_i x_j\right]$; 
-<br>
-  (5) $\left[\begin{array}{lll}a_{11} & a_{12} & a_{12}+a_{13} \\ a_{21} & a_{22} & a_{22}+a_{23} \\ a_{31} & a_{32} & a_{32}+a_{33}\end{array}\right]$; 
-<br>
-  (6) $\left[\begin{array}{rrrr}1 & 2 & 5 & 2 \\ 0 & 1 & 2 & -4 \\ 0 & 0 & -4 & 3 \\ 0 & 0 & 0 & -9\end{array}\right]$.
- </font>
+<input type=button value= "显示代码" onclick='document.getElementById("divIDdaimaex2").style.display="block"'> 
+<input type=button value= "收起代码" onclick='document.getElementById("divIDdaimaex2").style.display="none"'> 
+<div id= "divIDdaimaex2" style= "display:none"> 
+<div class="compute"><script type="text/x-sage">
+var("x1 x2 x3 a11 a12 a13 a21 a22 a23 a31 a32 a33")
+show(matrix([[1],[-1],[2],[3]])*matrix([[3,2,-1,0]]))             #(1)
+show(matrix([[5,0,0],[0,3,1],[0,2,1]])*matrix([[1],[-2],[3]]))    #(2) 
+show(matrix([[1,2,3,4]])*matrix([[3],[2],[1],[0]]))               #(3)
+show(matrix([[x1,x2,x3]])*matrix([[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]])*matrix([[x1],[x2],[x3]]))        #(4)
+show(matrix([[a11,a12,a13],[a21,a22,a23],[a31,a32,a33]])*matrix([[1,0,0],[0,1,1],[0,0,1]]))                    #(5)
+show(matrix([[1,2,1,0],[0,1,0,1],[0,0,2,1],[0,0,0,3]])*matrix([[1,0,3,1],[0,1,2,-1],[0,0,-2,3],[0,0,0,-3]]))   #(6)
+ </script></div>
 </div>
 </li>
   
